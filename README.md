@@ -2,14 +2,16 @@
 
 # <img src="assets/spdw_symbol.png" width="27" alt="SPDW Symbol"> Dolphin Core for MuOS
 
-**The definitive Dolphin optimization hub for muOS.**
+**The definitive Dolphin Core optimization for muOS.**
 *A handheld running an ARM SoC deserves to squeeze every drop of performance out of GameCube and Wii.*
 
 [![muOS](https://img.shields.io/badge/muOS-Compatible-7B68EE?style=flat-square)](#)
 [![Device](https://img.shields.io/badge/Device-RG35XX--H-FF6F00?style=flat-square)](#)
 [![Emulation](https://img.shields.io/badge/Core-Dolphin-3776AB?style=flat-square&logo=nintendo-gamecube&logoColor=white)](#)
 [![SPDW Factory](https://img.shields.io/badge/SPDW_Factory_Lab-00FFCC?style=for-the-badge)](#)
-![Dolphin for muOS](assets/dolphinformuos.png)
+<div align="center">
+  <img src="assets/dolphinformuos.png" width="700" alt="SPDW Factory Logo">
+  <br>
 </div>
 
 ## 📜 Overview
@@ -55,6 +57,26 @@ Before VoidDesk and SPDW Factory took over the optimization side, the foundation
 
 ---
 
+## 📥 Installation Guide
+
+1. **Download the Release:** 
+2. **Transfer to Device:** Place the downloaded file into the `ARCHIVE` folder on either `SD1` or `SD2`.
+3. **Open Archive Manager:** On your console, navigate to **Applications** ➔ **Archive Manager** inside muOS.
+4. **Execute Install:** Select the downloaded file and launch the installation process.
+
+## 📖 Usage Guide
+
+1. **Navigate to Content:** Open **Content Explorer** from the main muOS menu.
+2. **Locate Your Games:** Browse to the directory where you stored your Nintendo GameCube or Nintendo Wii ROMs.
+3. **Assign Core Profile:** Match the game (or folder) with one of the available Dolphin core profiles.
+4. **Launch & Play:** Boot up the title and test the performance!
+
+> ⚠️ **Important Note on Exiting the Emulator:**  
+> Dedicated in-core hotkeys to directly exit Dolphin are not fully operational yet. To exit safely without risking corruption, use the native muOS safe restart shortcut:  
+> **`L2` + `R2` + `SELECT`** (Safe Console Reboot).
+
+---
+
 ## 🤝 Credits & Acknowledgments
 
 Part of the **SPDW Factory** ecosystem, created by **Sir Pips**.
@@ -67,11 +89,11 @@ Part of the **SPDW Factory** ecosystem, created by **Sir Pips**.
 
 <br>
 
-This project stands upon the shoulders of the talented developers and community pioneers who made GameCube emulation on H700 handhelds a reality — as initially explored and documented in the official [muOS Community Discussion for Dolphin V9](https://community.muos.dev/t/core-dolphin-for-muos-v9-take-3-by-speedrun/491)[cite: 1]:
-* **@Speedrun:** Original author of the Dolphin port for muOS (V9 / Take 3)[cite: 1].
-* **@FireBattleInMtl:** Huge thanks for all changes after V8, fixing permissions, and creating the script to add Dolphin to muOS' `launch.sh`[cite: 1].
-* **@Snow:** For providing the newly compiled Dolphin binary file[cite: 1].
-* **@bitter_bizarro:** For adopting the core and making it compatible with muOS Goose![cite: 1]
+This project stands upon the shoulders of the talented developers and community pioneers who made GameCube emulation on H700 handhelds a reality — as initially explored and documented in the official [muOS Community Discussion for Dolphin V9](https://community.muos.dev/t/core-dolphin-for-muos-v9-take-3-by-speedrun/491):
+* **@Speedrun:** Original author of the Dolphin port for muOS (V9 / Take 3).
+* **@FireBattleInMtl:** Huge thanks for all changes after V8, fixing permissions, and creating the script to add Dolphin to muOS' `launch.sh`.
+* **@Snow:** For providing the newly compiled Dolphin binary file.
+* **@bitter_bizarro:** For adopting the core and making it compatible with muOS Goose!
 * **muOS Development Team:** For ongoing firmware maintenance and structural support.
 
 ---
