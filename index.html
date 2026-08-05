@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it" class="dark">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,27 +30,27 @@
         <div>
           <h1 class="text-2xl font-black tracking-tight text-white flex items-center gap-2">
             <span class="text-sky-400">RG35XX-H</span> GameCube DB
-            <span class="text-xs font-mono font-normal px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Core v9</span>
+            <span class="text-xs font-mono font-normal px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Core v10.5.3</span>
           </h1>
-          <p class="text-xs text-slate-400 mt-0.5">Dashboard ottimizzata per l'emulazione su chip Allwinner H700</p>
+          <p class="text-xs text-slate-400 mt-0.5">Optimized emulation dashboard for Allwinner H700 chipset</p>
         </div>
 
         <!-- Dashboard Metrics -->
         <div class="grid grid-cols-4 gap-2 sm:gap-4 text-center">
           <div class="bg-slate-800/60 border border-slate-700/50 rounded-lg p-2">
-            <div class="text-xs text-slate-400">Totali</div>
+            <div class="text-xs text-slate-400">Total</div>
             <div id="statTotal" class="text-lg font-bold font-mono text-slate-100">0</div>
           </div>
           <div class="bg-emerald-950/40 border border-emerald-800/50 rounded-lg p-2">
-            <div class="text-xs text-emerald-400">Giocabili</div>
+            <div class="text-xs text-emerald-400">Playable</div>
             <div id="statPlayable" class="text-lg font-bold font-mono text-emerald-400">0</div>
           </div>
           <div class="bg-amber-950/40 border border-amber-800/50 rounded-lg p-2">
-            <div class="text-xs text-amber-400">Incostanti</div>
+            <div class="text-xs text-amber-400">Inconsistent</div>
             <div id="statInconsistent" class="text-lg font-bold font-mono text-amber-400">0</div>
           </div>
           <div class="bg-red-950/40 border border-red-800/50 rounded-lg p-2">
-            <div class="text-xs text-red-400">Inutilizzabili</div>
+            <div class="text-xs text-red-400">Unplayable</div>
             <div id="statUnplayable" class="text-lg font-bold font-mono text-red-400">0</div>
           </div>
         </div>
@@ -67,7 +67,7 @@
         <input 
           type="text" 
           id="searchInput" 
-          placeholder="Cerca un gioco..." 
+          placeholder="Search game title..." 
           class="w-full bg-slate-950 text-slate-200 placeholder-slate-500 border border-slate-700 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:border-sky-500 transition-colors"
         >
         <svg class="w-4 h-4 text-slate-500 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,15 +79,15 @@
       <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto">
         <!-- Status Filter -->
         <select id="statusFilter" class="bg-slate-950 text-slate-300 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-sky-500">
-          <option value="all">Stato: Tutti</option>
-          <option value="Yes">Giocabile (Yes)</option>
-          <option value="Inconsistent">Incostante (Inconsistent)</option>
-          <option value="No">Non Giocabile (No)</option>
+          <option value="all">Status: All</option>
+          <option value="Yes">Playable (Yes)</option>
+          <option value="Inconsistent">Inconsistent</option>
+          <option value="No">Unplayable (No)</option>
         </select>
 
         <!-- Region Filter -->
         <select id="regionFilter" class="bg-slate-950 text-slate-300 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-sky-500">
-          <option value="all">Regione: Tutte</option>
+          <option value="all">Region: All</option>
           <option value="USA">USA</option>
           <option value="EUR">EUR</option>
           <option value="JPN">JPN</option>
@@ -95,18 +95,18 @@
 
         <!-- Sort Select -->
         <select id="sortBy" class="bg-slate-950 text-slate-300 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-sky-500">
-          <option value="score-desc">Punteggio (Alto -> Basso)</option>
-          <option value="score-asc">Punteggio (Basso -> Alto)</option>
-          <option value="title-asc">Nome (A -> Z)</option>
-          <option value="title-desc">Nome (Z -> A)</option>
+          <option value="score-desc">Score (High &rarr; Low)</option>
+          <option value="score-asc">Score (Low &rarr; High)</option>
+          <option value="title-asc">Title (A &rarr; Z)</option>
+          <option value="title-desc">Title (Z &rarr; A)</option>
         </select>
 
-        <!-- JSON File Upload -->
-        <label class="cursor-pointer bg-sky-600 hover:bg-sky-500 text-white font-medium text-sm px-4 py-2 rounded-lg transition-colors flex items-center gap-2">
+        <!-- Manual Upload Fallback -->
+        <label class="cursor-pointer bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-medium text-sm px-3 py-2 rounded-lg border border-slate-700 transition-colors flex items-center gap-2" title="Manual JSON Upload">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
           </svg>
-          Carica JSON
+          Upload JSON
           <input type="file" id="jsonInput" accept=".json" class="hidden">
         </label>
       </div>
@@ -122,15 +122,13 @@
       <svg class="w-12 h-12 text-slate-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
       </svg>
-      <p class="text-slate-400 font-medium">Nessun gioco trovato con i filtri attuali.</p>
+      <p id="emptyStateText" class="text-slate-400 font-medium">No games found matching your current filters.</p>
     </div>
   </main>
 
   <script>
-    // Inizializzazione Dati
     let gamesData = [];
 
-    // Elementi DOM
     const jsonInput = document.getElementById('jsonInput');
     const searchInput = document.getElementById('searchInput');
     const statusFilter = document.getElementById('statusFilter');
@@ -138,8 +136,26 @@
     const sortBy = document.getElementById('sortBy');
     const gamesGrid = document.getElementById('gamesGrid');
     const emptyState = document.getElementById('emptyState');
+    const emptyStateText = document.getElementById('emptyStateText');
 
-    // Caricamento file JSON locale
+    // Automatic Load from data/games.json
+    async function loadAutomaticData() {
+      try {
+        const response = await fetch('data/games.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        gamesData = Array.isArray(data) ? data : (data.games || []);
+        updateDashboard();
+      } catch (error) {
+        console.warn('Auto-load failed for data/games.json:', error);
+        emptyStateText.textContent = 'Could not load data/games.json automatically. Please upload a JSON file manually.';
+        emptyState.classList.remove('hidden');
+      }
+    }
+
+    // Manual Upload Fallback
     jsonInput.addEventListener('change', (e) => {
       const file = e.target.files[0];
       if (!file) return;
@@ -151,18 +167,18 @@
           gamesData = Array.isArray(parsed) ? parsed : (parsed.games || []);
           updateDashboard();
         } catch (err) {
-          alert('Errore nella lettura del file JSON: formato non valido.');
+          alert('Error reading JSON file: invalid format.');
         }
       };
       reader.readAsText(file);
     });
 
-    // Event Listeners per i filtri
+    // Event Listeners for Filters
     [searchInput, statusFilter, regionFilter, sortBy].forEach(el => {
       el.addEventListener('input', applyFilters);
     });
 
-    // Calcolo e aggiornamento metriche
+    // Stats Calculation
     function updateStats(data) {
       document.getElementById('statTotal').textContent = data.length;
       document.getElementById('statPlayable').textContent = data.filter(g => g.playable === 'Yes').length;
@@ -170,7 +186,7 @@
       document.getElementById('statUnplayable').textContent = data.filter(g => g.playable === 'No').length;
     }
 
-    // Algoritmo di Filtraggio e Ordinamento
+    // Filter & Sort Logic
     function applyFilters() {
       const query = searchInput.value.toLowerCase().trim();
       const status = statusFilter.value;
@@ -184,7 +200,7 @@
         return matchesQuery && matchesStatus && matchesRegion;
       });
 
-      // Ordinamento
+      // Sorting
       filtered.sort((a, b) => {
         const scoreA = parseFloat(a.emulationScore) || 0;
         const scoreB = parseFloat(b.emulationScore) || 0;
@@ -203,10 +219,11 @@
       renderGrid(filtered);
     }
 
-    // Renderizzazione Card Gioco
+    // Render Game Cards
     function renderGrid(data) {
       if (data.length === 0) {
         gamesGrid.innerHTML = '';
+        emptyStateText.textContent = 'No games found matching your current filters.';
         emptyState.classList.remove('hidden');
         return;
       }
@@ -219,7 +236,7 @@
         const card = document.createElement('div');
         card.className = "bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-xl p-4 flex flex-col justify-between transition-all duration-200 shadow-sm hover:shadow-md";
 
-        // Badges Styling
+        // Status Badge Styling
         let statusBadge = "bg-red-500/10 text-red-400 border-red-500/30";
         if (game.playable === "Yes") statusBadge = "bg-emerald-500/10 text-emerald-400 border-emerald-500/30";
         if (game.playable === "Inconsistent") statusBadge = "bg-amber-500/10 text-amber-400 border-amber-500/30";
@@ -233,7 +250,7 @@
           <div>
             <div class="flex justify-between items-start gap-2 mb-2">
               <div>
-                <h3 class="font-bold text-slate-100 leading-snug">${game.title || 'Senza Titolo'}</h3>
+                <h3 class="font-bold text-slate-100 leading-snug">${game.title || 'Untitled Game'}</h3>
                 <span class="inline-block text-[10px] font-mono px-1.5 py-0.5 mt-1 rounded bg-slate-800 text-slate-400 border border-slate-700/60 uppercase">
                   ${game.region || 'N/A'}
                 </span>
@@ -244,7 +261,7 @@
             </div>
 
             <div class="my-3 flex items-center justify-between border-y border-slate-800/80 py-2">
-              <div class="text-xs text-slate-400">Punteggio Emulazione</div>
+              <div class="text-xs text-slate-400">Emulation Score</div>
               <div class="text-base font-black font-mono ${scoreColor}">
                 ${score.toFixed(1)} <span class="text-xs font-normal text-slate-500">/ 10</span>
               </div>
@@ -256,23 +273,23 @@
                 <span>${game.fps || 'N/A'}</span>
               </div>
               <div class="flex justify-between text-slate-300 font-mono">
-                <span class="text-slate-500">Avvio (Boots):</span>
+                <span class="text-slate-500">Boots:</span>
                 <span class="${game.boots ? 'text-emerald-400' : 'text-red-400'} font-bold">
-                  ${game.boots ? 'Sì' : 'No'}
+                  ${game.boots ? 'Yes' : 'No'}
                 </span>
               </div>
               
               <div class="pt-2">
-                <span class="text-slate-500 font-medium block mb-1 uppercase text-[10px] tracking-wider">Impostazioni:</span>
+                <span class="text-slate-500 font-medium block mb-1 uppercase text-[10px] tracking-wider">Settings:</span>
                 <div class="bg-slate-950 p-2 rounded border border-slate-800 text-slate-300 font-mono text-[11px] break-words">
-                  ${game.settings || 'Nessuna configurazione specifica.'}
+                  ${game.settings || 'No specific settings.'}
                 </div>
               </div>
 
               <div class="pt-1">
-                <span class="text-slate-500 font-medium block mb-1 uppercase text-[10px] tracking-wider">Note:</span>
+                <span class="text-slate-500 font-medium block mb-1 uppercase text-[10px] tracking-wider">Notes:</span>
                 <p class="text-slate-400 leading-relaxed text-[11px]">
-                  ${game.notes || 'Nessuna nota presente.'}
+                  ${game.notes || 'No notes available.'}
                 </p>
               </div>
             </div>
@@ -290,6 +307,9 @@
       updateStats(gamesData);
       applyFilters();
     }
+
+    // Initialize Auto-load on DOM ready
+    window.addEventListener('DOMContentLoaded', loadAutomaticData);
   </script>
 </body>
 </html>
