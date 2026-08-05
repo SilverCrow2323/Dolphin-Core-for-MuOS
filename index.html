@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolphin muOS Compatibility Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen p-4 md:p-8">
+
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <header class="mb-8 border-b border-slate-800 pb-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <h1 class="text-3xl font-bold text-cyan-400 tracking-wide">🐬 Dolphin Core muOS Compatibility</h1>
+                <p class="text-slate-400 text-sm mt-1">Community-driven testing database for H700 handhelds</p>
+            </div>
+            <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/issues/new?template=report.yml" target="_blank" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-2.5 px-5 rounded-lg transition shadow-lg shadow-cyan-500/20">
+                + Submit Test Report
+            </a>
+        </header>
+
+        <!-- Search & Filter Controls -->
+        <div class="flex flex-col md:flex-row gap-4 mb-6">
+            <input type="text" id="searchInput" placeholder="Search game title..." class="bg-slate-900 border border-slate-800 text-slate-200 px-4 py-2.5 rounded-lg focus:outline-none focus:border-cyan-500 flex-1">
+            <select id="statusFilter" class="bg-slate-900 border border-slate-800 text-slate-200 px-4 py-2.5 rounded-lg focus:outline-none focus:border-cyan-500">
+                <option value="ALL">All Statuses</option>
+                <option value="Perfect">🟢 Perfect</option>
+                <option value="Playable">🟡 Playable</option>
+                <option value="Ingame">🟠 Ingame</option>
+                <option value="Unplayable">🔴 Unplayable</option>
+            </select>
+        </div>
+
+        <!-- Games List Container -->
+        <div id="gamesContainer" class="space-y-4">
+            <p class="text-slate-500 text-center py-8">Loading compatibility database...</p>
+        </div>
+    </div>
+
+    <script>
+        let gamesData = [];
+
+        async function fetchGames() {
+            try {
+                const res = await fetch('data/games.json');
+                gamesData = await res.json();
+                renderGames(gamesData);
+            } catch (err) {
+                document.getElementById('gamesContainer').innerHTML = `<p class="text-red-400 text-center">Failed to load database.</p>`;
+            }
+        }
+
+        function getStatusBadge(status) {
+            const colors = {
+                'Perfect': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+                'Playable': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
+                'Ingame': 'bg-orange-500/10 text-orange-400 border-orange-500/20',
+                'Unplayable': 'bg-rose-500/10 text-rose-400 border-rose-500/20'
+            };
+            return `<span class="px-2.5 py-1 text-xs font-semibold rounded-full border ${colors[status] || 'bg-slate-800 text-slate-300'}">${status}</span>`;
+        }
+
+        function renderGames(data) {
+            const container = document.getElementById('gamesContainer');
+            container.innerHTML = '';
+
+            if (data.length === 0) {
+                container.innerHTML = `<p class="text-slate-500 text-center py-8">No matching games found.</p>`;
+                return;
+            }
+
+            data.forEach((game, index) => {
+                const gameCard = document.createElement('div');
+                gameCard.className = 'bg-slate-900 border border-slate-800/80 rounded-xl overflow-hidden';
+                
+                gameCard.innerHTML = `
+                    <div class="p-4 flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer hover:bg-slate-800/40 transition" onclick="toggleDetails(${index})">
+                        <div class="flex items-center gap-3">
+                            <span class="text-cyan-400 font-bold">►</span>
+                            <div>
+                                <h3 class="font-bold text-lg text-slate-100">${game.title}</h3>
+                                <span class="text-xs text-slate-400">${game.region} • ${game.reports.length} report(s) submitted</span>
+                            </div>
+                        </div>
+                        <div>${getStatusBadge(game.overall_status)}</div>
+                    </div>
+
+                    <!-- Collapsible Reports List -->
+                    <div id="reports-${index}" class="hidden border-t border-slate-800 bg-slate-950/50 p-4 space-y-3">
+                        ${game.reports.map(r => `
+                            <div class="p-3 bg-slate-900/90 rounded-lg border border-slate-800/60 text-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold text-cyan-300">Tested by @${r.tester} <span class="text-xs text-slate-500">(${r.device})</span></span>
+                                    <span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-mono">Core: ${r.core_version}</span>
+                                </div>
+                                <p class="text-slate-300 mb-1"><strong>Performance:</strong> ${r.fps}</p>
+                                ${r.settings ? `<p class="text-slate-400 mb-1"><strong>Settings:</strong> <code class="text-amber-300/90 bg-slate-950 px-1.5 py-0.5 rounded text-xs">${r.settings}</code></p>` : ''}
+                                ${r.notes ? `<p class="text-slate-400 text-xs italic mt-1">"${r.notes}"</p>` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                container.appendChild(gameCard);
+            });
+        }
+
+        function toggleDetails(index) {
+            const el = document.getElementById(`reports-${index}`);
+            el.classList.toggle('hidden');
+        }
+
+        // Search & Filter Listeners
+        document.getElementById('searchInput').addEventListener('input', filterData);
+        document.getElementById('statusFilter').addEventListener('change', filterData);
+
+        function filterData() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const status = document.getElementById('statusFilter').value;
+
+            const filtered = gamesData.filter(g => {
+                const matchesSearch = g.title.toLowerCase().includes(query);
+                const matchesStatus = status === 'ALL' || g.overall_status === status;
+                return matchesSearch && matchesStatus;
+            });
+            renderGames(filtered);
+        }
+
+        fetchGames();
+    </script>
+</body>
+</html>

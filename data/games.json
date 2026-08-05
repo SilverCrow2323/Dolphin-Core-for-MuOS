@@ -1,0 +1,1942 @@
+[
+  {
+    "title": "F-Zero GX",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Yes",
+    "emulationScore": 9.5,
+    "settings": "All of them",
+    "fps": "50/60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Luigi's Mansion",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Mario Kart Double Dash",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Serious Sam Next Encounter",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Turok Evolution",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Super Mario Sunshine",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Super Monkey Ball",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Yes",
+    "emulationScore": 9.5,
+    "settings": "All of them",
+    "fps": "50/60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Super Monkey Ball 2",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Yes",
+    "emulationScore": 9.0,
+    "settings": "Standard",
+    "fps": "60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Super Monkey Ball Adventure",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "TimeSplitters 2",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Pikmin",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Paper Mario Thousand Year Door",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Yes",
+    "emulationScore": 8.0,
+    "settings": "SpeedHack/Default",
+    "fps": "50-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "007 - Agent Under Fire",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Animal Crossing",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Yes",
+    "emulationScore": 9.5,
+    "settings": "Standard",
+    "fps": "60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "XIII",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 2.0,
+    "settings": "Blackscreen fix",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "Chibi-Robo!",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Kao the Kangaroo - Round 2",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "LEGO Star Wars",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Zelda - The Wind Waker",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Zelda - Twilight Princess",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 5.5,
+    "settings": "Blackscreen fix",
+    "fps": "30-50",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Super Smash Bros. Melee",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Spongebob - Battle for Bikini Bottom",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Mario Party 4",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Mario Party 7",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Spyro - A New Beginning",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 5.5,
+    "settings": "Blackscreen fix",
+    "fps": "30-50",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Spyro - Enter the Dragonfly",
+    "region": "NTSC",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 2.0,
+    "settings": "Blackscreen fix",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
+  },
+  {
+    "title": "Spyro - A Hero's Tail",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "1080 Avalanche",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Call of Duty 2 - Big Red One",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "The Sims",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Yes",
+    "emulationScore": 9.0,
+    "settings": "Standard",
+    "fps": "60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "The Sims 2",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "V-Rally 3",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Baldur's Gate - Dark Alliance",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Wario World",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Medal of Honor - Frontline",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Viewtiful Joe",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Viewtiful Joe 2",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Metroid Prime",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Star Fox - Assault",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Crash Bandicoot - The Wrath of Cortex",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Skies of Arcadia Legends",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Star Fox Adventures",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Pokemon XD",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Pokemon Colosseum",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Yes",
+    "emulationScore": 8.0,
+    "settings": "SpeedHack/Default",
+    "fps": "50-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Bust-a-Move 3000",
+    "region": "NTSC",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
+  },
+  {
+    "title": "Crazy Taxi",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Kirby Air Ride FREE RUN MODE",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Kirby Air Ride",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Harvest Moon Magical Melody",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Yes",
+    "emulationScore": 8.0,
+    "settings": "SpeedHack/Default",
+    "fps": "50-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Resident Evil 4",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Sonic Heroes",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Sonic Riders",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Sonic Adventure DX",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Sonic Adventure 2 DX",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 2.0,
+    "settings": "Blackscreen fix",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "SSX 3",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "SSX on Tour",
+    "region": "PAL / NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comments: PAL | YES & NTSC | YES"
+  },
+  {
+    "title": "SSX Tricky",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "Big Mutha Truckers",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "American Chopper 2 - Full Throttle",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Beyond Good & Evil",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Batman Begins",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Bionicle Heroes",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Baten Kaitos - Eternal Wings",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "18 Wheeler - American Pro Trucker",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Call of Duty - Finest Hour",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 5.5,
+    "settings": "Blackscreen fix",
+    "fps": "30-50",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Burnout",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Burnout 2 - Point of Impact",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "BloodRayne",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "Blood Omen 2 - Legacy of Kain",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Capcom vs. SNK 2 EO",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Cabela's Big Game Hunter 2005",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Chaos Field",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Conflict - Desert Storm",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Conflict - Desert Storm II",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Soulcalibur II",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Peter Jackson's King Kong",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Red Faction II",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Dead to Rights",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Shrek Extra Large",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Shrek 2",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "The Simpsons - Hit & Run",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Star Wars - Rogue Squadron II",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "Shrek - Smash n' Crash Racing",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Gun",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "Lost Kingdoms",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Eternal Darkness - Sanity's Requiem",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "Pac-Man World 2",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Pac-Man World 3",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Mega Man X - Command Mission",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Metal Arms - Glitch in the System",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Metal Gear Solid - The Twin Snakes",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Medal of Honor - Rising Sun",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Yes",
+    "emulationScore": 9.0,
+    "settings": "Default",
+    "fps": "50/60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Crystal Chronicles",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Yes",
+    "emulationScore": 9.0,
+    "settings": "Default",
+    "fps": "50/60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Rayman 3 - Hoodlum Havoc",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Yes",
+    "emulationScore": 9.0,
+    "settings": "Default",
+    "fps": "50/60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Super Mario Strikers",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "F1 2002",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "FIFA Football 2003",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "FIFA Football 2004",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "FIFA Football 2005",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "FIFA 06",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "FIFA 07",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "The SpongeBob SquarePants Movie",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Billy Hatcher",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "WarioWare Inc. - Mega Party Game$!",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Crash Nitro Kart",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Crash Tag Team Racing",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Ribbit King",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Asterix & Obelix XXL",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Yes",
+    "emulationScore": 8.0,
+    "settings": "SpeedHack/Default",
+    "fps": "50-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Rayman Arena",
+    "region": "NTSC",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
+  },
+  {
+    "title": "Dreamworks Madagascar",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Yes",
+    "emulationScore": 8.0,
+    "settings": "SpeedHack/Default",
+    "fps": "50-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Disney-Pixar The Incredibles",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Harry Potter / Philosopher's Stone",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Prince of Persia: Sands of Time",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Looney Tunes: Back in Action",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Frogger: Ancient Shadow",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Frogger Beyond",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Frogger's Adventures: The Rescue",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Diet Melee Classic v1.03 MOD",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "TimeSplitters Future Perfect",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "Samurai Jack: The Shadow of Aku",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Animaniacs: The Great Edgar Hunt",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Naruto: Clash of Ninja",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Shadow the Hedgehog",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Sphinx and the Cursed Mummy",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Taz Wanted",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "TMNT",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Ty the Tasmanian Tiger",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Tom & Jerry in War of Whiskers",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Zoocube",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Aggressive Inline",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "X-Men 2: Wolverine's Revenge",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Star Wars: Bounty Hunter",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Tak: The Great Juju Challenge",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Tak 2: The Staff of Dreams",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Open Season",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 2.0,
+    "settings": "SpeedHack",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "Pac-Man World Rally",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Scaler",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Dancing Stage Mario Mix",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Donald Duck Quack Attack",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Puyo Puyo Fever",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Zapper",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "The Sims Bustin' Out",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Yes",
+    "emulationScore": 8.0,
+    "settings": "SpeedHack/Default",
+    "fps": "50-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Robots",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Yes",
+    "emulationScore": 8.0,
+    "settings": "SpeedHack/Default",
+    "fps": "50-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Ultimate Muscle: Legends",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Yes",
+    "emulationScore": 8.0,
+    "settings": "SpeedHack/Default",
+    "fps": "50-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Bomberman Generation",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Bomberman Jetters",
+    "region": "NTSC",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
+  },
+  {
+    "title": "Carmen Sandiego: Stolen Drums",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Cel Damage",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Codename K1ds Next Door",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Harry Potter: Quidditch World Cup",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Harry Potter / Prisoner of Azkaban",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Harry Potter / Goblet of Fire",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Disney's Piglet's Big Game",
+    "region": "NTSC",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
+  },
+  {
+    "title": "Disney's Chicken Little",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Disney's Extreme Skate Adventure",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 2.0,
+    "settings": "SpeedHack",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "Disney's Magical Mirror",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Disney's PK - Out of Shadows",
+    "region": "NTSC",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 2.0,
+    "settings": "SpeedHack",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
+  },
+  {
+    "title": "Disney-Pixar Ratatouille",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Need for Speed - Most Wanted",
+    "region": "NTSC",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
+  },
+  {
+    "title": "Need for Speed - Underground",
+    "region": "NTSC",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
+  },
+  {
+    "title": "Need for Speed - Underground 2",
+    "region": "NTSC",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
+  },
+  {
+    "title": "Need for Speed - Hot Pursuit 2",
+    "region": "NTSC",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
+  },
+  {
+    "title": "Need for Speed - Carbon",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Fantastic 4",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "Dragon Ball Z Budokai",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "LEGO Star Wars II",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Star Wars: Clone Wars",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "Star Wars: Rogue Squadron III",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Super Bust-A-Move All Stars",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "Tetris Worlds",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "TMNT Mutant Melee",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Tom Clancy's Splinter Cell",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "Tony Hawk's American Wasteland",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 2.0,
+    "settings": "SpeedHack",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "Tony Hawk's Pro Skater 3",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Tony Hawk's Pro Skater 4",
+    "region": "NTSC",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 2.0,
+    "settings": "SpeedHack",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
+  },
+  {
+    "title": "Tony Hawk's Underground",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Tony Hawk's Underground 2",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Ultimate Spider-Man",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 2.0,
+    "settings": "SpeedHack",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  },
+  {
+    "title": "Vexx",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Harry Potter / Chamber of Secrets",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Tales of Symphonia",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Ty the Tasmanian Tiger 2",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Ty the Tasmanian Tiger 3",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Wave Race: Blue Storm",
+    "region": "NTSC",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 2.0,
+    "settings": "SpeedHack",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
+  },
+  {
+    "title": "Worms 3D",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Worms Blast",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Yu-Gi-Oh: Falsebound Kingdom",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Cubivore - Survival of Fittest",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.5,
+    "settings": "SpeedHack",
+    "fps": "45-60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Gadget Racers",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "MaxPlay Volume 01",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Odama",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Phantasy Star Online",
+    "region": "NTSC",
+    "boots": true,
+    "playable": "Yes",
+    "emulationScore": 9.0,
+    "settings": "Default",
+    "fps": "60",
+    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
+  },
+  {
+    "title": "Hitman 2: Silent Assassin",
+    "region": "PAL",
+    "boots": true,
+    "playable": "Inconsistent",
+    "emulationScore": 7.0,
+    "settings": "SpeedHack",
+    "fps": "40-60",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
+  },
+  {
+    "title": "Doshin the Giant",
+    "region": "PAL",
+    "boots": false,
+    "playable": "No",
+    "emulationScore": 1.0,
+    "settings": "All of them",
+    "fps": "0",
+    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+  }
+]
