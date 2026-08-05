@@ -1,132 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dolphin muOS Compatibility Hub</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RG35XX-H GameCube Compatibility Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              500: '#3b82f6',
+              600: '#2563eb',
+            }
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans min-h-screen p-4 md:p-8">
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased selection:bg-sky-500 selection:text-white">
 
-    <div class="max-w-6xl mx-auto">
-        <!-- Header -->
-        <header class="mb-8 border-b border-slate-800 pb-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
-            <div>
-                <h1 class="text-3xl font-bold text-cyan-400 tracking-wide">🐬 Dolphin Core muOS Compatibility</h1>
-                <p class="text-slate-400 text-sm mt-1">Community-driven testing database for H700 handhelds</p>
-            </div>
-            <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/issues/new?template=report.yml" target="_blank" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-2.5 px-5 rounded-lg transition shadow-lg shadow-cyan-500/20">
-                + Submit Test Report
-            </a>
-        </header>
-
-        <!-- Search & Filter Controls -->
-        <div class="flex flex-col md:flex-row gap-4 mb-6">
-            <input type="text" id="searchInput" placeholder="Search game title..." class="bg-slate-900 border border-slate-800 text-slate-200 px-4 py-2.5 rounded-lg focus:outline-none focus:border-cyan-500 flex-1">
-            <select id="statusFilter" class="bg-slate-900 border border-slate-800 text-slate-200 px-4 py-2.5 rounded-lg focus:outline-none focus:border-cyan-500">
-                <option value="ALL">All Statuses</option>
-                <option value="Perfect">🟢 Perfect</option>
-                <option value="Playable">🟡 Playable</option>
-                <option value="Ingame">🟠 Ingame</option>
-                <option value="Unplayable">🔴 Unplayable</option>
-            </select>
+  <!-- Header & Dynamic Stats Bar -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h1 class="text-2xl font-black tracking-tight text-white flex items-center gap-2">
+            <span class="text-sky-400">RG35XX-H</span> GameCube DB
+            <span class="text-xs font-mono font-normal px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Core v9</span>
+          </h1>
+          <p class="text-xs text-slate-400 mt-0.5">Dashboard ottimizzata per l'emulazione su chip Allwinner H700</p>
         </div>
 
-        <!-- Games List Container -->
-        <div id="gamesContainer" class="space-y-4">
-            <p class="text-slate-500 text-center py-8">Loading compatibility database...</p>
+        <!-- Dashboard Metrics -->
+        <div class="grid grid-cols-4 gap-2 sm:gap-4 text-center">
+          <div class="bg-slate-800/60 border border-slate-700/50 rounded-lg p-2">
+            <div class="text-xs text-slate-400">Totali</div>
+            <div id="statTotal" class="text-lg font-bold font-mono text-slate-100">0</div>
+          </div>
+          <div class="bg-emerald-950/40 border border-emerald-800/50 rounded-lg p-2">
+            <div class="text-xs text-emerald-400">Giocabili</div>
+            <div id="statPlayable" class="text-lg font-bold font-mono text-emerald-400">0</div>
+          </div>
+          <div class="bg-amber-950/40 border border-amber-800/50 rounded-lg p-2">
+            <div class="text-xs text-amber-400">Incostanti</div>
+            <div id="statInconsistent" class="text-lg font-bold font-mono text-amber-400">0</div>
+          </div>
+          <div class="bg-red-950/40 border border-red-800/50 rounded-lg p-2">
+            <div class="text-xs text-red-400">Inutilizzabili</div>
+            <div id="statUnplayable" class="text-lg font-bold font-mono text-red-400">0</div>
+          </div>
         </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Controls & Filters Bar -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+    <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 flex flex-col lg:flex-row gap-4 justify-between items-center shadow-md">
+      
+      <!-- Search Bar -->
+      <div class="relative w-full lg:w-96">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Cerca un gioco..." 
+          class="w-full bg-slate-950 text-slate-200 placeholder-slate-500 border border-slate-700 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:border-sky-500 transition-colors"
+        >
+        <svg class="w-4 h-4 text-slate-500 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </div>
+
+      <!-- Filters & Sort Options -->
+      <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto">
+        <!-- Status Filter -->
+        <select id="statusFilter" class="bg-slate-950 text-slate-300 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-sky-500">
+          <option value="all">Stato: Tutti</option>
+          <option value="Yes">Giocabile (Yes)</option>
+          <option value="Inconsistent">Incostante (Inconsistent)</option>
+          <option value="No">Non Giocabile (No)</option>
+        </select>
+
+        <!-- Region Filter -->
+        <select id="regionFilter" class="bg-slate-950 text-slate-300 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-sky-500">
+          <option value="all">Regione: Tutte</option>
+          <option value="USA">USA</option>
+          <option value="EUR">EUR</option>
+          <option value="JPN">JPN</option>
+        </select>
+
+        <!-- Sort Select -->
+        <select id="sortBy" class="bg-slate-950 text-slate-300 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-sky-500">
+          <option value="score-desc">Punteggio (Alto -> Basso)</option>
+          <option value="score-asc">Punteggio (Basso -> Alto)</option>
+          <option value="title-asc">Nome (A -> Z)</option>
+          <option value="title-desc">Nome (Z -> A)</option>
+        </select>
+
+        <!-- JSON File Upload -->
+        <label class="cursor-pointer bg-sky-600 hover:bg-sky-500 text-white font-medium text-sm px-4 py-2 rounded-lg transition-colors flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+          </svg>
+          Carica JSON
+          <input type="file" id="jsonInput" accept=".json" class="hidden">
+        </label>
+      </div>
     </div>
 
-    <script>
-        let gamesData = [];
+    <!-- Games Grid -->
+    <div id="gamesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <!-- Direct Injection via JavaScript -->
+    </div>
 
-        async function fetchGames() {
-            try {
-                const res = await fetch('data/games.json');
-                gamesData = await res.json();
-                renderGames(gamesData);
-            } catch (err) {
-                document.getElementById('gamesContainer').innerHTML = `<p class="text-red-400 text-center">Failed to load database.</p>`;
-            }
+    <!-- Empty State -->
+    <div id="emptyState" class="hidden text-center py-16 bg-slate-900/30 border border-dashed border-slate-800 rounded-2xl">
+      <svg class="w-12 h-12 text-slate-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+      <p class="text-slate-400 font-medium">Nessun gioco trovato con i filtri attuali.</p>
+    </div>
+  </main>
+
+  <script>
+    // Inizializzazione Dati
+    let gamesData = [];
+
+    // Elementi DOM
+    const jsonInput = document.getElementById('jsonInput');
+    const searchInput = document.getElementById('searchInput');
+    const statusFilter = document.getElementById('statusFilter');
+    const regionFilter = document.getElementById('regionFilter');
+    const sortBy = document.getElementById('sortBy');
+    const gamesGrid = document.getElementById('gamesGrid');
+    const emptyState = document.getElementById('emptyState');
+
+    // Caricamento file JSON locale
+    jsonInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const parsed = JSON.parse(event.target.result);
+          gamesData = Array.isArray(parsed) ? parsed : (parsed.games || []);
+          updateDashboard();
+        } catch (err) {
+          alert('Errore nella lettura del file JSON: formato non valido.');
         }
+      };
+      reader.readAsText(file);
+    });
 
-        function getStatusBadge(status) {
-            const colors = {
-                'Perfect': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-                'Playable': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-                'Ingame': 'bg-orange-500/10 text-orange-400 border-orange-500/20',
-                'Unplayable': 'bg-rose-500/10 text-rose-400 border-rose-500/20'
-            };
-            return `<span class="px-2.5 py-1 text-xs font-semibold rounded-full border ${colors[status] || 'bg-slate-800 text-slate-300'}">${status}</span>`;
+    // Event Listeners per i filtri
+    [searchInput, statusFilter, regionFilter, sortBy].forEach(el => {
+      el.addEventListener('input', applyFilters);
+    });
+
+    // Calcolo e aggiornamento metriche
+    function updateStats(data) {
+      document.getElementById('statTotal').textContent = data.length;
+      document.getElementById('statPlayable').textContent = data.filter(g => g.playable === 'Yes').length;
+      document.getElementById('statInconsistent').textContent = data.filter(g => g.playable === 'Inconsistent').length;
+      document.getElementById('statUnplayable').textContent = data.filter(g => g.playable === 'No').length;
+    }
+
+    // Algoritmo di Filtraggio e Ordinamento
+    function applyFilters() {
+      const query = searchInput.value.toLowerCase().trim();
+      const status = statusFilter.value;
+      const region = regionFilter.value;
+      const sort = sortBy.value;
+
+      let filtered = gamesData.filter(game => {
+        const matchesQuery = (game.title || '').toLowerCase().includes(query);
+        const matchesStatus = status === 'all' || game.playable === status;
+        const matchesRegion = region === 'all' || (game.region || '').toUpperCase() === region;
+        return matchesQuery && matchesStatus && matchesRegion;
+      });
+
+      // Ordinamento
+      filtered.sort((a, b) => {
+        const scoreA = parseFloat(a.emulationScore) || 0;
+        const scoreB = parseFloat(b.emulationScore) || 0;
+        const titleA = (a.title || '').toLowerCase();
+        const titleB = (b.title || '').toLowerCase();
+
+        switch (sort) {
+          case 'score-desc': return scoreB - scoreA;
+          case 'score-asc': return scoreA - scoreB;
+          case 'title-asc': return titleA.localeCompare(titleB);
+          case 'title-desc': return titleB.localeCompare(titleA);
+          default: return 0;
         }
+      });
 
-        function renderGames(data) {
-            const container = document.getElementById('gamesContainer');
-            container.innerHTML = '';
+      renderGrid(filtered);
+    }
 
-            if (data.length === 0) {
-                container.innerHTML = `<p class="text-slate-500 text-center py-8">No matching games found.</p>`;
-                return;
-            }
+    // Renderizzazione Card Gioco
+    function renderGrid(data) {
+      if (data.length === 0) {
+        gamesGrid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
 
-            data.forEach((game, index) => {
-                const gameCard = document.createElement('div');
-                gameCard.className = 'bg-slate-900 border border-slate-800/80 rounded-xl overflow-hidden';
-                
-                gameCard.innerHTML = `
-                    <div class="p-4 flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer hover:bg-slate-800/40 transition" onclick="toggleDetails(${index})">
-                        <div class="flex items-center gap-3">
-                            <span class="text-cyan-400 font-bold">►</span>
-                            <div>
-                                <h3 class="font-bold text-lg text-slate-100">${game.title}</h3>
-                                <span class="text-xs text-slate-400">${game.region} • ${game.reports.length} report(s) submitted</span>
-                            </div>
-                        </div>
-                        <div>${getStatusBadge(game.overall_status)}</div>
-                    </div>
+      emptyState.classList.add('hidden');
+      
+      const fragment = document.createDocumentFragment();
 
-                    <!-- Collapsible Reports List -->
-                    <div id="reports-${index}" class="hidden border-t border-slate-800 bg-slate-950/50 p-4 space-y-3">
-                        ${game.reports.map(r => `
-                            <div class="p-3 bg-slate-900/90 rounded-lg border border-slate-800/60 text-sm">
-                                <div class="flex justify-between items-center mb-2">
-                                    <span class="font-semibold text-cyan-300">Tested by @${r.tester} <span class="text-xs text-slate-500">(${r.device})</span></span>
-                                    <span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-mono">Core: ${r.core_version}</span>
-                                </div>
-                                <p class="text-slate-300 mb-1"><strong>Performance:</strong> ${r.fps}</p>
-                                ${r.settings ? `<p class="text-slate-400 mb-1"><strong>Settings:</strong> <code class="text-amber-300/90 bg-slate-950 px-1.5 py-0.5 rounded text-xs">${r.settings}</code></p>` : ''}
-                                ${r.notes ? `<p class="text-slate-400 text-xs italic mt-1">"${r.notes}"</p>` : ''}
-                            </div>
-                        `).join('')}
-                    </div>
-                `;
-                container.appendChild(gameCard);
-            });
-        }
+      data.forEach(game => {
+        const card = document.createElement('div');
+        card.className = "bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-xl p-4 flex flex-col justify-between transition-all duration-200 shadow-sm hover:shadow-md";
 
-        function toggleDetails(index) {
-            const el = document.getElementById(`reports-${index}`);
-            el.classList.toggle('hidden');
-        }
+        // Badges Styling
+        let statusBadge = "bg-red-500/10 text-red-400 border-red-500/30";
+        if (game.playable === "Yes") statusBadge = "bg-emerald-500/10 text-emerald-400 border-emerald-500/30";
+        if (game.playable === "Inconsistent") statusBadge = "bg-amber-500/10 text-amber-400 border-amber-500/30";
 
-        // Search & Filter Listeners
-        document.getElementById('searchInput').addEventListener('input', filterData);
-        document.getElementById('statusFilter').addEventListener('change', filterData);
+        const score = parseFloat(game.emulationScore) || 0;
+        let scoreColor = "text-red-400";
+        if (score >= 8.0) scoreColor = "text-emerald-400";
+        else if (score >= 5.5) scoreColor = "text-amber-400";
 
-        function filterData() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            const status = document.getElementById('statusFilter').value;
+        card.innerHTML = `
+          <div>
+            <div class="flex justify-between items-start gap-2 mb-2">
+              <div>
+                <h3 class="font-bold text-slate-100 leading-snug">${game.title || 'Senza Titolo'}</h3>
+                <span class="inline-block text-[10px] font-mono px-1.5 py-0.5 mt-1 rounded bg-slate-800 text-slate-400 border border-slate-700/60 uppercase">
+                  ${game.region || 'N/A'}
+                </span>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full border shrink-0 ${statusBadge}">
+                ${game.playable || 'N/A'}
+              </span>
+            </div>
 
-            const filtered = gamesData.filter(g => {
-                const matchesSearch = g.title.toLowerCase().includes(query);
-                const matchesStatus = status === 'ALL' || g.overall_status === status;
-                return matchesSearch && matchesStatus;
-            });
-            renderGames(filtered);
-        }
+            <div class="my-3 flex items-center justify-between border-y border-slate-800/80 py-2">
+              <div class="text-xs text-slate-400">Punteggio Emulazione</div>
+              <div class="text-base font-black font-mono ${scoreColor}">
+                ${score.toFixed(1)} <span class="text-xs font-normal text-slate-500">/ 10</span>
+              </div>
+            </div>
 
-        fetchGames();
-    </script>
+            <div class="space-y-2 text-xs">
+              <div class="flex justify-between text-slate-300 font-mono">
+                <span class="text-slate-500">FPS:</span>
+                <span>${game.fps || 'N/A'}</span>
+              </div>
+              <div class="flex justify-between text-slate-300 font-mono">
+                <span class="text-slate-500">Avvio (Boots):</span>
+                <span class="${game.boots ? 'text-emerald-400' : 'text-red-400'} font-bold">
+                  ${game.boots ? 'Sì' : 'No'}
+                </span>
+              </div>
+              
+              <div class="pt-2">
+                <span class="text-slate-500 font-medium block mb-1 uppercase text-[10px] tracking-wider">Impostazioni:</span>
+                <div class="bg-slate-950 p-2 rounded border border-slate-800 text-slate-300 font-mono text-[11px] break-words">
+                  ${game.settings || 'Nessuna configurazione specifica.'}
+                </div>
+              </div>
+
+              <div class="pt-1">
+                <span class="text-slate-500 font-medium block mb-1 uppercase text-[10px] tracking-wider">Note:</span>
+                <p class="text-slate-400 leading-relaxed text-[11px]">
+                  ${game.notes || 'Nessuna nota presente.'}
+                </p>
+              </div>
+            </div>
+          </div>
+        `;
+
+        fragment.appendChild(card);
+      });
+
+      gamesGrid.innerHTML = '';
+      gamesGrid.appendChild(fragment);
+    }
+
+    function updateDashboard() {
+      updateStats(gamesData);
+      applyFilters();
+    }
+  </script>
 </body>
 </html>
