@@ -13,7 +13,7 @@
   <img src="assets/dolphinformuos.png" width="700" alt="SPDW Factory Logo">
   <br>
 </div>
-
+</div>
 ## 📜 Overview
 
 Stock firmware gives you basic emulation and stops there. Thanks to muOS, fortunately, countless doors of possibility are thrown wide open. It provides an effective and highly functional environment that significantly elevates the quality of these portable consoles—often of dubious (or entirely unknown) origins—pushing them to heights we thought impossible for a 200g pocket-sized contraption. Dolphin Core is one of those peaks.
