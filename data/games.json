@@ -1,1942 +1,1952 @@
 [
   {
-    "title": "F-Zero GX",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Yes",
-    "emulationScore": 9.5,
-    "settings": "All of them",
-    "fps": "50/60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Luigi's Mansion",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Mario Kart Double Dash",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Serious Sam Next Encounter",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Turok Evolution",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Super Mario Sunshine",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Super Monkey Ball",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Yes",
-    "emulationScore": 9.5,
-    "settings": "All of them",
-    "fps": "50/60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Super Monkey Ball 2",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Yes",
-    "emulationScore": 9.0,
-    "settings": "Standard",
-    "fps": "60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Super Monkey Ball Adventure",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "TimeSplitters 2",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Pikmin",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Paper Mario Thousand Year Door",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Yes",
-    "emulationScore": 8.0,
-    "settings": "SpeedHack/Default",
-    "fps": "50-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "007 - Agent Under Fire",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Animal Crossing",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Yes",
-    "emulationScore": 9.5,
-    "settings": "Standard",
-    "fps": "60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "XIII",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 2.0,
-    "settings": "Blackscreen fix",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "Chibi-Robo!",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Kao the Kangaroo - Round 2",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "LEGO Star Wars",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Zelda - The Wind Waker",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Zelda - Twilight Princess",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 5.5,
-    "settings": "Blackscreen fix",
-    "fps": "30-50",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Super Smash Bros. Melee",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Spongebob - Battle for Bikini Bottom",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Mario Party 4",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Mario Party 7",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Spyro - A New Beginning",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 5.5,
-    "settings": "Blackscreen fix",
-    "fps": "30-50",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Spyro - Enter the Dragonfly",
-    "region": "NTSC",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 2.0,
-    "settings": "Blackscreen fix",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
-  },
-  {
-    "title": "Spyro - A Hero's Tail",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "1080 Avalanche",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Call of Duty 2 - Big Red One",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "The Sims",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Yes",
-    "emulationScore": 9.0,
-    "settings": "Standard",
-    "fps": "60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "The Sims 2",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "V-Rally 3",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Baldur's Gate - Dark Alliance",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Wario World",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Medal of Honor - Frontline",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Viewtiful Joe",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Viewtiful Joe 2",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Metroid Prime",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Star Fox - Assault",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Crash Bandicoot - The Wrath of Cortex",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Skies of Arcadia Legends",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Star Fox Adventures",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Pokemon XD",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Pokemon Colosseum",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Yes",
-    "emulationScore": 8.0,
-    "settings": "SpeedHack/Default",
-    "fps": "50-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Bust-a-Move 3000",
-    "region": "NTSC",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
-  },
-  {
-    "title": "Crazy Taxi",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Kirby Air Ride FREE RUN MODE",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Kirby Air Ride",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Harvest Moon Magical Melody",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Yes",
-    "emulationScore": 8.0,
-    "settings": "SpeedHack/Default",
-    "fps": "50-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Resident Evil 4",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Sonic Heroes",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Sonic Riders",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Sonic Adventure DX",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Sonic Adventure 2 DX",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 2.0,
-    "settings": "Blackscreen fix",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "SSX 3",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "SSX on Tour",
-    "region": "PAL / NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comments: PAL | YES & NTSC | YES"
-  },
-  {
-    "title": "SSX Tricky",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "Big Mutha Truckers",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "American Chopper 2 - Full Throttle",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Beyond Good & Evil",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Batman Begins",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Bionicle Heroes",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Baten Kaitos - Eternal Wings",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "18 Wheeler - American Pro Trucker",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Call of Duty - Finest Hour",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 5.5,
-    "settings": "Blackscreen fix",
-    "fps": "30-50",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Burnout",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Burnout 2 - Point of Impact",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "BloodRayne",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "Blood Omen 2 - Legacy of Kain",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Capcom vs. SNK 2 EO",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Cabela's Big Game Hunter 2005",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Chaos Field",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Conflict - Desert Storm",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Conflict - Desert Storm II",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Soulcalibur II",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Peter Jackson's King Kong",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Red Faction II",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Dead to Rights",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Shrek Extra Large",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Shrek 2",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "The Simpsons - Hit & Run",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Star Wars - Rogue Squadron II",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "Shrek - Smash n' Crash Racing",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Gun",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "Lost Kingdoms",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Eternal Darkness - Sanity's Requiem",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "Pac-Man World 2",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Pac-Man World 3",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Mega Man X - Command Mission",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Metal Arms - Glitch in the System",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Metal Gear Solid - The Twin Snakes",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Medal of Honor - Rising Sun",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Yes",
-    "emulationScore": 9.0,
-    "settings": "Default",
-    "fps": "50/60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Crystal Chronicles",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Yes",
-    "emulationScore": 9.0,
-    "settings": "Default",
-    "fps": "50/60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Rayman 3 - Hoodlum Havoc",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Yes",
-    "emulationScore": 9.0,
-    "settings": "Default",
-    "fps": "50/60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Super Mario Strikers",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "F1 2002",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "FIFA Football 2003",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "FIFA Football 2004",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "FIFA Football 2005",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "FIFA 06",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "FIFA 07",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "The SpongeBob SquarePants Movie",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Billy Hatcher",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "WarioWare Inc. - Mega Party Game$!",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Crash Nitro Kart",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Crash Tag Team Racing",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Ribbit King",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Asterix & Obelix XXL",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Yes",
-    "emulationScore": 8.0,
-    "settings": "SpeedHack/Default",
-    "fps": "50-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Rayman Arena",
-    "region": "NTSC",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
-  },
-  {
-    "title": "Dreamworks Madagascar",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Yes",
-    "emulationScore": 8.0,
-    "settings": "SpeedHack/Default",
-    "fps": "50-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Disney-Pixar The Incredibles",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Harry Potter / Philosopher's Stone",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Prince of Persia: Sands of Time",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Looney Tunes: Back in Action",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Frogger: Ancient Shadow",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Frogger Beyond",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Frogger's Adventures: The Rescue",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Diet Melee Classic v1.03 MOD",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "TimeSplitters Future Perfect",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "Samurai Jack: The Shadow of Aku",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Animaniacs: The Great Edgar Hunt",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Naruto: Clash of Ninja",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Shadow the Hedgehog",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Sphinx and the Cursed Mummy",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Taz Wanted",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "TMNT",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Ty the Tasmanian Tiger",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Tom & Jerry in War of Whiskers",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Zoocube",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Aggressive Inline",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "X-Men 2: Wolverine's Revenge",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Star Wars: Bounty Hunter",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Tak: The Great Juju Challenge",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Tak 2: The Staff of Dreams",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Open Season",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 2.0,
-    "settings": "SpeedHack",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "Pac-Man World Rally",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Scaler",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Dancing Stage Mario Mix",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Donald Duck Quack Attack",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Puyo Puyo Fever",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Zapper",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "The Sims Bustin' Out",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Yes",
-    "emulationScore": 8.0,
-    "settings": "SpeedHack/Default",
-    "fps": "50-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Robots",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Yes",
-    "emulationScore": 8.0,
-    "settings": "SpeedHack/Default",
-    "fps": "50-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Ultimate Muscle: Legends",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Yes",
-    "emulationScore": 8.0,
-    "settings": "SpeedHack/Default",
-    "fps": "50-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Bomberman Generation",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Bomberman Jetters",
-    "region": "NTSC",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
-  },
-  {
-    "title": "Carmen Sandiego: Stolen Drums",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Cel Damage",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Codename K1ds Next Door",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Harry Potter: Quidditch World Cup",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Harry Potter / Prisoner of Azkaban",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Harry Potter / Goblet of Fire",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Disney's Piglet's Big Game",
-    "region": "NTSC",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
-  },
-  {
-    "title": "Disney's Chicken Little",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Disney's Extreme Skate Adventure",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 2.0,
-    "settings": "SpeedHack",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "Disney's Magical Mirror",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Disney's PK - Out of Shadows",
-    "region": "NTSC",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 2.0,
-    "settings": "SpeedHack",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
-  },
-  {
-    "title": "Disney-Pixar Ratatouille",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Need for Speed - Most Wanted",
-    "region": "NTSC",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
-  },
-  {
-    "title": "Need for Speed - Underground",
-    "region": "NTSC",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
-  },
-  {
-    "title": "Need for Speed - Underground 2",
-    "region": "NTSC",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
-  },
-  {
-    "title": "Need for Speed - Hot Pursuit 2",
-    "region": "NTSC",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
-  },
-  {
-    "title": "Need for Speed - Carbon",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Fantastic 4",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "Dragon Ball Z Budokai",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "LEGO Star Wars II",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Star Wars: Clone Wars",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "Star Wars: Rogue Squadron III",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Super Bust-A-Move All Stars",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "Tetris Worlds",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "TMNT Mutant Melee",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Tom Clancy's Splinter Cell",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "Tony Hawk's American Wasteland",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 2.0,
-    "settings": "SpeedHack",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "Tony Hawk's Pro Skater 3",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Tony Hawk's Pro Skater 4",
-    "region": "NTSC",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 2.0,
-    "settings": "SpeedHack",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
-  },
-  {
-    "title": "Tony Hawk's Underground",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Tony Hawk's Underground 2",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Ultimate Spider-Man",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 2.0,
-    "settings": "SpeedHack",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
-  },
-  {
-    "title": "Vexx",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Harry Potter / Chamber of Secrets",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Tales of Symphonia",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Ty the Tasmanian Tiger 2",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Ty the Tasmanian Tiger 3",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Wave Race: Blue Storm",
-    "region": "NTSC",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 2.0,
-    "settings": "SpeedHack",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | NO"
-  },
-  {
-    "title": "Worms 3D",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Worms Blast",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Yu-Gi-Oh: Falsebound Kingdom",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Cubivore - Survival of Fittest",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.5,
-    "settings": "SpeedHack",
-    "fps": "45-60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Gadget Racers",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "MaxPlay Volume 01",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Odama",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Phantasy Star Online",
-    "region": "NTSC",
-    "boots": true,
-    "playable": "Yes",
-    "emulationScore": 9.0,
-    "settings": "Default",
-    "fps": "60",
-    "notes": "Core v9, RG35XX-H, Comment: NTSC | YES"
-  },
-  {
-    "title": "Hitman 2: Silent Assassin",
-    "region": "PAL",
-    "boots": true,
-    "playable": "Inconsistent",
-    "emulationScore": 7.0,
-    "settings": "SpeedHack",
-    "fps": "40-60",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | YES"
-  },
-  {
-    "title": "Doshin the Giant",
-    "region": "PAL",
-    "boots": false,
-    "playable": "No",
-    "emulationScore": 1.0,
-    "settings": "All of them",
-    "fps": "0",
-    "notes": "Core v9, RG35XX-H, Comment: PAL | NO"
+    "GAME": "F-Zero GX",
+    "REGION": "PAL",
+    "CORE": "All of them",
+    "RUNS?": "YES",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "While the game is able to start it doesnt go past\nthe logos of the developers, crashing and\nresetting on its own",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Luigi's Mansion",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "7-10",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "The game runs, but performance is too low for \nme to consider it playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Mario Kart Double Dash",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "14-20",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "The game runs, but performance is too low for \nme to consider it playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Serious Sam Next Encounter",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "15-50",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Videos runs Slow, it can struggle a bit,\nespecialy during battles and larger levels\nbut its still decently playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Turok Evolution",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "9-25",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Videos runs Slow, it can struggle a bit,\nrunning most of the time around 15 fps\nbut its still decently playable\n",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Super Mario Sunshine",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "7-12",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "The game runs, but performance is too low for \nme to consider it playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Super Monkey Ball",
+    "REGION": "PAL",
+    "CORE": "All of them",
+    "RUNS?": "YES",
+    "FPS": "25-30",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "it requires files from this link to work.\nhttps://github.com/libretro/dolphin/archive/master.zip \nonly workswith NTSC iso. try the DS game.",
+    "SOURCE": "DeadPlant\nSexy_Shrek\nSEIRO\n"
+  },
+  {
+    "GAME": "Super Monkey Ball 2",
+    "REGION": "NTSC",
+    "CORE": "standard",
+    "RUNS?": "YES",
+    "FPS": "30-60",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "playable at relativly high framerate if you \nuse the debug mode to disable stuff. \ni suggest BACKGROUND, STOBJ, EFFECTS, \nAPE, MINIMAP",
+    "SOURCE": "Row"
+  },
+  {
+    "GAME": "Super Monkey Ball Adventure",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "7-25",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate flactuations make the game unplayable",
+    "SOURCE": "Danster21"
+  },
+  {
+    "GAME": "TimeSplitters 2",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "14-32",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "The game runs, but performance is too low for \nme to consider it playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Pikmin",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "20-25",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Menus are slow, gameplay is almost perfect",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Paper Mario Thousend Year",
+    "REGION": "PAL",
+    "CORE": "SpeedHack/default",
+    "RUNS?": "YES",
+    "FPS": "15-25",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "slight texture issues, framerate is slow .\ndefault core seems to also give the same result",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "007 - Agent Under Fire",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "12-40",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "videos run slow, framerate varies, but playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Animal Crossing",
+    "REGION": "NTSC",
+    "CORE": "Standard",
+    "RUNS?": "YES",
+    "FPS": "12-25",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "it runs ok, but stutters quite a bit, its \npreferable to either use a PAL rom-speedhack \ncore or play the OG N64 version.",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "XIII",
+    "REGION": "PAL",
+    "CORE": "blacksceen fix",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "it boots, but freezes almost immidiatly.",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Chibi-Robo!",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "4-5",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate is unplayably slow. dont even bother.",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Kao the Kangaroo - Round 2",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "12-25",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "framerate varies, but playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "LEGO Star Wars ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "8-23",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate is unplayably slow. just play the DS\nor PSP versions.",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Zelda - The Wind Waker",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "4-5",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate is unplayably slow. dont even bother.",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Zelda - Twilight Princess",
+    "REGION": "PAL",
+    "CORE": "blacksceen fix",
+    "RUNS?": "YES",
+    "FPS": "5-15",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate is unplayably slow. dont even bother.",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Super Smash Bros. Melee",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "8-10",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate is unplayably slow. using the \nDiet Melee mods might make it playable\n",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Spongebob - Battle for Bikini Bottom",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "22-50",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "framerate varies, but playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Mario Party 4",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "4-14",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Mario Party 7",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "10-16",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Spyro - A New Beginning",
+    "REGION": "PAL",
+    "CORE": "blacksceen fix",
+    "RUNS?": "YES",
+    "FPS": "7-8",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Spyro - Enter the Dragonfly",
+    "REGION": "NTSC",
+    "CORE": "blacksceen fix",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "it boots, but freezes almost immidiatly.",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Spyro - A Hero's Tail",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "8-11",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "1080 Avalanche",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "5-15",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "stutters quite a bit at the start of a race,\nbut still playable with some patiance",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Call of Duty 2 - Big Red One",
+    "REGION": "PAL",
+    "CORE": "All of them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "crashes the entire emulator.",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "The Sims",
+    "REGION": "NTSC",
+    "CORE": "Standard",
+    "RUNS?": "YES",
+    "FPS": "10-15",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "playable, if a bit slow. Surprisingly the\nSpeedHack core makes the game run slower",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "The Sims 2",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "6-20",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "stutters quite a lot especialy at the start of\nthe game, playable, but only if you can handle\nlow framerates",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "V-Rally 3",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "10-12",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Baldur's gate - Dark alliance",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "2-15",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Wario World",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "10-45",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "texture problems with the ui make it difficult\nto start a new game, performance is low in the\nstart lobby, but gets better in levels.",
+    "SOURCE": "Sexy_Shrek\nSpeedrun [+.[\ud83d\udc2c].%]"
+  },
+  {
+    "GAME": "Medal of Honor - Frontline",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "4-6",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Viewtiful Joe ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "20-30",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "audio desynchs during the intro which takes a\nvery long time, framarate seems high, but the\ngame essentialy runs in slow motion.",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Viewtiful Joe 2",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "30",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "audio desynchs during the intro which takes a\nvery long time, framarate seems high, but the\ngame essentialy runs in slow motion.",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Metroid Prime",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "5-8",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Star Fox - Assault",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "18-23",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "text doesnt render in the menu making the game\nalmost unplayable, apart from that its very\nmuch playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Crash Bandicoot - The Wrath of Cortex",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "5-10",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Skies of Arcadia Legends ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "10-25",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "bit slow, but perfectly playable, the \ndreamcast version is still more stable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Star Fox Adventures ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "20-25",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "playable, framerate can sometimes vary",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Pokemon XD",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "25",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "glitchy text, playable with a few frame drops",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Pokemon Colosseum ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack/default",
+    "RUNS?": "YES",
+    "FPS": "15-20",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "slow videos, framerate can vary, playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Bust-a-Move 3000",
+    "REGION": "NTSC",
+    "CORE": "all of them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Doesnt start",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Crazy Taxi",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "25-40",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "perfectly playable, the dreamcast version is still\nmore stable and preferable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Kirby Air Ride FREE RUN MODE",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "30-40",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "very much playable, framerate not perfect tho",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Kirby Air Ride",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "5-6",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate is unplayably low",
+    "SOURCE": "WorkingGoose"
+  },
+  {
+    "GAME": "Harvest Moon Magical Melody",
+    "REGION": "PAL",
+    "CORE": "SpeedHack/default",
+    "RUNS?": "YES",
+    "FPS": "7-13",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Resident Evil 4",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "10-11",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Sonic Heroes",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "13-18",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Sonic Riders",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "11-18",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Sonic Adventure DX",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "4-13",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable, play the \ndreamcast version instead",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Sonic Adventure 2 DX ",
+    "REGION": "PAL",
+    "CORE": "blacksceen fix",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Doesnt start",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "SSX 3 ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "3-7",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "stutters a lot, completly unplayable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "SSX on Tour ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "got stuck on character creation. unplayable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "SSX Tricky",
+    "REGION": "PAL",
+    "CORE": "All of the ",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Starts, but crashes shortly after",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Big Mutha Truckers",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "22-24",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "game runs in slow motion, the DS version is\npreferable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "American Chopper 2 - Full Throttle",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "7-9",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate is unplayably low",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Beyond Good & Evil ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "7-12",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate is unplayably low",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Batman Begins ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "7-10",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "graphical glitches all over, too slow to be \nanykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Bionicle Heroes",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "12-30",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "framerate varies, but very much playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Baten Kaitos - Eternal Wings and the Lost Ocean ",
+    "REGION": "PAL",
+    "CORE": "all of them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "starts, but freezes immidiatly",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "18 Wheeler - American Pro Trucker",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "10-12",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Call of Duty - Finest Hour ",
+    "REGION": "PAL",
+    "CORE": "blacksceen fix",
+    "RUNS?": "YES",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Crashes on the main menu",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Burnout ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "20-30",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "playable if a bit slow",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Burnout 2 - Point of Impact ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "18-21",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "BloodRayne",
+    "REGION": "PAL",
+    "CORE": "all of them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "crashes immidiatly",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Blood Omen 2 - The Legacy of Kain Series ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "12-25",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "framerate varies, but very much playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Capcom vs. SNK 2 EO ",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "20-24",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Cabela's Big Game Hunter 2005 Adventures ",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "7-11",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "frameratte too low to be playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Chaos Field",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "18-25",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "game runs in slow motion, unplayable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Conflict - Desert Storm ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "4-8",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "frameratte too low to be playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Conflict - Desert Storm II",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "5-15",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "frameratte too low to be playable and stutters\na lot",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Soulcalibur II",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "6-12",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "crashes sometimes and has graphical glitches \nin the ui, low framerate makes it unplayable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Peter Jackson's King Kong",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "8-13",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "playable with a LOT of patience, its better to\njust play the PSP version",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Red Faction II",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "5-12",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "frameratte too low to be playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Dead to Rights",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "6-14",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "playable but framerate can vary",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Shrek Extra Large",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "7-9",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "frameratte too low to be playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Shrek 2",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "6-13",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "frameratte too low to be playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "The Simpsons - Hit & Run",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "12-25",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "slow cutscenes, can be quite unstable with the \ndefault underclock. in Dolphin.ini set \nOverlock = 0.23000000 to resolve crashing and \nother issues.",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Star Wars - Rogue Squadron II - Rogue Leader",
+    "REGION": "PAL",
+    "CORE": "all fo them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "crashes immidiatly",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Shrek - Smash n' Crash Racing",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "10-18",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "playable, but playing either the DS or PSP \nversion is preferable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Gun",
+    "REGION": "PAL",
+    "CORE": "all fo them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "crashes immidiatly, PSP version is playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Lost Kingdoms",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "10-12",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Eternal Darkness - Sanity's Requiem",
+    "REGION": "PAL",
+    "CORE": "all fo them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "crashes immidiatly",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Pac-Man World 2",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "16-30",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "playable but framerate can vary",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Pac-Man World 3",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "9-12",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Mega Man X - Command Mission",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "27-40",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "a bit slow, but playable with patience",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Metal Arms - Glitch in the System",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "4-8",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "menus and videos run hella slow, audio cuts in \nand out, framerate make it unplayable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Metal Gear Solid - The Twin Snakes",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "videocalls dont render, making the game not \nstart, just play the original for the PSX",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Medal of Honor - Rising Sun",
+    "REGION": "PAL",
+    "CORE": "default",
+    "RUNS?": "YES",
+    "FPS": "5-15",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "frameratte too low to be playable",
+    "SOURCE": "Danster21"
+  },
+  {
+    "GAME": "Crystal Chronicles",
+    "REGION": "PAL",
+    "CORE": "default",
+    "RUNS?": "YES",
+    "FPS": "5-6",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "Danster21"
+  },
+  {
+    "GAME": "Rayman 3 - Hoodlum Havoc",
+    "REGION": "PAL",
+    "CORE": "default",
+    "RUNS?": "YES",
+    "FPS": "17-25",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "playable with framerate dips in larger areas",
+    "SOURCE": "Danster21"
+  },
+  {
+    "GAME": "Super Mario Strikers",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "10-25",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Overclock = .4 Resolution = .33 playable",
+    "SOURCE": "Mercquick"
+  },
+  {
+    "GAME": "F1 2002 ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "1-3",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "one of the worst framerate ever tested",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "FIFA Football 2003",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "8-11",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "frameratte too low to be playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "FIFA Football 2004",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "6-8",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "frameratte too low to be playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "FIFA Football 2005 ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "7-9",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "frameratte too low to be playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "FIFA 06 ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "7-9",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "frameratte too low to be playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "FIFA 07",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "2-3",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "one of the worst framerate ever tested",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "The SpongeBob SquarePants Movie",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "20-25",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "few stutters here and there, but playable. \nMight need higher cpu clock to avoid crashing.",
+    "SOURCE": "Speedrun [+.[\ud83d\udc2c].%]"
+  },
+  {
+    "GAME": "Billy Hatcher",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "8-11",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "frameratte too low to be playable",
+    "SOURCE": "Danster21"
+  },
+  {
+    "GAME": "WarioWare Inc. - Mega Party Game$!",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "40-50",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Runs nearly flawlessly. 40fps inbetween the \nminigames, tho minigames run fullspeed.\nCan run on the default core but is 20% \nslower and slightly its less playable.",
+    "SOURCE": "Danster21"
+  },
+  {
+    "GAME": "Crash Nitro Kart ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "16-22",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Runs alright framerate is not tied to game speed. \nLoading each map takes about 30 seconds.\n",
+    "SOURCE": "Danster21"
+  },
+  {
+    "GAME": "Crash Tag Team Racing ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "5-6",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "frame rate but it's too slow to be enjoyable.",
+    "SOURCE": "Danster21"
+  },
+  {
+    "GAME": "Ribbit King",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "7-30",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "playable, but can be laggy",
+    "SOURCE": "Speedrun [+.[\ud83d\udc2c].%]"
+  },
+  {
+    "GAME": "Asterix & Obelix XXL",
+    "REGION": "PAL",
+    "CORE": "SpeedHack/default",
+    "RUNS?": "YES",
+    "FPS": "12-40",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Can be slow with many enemies on screen.\nCan stutter when speaking with npcs.",
+    "SOURCE": "Happy"
+  },
+  {
+    "GAME": "Rayman Arena",
+    "REGION": "NTSC",
+    "CORE": "all of them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "crashes immidiatly",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Dreamworks Madagascar",
+    "REGION": "PAL",
+    "CORE": "SpeedHack/default",
+    "RUNS?": "YES",
+    "FPS": "4-7",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate too slow to be playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Disney-Pixar The Incredibles",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "11-24",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "severe slowdowns on large areas, \nbarely playable but not really enjoyable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Harry Potter and the Philosopher's Stone",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "8-10",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Prince of Persia: The Sands of Time ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "7-12",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Looney Tunes: Back in Action",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "13-25",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "few slowdowns, but mostly playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Frogger: Ancient Shadow",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "41-60",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "runs really well, very playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Frogger Beyond",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "26-40",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "some slowdown, NEEDS NTSC ISO!",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Frogger's Adventures: The Rescue",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "30-42",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": " really slow cutscenes, but in-game runs fine",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Diet Melee Classic v1.03 MOD",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "13-43",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "framerate varies, too much stuttering to playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "TimeSplitters Future Perfect",
+    "REGION": "PAL",
+    "CORE": "all of them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "only gives a black screen",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Samurai Jack: The Shadow of Aku",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "15-23",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": " playable but with lot of patience\n",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Animaniacs: The Great Edgar Hunt ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "19-23",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "few slowdowns here and there but playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Naruto: Clash of Ninja",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "8-10",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Shadow the Hedgehog",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "7-12",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Sphinx and the Cursed Mummy ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "18-24",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Taz Wanted",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "6-10",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "TMNT",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "12-16",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Ty the Tasmanian Tiger",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "11-16",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "frameratte too low to be playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Tom and Jerry in War of the Whiskers",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "11-14",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Zoocube",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "30-40",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "choose 50hz mode at the start",
+    "SOURCE": "Speedrun [+.[\ud83d\udc2c].%]"
+  },
+  {
+    "GAME": "Aggressive Inline",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "15-25",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "fps drops are common, but its still very playable",
+    "SOURCE": "S1eepy"
+  },
+  {
+    "GAME": "X-Men 2: Wolverine's Revenge",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "13-25",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "some framedrops can happen, still very playable",
+    "SOURCE": "S1eepy"
+  },
+  {
+    "GAME": "Star Wars: Bounty Hunter",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "18-24",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Few stutters here and there but playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Tak: The Great Juju Challenge ",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "8-10",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate too low to be playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Tak 2: The Staff of Dreams",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "8-13",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate too low to be playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Open Season",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "unplayable, blocked on a green screen",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Pac-Man World Rally",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "13-28",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "performance varies but it's playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Scaler",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "8-27",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "playable but very slow in large areas",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Dancing Stage Mario Mix ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "19-25",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Runs almost perfectly",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Donald Duck Quack Attack ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "13-20",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Performance varies. Iplayable but can be laggy.",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Puyo Puyo Fever",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "36-45",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Runs almost perfectly",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "SSX on Tour",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "1-3",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Unplayably slow",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Zapper",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "11-13",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate too low to be playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "The Sims Bustin\u2019 out",
+    "REGION": "PAL",
+    "CORE": "SpeedHack/default",
+    "RUNS?": "YES",
+    "FPS": "2-6",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate too low to be playable",
+    "SOURCE": "eleot"
+  },
+  {
+    "GAME": "Robots ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack/default",
+    "RUNS?": "YES",
+    "FPS": "5-6",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate too low to be playable",
+    "SOURCE": "eleot"
+  },
+  {
+    "GAME": "Ultimate Muscle: Legends vs New Generatio",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack/default",
+    "RUNS?": "YES",
+    "FPS": "19-28",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "gameplay needs a bit of patience",
+    "SOURCE": "eleot"
+  },
+  {
+    "GAME": "Bomberman Generation ",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "25-30",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "gameplay runs at half speed",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Bomberman Jetters",
+    "REGION": "NTSC",
+    "CORE": "all of them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Black Screen",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Carmen Sandiego: The Secret of the Stolen Drums",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "20-37",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "framerate slowdown in large, cutscenes are slow",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Cel Damage",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "5-7",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Too slow to be anykind of playable.",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Codename K1ds Next Door Operation V.I.D.E.O.G.A.M.E.",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "17-34",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "A few stutters but otherwise playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Harry Potter: Quidditch World Cup",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "21-50",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Framerate varies but it's perfectly playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Harry Potter and the Prisoner of Azkaban ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Freezes at the WB logo.",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Harry Potter and the Goblet of Fire",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Crashes in the menu",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Disney's Piglet's Big Game ",
+    "REGION": "NTSC",
+    "CORE": "all of them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Black Screen",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Disney's Chicken Little",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "6-9",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Too slow to be anykind of playable.",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Disney's Extreme Skate Adventure",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "freezes at the start",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Disney's Magical Mirror Starring Mickey Mouse",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "25-30",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Disney's PK - Out of the Shadows",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Crashes",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Disney-Pixar Ratatouille",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "14-17",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Broken cutscenes but in-game runs fine",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Need for Speed - Most Wanted",
+    "REGION": "NTSC",
+    "CORE": "all of them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Black Screen",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Need for Speed - Underground",
+    "REGION": "NTSC",
+    "CORE": "all of them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Black Screen",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Need for Speed - Underground 2",
+    "REGION": "NTSC",
+    "CORE": "all of them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Black Screen",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Need for Speed - Hot Pursuit 2 ",
+    "REGION": "NTSC",
+    "CORE": "all of them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Black Screen",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Need for Speed - Carbon",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "3-8",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate too low to be playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Fantastic 4",
+    "REGION": "PAL",
+    "CORE": "all of them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Black Screen",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Dragon Ball Z Budokai",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "18-25",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "LEGO Star Wars II - The Original Trilogy",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "19-47",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Music glitch-loops rarely, few stutters, playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Star Wars: Clone Wars",
+    "REGION": "PAL",
+    "CORE": "all of them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Black Screen",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Star Wars: Rogue Squadron III ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Freezes at the starting credits screen.",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Super Bust-A-Move All Stars ",
+    "REGION": "PAL",
+    "CORE": "all of them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Black Screen",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Tetris Worlds",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "29-31",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Too slow to be anykind of playable.",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "TMNT Mutant Melee",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "13-21",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Too slow to be anykind of playable.",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Tom Clancy's Splinter Cell",
+    "REGION": "PAL",
+    "CORE": "all of them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Black Screen",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Tony Hawk's American Wasteland",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Crashes at starting logo.",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Tony Hawk's Pro Skater 3",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "14-27",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Performance varies, playable but not enjoyable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Tony Hawk's Pro Skater 4",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Freezes at the starting screen.",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Tony Hawk's Underground",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "1-9",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Too slow to be anykind of playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Tony Hawk's Underground 2",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Freezes at the Loading screen.",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Ultimate Spider-Man ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Crashes immidiatly",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Vexx",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "11-23",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "few stutters but otherwise playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Harry Potter and the Chamber of the Secrets",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "8-12",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Too slow to be anykind of playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Tales of Symphonia",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "16-25",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "The unskippable prologue is unbearably slow, \nbut after that, in-game its completly playable. ",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Ty the Tasmanian Tiger 2",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "6-9",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate too low to be playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Ty the Tasmanian Tiger 3",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "3-6",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "framerate too low to be playable",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Wave Race: Blue Storm",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Stuck at black screen after the main menu",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Worms 3D ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "8-18",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Performance varies, but its pretty static game so \ni'd say it's playable, with lots patience.\n",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Worms Blast",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "48-50",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Almost Perfect",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Yu-Gi-Oh: The Falsebound Kingdo",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "11-25",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "overworld runs good, battles not as good",
+    "SOURCE": "SkullXavier"
+  },
+  {
+    "GAME": "Cubivore - Survival of the Fittest ",
+    "REGION": "NTSC",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "38-40",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "Almost Perfect",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Gadget Racers ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "3-4",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "the text-boxes in the menus dont render the text,\nframerate too low to be playable, the free-run\nmode is kinda playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "MaxPlay Volume 01 ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "4-6",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Too slow to be anykind of playable",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Odama ",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "text doesnt render making gamepaly impossible,\ncontrols also dont seem to work for some reason",
+    "SOURCE": "Sexy_Shrek"
+  },
+  {
+    "GAME": "Phantasy Star Online",
+    "REGION": "NTSC",
+    "CORE": "default",
+    "RUNS?": "YES",
+    "FPS": "10-18",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "a bit slow but playable, the date setup at the \nstart crashes the emulator so youre going to \nneed to import a save from an external source\nto bypass that. online doesnt work, solo does.",
+    "SOURCE": "Lucaspec72"
+  },
+  {
+    "GAME": "Hitman 2: Silent Assassin",
+    "REGION": "PAL",
+    "CORE": "SpeedHack",
+    "RUNS?": "YES",
+    "FPS": "12-20",
+    "PLAYABLE": "YES",
+    "CONSIDERATIONS": "pretty playable",
+    "SOURCE": "\u1d21\u1d0f\u1d0b\u1d07\u1d1c\u1d18\u026a\u0274\u1d18\u1d00\u0280\u026as"
+  },
+  {
+    "GAME": "Doshin the Giant",
+    "REGION": "PAL",
+    "CORE": "all of them",
+    "RUNS?": "NO",
+    "FPS": "???",
+    "PLAYABLE": "NO",
+    "CONSIDERATIONS": "Doesnt start",
+    "SOURCE": "Sexy_Shrek"
   }
 ]
