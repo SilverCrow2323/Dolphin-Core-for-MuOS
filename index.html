@@ -1,45 +1,527 @@
-<!-- Header Section -->
-<header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-      <div>
-        <h1 class="font-black tracking-tight text-white flex flex-col gap-1">
-          <!-- Riga 1: Dolphin Core + Version -->
-          <div class="text-2xl flex items-center gap-2">
-            <span>🐬</span> Dolphin Core for MuOS
-            <span class="text-xs font-mono font-normal px-2.5 py-1 rounded-full bg-sky-950 text-sky-400 border border-sky-800">Core version: v10.5.300</span>
-          </div>
-          
-          <!-- Riga 2: Logo GameCube + Compatibility Dashboard -->
-          <div class="text-xl text-slate-200 flex items-center gap-2 mt-0.5">
-            <img src="assets/gamecube-logo.png" alt="GameCube" class="h-6 w-auto inline-block object-contain" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/2/2b/GameCube-Logo.svg';">
-            <span>Compatibility Dashboard</span>
-          </div>
-        </h1>
-        <p class="text-xs italic text-slate-400 mt-1">
-          Community driven testing database for GameCube emulation performance on muOS & H700 chipset
-        </p>
-      </div>
+<!DOCTYPE html>
+<html lang="it" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🐬 Dolphin Core for MuOS | GameCube Compatibility Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 500: '#3b82f6', 600: '#2563eb' }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased selection:bg-sky-500 selection:text-white">
 
-      <!-- Dashboard Metrics -->
-      <div class="grid grid-cols-4 gap-2 sm:gap-3 text-center">
-        <div class="bg-slate-800/60 border border-slate-700/50 rounded-lg p-2">
-          <div class="text-[10px] uppercase font-semibold text-slate-400">Totali</div>
-          <div id="statTotal" class="text-base font-bold font-mono text-slate-100">0</div>
+  <!-- Header Section -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h1 class="font-black tracking-tight text-white flex flex-col gap-1">
+            <!-- Riga 1: Core & Versione -->
+            <div class="text-2xl flex items-center gap-2">
+              <span>🐬</span> Dolphin Core for MuOS
+              <span class="text-xs font-mono font-normal px-2.5 py-1 rounded-full bg-sky-950 text-sky-400 border border-sky-800">Core version: v10.5.300</span>
+            </div>
+            
+            <!-- Riga 2: Logo GameCube + Dashboard Title -->
+            <div class="text-xl text-slate-200 flex items-center gap-2 mt-0.5">
+              <img src="assets/gamecube-logo.png" alt="GameCube" class="h-6 w-auto inline-block object-contain" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/2/2b/GameCube-Logo.svg';">
+              <span>Compatibility Dashboard</span>
+            </div>
+          </h1>
+          <p class="text-xs italic text-slate-400 mt-1">
+            Community driven testing database for GameCube emulation performance on muOS & H700 chipset
+          </p>
         </div>
-        <div class="bg-emerald-950/40 border border-emerald-800/50 rounded-lg p-2">
-          <div class="text-[10px] uppercase font-semibold text-emerald-400">Perfetti (5★)</div>
-          <div id="statPerfect" class="text-base font-bold font-mono text-emerald-400">0</div>
-        </div>
-        <div class="bg-amber-950/40 border border-amber-800/50 rounded-lg p-2">
-          <div class="text-[10px] uppercase font-semibold text-amber-400">Giocabili (3-4★)</div>
-          <div id="statPlayable" class="text-base font-bold font-mono text-amber-400">0</div>
-        </div>
-        <div class="bg-red-950/40 border border-red-800/50 rounded-lg p-2">
-          <div class="text-[10px] uppercase font-semibold text-red-400">K.O. (0-2★)</div>
-          <div id="statKO" class="text-base font-bold font-mono text-red-400">0</div>
+
+        <!-- Dashboard Metrics -->
+        <div class="grid grid-cols-4 gap-2 sm:gap-3 text-center">
+          <div class="bg-slate-800/60 border border-slate-700/50 rounded-lg p-2">
+            <div class="text-[10px] uppercase font-semibold text-slate-400">Totali</div>
+            <div id="statTotal" class="text-base font-bold font-mono text-slate-100">0</div>
+          </div>
+          <div class="bg-emerald-950/40 border border-emerald-800/50 rounded-lg p-2">
+            <div class="text-[10px] uppercase font-semibold text-emerald-400">Perfetti (5★)</div>
+            <div id="statPerfect" class="text-base font-bold font-mono text-emerald-400">0</div>
+          </div>
+          <div class="bg-amber-950/40 border border-amber-800/50 rounded-lg p-2">
+            <div class="text-[10px] uppercase font-semibold text-amber-400">Giocabili (3-4★)</div>
+            <div id="statPlayable" class="text-base font-bold font-mono text-amber-400">0</div>
+          </div>
+          <div class="bg-red-950/40 border border-red-800/50 rounded-lg p-2">
+            <div class="text-[10px] uppercase font-semibold text-red-400">K.O. (0-2★)</div>
+            <div id="statKO" class="text-base font-bold font-mono text-red-400">0</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
+
+  <!-- Controls & Filters Bar -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+    <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 flex flex-col xl:flex-row gap-4 justify-between items-center shadow-md">
+      
+      <!-- Search Input -->
+      <div class="relative w-full xl:w-80">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Cerca un gioco..." 
+          class="w-full bg-slate-950 text-slate-200 placeholder-slate-500 border border-slate-700 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:border-sky-500 transition-colors"
+        >
+        <svg class="w-4 h-4 text-slate-500 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </div>
+
+      <!-- Filters & Sorting -->
+      <div class="flex flex-wrap items-center gap-3 w-full xl:w-auto">
+        <!-- Stars Filter -->
+        <select id="starsFilter" class="bg-slate-950 text-slate-300 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-sky-500">
+          <option value="all">Stelle: Tutte</option>
+          <option value="5">5★ - Perfetto!</option>
+          <option value="4">4★ - Giocabile con problemi</option>
+          <option value="3">3★ - Inconsistent</option>
+          <option value="2">2★ - Disastro ma ci prova</option>
+          <option value="1">1★ - Meglio di no</option>
+          <option value="0">0★ - Non parte</option>
+        </select>
+
+        <!-- Region Filter -->
+        <select id="regionFilter" class="bg-slate-950 text-slate-300 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-sky-500">
+          <option value="all">Regione: Tutte</option>
+          <option value="PAL">PAL</option>
+          <option value="NTSC">NTSC / USA</option>
+          <option value="JPN">JPN</option>
+        </select>
+
+        <!-- Sort Key -->
+        <select id="sortKey" class="bg-slate-950 text-slate-300 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-sky-500">
+          <option value="stars">Ordine: Stelle</option>
+          <option value="title">Ordine: Titolo</option>
+          <option value="fps">Ordine: FPS</option>
+        </select>
+
+        <!-- Sort Direction Toggle -->
+        <button id="sortOrderBtn" class="bg-slate-950 text-slate-300 border border-slate-700 hover:border-slate-500 px-3 py-2 rounded-lg text-sm flex items-center gap-1.5 transition-colors">
+          <span id="sortOrderLabel">Desc</span>
+          <svg id="sortOrderIcon" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+
+        <!-- View Mode Switcher -->
+        <div class="flex bg-slate-950 p-1 rounded-lg border border-slate-700">
+          <button id="viewGridBtn" class="px-2.5 py-1 rounded-md text-xs font-semibold flex items-center gap-1 bg-sky-600 text-white transition-all">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+            Griglia
+          </button>
+          <button id="viewListBtn" class="px-2.5 py-1 rounded-md text-xs font-semibold flex items-center gap-1 text-slate-400 hover:text-slate-200 transition-all">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            Lista
+          </button>
+        </div>
+
+        <!-- Manual Upload Fallback -->
+        <label class="cursor-pointer bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-medium text-sm px-3 py-2 rounded-lg border border-slate-700 transition-colors flex items-center gap-2" title="Carica JSON Manuale">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+          </svg>
+          <input type="file" id="jsonInput" accept=".json" class="hidden">
+        </label>
+      </div>
+    </div>
+
+    <!-- Dynamic Container -->
+    <div id="gamesContainer"></div>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="hidden text-center py-16 bg-slate-900/30 border border-dashed border-slate-800 rounded-2xl">
+      <svg class="w-12 h-12 text-slate-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+      <p id="emptyStateText" class="text-slate-400 font-medium">Nessun gioco trovato con i filtri attuali.</p>
+    </div>
+  </main>
+
+  <script>
+    let gamesData = [];
+    let currentView = 'grid';
+    let isAscending = false;
+
+    const RATING_CONFIG = {
+      0: { label: "non parte", color: "text-red-500", bg: "bg-red-500/10 border-red-500/30" },
+      1: { label: "parte ma sarebbe meglio non lo facesse", color: "text-rose-400", bg: "bg-rose-500/10 border-rose-500/30" },
+      2: { label: "disastro ma almeno ci prova", color: "text-orange-400", bg: "bg-orange-500/10 border-orange-500/30" },
+      3: { label: "inconsistent", color: "text-amber-400", bg: "bg-amber-500/10 border-amber-500/30" },
+      4: { label: "giocabile ma con dei problemi", color: "text-lime-400", bg: "bg-lime-500/10 border-lime-500/30" },
+      5: { label: "perfetto!", color: "text-emerald-400", bg: "bg-emerald-500/10 border-emerald-500/30" }
+    };
+
+    const searchInput = document.getElementById('searchInput');
+    const starsFilter = document.getElementById('starsFilter');
+    const regionFilter = document.getElementById('regionFilter');
+    const sortKey = document.getElementById('sortKey');
+    const sortOrderBtn = document.getElementById('sortOrderBtn');
+    const sortOrderLabel = document.getElementById('sortOrderLabel');
+    const sortOrderIcon = document.getElementById('sortOrderIcon');
+    const viewGridBtn = document.getElementById('viewGridBtn');
+    const viewListBtn = document.getElementById('viewListBtn');
+    const gamesContainer = document.getElementById('gamesContainer');
+    const emptyState = document.getElementById('emptyState');
+    const emptyStateText = document.getElementById('emptyStateText');
+
+    function getCoverUrl(game) {
+      if (game.coverUrl) return game.coverUrl;
+      const cleanTitle = (game.title || '')
+        .trim()
+        .replace(/&/g, '_')
+        .replace(/\*/g, '_')
+        .replace(/\//g, '_')
+        .replace(/:/g, '_')
+        .replace(/`/g, '_')
+        .replace(/</g, '_')
+        .replace(/>/g, '_')
+        .replace(/\?/g, '_')
+        .replace(/\\/g, '_')
+        .replace(/\|/g, '_')
+        .replace(/"/g, '_');
+      
+      return `https://raw.githubusercontent.com/libretro/libretro-thumbnails/master/Nintendo%20-%20GameCube/Named_Boxarts/${encodeURIComponent(cleanTitle)}.png`;
+    }
+
+    function calculateStars(game) {
+      if (game.stars !== undefined) return Math.min(5, Math.max(0, parseInt(game.stars)));
+      if (game.emulationScore !== undefined) {
+        const score = parseFloat(game.emulationScore);
+        if (score >= 9.0) return 5;
+        if (score >= 7.5) return 4;
+        if (score >= 5.5) return 3;
+        if (score >= 3.5) return 2;
+        if (score >= 1.0) return 1;
+        return 0;
+      }
+      if (game.playable === 'Yes' || game.status === 'Perfect') return 5;
+      if (game.playable === 'Inconsistent' || game.status === 'Playable') return 3;
+      if (game.playable === 'No' || game.status === 'Unplayable') return 0;
+      return 3;
+    }
+
+    function renderStarsHTML(starsCount) {
+      const config = RATING_CONFIG[starsCount] || RATING_CONFIG[0];
+      let starsHtml = '';
+      for (let i = 1; i <= 5; i++) {
+        const filled = i <= starsCount;
+        starsHtml += `
+          <svg class="w-4 h-4 ${filled ? config.color : 'text-slate-700'}" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+        `;
+      }
+      return starsHtml;
+    }
+
+    async function loadAutomaticData() {
+      try {
+        const response = await fetch('data/games.json');
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const data = await response.json();
+        gamesData = Array.isArray(data) ? data : (data.games || []);
+        updateDashboard();
+      } catch (error) {
+        console.warn('Auto-load failed for data/games.json:', error);
+        emptyStateText.textContent = 'Impossibile caricare data/games.json automaticamente. Carica il JSON manualmente.';
+        emptyState.classList.remove('hidden');
+      }
+    }
+
+    document.getElementById('jsonInput').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const parsed = JSON.parse(event.target.result);
+          gamesData = Array.isArray(parsed) ? parsed : (parsed.games || []);
+          updateDashboard();
+        } catch (err) {
+          alert('Errore nel formato del file JSON.');
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    viewGridBtn.addEventListener('click', () => {
+      currentView = 'grid';
+      viewGridBtn.className = "px-2.5 py-1 rounded-md text-xs font-semibold flex items-center gap-1 bg-sky-600 text-white transition-all";
+      viewListBtn.className = "px-2.5 py-1 rounded-md text-xs font-semibold flex items-center gap-1 text-slate-400 hover:text-slate-200 transition-all";
+      applyFilters();
+    });
+
+    viewListBtn.addEventListener('click', () => {
+      currentView = 'list';
+      viewListBtn.className = "px-2.5 py-1 rounded-md text-xs font-semibold flex items-center gap-1 bg-sky-600 text-white transition-all";
+      viewGridBtn.className = "px-2.5 py-1 rounded-md text-xs font-semibold flex items-center gap-1 text-slate-400 hover:text-slate-200 transition-all";
+      applyFilters();
+    });
+
+    sortOrderBtn.addEventListener('click', () => {
+      isAscending = !isAscending;
+      sortOrderLabel.textContent = isAscending ? 'Asc' : 'Desc';
+      sortOrderIcon.style.transform = isAscending ? 'rotate(180deg)' : 'rotate(0deg)';
+      applyFilters();
+    });
+
+    [searchInput, starsFilter, regionFilter, sortKey].forEach(el => {
+      el.addEventListener('input', applyFilters);
+    });
+
+    function updateStats(data) {
+      document.getElementById('statTotal').textContent = data.length;
+      document.getElementById('statPerfect').textContent = data.filter(g => calculateStars(g) === 5).length;
+      document.getElementById('statPlayable').textContent = data.filter(g => {
+        const s = calculateStars(g);
+        return s === 3 || s === 4;
+      }).length;
+      document.getElementById('statKO').textContent = data.filter(g => calculateStars(g) <= 2).length;
+    }
+
+    function applyFilters() {
+      const query = searchInput.value.toLowerCase().trim();
+      const starsVal = starsFilter.value;
+      const region = regionFilter.value;
+      const key = sortKey.value;
+
+      let filtered = gamesData.filter(game => {
+        const stars = calculateStars(game);
+        const matchesQuery = (game.title || '').toLowerCase().includes(query);
+        const matchesStars = starsVal === 'all' || stars === parseInt(starsVal);
+        const matchesRegion = region === 'all' || (game.region || '').toUpperCase().includes(region);
+        return matchesQuery && matchesStars && matchesRegion;
+      });
+
+      filtered.sort((a, b) => {
+        let valA, valB;
+        if (key === 'stars') {
+          valA = calculateStars(a);
+          valB = calculateStars(b);
+        } else if (key === 'fps') {
+          valA = parseInt(a.fps) || 0;
+          valB = parseInt(b.fps) || 0;
+        } else {
+          valA = (a.title || '').toLowerCase();
+          valB = (b.title || '').toLowerCase();
+        }
+
+        if (valA < valB) return isAscending ? -1 : 1;
+        if (valA > valB) return isAscending ? 1 : -1;
+        return 0;
+      });
+
+      renderView(filtered);
+    }
+
+    function checkProfileActive(gameSettings, profileName) {
+      if (!gameSettings) return false;
+      const s = gameSettings.toLowerCase();
+      if (profileName === 'default') return s.includes('default') || s === '' || s.includes('stock');
+      if (profileName === 'speed hack') return s.includes('speed') || s.includes('hack') || s.includes('overclock') || s.includes('efb');
+      if (profileName === 'black screen fix') return s.includes('black') || s.includes('screen') || s.includes('xfb') || s.includes('fix');
+      return false;
+    }
+
+    function renderView(data) {
+      if (data.length === 0) {
+        gamesContainer.innerHTML = '';
+        emptyStateText.textContent = 'Nessun gioco trovato con i filtri attuali.';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      if (currentView === 'grid') {
+        renderGridView(data);
+      } else {
+        renderListView(data);
+      }
+    }
+
+    function renderGridView(data) {
+      const grid = document.createElement('div');
+      grid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5";
+
+      data.forEach(game => {
+        const card = document.createElement('div');
+        card.className = "bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-xl overflow-hidden flex flex-col justify-between transition-all duration-200 shadow-md group";
+
+        const stars = calculateStars(game);
+        const ratingConfig = RATING_CONFIG[stars] || RATING_CONFIG[0];
+        
+        const boots = game.boots !== undefined ? (game.boots === true || game.boots === "Yes" || game.boots === "true") : (stars > 0);
+        const playable = game.playable === 'Yes' || game.playable === true || stars >= 4;
+
+        const bootBadge = boots 
+          ? `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">✔ BOOT</span>`
+          : `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-500/10 text-red-400 border border-red-500/30">✖ BOOT</span>`;
+
+        const playableBadge = playable 
+          ? `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">✔ GIOCABILE</span>`
+          : `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-500/10 text-red-400 border border-red-500/30">✖ GIOCABILE</span>`;
+
+        const settings = game.settings || '';
+        const isDefault = checkProfileActive(settings, 'default');
+        const isSpeed = checkProfileActive(settings, 'speed hack');
+        const isBlackScreen = checkProfileActive(settings, 'black screen fix');
+
+        const coreVersion = game.core_version || 'v9 take 3';
+        const testerName = game.tester || game.author || 'Community';
+        const considerationText = game.notes || game.consideration || 'Nessuna nota aggiuntiva.';
+        const coverUrl = getCoverUrl(game);
+
+        card.innerHTML = `
+          <div>
+            <div class="relative h-52 bg-slate-950 overflow-hidden flex items-center justify-center border-b border-slate-800">
+              <img 
+                src="${coverUrl}" 
+                alt="${game.title}" 
+                class="h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-slate-600 text-xs font-mono font-bold px-4 text-center\'>COVER NOT FOUND</div>';"
+              />
+              <span class="absolute top-2 left-2 text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-slate-900/90 text-sky-400 border border-sky-800 uppercase">
+                ${game.region || 'PAL'}
+              </span>
+              <span class="absolute top-2 right-2 text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900/90 text-slate-400 border border-slate-700">
+                ${coreVersion}
+              </span>
+            </div>
+
+            <div class="p-4 space-y-3">
+              <div>
+                <h3 class="font-bold text-slate-100 text-base leading-tight line-clamp-1" title="${game.title}">${game.title || 'Untitled'}</h3>
+              </div>
+
+              <div class="bg-slate-950/70 p-2.5 rounded-lg border border-slate-800">
+                <div class="flex items-center justify-between gap-1 mb-1">
+                  <div class="flex items-center gap-0.5">${renderStarsHTML(stars)}</div>
+                  <span class="text-xs font-mono font-bold ${ratingConfig.color}">${stars}/5</span>
+                </div>
+                <div class="text-[11px] font-medium ${ratingConfig.color} italic">
+                  "${ratingConfig.label}"
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between text-xs gap-1 border-y border-slate-800/80 py-2">
+                <div class="flex items-center gap-1.5">${bootBadge}${playableBadge}</div>
+                <div class="font-mono text-xs text-slate-300">
+                  <span class="text-slate-500">FPS:</span> <strong class="text-slate-100">${game.fps || 'N/A'}</strong>
+                </div>
+              </div>
+
+              <div>
+                <span class="text-slate-500 font-medium block mb-1.5 uppercase text-[10px] tracking-wider">Profili Core Provati:</span>
+                <div class="grid grid-cols-3 gap-1 text-[10px] font-mono text-center">
+                  <div class="p-1 rounded border ${isDefault ? 'bg-sky-950 text-sky-300 border-sky-700 font-bold' : 'bg-slate-950/40 text-slate-600 border-slate-800'}">Default</div>
+                  <div class="p-1 rounded border ${isSpeed ? 'bg-amber-950 text-amber-300 border-amber-700 font-bold' : 'bg-slate-950/40 text-slate-600 border-slate-800'}">Speed Hack</div>
+                  <div class="p-1 rounded border ${isBlackScreen ? 'bg-purple-950 text-purple-300 border-purple-700 font-bold' : 'bg-slate-950/40 text-slate-600 border-slate-800'}">Black Screen</div>
+                </div>
+              </div>
+
+              <div class="pt-1">
+                <span class="text-slate-500 font-medium block mb-1 uppercase text-[10px] tracking-wider">Considerazioni:</span>
+                <div class="bg-slate-950 p-2.5 rounded border border-slate-800 text-[11px] text-slate-300 space-y-1">
+                  <p class="italic leading-relaxed text-slate-400">"${considerationText}"</p>
+                  <div class="text-right text-[10px] font-semibold text-sky-400">— @${testerName}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      gamesContainer.innerHTML = '';
+      gamesContainer.appendChild(grid);
+    }
+
+    function renderListView(data) {
+      const wrapper = document.createElement('div');
+      wrapper.className = "bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-md";
+
+      let rowsHtml = data.map(game => {
+        const stars = calculateStars(game);
+        const ratingConfig = RATING_CONFIG[stars] || RATING_CONFIG[0];
+        const boots = game.boots !== undefined ? (game.boots === true || game.boots === "Yes" || game.boots === "true") : (stars > 0);
+        const playable = game.playable === 'Yes' || game.playable === true || stars >= 4;
+        const coverUrl = getCoverUrl(game);
+        const testerName = game.tester || game.author || 'Community';
+        const considerationText = game.notes || game.consideration || '-';
+
+        return `
+          <tr class="border-b border-slate-800/60 hover:bg-slate-800/40 transition-colors text-xs">
+            <td class="py-2.5 px-3 w-12 text-center">
+              <img src="${coverUrl}" alt="" class="h-10 w-8 object-contain rounded bg-slate-950 border border-slate-800 mx-auto" onerror="this.style.display='none'"/>
+            </td>
+            <td class="py-2.5 px-3 font-bold text-slate-100">${game.title || 'Untitled'}</td>
+            <td class="py-2.5 px-3 font-mono text-slate-400 uppercase">${game.region || 'PAL'}</td>
+            <td class="py-2.5 px-3">
+              <div class="flex items-center gap-1">${renderStarsHTML(stars)}</div>
+              <span class="text-[10px] ${ratingConfig.color}">${ratingConfig.label}</span>
+            </td>
+            <td class="py-2.5 px-3 font-mono text-slate-300">${game.fps || 'N/A'}</td>
+            <td class="py-2.5 px-3 font-mono">
+              <span class="${boots ? 'text-emerald-400' : 'text-red-400'} font-bold">${boots ? '✔ BOOT' : '✖ BOOT'}</span>
+            </td>
+            <td class="py-2.5 px-3 font-mono">
+              <span class="${playable ? 'text-emerald-400' : 'text-red-400'} font-bold">${playable ? '✔ GIOCABILE' : '✖ GIOCABILE'}</span>
+            </td>
+            <td class="py-2.5 px-3 text-slate-400 max-w-xs truncate italic">
+              "${considerationText}" <span class="text-sky-400 font-semibold">— @${testerName}</span>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      wrapper.innerHTML = `
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-slate-950/80 border-b border-slate-800 text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
+                <th class="py-3 px-3 text-center">Cover</th>
+                <th class="py-3 px-3">Gioco</th>
+                <th class="py-3 px-3">Regione</th>
+                <th class="py-3 px-3">Valutazione</th>
+                <th class="py-3 px-3">FPS</th>
+                <th class="py-3 px-3">Boot</th>
+                <th class="py-3 px-3">Giocabile</th>
+                <th class="py-3 px-3">Considerazioni & Autore</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/40">
+              ${rowsHtml}
+            </tbody>
+          </table>
+        </div>
+      `;
+
+      gamesContainer.innerHTML = '';
+      gamesContainer.appendChild(wrapper);
+    }
+
+    function updateDashboard() {
+      updateStats(gamesData);
+      applyFilters();
+    }
+
+    window.addEventListener('DOMContentLoaded', loadAutomaticData);
+  </script>
+</body>
+</html>
