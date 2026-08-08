@@ -1,1952 +1,1952 @@
 [
   {
-    "GAME": "F-Zero GX",
-    "REGION": "PAL",
-    "CORE": "All of them",
-    "RUNS?": "YES",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "While the game is able to start it doesnt go past\nthe logos of the developers, crashing and\nresetting on its own",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Luigi's Mansion",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "7-10",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "The game runs, but performance is too low for \nme to consider it playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Mario Kart Double Dash",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "14-20",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "The game runs, but performance is too low for \nme to consider it playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Serious Sam Next Encounter",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "15-50",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Videos runs Slow, it can struggle a bit,\nespecialy during battles and larger levels\nbut its still decently playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Turok Evolution",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "9-25",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Videos runs Slow, it can struggle a bit,\nrunning most of the time around 15 fps\nbut its still decently playable\n",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Super Mario Sunshine",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "7-12",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "The game runs, but performance is too low for \nme to consider it playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Super Monkey Ball",
-    "REGION": "PAL",
-    "CORE": "All of them",
-    "RUNS?": "YES",
-    "FPS": "25-30",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "it requires files from this link to work.\nhttps://github.com/libretro/dolphin/archive/master.zip \nonly workswith NTSC iso. try the DS game.",
-    "SOURCE": "DeadPlant\nSexy_Shrek\nSEIRO\n"
-  },
-  {
-    "GAME": "Super Monkey Ball 2",
-    "REGION": "NTSC",
-    "CORE": "standard",
-    "RUNS?": "YES",
-    "FPS": "30-60",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "playable at relativly high framerate if you \nuse the debug mode to disable stuff. \ni suggest BACKGROUND, STOBJ, EFFECTS, \nAPE, MINIMAP",
-    "SOURCE": "Row"
-  },
-  {
-    "GAME": "Super Monkey Ball Adventure",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "7-25",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate flactuations make the game unplayable",
-    "SOURCE": "Danster21"
-  },
-  {
-    "GAME": "TimeSplitters 2",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "14-32",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "The game runs, but performance is too low for \nme to consider it playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Pikmin",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "20-25",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Menus are slow, gameplay is almost perfect",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Paper Mario Thousend Year",
-    "REGION": "PAL",
-    "CORE": "SpeedHack/default",
-    "RUNS?": "YES",
-    "FPS": "15-25",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "slight texture issues, framerate is slow .\ndefault core seems to also give the same result",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "007 - Agent Under Fire",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "12-40",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "videos run slow, framerate varies, but playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Animal Crossing",
-    "REGION": "NTSC",
-    "CORE": "Standard",
-    "RUNS?": "YES",
-    "FPS": "12-25",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "it runs ok, but stutters quite a bit, its \npreferable to either use a PAL rom-speedhack \ncore or play the OG N64 version.",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "XIII",
-    "REGION": "PAL",
-    "CORE": "blacksceen fix",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "it boots, but freezes almost immidiatly.",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Chibi-Robo!",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "4-5",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate is unplayably slow. dont even bother.",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Kao the Kangaroo - Round 2",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "12-25",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "framerate varies, but playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "LEGO Star Wars ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "8-23",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate is unplayably slow. just play the DS\nor PSP versions.",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Zelda - The Wind Waker",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "4-5",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate is unplayably slow. dont even bother.",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Zelda - Twilight Princess",
-    "REGION": "PAL",
-    "CORE": "blacksceen fix",
-    "RUNS?": "YES",
-    "FPS": "5-15",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate is unplayably slow. dont even bother.",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Super Smash Bros. Melee",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "8-10",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate is unplayably slow. using the \nDiet Melee mods might make it playable\n",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Spongebob - Battle for Bikini Bottom",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "22-50",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "framerate varies, but playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Mario Party 4",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "4-14",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Mario Party 7",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "10-16",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Spyro - A New Beginning",
-    "REGION": "PAL",
-    "CORE": "blacksceen fix",
-    "RUNS?": "YES",
-    "FPS": "7-8",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Spyro - Enter the Dragonfly",
-    "REGION": "NTSC",
-    "CORE": "blacksceen fix",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "it boots, but freezes almost immidiatly.",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Spyro - A Hero's Tail",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "8-11",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "1080 Avalanche",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "5-15",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "stutters quite a bit at the start of a race,\nbut still playable with some patiance",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Call of Duty 2 - Big Red One",
-    "REGION": "PAL",
-    "CORE": "All of them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "crashes the entire emulator.",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "The Sims",
-    "REGION": "NTSC",
-    "CORE": "Standard",
-    "RUNS?": "YES",
-    "FPS": "10-15",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "playable, if a bit slow. Surprisingly the\nSpeedHack core makes the game run slower",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "The Sims 2",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "6-20",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "stutters quite a lot especialy at the start of\nthe game, playable, but only if you can handle\nlow framerates",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "V-Rally 3",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "10-12",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Baldur's gate - Dark alliance",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "2-15",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Wario World",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "10-45",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "texture problems with the ui make it difficult\nto start a new game, performance is low in the\nstart lobby, but gets better in levels.",
-    "SOURCE": "Sexy_Shrek\nSpeedrun [+.[\ud83d\udc2c].%]"
-  },
-  {
-    "GAME": "Medal of Honor - Frontline",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "4-6",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Viewtiful Joe ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "20-30",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "audio desynchs during the intro which takes a\nvery long time, framarate seems high, but the\ngame essentialy runs in slow motion.",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Viewtiful Joe 2",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "30",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "audio desynchs during the intro which takes a\nvery long time, framarate seems high, but the\ngame essentialy runs in slow motion.",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Metroid Prime",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "5-8",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Star Fox - Assault",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "18-23",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "text doesnt render in the menu making the game\nalmost unplayable, apart from that its very\nmuch playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Crash Bandicoot - The Wrath of Cortex",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "5-10",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Skies of Arcadia Legends ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "10-25",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "bit slow, but perfectly playable, the \ndreamcast version is still more stable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Star Fox Adventures ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "20-25",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "playable, framerate can sometimes vary",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Pokemon XD",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "25",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "glitchy text, playable with a few frame drops",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Pokemon Colosseum ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack/default",
-    "RUNS?": "YES",
-    "FPS": "15-20",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "slow videos, framerate can vary, playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Bust-a-Move 3000",
-    "REGION": "NTSC",
-    "CORE": "all of them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Doesnt start",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Crazy Taxi",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "25-40",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "perfectly playable, the dreamcast version is still\nmore stable and preferable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Kirby Air Ride FREE RUN MODE",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "30-40",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "very much playable, framerate not perfect tho",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Kirby Air Ride",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "5-6",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate is unplayably low",
-    "SOURCE": "WorkingGoose"
-  },
-  {
-    "GAME": "Harvest Moon Magical Melody",
-    "REGION": "PAL",
-    "CORE": "SpeedHack/default",
-    "RUNS?": "YES",
-    "FPS": "7-13",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Resident Evil 4",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "10-11",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Sonic Heroes",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "13-18",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Sonic Riders",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "11-18",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Sonic Adventure DX",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "4-13",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable, play the \ndreamcast version instead",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Sonic Adventure 2 DX ",
-    "REGION": "PAL",
-    "CORE": "blacksceen fix",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Doesnt start",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "SSX 3 ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "3-7",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "stutters a lot, completly unplayable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "SSX on Tour ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "got stuck on character creation. unplayable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "SSX Tricky",
-    "REGION": "PAL",
-    "CORE": "All of the ",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Starts, but crashes shortly after",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Big Mutha Truckers",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "22-24",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "game runs in slow motion, the DS version is\npreferable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "American Chopper 2 - Full Throttle",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "7-9",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate is unplayably low",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Beyond Good & Evil ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "7-12",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate is unplayably low",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Batman Begins ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "7-10",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "graphical glitches all over, too slow to be \nanykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Bionicle Heroes",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "12-30",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "framerate varies, but very much playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Baten Kaitos - Eternal Wings and the Lost Ocean ",
-    "REGION": "PAL",
-    "CORE": "all of them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "starts, but freezes immidiatly",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "18 Wheeler - American Pro Trucker",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "10-12",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Call of Duty - Finest Hour ",
-    "REGION": "PAL",
-    "CORE": "blacksceen fix",
-    "RUNS?": "YES",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Crashes on the main menu",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Burnout ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "20-30",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "playable if a bit slow",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Burnout 2 - Point of Impact ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "18-21",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "BloodRayne",
-    "REGION": "PAL",
-    "CORE": "all of them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "crashes immidiatly",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Blood Omen 2 - The Legacy of Kain Series ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "12-25",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "framerate varies, but very much playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Capcom vs. SNK 2 EO ",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "20-24",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Cabela's Big Game Hunter 2005 Adventures ",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "7-11",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "frameratte too low to be playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Chaos Field",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "18-25",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "game runs in slow motion, unplayable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Conflict - Desert Storm ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "4-8",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "frameratte too low to be playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Conflict - Desert Storm II",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "5-15",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "frameratte too low to be playable and stutters\na lot",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Soulcalibur II",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "6-12",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "crashes sometimes and has graphical glitches \nin the ui, low framerate makes it unplayable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Peter Jackson's King Kong",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "8-13",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "playable with a LOT of patience, its better to\njust play the PSP version",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Red Faction II",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "5-12",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "frameratte too low to be playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Dead to Rights",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "6-14",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "playable but framerate can vary",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Shrek Extra Large",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "7-9",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "frameratte too low to be playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Shrek 2",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "6-13",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "frameratte too low to be playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "The Simpsons - Hit & Run",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "12-25",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "slow cutscenes, can be quite unstable with the \ndefault underclock. in Dolphin.ini set \nOverlock = 0.23000000 to resolve crashing and \nother issues.",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Star Wars - Rogue Squadron II - Rogue Leader",
-    "REGION": "PAL",
-    "CORE": "all fo them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "crashes immidiatly",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Shrek - Smash n' Crash Racing",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "10-18",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "playable, but playing either the DS or PSP \nversion is preferable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Gun",
-    "REGION": "PAL",
-    "CORE": "all fo them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "crashes immidiatly, PSP version is playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Lost Kingdoms",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "10-12",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Eternal Darkness - Sanity's Requiem",
-    "REGION": "PAL",
-    "CORE": "all fo them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "crashes immidiatly",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Pac-Man World 2",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "16-30",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "playable but framerate can vary",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Pac-Man World 3",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "9-12",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Mega Man X - Command Mission",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "27-40",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "a bit slow, but playable with patience",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Metal Arms - Glitch in the System",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "4-8",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "menus and videos run hella slow, audio cuts in \nand out, framerate make it unplayable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Metal Gear Solid - The Twin Snakes",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "videocalls dont render, making the game not \nstart, just play the original for the PSX",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Medal of Honor - Rising Sun",
-    "REGION": "PAL",
-    "CORE": "default",
-    "RUNS?": "YES",
-    "FPS": "5-15",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "frameratte too low to be playable",
-    "SOURCE": "Danster21"
-  },
-  {
-    "GAME": "Crystal Chronicles",
-    "REGION": "PAL",
-    "CORE": "default",
-    "RUNS?": "YES",
-    "FPS": "5-6",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "Danster21"
-  },
-  {
-    "GAME": "Rayman 3 - Hoodlum Havoc",
-    "REGION": "PAL",
-    "CORE": "default",
-    "RUNS?": "YES",
-    "FPS": "17-25",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "playable with framerate dips in larger areas",
-    "SOURCE": "Danster21"
-  },
-  {
-    "GAME": "Super Mario Strikers",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "10-25",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Overclock = .4 Resolution = .33 playable",
-    "SOURCE": "Mercquick"
-  },
-  {
-    "GAME": "F1 2002 ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "1-3",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "one of the worst framerate ever tested",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "FIFA Football 2003",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "8-11",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "frameratte too low to be playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "FIFA Football 2004",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "6-8",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "frameratte too low to be playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "FIFA Football 2005 ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "7-9",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "frameratte too low to be playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "FIFA 06 ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "7-9",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "frameratte too low to be playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "FIFA 07",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "2-3",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "one of the worst framerate ever tested",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "The SpongeBob SquarePants Movie",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "20-25",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "few stutters here and there, but playable. \nMight need higher cpu clock to avoid crashing.",
-    "SOURCE": "Speedrun [+.[\ud83d\udc2c].%]"
-  },
-  {
-    "GAME": "Billy Hatcher",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "8-11",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "frameratte too low to be playable",
-    "SOURCE": "Danster21"
-  },
-  {
-    "GAME": "WarioWare Inc. - Mega Party Game$!",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "40-50",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Runs nearly flawlessly. 40fps inbetween the \nminigames, tho minigames run fullspeed.\nCan run on the default core but is 20% \nslower and slightly its less playable.",
-    "SOURCE": "Danster21"
-  },
-  {
-    "GAME": "Crash Nitro Kart ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "16-22",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Runs alright framerate is not tied to game speed. \nLoading each map takes about 30 seconds.\n",
-    "SOURCE": "Danster21"
-  },
-  {
-    "GAME": "Crash Tag Team Racing ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "5-6",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "frame rate but it's too slow to be enjoyable.",
-    "SOURCE": "Danster21"
-  },
-  {
-    "GAME": "Ribbit King",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "7-30",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "playable, but can be laggy",
-    "SOURCE": "Speedrun [+.[\ud83d\udc2c].%]"
-  },
-  {
-    "GAME": "Asterix & Obelix XXL",
-    "REGION": "PAL",
-    "CORE": "SpeedHack/default",
-    "RUNS?": "YES",
-    "FPS": "12-40",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Can be slow with many enemies on screen.\nCan stutter when speaking with npcs.",
-    "SOURCE": "Happy"
-  },
-  {
-    "GAME": "Rayman Arena",
-    "REGION": "NTSC",
-    "CORE": "all of them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "crashes immidiatly",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Dreamworks Madagascar",
-    "REGION": "PAL",
-    "CORE": "SpeedHack/default",
-    "RUNS?": "YES",
-    "FPS": "4-7",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate too slow to be playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Disney-Pixar The Incredibles",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "11-24",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "severe slowdowns on large areas, \nbarely playable but not really enjoyable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Harry Potter and the Philosopher's Stone",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "8-10",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Prince of Persia: The Sands of Time ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "7-12",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Looney Tunes: Back in Action",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "13-25",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "few slowdowns, but mostly playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Frogger: Ancient Shadow",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "41-60",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "runs really well, very playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Frogger Beyond",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "26-40",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "some slowdown, NEEDS NTSC ISO!",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Frogger's Adventures: The Rescue",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "30-42",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": " really slow cutscenes, but in-game runs fine",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Diet Melee Classic v1.03 MOD",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "13-43",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "framerate varies, too much stuttering to playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "TimeSplitters Future Perfect",
-    "REGION": "PAL",
-    "CORE": "all of them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "only gives a black screen",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Samurai Jack: The Shadow of Aku",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "15-23",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": " playable but with lot of patience\n",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Animaniacs: The Great Edgar Hunt ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "19-23",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "few slowdowns here and there but playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Naruto: Clash of Ninja",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "8-10",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Shadow the Hedgehog",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "7-12",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Sphinx and the Cursed Mummy ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "18-24",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Taz Wanted",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "6-10",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "TMNT",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "12-16",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Ty the Tasmanian Tiger",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "11-16",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "frameratte too low to be playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Tom and Jerry in War of the Whiskers",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "11-14",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Zoocube",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "30-40",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "choose 50hz mode at the start",
-    "SOURCE": "Speedrun [+.[\ud83d\udc2c].%]"
-  },
-  {
-    "GAME": "Aggressive Inline",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "15-25",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "fps drops are common, but its still very playable",
-    "SOURCE": "S1eepy"
-  },
-  {
-    "GAME": "X-Men 2: Wolverine's Revenge",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "13-25",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "some framedrops can happen, still very playable",
-    "SOURCE": "S1eepy"
-  },
-  {
-    "GAME": "Star Wars: Bounty Hunter",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "18-24",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Few stutters here and there but playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Tak: The Great Juju Challenge ",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "8-10",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate too low to be playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Tak 2: The Staff of Dreams",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "8-13",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate too low to be playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Open Season",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "unplayable, blocked on a green screen",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Pac-Man World Rally",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "13-28",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "performance varies but it's playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Scaler",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "8-27",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "playable but very slow in large areas",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Dancing Stage Mario Mix ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "19-25",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Runs almost perfectly",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Donald Duck Quack Attack ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "13-20",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Performance varies. Iplayable but can be laggy.",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Puyo Puyo Fever",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "36-45",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Runs almost perfectly",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "SSX on Tour",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "1-3",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Unplayably slow",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Zapper",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "11-13",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate too low to be playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "The Sims Bustin\u2019 out",
-    "REGION": "PAL",
-    "CORE": "SpeedHack/default",
-    "RUNS?": "YES",
-    "FPS": "2-6",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate too low to be playable",
-    "SOURCE": "eleot"
-  },
-  {
-    "GAME": "Robots ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack/default",
-    "RUNS?": "YES",
-    "FPS": "5-6",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate too low to be playable",
-    "SOURCE": "eleot"
-  },
-  {
-    "GAME": "Ultimate Muscle: Legends vs New Generatio",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack/default",
-    "RUNS?": "YES",
-    "FPS": "19-28",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "gameplay needs a bit of patience",
-    "SOURCE": "eleot"
-  },
-  {
-    "GAME": "Bomberman Generation ",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "25-30",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "gameplay runs at half speed",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Bomberman Jetters",
-    "REGION": "NTSC",
-    "CORE": "all of them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Black Screen",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Carmen Sandiego: The Secret of the Stolen Drums",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "20-37",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "framerate slowdown in large, cutscenes are slow",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Cel Damage",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "5-7",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Too slow to be anykind of playable.",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Codename K1ds Next Door Operation V.I.D.E.O.G.A.M.E.",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "17-34",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "A few stutters but otherwise playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Harry Potter: Quidditch World Cup",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "21-50",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Framerate varies but it's perfectly playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Harry Potter and the Prisoner of Azkaban ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Freezes at the WB logo.",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Harry Potter and the Goblet of Fire",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Crashes in the menu",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Disney's Piglet's Big Game ",
-    "REGION": "NTSC",
-    "CORE": "all of them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Black Screen",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Disney's Chicken Little",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "6-9",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Too slow to be anykind of playable.",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Disney's Extreme Skate Adventure",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "freezes at the start",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Disney's Magical Mirror Starring Mickey Mouse",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "25-30",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Disney's PK - Out of the Shadows",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Crashes",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Disney-Pixar Ratatouille",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "14-17",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Broken cutscenes but in-game runs fine",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Need for Speed - Most Wanted",
-    "REGION": "NTSC",
-    "CORE": "all of them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Black Screen",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Need for Speed - Underground",
-    "REGION": "NTSC",
-    "CORE": "all of them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Black Screen",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Need for Speed - Underground 2",
-    "REGION": "NTSC",
-    "CORE": "all of them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Black Screen",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Need for Speed - Hot Pursuit 2 ",
-    "REGION": "NTSC",
-    "CORE": "all of them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Black Screen",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Need for Speed - Carbon",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "3-8",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate too low to be playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Fantastic 4",
-    "REGION": "PAL",
-    "CORE": "all of them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Black Screen",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Dragon Ball Z Budokai",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "18-25",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "too slow to be anykind of enjoyable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "LEGO Star Wars II - The Original Trilogy",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "19-47",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Music glitch-loops rarely, few stutters, playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Star Wars: Clone Wars",
-    "REGION": "PAL",
-    "CORE": "all of them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Black Screen",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Star Wars: Rogue Squadron III ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Freezes at the starting credits screen.",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Super Bust-A-Move All Stars ",
-    "REGION": "PAL",
-    "CORE": "all of them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Black Screen",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Tetris Worlds",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "29-31",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Too slow to be anykind of playable.",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "TMNT Mutant Melee",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "13-21",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Too slow to be anykind of playable.",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Tom Clancy's Splinter Cell",
-    "REGION": "PAL",
-    "CORE": "all of them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Black Screen",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Tony Hawk's American Wasteland",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Crashes at starting logo.",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Tony Hawk's Pro Skater 3",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "14-27",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Performance varies, playable but not enjoyable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Tony Hawk's Pro Skater 4",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Freezes at the starting screen.",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Tony Hawk's Underground",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "1-9",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Too slow to be anykind of playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Tony Hawk's Underground 2",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Freezes at the Loading screen.",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Ultimate Spider-Man ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Crashes immidiatly",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Vexx",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "11-23",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "few stutters but otherwise playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Harry Potter and the Chamber of the Secrets",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "8-12",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Too slow to be anykind of playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Tales of Symphonia",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "16-25",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "The unskippable prologue is unbearably slow, \nbut after that, in-game its completly playable. ",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Ty the Tasmanian Tiger 2",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "6-9",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate too low to be playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Ty the Tasmanian Tiger 3",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "3-6",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "framerate too low to be playable",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Wave Race: Blue Storm",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Stuck at black screen after the main menu",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Worms 3D ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "8-18",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Performance varies, but its pretty static game so \ni'd say it's playable, with lots patience.\n",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Worms Blast",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "48-50",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Almost Perfect",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Yu-Gi-Oh: The Falsebound Kingdo",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "11-25",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "overworld runs good, battles not as good",
-    "SOURCE": "SkullXavier"
-  },
-  {
-    "GAME": "Cubivore - Survival of the Fittest ",
-    "REGION": "NTSC",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "38-40",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "Almost Perfect",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Gadget Racers ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "3-4",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "the text-boxes in the menus dont render the text,\nframerate too low to be playable, the free-run\nmode is kinda playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "MaxPlay Volume 01 ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "4-6",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Too slow to be anykind of playable",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Odama ",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "text doesnt render making gamepaly impossible,\ncontrols also dont seem to work for some reason",
-    "SOURCE": "Sexy_Shrek"
-  },
-  {
-    "GAME": "Phantasy Star Online",
-    "REGION": "NTSC",
-    "CORE": "default",
-    "RUNS?": "YES",
-    "FPS": "10-18",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "a bit slow but playable, the date setup at the \nstart crashes the emulator so youre going to \nneed to import a save from an external source\nto bypass that. online doesnt work, solo does.",
-    "SOURCE": "Lucaspec72"
-  },
-  {
-    "GAME": "Hitman 2: Silent Assassin",
-    "REGION": "PAL",
-    "CORE": "SpeedHack",
-    "RUNS?": "YES",
-    "FPS": "12-20",
-    "PLAYABLE": "YES",
-    "CONSIDERATIONS": "pretty playable",
-    "SOURCE": "\u1d21\u1d0f\u1d0b\u1d07\u1d1c\u1d18\u026a\u0274\u1d18\u1d00\u0280\u026as"
-  },
-  {
-    "GAME": "Doshin the Giant",
-    "REGION": "PAL",
-    "CORE": "all of them",
-    "RUNS?": "NO",
-    "FPS": "???",
-    "PLAYABLE": "NO",
-    "CONSIDERATIONS": "Doesnt start",
-    "SOURCE": "Sexy_Shrek"
+    "game": "F-Zero GX",
+    "region": "PAL",
+    "core": "All of them",
+    "runs?": "YES",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "While the game is able to start it doesnt go past\nthe logos of the developers, crashing and\nresetting on its own",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Luigi's Mansion",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "7-10",
+    "playable": "NO",
+    "considerations": "The game runs, but performance is too low for \nme to consider it playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Mario Kart Double Dash",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "14-20",
+    "playable": "NO",
+    "considerations": "The game runs, but performance is too low for \nme to consider it playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Serious Sam Next Encounter",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "15-50",
+    "playable": "YES",
+    "considerations": "Videos runs Slow, it can struggle a bit,\nespecialy during battles and larger levels\nbut its still decently playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Turok Evolution",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "9-25",
+    "playable": "YES",
+    "considerations": "Videos runs Slow, it can struggle a bit,\nrunning most of the time around 15 fps\nbut its still decently playable\n",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Super Mario Sunshine",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "7-12",
+    "playable": "NO",
+    "considerations": "The game runs, but performance is too low for \nme to consider it playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Super Monkey Ball",
+    "region": "PAL",
+    "core": "All of them",
+    "runs?": "YES",
+    "fps": "25-30",
+    "playable": "NO",
+    "considerations": "it requires files from this link to work.\nhttps://github.com/libretro/dolphin/archive/master.zip \nonly workswith NTSC iso. try the DS game.",
+    "source": "DeadPlant\nSexy_Shrek\nSEIRO\n"
+  },
+  {
+    "game": "Super Monkey Ball 2",
+    "region": "NTSC",
+    "core": "standard",
+    "runs?": "YES",
+    "fps": "30-60",
+    "playable": "YES",
+    "considerations": "playable at relativly high framerate if you \nuse the debug mode to disable stuff. \ni suggest BACKGROUND, STOBJ, EFFECTS, \nAPE, MINIMAP",
+    "source": "Row"
+  },
+  {
+    "game": "Super Monkey Ball Adventure",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "7-25",
+    "playable": "NO",
+    "considerations": "framerate flactuations make the game unplayable",
+    "source": "Danster21"
+  },
+  {
+    "game": "TimeSplitters 2",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "14-32",
+    "playable": "NO",
+    "considerations": "The game runs, but performance is too low for \nme to consider it playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Pikmin",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "20-25",
+    "playable": "YES",
+    "considerations": "Menus are slow, gameplay is almost perfect",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Paper Mario Thousend Year",
+    "region": "PAL",
+    "core": "SpeedHack/default",
+    "runs?": "YES",
+    "fps": "15-25",
+    "playable": "NO",
+    "considerations": "slight texture issues, framerate is slow .\ndefault core seems to also give the same result",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "007 - Agent Under Fire",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "12-40",
+    "playable": "YES",
+    "considerations": "videos run slow, framerate varies, but playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Animal Crossing",
+    "region": "NTSC",
+    "core": "Standard",
+    "runs?": "YES",
+    "fps": "12-25",
+    "playable": "YES",
+    "considerations": "it runs ok, but stutters quite a bit, its \npreferable to either use a PAL rom-speedhack \ncore or play the OG N64 version.",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "XIII",
+    "region": "PAL",
+    "core": "blacksceen fix",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "it boots, but freezes almost immidiatly.",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Chibi-Robo!",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "4-5",
+    "playable": "NO",
+    "considerations": "framerate is unplayably slow. dont even bother.",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Kao the Kangaroo - Round 2",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "12-25",
+    "playable": "YES",
+    "considerations": "framerate varies, but playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "LEGO Star Wars ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "8-23",
+    "playable": "NO",
+    "considerations": "framerate is unplayably slow. just play the DS\nor PSP versions.",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Zelda - The Wind Waker",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "4-5",
+    "playable": "NO",
+    "considerations": "framerate is unplayably slow. dont even bother.",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Zelda - Twilight Princess",
+    "region": "PAL",
+    "core": "blacksceen fix",
+    "runs?": "YES",
+    "fps": "5-15",
+    "playable": "NO",
+    "considerations": "framerate is unplayably slow. dont even bother.",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Super Smash Bros. Melee",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "8-10",
+    "playable": "NO",
+    "considerations": "framerate is unplayably slow. using the \nDiet Melee mods might make it playable\n",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Spongebob - Battle for Bikini Bottom",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "22-50",
+    "playable": "YES",
+    "considerations": "framerate varies, but playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Mario Party 4",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "4-14",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Mario Party 7",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "10-16",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Spyro - A New Beginning",
+    "region": "PAL",
+    "core": "blacksceen fix",
+    "runs?": "YES",
+    "fps": "7-8",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Spyro - Enter the Dragonfly",
+    "region": "NTSC",
+    "core": "blacksceen fix",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "it boots, but freezes almost immidiatly.",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Spyro - A Hero's Tail",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "8-11",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "1080 Avalanche",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "5-15",
+    "playable": "YES",
+    "considerations": "stutters quite a bit at the start of a race,\nbut still playable with some patiance",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Call of Duty 2 - Big Red One",
+    "region": "PAL",
+    "core": "All of them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "crashes the entire emulator.",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "The Sims",
+    "region": "NTSC",
+    "core": "Standard",
+    "runs?": "YES",
+    "fps": "10-15",
+    "playable": "YES",
+    "considerations": "playable, if a bit slow. Surprisingly the\nSpeedHack core makes the game run slower",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "The Sims 2",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "6-20",
+    "playable": "YES",
+    "considerations": "stutters quite a lot especialy at the start of\nthe game, playable, but only if you can handle\nlow framerates",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "V-Rally 3",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "10-12",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Baldur's gate - Dark alliance",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "2-15",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Wario World",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "10-45",
+    "playable": "YES",
+    "considerations": "texture problems with the ui make it difficult\nto start a new game, performance is low in the\nstart lobby, but gets better in levels.",
+    "source": "Sexy_Shrek\nSpeedrun [+.[\ud83d\udc2c].%]"
+  },
+  {
+    "game": "Medal of Honor - Frontline",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "4-6",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Viewtiful Joe ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "20-30",
+    "playable": "NO",
+    "considerations": "audio desynchs during the intro which takes a\nvery long time, framarate seems high, but the\ngame essentialy runs in slow motion.",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Viewtiful Joe 2",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "30",
+    "playable": "NO",
+    "considerations": "audio desynchs during the intro which takes a\nvery long time, framarate seems high, but the\ngame essentialy runs in slow motion.",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Metroid Prime",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "5-8",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Star Fox - Assault",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "18-23",
+    "playable": "NO",
+    "considerations": "text doesnt render in the menu making the game\nalmost unplayable, apart from that its very\nmuch playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Crash Bandicoot - The Wrath of Cortex",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "5-10",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Skies of Arcadia Legends ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "10-25",
+    "playable": "NO",
+    "considerations": "bit slow, but perfectly playable, the \ndreamcast version is still more stable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Star Fox Adventures ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "20-25",
+    "playable": "NO",
+    "considerations": "playable, framerate can sometimes vary",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Pokemon XD",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "25",
+    "playable": "YES",
+    "considerations": "glitchy text, playable with a few frame drops",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Pokemon Colosseum ",
+    "region": "PAL",
+    "core": "SpeedHack/default",
+    "runs?": "YES",
+    "fps": "15-20",
+    "playable": "YES",
+    "considerations": "slow videos, framerate can vary, playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Bust-a-Move 3000",
+    "region": "NTSC",
+    "core": "all of them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Doesnt start",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Crazy Taxi",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "25-40",
+    "playable": "YES",
+    "considerations": "perfectly playable, the dreamcast version is still\nmore stable and preferable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Kirby Air Ride FREE RUN MODE",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "30-40",
+    "playable": "YES",
+    "considerations": "very much playable, framerate not perfect tho",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Kirby Air Ride",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "5-6",
+    "playable": "NO",
+    "considerations": "framerate is unplayably low",
+    "source": "WorkingGoose"
+  },
+  {
+    "game": "Harvest Moon Magical Melody",
+    "region": "PAL",
+    "core": "SpeedHack/default",
+    "runs?": "YES",
+    "fps": "7-13",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Resident Evil 4",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "10-11",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Sonic Heroes",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "13-18",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Sonic Riders",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "11-18",
+    "playable": "NO",
+    "considerations": "",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Sonic Adventure DX",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "4-13",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable, play the \ndreamcast version instead",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Sonic Adventure 2 DX ",
+    "region": "PAL",
+    "core": "blacksceen fix",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Doesnt start",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "SSX 3 ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "3-7",
+    "playable": "NO",
+    "considerations": "stutters a lot, completly unplayable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "SSX on Tour ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "got stuck on character creation. unplayable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "SSX Tricky",
+    "region": "PAL",
+    "core": "All of the ",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Starts, but crashes shortly after",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Big Mutha Truckers",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "22-24",
+    "playable": "NO",
+    "considerations": "game runs in slow motion, the DS version is\npreferable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "American Chopper 2 - Full Throttle",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "7-9",
+    "playable": "NO",
+    "considerations": "framerate is unplayably low",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Beyond Good & Evil ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "7-12",
+    "playable": "NO",
+    "considerations": "framerate is unplayably low",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Batman Begins ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "7-10",
+    "playable": "NO",
+    "considerations": "graphical glitches all over, too slow to be \nanykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Bionicle Heroes",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "12-30",
+    "playable": "YES",
+    "considerations": "framerate varies, but very much playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Baten Kaitos - Eternal Wings and the Lost Ocean ",
+    "region": "PAL",
+    "core": "all of them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "starts, but freezes immidiatly",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "18 Wheeler - American Pro Trucker",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "10-12",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Call of Duty - Finest Hour ",
+    "region": "PAL",
+    "core": "blacksceen fix",
+    "runs?": "YES",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Crashes on the main menu",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Burnout ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "20-30",
+    "playable": "YES",
+    "considerations": "playable if a bit slow",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Burnout 2 - Point of Impact ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "18-21",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "BloodRayne",
+    "region": "PAL",
+    "core": "all of them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "crashes immidiatly",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Blood Omen 2 - The Legacy of Kain Series ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "12-25",
+    "playable": "YES",
+    "considerations": "framerate varies, but very much playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Capcom vs. SNK 2 EO ",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "20-24",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Cabela's Big Game Hunter 2005 Adventures ",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "7-11",
+    "playable": "NO",
+    "considerations": "frameratte too low to be playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Chaos Field",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "18-25",
+    "playable": "NO",
+    "considerations": "game runs in slow motion, unplayable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Conflict - Desert Storm ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "4-8",
+    "playable": "NO",
+    "considerations": "frameratte too low to be playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Conflict - Desert Storm II",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "5-15",
+    "playable": "NO",
+    "considerations": "frameratte too low to be playable and stutters\na lot",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Soulcalibur II",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "6-12",
+    "playable": "NO",
+    "considerations": "crashes sometimes and has graphical glitches \nin the ui, low framerate makes it unplayable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Peter Jackson's King Kong",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "8-13",
+    "playable": "YES",
+    "considerations": "playable with a LOT of patience, its better to\njust play the PSP version",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Red Faction II",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "5-12",
+    "playable": "NO",
+    "considerations": "frameratte too low to be playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Dead to Rights",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "6-14",
+    "playable": "YES",
+    "considerations": "playable but framerate can vary",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Shrek Extra Large",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "7-9",
+    "playable": "NO",
+    "considerations": "frameratte too low to be playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Shrek 2",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "6-13",
+    "playable": "NO",
+    "considerations": "frameratte too low to be playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "The Simpsons - Hit & Run",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "12-25",
+    "playable": "YES",
+    "considerations": "slow cutscenes, can be quite unstable with the \ndefault underclock. in Dolphin.ini set \nOverlock = 0.23000000 to resolve crashing and \nother issues.",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Star Wars - Rogue Squadron II - Rogue Leader",
+    "region": "PAL",
+    "core": "all fo them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "crashes immidiatly",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Shrek - Smash n' Crash Racing",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "10-18",
+    "playable": "YES",
+    "considerations": "playable, but playing either the DS or PSP \nversion is preferable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Gun",
+    "region": "PAL",
+    "core": "all fo them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "crashes immidiatly, PSP version is playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Lost Kingdoms",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "10-12",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Eternal Darkness - Sanity's Requiem",
+    "region": "PAL",
+    "core": "all fo them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "crashes immidiatly",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Pac-Man World 2",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "16-30",
+    "playable": "YES",
+    "considerations": "playable but framerate can vary",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Pac-Man World 3",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "9-12",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Mega Man X - Command Mission",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "27-40",
+    "playable": "YES",
+    "considerations": "a bit slow, but playable with patience",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Metal Arms - Glitch in the System",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "4-8",
+    "playable": "NO",
+    "considerations": "menus and videos run hella slow, audio cuts in \nand out, framerate make it unplayable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Metal Gear Solid - The Twin Snakes",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "videocalls dont render, making the game not \nstart, just play the original for the PSX",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Medal of Honor - Rising Sun",
+    "region": "PAL",
+    "core": "default",
+    "runs?": "YES",
+    "fps": "5-15",
+    "playable": "NO",
+    "considerations": "frameratte too low to be playable",
+    "source": "Danster21"
+  },
+  {
+    "game": "Crystal Chronicles",
+    "region": "PAL",
+    "core": "default",
+    "runs?": "YES",
+    "fps": "5-6",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Danster21"
+  },
+  {
+    "game": "Rayman 3 - Hoodlum Havoc",
+    "region": "PAL",
+    "core": "default",
+    "runs?": "YES",
+    "fps": "17-25",
+    "playable": "YES",
+    "considerations": "playable with framerate dips in larger areas",
+    "source": "Danster21"
+  },
+  {
+    "game": "Super Mario Strikers",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "10-25",
+    "playable": "YES",
+    "considerations": "Overclock = .4 Resolution = .33 playable",
+    "source": "Mercquick"
+  },
+  {
+    "game": "F1 2002 ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "1-3",
+    "playable": "NO",
+    "considerations": "one of the worst framerate ever tested",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "FIFA Football 2003",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "8-11",
+    "playable": "NO",
+    "considerations": "frameratte too low to be playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "FIFA Football 2004",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "6-8",
+    "playable": "NO",
+    "considerations": "frameratte too low to be playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "FIFA Football 2005 ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "7-9",
+    "playable": "NO",
+    "considerations": "frameratte too low to be playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "FIFA 06 ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "7-9",
+    "playable": "NO",
+    "considerations": "frameratte too low to be playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "FIFA 07",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "2-3",
+    "playable": "NO",
+    "considerations": "one of the worst framerate ever tested",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "The SpongeBob SquarePants Movie",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "20-25",
+    "playable": "YES",
+    "considerations": "few stutters here and there, but playable. \nMight need higher cpu clock to avoid crashing.",
+    "source": "Speedrun [+.[\ud83d\udc2c].%]"
+  },
+  {
+    "game": "Billy Hatcher",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "8-11",
+    "playable": "NO",
+    "considerations": "frameratte too low to be playable",
+    "source": "Danster21"
+  },
+  {
+    "game": "WarioWare Inc. - Mega Party Game$!",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "40-50",
+    "playable": "YES",
+    "considerations": "Runs nearly flawlessly. 40fps inbetween the \nminigames, tho minigames run fullspeed.\nCan run on the default core but is 20% \nslower and slightly its less playable.",
+    "source": "Danster21"
+  },
+  {
+    "game": "Crash Nitro Kart ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "16-22",
+    "playable": "YES",
+    "considerations": "Runs alright framerate is not tied to game speed. \nLoading each map takes about 30 seconds.\n",
+    "source": "Danster21"
+  },
+  {
+    "game": "Crash Tag Team Racing ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "5-6",
+    "playable": "NO",
+    "considerations": "frame rate but it's too slow to be enjoyable.",
+    "source": "Danster21"
+  },
+  {
+    "game": "Ribbit King",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "7-30",
+    "playable": "YES",
+    "considerations": "playable, but can be laggy",
+    "source": "Speedrun [+.[\ud83d\udc2c].%]"
+  },
+  {
+    "game": "Asterix & Obelix XXL",
+    "region": "PAL",
+    "core": "SpeedHack/default",
+    "runs?": "YES",
+    "fps": "12-40",
+    "playable": "YES",
+    "considerations": "Can be slow with many enemies on screen.\nCan stutter when speaking with npcs.",
+    "source": "Happy"
+  },
+  {
+    "game": "Rayman Arena",
+    "region": "NTSC",
+    "core": "all of them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "crashes immidiatly",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Dreamworks Madagascar",
+    "region": "PAL",
+    "core": "SpeedHack/default",
+    "runs?": "YES",
+    "fps": "4-7",
+    "playable": "NO",
+    "considerations": "framerate too slow to be playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Disney-Pixar The Incredibles",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "11-24",
+    "playable": "YES",
+    "considerations": "severe slowdowns on large areas, \nbarely playable but not really enjoyable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Harry Potter and the Philosopher's Stone",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "8-10",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Prince of Persia: The Sands of Time ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "7-12",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Looney Tunes: Back in Action",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "13-25",
+    "playable": "YES",
+    "considerations": "few slowdowns, but mostly playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Frogger: Ancient Shadow",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "41-60",
+    "playable": "YES",
+    "considerations": "runs really well, very playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Frogger Beyond",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "26-40",
+    "playable": "YES",
+    "considerations": "some slowdown, NEEDS NTSC ISO!",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Frogger's Adventures: The Rescue",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "30-42",
+    "playable": "YES",
+    "considerations": " really slow cutscenes, but in-game runs fine",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Diet Melee Classic v1.03 MOD",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "13-43",
+    "playable": "YES",
+    "considerations": "framerate varies, too much stuttering to playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "TimeSplitters Future Perfect",
+    "region": "PAL",
+    "core": "all of them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "only gives a black screen",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Samurai Jack: The Shadow of Aku",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "15-23",
+    "playable": "YES",
+    "considerations": " playable but with lot of patience\n",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Animaniacs: The Great Edgar Hunt ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "19-23",
+    "playable": "YES",
+    "considerations": "few slowdowns here and there but playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Naruto: Clash of Ninja",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "8-10",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Shadow the Hedgehog",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "7-12",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Sphinx and the Cursed Mummy ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "18-24",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Taz Wanted",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "6-10",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "TMNT",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "12-16",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Ty the Tasmanian Tiger",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "11-16",
+    "playable": "NO",
+    "considerations": "frameratte too low to be playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Tom and Jerry in War of the Whiskers",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "11-14",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Zoocube",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "30-40",
+    "playable": "YES",
+    "considerations": "choose 50hz mode at the start",
+    "source": "Speedrun [+.[\ud83d\udc2c].%]"
+  },
+  {
+    "game": "Aggressive Inline",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "15-25",
+    "playable": "YES",
+    "considerations": "fps drops are common, but its still very playable",
+    "source": "S1eepy"
+  },
+  {
+    "game": "X-Men 2: Wolverine's Revenge",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "13-25",
+    "playable": "YES",
+    "considerations": "some framedrops can happen, still very playable",
+    "source": "S1eepy"
+  },
+  {
+    "game": "Star Wars: Bounty Hunter",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "18-24",
+    "playable": "YES",
+    "considerations": "Few stutters here and there but playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Tak: The Great Juju Challenge ",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "8-10",
+    "playable": "NO",
+    "considerations": "framerate too low to be playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Tak 2: The Staff of Dreams",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "8-13",
+    "playable": "NO",
+    "considerations": "framerate too low to be playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Open Season",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "unplayable, blocked on a green screen",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Pac-Man World Rally",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "13-28",
+    "playable": "YES",
+    "considerations": "performance varies but it's playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Scaler",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "8-27",
+    "playable": "YES",
+    "considerations": "playable but very slow in large areas",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Dancing Stage Mario Mix ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "19-25",
+    "playable": "YES",
+    "considerations": "Runs almost perfectly",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Donald Duck Quack Attack ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "13-20",
+    "playable": "YES",
+    "considerations": "Performance varies. Iplayable but can be laggy.",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Puyo Puyo Fever",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "36-45",
+    "playable": "YES",
+    "considerations": "Runs almost perfectly",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "SSX on Tour",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "1-3",
+    "playable": "NO",
+    "considerations": "Unplayably slow",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Zapper",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "11-13",
+    "playable": "NO",
+    "considerations": "framerate too low to be playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "The Sims Bustin\u2019 out",
+    "region": "PAL",
+    "core": "SpeedHack/default",
+    "runs?": "YES",
+    "fps": "2-6",
+    "playable": "NO",
+    "considerations": "framerate too low to be playable",
+    "source": "eleot"
+  },
+  {
+    "game": "Robots ",
+    "region": "PAL",
+    "core": "SpeedHack/default",
+    "runs?": "YES",
+    "fps": "5-6",
+    "playable": "NO",
+    "considerations": "framerate too low to be playable",
+    "source": "eleot"
+  },
+  {
+    "game": "Ultimate Muscle: Legends vs New Generatio",
+    "region": "NTSC",
+    "core": "SpeedHack/default",
+    "runs?": "YES",
+    "fps": "19-28",
+    "playable": "YES",
+    "considerations": "gameplay needs a bit of patience",
+    "source": "eleot"
+  },
+  {
+    "game": "Bomberman Generation ",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "25-30",
+    "playable": "NO",
+    "considerations": "gameplay runs at half speed",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Bomberman Jetters",
+    "region": "NTSC",
+    "core": "all of them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Black Screen",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Carmen Sandiego: The Secret of the Stolen Drums",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "20-37",
+    "playable": "YES",
+    "considerations": "framerate slowdown in large, cutscenes are slow",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Cel Damage",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "5-7",
+    "playable": "NO",
+    "considerations": "Too slow to be anykind of playable.",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Codename K1ds Next Door Operation V.I.D.E.O.G.A.M.E.",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "17-34",
+    "playable": "YES",
+    "considerations": "A few stutters but otherwise playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Harry Potter: Quidditch World Cup",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "21-50",
+    "playable": "YES",
+    "considerations": "Framerate varies but it's perfectly playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Harry Potter and the Prisoner of Azkaban ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Freezes at the WB logo.",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Harry Potter and the Goblet of Fire",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Crashes in the menu",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Disney's Piglet's Big Game ",
+    "region": "NTSC",
+    "core": "all of them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Black Screen",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Disney's Chicken Little",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "6-9",
+    "playable": "NO",
+    "considerations": "Too slow to be anykind of playable.",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Disney's Extreme Skate Adventure",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "freezes at the start",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Disney's Magical Mirror Starring Mickey Mouse",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "25-30",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Disney's PK - Out of the Shadows",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Crashes",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Disney-Pixar Ratatouille",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "14-17",
+    "playable": "YES",
+    "considerations": "Broken cutscenes but in-game runs fine",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Need for Speed - Most Wanted",
+    "region": "NTSC",
+    "core": "all of them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Black Screen",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Need for Speed - Underground",
+    "region": "NTSC",
+    "core": "all of them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Black Screen",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Need for Speed - Underground 2",
+    "region": "NTSC",
+    "core": "all of them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Black Screen",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Need for Speed - Hot Pursuit 2 ",
+    "region": "NTSC",
+    "core": "all of them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Black Screen",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Need for Speed - Carbon",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "3-8",
+    "playable": "NO",
+    "considerations": "framerate too low to be playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Fantastic 4",
+    "region": "PAL",
+    "core": "all of them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Black Screen",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Dragon Ball Z Budokai",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "18-25",
+    "playable": "NO",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "LEGO Star Wars II - The Original Trilogy",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "19-47",
+    "playable": "YES",
+    "considerations": "Music glitch-loops rarely, few stutters, playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Star Wars: Clone Wars",
+    "region": "PAL",
+    "core": "all of them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Black Screen",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Star Wars: Rogue Squadron III ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Freezes at the starting credits screen.",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Super Bust-A-Move All Stars ",
+    "region": "PAL",
+    "core": "all of them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Black Screen",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Tetris Worlds",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "29-31",
+    "playable": "NO",
+    "considerations": "Too slow to be anykind of playable.",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "TMNT Mutant Melee",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "13-21",
+    "playable": "NO",
+    "considerations": "Too slow to be anykind of playable.",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Tom Clancy's Splinter Cell",
+    "region": "PAL",
+    "core": "all of them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Black Screen",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Tony Hawk's American Wasteland",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Crashes at starting logo.",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Tony Hawk's Pro Skater 3",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "14-27",
+    "playable": "YES",
+    "considerations": "Performance varies, playable but not enjoyable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Tony Hawk's Pro Skater 4",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Freezes at the starting screen.",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Tony Hawk's Underground",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "1-9",
+    "playable": "NO",
+    "considerations": "Too slow to be anykind of playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Tony Hawk's Underground 2",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Freezes at the Loading screen.",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Ultimate Spider-Man ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Crashes immidiatly",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Vexx",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "11-23",
+    "playable": "YES",
+    "considerations": "few stutters but otherwise playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Harry Potter and the Chamber of the Secrets",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "8-12",
+    "playable": "NO",
+    "considerations": "Too slow to be anykind of playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Tales of Symphonia",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "16-25",
+    "playable": "YES",
+    "considerations": "The unskippable prologue is unbearably slow, \nbut after that, in-game its completly playable. ",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Ty the Tasmanian Tiger 2",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "6-9",
+    "playable": "NO",
+    "considerations": "framerate too low to be playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Ty the Tasmanian Tiger 3",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "3-6",
+    "playable": "NO",
+    "considerations": "framerate too low to be playable",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Wave Race: Blue Storm",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Stuck at black screen after the main menu",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Worms 3D ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "8-18",
+    "playable": "YES",
+    "considerations": "Performance varies, but its pretty static game so \ni'd say it's playable, with lots patience.\n",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Worms Blast",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "48-50",
+    "playable": "YES",
+    "considerations": "Almost Perfect",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Yu-Gi-Oh: The Falsebound Kingdo",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "11-25",
+    "playable": "YES",
+    "considerations": "overworld runs good, battles not as good",
+    "source": "SkullXavier"
+  },
+  {
+    "game": "Cubivore - Survival of the Fittest ",
+    "region": "NTSC",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "38-40",
+    "playable": "YES",
+    "considerations": "Almost Perfect",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Gadget Racers ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "3-4",
+    "playable": "NO",
+    "considerations": "the text-boxes in the menus dont render the text,\nframerate too low to be playable, the free-run\nmode is kinda playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "MaxPlay Volume 01 ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "4-6",
+    "playable": "NO",
+    "considerations": "Too slow to be anykind of playable",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Odama ",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "text doesnt render making gamepaly impossible,\ncontrols also dont seem to work for some reason",
+    "source": "Sexy_Shrek"
+  },
+  {
+    "game": "Phantasy Star Online",
+    "region": "NTSC",
+    "core": "default",
+    "runs?": "YES",
+    "fps": "10-18",
+    "playable": "YES",
+    "considerations": "a bit slow but playable, the date setup at the \nstart crashes the emulator so youre going to \nneed to import a save from an external source\nto bypass that. online doesnt work, solo does.",
+    "source": "Lucaspec72"
+  },
+  {
+    "game": "Hitman 2: Silent Assassin",
+    "region": "PAL",
+    "core": "SpeedHack",
+    "runs?": "YES",
+    "fps": "12-20",
+    "playable": "YES",
+    "considerations": "pretty playable",
+    "source": "\u1d21\u1d0f\u1d0b\u1d07\u1d1c\u1d18\u026a\u0274\u1d18\u1d00\u0280\u026as"
+  },
+  {
+    "game": "Doshin the Giant",
+    "region": "PAL",
+    "core": "all of them",
+    "runs?": "NO",
+    "fps": "???",
+    "playable": "NO",
+    "considerations": "Doesnt start",
+    "source": "Sexy_Shrek"
   }
 ]
