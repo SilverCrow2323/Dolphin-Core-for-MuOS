@@ -64,6 +64,9 @@ Before **SPDW Factory** took over the optimization side, the foundation was laid
   * **V8:** **`L2` + `A/B/X/Y`** mapped for C-Stick functionality.
 * **Consolidated Build:** V9 consolidated the core into a single version for all devices, treating controller capabilities based on the device's built-in hardware (it will not account for a device with 0 or 1 joysticks connected to an external controller with 2 joysticks).
 
+
+> *Looking for ancient artifacts? Check out the [Core History Archive](Core_History/) to browse legacy builds (V7, V8, V9) and read up on their evolution.*
+
 ---
 
 ## 📥 Installation Guide
@@ -96,8 +99,8 @@ A brand new, interactive compatibility database is now live! It gathers and orga
 
 Want to contribute to the chaos? If you test other titles, feel free to share your results by opening a new issue using our dedicated [GameCube Test Template](.github/ISSUE_TEMPLATE/new_gamecube_test.yml).
 
----
-*Data history note: All preliminary data has been meticulously extrapolated and ported over from the [Original Community Google Sheets Spreadsheet](https://docs.google.com/spreadsheets/u/0/d/1LHXQV78yAuvii8J77KUgEt3Ap6TagjQzN48gdB9iVKY/htmlview).*
+
+> *Data history note: All preliminary data has been meticulously extrapolated and ported over from the [Original Community Google Sheets Spreadsheet](https://docs.google.com/spreadsheets/u/0/d/1LHXQV78yAuvii8J77KUgEt3Ap6TagjQzN48gdB9iVKY/htmlview).*
 
 ---
 
