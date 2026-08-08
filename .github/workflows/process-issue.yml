@@ -1,0 +1,67 @@
+name: Add Game from Issue
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  update-json:
+    if: contains(github.event.issue.labels.*.name, 'game-test') && github.event.issue.state_reason == 'completed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Update games.json
+        run: |
+          python -c '
+          import json, os, re
+
+          issue_body = """${{ github.event.issue.body }}"""
+          
+          def extract_val(label, body):
+              safe_label = re.escape(label)
+              match = re.search(rf"### {safe_label}\s*\n\s*(.*?)(?=\n### |\Z)", body, re.DOTALL)
+              return match.group(1).strip() if match else ""
+
+          stars_raw = extract_val("Rating (Stars)", issue_body)
+          stars_num = stars_raw.split(" - ")[0] if stars_raw else "3"
+
+          new_game = {
+              "title": extract_val("Game Title", issue_body),
+              "region": extract_val("Region", issue_body),
+              "stars": stars_num,
+              "fps": extract_val("Average FPS", issue_body),
+              "boots": extract_val("Does the game boot?", issue_body),
+              "playable": extract_val("Is the game playable?", issue_body),
+              "settings": extract_val("Core Profile Used", issue_body),
+              "core_version": extract_val("Core Version", issue_body),
+              "notes": extract_val("Considerations & Notes", issue_body),
+              "tester": extract_val("Your Nickname / Handle", issue_body)
+          }
+
+          json_path = "data/games.json"
+          if os.path.exists(json_path):
+              with open(json_path, "r", encoding="utf-8") as f:
+                  data = json.load(f)
+          else:
+              data = []
+
+          data.append(new_game)
+
+          with open(json_path, "w", encoding="utf-8") as f:
+              json.dump(data, f, indent=2, ensure_ascii=False)
+          '
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/games.json
+          git commit -m "auto: add new tested game from Issue #${{ github.event.issue.number }}"
+          git push
