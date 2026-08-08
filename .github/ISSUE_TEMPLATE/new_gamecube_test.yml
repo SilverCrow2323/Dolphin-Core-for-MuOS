@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for contributing to the compatibility database! Please fill out the fields below.
+        Thank you for contributing to the GameCube Compatibility Database! Please fill out all required fields below. Your report will be reviewed and merged into the dashboard.
 
   - type: input
     id: title
@@ -21,37 +21,40 @@ body:
     id: region
     attributes:
       label: "Region"
+      description: "Which region is the tested ROM/ISO from?"
       options:
         - "PAL"
-        - "NTSC"
+        - "NTSC / USA"
         - "JPN"
     validations:
       required: true
 
   - type: dropdown
-    id: stars
+    id: rating
     attributes:
-      label: "Rating (Stars)"
+      label: "Performance Rating (Stars)"
+      description: "Rate the overall performance. 5★ = virtually perfect, no real issues. 0★ = does not boot at all."
       options:
-        - "5 - Perfect!"
-        - "4 - Playable with issues"
-        - "3 - Inconsistent"
-        - "2 - Disaster but tries"
-        - "1 - Better not"
-        - "0 - Doesn't boot"
+        - "5 - Perfect (no significant issues)"
+        - "4 - Playable with minor issues"
+        - "3 - Playable with patience"
+        - "2 - Disaster but boots"
+        - "1 - Better avoid"
+        - "0 - Does not boot"
     validations:
       required: true
 
   - type: input
     id: fps
     attributes:
-      label: "Average FPS"
-      placeholder: "50"
+      label: "FPS Range"
+      description: "Enter the observed FPS range (e.g., 30-60 or 25). Use ??? if unknown."
+      placeholder: "30-60"
     validations:
       required: true
 
   - type: dropdown
-    id: boots
+    id: boot
     attributes:
       label: "Does the game boot?"
       options:
@@ -64,6 +67,7 @@ body:
     id: playable
     attributes:
       label: "Is the game playable?"
+      description: "Can you actually play through the game, even with issues?"
       options:
         - "Yes"
         - "No"
@@ -71,13 +75,17 @@ body:
       required: true
 
   - type: dropdown
-    id: settings
+    id: core
     attributes:
       label: "Core Profile Used"
+      description: "Which Dolphin core profile was used for this test?"
       options:
         - "Default"
-        - "Speed Hack"
+        - "SpeedHack"
         - "Black Screen Fix"
+        - "SpeedHack / Default (both tested)"
+        - "All of them (tested multiple)"
+        - "Other (specify in notes)"
     validations:
       required: true
 
@@ -85,7 +93,7 @@ body:
     id: core_version
     attributes:
       label: "Core Version"
-      description: "Select the version of the core used for this test"
+      description: "Select the version of the Dolphin core used for this test"
       options:
         - "~v8.0"
         - "v9.0"
@@ -93,6 +101,7 @@ body:
         - "v10.0 SPDW"
         - "v10.5-124"
         - "v10.5-3"
+        - "v10.5.300"
         - "Other (specify in notes)"
     validations:
       required: true
@@ -101,14 +110,25 @@ body:
     id: notes
     attributes:
       label: "Considerations & Notes"
-      placeholder: "Runs smooth at 50fps but drops frames in crowded areas..."
+      description: "Describe performance, graphical issues, audio problems, workarounds, or anything noteworthy."
+      placeholder: "Runs smooth at 50fps but drops frames in crowded areas. Audio desyncs during intro..."
     validations:
       required: false
 
   - type: input
     id: tester
     attributes:
-      label: "Your Device"
-      placeholder: "your_device"
+      label: "Tester Username"
+      description: "Your username or alias to credit in the database."
+      placeholder: "Sexy_Shrek"
     validations:
       required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: "Device Used"
+      description: "Which handheld / device did you test on? (e.g., Trimui Smart Pro, RG35XX H, etc.)"
+      placeholder: "Trimui Smart Pro"
+    validations:
+      required: false
