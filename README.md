@@ -31,8 +31,6 @@ Stock firmware gives you basic emulation and stops there. Thanks to **muOS**, fo
 
 The goal of **Dolphin Core for MuOS** — now included as part of the **[V0iD Project]** by **SPDW Factory** — starts from a different premise: running GameCube and Wii on an **H700 chipset** requires surgical precision, relentless testing, and custom optimization profiles. We are actively working on this core with the specific aim of pushing the hardware to its absolute limits (and maybe a little beyond) to offer a genuinely pleasant and playable experience for the GameCube catalog and, albeit much more difficult, the Wii library.
 
-📊 **[Check the Community Compatibility List Here](https://docs.google.com/spreadsheets/u/0/d/1LHXQV78yAuvii8J77KUgEt3Ap6TagjQzN48gdB9iVKY/htmlview)**
-
 ---
 
 ## ⚙️ Key Features & Performance
@@ -56,7 +54,7 @@ The goal of **Dolphin Core for MuOS** — now included as part of the **[V0iD Pr
 
 ## 💾 Legacy Notes & Core Info
 
-Before **VoidDesk** and **SPDW Factory** took over the optimization side, the foundation was laid by the original devs. Here are some critical legacy notes regarding the core itself you should be aware of:
+Before **SPDW Factory** took over the optimization side, the foundation was laid by the original devs. Here are some critical legacy notes regarding the core itself you should be aware of:
 
 * **Hardware Support:** **RG28XX is NOT supported**.
 * **Exiting the Core:** To exit the core safely, use the Safe Reset Hotkey: press **`L1 + L2 + R1 + R2`** + **hold Power for 2 seconds**. *(Note: muOS standard hotkeys may also apply depending on your firmware version).*
@@ -70,7 +68,7 @@ Before **VoidDesk** and **SPDW Factory** took over the optimization side, the fo
 
 ## 📥 Installation Guide
 
-1. **Download the Release:** Fetch the latest package file (`.zip` or `.muxapp`) from the **[Releases](#)** section.
+1. **Download the Release:** Fetch the latest package file (`.muxupd`) from the **[Releases](#)** section.
 2. **Transfer to Device:** Place the downloaded file into the `ARCHIVE` folder on either **`SD1`** or **`SD2`**.
 3. **Open Archive Manager:** On your console, navigate to **Applications** ➔ **Archive Manager** inside muOS.
 4. **Execute Install:** Select the downloaded file and launch the installation process.
@@ -90,11 +88,16 @@ Before **VoidDesk** and **SPDW Factory** took over the optimization side, the fo
 
 ---
 
-## 🎮 Compatibility & Performance
+## 📊 Compatibility List & Database
 
-If you are brave (or foolish) enough to attempt running GameCube and Wii titles via the Dolphin core on muOS, make sure to check the linked page [Dolphin Core for muOS Compatibility List](https://silvercrow2323.github.io/Dolphin-Core-for-MuOS/). 
+A brand new, interactive compatibility database is now live! It gathers and organizes all test results performed across previous core versions into a detailed, searchable format complete with user ratings and performance metrics:
 
-Consult it before launching anything, unless your primary goal is turning your handheld into a miniature pocket heater or staring at a glorious static slideshow of 3 FPS.
+* 🌐 **[Dolphin Core for muOS Interactive List](https://silvercrow2323.github.io/Dolphin-Core-for-MuOS/)**
+
+Want to contribute to the chaos? If you test other titles, feel free to share your results by opening a new issue using our dedicated [GameCube Test Template](.github/ISSUE_TEMPLATE/new_gamecube_test.yml).
+
+---
+*Data history note: All preliminary data has been meticulously extrapolated and ported over from the [Original Community Google Sheets Spreadsheet](https://docs.google.com/spreadsheets/u/0/d/1LHXQV78yAuvii8J77KUgEt3Ap6TagjQzN48gdB9iVKY/htmlview).*
 
 ---
 
