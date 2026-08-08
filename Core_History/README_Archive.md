@@ -26,7 +26,7 @@ Here is the complete inventory of the relics preserved in this archive, categori
 * `Dolphin for muOS V9-Goose.muxupd` — Community-adapted update file restructured by `@bitter_bizarro` to ensure firmware compatibility with newer muOS versions (such as *Goose*).
 
 ### 🔹 Dolphin for muOS v10 [SPDW] (Custom Fork Iterations)
-* `Dolphin for muOS v10_SPDW.muxupd` — Custom-branded evolution package carrying your own signature touch.
+* `Dolphin for muOS v10_SPDW.muxupd` — Our first version of the core.
 * `Dolphin_for_MuOS_v10.5.124_SPDW.muxupd` — Sub-version 10.5 build pushing experimental tweaks further down the rabbit hole.
 
 ---
