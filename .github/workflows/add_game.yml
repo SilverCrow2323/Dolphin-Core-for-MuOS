@@ -1,0 +1,151 @@
+name: Add Game from Issue
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  update-json:
+    if: contains(github.event.issue.labels.*.name, 'game-test') && github.event.issue.state_reason == 'completed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Update games.json
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          python3 << 'PYSCRIPT'
+          import json, os, re
+
+          issue_body = os.environ['ISSUE_BODY']
+          issue_number = os.environ['ISSUE_NUMBER']
+
+          def extract_val(label, body):
+              """Extract value from GitHub issue form body."""
+              safe_label = re.escape(label)
+              match = re.search(
+                  rf"###\s*{safe_label}\s*\n\s*(.*?)(?=\n###\s|\Z)",
+                  body,
+                  re.DOTALL
+              )
+              if not match:
+                  return ""
+              val = match.group(1).strip()
+              # Strip markdown formatting artifacts
+              val = re.sub(r'\*\*(.*?)\*\*', r'\1', val)
+              val = re.sub(r'\*(.*?)\*', r'\1', val)
+              val = re.sub(r'^\s*[-\*]\s*', '', val, flags=re.MULTILINE)
+              return val.strip()
+
+          def parse_rating(rating_raw):
+              """Extract numeric rating from '5 - Perfect...' format."""
+              if not rating_raw:
+                  return 3
+              m = re.match(r'(\d+)', rating_raw.strip())
+              return int(m.group(1)) if m else 3
+
+          def parse_fps(fps_str):
+              """Parse '30-60' or '25' into (fps_min, fps_max)."""
+              fps_str = fps_str.strip()
+              if not fps_str or fps_str == '???':
+                  return (0, 0)
+              parts = fps_str.split('-')
+              if len(parts) == 2:
+                  try:
+                      return (int(parts[0].strip()), int(parts[1].strip()))
+                  except ValueError:
+                      return (0, 0)
+              else:
+                  try:
+                      v = int(fps_str.strip())
+                      return (v, v)
+                  except ValueError:
+                      return (0, 0)
+
+          def yes_no(val):
+              """Normalize Yes/No to YES/NO."""
+              return "YES" if val.strip().lower() == "yes" else "NO"
+
+          # Extract fields from issue body
+          rating_raw = extract_val("Performance Rating (Stars)", issue_body)
+          fps_raw    = extract_val("FPS Range", issue_body)
+          boot_raw   = extract_val("Does the game boot?", issue_body)
+          play_raw   = extract_val("Is the game playable?", issue_body)
+
+          rating     = parse_rating(rating_raw)
+          fps_min, fps_max = parse_fps(fps_raw)
+
+          new_game = {
+              "game": extract_val("Game Title", issue_body),
+              "region": extract_val("Region", issue_body),
+              "core": extract_val("Core Profile Used", issue_body),
+              "boot": yes_no(boot_raw),
+              "playable": yes_no(play_raw),
+              "fps": fps_raw if fps_raw else "???",
+              "fps_min": fps_min,
+              "fps_max": fps_max,
+              "considerations": extract_val("Considerations & Notes", issue_body),
+              "source": extract_val("Tester Username", issue_body),
+              "device": extract_val("Device Used", issue_body),
+              "core_version": extract_val("Core Version", issue_body),
+              "rating": rating,
+              "issue": int(issue_number)
+          }
+
+          # Skip if no title found
+          if not new_game["game"]:
+              print("ERROR: No game title found in issue body. Aborting.")
+              exit(1)
+
+          json_path = "data/games.json"
+          os.makedirs(os.path.dirname(json_path) if os.path.dirname(json_path) else ".", exist_ok=True)
+
+          if os.path.exists(json_path):
+              with open(json_path, "r", encoding="utf-8") as f:
+                  data = json.load(f)
+          else:
+              data = []
+
+          # Update existing entry by game title (case-insensitive), otherwise append
+          existing_idx = None
+          for i, g in enumerate(data):
+              if g.get("game", "").lower() == new_game["game"].lower():
+                  existing_idx = i
+                  break
+
+          if existing_idx is not None:
+              data[existing_idx] = new_game
+              action = "updated"
+          else:
+              data.append(new_game)
+              action = "added"
+
+          with open(json_path, "w", encoding="utf-8") as f:
+              json.dump(data, f, indent=2, ensure_ascii=False)
+
+          print(f"✅ Game '{new_game['game']}' {action} successfully.")
+          print(f"   Rating: {rating}★ | Boot: {new_game['boot']} | Playable: {new_game['playable']}")
+          print(f"   Total games in database: {len(data)}")
+          PYSCRIPT
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/games.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "auto: ${action} game from Issue #${{ github.event.issue.number }}"
+            git push
+          fi
+
+
