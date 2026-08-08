@@ -108,7 +108,7 @@ body:
   - type: input
     id: tester
     attributes:
-      label: "Your Nickname / Handle"
-      placeholder: "your_name"
+      label: "Your Device"
+      placeholder: "your_device"
     validations:
       required: true
