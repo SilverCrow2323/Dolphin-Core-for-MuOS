@@ -90,6 +90,14 @@ Before **VoidDesk** and **SPDW Factory** took over the optimization side, the fo
 
 ---
 
+## 🎮 Compatibility & Performance
+
+If you are brave (or foolish) enough to attempt running GameCube and Wii titles via the Dolphin core on muOS, make sure to check the linked page [Dolphin Core for muOS Compatibility List](https://silvercrow2323.github.io/Dolphin-Core-for-MuOS/). 
+
+Consult it before launching anything, unless your primary goal is turning your handheld into a miniature pocket heater or staring at a glorious static slideshow of 3 FPS.
+
+---
+
 ## 🤝 Credits & Acknowledgments
 
 Part of the **SPDW Factory** ecosystem, created by **Sir Pips**.
