@@ -1,0 +1,162 @@
+name: Add Wii Game from Issue
+
+on:
+  issues:
+    types: [closed]
+
+permissions:
+  contents: write
+
+jobs:
+  update-json:
+    if: contains(github.event.issue.labels.*.name, 'wii-game-test') && github.event.issue.state_reason == 'completed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Update games2.json
+        env:
+          ISSUE_BODY: ${{ toJSON(github.event.issue.body) }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          python3 << 'PYSCRIPT'
+          import json, os, re
+
+          issue_body_env = os.environ.get('ISSUE_BODY', '')
+          try:
+              issue_body = json.loads(issue_body_env) if issue_body_env else ""
+          except Exception:
+              issue_body = issue_body_env
+
+          if not issue_body:
+              issue_body = ""
+
+          issue_number = os.environ.get('ISSUE_NUMBER', '0')
+
+          def extract_val(label, body):
+              if not body:
+                  return ""
+              safe_label = re.escape(label)
+              match = re.search(
+                  rf"###\s*{safe_label}\s*\n\s*(.*?)(?=\n###\s|\Z)",
+                  body,
+                  re.DOTALL
+              )
+              if not match:
+                  return ""
+              val = match.group(1).strip()
+              val = re.sub(r'\*\*(.*?)\*\*', r'\1', val)
+              val = re.sub(r'\*(.*?)\*', r'\1', val)
+              val = re.sub(r'^\s*[-\*]\s*', '', val, flags=re.MULTILINE).strip()
+              
+              if val.lower() in ["_no response_", "no response", "n/a", "none"]:
+                  return ""
+              return val
+
+          def parse_rating(rating_raw):
+              if not rating_raw:
+                  return 3
+              nums = re.findall(r'\d+', rating_raw)
+              if nums:
+                  return max(0, min(5, int(nums[0])))
+              return 3
+
+          def parse_fps(fps_str):
+              if not fps_str or fps_str == '???':
+                  return (0, 0)
+              nums = [int(n) for n in re.findall(r'\d+', fps_str)]
+              if len(nums) >= 2:
+                  return (min(nums[0], nums[1]), max(nums[0], nums[1]))
+              elif len(nums) == 1:
+                  return (nums[0], nums[0])
+              return (0, 0)
+
+          def yes_no(val):
+              v = val.strip().lower()
+              return "YES" if ("yes" in v or "true" in v) else "NO"
+
+          # Estrazione puntuale dei campi per Wii
+          rating_raw = extract_val("Performance Rating (Stars)", issue_body)
+          fps_raw    = extract_val("FPS Range", issue_body)
+          boot_raw   = extract_val("Does the game boot?", issue_body)
+          play_raw   = extract_val("Is the game playable?", issue_body)
+
+          fps_min, fps_max = parse_fps(fps_raw)
+
+          new_game = {
+              "game": extract_val("Game Title", issue_body),
+              "region": extract_val("Region", issue_body) or "NTSC / USA",
+              "rating": parse_rating(rating_raw),
+              "fps": fps_raw if fps_raw else "???",
+              "fps_min": fps_min,
+              "fps_max": fps_max,
+              "boot": yes_no(boot_raw),
+              "playable": yes_no(play_raw),
+              "core": extract_val("Core Profile Used", issue_body) or "Default",
+              "core_version": extract_val("Core Version", issue_body) or "v10.0 SPDW",
+              "considerations": extract_val("Considerations & Notes", issue_body),
+              "source": extract_val("Tester Username", issue_body) or "Anonymous",
+              "device": extract_val("Device Used", issue_body) or "Unknown Device",
+              "issue": int(issue_number) if issue_number.isdigit() else 0
+          }
+
+          if not new_game["game"]:
+              print("ERROR: Game Title vuoto. Annullamento.")
+              exit(1)
+
+          json_path = "data/games2.json"
+          os.makedirs(os.path.dirname(json_path) if os.path.dirname(json_path) else ".", exist_ok=True)
+
+          if os.path.exists(json_path):
+              with open(json_path, "r", encoding="utf-8") as f:
+                  data = json.load(f)
+          else:
+              data = []
+
+          # Ricerca duplicati per Issue # o per combinazione Gioco + Region + Tester
+          existing_idx = None
+          for i, g in enumerate(data):
+              if g.get("issue") and g.get("issue") == new_game["issue"]:
+                  existing_idx = i
+                  break
+              elif (g.get("game", "").lower() == new_game["game"].lower() and
+                    g.get("region", "").lower() == new_game["region"].lower() and
+                    g.get("source", "").lower() == new_game["source"].lower()):
+                  existing_idx = i
+                  break
+
+          if existing_idx is not None:
+              data[existing_idx] = new_game
+              action = "updated"
+          else:
+              data.append(new_game)
+              action = "added"
+
+          with open(json_path, "w", encoding="utf-8") as f:
+              json.dump(data, f, indent=2, ensure_ascii=False)
+
+          github_env = os.environ.get('GITHUB_ENV')
+          if github_env:
+              with open(github_env, 'a', encoding='utf-8') as f:
+                  f.write(f"ACTION={action}\n")
+
+          print(f"✅ Gioco Wii '{new_game['game']}' {action} con successo in games2.json.")
+          PYSCRIPT
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/games2.json
+          if git diff --cached --quiet; then
+            echo "Nessuna modifica da committare."
+          else
+            git commit -m "auto: ${{ env.ACTION }} Wii game from Issue #${{ github.event.issue.number }}"
+            git push
+          fi
