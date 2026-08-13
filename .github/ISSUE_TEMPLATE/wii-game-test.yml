@@ -1,0 +1,134 @@
+name: "🌀 New Wii Game Test"
+description: "Submit test results for a new Wii game on Dolphin Core / muOS"
+title: "[WII TEST]: "
+labels: ["wii-game-test"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing to the Wii Compatibility Database! Please fill out all required fields below. Your report will be reviewed and merged into the database.
+
+  - type: input
+    id: title
+    attributes:
+      label: "Game Title"
+      description: "Exact name of the game"
+      placeholder: "Enter game title"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: region
+    attributes:
+      label: "Region"
+      description: "Which region is the tested ROM/ISO/WBFS from?"
+      options:
+        - "PAL"
+        - "NTSC / USA"
+        - "JPN"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: rating
+    attributes:
+      label: "Performance Rating (Stars)"
+      description: "Rate the overall performance. 5★ = virtually perfect, no real issues. 0★ = does not boot at all."
+      options:
+        - "5 - Perfect (no significant issues)"
+        - "4 - Playable with minor issues"
+        - "3 - Playable with patience"
+        - "2 - Disaster but boots"
+        - "1 - Better avoid"
+        - "0 - Does not boot"
+    validations:
+      required: true
+
+  - type: input
+    id: fps
+    attributes:
+      label: "FPS Range"
+      description: "Enter the observed FPS range or average value. Use ??? if unknown."
+      placeholder: "Enter FPS range or average value"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: boot
+    attributes:
+      label: "Does the game boot?"
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: playable
+    attributes:
+      label: "Is the game playable?"
+      description: "Can you actually play through the game, even with issues?"
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: core
+    attributes:
+      label: "Core Profile Used"
+      description: "Which Dolphin core profile was used for this test?"
+      options:
+        - "Default"
+        - "SpeedHack"
+        - "Black Screen Fix"
+        - "SpeedHack / Default (both tested)"
+        - "All of them (tested multiple)"
+        - "Other (specify in notes)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: core_version
+    attributes:
+      label: "Core Version"
+      description: "Select the version of the Dolphin core used for this test"
+      options:
+        - "~v8.0"
+        - "v9.0"
+        - "v9.0 Goose"
+        - "v10.0 SPDW"
+        - "v10.5-124"
+        - "v10.5-3"
+        - "v10.5.300"
+        - "Other (specify in notes)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Considerations & Notes"
+      description: "Describe performance, graphical issues, Wiimote mapping/controls, audio problems, or workarounds."
+      placeholder: "Write your considerations, notes or performance details here"
+    validations:
+      required: false
+
+  - type: input
+    id: tester
+    attributes:
+      label: "Tester Username"
+      description: "Your username or alias to credit in the database."
+      placeholder: "Write your username"
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: "Device Used"
+      description: "Which handheld or device did you test on?"
+      placeholder: "Write your device model"
+    validations:
+      required: false
