@@ -1,18 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" id="htmlRoot">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dolphin Core for MuOS | GameCube Compatibility Dashboard</title>
-  <link rel="icon" type="image/svg+xml" href="https://static.wikia.nocookie.net/logopedia/images/2/2a/Nintendo_GameCube_Symbol.svg/revision/latest?cb=20230422004205">
+  <title>Dolphin Core for MuOS | Universal Compatibility Dashboard</title>
+  <link id="favicon" rel="icon" type="image/svg+xml" href="assets/gc.svg">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+          },
           colors: {
-            brand: { 500: '#3b82f6', 600: '#2563eb' }
+            wii: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#00a3e0', // Iconico Azzurro Wii
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            gc: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6', // GameCube Indigo Violet
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
+              950: '#1e112a', // Sfondo viola scuro profondo
+            }
           }
         }
       }
@@ -20,10 +48,24 @@
   </script>
   <style>
     ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #020617; }
-    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #334155; }
-    .gc-logo { filter: invert(1) brightness(2); }
+    
+    /* Dynamic theme styles */
+    body.theme-gc {
+      background: linear-gradient(135deg, #090511 0%, #160b24 50%, #0d0716 100%);
+      color: #f1f5f9;
+    }
+    body.theme-gc ::-webkit-scrollbar-track { background: #0d0716; }
+    body.theme-gc ::-webkit-scrollbar-thumb { background: #2e1847; border-radius: 4px; }
+    body.theme-gc ::-webkit-scrollbar-thumb:hover { background: #6d28d9; }
+
+    body.theme-wii {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      color: #1e293b;
+    }
+    body.theme-wii ::-webkit-scrollbar-track { background: #f1f5f9; }
+    body.theme-wii ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    body.theme-wii ::-webkit-scrollbar-thumb:hover { background: #00a3e0; }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(4px); }
       to { opacity: 1; transform: translateY(0); }
@@ -32,52 +74,90 @@
       animation: fadeIn 0.18s ease-out forwards;
       opacity: 0;
     }
+
+    .wii-glass {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 4px 20px -2px rgba(0, 163, 224, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+    }
+
+    .gc-glass {
+      background: rgba(22, 11, 36, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(124, 58, 237, 0.25);
+      box-shadow: 0 4px 20px -2px rgba(124, 58, 237, 0.15), 0 2px 6px -1px rgba(0, 0, 0, 0.4);
+    }
+
+    .gc-logo-filter {
+      filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.4));
+    }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased selection:bg-sky-500 selection:text-white">
+<body id="appBody" class="theme-gc font-sans antialiased transition-colors duration-300 min-h-screen">
 
   <!-- HEADER -->
-  <header class="border-b border-slate-800/80 bg-slate-900/90 backdrop-blur sticky top-0 z-40 overflow-hidden">
+  <header id="appHeader" class="border-b sticky top-0 z-40 overflow-hidden shadow-sm transition-colors duration-300 border-purple-900/40 bg-gc-950/90 backdrop-blur">
     <div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-10 pointer-events-none z-0">
-      <img src="https://static.wikia.nocookie.net/logopedia/images/a/af/Nintendo_Dolphin_1999.svg/revision/latest/scale-to-width-down/1000?cb=20250924091928" alt="Project Dolphin" class="h-32 md:h-40 w-auto">
+      <svg id="headerBgWatermark" class="h-32 md:h-40 w-auto text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+      </svg>
     </div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 relative z-10">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         
-        <!-- TITLE -->
-        <div>
-          <h1 class="font-black tracking-tight text-white flex flex-col gap-1">
-            <div class="text-2xl flex items-center gap-3">
-              <img src="https://static.wikia.nocookie.net/logopedia/images/2/2a/Nintendo_GameCube_Symbol.svg/revision/latest?cb=20230422004205" alt="GameCube" class="h-7 w-7 gc-logo">
-              <span>Dolphin Core for MuOS</span>
+        <!-- TITLE & CONSOLE SWITCHER -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <!-- CONSOLE SELECTOR TABS -->
+            <div class="inline-flex p-1 rounded-2xl bg-black/20 border border-white/10 backdrop-blur-md">
+              <button id="btnConsoleGC" onclick="switchConsole('gc')" class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl font-bold text-xs transition-all duration-200 bg-gc-600 text-white shadow-lg shadow-gc-900/50">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.2L19.5 8 12 11.8 4.5 8 12 4.2zM4 9.5l7 3.5v7.2l-7-3.5V9.5zm16 7.2l-7 3.5v-7.2l7-3.5v7.2z"/>
+                </svg>
+                <span>GameCube</span>
+              </button>
+
+              <button id="btnConsoleWii" onclick="switchConsole('wii')" class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl font-bold text-xs transition-all duration-200 text-slate-400 hover:text-white">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                </svg>
+                <span>Nintendo Wii</span>
+              </button>
             </div>
-            <div class="text-lg text-slate-300 font-medium mt-0.5">
+          </div>
+
+          <div>
+            <h1 class="font-black tracking-tight flex items-center gap-3">
+              <span id="dashboardTitle" class="text-2xl text-white">Dolphin Core for MuOS</span>
+            </h1>
+            <div id="dashboardSubtitle" class="text-lg font-bold text-gc-400 mt-0.5">
               GameCube Compatibility Dashboard
             </div>
-          </h1>
-          <p class="text-xs italic text-slate-400 mt-1">
-            Community-driven testing database for GameCube emulation on muOS &amp; H700 chipset
-          </p>
+            <p id="dashboardDesc" class="text-xs italic text-slate-400 mt-1">
+              Community-driven testing database for GameCube emulation on muOS &amp; H700 chipset
+            </p>
+          </div>
         </div>
         
         <!-- SPDW FACTORY PANEL -->
-        <div class="bg-gradient-to-r from-sky-950/80 to-slate-900 border border-sky-500/40 rounded-xl p-3.5 shadow-lg shadow-sky-950/20 shrink-0 w-full md:w-auto min-w-[250px]">
-          <div class="flex items-center justify-between gap-3 mb-2 pb-1.5 border-b border-slate-800">
-            <div class="flex items-center gap-1.5 font-black text-sky-400 tracking-wider text-xs uppercase">
-              <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+        <div id="spdwPanel" class="gc-glass rounded-2xl p-3.5 shrink-0 w-full md:w-auto min-w-[250px] transition-all duration-300">
+          <div class="flex items-center justify-between gap-3 mb-2 pb-1.5 border-b border-white/10">
+            <div id="spdwBrand" class="flex items-center gap-1.5 font-black text-gc-400 tracking-wider text-xs uppercase">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
               SPDW Factory
             </div>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-sky-950 text-sky-300 border border-sky-800/60 font-semibold">Core v10.5.300</span>
+            <span id="coreBadge" class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-gc-900 text-gc-300 border border-gc-700/60 font-bold">Core v10.5 SPDW</span>
           </div>
           <div class="space-y-2">
-            <!-- HIGHLIGHTED & ENLARGED TESTED GAMES COUNTER -->
-            <div class="text-xs font-black text-white bg-sky-950/80 border border-sky-500/50 rounded-lg px-3 py-1.5 flex justify-between items-center shadow-inner">
+            <div id="statTestedBox" class="text-xs font-black bg-gc-900/80 border border-gc-600/50 rounded-xl px-3 py-1.5 flex justify-between items-center shadow-inner text-white">
               <span class="tracking-wider uppercase">TESTED GAMES:</span>
-              <span id="statTested" class="bg-sky-500 text-slate-950 px-2.5 py-0.5 rounded font-mono font-black text-base shadow">0</span>
+              <span id="statTested" class="bg-gc-500 text-white px-2.5 py-0.5 rounded-lg font-mono font-black text-base shadow-sm">0</span>
             </div>
-            <div class="text-xs text-slate-400 font-mono flex justify-between items-center px-1">
-              <span><strong class="text-sky-500">##</strong> Total Entries:</span>
-              <span id="statTotal" class="text-slate-200 font-bold">0</span>
+            <div class="text-xs font-mono flex justify-between items-center px-1 text-slate-400">
+              <span><strong id="totalEntriesAccent" class="text-gc-400">##</strong> Total Entries:</span>
+              <span id="statTotal" class="font-bold text-slate-200">0</span>
             </div>
           </div>
         </div>
@@ -89,53 +169,53 @@
   <!-- MAIN CONTENT -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-4">
     
-    <!-- CONTROLS & FILTERS (CENTERED) -->
-    <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-3 flex flex-col md:flex-row gap-3 justify-center items-center shadow-md max-w-4xl mx-auto w-full">
+    <!-- CONTROLS & FILTERS -->
+    <div id="filterPanel" class="gc-glass rounded-2xl p-3 flex flex-col md:flex-row gap-3 justify-center items-center max-w-4xl mx-auto w-full transition-colors duration-300">
       <div class="relative w-full md:w-64 shrink-0">
         <input type="text" id="searchInput" placeholder="Search game title..." 
-          class="w-full bg-slate-950 text-slate-200 placeholder-slate-500 border border-slate-800 rounded-lg pl-9 pr-4 py-1.5 text-xs focus:outline-none focus:border-sky-500 transition-colors">
+          class="w-full bg-slate-950/60 text-slate-100 placeholder-slate-500 border border-white/10 rounded-xl pl-9 pr-4 py-1.5 text-xs focus:outline-none focus:border-gc-500 transition-all">
         <svg class="w-4 h-4 text-slate-500 absolute left-2.5 top-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
         </svg>
       </div>
 
       <div class="flex flex-wrap items-center justify-center gap-2">
-        <select id="regionFilter" class="bg-slate-950 text-slate-300 border border-slate-800 rounded-lg px-2.5 py-1.5 text-xs focus:outline-none focus:border-sky-500">
+        <select id="regionFilter" class="bg-slate-950/60 border border-white/10 rounded-xl px-2.5 py-1.5 text-xs focus:outline-none">
           <option value="all">Region: All</option>
           <option value="PAL">PAL</option>
           <option value="NTSC">NTSC / USA</option>
           <option value="JPN">JPN</option>
         </select>
 
-        <select id="bootFilter" class="bg-slate-950 text-slate-300 border border-slate-800 rounded-lg px-2.5 py-1.5 text-xs focus:outline-none focus:border-sky-500">
+        <select id="bootFilter" class="bg-slate-950/60 border border-white/10 rounded-xl px-2.5 py-1.5 text-xs focus:outline-none">
           <option value="all">Boot: All</option>
           <option value="YES">Boots (YES)</option>
           <option value="NO">Won't Boot (NO)</option>
         </select>
 
-        <select id="sortKey" class="bg-slate-950 text-slate-300 border border-slate-800 rounded-lg px-2.5 py-1.5 text-xs focus:outline-none focus:border-sky-500">
+        <select id="sortKey" class="bg-slate-950/60 border border-white/10 rounded-xl px-2.5 py-1.5 text-xs focus:outline-none">
           <option value="title">Sort: Title</option>
           <option value="rating">Sort: Rating</option>
           <option value="fps">Sort: FPS</option>
         </select>
 
-        <button id="sortOrderBtn" class="bg-slate-950 text-slate-300 border border-slate-800 hover:border-slate-600 px-2.5 py-1.5 rounded-lg text-xs flex items-center gap-1 transition-colors">
+        <button id="sortOrderBtn" class="bg-slate-950/60 border border-white/10 hover:border-white/30 px-2.5 py-1.5 rounded-xl text-xs flex items-center gap-1 transition-colors shadow-sm">
           <span id="sortOrderLabel">Asc</span>
-          <svg id="sortOrderIcon" class="w-3.5 h-3.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg id="sortOrderIcon" class="w-3.5 h-3.5 transition-transform duration-200 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
           </svg>
         </button>
 
-        <button id="resetFiltersBtn" class="bg-rose-950/30 text-rose-400 border border-rose-900/40 hover:bg-rose-900/40 px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors">
+        <button id="resetFiltersBtn" class="bg-rose-950/40 text-rose-400 border border-rose-800/40 hover:bg-rose-900/50 px-2.5 py-1.5 rounded-xl text-xs font-semibold transition-colors shadow-sm">
           Reset Filters
         </button>
       </div>
     </div>
 
-    <!-- 5 INTERACTIVE RATING PANELS (CENTERED & SINGLE ROW) -->
+    <!-- 5 INTERACTIVE RATING PANELS -->
     <div class="grid grid-cols-5 gap-2 max-w-4xl mx-auto w-full">
       <!-- 5 Stars Panel -->
-      <button data-rating="5" class="rating-panel bg-slate-900/80 border border-emerald-500/30 hover:border-emerald-500/70 hover:bg-emerald-950/30 p-2 rounded-xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer">
+      <button data-rating="5" class="rating-panel gc-glass border border-emerald-500/30 hover:border-emerald-500/70 p-2 rounded-2xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer shadow-sm">
         <div class="space-y-0.5 min-w-0">
           <div class="flex items-center gap-1 text-emerald-400 font-bold text-xs">
             <span>5&#9733;</span>
@@ -143,11 +223,11 @@
           </div>
           <div class="text-[10px] text-slate-400 truncate hidden md:block">Full Speed</div>
         </div>
-        <span id="count-5" class="bg-emerald-950 text-emerald-400 border border-emerald-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
+        <span id="count-5" class="bg-emerald-950/80 text-emerald-400 border border-emerald-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
       </button>
 
       <!-- 4 Stars Panel -->
-      <button data-rating="4" class="rating-panel bg-slate-900/80 border border-teal-500/30 hover:border-teal-500/70 hover:bg-teal-950/30 p-2 rounded-xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer">
+      <button data-rating="4" class="rating-panel gc-glass border border-teal-500/30 hover:border-teal-500/70 p-2 rounded-2xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer shadow-sm">
         <div class="space-y-0.5 min-w-0">
           <div class="flex items-center gap-1 text-teal-400 font-bold text-xs">
             <span>4&#9733;</span>
@@ -155,11 +235,11 @@
           </div>
           <div class="text-[10px] text-slate-400 truncate hidden md:block">Minor Issues</div>
         </div>
-        <span id="count-4" class="bg-teal-950 text-teal-400 border border-teal-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
+        <span id="count-4" class="bg-teal-950/80 text-teal-400 border border-teal-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
       </button>
 
       <!-- 3 Stars Panel -->
-      <button data-rating="3" class="rating-panel bg-slate-900/80 border border-amber-500/30 hover:border-amber-500/70 hover:bg-amber-950/30 p-2 rounded-xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer">
+      <button data-rating="3" class="rating-panel gc-glass border border-amber-500/30 hover:border-amber-500/70 p-2 rounded-2xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer shadow-sm">
         <div class="space-y-0.5 min-w-0">
           <div class="flex items-center gap-1 text-amber-400 font-bold text-xs">
             <span>3&#9733;</span>
@@ -167,11 +247,11 @@
           </div>
           <div class="text-[10px] text-slate-400 truncate hidden md:block">Needs Tweaks</div>
         </div>
-        <span id="count-3" class="bg-amber-950 text-amber-400 border border-amber-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
+        <span id="count-3" class="bg-amber-950/80 text-amber-400 border border-amber-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
       </button>
 
       <!-- 2 Stars Panel -->
-      <button data-rating="2" class="rating-panel bg-slate-900/80 border border-orange-500/30 hover:border-orange-500/70 hover:bg-orange-950/30 p-2 rounded-xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer">
+      <button data-rating="2" class="rating-panel gc-glass border border-orange-500/30 hover:border-orange-500/70 p-2 rounded-2xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer shadow-sm">
         <div class="space-y-0.5 min-w-0">
           <div class="flex items-center gap-1 text-orange-400 font-bold text-xs">
             <span>2&#9733;</span>
@@ -179,11 +259,11 @@
           </div>
           <div class="text-[10px] text-slate-400 truncate hidden md:block">Slow</div>
         </div>
-        <span id="count-2" class="bg-orange-950 text-orange-400 border border-orange-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
+        <span id="count-2" class="bg-orange-950/80 text-orange-400 border border-orange-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
       </button>
 
       <!-- 1 & 0 Star Panel -->
-      <button data-rating="1" class="rating-panel bg-slate-900/80 border border-rose-500/30 hover:border-rose-500/70 hover:bg-rose-950/30 p-2 rounded-xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer">
+      <button data-rating="1" class="rating-panel gc-glass border border-rose-500/30 hover:border-rose-500/70 p-2 rounded-2xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer shadow-sm">
         <div class="space-y-0.5 min-w-0">
           <div class="flex items-center gap-1 text-rose-400 font-bold text-xs">
             <span>1-0&#9733;</span>
@@ -191,7 +271,7 @@
           </div>
           <div class="text-[10px] text-slate-400 truncate hidden md:block">No Boot</div>
         </div>
-        <span id="count-1" class="bg-rose-950 text-rose-400 border border-rose-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
+        <span id="count-1" class="bg-rose-950/80 text-rose-400 border border-rose-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
       </button>
     </div>
 
@@ -199,12 +279,12 @@
     <div id="gamesContainer" class="flex flex-col gap-2"></div>
 
     <!-- EMPTY STATE -->
-    <div id="emptyState" class="hidden text-center py-12 bg-slate-900/30 border border-dashed border-slate-800 rounded-xl">
-      <svg class="w-10 h-10 text-slate-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div id="emptyState" class="hidden text-center py-12 bg-slate-900/30 border border-dashed border-white/10 rounded-2xl">
+      <svg class="w-10 h-10 text-slate-500 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
       </svg>
       <p id="emptyStateText" class="text-slate-400 text-xs font-medium">No games found matching the current filters.</p>
-      <button id="clearFiltersBtn" class="mt-3 px-3 py-1.5 bg-sky-600 text-white rounded-lg text-xs font-medium hover:bg-sky-500 transition-colors">
+      <button id="clearFiltersBtn" class="mt-3 px-3 py-1.5 bg-gc-600 text-white rounded-xl text-xs font-semibold hover:bg-gc-500 transition-colors shadow-sm">
         Clear Filters
       </button>
     </div>
@@ -212,65 +292,159 @@
 
   <!-- MODAL FOR DETAILED VIEW -->
   <div id="gameModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm hidden">
-    <div class="bg-slate-900 border border-slate-700/80 rounded-2xl max-w-lg w-full p-6 space-y-4 shadow-2xl relative">
-      <button id="closeModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors">
+    <div id="modalCard" class="bg-gc-950 border border-gc-700/80 rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl relative">
+      <button id="closeModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1.5 rounded-full bg-white/5 hover:bg-white/10 transition-colors">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
 
       <div class="flex items-center gap-3 pr-8">
-        <img id="modalFlag" src="" alt="Region Flag" class="w-6 h-auto rounded border border-slate-700 shrink-0">
+        <img id="modalFlag" src="" alt="Region Flag" class="w-6 h-auto rounded border border-white/10 shrink-0">
         <h3 id="modalTitle" class="text-xl font-bold text-white leading-tight"></h3>
       </div>
 
       <div class="flex flex-wrap items-center gap-2">
         <div id="modalStars"></div>
         <span id="modalRatingBadge" class="text-xs px-2.5 py-0.5 rounded-full font-semibold border"></span>
-        <span id="modalFps" class="text-xs font-mono px-2.5 py-0.5 rounded bg-slate-800 text-sky-400 border border-slate-700"></span>
+        <span id="modalFps" class="text-xs font-mono px-2.5 py-0.5 rounded bg-black/30 text-gc-300 border border-white/10"></span>
       </div>
 
-      <div class="grid grid-cols-3 gap-2 text-center py-2 bg-slate-950/60 rounded-xl border border-slate-800">
+      <div id="modalStatsGrid" class="grid grid-cols-3 gap-2 text-center py-2 bg-black/30 rounded-2xl border border-white/5">
         <div class="p-2">
-          <div class="text-[10px] uppercase font-semibold text-slate-400">Boot</div>
+          <div class="text-[10px] uppercase font-bold text-slate-400">Boot</div>
           <div id="modalBoot" class="text-xs font-bold mt-0.5"></div>
         </div>
-        <div class="p-2 border-x border-slate-800">
-          <div class="text-[10px] uppercase font-semibold text-slate-400">Playable</div>
+        <div class="p-2 border-x border-white/10">
+          <div class="text-[10px] uppercase font-bold text-slate-400">Playable</div>
           <div id="modalPlayable" class="text-xs font-bold mt-0.5"></div>
         </div>
         <div class="p-2">
-          <div class="text-[10px] uppercase font-semibold text-slate-400">Core</div>
-          <div id="modalCore" class="text-xs font-mono font-bold mt-0.5 text-sky-300"></div>
+          <div class="text-[10px] uppercase font-bold text-slate-400">Core</div>
+          <div id="modalCore" class="text-xs font-mono font-bold mt-0.5 text-gc-400"></div>
         </div>
       </div>
 
       <div>
-        <h4 class="text-xs uppercase font-semibold text-slate-400 mb-1.5">Testing Notes &amp; Considerations</h4>
-        <p id="modalConsiderations" class="text-sm text-slate-300 bg-slate-950/80 p-3.5 rounded-xl border border-slate-800 leading-relaxed"></p>
+        <h4 class="text-xs uppercase font-bold text-slate-400 mb-1.5">Testing Notes &amp; Considerations</h4>
+        <p id="modalConsiderations" class="text-sm text-slate-300 bg-black/20 p-3.5 rounded-2xl border border-white/5 leading-relaxed italic"></p>
       </div>
 
-      <div class="flex justify-between items-center text-xs text-slate-500 pt-2 border-t border-slate-800">
-        <span>Submitted by: <strong id="modalSource" class="text-slate-300"></strong></span>
-        <span>Platform: muOS (H700)</span>
+      <div class="flex justify-between items-center text-xs text-slate-500 pt-2 border-t border-white/10">
+        <span>Submitted by: <strong id="modalSource" class="text-gc-400 font-bold"></strong></span>
+        <span>Device: <strong id="modalDevice" class="text-slate-300"></strong></span>
       </div>
     </div>
   </div>
 
   <!-- FOOTER -->
-  <footer class="border-t border-slate-800/80 bg-slate-900/50 mt-10">
+  <footer id="appFooter" class="border-t border-white/5 bg-black/20 mt-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-center text-xs text-slate-500">
-      Data sourced from community testing reports. SPDW Factory Dashboard layout.
+      Data sourced from community testing reports. SPDW Factory Universal Dashboard.
     </div>
   </footer>
 
   <script>
+    // CONFIG & STATE
+    let currentConsole = 'gc'; // 'gc' or 'wii'
     let EMBEDDED_GAMES = [];
-    const GAMES_JSON_URL = "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/games.json";
 
-    const FLAG_MAP = { 'PAL': 'eu', 'NTSC': 'us', 'JPN': 'jp' };
+    const URLS = {
+      gc: "./data/games.json",
+      gc_fallback: "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/games.json",
+      wii: "./data/games2.json"
+    };
+
+    const FLAG_MAP = { 'PAL': 'eu', 'NTSC': 'us', 'NTSC / USA': 'us', 'JPN': 'jp' };
 
     function getFlagUrl(region) {
       const code = FLAG_MAP[region] || 'un';
       return `https://flagcdn.com/w40/${code}.png`;
+    }
+
+    // THEME SWITCHING SYSTEM
+    function switchConsole(targetConsole) {
+      currentConsole = targetConsole;
+
+      const appBody = document.getElementById('appBody');
+      const appHeader = document.getElementById('appHeader');
+      const btnGC = document.getElementById('btnConsoleGC');
+      const btnWii = document.getElementById('btnConsoleWii');
+      const title = document.getElementById('dashboardTitle');
+      const subtitle = document.getElementById('dashboardSubtitle');
+      const desc = document.getElementById('dashboardDesc');
+      const spdwPanel = document.getElementById('spdwPanel');
+      const spdwBrand = document.getElementById('spdwBrand');
+      const coreBadge = document.getElementById('coreBadge');
+      const statTestedBox = document.getElementById('statTestedBox');
+      const statTested = document.getElementById('statTested');
+      const totalEntriesAccent = document.getElementById('totalEntriesAccent');
+      const filterPanel = document.getElementById('filterPanel');
+      const clearFiltersBtn = document.getElementById('clearFiltersBtn');
+      const filterSelects = document.querySelectorAll('#filterPanel select, #filterPanel input');
+      const modalCard = document.getElementById('modalCard');
+
+      if (targetConsole === 'gc') {
+        // Apply GC Dark Purple Theme
+        appBody.className = "theme-gc font-sans antialiased transition-colors duration-300 min-h-screen";
+        appHeader.className = "border-b sticky top-0 z-40 overflow-hidden shadow-sm transition-colors duration-300 border-purple-900/40 bg-gc-950/90 backdrop-blur";
+        
+        btnGC.className = "flex items-center gap-2 px-3.5 py-1.5 rounded-xl font-bold text-xs transition-all duration-200 bg-gc-600 text-white shadow-lg shadow-gc-900/50";
+        btnWii.className = "flex items-center gap-2 px-3.5 py-1.5 rounded-xl font-bold text-xs transition-all duration-200 text-slate-400 hover:text-white";
+
+        subtitle.textContent = "GameCube Compatibility Dashboard";
+        subtitle.className = "text-lg font-bold text-gc-400 mt-0.5";
+        desc.textContent = "Community-driven testing database for GameCube emulation on muOS & H700 chipset";
+
+        spdwPanel.className = "gc-glass rounded-2xl p-3.5 shrink-0 w-full md:w-auto min-w-[250px] transition-all duration-300";
+        spdwBrand.className = "flex items-center gap-1.5 font-black text-gc-400 tracking-wider text-xs uppercase";
+        coreBadge.className = "text-[10px] font-mono px-2 py-0.5 rounded-full bg-gc-900 text-gc-300 border border-gc-700/60 font-bold";
+        coreBadge.textContent = "Core v10.5 SPDW";
+
+        statTestedBox.className = "text-xs font-black bg-gc-900/80 border border-gc-600/50 rounded-xl px-3 py-1.5 flex justify-between items-center shadow-inner text-white";
+        statTested.className = "bg-gc-500 text-white px-2.5 py-0.5 rounded-lg font-mono font-black text-base shadow-sm";
+        totalEntriesAccent.className = "text-gc-400";
+
+        filterPanel.className = "gc-glass rounded-2xl p-3 flex flex-col md:flex-row gap-3 justify-center items-center max-w-4xl mx-auto w-full transition-colors duration-300";
+        
+        filterSelects.forEach(el => {
+          el.className = el.className.replace(/bg-white text-slate-\d+/g, 'bg-slate-950/60 text-slate-100');
+        });
+
+        clearFiltersBtn.className = "mt-3 px-3 py-1.5 bg-gc-600 text-white rounded-xl text-xs font-semibold hover:bg-gc-500 transition-colors shadow-sm";
+        modalCard.className = "bg-gc-950 border border-gc-700/80 rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl relative text-slate-100";
+
+      } else {
+        // Apply Wii Light Theme
+        appBody.className = "theme-wii font-sans antialiased transition-colors duration-300 min-h-screen";
+        appHeader.className = "border-b sticky top-0 z-40 overflow-hidden shadow-sm transition-colors duration-300 border-slate-200/80 bg-white/80 backdrop-blur";
+
+        btnWii.className = "flex items-center gap-2 px-3.5 py-1.5 rounded-xl font-bold text-xs transition-all duration-200 bg-wii-500 text-white shadow-lg shadow-wii-500/30";
+        btnGC.className = "flex items-center gap-2 px-3.5 py-1.5 rounded-xl font-bold text-xs transition-all duration-200 text-slate-500 hover:text-slate-900";
+
+        subtitle.textContent = "Wii Compatibility Dashboard";
+        subtitle.className = "text-lg font-bold text-wii-600 mt-0.5";
+        desc.textContent = "Community-driven testing database for Nintendo Wii emulation on muOS & H700 chipset";
+
+        spdwPanel.className = "wii-glass border border-wii-300/60 rounded-2xl p-3.5 shadow-lg shadow-wii-500/10 shrink-0 w-full md:w-auto min-w-[250px] transition-all duration-300";
+        spdwBrand.className = "flex items-center gap-1.5 font-black text-wii-600 tracking-wider text-xs uppercase";
+        coreBadge.className = "text-[10px] font-mono px-2 py-0.5 rounded-full bg-wii-100 text-wii-700 border border-wii-300 font-bold";
+        coreBadge.textContent = "Core v10.0 SPDW";
+
+        statTestedBox.className = "text-xs font-black text-slate-700 bg-wii-50/80 border border-wii-200 rounded-xl px-3 py-1.5 flex justify-between items-center shadow-inner";
+        statTested.className = "bg-wii-500 text-white px-2.5 py-0.5 rounded-lg font-mono font-black text-base shadow-sm";
+        totalEntriesAccent.className = "text-wii-600";
+
+        filterPanel.className = "wii-glass border border-slate-200/80 rounded-2xl p-3 flex flex-col md:flex-row gap-3 justify-center items-center shadow-sm max-w-4xl mx-auto w-full transition-colors duration-300";
+
+        filterSelects.forEach(el => {
+          el.className = el.className.replace(/bg-slate-950\/60 text-slate-100/g, 'bg-white text-slate-800');
+        });
+
+        clearFiltersBtn.className = "mt-3 px-3 py-1.5 bg-wii-500 text-white rounded-xl text-xs font-semibold hover:bg-wii-600 transition-colors shadow-sm";
+        modalCard.className = "bg-white border border-slate-200 rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl relative text-slate-800";
+      }
+
+      // Re-fetch dataset for switched console
+      loadConsoleData();
     }
 
     function renderStars(rating) {
@@ -301,12 +475,21 @@
     }
 
     function getRatingBadgeClass(rating) {
-      if (rating === 5) return 'bg-emerald-950/80 text-emerald-400 border-emerald-800/60';
-      if (rating === 4) return 'bg-teal-950/80 text-teal-400 border-teal-800/60';
-      if (rating === 3) return 'bg-amber-950/80 text-amber-400 border-amber-800/60';
-      if (rating === 2) return 'bg-orange-950/80 text-orange-400 border-orange-800/60';
-      if (rating >= 1) return 'bg-rose-950/80 text-rose-400 border-rose-800/60';
-      return 'bg-slate-900 text-slate-400 border-slate-700';
+      if (currentConsole === 'gc') {
+        if (rating === 5) return 'bg-emerald-950/80 text-emerald-400 border-emerald-800/60';
+        if (rating === 4) return 'bg-teal-950/80 text-teal-400 border-teal-800/60';
+        if (rating === 3) return 'bg-amber-950/80 text-amber-400 border-amber-800/60';
+        if (rating === 2) return 'bg-orange-950/80 text-orange-400 border-orange-800/60';
+        if (rating >= 1) return 'bg-rose-950/80 text-rose-400 border-rose-800/60';
+        return 'bg-slate-900 text-slate-400 border-slate-700';
+      } else {
+        if (rating === 5) return 'bg-emerald-100 text-emerald-700 border-emerald-300';
+        if (rating === 4) return 'bg-teal-100 text-teal-700 border-teal-300';
+        if (rating === 3) return 'bg-amber-100 text-amber-700 border-amber-300';
+        if (rating === 2) return 'bg-orange-100 text-orange-700 border-orange-300';
+        if (rating >= 1) return 'bg-rose-100 text-rose-700 border-rose-300';
+        return 'bg-slate-100 text-slate-500 border-slate-300';
+      }
     }
 
     // STATE VARIABLES
@@ -334,12 +517,11 @@
     // UPDATE STATS & RATING PANEL COUNTS
     function updateStats() {
       const totalEntries = EMBEDDED_GAMES.length;
-      const uniqueGamesCount = new Set(EMBEDDED_GAMES.map(g => g.game.trim().toLowerCase())).size;
+      const uniqueGamesCount = new Set(EMBEDDED_GAMES.map(g => (g.game || '').trim().toLowerCase())).size;
 
       document.getElementById('statTested').textContent = uniqueGamesCount;
       document.getElementById('statTotal').textContent = totalEntries;
 
-      // Calculate rating breakdown counts
       const counts = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
       EMBEDDED_GAMES.forEach(g => {
         if (g.rating === 5) counts[5]++;
@@ -359,19 +541,28 @@
     // COMPACT LIST ROW BUILDER
     function createListRow(game, index) {
       const flagUrl = getFlagUrl(game.region);
+      const isGC = currentConsole === 'gc';
+
       const bootBadgeClass = game.boot === 'YES' 
-        ? 'text-emerald-400 bg-emerald-950/50 border-emerald-800/50' 
-        : 'text-rose-400 bg-rose-950/50 border-rose-800/50';
+        ? (isGC ? 'text-emerald-400 bg-emerald-950/50 border-emerald-800/50' : 'text-emerald-700 bg-emerald-100 border-emerald-300')
+        : (isGC ? 'text-rose-400 bg-rose-950/50 border-rose-800/50' : 'text-rose-700 bg-rose-100 border-rose-300');
+
+      const cardClass = isGC 
+        ? 'gc-glass border border-white/10 hover:border-gc-500/50 hover:bg-gc-900/40 text-slate-100'
+        : 'wii-glass border border-slate-200/80 hover:border-wii-400 hover:shadow-md text-slate-800';
+
+      const accentHoverText = isGC ? 'group-hover:text-gc-400' : 'group-hover:text-wii-600';
+      const fpsBadgeClass = isGC ? 'bg-black/40 text-gc-300 border-white/10' : 'bg-wii-50 text-wii-700 border-wii-200';
 
       const delay = Math.min(index * 12, 180);
 
       return `
-        <div class="card-anim bg-slate-900/70 border border-slate-800/80 hover:border-sky-500/50 hover:bg-slate-900/90 rounded-lg py-2.5 px-3.5 flex items-center justify-between gap-3 transition-all duration-200 cursor-pointer group shadow-sm hover:shadow-md hover:shadow-sky-950/20" style="animation-delay: ${delay}ms;" onclick="openGameModal(${index})">
+        <div class="card-anim rounded-2xl py-2.5 px-3.5 flex items-center justify-between gap-3 transition-all duration-200 cursor-pointer group shadow-sm ${cardClass}" style="animation-delay: ${delay}ms;" onclick="openGameModal(${index})">
           
           <!-- Title & Region Flag -->
           <div class="flex items-center gap-3 min-w-0 flex-1">
-            <img src="${flagUrl}" alt="${game.region}" class="w-5 h-3.5 object-cover rounded border border-slate-700/80 shrink-0">
-            <h3 class="font-semibold text-slate-100 text-sm truncate group-hover:text-sky-400 transition-colors">${escapeHtml(game.game)}</h3>
+            <img src="${flagUrl}" alt="${game.region}" class="w-5 h-3.5 object-cover rounded border border-white/10 shrink-0">
+            <h3 class="font-bold text-sm truncate transition-colors ${accentHoverText}">${escapeHtml(game.game)}</h3>
           </div>
 
           <!-- Rating Stars, FPS, Boot status -->
@@ -380,15 +571,15 @@
               ${renderStars(game.rating)}
             </div>
 
-            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-950 text-sky-300 border border-slate-800/80">
+            <span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded-lg border ${fpsBadgeClass}">
               ${game.fps !== "???" ? game.fps + " FPS" : "N/A"}
             </span>
 
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full border ${bootBadgeClass}">
+            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full border ${bootBadgeClass}">
               ${game.boot === 'YES' ? 'Boot' : 'No Boot'}
             </span>
 
-            <svg class="w-4 h-4 text-slate-600 group-hover:text-sky-400 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            <svg class="w-4 h-4 text-slate-500 ${accentHoverText} group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </div>
         </div>
       `;
@@ -411,15 +602,20 @@
       
       const bootEl = document.getElementById('modalBoot');
       bootEl.textContent = game.boot === 'YES' ? 'Boots' : 'No Boot';
-      bootEl.className = game.boot === 'YES' ? 'text-xs font-bold text-emerald-400 mt-0.5' : 'text-xs font-bold text-rose-400 mt-0.5';
+      bootEl.className = game.boot === 'YES' 
+        ? 'text-xs font-bold text-emerald-400 mt-0.5' 
+        : 'text-xs font-bold text-rose-400 mt-0.5';
 
       const playableEl = document.getElementById('modalPlayable');
       playableEl.textContent = game.playable === 'YES' ? 'Playable' : 'Unplayable';
-      playableEl.className = game.playable === 'YES' ? 'text-xs font-bold text-sky-400 mt-0.5' : 'text-xs font-bold text-rose-400 mt-0.5';
+      playableEl.className = game.playable === 'YES' 
+        ? (currentConsole === 'gc' ? 'text-xs font-bold text-gc-400 mt-0.5' : 'text-xs font-bold text-wii-600 mt-0.5')
+        : 'text-xs font-bold text-rose-400 mt-0.5';
 
-      document.getElementById('modalCore').textContent = game.core;
+      document.getElementById('modalCore').textContent = game.core || 'Default Core';
       document.getElementById('modalConsiderations').textContent = game.considerations || 'No additional testing notes provided for this report.';
       document.getElementById('modalSource').textContent = game.source || 'Anonymous';
+      document.getElementById('modalDevice').textContent = game.device || 'RG35XX H (muOS)';
 
       document.getElementById('gameModal').classList.remove('hidden');
     }
@@ -438,14 +634,16 @@
 
     // RENDER LOGIC
     function render() {
-      // Update interactive rating panel selection UI states
+      // Rating panels selection UI
       document.querySelectorAll('.rating-panel').forEach(panel => {
         const ratingAttr = panel.getAttribute('data-rating');
+        const activeRingClass = currentConsole === 'gc' ? 'ring-gc-500' : 'ring-wii-500';
+
         if (selectedStars === ratingAttr) {
-          panel.classList.add('ring-2', 'ring-sky-400', 'bg-sky-950/40', 'scale-[1.02]');
+          panel.classList.add('ring-2', activeRingClass, 'scale-[1.02]');
           panel.classList.remove('opacity-60');
         } else {
-          panel.classList.remove('ring-2', 'ring-sky-400', 'bg-sky-950/40', 'scale-[1.02]');
+          panel.classList.remove('ring-2', 'ring-gc-500', 'ring-wii-500', 'scale-[1.02]');
           if (selectedStars !== 'all') {
             panel.classList.add('opacity-60');
           } else {
@@ -455,6 +653,8 @@
       });
 
       currentFilteredGames = EMBEDDED_GAMES.filter(game => {
+        if (!game || !game.game) return false;
+
         if (searchQuery) {
           const matchName = game.game.toLowerCase().includes(searchQuery);
           const matchNotes = (game.considerations || '').toLowerCase().includes(searchQuery);
@@ -471,7 +671,11 @@
           }
         }
 
-        if (selectedRegion !== 'all' && game.region !== selectedRegion) return false;
+        if (selectedRegion !== 'all') {
+          if (selectedRegion === 'NTSC' && !game.region.includes('NTSC')) return false;
+          if (selectedRegion !== 'NTSC' && game.region !== selectedRegion) return false;
+        }
+
         if (selectedBoot !== 'all' && game.boot !== selectedBoot) return false;
 
         return true;
@@ -480,9 +684,9 @@
       currentFilteredGames.sort((a, b) => {
         let comparison = 0;
         if (currentSortKey === 'title') {
-          comparison = a.game.localeCompare(b.game);
+          comparison = (a.game || '').localeCompare(b.game || '');
         } else if (currentSortKey === 'rating') {
-          comparison = a.rating - b.rating;
+          comparison = (a.rating || 0) - (b.rating || 0);
         } else if (currentSortKey === 'fps') {
           comparison = (a.fps_max || 0) - (b.fps_max || 0);
         }
@@ -533,15 +737,10 @@
       render();
     });
 
-    // RATING PANEL CLICK HANDLER
     document.querySelectorAll('.rating-panel').forEach(panel => {
       panel.addEventListener('click', () => {
         const rating = panel.getAttribute('data-rating');
-        if (selectedStars === rating) {
-          selectedStars = 'all';
-        } else {
-          selectedStars = rating;
-        }
+        selectedStars = selectedStars === rating ? 'all' : rating;
         render();
       });
     });
@@ -567,23 +766,29 @@
     resetFiltersBtn.addEventListener('click', resetAllFilters);
     clearFiltersBtn.addEventListener('click', resetAllFilters);
 
-    // INITIALIZATION
-    async function initDashboard() {
+    // FETCH DATASET ACCORDING TO ACTIVE CONSOLE
+    async function loadConsoleData() {
+      EMBEDDED_GAMES = [];
+      const primaryUrl = URLS[currentConsole];
+      const fallbackUrl = currentConsole === 'gc' ? URLS.gc_fallback : null;
+
       try {
-        const response = await fetch(GAMES_JSON_URL);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+        let response = await fetch(primaryUrl);
+        if (!response.ok && fallbackUrl) {
+          response = await fetch(fallbackUrl);
         }
+        if (!response.ok) throw new Error(`HTTP Error status: ${response.status}`);
         EMBEDDED_GAMES = await response.json();
       } catch (err) {
-        console.error("Error loading compatibility data:", err);
+        console.error(`Error loading data for ${currentConsole}:`, err);
       } finally {
         updateStats();
         render();
       }
     }
 
-    initDashboard();
+    // INITIALIZATION
+    loadConsoleData();
   </script>
 </body>
 </html>
