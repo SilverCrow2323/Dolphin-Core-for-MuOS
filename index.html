@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dolphin Core for MuOS | Universal Compatibility Dashboard</title>
-  <link id="favicon" rel="icon" type="image/svg+xml" href="assets/gc.svg">
+  <link id="favicon" rel="icon" type="image/svg+xml" href="assets/gamecube.svg">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script>
@@ -39,7 +39,7 @@
               700: '#6d28d9',
               800: '#5b21b6',
               900: '#4c1d95',
-              950: '#1e112a', // Sfondo viola scuro profondo
+              950: '#1e112a',
             }
           }
         }
@@ -60,7 +60,7 @@
 
     body.theme-wii {
       background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-      color: #1e293b;
+      color: #0f172a;
     }
     body.theme-wii ::-webkit-scrollbar-track { background: #f1f5f9; }
     body.theme-wii ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
@@ -76,10 +76,10 @@
     }
 
     .wii-glass {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      box-shadow: 0 4px 20px -2px rgba(0, 163, 224, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(203, 213, 225, 0.8);
+      box-shadow: 0 4px 20px -2px rgba(0, 163, 224, 0.12), 0 2px 6px -1px rgba(0, 0, 0, 0.05);
     }
 
     .gc-glass {
@@ -88,10 +88,6 @@
       border: 1px solid rgba(124, 58, 237, 0.25);
       box-shadow: 0 4px 20px -2px rgba(124, 58, 237, 0.15), 0 2px 6px -1px rgba(0, 0, 0, 0.4);
     }
-
-    .gc-logo-filter {
-      filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.4));
-    }
   </style>
 </head>
 <body id="appBody" class="theme-gc font-sans antialiased transition-colors duration-300 min-h-screen">
@@ -99,7 +95,7 @@
   <!-- HEADER -->
   <header id="appHeader" class="border-b sticky top-0 z-40 overflow-hidden shadow-sm transition-colors duration-300 border-purple-900/40 bg-gc-950/90 backdrop-blur">
     <div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-10 pointer-events-none z-0">
-      <svg id="headerBgWatermark" class="h-32 md:h-40 w-auto text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+      <svg class="h-32 md:h-40 w-auto text-purple-400" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
       </svg>
     </div>
@@ -129,13 +125,15 @@
           </div>
 
           <div>
+            <!-- LOGO ED INTESTAZIONE -->
             <h1 class="font-black tracking-tight flex items-center gap-3">
-              <span id="dashboardTitle" class="text-2xl text-white">Dolphin Core for MuOS</span>
+              <img id="consoleLogo" src="assets/gamecube.svg" alt="Console Logo" class="w-7 h-7 object-contain shrink-0">
+              <span id="dashboardTitle" class="text-2xl text-white transition-colors">Dolphin Core for MuOS</span>
             </h1>
-            <div id="dashboardSubtitle" class="text-lg font-bold text-gc-400 mt-0.5">
+            <div id="dashboardSubtitle" class="text-lg font-bold text-gc-400 mt-0.5 transition-colors">
               GameCube Compatibility Dashboard
             </div>
-            <p id="dashboardDesc" class="text-xs italic text-slate-400 mt-1">
+            <p id="dashboardDesc" class="text-xs italic text-slate-400 mt-1 transition-colors">
               Community-driven testing database for GameCube emulation on muOS &amp; H700 chipset
             </p>
           </div>
@@ -174,7 +172,7 @@
       <div class="relative w-full md:w-64 shrink-0">
         <input type="text" id="searchInput" placeholder="Search game title..." 
           class="w-full bg-slate-950/60 text-slate-100 placeholder-slate-500 border border-white/10 rounded-xl pl-9 pr-4 py-1.5 text-xs focus:outline-none focus:border-gc-500 transition-all">
-        <svg class="w-4 h-4 text-slate-500 absolute left-2.5 top-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-4 h-4 text-slate-400 absolute left-2.5 top-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
         </svg>
       </div>
@@ -217,11 +215,11 @@
       <!-- 5 Stars Panel -->
       <button data-rating="5" class="rating-panel gc-glass border border-emerald-500/30 hover:border-emerald-500/70 p-2 rounded-2xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer shadow-sm">
         <div class="space-y-0.5 min-w-0">
-          <div class="flex items-center gap-1 text-emerald-400 font-bold text-xs">
+          <div class="flex items-center gap-1 text-emerald-500 font-bold text-xs">
             <span>5&#9733;</span>
             <span class="text-[9px] uppercase tracking-wider font-semibold opacity-90 truncate hidden sm:inline">Perfect</span>
           </div>
-          <div class="text-[10px] text-slate-400 truncate hidden md:block">Full Speed</div>
+          <div class="text-[10px] text-slate-500 font-medium truncate hidden md:block">Full Speed</div>
         </div>
         <span id="count-5" class="bg-emerald-950/80 text-emerald-400 border border-emerald-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
       </button>
@@ -229,11 +227,11 @@
       <!-- 4 Stars Panel -->
       <button data-rating="4" class="rating-panel gc-glass border border-teal-500/30 hover:border-teal-500/70 p-2 rounded-2xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer shadow-sm">
         <div class="space-y-0.5 min-w-0">
-          <div class="flex items-center gap-1 text-teal-400 font-bold text-xs">
+          <div class="flex items-center gap-1 text-teal-500 font-bold text-xs">
             <span>4&#9733;</span>
             <span class="text-[9px] uppercase tracking-wider font-semibold opacity-90 truncate hidden sm:inline">Great</span>
           </div>
-          <div class="text-[10px] text-slate-400 truncate hidden md:block">Minor Issues</div>
+          <div class="text-[10px] text-slate-500 font-medium truncate hidden md:block">Minor Issues</div>
         </div>
         <span id="count-4" class="bg-teal-950/80 text-teal-400 border border-teal-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
       </button>
@@ -241,11 +239,11 @@
       <!-- 3 Stars Panel -->
       <button data-rating="3" class="rating-panel gc-glass border border-amber-500/30 hover:border-amber-500/70 p-2 rounded-2xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer shadow-sm">
         <div class="space-y-0.5 min-w-0">
-          <div class="flex items-center gap-1 text-amber-400 font-bold text-xs">
+          <div class="flex items-center gap-1 text-amber-500 font-bold text-xs">
             <span>3&#9733;</span>
             <span class="text-[9px] uppercase tracking-wider font-semibold opacity-90 truncate hidden sm:inline">Playable</span>
           </div>
-          <div class="text-[10px] text-slate-400 truncate hidden md:block">Needs Tweaks</div>
+          <div class="text-[10px] text-slate-500 font-medium truncate hidden md:block">Needs Tweaks</div>
         </div>
         <span id="count-3" class="bg-amber-950/80 text-amber-400 border border-amber-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
       </button>
@@ -253,11 +251,11 @@
       <!-- 2 Stars Panel -->
       <button data-rating="2" class="rating-panel gc-glass border border-orange-500/30 hover:border-orange-500/70 p-2 rounded-2xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer shadow-sm">
         <div class="space-y-0.5 min-w-0">
-          <div class="flex items-center gap-1 text-orange-400 font-bold text-xs">
+          <div class="flex items-center gap-1 text-orange-500 font-bold text-xs">
             <span>2&#9733;</span>
             <span class="text-[9px] uppercase tracking-wider font-semibold opacity-90 truncate hidden sm:inline">Poor</span>
           </div>
-          <div class="text-[10px] text-slate-400 truncate hidden md:block">Slow</div>
+          <div class="text-[10px] text-slate-500 font-medium truncate hidden md:block">Slow</div>
         </div>
         <span id="count-2" class="bg-orange-950/80 text-orange-400 border border-orange-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
       </button>
@@ -265,11 +263,11 @@
       <!-- 1 & 0 Star Panel -->
       <button data-rating="1" class="rating-panel gc-glass border border-rose-500/30 hover:border-rose-500/70 p-2 rounded-2xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer shadow-sm">
         <div class="space-y-0.5 min-w-0">
-          <div class="flex items-center gap-1 text-rose-400 font-bold text-xs">
+          <div class="flex items-center gap-1 text-rose-500 font-bold text-xs">
             <span>1-0&#9733;</span>
             <span class="text-[9px] uppercase tracking-wider font-semibold opacity-90 truncate hidden sm:inline">Bad</span>
           </div>
-          <div class="text-[10px] text-slate-400 truncate hidden md:block">No Boot</div>
+          <div class="text-[10px] text-slate-500 font-medium truncate hidden md:block">No Boot</div>
         </div>
         <span id="count-1" class="bg-rose-950/80 text-rose-400 border border-rose-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
       </button>
@@ -293,58 +291,57 @@
   <!-- MODAL FOR DETAILED VIEW -->
   <div id="gameModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm hidden">
     <div id="modalCard" class="bg-gc-950 border border-gc-700/80 rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl relative">
-      <button id="closeModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1.5 rounded-full bg-white/5 hover:bg-white/10 transition-colors">
+      <button id="closeModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-200 p-1.5 rounded-full bg-black/10 hover:bg-black/20 transition-colors">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
 
       <div class="flex items-center gap-3 pr-8">
-        <img id="modalFlag" src="" alt="Region Flag" class="w-6 h-auto rounded border border-white/10 shrink-0">
-        <h3 id="modalTitle" class="text-xl font-bold text-white leading-tight"></h3>
+        <img id="modalFlag" src="" alt="Region Flag" class="w-6 h-auto rounded border border-slate-300/20 shrink-0">
+        <h3 id="modalTitle" class="text-xl font-bold leading-tight"></h3>
       </div>
 
       <div class="flex flex-wrap items-center gap-2">
         <div id="modalStars"></div>
         <span id="modalRatingBadge" class="text-xs px-2.5 py-0.5 rounded-full font-semibold border"></span>
-        <span id="modalFps" class="text-xs font-mono px-2.5 py-0.5 rounded bg-black/30 text-gc-300 border border-white/10"></span>
+        <span id="modalFps" class="text-xs font-mono px-2.5 py-0.5 rounded font-bold"></span>
       </div>
 
-      <div id="modalStatsGrid" class="grid grid-cols-3 gap-2 text-center py-2 bg-black/30 rounded-2xl border border-white/5">
+      <div id="modalStatsGrid" class="grid grid-cols-3 gap-2 text-center py-2.5 rounded-2xl border">
         <div class="p-2">
-          <div class="text-[10px] uppercase font-bold text-slate-400">Boot</div>
+          <div class="text-[10px] uppercase font-bold text-slate-500">Boot</div>
           <div id="modalBoot" class="text-xs font-bold mt-0.5"></div>
         </div>
-        <div class="p-2 border-x border-white/10">
-          <div class="text-[10px] uppercase font-bold text-slate-400">Playable</div>
+        <div class="p-2 border-x border-slate-300/20">
+          <div class="text-[10px] uppercase font-bold text-slate-500">Playable</div>
           <div id="modalPlayable" class="text-xs font-bold mt-0.5"></div>
         </div>
         <div class="p-2">
-          <div class="text-[10px] uppercase font-bold text-slate-400">Core</div>
-          <div id="modalCore" class="text-xs font-mono font-bold mt-0.5 text-gc-400"></div>
+          <div class="text-[10px] uppercase font-bold text-slate-500">Core</div>
+          <div id="modalCore" class="text-xs font-mono font-bold mt-0.5"></div>
         </div>
       </div>
 
       <div>
-        <h4 class="text-xs uppercase font-bold text-slate-400 mb-1.5">Testing Notes &amp; Considerations</h4>
-        <p id="modalConsiderations" class="text-sm text-slate-300 bg-black/20 p-3.5 rounded-2xl border border-white/5 leading-relaxed italic"></p>
+        <h4 id="modalNotesHeader" class="text-xs uppercase font-bold text-slate-500 mb-1.5">Testing Notes &amp; Considerations</h4>
+        <p id="modalConsiderations" class="text-sm p-3.5 rounded-2xl border leading-relaxed italic"></p>
       </div>
 
-      <div class="flex justify-between items-center text-xs text-slate-500 pt-2 border-t border-white/10">
-        <span>Submitted by: <strong id="modalSource" class="text-gc-400 font-bold"></strong></span>
-        <span>Device: <strong id="modalDevice" class="text-slate-300"></strong></span>
+      <div id="modalFooter" class="flex justify-between items-center text-xs pt-2 border-t border-slate-300/20">
+        <span>Submitted by: <strong id="modalSource" class="font-bold"></strong></span>
+        <span>Device: <strong id="modalDevice" class="font-semibold"></strong></span>
       </div>
     </div>
   </div>
 
   <!-- FOOTER -->
-  <footer id="appFooter" class="border-t border-white/5 bg-black/20 mt-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-center text-xs text-slate-500">
+  <footer id="appFooter" class="border-t border-slate-300/20 bg-black/10 mt-10">
+    <div id="footerText" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-center text-xs text-slate-500 font-medium">
       Data sourced from community testing reports. SPDW Factory Universal Dashboard.
     </div>
   </footer>
 
   <script>
-    // CONFIG & STATE
-    let currentConsole = 'gc'; // 'gc' or 'wii'
+    let currentConsole = 'gc';
     let EMBEDDED_GAMES = [];
 
     const URLS = {
@@ -360,10 +357,12 @@
       return `https://flagcdn.com/w40/${code}.png`;
     }
 
-    // THEME SWITCHING SYSTEM
+    // SWITCHING DEL TEMA E DEL LOGO
     function switchConsole(targetConsole) {
       currentConsole = targetConsole;
 
+      const favicon = document.getElementById('favicon');
+      const consoleLogo = document.getElementById('consoleLogo');
       const appBody = document.getElementById('appBody');
       const appHeader = document.getElementById('appHeader');
       const btnGC = document.getElementById('btnConsoleGC');
@@ -379,20 +378,28 @@
       const totalEntriesAccent = document.getElementById('totalEntriesAccent');
       const filterPanel = document.getElementById('filterPanel');
       const clearFiltersBtn = document.getElementById('clearFiltersBtn');
-      const filterSelects = document.querySelectorAll('#filterPanel select, #filterPanel input');
-      const modalCard = document.getElementById('modalCard');
+      const filterSelects = document.querySelectorAll('#filterPanel select');
+      const searchInput = document.getElementById('searchInput');
+      const sortOrderBtn = document.getElementById('sortOrderBtn');
 
       if (targetConsole === 'gc') {
-        // Apply GC Dark Purple Theme
+        // Logo & Favicon
+        consoleLogo.src = 'assets/gamecube.svg';
+        consoleLogo.alt = 'GameCube Logo';
+        favicon.href = 'assets/gamecube.svg';
+
+        // Tema GC Dark
         appBody.className = "theme-gc font-sans antialiased transition-colors duration-300 min-h-screen";
         appHeader.className = "border-b sticky top-0 z-40 overflow-hidden shadow-sm transition-colors duration-300 border-purple-900/40 bg-gc-950/90 backdrop-blur";
         
         btnGC.className = "flex items-center gap-2 px-3.5 py-1.5 rounded-xl font-bold text-xs transition-all duration-200 bg-gc-600 text-white shadow-lg shadow-gc-900/50";
         btnWii.className = "flex items-center gap-2 px-3.5 py-1.5 rounded-xl font-bold text-xs transition-all duration-200 text-slate-400 hover:text-white";
 
+        title.className = "text-2xl text-white font-black tracking-tight transition-colors";
         subtitle.textContent = "GameCube Compatibility Dashboard";
-        subtitle.className = "text-lg font-bold text-gc-400 mt-0.5";
+        subtitle.className = "text-lg font-bold text-gc-400 mt-0.5 transition-colors";
         desc.textContent = "Community-driven testing database for GameCube emulation on muOS & H700 chipset";
+        desc.className = "text-xs italic text-slate-400 mt-1 transition-colors";
 
         spdwPanel.className = "gc-glass rounded-2xl p-3.5 shrink-0 w-full md:w-auto min-w-[250px] transition-all duration-300";
         spdwBrand.className = "flex items-center gap-1.5 font-black text-gc-400 tracking-wider text-xs uppercase";
@@ -406,61 +413,69 @@
         filterPanel.className = "gc-glass rounded-2xl p-3 flex flex-col md:flex-row gap-3 justify-center items-center max-w-4xl mx-auto w-full transition-colors duration-300";
         
         filterSelects.forEach(el => {
-          el.className = el.className.replace(/bg-white text-slate-\d+/g, 'bg-slate-950/60 text-slate-100');
+          el.className = "bg-slate-950/60 text-slate-100 border border-white/10 rounded-xl px-2.5 py-1.5 text-xs focus:outline-none focus:border-gc-500 transition-all";
         });
+        searchInput.className = "w-full bg-slate-950/60 text-slate-100 placeholder-slate-500 border border-white/10 rounded-xl pl-9 pr-4 py-1.5 text-xs focus:outline-none focus:border-gc-500 transition-all";
+        sortOrderBtn.className = "bg-slate-950/60 text-slate-200 border border-white/10 hover:border-white/30 px-2.5 py-1.5 rounded-xl text-xs flex items-center gap-1 transition-colors shadow-sm";
 
         clearFiltersBtn.className = "mt-3 px-3 py-1.5 bg-gc-600 text-white rounded-xl text-xs font-semibold hover:bg-gc-500 transition-colors shadow-sm";
-        modalCard.className = "bg-gc-950 border border-gc-700/80 rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl relative text-slate-100";
 
       } else {
-        // Apply Wii Light Theme
-        appBody.className = "theme-wii font-sans antialiased transition-colors duration-300 min-h-screen";
-        appHeader.className = "border-b sticky top-0 z-40 overflow-hidden shadow-sm transition-colors duration-300 border-slate-200/80 bg-white/80 backdrop-blur";
+        // Logo & Favicon
+        consoleLogo.src = 'assets/wii.svg';
+        consoleLogo.alt = 'Wii Logo';
+        favicon.href = 'assets/wii.svg';
+
+        // Tema Wii Light High-Contrast
+        appBody.className = "theme-wii font-sans antialiased transition-colors duration-300 min-h-screen text-slate-900";
+        appHeader.className = "border-b sticky top-0 z-40 overflow-hidden shadow-sm transition-colors duration-300 border-slate-300 bg-white/95 backdrop-blur";
 
         btnWii.className = "flex items-center gap-2 px-3.5 py-1.5 rounded-xl font-bold text-xs transition-all duration-200 bg-wii-500 text-white shadow-lg shadow-wii-500/30";
-        btnGC.className = "flex items-center gap-2 px-3.5 py-1.5 rounded-xl font-bold text-xs transition-all duration-200 text-slate-500 hover:text-slate-900";
+        btnGC.className = "flex items-center gap-2 px-3.5 py-1.5 rounded-xl font-bold text-xs transition-all duration-200 text-slate-600 hover:text-slate-900";
 
+        title.className = "text-2xl text-slate-900 font-black tracking-tight transition-colors";
         subtitle.textContent = "Wii Compatibility Dashboard";
-        subtitle.className = "text-lg font-bold text-wii-600 mt-0.5";
+        subtitle.className = "text-lg font-bold text-wii-700 mt-0.5 transition-colors";
         desc.textContent = "Community-driven testing database for Nintendo Wii emulation on muOS & H700 chipset";
+        desc.className = "text-xs italic text-slate-600 font-medium mt-1 transition-colors";
 
-        spdwPanel.className = "wii-glass border border-wii-300/60 rounded-2xl p-3.5 shadow-lg shadow-wii-500/10 shrink-0 w-full md:w-auto min-w-[250px] transition-all duration-300";
-        spdwBrand.className = "flex items-center gap-1.5 font-black text-wii-600 tracking-wider text-xs uppercase";
-        coreBadge.className = "text-[10px] font-mono px-2 py-0.5 rounded-full bg-wii-100 text-wii-700 border border-wii-300 font-bold";
+        spdwPanel.className = "wii-glass border border-slate-300 rounded-2xl p-3.5 shadow-md shrink-0 w-full md:w-auto min-w-[250px] transition-all duration-300";
+        spdwBrand.className = "flex items-center gap-1.5 font-black text-wii-800 tracking-wider text-xs uppercase";
+        coreBadge.className = "text-[10px] font-mono px-2 py-0.5 rounded-full bg-wii-100 text-wii-900 border border-wii-300 font-bold";
         coreBadge.textContent = "Core v10.0 SPDW";
 
-        statTestedBox.className = "text-xs font-black text-slate-700 bg-wii-50/80 border border-wii-200 rounded-xl px-3 py-1.5 flex justify-between items-center shadow-inner";
+        statTestedBox.className = "text-xs font-black text-slate-800 bg-wii-50 border border-wii-200 rounded-xl px-3 py-1.5 flex justify-between items-center shadow-inner";
         statTested.className = "bg-wii-500 text-white px-2.5 py-0.5 rounded-lg font-mono font-black text-base shadow-sm";
-        totalEntriesAccent.className = "text-wii-600";
+        totalEntriesAccent.className = "text-wii-700 font-bold";
 
-        filterPanel.className = "wii-glass border border-slate-200/80 rounded-2xl p-3 flex flex-col md:flex-row gap-3 justify-center items-center shadow-sm max-w-4xl mx-auto w-full transition-colors duration-300";
+        filterPanel.className = "wii-glass border border-slate-300 rounded-2xl p-3 flex flex-col md:flex-row gap-3 justify-center items-center shadow-sm max-w-4xl mx-auto w-full transition-colors duration-300";
 
         filterSelects.forEach(el => {
-          el.className = el.className.replace(/bg-slate-950\/60 text-slate-100/g, 'bg-white text-slate-800');
+          el.className = "bg-white text-slate-900 border border-slate-300 rounded-xl px-2.5 py-1.5 text-xs font-semibold focus:outline-none focus:border-wii-500 transition-all";
         });
+        searchInput.className = "w-full bg-white text-slate-900 placeholder-slate-400 border border-slate-300 rounded-xl pl-9 pr-4 py-1.5 text-xs font-semibold focus:outline-none focus:border-wii-500 transition-all";
+        sortOrderBtn.className = "bg-white text-slate-800 border border-slate-300 hover:border-slate-400 px-2.5 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1 transition-colors shadow-sm";
 
         clearFiltersBtn.className = "mt-3 px-3 py-1.5 bg-wii-500 text-white rounded-xl text-xs font-semibold hover:bg-wii-600 transition-colors shadow-sm";
-        modalCard.className = "bg-white border border-slate-200 rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl relative text-slate-800";
       }
 
-      // Re-fetch dataset for switched console
       loadConsoleData();
     }
 
     function renderStars(rating) {
       const starColors = {
-        5: 'text-emerald-400',
-        4: 'text-teal-400',
-        3: 'text-amber-400',
-        2: 'text-orange-400',
-        1: 'text-rose-400',
-        0: 'text-slate-600'
+        5: 'text-emerald-500',
+        4: 'text-teal-500',
+        3: 'text-amber-500',
+        2: 'text-orange-500',
+        1: 'text-rose-500',
+        0: 'text-slate-400'
       };
-      const colorClass = starColors[rating] || 'text-amber-400';
+      const colorClass = starColors[rating] || 'text-amber-500';
 
       let html = '<div class="flex items-center gap-0.5" title="' + rating + ' out of 5 stars">';
       for (let i = 1; i <= 5; i++) {
-        const opacity = i <= rating ? 'fill-current ' + colorClass : 'fill-slate-800 text-slate-700';
+        const opacity = i <= rating ? 'fill-current ' + colorClass : 'fill-slate-300 text-slate-300 dark:fill-slate-800 dark:text-slate-800';
         html += `<svg class="w-3.5 h-3.5 ${opacity}" viewBox="0 0 20 20">
           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/>
         </svg>`;
@@ -483,12 +498,12 @@
         if (rating >= 1) return 'bg-rose-950/80 text-rose-400 border-rose-800/60';
         return 'bg-slate-900 text-slate-400 border-slate-700';
       } else {
-        if (rating === 5) return 'bg-emerald-100 text-emerald-700 border-emerald-300';
-        if (rating === 4) return 'bg-teal-100 text-teal-700 border-teal-300';
-        if (rating === 3) return 'bg-amber-100 text-amber-700 border-amber-300';
-        if (rating === 2) return 'bg-orange-100 text-orange-700 border-orange-300';
-        if (rating >= 1) return 'bg-rose-100 text-rose-700 border-rose-300';
-        return 'bg-slate-100 text-slate-500 border-slate-300';
+        if (rating === 5) return 'bg-emerald-100 text-emerald-800 border-emerald-300';
+        if (rating === 4) return 'bg-teal-100 text-teal-800 border-teal-300';
+        if (rating === 3) return 'bg-amber-100 text-amber-800 border-amber-300';
+        if (rating === 2) return 'bg-orange-100 text-orange-800 border-orange-300';
+        if (rating >= 1) return 'bg-rose-100 text-rose-800 border-rose-300';
+        return 'bg-slate-100 text-slate-700 border-slate-300';
       }
     }
 
@@ -514,7 +529,6 @@
     const resetFiltersBtn = document.getElementById('resetFiltersBtn');
     const clearFiltersBtn = document.getElementById('clearFiltersBtn');
 
-    // UPDATE STATS & RATING PANEL COUNTS
     function updateStats() {
       const totalEntries = EMBEDDED_GAMES.length;
       const uniqueGamesCount = new Set(EMBEDDED_GAMES.map(g => (g.game || '').trim().toLowerCase())).size;
@@ -538,48 +552,46 @@
       document.getElementById('count-1').textContent = counts[1];
     }
 
-    // COMPACT LIST ROW BUILDER
+    // COMPACT LIST ROW BUILDER CON CONTRASTO PER TEMA
     function createListRow(game, index) {
       const flagUrl = getFlagUrl(game.region);
       const isGC = currentConsole === 'gc';
 
       const bootBadgeClass = game.boot === 'YES' 
-        ? (isGC ? 'text-emerald-400 bg-emerald-950/50 border-emerald-800/50' : 'text-emerald-700 bg-emerald-100 border-emerald-300')
-        : (isGC ? 'text-rose-400 bg-rose-950/50 border-rose-800/50' : 'text-rose-700 bg-rose-100 border-rose-300');
+        ? (isGC ? 'text-emerald-400 bg-emerald-950/50 border-emerald-800/50' : 'text-emerald-800 bg-emerald-100 border-emerald-300 font-bold')
+        : (isGC ? 'text-rose-400 bg-rose-950/50 border-rose-800/50' : 'text-rose-800 bg-rose-100 border-rose-300 font-bold');
 
       const cardClass = isGC 
         ? 'gc-glass border border-white/10 hover:border-gc-500/50 hover:bg-gc-900/40 text-slate-100'
-        : 'wii-glass border border-slate-200/80 hover:border-wii-400 hover:shadow-md text-slate-800';
+        : 'wii-glass border border-slate-300 hover:border-wii-400 hover:bg-wii-50/60 text-slate-900 shadow-sm';
 
-      const accentHoverText = isGC ? 'group-hover:text-gc-400' : 'group-hover:text-wii-600';
-      const fpsBadgeClass = isGC ? 'bg-black/40 text-gc-300 border-white/10' : 'bg-wii-50 text-wii-700 border-wii-200';
+      const titleTextClass = isGC ? 'text-slate-100 group-hover:text-gc-400' : 'text-slate-900 group-hover:text-wii-600 font-bold';
+      const fpsBadgeClass = isGC ? 'bg-black/40 text-gc-300 border-white/10' : 'bg-wii-100 text-wii-900 border-wii-300 font-bold';
 
       const delay = Math.min(index * 12, 180);
 
       return `
         <div class="card-anim rounded-2xl py-2.5 px-3.5 flex items-center justify-between gap-3 transition-all duration-200 cursor-pointer group shadow-sm ${cardClass}" style="animation-delay: ${delay}ms;" onclick="openGameModal(${index})">
           
-          <!-- Title & Region Flag -->
           <div class="flex items-center gap-3 min-w-0 flex-1">
-            <img src="${flagUrl}" alt="${game.region}" class="w-5 h-3.5 object-cover rounded border border-white/10 shrink-0">
-            <h3 class="font-bold text-sm truncate transition-colors ${accentHoverText}">${escapeHtml(game.game)}</h3>
+            <img src="${flagUrl}" alt="${game.region}" class="w-5 h-3.5 object-cover rounded border border-slate-400/30 shrink-0">
+            <h3 class="text-sm truncate transition-colors ${titleTextClass}">${escapeHtml(game.game)}</h3>
           </div>
 
-          <!-- Rating Stars, FPS, Boot status -->
           <div class="flex items-center gap-3 shrink-0">
             <div class="hidden sm:block">
               ${renderStars(game.rating)}
             </div>
 
-            <span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded-lg border ${fpsBadgeClass}">
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded-lg border ${fpsBadgeClass}">
               ${game.fps !== "???" ? game.fps + " FPS" : "N/A"}
             </span>
 
-            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full border ${bootBadgeClass}">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full border ${bootBadgeClass}">
               ${game.boot === 'YES' ? 'Boot' : 'No Boot'}
             </span>
 
-            <svg class="w-4 h-4 text-slate-500 ${accentHoverText} group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            <svg class="w-4 h-4 text-slate-400 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </div>
         </div>
       `;
@@ -589,6 +601,30 @@
     function openGameModal(filteredIndex) {
       const game = currentFilteredGames[filteredIndex];
       if (!game) return;
+
+      const isGC = currentConsole === 'gc';
+      const modalCard = document.getElementById('modalCard');
+
+      // Modifica stile modale a seconda del tema
+      if (isGC) {
+        modalCard.className = "bg-gc-950 border border-gc-700/80 rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl relative text-slate-100";
+        document.getElementById('modalTitle').className = "text-xl font-bold text-white leading-tight";
+        document.getElementById('modalFps').className = "text-xs font-mono px-2.5 py-0.5 rounded bg-black/40 text-gc-300 border border-white/10 font-bold";
+        document.getElementById('modalStatsGrid').className = "grid grid-cols-3 gap-2 text-center py-2.5 bg-black/30 rounded-2xl border border-white/10 text-slate-200";
+        document.getElementById('modalCore').className = "text-xs font-mono font-bold mt-0.5 text-gc-400";
+        document.getElementById('modalConsiderations').className = "text-sm text-slate-300 bg-black/20 p-3.5 rounded-2xl border border-white/10 leading-relaxed italic";
+        document.getElementById('modalSource').className = "text-gc-400 font-bold";
+        document.getElementById('modalDevice').className = "text-slate-300 font-semibold";
+      } else {
+        modalCard.className = "bg-white border border-slate-300 rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl relative text-slate-900";
+        document.getElementById('modalTitle').className = "text-xl font-bold text-slate-900 leading-tight";
+        document.getElementById('modalFps').className = "text-xs font-mono px-2.5 py-0.5 rounded bg-wii-100 text-wii-900 border border-wii-300 font-bold";
+        document.getElementById('modalStatsGrid').className = "grid grid-cols-3 gap-2 text-center py-2.5 bg-slate-50 rounded-2xl border border-slate-200 text-slate-800";
+        document.getElementById('modalCore').className = "text-xs font-mono font-bold mt-0.5 text-wii-700";
+        document.getElementById('modalConsiderations').className = "text-sm text-slate-800 bg-slate-50 p-3.5 rounded-2xl border border-slate-200 leading-relaxed italic font-medium";
+        document.getElementById('modalSource').className = "text-wii-700 font-bold";
+        document.getElementById('modalDevice').className = "text-slate-800 font-semibold";
+      }
 
       document.getElementById('modalTitle').textContent = game.game;
       document.getElementById('modalFlag').src = getFlagUrl(game.region);
@@ -602,15 +638,13 @@
       
       const bootEl = document.getElementById('modalBoot');
       bootEl.textContent = game.boot === 'YES' ? 'Boots' : 'No Boot';
-      bootEl.className = game.boot === 'YES' 
-        ? 'text-xs font-bold text-emerald-400 mt-0.5' 
-        : 'text-xs font-bold text-rose-400 mt-0.5';
+      bootEl.className = game.boot === 'YES' ? 'text-xs font-bold text-emerald-600 mt-0.5' : 'text-xs font-bold text-rose-600 mt-0.5';
 
       const playableEl = document.getElementById('modalPlayable');
       playableEl.textContent = game.playable === 'YES' ? 'Playable' : 'Unplayable';
       playableEl.className = game.playable === 'YES' 
-        ? (currentConsole === 'gc' ? 'text-xs font-bold text-gc-400 mt-0.5' : 'text-xs font-bold text-wii-600 mt-0.5')
-        : 'text-xs font-bold text-rose-400 mt-0.5';
+        ? (isGC ? 'text-xs font-bold text-gc-400 mt-0.5' : 'text-xs font-bold text-wii-600 mt-0.5')
+        : 'text-xs font-bold text-rose-600 mt-0.5';
 
       document.getElementById('modalCore').textContent = game.core || 'Default Core';
       document.getElementById('modalConsiderations').textContent = game.considerations || 'No additional testing notes provided for this report.';
@@ -634,7 +668,6 @@
 
     // RENDER LOGIC
     function render() {
-      // Rating panels selection UI
       document.querySelectorAll('.rating-panel').forEach(panel => {
         const ratingAttr = panel.getAttribute('data-rating');
         const activeRingClass = currentConsole === 'gc' ? 'ring-gc-500' : 'ring-wii-500';
@@ -703,7 +736,7 @@
       }
     }
 
-    // EVENT LISTENERS
+    // LISTENERS
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value.toLowerCase().trim();
       render();
@@ -766,28 +799,40 @@
     resetFiltersBtn.addEventListener('click', resetAllFilters);
     clearFiltersBtn.addEventListener('click', resetAllFilters);
 
-    // FETCH DATASET ACCORDING TO ACTIVE CONSOLE
     async function loadConsoleData() {
       EMBEDDED_GAMES = [];
       const primaryUrl = URLS[currentConsole];
       const fallbackUrl = currentConsole === 'gc' ? URLS.gc_fallback : null;
+
+      if (window.location.protocol === 'file:') {
+        document.getElementById('emptyStateText').innerHTML = 
+          `<strong class="text-rose-500">Errore CORS Locale:</strong> Impossibile caricare i file JSON tramite protocollo file://.<br>Avvia un server locale (es. <code class="bg-black/20 px-1.5 py-0.5 rounded font-mono">python3 -m http.server 8000</code>).`;
+        document.getElementById('emptyState').classList.remove('hidden');
+        updateStats();
+        render();
+        return;
+      }
 
       try {
         let response = await fetch(primaryUrl);
         if (!response.ok && fallbackUrl) {
           response = await fetch(fallbackUrl);
         }
-        if (!response.ok) throw new Error(`HTTP Error status: ${response.status}`);
+        if (!response.ok) throw new Error(`HTTP Status ${response.status}`);
+        
         EMBEDDED_GAMES = await response.json();
+        document.getElementById('emptyStateText').textContent = "No games found matching the current filters.";
       } catch (err) {
         console.error(`Error loading data for ${currentConsole}:`, err);
+        document.getElementById('emptyStateText').innerHTML = 
+          `<strong class="text-rose-500">Errore caricamento file JSON (${currentConsole.toUpperCase()}):</strong><br>Verifica che il file <code class="bg-black/20 px-1 py-0.5 rounded font-mono">${primaryUrl}</code> esista e sia un JSON valido.`;
+        document.getElementById('emptyState').classList.remove('hidden');
       } finally {
         updateStats();
         render();
       }
     }
 
-    // INITIALIZATION
     loadConsoleData();
   </script>
 </body>
