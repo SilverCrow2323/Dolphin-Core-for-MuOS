@@ -23,7 +23,7 @@
               200: '#bae6fd',
               300: '#7dd3fc',
               400: '#38bdf8',
-              500: '#00a3e0', // Iconico Azzurro Wii
+              500: '#00a3e0', // Azzurro Wii
               600: '#0284c7',
               700: '#0369a1',
               800: '#075985',
@@ -35,7 +35,7 @@
               200: '#ddd6fe',
               300: '#c4b5fd',
               400: '#a78bfa',
-              500: '#8b5cf6', // GameCube Indigo Violet
+              500: '#8b5cf6', // GameCube Indigo
               600: '#7c3aed',
               700: '#6d28d9',
               800: '#5b21b6',
@@ -50,7 +50,6 @@
   <style>
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     
-    /* Dynamic theme styles */
     body.theme-gc {
       background: linear-gradient(135deg, #090511 0%, #160b24 50%, #0d0716 100%);
       color: #f1f5f9;
@@ -132,7 +131,6 @@
           </div>
 
           <div>
-            <!-- LOGO ED INTESTAZIONE -->
             <h1 class="font-black tracking-tight flex items-center gap-3">
               <img id="consoleLogo" src="assets/gamecube.svg" alt="Console Logo" class="w-7 h-7 object-contain shrink-0">
               <span id="dashboardTitle" class="text-2xl text-white transition-colors">Dolphin Core for MuOS</span>
@@ -219,7 +217,6 @@
 
     <!-- 5 INTERACTIVE RATING PANELS -->
     <div class="grid grid-cols-5 gap-2 max-w-4xl mx-auto w-full">
-      <!-- 5 Stars Panel -->
       <button data-rating="5" class="rating-panel gc-glass border border-emerald-500/30 hover:border-emerald-500/70 p-2 rounded-2xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer shadow-sm">
         <div class="space-y-0.5 min-w-0">
           <div class="flex items-center gap-1 text-emerald-500 font-bold text-xs">
@@ -231,7 +228,6 @@
         <span id="count-5" class="bg-emerald-950/80 text-emerald-400 border border-emerald-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
       </button>
 
-      <!-- 4 Stars Panel -->
       <button data-rating="4" class="rating-panel gc-glass border border-teal-500/30 hover:border-teal-500/70 p-2 rounded-2xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer shadow-sm">
         <div class="space-y-0.5 min-w-0">
           <div class="flex items-center gap-1 text-teal-500 font-bold text-xs">
@@ -243,7 +239,6 @@
         <span id="count-4" class="bg-teal-950/80 text-teal-400 border border-teal-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
       </button>
 
-      <!-- 3 Stars Panel -->
       <button data-rating="3" class="rating-panel gc-glass border border-amber-500/30 hover:border-amber-500/70 p-2 rounded-2xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer shadow-sm">
         <div class="space-y-0.5 min-w-0">
           <div class="flex items-center gap-1 text-amber-500 font-bold text-xs">
@@ -255,7 +250,6 @@
         <span id="count-3" class="bg-amber-950/80 text-amber-400 border border-amber-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
       </button>
 
-      <!-- 2 Stars Panel -->
       <button data-rating="2" class="rating-panel gc-glass border border-orange-500/30 hover:border-orange-500/70 p-2 rounded-2xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer shadow-sm">
         <div class="space-y-0.5 min-w-0">
           <div class="flex items-center gap-1 text-orange-500 font-bold text-xs">
@@ -267,7 +261,6 @@
         <span id="count-2" class="bg-orange-950/80 text-orange-400 border border-orange-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
       </button>
 
-      <!-- 1 & 0 Star Panel -->
       <button data-rating="1" class="rating-panel gc-glass border border-rose-500/30 hover:border-rose-500/70 p-2 rounded-2xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer shadow-sm">
         <div class="space-y-0.5 min-w-0">
           <div class="flex items-center gap-1 text-rose-500 font-bold text-xs">
@@ -364,7 +357,6 @@
       return `https://flagcdn.com/w40/${code}.png`;
     }
 
-    // SWITCHING DEL TEMA E DEL LOGO
     function switchConsole(targetConsole) {
       currentConsole = targetConsole;
 
@@ -389,11 +381,9 @@
       const sortOrderBtn = document.getElementById('sortOrderBtn');
 
       if (targetConsole === 'gc') {
-        // Logo Console
         consoleLogo.src = 'assets/gamecube.svg';
         consoleLogo.alt = 'GameCube Logo';
 
-        // Tema GC Dark
         appBody.className = "theme-gc font-sans antialiased transition-colors duration-300 min-h-screen";
         appHeader.className = "border-b sticky top-0 z-40 overflow-hidden shadow-sm transition-colors duration-300 border-purple-900/40 bg-gc-950/90 backdrop-blur";
         
@@ -426,11 +416,9 @@
         clearFiltersBtn.className = "mt-3 px-3 py-1.5 bg-gc-600 text-white rounded-xl text-xs font-semibold hover:bg-gc-500 transition-colors shadow-sm";
 
       } else {
-        // Logo Console
         consoleLogo.src = 'assets/wii.svg';
         consoleLogo.alt = 'Wii Logo';
 
-        // Tema Wii Light High-Contrast
         appBody.className = "theme-wii font-sans antialiased transition-colors duration-300 min-h-screen text-slate-900";
         appHeader.className = "border-b sticky top-0 z-40 overflow-hidden shadow-sm transition-colors duration-300 border-slate-300 bg-white/95 backdrop-blur";
 
@@ -556,7 +544,6 @@
       document.getElementById('count-1').textContent = counts[1];
     }
 
-    // COMPACT LIST ROW BUILDER
     function createListRow(game, index) {
       const flagUrl = getFlagUrl(game.region);
       const isGC = currentConsole === 'gc';
@@ -601,7 +588,6 @@
       `;
     }
 
-    // MODAL HANDLERS
     function openGameModal(filteredIndex) {
       const game = currentFilteredGames[filteredIndex];
       if (!game) return;
@@ -669,7 +655,6 @@
       if (e.key === 'Escape') closeModal();
     });
 
-    // RENDER LOGIC
     function render() {
       document.querySelectorAll('.rating-panel').forEach(panel => {
         const ratingAttr = panel.getAttribute('data-rating');
@@ -739,7 +724,6 @@
       }
     }
 
-    // LISTENERS
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value.toLowerCase().trim();
       render();
@@ -830,7 +814,7 @@
         document.getElementById('emptyStateText').innerHTML = 
           `<strong class="text-rose-500">Errore caricamento file JSON (${currentConsole.toUpperCase()}):</strong><br>Verifica che il file <code class="bg-black/20 px-1 py-0.5 rounded font-mono">${primaryUrl}</code> esista e sia un JSON valido.`;
         document.getElementById('emptyState').classList.remove('hidden');
-      } font-medium {
+      } finally {
         updateStats();
         render();
       }
