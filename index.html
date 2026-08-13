@@ -19,150 +19,254 @@
     }
   </script>
   <style>
-    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: #020617; }
     ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #334155; }
     .gc-logo { filter: invert(1) brightness(2); }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
+      from { opacity: 0; transform: translateY(4px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .card-anim {
-      animation: fadeIn 0.35s ease-out forwards;
+      animation: fadeIn 0.18s ease-out forwards;
       opacity: 0;
     }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased selection:bg-sky-500 selection:text-white">
 
-  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50 relative overflow-hidden">
-    <div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-10 md:opacity-20 md:right-12 pointer-events-none z-0">
-      <img src="https://static.wikia.nocookie.net/logopedia/images/a/af/Nintendo_Dolphin_1999.svg/revision/latest/scale-to-width-down/1000?cb=20250924091928" alt="Project Dolphin" class="h-32 md:h-44 w-auto drop-shadow-xl">
+  <!-- HEADER -->
+  <header class="border-b border-slate-800/80 bg-slate-900/90 backdrop-blur sticky top-0 z-40 overflow-hidden">
+    <div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-10 pointer-events-none z-0">
+      <img src="https://static.wikia.nocookie.net/logopedia/images/a/af/Nintendo_Dolphin_1999.svg/revision/latest/scale-to-width-down/1000?cb=20250924091928" alt="Project Dolphin" class="h-32 md:h-40 w-auto">
     </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 relative z-10">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        
+        <!-- TITLE -->
         <div>
           <h1 class="font-black tracking-tight text-white flex flex-col gap-1">
             <div class="text-2xl flex items-center gap-3">
               <img src="https://static.wikia.nocookie.net/logopedia/images/2/2a/Nintendo_GameCube_Symbol.svg/revision/latest?cb=20230422004205" alt="GameCube" class="h-7 w-7 gc-logo">
               <span>Dolphin Core for MuOS</span>
-              <span class="text-xs font-mono font-normal px-2.5 py-1 rounded-full bg-sky-950 text-sky-400 border border-sky-800">Core v10.5.300</span>
             </div>
-            <div class="text-xl text-slate-200 flex items-center gap-2 mt-0.5">
-              <span>GameCube Compatibility Dashboard</span>
+            <div class="text-lg text-slate-300 font-medium mt-0.5">
+              GameCube Compatibility Dashboard
             </div>
           </h1>
           <p class="text-xs italic text-slate-400 mt-1">
             Community-driven testing database for GameCube emulation on muOS &amp; H700 chipset
           </p>
         </div>
-        <div class="grid grid-cols-4 gap-2 sm:gap-3 text-center shrink-0">
-          <div class="bg-slate-800/60 border border-slate-700/50 rounded-lg p-2">
-            <div class="text-[10px] uppercase font-semibold text-slate-400">Total</div>
-            <div id="statTotal" class="text-base font-bold font-mono text-slate-100">0</div>
+        
+        <!-- SPDW FACTORY PANEL -->
+        <div class="bg-gradient-to-r from-sky-950/80 to-slate-900 border border-sky-500/40 rounded-xl p-3.5 shadow-lg shadow-sky-950/20 shrink-0 w-full md:w-auto min-w-[250px]">
+          <div class="flex items-center justify-between gap-3 mb-2 pb-1.5 border-b border-slate-800">
+            <div class="flex items-center gap-1.5 font-black text-sky-400 tracking-wider text-xs uppercase">
+              <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+              SPDW Factory
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-sky-950 text-sky-300 border border-sky-800/60 font-semibold">Core v10.5.300</span>
           </div>
-          <div class="bg-emerald-950/40 border border-emerald-800/50 rounded-lg p-2">
-            <div class="text-[10px] uppercase font-semibold text-emerald-400">Perfect (5&#9733;)</div>
-            <div id="statPerfect" class="text-base font-bold font-mono text-emerald-400">0</div>
-          </div>
-          <div class="bg-amber-950/40 border border-amber-800/50 rounded-lg p-2">
-            <div class="text-[10px] uppercase font-semibold text-amber-400">Playable (3-4&#9733;)</div>
-            <div id="statPlayable" class="text-base font-bold font-mono text-amber-400">0</div>
-          </div>
-          <div class="bg-red-950/40 border border-red-800/50 rounded-lg p-2">
-            <div class="text-[10px] uppercase font-semibold text-red-400">Unplayable (0-2&#9733;)</div>
-            <div id="statKO" class="text-base font-bold font-mono text-red-400">0</div>
+          <div class="space-y-2">
+            <!-- HIGHLIGHTED & ENLARGED TESTED GAMES COUNTER -->
+            <div class="text-xs font-black text-white bg-sky-950/80 border border-sky-500/50 rounded-lg px-3 py-1.5 flex justify-between items-center shadow-inner">
+              <span class="tracking-wider uppercase">TESTED GAMES:</span>
+              <span id="statTested" class="bg-sky-500 text-slate-950 px-2.5 py-0.5 rounded font-mono font-black text-base shadow">0</span>
+            </div>
+            <div class="text-xs text-slate-400 font-mono flex justify-between items-center px-1">
+              <span><strong class="text-sky-500">##</strong> Total Entries:</span>
+              <span id="statTotal" class="text-slate-200 font-bold">0</span>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
-    <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 flex flex-col xl:flex-row gap-4 justify-between items-center shadow-md">
-      <div class="relative w-full xl:w-80 flex-shrink-0">
-        <input type="text" id="searchInput" placeholder="Search for a game..." 
-          class="w-full bg-slate-950 text-slate-200 placeholder-slate-500 border border-slate-700 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:border-sky-500 transition-colors">
-        <svg class="w-4 h-4 text-slate-500 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <!-- MAIN CONTENT -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-4">
+    
+    <!-- CONTROLS & FILTERS (CENTERED) -->
+    <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-3 flex flex-col md:flex-row gap-3 justify-center items-center shadow-md max-w-4xl mx-auto w-full">
+      <div class="relative w-full md:w-64 shrink-0">
+        <input type="text" id="searchInput" placeholder="Search game title..." 
+          class="w-full bg-slate-950 text-slate-200 placeholder-slate-500 border border-slate-800 rounded-lg pl-9 pr-4 py-1.5 text-xs focus:outline-none focus:border-sky-500 transition-colors">
+        <svg class="w-4 h-4 text-slate-500 absolute left-2.5 top-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
         </svg>
       </div>
-      <div class="flex flex-wrap items-center gap-3 w-full xl:w-auto">
-        <select id="starsFilter" class="bg-slate-950 text-slate-300 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-sky-500">
-          <option value="all">Rating: All</option>
-          <option value="5">5&#9733; Perfect</option>
-          <option value="4">4&#9733; Playable with minor issues</option>
-          <option value="3">3&#9733; Playable with patience</option>
-          <option value="2">2&#9733; Disaster but boots</option>
-          <option value="1">1&#9733; Better avoid</option>
-          <option value="0">0&#9733; Does not boot</option>
-        </select>
-        <select id="regionFilter" class="bg-slate-950 text-slate-300 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-sky-500">
+
+      <div class="flex flex-wrap items-center justify-center gap-2">
+        <select id="regionFilter" class="bg-slate-950 text-slate-300 border border-slate-800 rounded-lg px-2.5 py-1.5 text-xs focus:outline-none focus:border-sky-500">
           <option value="all">Region: All</option>
           <option value="PAL">PAL</option>
           <option value="NTSC">NTSC / USA</option>
           <option value="JPN">JPN</option>
         </select>
-        <select id="bootFilter" class="bg-slate-950 text-slate-300 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-sky-500">
+
+        <select id="bootFilter" class="bg-slate-950 text-slate-300 border border-slate-800 rounded-lg px-2.5 py-1.5 text-xs focus:outline-none focus:border-sky-500">
           <option value="all">Boot: All</option>
-          <option value="YES">Boots</option>
-          <option value="NO">Does not boot</option>
+          <option value="YES">Boots (YES)</option>
+          <option value="NO">Won't Boot (NO)</option>
         </select>
-        <select id="sortKey" class="bg-slate-950 text-slate-300 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-sky-500">
+
+        <select id="sortKey" class="bg-slate-950 text-slate-300 border border-slate-800 rounded-lg px-2.5 py-1.5 text-xs focus:outline-none focus:border-sky-500">
           <option value="title">Sort: Title</option>
           <option value="rating">Sort: Rating</option>
           <option value="fps">Sort: FPS</option>
         </select>
-        <button id="sortOrderBtn" class="bg-slate-950 text-slate-300 border border-slate-700 hover:border-slate-500 px-3 py-2 rounded-lg text-sm flex items-center gap-1.5 transition-colors">
+
+        <button id="sortOrderBtn" class="bg-slate-950 text-slate-300 border border-slate-800 hover:border-slate-600 px-2.5 py-1.5 rounded-lg text-xs flex items-center gap-1 transition-colors">
           <span id="sortOrderLabel">Asc</span>
-          <svg id="sortOrderIcon" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg id="sortOrderIcon" class="w-3.5 h-3.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
           </svg>
         </button>
-        <button id="resetFiltersBtn" class="bg-rose-950/30 text-rose-400 border border-rose-900/50 hover:bg-rose-900/40 hover:text-rose-300 px-3 py-2 rounded-lg text-sm font-medium transition-colors hidden lg:block">
-          Reset
+
+        <button id="resetFiltersBtn" class="bg-rose-950/30 text-rose-400 border border-rose-900/40 hover:bg-rose-900/40 px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors">
+          Reset Filters
         </button>
-        <div class="flex bg-slate-950 p-1 rounded-lg border border-slate-700 ml-auto xl:ml-0">
-          <button id="viewGridBtn" class="px-2.5 py-1 rounded-md text-xs font-semibold flex items-center gap-1 bg-sky-600 text-white transition-all">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
-            Grid
-          </button>
-          <button id="viewListBtn" class="px-2.5 py-1 rounded-md text-xs font-semibold flex items-center gap-1 text-slate-400 hover:text-slate-200 transition-all">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            List
-          </button>
-        </div>
       </div>
     </div>
 
-    <div id="gamesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>
-    <div id="emptyState" class="hidden text-center py-16 bg-slate-900/30 border border-dashed border-slate-800 rounded-2xl">
-      <svg class="w-12 h-12 text-slate-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <!-- 5 INTERACTIVE RATING PANELS (CENTERED & SINGLE ROW) -->
+    <div class="grid grid-cols-5 gap-2 max-w-4xl mx-auto w-full">
+      <!-- 5 Stars Panel -->
+      <button data-rating="5" class="rating-panel bg-slate-900/80 border border-emerald-500/30 hover:border-emerald-500/70 hover:bg-emerald-950/30 p-2 rounded-xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer">
+        <div class="space-y-0.5 min-w-0">
+          <div class="flex items-center gap-1 text-emerald-400 font-bold text-xs">
+            <span>5&#9733;</span>
+            <span class="text-[9px] uppercase tracking-wider font-semibold opacity-90 truncate hidden sm:inline">Perfect</span>
+          </div>
+          <div class="text-[10px] text-slate-400 truncate hidden md:block">Full Speed</div>
+        </div>
+        <span id="count-5" class="bg-emerald-950 text-emerald-400 border border-emerald-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
+      </button>
+
+      <!-- 4 Stars Panel -->
+      <button data-rating="4" class="rating-panel bg-slate-900/80 border border-teal-500/30 hover:border-teal-500/70 hover:bg-teal-950/30 p-2 rounded-xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer">
+        <div class="space-y-0.5 min-w-0">
+          <div class="flex items-center gap-1 text-teal-400 font-bold text-xs">
+            <span>4&#9733;</span>
+            <span class="text-[9px] uppercase tracking-wider font-semibold opacity-90 truncate hidden sm:inline">Great</span>
+          </div>
+          <div class="text-[10px] text-slate-400 truncate hidden md:block">Minor Issues</div>
+        </div>
+        <span id="count-4" class="bg-teal-950 text-teal-400 border border-teal-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
+      </button>
+
+      <!-- 3 Stars Panel -->
+      <button data-rating="3" class="rating-panel bg-slate-900/80 border border-amber-500/30 hover:border-amber-500/70 hover:bg-amber-950/30 p-2 rounded-xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer">
+        <div class="space-y-0.5 min-w-0">
+          <div class="flex items-center gap-1 text-amber-400 font-bold text-xs">
+            <span>3&#9733;</span>
+            <span class="text-[9px] uppercase tracking-wider font-semibold opacity-90 truncate hidden sm:inline">Playable</span>
+          </div>
+          <div class="text-[10px] text-slate-400 truncate hidden md:block">Needs Tweaks</div>
+        </div>
+        <span id="count-3" class="bg-amber-950 text-amber-400 border border-amber-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
+      </button>
+
+      <!-- 2 Stars Panel -->
+      <button data-rating="2" class="rating-panel bg-slate-900/80 border border-orange-500/30 hover:border-orange-500/70 hover:bg-orange-950/30 p-2 rounded-xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer">
+        <div class="space-y-0.5 min-w-0">
+          <div class="flex items-center gap-1 text-orange-400 font-bold text-xs">
+            <span>2&#9733;</span>
+            <span class="text-[9px] uppercase tracking-wider font-semibold opacity-90 truncate hidden sm:inline">Poor</span>
+          </div>
+          <div class="text-[10px] text-slate-400 truncate hidden md:block">Slow</div>
+        </div>
+        <span id="count-2" class="bg-orange-950 text-orange-400 border border-orange-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
+      </button>
+
+      <!-- 1 & 0 Star Panel -->
+      <button data-rating="1" class="rating-panel bg-slate-900/80 border border-rose-500/30 hover:border-rose-500/70 hover:bg-rose-950/30 p-2 rounded-xl flex items-center justify-between transition-all duration-200 text-left group cursor-pointer">
+        <div class="space-y-0.5 min-w-0">
+          <div class="flex items-center gap-1 text-rose-400 font-bold text-xs">
+            <span>1-0&#9733;</span>
+            <span class="text-[9px] uppercase tracking-wider font-semibold opacity-90 truncate hidden sm:inline">Bad</span>
+          </div>
+          <div class="text-[10px] text-slate-400 truncate hidden md:block">No Boot</div>
+        </div>
+        <span id="count-1" class="bg-rose-950 text-rose-400 border border-rose-700/60 font-mono font-bold text-xs px-2 py-0.5 rounded-lg shrink-0">0</span>
+      </button>
+    </div>
+
+    <!-- COMPACT LIST CONTAINER -->
+    <div id="gamesContainer" class="flex flex-col gap-2"></div>
+
+    <!-- EMPTY STATE -->
+    <div id="emptyState" class="hidden text-center py-12 bg-slate-900/30 border border-dashed border-slate-800 rounded-xl">
+      <svg class="w-10 h-10 text-slate-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
       </svg>
-      <p id="emptyStateText" class="text-slate-400 font-medium">No games found with the current filters.</p>
-      <button onclick="document.getElementById('resetFiltersBtn').click()" class="mt-4 px-4 py-2 bg-sky-600 text-white rounded-lg text-sm font-medium hover:bg-sky-500 transition-colors">
-        Clear all filters
+      <p id="emptyStateText" class="text-slate-400 text-xs font-medium">No games found matching the current filters.</p>
+      <button id="clearFiltersBtn" class="mt-3 px-3 py-1.5 bg-sky-600 text-white rounded-lg text-xs font-medium hover:bg-sky-500 transition-colors">
+        Clear Filters
       </button>
     </div>
   </main>
 
-  <footer class="border-t border-slate-800 bg-slate-900/50 mt-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-xs text-slate-500">
-      Data sourced from community testing reports. Compatibility may vary by device and core version.
+  <!-- MODAL FOR DETAILED VIEW -->
+  <div id="gameModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm hidden">
+    <div class="bg-slate-900 border border-slate-700/80 rounded-2xl max-w-lg w-full p-6 space-y-4 shadow-2xl relative">
+      <button id="closeModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="flex items-center gap-3 pr-8">
+        <img id="modalFlag" src="" alt="Region Flag" class="w-6 h-auto rounded border border-slate-700 shrink-0">
+        <h3 id="modalTitle" class="text-xl font-bold text-white leading-tight"></h3>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2">
+        <div id="modalStars"></div>
+        <span id="modalRatingBadge" class="text-xs px-2.5 py-0.5 rounded-full font-semibold border"></span>
+        <span id="modalFps" class="text-xs font-mono px-2.5 py-0.5 rounded bg-slate-800 text-sky-400 border border-slate-700"></span>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2 text-center py-2 bg-slate-950/60 rounded-xl border border-slate-800">
+        <div class="p-2">
+          <div class="text-[10px] uppercase font-semibold text-slate-400">Boot</div>
+          <div id="modalBoot" class="text-xs font-bold mt-0.5"></div>
+        </div>
+        <div class="p-2 border-x border-slate-800">
+          <div class="text-[10px] uppercase font-semibold text-slate-400">Playable</div>
+          <div id="modalPlayable" class="text-xs font-bold mt-0.5"></div>
+        </div>
+        <div class="p-2">
+          <div class="text-[10px] uppercase font-semibold text-slate-400">Core</div>
+          <div id="modalCore" class="text-xs font-mono font-bold mt-0.5 text-sky-300"></div>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-xs uppercase font-semibold text-slate-400 mb-1.5">Testing Notes &amp; Considerations</h4>
+        <p id="modalConsiderations" class="text-sm text-slate-300 bg-slate-950/80 p-3.5 rounded-xl border border-slate-800 leading-relaxed"></p>
+      </div>
+
+      <div class="flex justify-between items-center text-xs text-slate-500 pt-2 border-t border-slate-800">
+        <span>Submitted by: <strong id="modalSource" class="text-slate-300"></strong></span>
+        <span>Platform: muOS (H700)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-slate-900/50 mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-center text-xs text-slate-500">
+      Data sourced from community testing reports. SPDW Factory Dashboard layout.
     </div>
   </footer>
 
   <script>
-const EMBEDDED_GAMES = [{"game": "F-Zero GX", "region": "PAL", "core": "All of them", "boot": "YES", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "While the game is able to start it doesnt go past the logos of the developers, crashing and resetting on its own", "source": "Sexy_Shrek", "rating": 1}, {"game": "Luigi's Mansion", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "7-10", "fps_min": 7, "fps_max": 10, "considerations": "The game runs, but performance is too low for me to consider it playable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Mario Kart Double Dash", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "14-20", "fps_min": 14, "fps_max": 20, "considerations": "The game runs, but performance is too low for me to consider it playable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Serious Sam Next Encounter", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "15-50", "fps_min": 15, "fps_max": 50, "considerations": "Videos runs Slow, it can struggle a bit, especialy during battles and larger levels but its still decently playable", "source": "Sexy_Shrek", "rating": 4}, {"game": "Turok Evolution", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "9-25", "fps_min": 9, "fps_max": 25, "considerations": "Videos runs Slow, it can struggle a bit, running most of the time around 15 fps but its still decently playable", "source": "Sexy_Shrek", "rating": 3}, {"game": "Super Mario Sunshine", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "7-12", "fps_min": 7, "fps_max": 12, "considerations": "The game runs, but performance is too low for me to consider it playable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Super Monkey Ball", "region": "PAL", "core": "All of them", "boot": "YES", "playable": "NO", "fps": "25-30", "fps_min": 25, "fps_max": 30, "considerations": "it requires files from this link to work. https://github.com/libretro/dolphin/archive/master.zip only workswith NTSC iso. try the DS game.", "source": "DeadPlant, Sexy_Shrek, SEIRO", "rating": 2}, {"game": "Super Monkey Ball 2", "region": "NTSC", "core": "standard", "boot": "YES", "playable": "YES", "fps": "30-60", "fps_min": 30, "fps_max": 60, "considerations": "playable at relativly high framerate if you use the debug mode to disable stuff. i suggest BACKGROUND, STOBJ, EFFECTS, APE, MINIMAP", "source": "Row", "rating": 5}, {"game": "Super Monkey Ball Adventure", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "7-25", "fps_min": 7, "fps_max": 25, "considerations": "framerate flactuations make the game unplayable", "source": "Danster21", "rating": 2}, {"game": "TimeSplitters 2", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "14-32", "fps_min": 14, "fps_max": 32, "considerations": "The game runs, but performance is too low for me to consider it playable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Pikmin", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "20-25", "fps_min": 20, "fps_max": 25, "considerations": "Menus are slow, gameplay is almost perfect", "source": "Sexy_Shrek", "rating": 3}, {"game": "Paper Mario Thousend Year", "region": "PAL", "core": "SpeedHack/default", "boot": "YES", "playable": "NO", "fps": "15-25", "fps_min": 15, "fps_max": 25, "considerations": "slight texture issues, framerate is slow . default core seems to also give the same result", "source": "Sexy_Shrek", "rating": 2}, {"game": "007 - Agent Under Fire", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "12-40", "fps_min": 12, "fps_max": 40, "considerations": "videos run slow, framerate varies, but playable", "source": "Sexy_Shrek", "rating": 3}, {"game": "Animal Crossing", "region": "NTSC", "core": "Standard", "boot": "YES", "playable": "YES", "fps": "12-25", "fps_min": 12, "fps_max": 25, "considerations": "it runs ok, but stutters quite a bit, its preferable to either use a PAL rom-speedhack core or play the OG N64 version.", "source": "Sexy_Shrek", "rating": 3}, {"game": "XIII", "region": "PAL", "core": "blacksceen fix", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "it boots, but freezes almost immidiatly.", "source": "Sexy_Shrek", "rating": 0}, {"game": "Chibi-Robo!", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "4-5", "fps_min": 4, "fps_max": 5, "considerations": "framerate is unplayably slow. dont even bother.", "source": "Sexy_Shrek", "rating": 1}, {"game": "Kao the Kangaroo - Round 2", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "12-25", "fps_min": 12, "fps_max": 25, "considerations": "framerate varies, but playable", "source": "Sexy_Shrek", "rating": 3}, {"game": "LEGO Star Wars", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "8-23", "fps_min": 8, "fps_max": 23, "considerations": "framerate is unplayably slow. just play the DS or PSP versions.", "source": "Sexy_Shrek", "rating": 2}, {"game": "Zelda - The Wind Waker", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "4-5", "fps_min": 4, "fps_max": 5, "considerations": "framerate is unplayably slow. dont even bother.", "source": "Sexy_Shrek", "rating": 1}, {"game": "Zelda - Twilight Princess", "region": "PAL", "core": "blacksceen fix", "boot": "YES", "playable": "NO", "fps": "5-15", "fps_min": 5, "fps_max": 15, "considerations": "framerate is unplayably slow. dont even bother.", "source": "Sexy_Shrek", "rating": 2}, {"game": "Super Smash Bros. Melee", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "8-10", "fps_min": 8, "fps_max": 10, "considerations": "framerate is unplayably slow. using the Diet Melee mods might make it playable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Spongebob - Battle for Bikini Bottom", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "22-50", "fps_min": 22, "fps_max": 50, "considerations": "framerate varies, but playable", "source": "Sexy_Shrek", "rating": 4}, {"game": "Mario Party 4", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "4-14", "fps_min": 4, "fps_max": 14, "considerations": "too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Mario Party 7", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "10-16", "fps_min": 10, "fps_max": 16, "considerations": "too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Spyro - A New Beginning", "region": "PAL", "core": "blacksceen fix", "boot": "YES", "playable": "NO", "fps": "7-8", "fps_min": 7, "fps_max": 8, "considerations": "too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Spyro - Enter the Dragonfly", "region": "NTSC", "core": "blacksceen fix", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "it boots, but freezes almost immidiatly.", "source": "Sexy_Shrek", "rating": 0}, {"game": "Spyro - A Hero's Tail", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "8-11", "fps_min": 8, "fps_max": 11, "considerations": "too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "1080 Avalanche", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "5-15", "fps_min": 5, "fps_max": 15, "considerations": "stutters quite a bit at the start of a race, but still playable with some patiance", "source": "Sexy_Shrek", "rating": 2}, {"game": "Call of Duty 2 - Big Red One", "region": "PAL", "core": "All of them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "crashes the entire emulator.", "source": "Sexy_Shrek", "rating": 0}, {"game": "The Sims", "region": "NTSC", "core": "Standard", "boot": "YES", "playable": "YES", "fps": "10-15", "fps_min": 10, "fps_max": 15, "considerations": "playable, if a bit slow. Surprisingly the SpeedHack core makes the game run slower", "source": "Sexy_Shrek", "rating": 2}, {"game": "The Sims 2", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "6-20", "fps_min": 6, "fps_max": 20, "considerations": "stutters quite a lot especialy at the start of the game, playable, but only if you can handle low framerates", "source": "Sexy_Shrek", "rating": 2}, {"game": "V-Rally 3", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "10-12", "fps_min": 10, "fps_max": 12, "considerations": "too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Baldur's gate - Dark alliance", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "2-15", "fps_min": 2, "fps_max": 15, "considerations": "too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Wario World", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "10-45", "fps_min": 10, "fps_max": 45, "considerations": "texture problems with the ui make it difficult to start a new game, performance is low in the start lobby, but gets better in levels.", "source": "Sexy_Shrek, Speedrun [+.[🐬].%]", "rating": 4}, {"game": "Medal of Honor - Frontline", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "4-6", "fps_min": 4, "fps_max": 6, "considerations": "too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Viewtiful Joe", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "20-30", "fps_min": 20, "fps_max": 30, "considerations": "audio desynchs during the intro which takes a very long time, framarate seems high, but the game essentialy runs in slow motion.", "source": "Sexy_Shrek", "rating": 2}, {"game": "Viewtiful Joe 2", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "30", "fps_min": 30, "fps_max": 30, "considerations": "audio desynchs during the intro which takes a very long time, framarate seems high, but the game essentialy runs in slow motion.", "source": "Sexy_Shrek", "rating": 2}, {"game": "Metroid Prime", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "5-8", "fps_min": 5, "fps_max": 8, "considerations": "too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Star Fox - Assault", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "18-23", "fps_min": 18, "fps_max": 23, "considerations": "text doesnt render in the menu making the game almost unplayable, apart from that its very much playable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Crash Bandicoot - The Wrath of Cortex", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "5-10", "fps_min": 5, "fps_max": 10, "considerations": "too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Skies of Arcadia Legends", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "10-25", "fps_min": 10, "fps_max": 25, "considerations": "bit slow, but perfectly playable, the dreamcast version is still more stable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Star Fox Adventures", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "20-25", "fps_min": 20, "fps_max": 25, "considerations": "playable, framerate can sometimes vary", "source": "Sexy_Shrek", "rating": 2}, {"game": "Pokemon XD", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "25", "fps_min": 25, "fps_max": 25, "considerations": "glitchy text, playable with a few frame drops", "source": "Sexy_Shrek", "rating": 4}, {"game": "Pokemon Colosseum", "region": "PAL", "core": "SpeedHack/default", "boot": "YES", "playable": "YES", "fps": "15-20", "fps_min": 15, "fps_max": 20, "considerations": "slow videos, framerate can vary, playable", "source": "Sexy_Shrek", "rating": 3}, {"game": "Bust-a-Move 3000", "region": "NTSC", "core": "all of them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Doesnt start", "source": "Sexy_Shrek", "rating": 0}, {"game": "Crazy Taxi", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "25-40", "fps_min": 25, "fps_max": 40, "considerations": "perfectly playable, the dreamcast version is still more stable and preferable", "source": "Sexy_Shrek", "rating": 5}, {"game": "Kirby Air Ride FREE RUN MODE", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "30-40", "fps_min": 30, "fps_max": 40, "considerations": "very much playable, framerate not perfect tho", "source": "Sexy_Shrek", "rating": 5}, {"game": "Kirby Air Ride", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "5-6", "fps_min": 5, "fps_max": 6, "considerations": "framerate is unplayably low", "source": "WorkingGoose", "rating": 2}, {"game": "Harvest Moon Magical Melody", "region": "PAL", "core": "SpeedHack/default", "boot": "YES", "playable": "NO", "fps": "7-13", "fps_min": 7, "fps_max": 13, "considerations": "too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Resident Evil 4", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "10-11", "fps_min": 10, "fps_max": 11, "considerations": "too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Sonic Heroes", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "13-18", "fps_min": 13, "fps_max": 18, "considerations": "too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Sonic Riders", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "11-18", "fps_min": 11, "fps_max": 18, "considerations": "", "source": "Sexy_Shrek", "rating": 2}, {"game": "Sonic Adventure DX", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "4-13", "fps_min": 4, "fps_max": 13, "considerations": "too slow to be anykind of enjoyable, play the dreamcast version instead", "source": "Sexy_Shrek", "rating": 2}, {"game": "Sonic Adventure 2 DX", "region": "PAL", "core": "blacksceen fix", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Doesnt start", "source": "Sexy_Shrek", "rating": 0}, {"game": "SSX 3", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "3-7", "fps_min": 3, "fps_max": 7, "considerations": "stutters a lot, completly unplayable", "source": "Sexy_Shrek", "rating": 2}, {"game": "SSX on Tour", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "got stuck on character creation. unplayable", "source": "Sexy_Shrek", "rating": 1}, {"game": "SSX Tricky", "region": "PAL", "core": "All of the", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Starts, but crashes shortly after", "source": "Sexy_Shrek", "rating": 0}, {"game": "Big Mutha Truckers", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "22-24", "fps_min": 22, "fps_max": 24, "considerations": "game runs in slow motion, the DS version is preferable", "source": "Sexy_Shrek", "rating": 2}, {"game": "American Chopper 2 - Full Throttle", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "7-9", "fps_min": 7, "fps_max": 9, "considerations": "framerate is unplayably low", "source": "Sexy_Shrek", "rating": 2}, {"game": "Beyond Good & Evil", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "7-12", "fps_min": 7, "fps_max": 12, "considerations": "framerate is unplayably low", "source": "Sexy_Shrek", "rating": 2}, {"game": "Batman Begins", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "7-10", "fps_min": 7, "fps_max": 10, "considerations": "graphical glitches all over, too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Bionicle Heroes", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "12-30", "fps_min": 12, "fps_max": 30, "considerations": "framerate varies, but very much playable", "source": "Sexy_Shrek", "rating": 4}, {"game": "Baten Kaitos - Eternal Wings and the Lost Ocean", "region": "PAL", "core": "all of them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "starts, but freezes immidiatly", "source": "Sexy_Shrek", "rating": 0}, {"game": "18 Wheeler - American Pro Trucker", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "10-12", "fps_min": 10, "fps_max": 12, "considerations": "too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Call of Duty - Finest Hour", "region": "PAL", "core": "blacksceen fix", "boot": "YES", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Crashes on the main menu", "source": "Sexy_Shrek", "rating": 1}, {"game": "Burnout", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "20-30", "fps_min": 20, "fps_max": 30, "considerations": "playable if a bit slow", "source": "Sexy_Shrek", "rating": 3}, {"game": "Burnout 2 - Point of Impact", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "18-21", "fps_min": 18, "fps_max": 21, "considerations": "too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "BloodRayne", "region": "PAL", "core": "all of them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "crashes immidiatly", "source": "Sexy_Shrek", "rating": 0}, {"game": "Blood Omen 2 - The Legacy of Kain Series", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "12-25", "fps_min": 12, "fps_max": 25, "considerations": "framerate varies, but very much playable", "source": "Sexy_Shrek", "rating": 3}, {"game": "Capcom vs. SNK 2 EO", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "20-24", "fps_min": 20, "fps_max": 24, "considerations": "too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Cabela's Big Game Hunter 2005 Adventures", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "7-11", "fps_min": 7, "fps_max": 11, "considerations": "frameratte too low to be playable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Chaos Field", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "18-25", "fps_min": 18, "fps_max": 25, "considerations": "game runs in slow motion, unplayable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Conflict - Desert Storm", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "4-8", "fps_min": 4, "fps_max": 8, "considerations": "frameratte too low to be playable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Conflict - Desert Storm II", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "5-15", "fps_min": 5, "fps_max": 15, "considerations": "frameratte too low to be playable and stutters a lot", "source": "Sexy_Shrek", "rating": 2}, {"game": "Soulcalibur II", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "6-12", "fps_min": 6, "fps_max": 12, "considerations": "crashes sometimes and has graphical glitches in the ui, low framerate makes it unplayable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Peter Jackson's King Kong", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "8-13", "fps_min": 8, "fps_max": 13, "considerations": "playable with a LOT of patience, its better to just play the PSP version", "source": "Sexy_Shrek", "rating": 3}, {"game": "Red Faction II", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "5-12", "fps_min": 5, "fps_max": 12, "considerations": "frameratte too low to be playable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Dead to Rights", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "6-14", "fps_min": 6, "fps_max": 14, "considerations": "playable but framerate can vary", "source": "Sexy_Shrek", "rating": 2}, {"game": "Shrek Extra Large", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "7-9", "fps_min": 7, "fps_max": 9, "considerations": "frameratte too low to be playable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Shrek 2", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "6-13", "fps_min": 6, "fps_max": 13, "considerations": "frameratte too low to be playable", "source": "Sexy_Shrek", "rating": 2}, {"game": "The Simpsons - Hit & Run", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "12-25", "fps_min": 12, "fps_max": 25, "considerations": "slow cutscenes, can be quite unstable with the default underclock. in Dolphin.ini set Overlock = 0.23000000 to resolve crashing and other issues.", "source": "Sexy_Shrek", "rating": 3}, {"game": "Star Wars - Rogue Squadron II - Rogue Leader", "region": "PAL", "core": "all fo them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "crashes immidiatly", "source": "Sexy_Shrek", "rating": 0}, {"game": "Shrek - Smash n' Crash Racing", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "10-18", "fps_min": 10, "fps_max": 18, "considerations": "playable, but playing either the DS or PSP version is preferable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Gun", "region": "PAL", "core": "all fo them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "crashes immidiatly, PSP version is playable", "source": "Sexy_Shrek", "rating": 0}, {"game": "Lost Kingdoms", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "10-12", "fps_min": 10, "fps_max": 12, "considerations": "too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Eternal Darkness - Sanity's Requiem", "region": "PAL", "core": "all fo them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "crashes immidiatly", "source": "Sexy_Shrek", "rating": 0}, {"game": "Pac-Man World 2", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "16-30", "fps_min": 16, "fps_max": 30, "considerations": "playable but framerate can vary", "source": "Sexy_Shrek", "rating": 4}, {"game": "Pac-Man World 3", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "9-12", "fps_min": 9, "fps_max": 12, "considerations": "too slow to be anykind of enjoyable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Mega Man X - Command Mission", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "27-40", "fps_min": 27, "fps_max": 40, "considerations": "a bit slow, but playable with patience", "source": "Sexy_Shrek", "rating": 4}, {"game": "Metal Arms - Glitch in the System", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "4-8", "fps_min": 4, "fps_max": 8, "considerations": "menus and videos run hella slow, audio cuts in and out, framerate make it unplayable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Metal Gear Solid - The Twin Snakes", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "videocalls dont render, making the game not start, just play the original for the PSX", "source": "Sexy_Shrek", "rating": 1}, {"game": "Medal of Honor - Rising Sun", "region": "PAL", "core": "default", "boot": "YES", "playable": "NO", "fps": "5-15", "fps_min": 5, "fps_max": 15, "considerations": "frameratte too low to be playable", "source": "Danster21", "rating": 2}, {"game": "Crystal Chronicles", "region": "PAL", "core": "default", "boot": "YES", "playable": "NO", "fps": "5-6", "fps_min": 5, "fps_max": 6, "considerations": "too slow to be anykind of enjoyable", "source": "Danster21", "rating": 2}, {"game": "Rayman 3 - Hoodlum Havoc", "region": "PAL", "core": "default", "boot": "YES", "playable": "YES", "fps": "17-25", "fps_min": 17, "fps_max": 25, "considerations": "playable with framerate dips in larger areas", "source": "Danster21", "rating": 4}, {"game": "Super Mario Strikers", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "10-25", "fps_min": 10, "fps_max": 25, "considerations": "Overclock = .4 Resolution = .33 playable", "source": "Mercquick", "rating": 3}, {"game": "F1 2002", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "1-3", "fps_min": 1, "fps_max": 3, "considerations": "one of the worst framerate ever tested", "source": "Sexy_Shrek", "rating": 1}, {"game": "FIFA Football 2003", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "8-11", "fps_min": 8, "fps_max": 11, "considerations": "frameratte too low to be playable", "source": "Sexy_Shrek", "rating": 2}, {"game": "FIFA Football 2004", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "6-8", "fps_min": 6, "fps_max": 8, "considerations": "frameratte too low to be playable", "source": "Sexy_Shrek", "rating": 2}, {"game": "FIFA Football 2005", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "7-9", "fps_min": 7, "fps_max": 9, "considerations": "frameratte too low to be playable", "source": "Sexy_Shrek", "rating": 2}, {"game": "FIFA 06", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "7-9", "fps_min": 7, "fps_max": 9, "considerations": "frameratte too low to be playable", "source": "Sexy_Shrek", "rating": 2}, {"game": "FIFA 07", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "2-3", "fps_min": 2, "fps_max": 3, "considerations": "one of the worst framerate ever tested", "source": "Sexy_Shrek", "rating": 1}, {"game": "The SpongeBob SquarePants Movie", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "20-25", "fps_min": 20, "fps_max": 25, "considerations": "few stutters here and there, but playable. Might need higher cpu clock to avoid crashing.", "source": "Speedrun [+.[🐬].%]", "rating": 4}, {"game": "Billy Hatcher", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "8-11", "fps_min": 8, "fps_max": 11, "considerations": "frameratte too low to be playable", "source": "Danster21", "rating": 2}, {"game": "WarioWare Inc. - Mega Party Game$!", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "40-50", "fps_min": 40, "fps_max": 50, "considerations": "Runs nearly flawlessly. 40fps inbetween the minigames, tho minigames run fullspeed. Can run on the default core but is 20% slower and slightly its less playable.", "source": "Danster21", "rating": 5}, {"game": "Crash Nitro Kart", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "16-22", "fps_min": 16, "fps_max": 22, "considerations": "Runs alright framerate is not tied to game speed. Loading each map takes about 30 seconds.", "source": "Danster21", "rating": 3}, {"game": "Crash Tag Team Racing", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "5-6", "fps_min": 5, "fps_max": 6, "considerations": "frame rate but it's too slow to be enjoyable.", "source": "Danster21", "rating": 2}, {"game": "Ribbit King", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "7-30", "fps_min": 7, "fps_max": 30, "considerations": "playable, but can be laggy", "source": "Speedrun [+.[🐬].%]", "rating": 3}, {"game": "Asterix & Obelix XXL", "region": "PAL", "core": "SpeedHack/default", "boot": "YES", "playable": "YES", "fps": "12-40", "fps_min": 12, "fps_max": 40, "considerations": "Can be slow with many enemies on screen. Can stutter when speaking with npcs.", "source": "Happy", "rating": 3}, {"game": "Rayman Arena", "region": "NTSC", "core": "all of them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "crashes immidiatly", "source": "SkullXavier", "rating": 0}, {"game": "Dreamworks Madagascar", "region": "PAL", "core": "SpeedHack/default", "boot": "YES", "playable": "NO", "fps": "4-7", "fps_min": 4, "fps_max": 7, "considerations": "framerate too slow to be playable", "source": "SkullXavier", "rating": 2}, {"game": "Disney-Pixar The Incredibles", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "11-24", "fps_min": 11, "fps_max": 24, "considerations": "severe slowdowns on large areas, barely playable but not really enjoyable", "source": "SkullXavier", "rating": 3}, {"game": "Harry Potter and the Philosopher's Stone", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "8-10", "fps_min": 8, "fps_max": 10, "considerations": "too slow to be anykind of enjoyable", "source": "SkullXavier", "rating": 2}, {"game": "Prince of Persia: The Sands of Time", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "7-12", "fps_min": 7, "fps_max": 12, "considerations": "too slow to be anykind of enjoyable", "source": "SkullXavier", "rating": 2}, {"game": "Looney Tunes: Back in Action", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "13-25", "fps_min": 13, "fps_max": 25, "considerations": "few slowdowns, but mostly playable", "source": "SkullXavier", "rating": 3}, {"game": "Frogger: Ancient Shadow", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "41-60", "fps_min": 41, "fps_max": 60, "considerations": "runs really well, very playable", "source": "SkullXavier", "rating": 5}, {"game": "Frogger Beyond", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "26-40", "fps_min": 26, "fps_max": 40, "considerations": "some slowdown, NEEDS NTSC ISO!", "source": "SkullXavier", "rating": 4}, {"game": "Frogger's Adventures: The Rescue", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "30-42", "fps_min": 30, "fps_max": 42, "considerations": "really slow cutscenes, but in-game runs fine", "source": "SkullXavier", "rating": 4}, {"game": "Diet Melee Classic v1.03 MOD", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "13-43", "fps_min": 13, "fps_max": 43, "considerations": "framerate varies, too much stuttering to playable", "source": "SkullXavier", "rating": 4}, {"game": "TimeSplitters Future Perfect", "region": "PAL", "core": "all of them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "only gives a black screen", "source": "SkullXavier", "rating": 0}, {"game": "Samurai Jack: The Shadow of Aku", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "15-23", "fps_min": 15, "fps_max": 23, "considerations": "playable but with lot of patience", "source": "SkullXavier", "rating": 3}, {"game": "Animaniacs: The Great Edgar Hunt", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "19-23", "fps_min": 19, "fps_max": 23, "considerations": "few slowdowns here and there but playable", "source": "SkullXavier", "rating": 3}, {"game": "Naruto: Clash of Ninja", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "8-10", "fps_min": 8, "fps_max": 10, "considerations": "too slow to be anykind of enjoyable", "source": "SkullXavier", "rating": 2}, {"game": "Shadow the Hedgehog", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "7-12", "fps_min": 7, "fps_max": 12, "considerations": "too slow to be anykind of enjoyable", "source": "SkullXavier", "rating": 2}, {"game": "Sphinx and the Cursed Mummy", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "18-24", "fps_min": 18, "fps_max": 24, "considerations": "too slow to be anykind of enjoyable", "source": "SkullXavier", "rating": 2}, {"game": "Taz Wanted", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "6-10", "fps_min": 6, "fps_max": 10, "considerations": "too slow to be anykind of enjoyable", "source": "SkullXavier", "rating": 2}, {"game": "TMNT", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "12-16", "fps_min": 12, "fps_max": 16, "considerations": "too slow to be anykind of enjoyable", "source": "SkullXavier", "rating": 2}, {"game": "Ty the Tasmanian Tiger", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "11-16", "fps_min": 11, "fps_max": 16, "considerations": "frameratte too low to be playable", "source": "SkullXavier", "rating": 2}, {"game": "Tom and Jerry in War of the Whiskers", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "11-14", "fps_min": 11, "fps_max": 14, "considerations": "too slow to be anykind of enjoyable", "source": "SkullXavier", "rating": 2}, {"game": "Zoocube", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "30-40", "fps_min": 30, "fps_max": 40, "considerations": "choose 50hz mode at the start", "source": "Speedrun [+.[🐬].%]", "rating": 4}, {"game": "Aggressive Inline", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "15-25", "fps_min": 15, "fps_max": 25, "considerations": "fps drops are common, but its still very playable", "source": "S1eepy", "rating": 4}, {"game": "X-Men 2: Wolverine's Revenge", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "13-25", "fps_min": 13, "fps_max": 25, "considerations": "some framedrops can happen, still very playable", "source": "S1eepy", "rating": 3}, {"game": "Star Wars: Bounty Hunter", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "18-24", "fps_min": 18, "fps_max": 24, "considerations": "Few stutters here and there but playable", "source": "SkullXavier", "rating": 4}, {"game": "Tak: The Great Juju Challenge", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "8-10", "fps_min": 8, "fps_max": 10, "considerations": "framerate too low to be playable", "source": "SkullXavier", "rating": 2}, {"game": "Tak 2: The Staff of Dreams", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "8-13", "fps_min": 8, "fps_max": 13, "considerations": "framerate too low to be playable", "source": "SkullXavier", "rating": 2}, {"game": "Open Season", "region": "PAL", "core": "SpeedHack", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "unplayable, blocked on a green screen", "source": "SkullXavier", "rating": 0}, {"game": "Pac-Man World Rally", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "13-28", "fps_min": 13, "fps_max": 28, "considerations": "performance varies but it's playable", "source": "SkullXavier", "rating": 4}, {"game": "Scaler", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "8-27", "fps_min": 8, "fps_max": 27, "considerations": "playable but very slow in large areas", "source": "SkullXavier", "rating": 3}, {"game": "Dancing Stage Mario Mix", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "19-25", "fps_min": 19, "fps_max": 25, "considerations": "Runs almost perfectly", "source": "SkullXavier", "rating": 3}, {"game": "Donald Duck Quack Attack", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "13-20", "fps_min": 13, "fps_max": 20, "considerations": "Performance varies. Iplayable but can be laggy.", "source": "SkullXavier", "rating": 3}, {"game": "Puyo Puyo Fever", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "36-45", "fps_min": 36, "fps_max": 45, "considerations": "Runs almost perfectly", "source": "SkullXavier", "rating": 5}, {"game": "SSX on Tour", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "1-3", "fps_min": 1, "fps_max": 3, "considerations": "Unplayably slow", "source": "SkullXavier", "rating": 1}, {"game": "Zapper", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "11-13", "fps_min": 11, "fps_max": 13, "considerations": "framerate too low to be playable", "source": "SkullXavier", "rating": 2}, {"game": "The Sims Bustin’ out", "region": "PAL", "core": "SpeedHack/default", "boot": "YES", "playable": "NO", "fps": "2-6", "fps_min": 2, "fps_max": 6, "considerations": "framerate too low to be playable", "source": "eleot", "rating": 1}, {"game": "Robots", "region": "PAL", "core": "SpeedHack/default", "boot": "YES", "playable": "NO", "fps": "5-6", "fps_min": 5, "fps_max": 6, "considerations": "framerate too low to be playable", "source": "eleot", "rating": 2}, {"game": "Ultimate Muscle: Legends vs New Generatio", "region": "NTSC", "core": "SpeedHack/default", "boot": "YES", "playable": "YES", "fps": "19-28", "fps_min": 19, "fps_max": 28, "considerations": "gameplay needs a bit of patience", "source": "eleot", "rating": 3}, {"game": "Bomberman Generation", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "25-30", "fps_min": 25, "fps_max": 30, "considerations": "gameplay runs at half speed", "source": "SkullXavier", "rating": 2}, {"game": "Bomberman Jetters", "region": "NTSC", "core": "all of them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Black Screen", "source": "SkullXavier", "rating": 0}, {"game": "Carmen Sandiego: The Secret of the Stolen Drums", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "20-37", "fps_min": 20, "fps_max": 37, "considerations": "framerate slowdown in large, cutscenes are slow", "source": "SkullXavier", "rating": 3}, {"game": "Cel Damage", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "5-7", "fps_min": 5, "fps_max": 7, "considerations": "Too slow to be anykind of playable.", "source": "SkullXavier", "rating": 2}, {"game": "Codename K1ds Next Door Operation V.I.D.E.O.G.A.M.E.", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "17-34", "fps_min": 17, "fps_max": 34, "considerations": "A few stutters but otherwise playable", "source": "SkullXavier", "rating": 4}, {"game": "Harry Potter: Quidditch World Cup", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "21-50", "fps_min": 21, "fps_max": 50, "considerations": "Framerate varies but it's perfectly playable", "source": "SkullXavier", "rating": 5}, {"game": "Harry Potter and the Prisoner of Azkaban", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Freezes at the WB logo.", "source": "SkullXavier", "rating": 1}, {"game": "Harry Potter and the Goblet of Fire", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Crashes in the menu", "source": "SkullXavier", "rating": 1}, {"game": "Disney's Piglet's Big Game", "region": "NTSC", "core": "all of them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Black Screen", "source": "SkullXavier", "rating": 0}, {"game": "Disney's Chicken Little", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "6-9", "fps_min": 6, "fps_max": 9, "considerations": "Too slow to be anykind of playable.", "source": "SkullXavier", "rating": 2}, {"game": "Disney's Extreme Skate Adventure", "region": "PAL", "core": "SpeedHack", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "freezes at the start", "source": "SkullXavier", "rating": 0}, {"game": "Disney's Magical Mirror Starring Mickey Mouse", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "25-30", "fps_min": 25, "fps_max": 30, "considerations": "too slow to be anykind of enjoyable", "source": "SkullXavier", "rating": 2}, {"game": "Disney's PK - Out of the Shadows", "region": "NTSC", "core": "SpeedHack", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Crashes", "source": "SkullXavier", "rating": 0}, {"game": "Disney-Pixar Ratatouille", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "14-17", "fps_min": 14, "fps_max": 17, "considerations": "Broken cutscenes but in-game runs fine", "source": "SkullXavier", "rating": 3}, {"game": "Need for Speed - Most Wanted", "region": "NTSC", "core": "all of them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Black Screen", "source": "SkullXavier", "rating": 0}, {"game": "Need for Speed - Underground", "region": "NTSC", "core": "all of them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Black Screen", "source": "SkullXavier", "rating": 0}, {"game": "Need for Speed - Underground 2", "region": "NTSC", "core": "all of them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Black Screen", "source": "SkullXavier", "rating": 0}, {"game": "Need for Speed - Hot Pursuit 2", "region": "NTSC", "core": "all of them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Black Screen", "source": "SkullXavier", "rating": 0}, {"game": "Need for Speed - Carbon", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "3-8", "fps_min": 3, "fps_max": 8, "considerations": "framerate too low to be playable", "source": "SkullXavier", "rating": 2}, {"game": "Fantastic 4", "region": "PAL", "core": "all of them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Black Screen", "source": "SkullXavier", "rating": 0}, {"game": "Dragon Ball Z Budokai", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "18-25", "fps_min": 18, "fps_max": 25, "considerations": "too slow to be anykind of enjoyable", "source": "SkullXavier", "rating": 2}, {"game": "LEGO Star Wars II - The Original Trilogy", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "19-47", "fps_min": 19, "fps_max": 47, "considerations": "Music glitch-loops rarely, few stutters, playable", "source": "SkullXavier", "rating": 4}, {"game": "Star Wars: Clone Wars", "region": "PAL", "core": "all of them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Black Screen", "source": "SkullXavier", "rating": 0}, {"game": "Star Wars: Rogue Squadron III", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Freezes at the starting credits screen.", "source": "SkullXavier", "rating": 1}, {"game": "Super Bust-A-Move All Stars", "region": "PAL", "core": "all of them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Black Screen", "source": "SkullXavier", "rating": 0}, {"game": "Tetris Worlds", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "29-31", "fps_min": 29, "fps_max": 31, "considerations": "Too slow to be anykind of playable.", "source": "SkullXavier", "rating": 2}, {"game": "TMNT Mutant Melee", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "13-21", "fps_min": 13, "fps_max": 21, "considerations": "Too slow to be anykind of playable.", "source": "SkullXavier", "rating": 2}, {"game": "Tom Clancy's Splinter Cell", "region": "PAL", "core": "all of them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Black Screen", "source": "SkullXavier", "rating": 0}, {"game": "Tony Hawk's American Wasteland", "region": "PAL", "core": "SpeedHack", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Crashes at starting logo.", "source": "SkullXavier", "rating": 0}, {"game": "Tony Hawk's Pro Skater 3", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "14-27", "fps_min": 14, "fps_max": 27, "considerations": "Performance varies, playable but not enjoyable", "source": "SkullXavier", "rating": 4}, {"game": "Tony Hawk's Pro Skater 4", "region": "NTSC", "core": "SpeedHack", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Freezes at the starting screen.", "source": "SkullXavier", "rating": 0}, {"game": "Tony Hawk's Underground", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "1-9", "fps_min": 1, "fps_max": 9, "considerations": "Too slow to be anykind of playable", "source": "SkullXavier", "rating": 2}, {"game": "Tony Hawk's Underground 2", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Freezes at the Loading screen.", "source": "SkullXavier", "rating": 1}, {"game": "Ultimate Spider-Man", "region": "PAL", "core": "SpeedHack", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Crashes immidiatly", "source": "SkullXavier", "rating": 0}, {"game": "Vexx", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "11-23", "fps_min": 11, "fps_max": 23, "considerations": "few stutters but otherwise playable", "source": "SkullXavier", "rating": 3}, {"game": "Harry Potter and the Chamber of the Secrets", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "8-12", "fps_min": 8, "fps_max": 12, "considerations": "Too slow to be anykind of playable", "source": "SkullXavier", "rating": 2}, {"game": "Tales of Symphonia", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "16-25", "fps_min": 16, "fps_max": 25, "considerations": "The unskippable prologue is unbearably slow, but after that, in-game its completly playable.", "source": "SkullXavier", "rating": 3}, {"game": "Ty the Tasmanian Tiger 2", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "6-9", "fps_min": 6, "fps_max": 9, "considerations": "framerate too low to be playable", "source": "SkullXavier", "rating": 2}, {"game": "Ty the Tasmanian Tiger 3", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "3-6", "fps_min": 3, "fps_max": 6, "considerations": "framerate too low to be playable", "source": "SkullXavier", "rating": 1}, {"game": "Wave Race: Blue Storm", "region": "NTSC", "core": "SpeedHack", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Stuck at black screen after the main menu", "source": "SkullXavier", "rating": 0}, {"game": "Worms 3D", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "8-18", "fps_min": 8, "fps_max": 18, "considerations": "Performance varies, but its pretty static game so i'd say it's playable, with lots patience.", "source": "SkullXavier", "rating": 3}, {"game": "Worms Blast", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "48-50", "fps_min": 48, "fps_max": 50, "considerations": "Almost Perfect", "source": "SkullXavier", "rating": 5}, {"game": "Yu-Gi-Oh: The Falsebound Kingdo", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "11-25", "fps_min": 11, "fps_max": 25, "considerations": "overworld runs good, battles not as good", "source": "SkullXavier", "rating": 3}, {"game": "Cubivore - Survival of the Fittest", "region": "NTSC", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "38-40", "fps_min": 38, "fps_max": 40, "considerations": "Almost Perfect", "source": "Sexy_Shrek", "rating": 4}, {"game": "Gadget Racers", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "3-4", "fps_min": 3, "fps_max": 4, "considerations": "the text-boxes in the menus dont render the text, framerate too low to be playable, the free-run mode is kinda playable", "source": "Sexy_Shrek", "rating": 1}, {"game": "MaxPlay Volume 01", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "4-6", "fps_min": 4, "fps_max": 6, "considerations": "Too slow to be anykind of playable", "source": "Sexy_Shrek", "rating": 2}, {"game": "Odama", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "text doesnt render making gamepaly impossible, controls also dont seem to work for some reason", "source": "Sexy_Shrek", "rating": 1}, {"game": "Phantasy Star Online", "region": "NTSC", "core": "default", "boot": "YES", "playable": "YES", "fps": "10-18", "fps_min": 10, "fps_max": 18, "considerations": "a bit slow but playable, the date setup at the start crashes the emulator so youre going to need to import a save from an external source to bypass that. online doesnt work, solo does.", "source": "Lucaspec72", "rating": 2}, {"game": "Hitman 2: Silent Assassin", "region": "PAL", "core": "SpeedHack", "boot": "YES", "playable": "YES", "fps": "12-20", "fps_min": 12, "fps_max": 20, "considerations": "pretty playable", "source": "ᴡᴏᴋᴇᴜᴘɪɴᴘᴀʀɪs", "rating": 3}, {"game": "Doshin the Giant", "region": "PAL", "core": "all of them", "boot": "NO", "playable": "NO", "fps": "???", "fps_min": 0, "fps_max": 0, "considerations": "Doesnt start", "source": "Sexy_Shrek", "rating": 0}];
+    let EMBEDDED_GAMES = [];
+    const GAMES_JSON_URL = "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/games.json";
 
-
-    const FLAG_MAP = {
-      'PAL': 'eu',
-      'NTSC': 'us',
-      'JPN': 'jp'
-    };
+    const FLAG_MAP = { 'PAL': 'eu', 'NTSC': 'us', 'JPN': 'jp' };
 
     function getFlagUrl(region) {
       const code = FLAG_MAP[region] || 'un';
@@ -170,250 +274,316 @@ const EMBEDDED_GAMES = [{"game": "F-Zero GX", "region": "PAL", "core": "All of t
     }
 
     function renderStars(rating) {
-      let html = '<div class="flex items-center gap-0.5">';
+      const starColors = {
+        5: 'text-emerald-400',
+        4: 'text-teal-400',
+        3: 'text-amber-400',
+        2: 'text-orange-400',
+        1: 'text-rose-400',
+        0: 'text-slate-600'
+      };
+      const colorClass = starColors[rating] || 'text-amber-400';
+
+      let html = '<div class="flex items-center gap-0.5" title="' + rating + ' out of 5 stars">';
       for (let i = 1; i <= 5; i++) {
-        if (i <= rating) {
-          if (rating === 5) {
-            html += '<svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
-          } else if (rating >= 3) {
-            html += '<svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
-          } else {
-            html += '<svg class="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
-          }
-        } else {
-          html += '<svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>';
-        }
+        const opacity = i <= rating ? 'fill-current ' + colorClass : 'fill-slate-800 text-slate-700';
+        html += `<svg class="w-3.5 h-3.5 ${opacity}" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/>
+        </svg>`;
       }
       html += '</div>';
       return html;
     }
 
-    function getRatingColor(rating) {
-      if (rating === 5) return 'text-emerald-400 border-emerald-900/30 bg-emerald-950/10';
-      if (rating === 4) return 'text-sky-400 border-sky-900/30 bg-sky-950/10';
-      if (rating === 3) return 'text-amber-400 border-amber-900/30 bg-amber-950/10';
-      if (rating === 2) return 'text-orange-400 border-orange-900/30 bg-orange-950/10';
-      return 'text-red-400 border-red-900/30 bg-red-950/10';
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
     }
 
-    function getRatingLabel(rating) {
-      const labels = ['Does not boot', 'Better avoid', 'Disaster but boots', 'Playable with patience', 'Playable with minor issues', 'Perfect'];
-      return labels[rating] || 'Unknown';
+    function getRatingBadgeClass(rating) {
+      if (rating === 5) return 'bg-emerald-950/80 text-emerald-400 border-emerald-800/60';
+      if (rating === 4) return 'bg-teal-950/80 text-teal-400 border-teal-800/60';
+      if (rating === 3) return 'bg-amber-950/80 text-amber-400 border-amber-800/60';
+      if (rating === 2) return 'bg-orange-950/80 text-orange-400 border-orange-800/60';
+      if (rating >= 1) return 'bg-rose-950/80 text-rose-400 border-rose-800/60';
+      return 'bg-slate-900 text-slate-400 border-slate-700';
     }
 
-    let currentView = 'grid';
-    let currentSort = 'title';
-    let sortAsc = true;
-    let filteredData = [...EMBEDDED_GAMES];
+    // STATE VARIABLES
+    let currentSortKey = 'title';
+    let currentSortOrder = 'asc';
+    let searchQuery = '';
+    let selectedStars = 'all';
+    let selectedRegion = 'all';
+    let selectedBoot = 'all';
+    let currentFilteredGames = [];
 
-    const container = document.getElementById('gamesContainer');
+    // DOM ELEMENTS
+    const gamesContainer = document.getElementById('gamesContainer');
     const emptyState = document.getElementById('emptyState');
     const searchInput = document.getElementById('searchInput');
-    const starsFilter = document.getElementById('starsFilter');
     const regionFilter = document.getElementById('regionFilter');
     const bootFilter = document.getElementById('bootFilter');
     const sortKey = document.getElementById('sortKey');
     const sortOrderBtn = document.getElementById('sortOrderBtn');
+    const sortOrderLabel = document.getElementById('sortOrderLabel');
+    const sortOrderIcon = document.getElementById('sortOrderIcon');
     const resetFiltersBtn = document.getElementById('resetFiltersBtn');
-    const viewGridBtn = document.getElementById('viewGridBtn');
-    const viewListBtn = document.getElementById('viewListBtn');
+    const clearFiltersBtn = document.getElementById('clearFiltersBtn');
 
-    function init() {
-      bindEvents();
-      updateStats();
-      applyFiltersAndRender();
-    }
-
-    function bindEvents() {
-      searchInput.addEventListener('input', applyFiltersAndRender);
-      starsFilter.addEventListener('change', applyFiltersAndRender);
-      regionFilter.addEventListener('change', applyFiltersAndRender);
-      bootFilter.addEventListener('change', applyFiltersAndRender);
-      sortKey.addEventListener('change', applyFiltersAndRender);
-
-      sortOrderBtn.addEventListener('click', () => {
-        sortAsc = !sortAsc;
-        document.getElementById('sortOrderLabel').textContent = sortAsc ? 'Asc' : 'Desc';
-        document.getElementById('sortOrderIcon').style.transform = sortAsc ? 'rotate(180deg)' : 'rotate(0deg)';
-        applyFiltersAndRender();
-      });
-
-      resetFiltersBtn.addEventListener('click', () => {
-        searchInput.value = '';
-        starsFilter.value = 'all';
-        regionFilter.value = 'all';
-        bootFilter.value = 'all';
-        sortKey.value = 'title';
-        sortAsc = true;
-        document.getElementById('sortOrderLabel').textContent = 'Asc';
-        document.getElementById('sortOrderIcon').style.transform = 'rotate(180deg)';
-        applyFiltersAndRender();
-      });
-
-      viewGridBtn.addEventListener('click', () => {
-        currentView = 'grid';
-        viewGridBtn.classList.add('bg-sky-600', 'text-white');
-        viewGridBtn.classList.remove('text-slate-400');
-        viewListBtn.classList.remove('bg-sky-600', 'text-white');
-        viewListBtn.classList.add('text-slate-400');
-        renderCards();
-      });
-
-      viewListBtn.addEventListener('click', () => {
-        currentView = 'list';
-        viewListBtn.classList.add('bg-sky-600', 'text-white');
-        viewListBtn.classList.remove('text-slate-400');
-        viewGridBtn.classList.remove('bg-sky-600', 'text-white');
-        viewGridBtn.classList.add('text-slate-400');
-        renderCards();
-      });
-    }
-
-    function applyFiltersAndRender() {
-      const q = searchInput.value.toLowerCase();
-      const s = starsFilter.value;
-      const r = regionFilter.value;
-      const b = bootFilter.value;
-      const key = sortKey.value;
-
-      filteredData = EMBEDDED_GAMES.filter(g => {
-        const matchTitle = g.game.toLowerCase().includes(q);
-        const matchStars = s === 'all' || g.rating.toString() === s;
-        const matchRegion = r === 'all' || g.region.toUpperCase().includes(r);
-        const matchBoot = b === 'all' || g.boot === b;
-        return matchTitle && matchStars && matchRegion && matchBoot;
-      });
-
-      filteredData.sort((a, b) => {
-        let valA, valB;
-        if (key === 'title') { valA = a.game.toLowerCase(); valB = b.game.toLowerCase(); }
-        else if (key === 'rating') { valA = a.rating; valB = b.rating; }
-        else if (key === 'fps') { valA = a.fps_max || 0; valB = b.fps_max || 0; }
-
-        if (valA < valB) return sortAsc ? -1 : 1;
-        if (valA > valB) return sortAsc ? 1 : -1;
-        return 0;
-      });
-
-      renderCards();
-    }
-
+    // UPDATE STATS & RATING PANEL COUNTS
     function updateStats() {
-      document.getElementById('statTotal').textContent = EMBEDDED_GAMES.length;
-      document.getElementById('statPerfect').textContent = EMBEDDED_GAMES.filter(g => g.rating === 5).length;
-      document.getElementById('statPlayable').textContent = EMBEDDED_GAMES.filter(g => g.rating === 3 || g.rating === 4).length;
-      document.getElementById('statKO').textContent = EMBEDDED_GAMES.filter(g => g.rating <= 2).length;
+      const totalEntries = EMBEDDED_GAMES.length;
+      const uniqueGamesCount = new Set(EMBEDDED_GAMES.map(g => g.game.trim().toLowerCase())).size;
+
+      document.getElementById('statTested').textContent = uniqueGamesCount;
+      document.getElementById('statTotal').textContent = totalEntries;
+
+      // Calculate rating breakdown counts
+      const counts = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
+      EMBEDDED_GAMES.forEach(g => {
+        if (g.rating === 5) counts[5]++;
+        else if (g.rating === 4) counts[4]++;
+        else if (g.rating === 3) counts[3]++;
+        else if (g.rating === 2) counts[2]++;
+        else if (g.rating <= 1) counts[1]++;
+      });
+
+      document.getElementById('count-5').textContent = counts[5];
+      document.getElementById('count-4').textContent = counts[4];
+      document.getElementById('count-3').textContent = counts[3];
+      document.getElementById('count-2').textContent = counts[2];
+      document.getElementById('count-1').textContent = counts[1];
     }
 
-    function renderCards() {
-      if (filteredData.length === 0) {
-        container.innerHTML = '';
-        emptyState.classList.remove('hidden');
-        return;
-      }
-      emptyState.classList.add('hidden');
+    // COMPACT LIST ROW BUILDER
+    function createListRow(game, index) {
+      const flagUrl = getFlagUrl(game.region);
+      const bootBadgeClass = game.boot === 'YES' 
+        ? 'text-emerald-400 bg-emerald-950/50 border-emerald-800/50' 
+        : 'text-rose-400 bg-rose-950/50 border-rose-800/50';
 
-      if (currentView === 'grid') {
-        container.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4';
-      } else {
-        container.className = 'flex flex-col gap-3';
-      }
+      const delay = Math.min(index * 12, 180);
 
-      container.innerHTML = filteredData.map((g, idx) => {
-        const ratingClass = getRatingColor(g.rating);
-        const flagUrl = getFlagUrl(g.region);
-        const bootIcon = g.boot === 'YES' 
-          ? '<svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>'
-          : '<svg class="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>';
-        const playableIcon = g.playable === 'YES'
-          ? '<svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>'
-          : '<svg class="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>';
+      return `
+        <div class="card-anim bg-slate-900/70 border border-slate-800/80 hover:border-sky-500/50 hover:bg-slate-900/90 rounded-lg py-2.5 px-3.5 flex items-center justify-between gap-3 transition-all duration-200 cursor-pointer group shadow-sm hover:shadow-md hover:shadow-sky-950/20" style="animation-delay: ${delay}ms;" onclick="openGameModal(${index})">
+          
+          <!-- Title & Region Flag -->
+          <div class="flex items-center gap-3 min-w-0 flex-1">
+            <img src="${flagUrl}" alt="${game.region}" class="w-5 h-3.5 object-cover rounded border border-slate-700/80 shrink-0">
+            <h3 class="font-semibold text-slate-100 text-sm truncate group-hover:text-sky-400 transition-colors">${escapeHtml(game.game)}</h3>
+          </div>
 
-        const animDelay = `animation-delay: ${(idx % 8) * 50}ms;`;
-
-        if (currentView === 'grid') {
-          return `
-          <div class="rounded-xl border ${ratingClass} p-4 hover:shadow-lg hover:shadow-slate-900/50 transition-all duration-200 flex flex-col h-full bg-slate-900/40 card-anim" style="${animDelay}">
-            <div class="flex justify-between items-start mb-2 gap-2">
-              <h3 class="font-bold text-slate-100 text-base leading-tight line-clamp-2 flex-1" title="${g.game}">${g.game}</h3>
-              <div class="flex items-center gap-1.5 bg-slate-950/60 px-2 py-1 rounded-md border border-slate-800 shrink-0">
-                <img src="${flagUrl}" alt="${g.region}" class="w-5 h-3.5 object-cover rounded-sm shadow-sm" onerror="this.style.display='none'">
-                <span class="text-[10px] font-bold text-slate-300 uppercase">${g.region}</span>
-              </div>
+          <!-- Rating Stars, FPS, Boot status -->
+          <div class="flex items-center gap-3 shrink-0">
+            <div class="hidden sm:block">
+              ${renderStars(game.rating)}
             </div>
 
-            <div class="flex items-center justify-between mb-3">
-              ${renderStars(g.rating)}
-              <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">${getRatingLabel(g.rating)}</span>
-            </div>
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-950 text-sky-300 border border-slate-800/80">
+              ${game.fps !== "???" ? game.fps + " FPS" : "N/A"}
+            </span>
 
-            <div class="flex flex-wrap gap-1.5 mb-3 text-[10px] uppercase font-bold tracking-wider">
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 flex items-center gap-1">
-                ${bootIcon} Boot
-              </span>
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 flex items-center gap-1">
-                ${playableIcon} Playable
-              </span>
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">${g.core}</span>
-            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full border ${bootBadgeClass}">
+              ${game.boot === 'YES' ? 'Boot' : 'No Boot'}
+            </span>
 
-            <div class="bg-slate-950/50 rounded-lg p-3 border border-slate-800/50 flex-grow">
-              <div class="flex items-center justify-between mb-2 pb-2 border-b border-slate-800/50">
-                <span class="text-xs font-semibold text-slate-400">FPS</span>
-                <span class="text-sm font-mono font-bold text-slate-200">${g.fps}</span>
-              </div>
-              <p class="text-xs text-slate-300 leading-relaxed italic">${g.considerations || 'No specific notes.'}</p>
-            </div>
+            <svg class="w-4 h-4 text-slate-600 group-hover:text-sky-400 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      `;
+    }
 
-            <div class="mt-3 text-[10px] text-slate-500 text-right uppercase tracking-wider font-semibold">
-              Tested by: <span class="text-slate-400">${g.source}</span>
-            </div>
-          </div>`;
+    // MODAL HANDLERS
+    function openGameModal(filteredIndex) {
+      const game = currentFilteredGames[filteredIndex];
+      if (!game) return;
+
+      document.getElementById('modalTitle').textContent = game.game;
+      document.getElementById('modalFlag').src = getFlagUrl(game.region);
+      document.getElementById('modalStars').innerHTML = renderStars(game.rating);
+      
+      const ratingBadge = document.getElementById('modalRatingBadge');
+      ratingBadge.textContent = `${game.rating} / 5 Stars`;
+      ratingBadge.className = `text-xs px-2.5 py-0.5 rounded-full font-semibold border ${getRatingBadgeClass(game.rating)}`;
+
+      document.getElementById('modalFps').textContent = game.fps !== "???" ? `${game.fps} FPS` : 'FPS: Unknown';
+      
+      const bootEl = document.getElementById('modalBoot');
+      bootEl.textContent = game.boot === 'YES' ? 'Boots' : 'No Boot';
+      bootEl.className = game.boot === 'YES' ? 'text-xs font-bold text-emerald-400 mt-0.5' : 'text-xs font-bold text-rose-400 mt-0.5';
+
+      const playableEl = document.getElementById('modalPlayable');
+      playableEl.textContent = game.playable === 'YES' ? 'Playable' : 'Unplayable';
+      playableEl.className = game.playable === 'YES' ? 'text-xs font-bold text-sky-400 mt-0.5' : 'text-xs font-bold text-rose-400 mt-0.5';
+
+      document.getElementById('modalCore').textContent = game.core;
+      document.getElementById('modalConsiderations').textContent = game.considerations || 'No additional testing notes provided for this report.';
+      document.getElementById('modalSource').textContent = game.source || 'Anonymous';
+
+      document.getElementById('gameModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('gameModal').classList.add('hidden');
+    }
+
+    document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+    document.getElementById('gameModal').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('gameModal')) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // RENDER LOGIC
+    function render() {
+      // Update interactive rating panel selection UI states
+      document.querySelectorAll('.rating-panel').forEach(panel => {
+        const ratingAttr = panel.getAttribute('data-rating');
+        if (selectedStars === ratingAttr) {
+          panel.classList.add('ring-2', 'ring-sky-400', 'bg-sky-950/40', 'scale-[1.02]');
+          panel.classList.remove('opacity-60');
         } else {
-          return `
-          <div class="rounded-xl border ${ratingClass} p-4 hover:shadow-lg hover:shadow-slate-900/50 transition-all duration-200 flex flex-col sm:flex-row gap-4 bg-slate-900/40 card-anim" style="${animDelay}">
-            <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-3 mb-1">
-                <h3 class="font-bold text-slate-100 text-base leading-tight truncate" title="${g.game}">${g.game}</h3>
-                <div class="flex items-center gap-1.5 bg-slate-950/60 px-2 py-0.5 rounded-md border border-slate-800 shrink-0">
-                  <img src="${flagUrl}" alt="${g.region}" class="w-5 h-3.5 object-cover rounded-sm shadow-sm" onerror="this.style.display='none'">
-                  <span class="text-[10px] font-bold text-slate-300 uppercase">${g.region}</span>
-                </div>
-              </div>
-              <div class="flex items-center gap-2 mb-2">
-                ${renderStars(g.rating)}
-                <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">${getRatingLabel(g.rating)}</span>
-              </div>
-              <p class="text-xs text-slate-300 leading-relaxed italic">${g.considerations || 'No specific notes.'}</p>
-            </div>
-
-            <div class="flex flex-row sm:flex-col gap-3 sm:gap-2 sm:w-48 shrink-0 sm:items-end justify-between sm:justify-center">
-              <div class="flex items-center gap-2 text-xs">
-                <span class="text-slate-500 font-semibold uppercase text-[10px]">Boot</span>
-                ${bootIcon}
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span class="text-slate-500 font-semibold uppercase text-[10px]">Playable</span>
-                ${playableIcon}
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span class="text-slate-500 font-semibold uppercase text-[10px]">FPS</span>
-                <span class="font-mono font-bold text-slate-200">${g.fps}</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span class="text-slate-500 font-semibold uppercase text-[10px]">Core</span>
-                <span class="text-slate-300">${g.core}</span>
-              </div>
-              <div class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold sm:text-right">
-                by <span class="text-slate-400">${g.source}</span>
-              </div>
-            </div>
-          </div>`;
+          panel.classList.remove('ring-2', 'ring-sky-400', 'bg-sky-950/40', 'scale-[1.02]');
+          if (selectedStars !== 'all') {
+            panel.classList.add('opacity-60');
+          } else {
+            panel.classList.remove('opacity-60');
+          }
         }
-      }).join('');
+      });
+
+      currentFilteredGames = EMBEDDED_GAMES.filter(game => {
+        if (searchQuery) {
+          const matchName = game.game.toLowerCase().includes(searchQuery);
+          const matchNotes = (game.considerations || '').toLowerCase().includes(searchQuery);
+          const matchCore = (game.core || '').toLowerCase().includes(searchQuery);
+          if (!matchName && !matchNotes && !matchCore) return false;
+        }
+
+        if (selectedStars !== 'all') {
+          const starVal = parseInt(selectedStars, 10);
+          if (starVal === 1) {
+            if (game.rating > 1) return false;
+          } else {
+            if (game.rating !== starVal) return false;
+          }
+        }
+
+        if (selectedRegion !== 'all' && game.region !== selectedRegion) return false;
+        if (selectedBoot !== 'all' && game.boot !== selectedBoot) return false;
+
+        return true;
+      });
+
+      currentFilteredGames.sort((a, b) => {
+        let comparison = 0;
+        if (currentSortKey === 'title') {
+          comparison = a.game.localeCompare(b.game);
+        } else if (currentSortKey === 'rating') {
+          comparison = a.rating - b.rating;
+        } else if (currentSortKey === 'fps') {
+          comparison = (a.fps_max || 0) - (b.fps_max || 0);
+        }
+
+        return currentSortOrder === 'asc' ? comparison : -comparison;
+      });
+
+      if (currentFilteredGames.length === 0) {
+        gamesContainer.innerHTML = '';
+        emptyState.classList.remove('hidden');
+      } else {
+        emptyState.classList.add('hidden');
+        gamesContainer.innerHTML = currentFilteredGames.map((game, idx) => createListRow(game, idx)).join('');
+      }
     }
 
-    init();
+    // EVENT LISTENERS
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.toLowerCase().trim();
+      render();
+    });
+
+    regionFilter.addEventListener('change', (e) => {
+      selectedRegion = e.target.value;
+      render();
+    });
+
+    bootFilter.addEventListener('change', (e) => {
+      selectedBoot = e.target.value;
+      render();
+    });
+
+    sortKey.addEventListener('change', (e) => {
+      currentSortKey = e.target.value;
+      render();
+    });
+
+    sortOrderBtn.addEventListener('click', () => {
+      if (currentSortOrder === 'asc') {
+        currentSortOrder = 'desc';
+        sortOrderLabel.textContent = 'Desc';
+        sortOrderIcon.classList.add('rotate-180');
+      } else {
+        currentSortOrder = 'asc';
+        sortOrderLabel.textContent = 'Asc';
+        sortOrderIcon.classList.remove('rotate-180');
+      }
+      render();
+    });
+
+    // RATING PANEL CLICK HANDLER
+    document.querySelectorAll('.rating-panel').forEach(panel => {
+      panel.addEventListener('click', () => {
+        const rating = panel.getAttribute('data-rating');
+        if (selectedStars === rating) {
+          selectedStars = 'all';
+        } else {
+          selectedStars = rating;
+        }
+        render();
+      });
+    });
+
+    function resetAllFilters() {
+      searchInput.value = '';
+      regionFilter.value = 'all';
+      bootFilter.value = 'all';
+      sortKey.value = 'title';
+      currentSortOrder = 'asc';
+      sortOrderLabel.textContent = 'Asc';
+      sortOrderIcon.classList.remove('rotate-180');
+
+      searchQuery = '';
+      selectedStars = 'all';
+      selectedRegion = 'all';
+      selectedBoot = 'all';
+      currentSortKey = 'title';
+
+      render();
+    }
+
+    resetFiltersBtn.addEventListener('click', resetAllFilters);
+    clearFiltersBtn.addEventListener('click', resetAllFilters);
+
+    // INITIALIZATION
+    async function initDashboard() {
+      try {
+        const response = await fetch(GAMES_JSON_URL);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        EMBEDDED_GAMES = await response.json();
+      } catch (err) {
+        console.error("Error loading compatibility data:", err);
+      } finally {
+        updateStats();
+        render();
+      }
+    }
+
+    initDashboard();
   </script>
 </body>
 </html>
