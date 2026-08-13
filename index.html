@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dolphin Core for MuOS | Universal Compatibility Dashboard</title>
-  <link id="favicon" rel="icon" type="image/svg+xml" href="assets/gamecube.svg">
+  <!-- FAVICON SPDW SYMBOL -->
+  <link id="favicon" rel="icon" type="image/png" href="assets/spdw_symbol.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script>
@@ -105,7 +106,7 @@
         
         <!-- TITLE & CONSOLE SWITCHER -->
         <div class="space-y-3">
-          <div class="flex items-center gap-3">
+          <div class="flex flex-wrap items-center gap-3">
             <!-- CONSOLE SELECTOR TABS -->
             <div class="inline-flex p-1 rounded-2xl bg-black/20 border border-white/10 backdrop-blur-md">
               <button id="btnConsoleGC" onclick="switchConsole('gc')" class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl font-bold text-xs transition-all duration-200 bg-gc-600 text-white shadow-lg shadow-gc-900/50">
@@ -121,6 +122,12 @@
                 </svg>
                 <span>Nintendo Wii</span>
               </button>
+            </div>
+
+            <!-- LOGHI SPDW ACCANTO ALLO SWITCHER WII -->
+            <div class="flex items-center gap-2 shrink-0">
+              <img src="assets/spdw_symbol.png" alt="SPDW Symbol" class="h-7 w-auto object-contain">
+              <img src="assets/spdwfactory_logo.png" alt="SPDW Factory Logo" class="h-7 w-auto object-contain">
             </div>
           </div>
 
@@ -361,7 +368,6 @@
     function switchConsole(targetConsole) {
       currentConsole = targetConsole;
 
-      const favicon = document.getElementById('favicon');
       const consoleLogo = document.getElementById('consoleLogo');
       const appBody = document.getElementById('appBody');
       const appHeader = document.getElementById('appHeader');
@@ -383,10 +389,9 @@
       const sortOrderBtn = document.getElementById('sortOrderBtn');
 
       if (targetConsole === 'gc') {
-        // Logo & Favicon
+        // Logo Console
         consoleLogo.src = 'assets/gamecube.svg';
         consoleLogo.alt = 'GameCube Logo';
-        favicon.href = 'assets/gamecube.svg';
 
         // Tema GC Dark
         appBody.className = "theme-gc font-sans antialiased transition-colors duration-300 min-h-screen";
@@ -421,10 +426,9 @@
         clearFiltersBtn.className = "mt-3 px-3 py-1.5 bg-gc-600 text-white rounded-xl text-xs font-semibold hover:bg-gc-500 transition-colors shadow-sm";
 
       } else {
-        // Logo & Favicon
+        // Logo Console
         consoleLogo.src = 'assets/wii.svg';
         consoleLogo.alt = 'Wii Logo';
-        favicon.href = 'assets/wii.svg';
 
         // Tema Wii Light High-Contrast
         appBody.className = "theme-wii font-sans antialiased transition-colors duration-300 min-h-screen text-slate-900";
@@ -552,7 +556,7 @@
       document.getElementById('count-1').textContent = counts[1];
     }
 
-    // COMPACT LIST ROW BUILDER CON CONTRASTO PER TEMA
+    // COMPACT LIST ROW BUILDER
     function createListRow(game, index) {
       const flagUrl = getFlagUrl(game.region);
       const isGC = currentConsole === 'gc';
@@ -605,7 +609,6 @@
       const isGC = currentConsole === 'gc';
       const modalCard = document.getElementById('modalCard');
 
-      // Modifica stile modale a seconda del tema
       if (isGC) {
         modalCard.className = "bg-gc-950 border border-gc-700/80 rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl relative text-slate-100";
         document.getElementById('modalTitle').className = "text-xl font-bold text-white leading-tight";
@@ -827,7 +830,7 @@
         document.getElementById('emptyStateText').innerHTML = 
           `<strong class="text-rose-500">Errore caricamento file JSON (${currentConsole.toUpperCase()}):</strong><br>Verifica che il file <code class="bg-black/20 px-1 py-0.5 rounded font-mono">${primaryUrl}</code> esista e sia un JSON valido.`;
         document.getElementById('emptyState').classList.remove('hidden');
-      } finally {
+      } font-medium {
         updateStats();
         render();
       }
