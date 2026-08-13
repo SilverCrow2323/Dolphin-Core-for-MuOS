@@ -10,7 +10,7 @@ ROM=$3
 LOG_INFO "$0" 0 "Content Launch" "DETAIL"
 LOG_INFO "$0" 0 "NAME" "$NAME"
 LOG_INFO "$0" 0 "CORE" "$CORE"
-LOG_INFO "$0" 0 "FILE" "$FILE"
+LOG_INFO "$0" 0 "ROM" "$ROM"
 
 NUMSTICKS=$(cat /opt/muos/device/config/board/stick)
 
@@ -38,43 +38,48 @@ cd "$EMUDIR" || exit
 
 cd Config
 
-# Dolphin.ini (Overclock/CPU per-profilo — se nessun ramo combacia resta quello dell'ultimo lancio, per questo defaultgfx/speedhack/blackscreenfix devono SEMPRE ripristinare esplicitamente il default)
+# Dolphin.ini (Overclock/CPU per-profilo): se il file del profilo manca si ricade sempre
+# sul default, così non resta mai la configurazione dell'ultimo lancio.
 case ${CORE} in
 	*striker*)
-		cp Dolphin.ini.striker Dolphin.ini
+		CONFIG=Dolphin.ini.striker
 		;;
 	*scaler*)
-		cp Dolphin.ini.scaler Dolphin.ini
+		CONFIG=Dolphin.ini.scaler
 		;;
 	*luigismansion*)
-		cp Dolphin.ini.luigismansion Dolphin.ini
+		CONFIG=Dolphin.ini.luigismansion
 		;;
 	*)
-		cp Dolphin.ini.default Dolphin.ini
+		CONFIG=Dolphin.ini.default
 		;;
 esac
+[ -f "$CONFIG" ] || CONFIG=Dolphin.ini.default
+cp "$CONFIG" Dolphin.ini
 
-# GFX.ini
+# GFX.ini: stesso pattern — profilo mancante o non riconosciuto => default, mai sticky.
 case ${CORE} in
-	*defaultgfx*)
-		cp GFX.ini.default GFX.ini
-		;;
 	*speedhack*)
-		cp GFX.ini.speedhacks GFX.ini
+		CONFIG=GFX.ini.speedhacks
 		;;
 	*blackscreenfix*)
-		cp GFX.ini.blackscreenfix GFX.ini
+		CONFIG=GFX.ini.blackscreenfix
 		;;
 	*striker*)
-		cp GFX.ini.striker GFX.ini
+		CONFIG=GFX.ini.striker
 		;;
 	*scaler*)
-		cp GFX.ini.scaler GFX.ini
+		CONFIG=GFX.ini.scaler
 		;;
 	*luigismansion*)
-		cp GFX.ini.luigismansion GFX.ini
+		CONFIG=GFX.ini.luigismansion
+		;;
+	*)
+		CONFIG=GFX.ini.default
 		;;
 esac
+[ -f "$CONFIG" ] || CONFIG=GFX.ini.default
+cp "$CONFIG" GFX.ini
 
 # GCPadNew.ini
 cp GCPadNew.ini.${NUMSTICKS}joy GCPadNew.ini
@@ -87,11 +92,14 @@ case ${CORE} in
 	*sideways*)
 		cp WiimoteNew.ini.${NUMSTICKS}joy.sideways WiimoteNew.ini
 		;;
+	*)
+		cp WiimoteNew.ini.${NUMSTICKS}joy WiimoteNew.ini
+		;;
 esac
 
 cd ..
 
-/opt/muos/script/mux/track.sh "$NAME" "$CORE" "$FILE" start
+/opt/muos/script/mux/track.sh "$NAME" "$CORE" "$ROM" start
 
 /opt/muos/bin/gptokeyb dolphin -c "/opt/muos/share/emulator/gptokeyb/ext-dolphin.gptk" &
 GPTOKEYB_PID=$!
@@ -100,6 +108,6 @@ GPTOKEYB_PID=$!
 
 kill -9 $GPTOKEYB_PID 2>/dev/null
 
-/opt/muos/script/mux/track.sh "$NAME" "$CORE" "$FILE" stop
+/opt/muos/script/mux/track.sh "$NAME" "$CORE" "$ROM" stop
 
 unset SDL_GAMECONTROLLERCONFIG_FILE SDL_HQ_SCALER SDL_ROTATION SDL_BLITTER_DISABLED

@@ -19,13 +19,13 @@ jobs:
 
       - name: Update games.json
         env:
-          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_BODY: ${{ toJSON(github.event.issue.body) }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
           python3 << 'PYSCRIPT'
           import json, os, re
 
-          issue_body = os.environ['ISSUE_BODY']
+          issue_body = json.loads(os.environ['ISSUE_BODY'])
           issue_number = os.environ['ISSUE_NUMBER']
 
           def extract_val(label, body):
