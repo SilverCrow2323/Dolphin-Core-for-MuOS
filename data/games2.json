@@ -1,0 +1,18 @@
+[
+  {
+    "game": "Calling",
+    "region": "NTSC / USA",
+    "rating": 2,
+    "fps": "15-25",
+    "fps_min": 15,
+    "fps_max": 25,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "Default",
+    "core_version": "v10.5.300",
+    "considerations": "Boots but is heavily lagging all the time",
+    "source": "SirPips",
+    "device": "RG35XX H (muOS Jacaranda)",
+    "issue": 0
+  }
+]
