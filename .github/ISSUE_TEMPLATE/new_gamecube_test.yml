@@ -6,14 +6,14 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for contributing to the GameCube Compatibility Database! Please fill out all required fields below. Your report will be reviewed and merged into the dashboard.
+        Thank you for contributing to the GameCube Compatibility Database! Please fill out all required fields below. Your report will be reviewed and merged into the database.
 
   - type: input
     id: title
     attributes:
       label: "Game Title"
-      description: "Exact name of the game (e.g., Super Smash Bros. Melee)"
-      placeholder: "Super Mario Sunshine"
+      description: "Exact name of the game"
+      placeholder: "Enter game title"
     validations:
       required: true
 
@@ -48,8 +48,8 @@ body:
     id: fps
     attributes:
       label: "FPS Range"
-      description: "Enter the observed FPS range (e.g., 30-60 or 25). Use ??? if unknown."
-      placeholder: "30-60"
+      description: "Enter the observed FPS range or average value. Use ??? if unknown."
+      placeholder: "Enter FPS range or average value"
     validations:
       required: true
 
@@ -100,7 +100,6 @@ body:
         - "v9.0 Goose"
         - "v10.0 SPDW"
         - "v10.5-124"
-        - "v10.5-3"
         - "v10.5.300"
         - "Other (specify in notes)"
     validations:
@@ -111,7 +110,7 @@ body:
     attributes:
       label: "Considerations & Notes"
       description: "Describe performance, graphical issues, audio problems, workarounds, or anything noteworthy."
-      placeholder: "Runs smooth at 50fps but drops frames in crowded areas. Audio desyncs during intro..."
+      placeholder: "Write your considerations, notes or performance details here"
     validations:
       required: false
 
@@ -120,7 +119,7 @@ body:
     attributes:
       label: "Tester Username"
       description: "Your username or alias to credit in the database."
-      placeholder: "Sexy_Shrek"
+      placeholder: "Write your username"
     validations:
       required: true
 
@@ -128,7 +127,7 @@ body:
     id: device
     attributes:
       label: "Device Used"
-      description: "Which handheld / device did you test on? (e.g., Trimui Smart Pro, RG35XX H, etc.)"
-      placeholder: "Trimui Smart Pro"
+      description: "Which handheld or device did you test on?"
+      placeholder: "Write your device model"
     validations:
       required: false
