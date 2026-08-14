@@ -1,4 +1,4 @@
-name: Add Game from Issue
+name: Add GameCube test results from Issue
 
 on:
   issues:
