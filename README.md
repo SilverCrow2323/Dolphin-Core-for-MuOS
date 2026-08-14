@@ -99,6 +99,8 @@ A brand new, interactive compatibility database is now live! It gathers and orga
 
 Want to contribute to the chaos? If you test other titles, feel free to share your results by opening a new issue using our dedicated GameCube and Wii Test Templates.
 
+- 🎮 [Send GameCube Report](https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=new_gamecube_test.yml)
+- 🌀 [Send Wii Report](https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=wii-game-test.yml)
 
 > *Data history note: All preliminary data has been meticulously extrapolated and ported over from the [Original Community Google Sheets Spreadsheet](https://docs.google.com/spreadsheets/u/0/d/1LHXQV78yAuvii8J77KUgEt3Ap6TagjQzN48gdB9iVKY/htmlview).*
 
