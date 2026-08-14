@@ -155,7 +155,7 @@
           </div>
           <div class="space-y-2">
             <div id="statTestedBox" class="text-xs font-black bg-gc-900/80 border border-gc-600/50 rounded-xl px-3 py-1.5 flex justify-between items-center shadow-inner text-white">
-              <span class="tracking-wider uppercase">TESTED GAMES:</span>
+              <span class="tracking-wider uppercase">UNIQUE GAMES:</span>
               <span id="statTested" class="bg-gc-500 text-white px-2.5 py-0.5 rounded-lg font-mono font-black text-base shadow-sm">0</span>
             </div>
             <div class="text-xs font-mono flex justify-between items-center px-1 text-slate-400">
@@ -198,8 +198,8 @@
 
         <select id="sortKey" class="bg-slate-950/60 border border-white/10 rounded-xl px-2.5 py-1.5 text-xs focus:outline-none">
           <option value="title">Sort: Title</option>
-          <option value="rating">Sort: Rating</option>
-          <option value="fps">Sort: FPS</option>
+          <option value="rating">Sort: Best Rating</option>
+          <option value="fps">Sort: Best FPS</option>
         </select>
 
         <button id="sortOrderBtn" class="bg-slate-950/60 border border-white/10 hover:border-white/30 px-2.5 py-1.5 rounded-xl text-xs flex items-center gap-1 transition-colors shadow-sm">
@@ -273,11 +273,11 @@
       </button>
     </div>
 
-    <!-- COMPACT LIST CONTAINER -->
-    <div id="gamesContainer" class="flex flex-col gap-2"></div>
+    <!-- COMPACT HORIZONTAL MENU LIST CONTAINER -->
+    <div id="gamesContainer" class="flex flex-col gap-1.5 max-w-5xl mx-auto w-full"></div>
 
     <!-- EMPTY STATE -->
-    <div id="emptyState" class="hidden text-center py-12 bg-slate-900/30 border border-dashed border-white/10 rounded-2xl">
+    <div id="emptyState" class="hidden text-center py-12 bg-slate-900/30 border border-dashed border-white/10 rounded-2xl max-w-4xl mx-auto">
       <svg class="w-10 h-10 text-slate-500 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
       </svg>
@@ -288,47 +288,56 @@
     </div>
   </main>
 
-  <!-- MODAL FOR DETAILED VIEW -->
-  <div id="gameModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm hidden">
-    <div id="modalCard" class="bg-gc-950 border border-gc-700/80 rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl relative">
-      <button id="closeModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-200 p-1.5 rounded-full bg-black/10 hover:bg-black/20 transition-colors">
+  <!-- ADVANCED MODAL FOR DETAILED VIEW -->
+  <div id="gameModal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-md hidden">
+    <div id="modalCard" class="bg-gc-950 border border-gc-700/80 rounded-3xl max-w-2xl w-full max-h-[90vh] flex flex-col p-5 sm:p-6 shadow-2xl relative overflow-hidden">
+      
+      <!-- CLOSE BUTTON -->
+      <button id="closeModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-full bg-black/20 hover:bg-black/40 transition-colors z-10">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
 
-      <div class="flex items-center gap-3 pr-8">
-        <img id="modalFlag" src="" alt="Region Flag" class="w-6 h-auto rounded border border-slate-300/20 shrink-0">
-        <h3 id="modalTitle" class="text-xl font-bold leading-tight"></h3>
-      </div>
-
-      <div class="flex flex-wrap items-center gap-2">
-        <div id="modalStars"></div>
-        <span id="modalRatingBadge" class="text-xs px-2.5 py-0.5 rounded-full font-semibold border"></span>
-        <span id="modalFps" class="text-xs font-mono px-2.5 py-0.5 rounded font-bold"></span>
-      </div>
-
-      <div id="modalStatsGrid" class="grid grid-cols-3 gap-2 text-center py-2.5 rounded-2xl border">
-        <div class="p-2">
-          <div class="text-[10px] uppercase font-bold text-slate-500">Boot</div>
-          <div id="modalBoot" class="text-xs font-bold mt-0.5"></div>
+      <!-- MODAL HEADER -->
+      <div id="modalHeaderBox" class="border-b border-white/10 pb-4 pr-10 shrink-0 space-y-3">
+        <div class="flex items-center gap-3 min-w-0">
+          <img id="modalFlag" src="" alt="Region Flag" class="w-6 h-4 object-cover rounded border border-slate-300/20 shrink-0">
+          <h3 id="modalTitle" class="text-lg sm:text-xl font-black leading-tight truncate"></h3>
+          <span id="modalRegionBadge" class="text-[10px] font-mono px-2 py-0.5 rounded uppercase font-bold shrink-0"></span>
         </div>
-        <div class="p-2 border-x border-slate-300/20">
-          <div class="text-[10px] uppercase font-bold text-slate-500">Playable</div>
-          <div id="modalPlayable" class="text-xs font-bold mt-0.5"></div>
-        </div>
-        <div class="p-2">
-          <div class="text-[10px] uppercase font-bold text-slate-500">Core</div>
-          <div id="modalCore" class="text-xs font-mono font-bold mt-0.5"></div>
+
+        <!-- STATS COMPARISON GRID: BEST VS AVERAGE -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 text-center">
+          <div id="modalBestRatingBox" class="p-2 rounded-xl border flex flex-col items-center justify-center">
+            <span class="text-[9px] uppercase tracking-wider font-bold text-slate-400">Best Rating</span>
+            <div id="modalBestRatingVal" class="flex items-center gap-1 mt-0.5 font-bold text-xs"></div>
+          </div>
+
+          <div id="modalBestFpsBox" class="p-2 rounded-xl border flex flex-col items-center justify-center">
+            <span class="text-[9px] uppercase tracking-wider font-bold text-slate-400">Best FPS</span>
+            <span id="modalBestFpsVal" class="text-xs font-mono font-bold mt-0.5"></span>
+          </div>
+
+          <div id="modalAvgRatingBox" class="p-2 rounded-xl border flex flex-col items-center justify-center">
+            <span class="text-[9px] uppercase tracking-wider font-bold text-slate-400">Avg Rating</span>
+            <span id="modalAvgRatingVal" class="text-xs font-mono font-bold mt-0.5"></span>
+          </div>
+
+          <div id="modalAvgFpsBox" class="p-2 rounded-xl border flex flex-col items-center justify-center">
+            <span class="text-[9px] uppercase tracking-wider font-bold text-slate-400">Avg FPS</span>
+            <span id="modalAvgFpsVal" class="text-xs font-mono font-bold mt-0.5"></span>
+          </div>
         </div>
       </div>
 
-      <div>
-        <h4 id="modalNotesHeader" class="text-xs uppercase font-bold text-slate-500 mb-1.5">Testing Notes &amp; Considerations</h4>
-        <p id="modalConsiderations" class="text-sm p-3.5 rounded-2xl border leading-relaxed italic"></p>
+      <!-- MODAL BODY: SCROLLABLE CHRONOLOGICAL ENTRIES -->
+      <div class="flex-1 overflow-y-auto my-3 pr-1 space-y-3" id="modalEntriesContainer">
+        <!-- Populated via JS -->
       </div>
 
-      <div id="modalFooter" class="flex justify-between items-center text-xs pt-2 border-t border-slate-300/20">
-        <span>Submitted by: <strong id="modalSource" class="font-bold"></strong></span>
-        <span>Device: <strong id="modalDevice" class="font-semibold"></strong></span>
+      <!-- MODAL FOOTER -->
+      <div id="modalFooter" class="pt-3 border-t border-white/10 flex justify-between items-center text-xs text-slate-400 shrink-0">
+        <span id="modalTotalEntriesText">Total Registered Tests: 0</span>
+        <button onclick="closeModal()" class="px-4 py-1.5 rounded-xl font-bold bg-black/20 hover:bg-black/40 border border-white/10 transition-colors">Close</button>
       </div>
     </div>
   </div>
@@ -342,7 +351,8 @@
 
   <script>
     let currentConsole = 'gc';
-    let EMBEDDED_GAMES = [];
+    let RAW_GAMES = [];
+    let GROUPED_GAMES = [];
 
     const URLS = {
       gc: "./data/games.json",
@@ -481,22 +491,92 @@
       return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
     }
 
-    function getRatingBadgeClass(rating) {
-      if (currentConsole === 'gc') {
-        if (rating === 5) return 'bg-emerald-950/80 text-emerald-400 border-emerald-800/60';
-        if (rating === 4) return 'bg-teal-950/80 text-teal-400 border-teal-800/60';
-        if (rating === 3) return 'bg-amber-950/80 text-amber-400 border-amber-800/60';
-        if (rating === 2) return 'bg-orange-950/80 text-orange-400 border-orange-800/60';
-        if (rating >= 1) return 'bg-rose-950/80 text-rose-400 border-rose-800/60';
-        return 'bg-slate-900 text-slate-400 border-slate-700';
-      } else {
-        if (rating === 5) return 'bg-emerald-100 text-emerald-800 border-emerald-300';
-        if (rating === 4) return 'bg-teal-100 text-teal-800 border-teal-300';
-        if (rating === 3) return 'bg-amber-100 text-amber-800 border-amber-300';
-        if (rating === 2) return 'bg-orange-100 text-orange-800 border-orange-300';
-        if (rating >= 1) return 'bg-rose-100 text-rose-800 border-rose-300';
-        return 'bg-slate-100 text-slate-700 border-slate-300';
-      }
+    // GROUPING & DEDUPLICATION LOGIC BY (TITLE + REGION)
+    function groupGames(rawList) {
+      const groupsMap = new Map();
+
+      rawList.forEach(item => {
+        const gameTitle = (item.game || '').trim();
+        const regionStr = (item.region || 'NTSC / USA').trim();
+        if (!gameTitle) return;
+
+        const key = `${gameTitle.toLowerCase()}___${regionStr.toLowerCase()}`;
+
+        if (!groupsMap.has(key)) {
+          groupsMap.set(key, {
+            game: gameTitle,
+            region: regionStr,
+            entries: []
+          });
+        }
+        groupsMap.get(key).entries.push(item);
+      });
+
+      const result = [];
+
+      groupsMap.forEach(group => {
+        // Sort entries chronologically: oldest first (#1) to newest
+        group.entries.sort((a, b) => {
+          const issueA = parseInt(a.issue || 0, 10);
+          const issueB = parseInt(b.issue || 0, 10);
+          if (issueA !== 0 && issueB !== 0) return issueA - issueB;
+          return 0;
+        });
+
+        let bestRating = 0;
+        let bestFpsMax = -1;
+        let bestFpsStr = "???";
+        let bestBoot = "NO";
+        let bestPlayable = "NO";
+
+        let totalRating = 0;
+        let validFpsCount = 0;
+        let totalFpsSum = 0;
+
+        group.entries.forEach(e => {
+          const r = parseInt(e.rating || 0, 10);
+          if (r > bestRating) bestRating = r;
+          totalRating += r;
+
+          if (e.boot === "YES") bestBoot = "YES";
+          if (e.playable === "YES") bestPlayable = "YES";
+
+          const fpsRaw = (e.fps || '').trim();
+          const fpsMax = parseInt(e.fps_max || 0, 10);
+          const hasNumericFps = /\d+/.test(fpsRaw) && fpsRaw !== "???";
+
+          if (hasNumericFps && fpsMax > bestFpsMax) {
+            bestFpsMax = fpsMax;
+            bestFpsStr = fpsRaw;
+          } else if (bestFpsMax === -1 && fpsRaw && fpsRaw !== "???") {
+            bestFpsStr = fpsRaw;
+          }
+
+          if (hasNumericFps && fpsMax > 0) {
+            totalFpsSum += fpsMax;
+            validFpsCount++;
+          }
+        });
+
+        const avgRating = (totalRating / group.entries.length).toFixed(1);
+        const avgFps = validFpsCount > 0 ? Math.round(totalFpsSum / validFpsCount) : "N/A";
+
+        result.push({
+          game: group.game,
+          region: group.region,
+          entries: group.entries,
+          entriesCount: group.entries.length,
+          bestRating: bestRating,
+          bestFpsStr: bestFpsStr,
+          bestFpsMax: bestFpsMax,
+          bestBoot: bestBoot,
+          bestPlayable: bestPlayable,
+          avgRating: parseFloat(avgRating),
+          avgFps: avgFps
+        });
+      });
+
+      return result;
     }
 
     // STATE VARIABLES
@@ -522,19 +602,19 @@
     const clearFiltersBtn = document.getElementById('clearFiltersBtn');
 
     function updateStats() {
-      const totalEntries = EMBEDDED_GAMES.length;
-      const uniqueGamesCount = new Set(EMBEDDED_GAMES.map(g => (g.game || '').trim().toLowerCase())).size;
+      const totalEntriesCount = RAW_GAMES.length;
+      const uniqueGamesCount = GROUPED_GAMES.length;
 
       document.getElementById('statTested').textContent = uniqueGamesCount;
-      document.getElementById('statTotal').textContent = totalEntries;
+      document.getElementById('statTotal').textContent = totalEntriesCount;
 
       const counts = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
-      EMBEDDED_GAMES.forEach(g => {
-        if (g.rating === 5) counts[5]++;
-        else if (g.rating === 4) counts[4]++;
-        else if (g.rating === 3) counts[3]++;
-        else if (g.rating === 2) counts[2]++;
-        else if (g.rating <= 1) counts[1]++;
+      GROUPED_GAMES.forEach(g => {
+        if (g.bestRating === 5) counts[5]++;
+        else if (g.bestRating === 4) counts[4]++;
+        else if (g.bestRating === 3) counts[3]++;
+        else if (g.bestRating === 2) counts[2]++;
+        else if (g.bestRating <= 1) counts[1]++;
       });
 
       document.getElementById('count-5').textContent = counts[5];
@@ -544,102 +624,147 @@
       document.getElementById('count-1').textContent = counts[1];
     }
 
-    function createListRow(game, index) {
-      const flagUrl = getFlagUrl(game.region);
+    // CREATES SLIM COMPACT HORIZONTAL MENU ROW
+    function createListRow(groupedGame, index) {
+      const flagUrl = getFlagUrl(groupedGame.region);
       const isGC = currentConsole === 'gc';
 
-      const bootBadgeClass = game.boot === 'YES' 
+      const bootBadgeClass = groupedGame.bestBoot === 'YES' 
         ? (isGC ? 'text-emerald-400 bg-emerald-950/50 border-emerald-800/50' : 'text-emerald-800 bg-emerald-100 border-emerald-300 font-bold')
         : (isGC ? 'text-rose-400 bg-rose-950/50 border-rose-800/50' : 'text-rose-800 bg-rose-100 border-rose-300 font-bold');
 
       const cardClass = isGC 
         ? 'gc-glass border border-white/10 hover:border-gc-500/50 hover:bg-gc-900/40 text-slate-100'
-        : 'wii-glass border border-slate-300 hover:border-wii-400 hover:bg-wii-50/60 text-slate-900 shadow-sm';
+        : 'wii-glass border border-slate-300 hover:border-wii-400 hover:bg-wii-50/70 text-slate-900 shadow-sm';
 
       const titleTextClass = isGC ? 'text-slate-100 group-hover:text-gc-400' : 'text-slate-900 group-hover:text-wii-600 font-bold';
       const fpsBadgeClass = isGC ? 'bg-black/40 text-gc-300 border-white/10' : 'bg-wii-100 text-wii-900 border-wii-300 font-bold';
+      const countBadgeClass = isGC ? 'text-slate-400 font-mono text-[11px]' : 'text-slate-500 font-mono text-[11px] font-semibold';
 
       const delay = Math.min(index * 12, 180);
 
+      const entriesText = groupedGame.entriesCount > 1 
+        ? `<span class="${countBadgeClass} ml-1.5">[${groupedGame.entriesCount} entries]</span>` 
+        : `<span class="${countBadgeClass} ml-1.5 opacity-60">[1 entry]</span>`;
+
       return `
-        <div class="card-anim rounded-2xl py-2.5 px-3.5 flex items-center justify-between gap-3 transition-all duration-200 cursor-pointer group shadow-sm ${cardClass}" style="animation-delay: ${delay}ms;" onclick="openGameModal(${index})">
+        <div class="card-anim rounded-xl py-2 px-3 flex items-center justify-between gap-3 transition-all duration-200 cursor-pointer group shadow-sm ${cardClass}" style="animation-delay: ${delay}ms;" onclick="openGameModal(${index})">
           
-          <div class="flex items-center gap-3 min-w-0 flex-1">
-            <img src="${flagUrl}" alt="${game.region}" class="w-5 h-3.5 object-cover rounded border border-slate-400/30 shrink-0">
-            <h3 class="text-sm truncate transition-colors ${titleTextClass}">${escapeHtml(game.game)}</h3>
+          <div class="flex items-center gap-2.5 min-w-0 flex-1">
+            <img src="${flagUrl}" alt="${groupedGame.region}" class="w-4 h-3 object-cover rounded border border-slate-400/30 shrink-0">
+            <h3 class="text-xs sm:text-sm truncate transition-colors ${titleTextClass}">
+              ${escapeHtml(groupedGame.game)}
+              ${entriesText}
+            </h3>
           </div>
 
-          <div class="flex items-center gap-3 shrink-0">
+          <div class="flex items-center gap-2.5 shrink-0">
             <div class="hidden sm:block">
-              ${renderStars(game.rating)}
+              ${renderStars(groupedGame.bestRating)}
             </div>
 
-            <span class="text-[11px] font-mono px-2 py-0.5 rounded-lg border ${fpsBadgeClass}">
-              ${game.fps !== "???" ? game.fps + " FPS" : "N/A"}
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded border ${fpsBadgeClass}">
+              ${groupedGame.bestFpsStr !== "???" ? groupedGame.bestFpsStr + " FPS" : "N/A"}
             </span>
 
             <span class="text-[10px] font-mono px-2 py-0.5 rounded-full border ${bootBadgeClass}">
-              ${game.boot === 'YES' ? 'Boot' : 'No Boot'}
+              ${groupedGame.bestBoot === 'YES' ? 'Boot' : 'No Boot'}
             </span>
 
-            <svg class="w-4 h-4 text-slate-400 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            <svg class="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </div>
         </div>
       `;
     }
 
+    // OPEN DETAILED MODAL WITH ALL CHRONOLOGICAL ENTRIES
     function openGameModal(filteredIndex) {
-      const game = currentFilteredGames[filteredIndex];
-      if (!game) return;
+      const item = currentFilteredGames[filteredIndex];
+      if (!item) return;
 
       const isGC = currentConsole === 'gc';
       const modalCard = document.getElementById('modalCard');
+      const entriesContainer = document.getElementById('modalEntriesContainer');
 
       if (isGC) {
-        modalCard.className = "bg-gc-950 border border-gc-700/80 rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl relative text-slate-100";
-        document.getElementById('modalTitle').className = "text-xl font-bold text-white leading-tight";
-        document.getElementById('modalFps').className = "text-xs font-mono px-2.5 py-0.5 rounded bg-black/40 text-gc-300 border border-white/10 font-bold";
-        document.getElementById('modalStatsGrid').className = "grid grid-cols-3 gap-2 text-center py-2.5 bg-black/30 rounded-2xl border border-white/10 text-slate-200";
-        document.getElementById('modalCore').className = "text-xs font-mono font-bold mt-0.5 text-gc-400";
-        document.getElementById('modalConsiderations').className = "text-sm text-slate-300 bg-black/20 p-3.5 rounded-2xl border border-white/10 leading-relaxed italic";
-        document.getElementById('modalSource').className = "text-gc-400 font-bold";
-        document.getElementById('modalDevice').className = "text-slate-300 font-semibold";
+        modalCard.className = "bg-gc-950 border border-gc-700/80 rounded-3xl max-w-2xl w-full max-h-[90vh] flex flex-col p-5 sm:p-6 shadow-2xl relative overflow-hidden text-slate-100";
+        document.getElementById('modalTitle').className = "text-lg sm:text-xl font-black text-white leading-tight truncate";
+        document.getElementById('modalRegionBadge').className = "text-[10px] font-mono px-2 py-0.5 rounded bg-gc-900 text-gc-300 border border-gc-700/60 uppercase font-bold shrink-0";
+        
+        ['modalBestRatingBox', 'modalBestFpsBox', 'modalAvgRatingBox', 'modalAvgFpsBox'].forEach(id => {
+          document.getElementById(id).className = "p-2 rounded-xl bg-black/30 border border-white/10 flex flex-col items-center justify-center";
+        });
       } else {
-        modalCard.className = "bg-white border border-slate-300 rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl relative text-slate-900";
-        document.getElementById('modalTitle').className = "text-xl font-bold text-slate-900 leading-tight";
-        document.getElementById('modalFps').className = "text-xs font-mono px-2.5 py-0.5 rounded bg-wii-100 text-wii-900 border border-wii-300 font-bold";
-        document.getElementById('modalStatsGrid').className = "grid grid-cols-3 gap-2 text-center py-2.5 bg-slate-50 rounded-2xl border border-slate-200 text-slate-800";
-        document.getElementById('modalCore').className = "text-xs font-mono font-bold mt-0.5 text-wii-700";
-        document.getElementById('modalConsiderations').className = "text-sm text-slate-800 bg-slate-50 p-3.5 rounded-2xl border border-slate-200 leading-relaxed italic font-medium";
-        document.getElementById('modalSource').className = "text-wii-700 font-bold";
-        document.getElementById('modalDevice').className = "text-slate-800 font-semibold";
+        modalCard.className = "bg-white border border-slate-300 rounded-3xl max-w-2xl w-full max-h-[90vh] flex flex-col p-5 sm:p-6 shadow-2xl relative overflow-hidden text-slate-900";
+        document.getElementById('modalTitle').className = "text-lg sm:text-xl font-black text-slate-900 leading-tight truncate";
+        document.getElementById('modalRegionBadge').className = "text-[10px] font-mono px-2 py-0.5 rounded bg-wii-100 text-wii-900 border border-wii-300 uppercase font-bold shrink-0";
+        
+        ['modalBestRatingBox', 'modalBestFpsBox', 'modalAvgRatingBox', 'modalAvgFpsBox'].forEach(id => {
+          document.getElementById(id).className = "p-2 rounded-xl bg-slate-50 border border-slate-200 flex flex-col items-center justify-center";
+        });
       }
 
-      document.getElementById('modalTitle').textContent = game.game;
-      document.getElementById('modalFlag').src = getFlagUrl(game.region);
-      document.getElementById('modalStars').innerHTML = renderStars(game.rating);
+      document.getElementById('modalTitle').textContent = item.game;
+      document.getElementById('modalFlag').src = getFlagUrl(item.region);
+      document.getElementById('modalRegionBadge').textContent = item.region;
+
+      // Populate Header Stats Grid
+      document.getElementById('modalBestRatingVal').innerHTML = renderStars(item.bestRating);
+      document.getElementById('modalBestFpsVal').textContent = item.bestFpsStr !== "???" ? `${item.bestFpsStr} FPS` : 'N/A';
+      document.getElementById('modalBestFpsVal').className = isGC ? "text-xs font-mono font-bold mt-0.5 text-gc-300" : "text-xs font-mono font-bold mt-0.5 text-wii-700";
       
-      const ratingBadge = document.getElementById('modalRatingBadge');
-      ratingBadge.textContent = `${game.rating} / 5 Stars`;
-      ratingBadge.className = `text-xs px-2.5 py-0.5 rounded-full font-semibold border ${getRatingBadgeClass(game.rating)}`;
+      document.getElementById('modalAvgRatingVal').textContent = `${item.avgRating} / 5 ⭐`;
+      document.getElementById('modalAvgFpsVal').textContent = item.avgFps !== "N/A" ? `${item.avgFps} FPS` : 'N/A';
 
-      document.getElementById('modalFps').textContent = game.fps !== "???" ? `${game.fps} FPS` : 'FPS: Unknown';
-      
-      const bootEl = document.getElementById('modalBoot');
-      bootEl.textContent = game.boot === 'YES' ? 'Boots' : 'No Boot';
-      bootEl.className = game.boot === 'YES' ? 'text-xs font-bold text-emerald-600 mt-0.5' : 'text-xs font-bold text-rose-600 mt-0.5';
+      // Build Chronological Entries (#1 to #N)
+      entriesContainer.innerHTML = item.entries.map((entry, idx) => {
+        const num = idx + 1;
+        const entryCardBg = isGC ? 'bg-black/30 border-white/10' : 'bg-slate-50 border-slate-200';
+        const numBadge = isGC ? 'bg-gc-600/30 text-gc-300 border-gc-500/40' : 'bg-wii-500/20 text-wii-800 border-wii-300';
+        const notesBg = isGC ? 'bg-black/40 border-white/5 text-slate-300' : 'bg-white border-slate-200 text-slate-700 font-medium';
 
-      const playableEl = document.getElementById('modalPlayable');
-      playableEl.textContent = game.playable === 'YES' ? 'Playable' : 'Unplayable';
-      playableEl.className = game.playable === 'YES' 
-        ? (isGC ? 'text-xs font-bold text-gc-400 mt-0.5' : 'text-xs font-bold text-wii-600 mt-0.5')
-        : 'text-xs font-bold text-rose-600 mt-0.5';
+        return `
+          <div class="p-3.5 rounded-2xl border ${entryCardBg} space-y-2.5">
+            <div class="flex flex-wrap justify-between items-center gap-2 border-b border-white/10 pb-2">
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-mono font-black px-2 py-0.5 rounded border ${numBadge}">#${num}</span>
+                <span class="text-xs font-semibold">Tester: <strong class="${isGC ? 'text-gc-400' : 'text-wii-700'}">${escapeHtml(entry.source || 'Anonymous')}</strong></span>
+                ${entry.issue ? `<span class="text-[10px] font-mono text-slate-400">(Issue #${entry.issue})</span>` : ''}
+              </div>
+              <span class="text-xs text-slate-400 font-mono">Device: <strong class="${isGC ? 'text-slate-200' : 'text-slate-800'}">${escapeHtml(entry.device || 'Unknown Device')}</strong></span>
+            </div>
 
-      document.getElementById('modalCore').textContent = game.core || 'Default Core';
-      document.getElementById('modalConsiderations').textContent = game.considerations || 'No additional testing notes provided for this report.';
-      document.getElementById('modalSource').textContent = game.source || 'Anonymous';
-      document.getElementById('modalDevice').textContent = game.device || 'RG35XX H (muOS)';
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+              <div>
+                <span class="text-slate-500 text-[9px] uppercase font-bold block">Rating</span>
+                ${renderStars(entry.rating)}
+              </div>
+              <div>
+                <span class="text-slate-500 text-[9px] uppercase font-bold block">FPS Range</span>
+                <span class="font-mono font-bold">${entry.fps || '???'}</span>
+              </div>
+              <div>
+                <span class="text-slate-500 text-[9px] uppercase font-bold block">Status</span>
+                <span class="font-bold ${entry.boot === 'YES' ? 'text-emerald-500' : 'text-rose-500'}">
+                  ${entry.boot === 'YES' ? 'Boots' : 'No Boot'} / ${entry.playable === 'YES' ? 'Playable' : 'Unplayable'}
+                </span>
+              </div>
+              <div>
+                <span class="text-slate-500 text-[9px] uppercase font-bold block">Core Profile</span>
+                <span class="font-mono font-bold ${isGC ? 'text-gc-300' : 'text-wii-800'}">${escapeHtml(entry.core || 'Default')} (${escapeHtml(entry.core_version || 'v10.5.300')})</span>
+              </div>
+            </div>
 
+            ${entry.considerations ? `
+              <div class="p-2.5 rounded-xl border ${notesBg} text-xs italic leading-relaxed">
+                "${escapeHtml(entry.considerations)}"
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('modalTotalEntriesText').textContent = `Total Registered Tests: ${item.entriesCount}`;
       document.getElementById('gameModal').classList.remove('hidden');
     }
 
@@ -673,31 +798,29 @@
         }
       });
 
-      currentFilteredGames = EMBEDDED_GAMES.filter(game => {
-        if (!game || !game.game) return false;
-
+      currentFilteredGames = GROUPED_GAMES.filter(item => {
         if (searchQuery) {
-          const matchName = game.game.toLowerCase().includes(searchQuery);
-          const matchNotes = (game.considerations || '').toLowerCase().includes(searchQuery);
-          const matchCore = (game.core || '').toLowerCase().includes(searchQuery);
+          const matchName = item.game.toLowerCase().includes(searchQuery);
+          const matchNotes = item.entries.some(e => (e.considerations || '').toLowerCase().includes(searchQuery));
+          const matchCore = item.entries.some(e => (e.core || '').toLowerCase().includes(searchQuery));
           if (!matchName && !matchNotes && !matchCore) return false;
         }
 
         if (selectedStars !== 'all') {
           const starVal = parseInt(selectedStars, 10);
           if (starVal === 1) {
-            if (game.rating > 1) return false;
+            if (item.bestRating > 1) return false;
           } else {
-            if (game.rating !== starVal) return false;
+            if (item.bestRating !== starVal) return false;
           }
         }
 
         if (selectedRegion !== 'all') {
-          if (selectedRegion === 'NTSC' && !game.region.includes('NTSC')) return false;
-          if (selectedRegion !== 'NTSC' && game.region !== selectedRegion) return false;
+          if (selectedRegion === 'NTSC' && !item.region.includes('NTSC')) return false;
+          if (selectedRegion !== 'NTSC' && item.region !== selectedRegion) return false;
         }
 
-        if (selectedBoot !== 'all' && game.boot !== selectedBoot) return false;
+        if (selectedBoot !== 'all' && item.bestBoot !== selectedBoot) return false;
 
         return true;
       });
@@ -707,9 +830,9 @@
         if (currentSortKey === 'title') {
           comparison = (a.game || '').localeCompare(b.game || '');
         } else if (currentSortKey === 'rating') {
-          comparison = (a.rating || 0) - (b.rating || 0);
+          comparison = (a.bestRating || 0) - (b.bestRating || 0);
         } else if (currentSortKey === 'fps') {
-          comparison = (a.fps_max || 0) - (b.fps_max || 0);
+          comparison = (a.bestFpsMax || 0) - (b.bestFpsMax || 0);
         }
 
         return currentSortOrder === 'asc' ? comparison : -comparison;
@@ -720,7 +843,7 @@
         emptyState.classList.remove('hidden');
       } else {
         emptyState.classList.add('hidden');
-        gamesContainer.innerHTML = currentFilteredGames.map((game, idx) => createListRow(game, idx)).join('');
+        gamesContainer.innerHTML = currentFilteredGames.map((item, idx) => createListRow(item, idx)).join('');
       }
     }
 
@@ -787,7 +910,8 @@
     clearFiltersBtn.addEventListener('click', resetAllFilters);
 
     async function loadConsoleData() {
-      EMBEDDED_GAMES = [];
+      RAW_GAMES = [];
+      GROUPED_GAMES = [];
       const primaryUrl = URLS[currentConsole];
       const fallbackUrl = currentConsole === 'gc' ? URLS.gc_fallback : null;
 
@@ -807,7 +931,8 @@
         }
         if (!response.ok) throw new Error(`HTTP Status ${response.status}`);
         
-        EMBEDDED_GAMES = await response.json();
+        RAW_GAMES = await response.json();
+        GROUPED_GAMES = groupGames(RAW_GAMES);
         document.getElementById('emptyStateText').textContent = "No games found matching the current filters.";
       } catch (err) {
         console.error(`Error loading data for ${currentConsole}:`, err);
