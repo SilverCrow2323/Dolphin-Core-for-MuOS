@@ -2533,5 +2533,21 @@
     "considerations": "Doesnt start",
     "source": "Sexy_Shrek",
     "rating": 0
+  },
+  {
+    "game": "Scaler",
+    "region": "NTSC / USA",
+    "rating": 4,
+    "fps": "19-45",
+    "fps_min": 19,
+    "fps_max": 45,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "Default",
+    "core_version": "v10.5.300",
+    "considerations": "Runs smoothly at 40 FPS. Gets a bit laggy in large / crowded spaces.\nVideo sequences are perfect.\nPlayable, with issues",
+    "source": "sirpips",
+    "device": "RG35XX H",
+    "issue": 1
   }
 ]
