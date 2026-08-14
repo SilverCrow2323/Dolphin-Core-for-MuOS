@@ -2549,5 +2549,21 @@
     "source": "sirpips",
     "device": "RG35XX H",
     "issue": 1
+  },
+  {
+    "game": "Beyblade Super Tournament Battle",
+    "region": "NTSC / USA",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "All of them (tested multiple)",
+    "core_version": "v10.5.300",
+    "considerations": "",
+    "source": "sirpips",
+    "device": "RG35XX H with muOS Jacaranda",
+    "issue": 4
   }
 ]
