@@ -1,4 +1,4 @@
-name: Add Wii Game from Issue
+name: Add Wii test results from Issue
 
 on:
   issues:
