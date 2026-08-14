@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   update-json:
-    if: contains(github.event.issue.labels.*.name, 'game-test') && github.event.issue.state_reason == 'completed'
+    if: contains(github.event.issue.labels.*.name, 'GameCube game test')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
