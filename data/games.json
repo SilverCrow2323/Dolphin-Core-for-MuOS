@@ -2565,5 +2565,21 @@
     "source": "sirpips",
     "device": "RG35XX H with muOS Jacaranda",
     "issue": 4
+  },
+  {
+    "game": "Mario Smash Football",
+    "region": "PAL",
+    "rating": 5,
+    "fps": "30-50",
+    "fps_min": 30,
+    "fps_max": 50,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "All of them (tested multiple)",
+    "core_version": "v10.5.300",
+    "considerations": "Perfectly playable, some minor lagging in video scenes.",
+    "source": "sirpips",
+    "device": "RG35XX H with muOS Jacaranda",
+    "issue": 5
   }
 ]
