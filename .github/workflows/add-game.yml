@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       issue_number:
-        description: 'Numero Issue da processare manualmente (es: 12)'
+        description: 'Issue number to process manually (e.g., 12)'
         required: false
         type: string
 
@@ -33,32 +33,33 @@ jobs:
           MANUAL_ISSUE: ${{ inputs.issue_number }}
         run: |
           if [ -n "$MANUAL_ISSUE" ]; then
-            echo "Esecuzione manuale per Issue #$MANUAL_ISSUE"
+            echo "Manual execution for Issue #$MANUAL_ISSUE"
             BODY=$(gh issue view "$MANUAL_ISSUE" --json body -q .body)
-            echo "FETCHED_BODY=$BODY" >> $GITHUB_ENV
+            {
+              echo "FETCHED_BODY<<EOF"
+              echo "$BODY"
+              echo "EOF"
+            } >> $GITHUB_ENV
             echo "TARGET_ISSUE_NUM=$MANUAL_ISSUE" >> $GITHUB_ENV
           else
-            echo "Esecuzione automatica da chiusura Issue"
+            echo "Automatic execution from Issue closure"
+            {
+              echo "FETCHED_BODY<<EOF"
+              echo "${{ github.event.issue.body }}"
+              echo "EOF"
+            } >> $GITHUB_ENV
             echo "TARGET_ISSUE_NUM=${{ github.event.issue.number }}" >> $GITHUB_ENV
           fi
 
       - name: Update games.json
         env:
-          ISSUE_BODY: ${{ env.FETCHED_BODY || toJSON(github.event.issue.body) }}
+          ISSUE_BODY: ${{ env.FETCHED_BODY }}
           ISSUE_NUMBER: ${{ env.TARGET_ISSUE_NUM }}
         run: |
           python3 << 'PYSCRIPT'
           import json, os, re
 
-          issue_body_env = os.environ.get('ISSUE_BODY', '')
-          try:
-              issue_body = json.loads(issue_body_env) if issue_body_env.startswith('"') else issue_body_env
-          except Exception:
-              issue_body = issue_body_env
-
-          if not issue_body:
-              issue_body = ""
-
+          issue_body = os.environ.get('ISSUE_BODY', '')
           issue_number = os.environ.get('ISSUE_NUMBER', '0')
 
           def extract_val(label, body):
@@ -103,7 +104,8 @@ jobs:
               v = val.strip().lower()
               return "YES" if ("yes" in v or "true" in v) else "NO"
 
-          # Estrazione dati
+          # Extract Issue form data
+          game_title = extract_val("Game Title", issue_body)
           rating_raw = extract_val("Performance Rating (Stars)", issue_body)
           fps_raw    = extract_val("FPS Range", issue_body)
           boot_raw   = extract_val("Does the game boot?", issue_body)
@@ -112,7 +114,7 @@ jobs:
           fps_min, fps_max = parse_fps(fps_raw)
 
           new_game = {
-              "game": extract_val("Game Title", issue_body),
+              "game": game_title,
               "region": extract_val("Region", issue_body) or "NTSC / USA",
               "rating": parse_rating(rating_raw),
               "fps": fps_raw if fps_raw else "???",
@@ -129,7 +131,8 @@ jobs:
           }
 
           if not new_game["game"]:
-              print("ERROR: Game Title vuoto. Annullamento.")
+              print(f"ERROR: Game Title is empty for Issue #{issue_number}.")
+              print(f"Received Issue body:\n{issue_body[:200]}...")
               exit(1)
 
           json_path = "data/games.json"
@@ -141,6 +144,7 @@ jobs:
           else:
               data = []
 
+          # Check for duplicates by Issue # or Game + Region + Tester combination
           existing_idx = None
           for i, g in enumerate(data):
               if g.get("issue") and g.get("issue") == new_game["issue"]:
@@ -167,7 +171,7 @@ jobs:
               with open(github_env, 'a', encoding='utf-8') as f:
                   f.write(f"ACTION={action}\n")
 
-          print(f"✅ Gioco '{new_game['game']}' {action} con successo.")
+          print(f"✅ Game '{new_game['game']}' {action} successfully.")
           PYSCRIPT
 
       - name: Commit and Push changes
@@ -176,7 +180,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data/games.json
           if git diff --cached --quiet; then
-            echo "Nessuna modifica da committare."
+            echo "No changes to commit."
           else
             git commit -m "auto: ${{ env.ACTION }} game from Issue #${{ env.TARGET_ISSUE_NUM }}"
             git push
