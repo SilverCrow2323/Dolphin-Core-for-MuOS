@@ -1,123 +1,157 @@
 name: "🧪 New GameCube Game Test"
-description: "Submit test results for a new game on Dolphin Core / muOS"
-title: "[TEST]: "
-labels: ["game-test"]
+description: "Submit test results for a new GameCube game on Dolphin Rt:Core / muOS"
+title: "[TEST GC]: "
+labels: ["game-test", "gamecube"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for contributing to the GameCube Compatibility Database! Please fill out all required fields below. Your report will be reviewed and merged into the database.
+        ## 🎮 GAMECUBE COMPATIBILITY REPORT
+
+        *Before submitting, please check if this game has already been reported.*
+        *Search the database for the game title.*
+
+        ---
+
+        ### 🔍 Game ID Autodetection
+        **Start typing the game title below. The system will search GameTDB database and automatically find the Game ID.**
+
+        **Once the Game ID is found, the cover art will appear automatically!**
+
+        ---
 
   - type: input
-    id: title
+    id: game_title
     attributes:
-      label: "Game Title"
-      description: "Exact name of the game"
-      placeholder: "Enter game title"
+      label: "📖 Game Title"
+      description: "Start typing the game title. Autocomplete will help you!"
+      placeholder: "e.g., Luigi's Mansion, Super Mario Sunshine, Metroid Prime"
     validations:
       required: true
+
+  - type: input
+    id: game_id_display
+    attributes:
+      label: "🎯 Game ID (Auto-detected)"
+      description: "This will be automatically filled when you type the title above"
+      placeholder: "GLME01, GMSE01, etc."
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ### 🖼️ Cover Art Preview
+
+        *If the Game ID was detected correctly, a cover image will appear below.*
+
+        ![](https://art.gametdb.com/wiitdb/artwork/{GAME_ID}.png)
+
+        ---
 
   - type: dropdown
     id: region
     attributes:
-      label: "Region"
-      description: "Which region is the tested ROM/ISO from?"
+      label: "🌍 Region"
       options:
-        - "PAL"
         - "NTSC / USA"
-        - "JPN"
+        - "PAL"
+        - "NTSC / JPN"
+        - "NTSC / KOR"
     validations:
       required: true
 
   - type: dropdown
     id: rating
     attributes:
-      label: "Performance Rating (Stars)"
-      description: "Rate the overall performance. 5★ = virtually perfect, no real issues. 0★ = does not boot at all."
+      label: "⭐ Performance Rating"
+      description: "5★ = virtually perfect. 0★ = does not boot at all."
       options:
-        - "5 - Perfect (no significant issues)"
-        - "4 - Playable with minor issues"
-        - "3 - Playable with patience"
-        - "2 - Disaster but boots"
-        - "1 - Better avoid"
-        - "0 - Does not boot"
+        - "5 - PERFECT (no issues)"
+        - "4 - GREAT (minor issues)"
+        - "3 - PLAYABLE (needs tweaks)"
+        - "2 - POOR (slow but boots)"
+        - "1 - BAD (unplayable)"
+        - "0 - DOES NOT BOOT"
     validations:
       required: true
 
   - type: input
     id: fps
     attributes:
-      label: "FPS Range"
-      description: "Enter the observed FPS range or average value. Use ??? if unknown."
-      placeholder: "Enter FPS range or average value"
+      label: "🎬 FPS Range"
+      description: "Min and max FPS observed (e.g., 30-60). Use ??? if unknown."
+      placeholder: "e.g., 30-60"
     validations:
       required: true
 
   - type: dropdown
     id: boot
     attributes:
-      label: "Does the game boot?"
+      label: "🔌 Does the game boot?"
       options:
-        - "Yes"
-        - "No"
+        - "YES"
+        - "NO"
     validations:
       required: true
 
   - type: dropdown
     id: playable
     attributes:
-      label: "Is the game playable?"
+      label: "🎮 Is the game playable?"
       description: "Can you actually play through the game, even with issues?"
       options:
-        - "Yes"
-        - "No"
+        - "YES"
+        - "NO"
     validations:
       required: true
 
   - type: dropdown
-    id: core
+    id: core_profile
     attributes:
-      label: "Core Profile Used"
-      description: "Which Dolphin core profile was used for this test?"
+      label: "⚙️ Core Profile Used"
       options:
-        - "Default"
-        - "SpeedHack"
-        - "Black Screen Fix"
-        - "SpeedHack / Default (both tested)"
-        - "All of them (tested multiple)"
-        - "Other (specify in notes)"
-    validations:
-      required: true
-
-  - type: dropdown
-    id: core_version
-    attributes:
-      label: "Core Version"
-      description: "Select the version of the Dolphin core used for this test"
-      options:
-        - "~v8.0"
-        - "v9.0"
-        - "v9.0 Goose"
-        - "v10.0 SPDW"
-        - "v10.5-124"
-        - "v10.5.300"
+        - "Standard"
+        - "Performance"
+        - "Compatibility"
+        - "Wii"
         - "Other (specify in notes)"
     validations:
       required: true
 
   - type: textarea
+    id: game_settings_used
+    attributes:
+      label: "📝 GameSettings Configuration"
+      description: "If you used a custom GameSettings file, paste its content or describe the key changes."
+      placeholder: "Overclock = 0.55, InternalResolution = 50, VISkip = True, etc."
+    validations:
+      required: false
+
+  - type: textarea
     id: notes
     attributes:
-      label: "Considerations & Notes"
+      label: "📝 Considerations & Notes"
       description: "Describe performance, graphical issues, audio problems, workarounds, or anything noteworthy."
       placeholder: "Write your considerations, notes or performance details here"
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "🖼️ Screenshots / Video (optional)"
+      description: "Paste links to Imgur, YouTube, or other hosting services."
+      placeholder: "https://i.imgur.com/abc123.jpg"
     validations:
       required: false
 
   - type: input
     id: tester
     attributes:
-      label: "Tester Username"
+      label: "👤 Tester Username"
       description: "Your username or alias to credit in the database."
       placeholder: "Write your username"
     validations:
@@ -126,8 +160,31 @@ body:
   - type: input
     id: device
     attributes:
-      label: "Device Used"
-      description: "Which handheld or device did you test on?"
-      placeholder: "Write your device model"
+      label: "📱 Device Used"
+      description: "Which device did you test on?"
+      placeholder: "e.g., RG35XX H"
     validations:
-      required: false
+      required: true
+
+  - type: input
+    id: muos_version
+    attributes:
+      label: "💾 muOS Version"
+      description: "Which version of muOS are you running?"
+      placeholder: "e.g., Jacaranda"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: dolphincore_version
+    attributes:
+      label: "🐬 Dolphin Core Version"
+      options:
+        - "v10.5.300"
+        - "v10.5-124"
+        - "v10.0 SPDW"
+        - "v9.0"
+        - "v8.0"
+        - "Other (specify in notes)"
+    validations:
+      required: true
