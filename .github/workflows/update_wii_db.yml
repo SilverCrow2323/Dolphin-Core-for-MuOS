@@ -1,0 +1,285 @@
+name: Update Wii Database from Issues
+
+on:
+  issues:
+    types: [closed]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Issue number to process manually (e.g., 12)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  issues: read
+  pull-requests: write
+
+jobs:
+  update-wii-db:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.issue.labels.*.name, 'wii-game-test')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests python-Levenshtein
+
+      - name: Download GameTDB Database
+        run: |
+          mkdir -p data/database
+          wget -q https://www.gametdb.com/wiitdb.txt -O data/database/wiitdb.txt
+
+      - name: Process Issue and Update JSON
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MANUAL_ISSUE: ${{ inputs.issue_number }}
+        run: |
+          python3 << 'PYSCRIPT'
+          import json, os, re, sys
+          from difflib import get_close_matches
+          import requests
+
+          issue_body = ""
+          issue_number = ""
+
+          if os.environ.get('MANUAL_ISSUE'):
+              issue_num = os.environ.get('MANUAL_ISSUE')
+              import subprocess
+              result = subprocess.run(['gh', 'issue', 'view', issue_num, '--json', 'body', '-q', '.body'], capture_output=True, text=True)
+              issue_body = result.stdout
+              issue_number = issue_num
+          else:
+              issue_body = "${{ github.event.issue.body }}"
+              issue_number = "${{ github.event.issue.number }}"
+
+          # [STESSE FUNZIONI DEL WORKFLOW GC, ma con ID che iniziano con R]
+
+          def extract_val(label, body):
+              if not body:
+                  return ""
+              safe_label = re.escape(label)
+              match = re.search(rf"###\s*{safe_label}\s*\n\s*(.*?)(?=\n###\s|\Z)", body, re.DOTALL)
+              if not match:
+                  return ""
+              val = match.group(1).strip()
+              val = re.sub(r'\*\*(.*?)\*\*', r'\1', val)
+              val = re.sub(r'\*(.*?)\*', r'\1', val)
+              val = re.sub(r'^\s*[-\*]\s*', '', val, flags=re.MULTILINE).strip()
+              if val.lower() in ["_no response_", "no response", "n/a", "none"]:
+                  return ""
+              return val
+
+          def parse_rating(rating_raw):
+              if not rating_raw:
+                  return 3
+              nums = re.findall(r'\d+', rating_raw)
+              if nums:
+                  return max(0, min(5, int(nums[0])))
+              return 3
+
+          def parse_fps(fps_str):
+              if not fps_str or fps_str == '???':
+                  return (0, 0)
+              nums = [int(n) for n in re.findall(r'\d+', fps_str)]
+              if len(nums) >= 2:
+                  return (min(nums[0], nums[1]), max(nums[0], nums[1]))
+              elif len(nums) == 1:
+                  return (nums[0], nums[0])
+              return (0, 0)
+
+          def yes_no(val):
+              v = val.strip().lower()
+              return "YES" if ("yes" in v or "true" in v) else "NO"
+
+          def parse_core_profile(core_str):
+              if not core_str:
+                  return "Standard"
+              core_lower = core_str.lower()
+              if "speed" in core_lower:
+                  return "Performance"
+              if "black" in core_lower or "fix" in core_lower or "compat" in core_lower:
+                  return "Compatibility"
+              if "wii" in core_lower:
+                  return "Wii"
+              return "Standard"
+
+          def load_game_id_mapping():
+              mapping = {}
+              db_path = "data/database/wiitdb.txt"
+              if not os.path.exists(db_path):
+                  import urllib.request
+                  urllib.request.urlretrieve("https://www.gametdb.com/wiitdb.txt", db_path)
+
+              with open(db_path, "r", encoding="utf-8") as f:
+                  for line in f:
+                      line = line.strip()
+                      if not line or line.startswith('#') or line.startswith('TITLES ='):
+                          continue
+                      parts = line.split(' = ')
+                      if len(parts) == 2:
+                          game_id = parts[0].strip()
+                          title = parts[1].strip()
+                          # Per Wii (R*)
+                          if game_id[0] == 'R':
+                              mapping[title.lower()] = game_id
+                              clean = re.sub(r'[^\w\s]', '', title).lower()
+                              mapping[clean] = game_id
+                              if title.lower().startswith('the '):
+                                  mapping[title.lower()[4:]] = game_id
+              return mapping
+
+          def find_game_id(title, region, game_id_mapping):
+              if not title:
+                  return None
+
+              clean_title = re.sub(r'[^\w\s]', '', title).strip().lower()
+              clean_region = "ntsc" if "ntsc" in region.lower() else "pal"
+
+              for mapped_title, game_id in game_id_mapping.items():
+                  if clean_title in mapped_title or mapped_title in clean_title:
+                      region_char = game_id[-1]
+                      if clean_region == "ntsc" and region_char in ['E', 'U', 'K', 'W']:
+                          return game_id
+                      elif clean_region == "pal" and region_char == 'P':
+                          return game_id
+
+              matches = get_close_matches(clean_title, game_id_mapping.keys(), n=1, cutoff=0.6)
+              if matches:
+                  return game_id_mapping[matches[0]]
+
+              return None
+
+          # EXTRACT DATA
+          game_title = extract_val("Game Title", issue_body)
+          region = extract_val("Region", issue_body) or "NTSC / USA"
+          rating_raw = extract_val("Performance Rating (Stars)", issue_body)
+          fps_raw = extract_val("FPS Range", issue_body)
+          boot_raw = extract_val("Does the game boot?", issue_body)
+          play_raw = extract_val("Is the game playable?", issue_body)
+          core_raw = extract_val("Core Profile Used", issue_body)
+          core_version = extract_val("Dolphin Core Version", issue_body) or "v10.5.300"
+          considerations = extract_val("Considerations & Notes", issue_body)
+          tester = extract_val("Tester Username", issue_body) or "Anonymous"
+          device = extract_val("Device Used", issue_body) or "Unknown Device"
+          muos_version = extract_val("muOS Version", issue_body) or "Jacaranda"
+          screenshots = extract_val("Screenshots / Video (optional)", issue_body)
+          wiimote_ext = extract_val("Wiimote Extension Used", issue_body) or ""
+
+          fps_min, fps_max = parse_fps(fps_raw)
+          rating = parse_rating(rating_raw)
+          core_profile = parse_core_profile(core_raw)
+
+          game_id_mapping = load_game_id_mapping()
+          game_id = find_game_id(game_title, region, game_id_mapping)
+
+          if not game_id:
+              id_match = re.search(r'R[A-Z0-9]{5}', issue_body)
+              if id_match:
+                  game_id = id_match.group(0)
+              else:
+                  clean = re.sub(r'[^a-zA-Z]', '', game_title)[:3].upper()
+                  game_id = f"R{clean}01"
+                  note_missing = f"⚠️ Game ID non trovato automaticamente. Usato placeholder '{game_id}'. Correggere manualmente se necessario."
+              else:
+                  note_missing = ""
+          else:
+              note_missing = ""
+
+          new_entry = {
+              "game_id": game_id,
+              "game": game_title,
+              "region": region,
+              "rating": rating,
+              "fps": fps_raw if fps_raw else "???",
+              "fps_min": fps_min,
+              "fps_max": fps_max,
+              "boot": yes_no(boot_raw),
+              "playable": yes_no(play_raw),
+              "core": core_raw if core_raw else "Default",
+              "core_version": core_version,
+              "considerations": considerations + ("\n" + note_missing if note_missing else ""),
+              "source": tester,
+              "device": device,
+              "issue": int(issue_number) if issue_number.isdigit() else 0,
+              "configuration": {
+                  "core_profile": core_profile,
+                  "game_settings": f"{game_id}_default.ini",
+                  "overclock": None,
+                  "resolution": None,
+              },
+              "test_environment": {
+                  "device": device,
+                  "muos_version": muos_version,
+                  "dolphin_version": core_version,
+                  "sd_card": "",
+              },
+              "tags": [],
+              "wiimote_extension": wiimote_ext,
+              "profile_recommendation": {
+                  "core": core_profile,
+                  "game_settings": f"{game_id}_default.ini",
+                  "notes": "",
+              },
+              "video": {
+                  "screenshot": screenshots if screenshots else "",
+                  "video": "",
+              },
+              "variants": []
+          }
+
+          json_path = "data/games2.json"
+          os.makedirs(os.path.dirname(json_path) if os.path.dirname(json_path) else ".", exist_ok=True)
+
+          if os.path.exists(json_path):
+              with open(json_path, "r", encoding="utf-8") as f:
+                  data = json.load(f)
+          else:
+              data = []
+
+          existing_idx = None
+          for i, g in enumerate(data):
+              if g.get("game_id") == new_entry["game_id"]:
+                  existing_idx = i
+                  break
+
+          if existing_idx is not None:
+              data[existing_idx] = new_entry
+              action = "updated"
+          else:
+              data.append(new_entry)
+              action = "added"
+
+          with open(json_path, "w", encoding="utf-8") as f:
+              json.dump(data, f, indent=2, ensure_ascii=False)
+
+          github_env = os.environ.get('GITHUB_ENV')
+          if github_env:
+              with open(github_env, 'a', encoding='utf-8') as f:
+                  f.write(f"ACTION={action}\n")
+                  f.write(f"GAME_ID={new_entry['game_id']}\n")
+                  f.write(f"GAME_TITLE={new_entry['game']}\n")
+
+          print(f"✅ {new_entry['game']} ({new_entry['game_id']}) {action} successfully.")
+          if note_missing:
+              print(f"⚠️ {note_missing}")
+          PYSCRIPT
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/games2.json data/database/game_id_mapping.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "auto: ${{ env.ACTION }} ${{ env.GAME_TITLE }} (${{ env.GAME_ID }}) from Issue #${{ env.TARGET_ISSUE_NUM }}"
+            git push
+          fi
