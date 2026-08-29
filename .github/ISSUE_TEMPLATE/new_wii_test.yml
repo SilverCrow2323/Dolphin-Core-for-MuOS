@@ -1,0 +1,204 @@
+name: "🌀 New Wii Game Test"
+description: "Submit test results for a new Wii game on Dolphin Rt:Core / muOS"
+title: "[TEST WII]: "
+labels: ["wii-game-test", "wii"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📺 WII COMPATIBILITY REPORT
+
+        *Before submitting, please check if this game has already been reported.*
+        *Search the database for the game title.*
+
+        ---
+
+        ### 🔍 Game ID Autodetection
+        **Start typing the game title below. The system will search GameTDB database and automatically find the Game ID.**
+
+        **Once the Game ID is found, the cover art will appear automatically!**
+
+        ---
+
+  - type: input
+    id: game_title
+    attributes:
+      label: "📖 Game Title"
+      description: "Start typing the game title. Autocomplete will help you!"
+      placeholder: "e.g., Wii Sports, Mario Kart Wii, Super Mario Galaxy"
+    validations:
+      required: true
+
+  - type: input
+    id: game_id_display
+    attributes:
+      label: "🎯 Game ID (Auto-detected)"
+      description: "This will be automatically filled when you type the title above"
+      placeholder: "RSPE01, RMCE01, etc."
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ### 🖼️ Cover Art Preview
+
+        *If the Game ID was detected correctly, a cover image will appear below.*
+
+        ![](https://art.gametdb.com/wiitdb/artwork/{GAME_ID}.png)
+
+        ---
+
+  - type: dropdown
+    id: region
+    attributes:
+      label: "🌍 Region"
+      options:
+        - "NTSC / USA"
+        - "PAL"
+        - "NTSC / JPN"
+        - "NTSC / KOR"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: rating
+    attributes:
+      label: "⭐ Performance Rating"
+      description: "5★ = virtually perfect. 0★ = does not boot at all."
+      options:
+        - "5 - PERFECT (no issues)"
+        - "4 - GREAT (minor issues)"
+        - "3 - PLAYABLE (needs tweaks)"
+        - "2 - POOR (slow but boots)"
+        - "1 - BAD (unplayable)"
+        - "0 - DOES NOT BOOT"
+    validations:
+      required: true
+
+  - type: input
+    id: fps
+    attributes:
+      label: "🎬 FPS Range"
+      description: "Min and max FPS observed (e.g., 30-60). Use ??? if unknown."
+      placeholder: "e.g., 30-60"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: boot
+    attributes:
+      label: "🔌 Does the game boot?"
+      options:
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: playable
+    attributes:
+      label: "🎮 Is the game playable?"
+      description: "Can you actually play through the game, even with issues?"
+      options:
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: core_profile
+    attributes:
+      label: "⚙️ Core Profile Used"
+      options:
+        - "Standard"
+        - "Performance"
+        - "Compatibility"
+        - "Wii"
+        - "Other (specify in notes)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: wiimote_extension
+    attributes:
+      label: "🎮 Wiimote Extension Used"
+      description: "Which controller setup did you use?"
+      options:
+        - "Wiimote Only"
+        - "Wiimote + Nunchuk"
+        - "Classic Controller"
+        - "GameCube Controller"
+        - "Other (specify in notes)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: game_settings_used
+    attributes:
+      label: "📝 GameSettings Configuration"
+      description: "If you used a custom GameSettings file, paste its content or describe the key changes."
+      placeholder: "Overclock = 0.48, CPUThread = False, etc."
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "📝 Considerations & Notes"
+      description: "Describe performance, graphical issues, audio problems, Wiimote mapping issues, workarounds, or anything noteworthy."
+      placeholder: "Write your considerations, notes or performance details here"
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "🖼️ Screenshots / Video (optional)"
+      description: "Paste links to Imgur, YouTube, or other hosting services."
+      placeholder: "https://i.imgur.com/abc123.jpg"
+    validations:
+      required: false
+
+  - type: input
+    id: tester
+    attributes:
+      label: "👤 Tester Username"
+      description: "Your username or alias to credit in the database."
+      placeholder: "Write your username"
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: "📱 Device Used"
+      description: "Which device did you test on?"
+      placeholder: "e.g., RG35XX H"
+    validations:
+      required: true
+
+  - type: input
+    id: muos_version
+    attributes:
+      label: "💾 muOS Version"
+      description: "Which version of muOS are you running?"
+      placeholder: "e.g., Jacaranda"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: dolphincore_version
+    attributes:
+      label: "🐬 Dolphin Core Version"
+      options:
+        - "v10.5.300"
+        - "v10.5-124"
+        - "v10.0 SPDW"
+        - "v9.0"
+        - "v8.0"
+        - "Other (specify in notes)"
+    validations:
+      required: true
