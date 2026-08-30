@@ -1,6 +1,6 @@
 <div align="center">
 
-# <img src="assets/spdw_symbol.png" width="30" alt="SPDW Symbol"> Dolphin Core for MuOS
+# <img src="assets/spdw_symbol.png" width="30" alt="SPDW Symbol"> Dolphin Rt:Core for MuOS
 
 **The definitive Dolphin Core optimization hub for muOS.**  
 *A handheld running an ARM SoC deserves to squeeze every drop of performance out of GameCube and Wii.*
