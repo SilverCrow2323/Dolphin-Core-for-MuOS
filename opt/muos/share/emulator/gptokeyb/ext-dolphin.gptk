@@ -1,0 +1,16 @@
+# Dolphin Rt:Core - Default Hotkey Profile
+# RINFTROMPED by sirpips & SPDW Factory
+
+[Hotkeys]
+Keys/Stop = `Button 9` & `Button 8`
+Keys/Toggle Pause = `Button 6` & `Button 1`
+Keys/Save State Slot 1 = `Button 6` & `Button 0`
+Keys/Save State Slot 2 = `Button 6` & `Button 2`
+Keys/Save State Slot 3 = `Button 6` & `Button 3`
+Keys/Load State Slot 1 = `Button 7` & `Button 1`
+Keys/Load State Slot 2 = `Button 7` & `Button 0`
+Keys/Load State Slot 3 = `Button 7` & `Button 2`
+Keys/Load State Slot 4 = `Button 7` & `Button 3`
+Keys/Take Screenshot = `Button 10` & `Button 1`
+Keys/Toggle Fullscreen = `Button 6` & `Button 8`
+Keys/Reset = `Button 7` & `Button 8`

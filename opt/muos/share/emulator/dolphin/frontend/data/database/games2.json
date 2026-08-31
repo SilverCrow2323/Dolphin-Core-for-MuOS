@@ -1,0 +1,34 @@
+[
+  {
+    "game": "Calling",
+    "region": "NTSC / USA",
+    "rating": 2,
+    "fps": "15-25",
+    "fps_min": 15,
+    "fps_max": 25,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "Default",
+    "core_version": "v10.5.300",
+    "considerations": "Boots but is heavily lagging all the time",
+    "source": "SirPips",
+    "device": "RG35XX H (muOS Jacaranda)",
+    "issue": 0
+  },
+  {
+    "game": "New Super Mario Bros Wii",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "1-12",
+    "fps_min": 1,
+    "fps_max": 12,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack / Default (both tested)",
+    "core_version": "v10.5.300",
+    "considerations": "It is technically playable if you are fine with 9 fps but i wouldnt say its a fun experience",
+    "source": "TekkraGMD",
+    "device": "RG35XX H",
+    "issue": 8
+  }
+]

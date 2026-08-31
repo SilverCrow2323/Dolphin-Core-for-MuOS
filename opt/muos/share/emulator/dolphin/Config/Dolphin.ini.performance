@@ -1,6 +1,6 @@
 [Core]
 OverclockEnable = True
-Overclock = 0.55000000
+Overclock = 0.50000000
 CPUThread = True
 SyncOnSkipIdle = True
 DSPHLE = True
@@ -9,7 +9,7 @@ EmulationSpeed = 1.00000000
 GFXBackend = OGL
 
 [Video_Settings]
-InternalResolution = 50
+InternalResolution = 40
 EnableGPUTextureDecoding = True
 DisableFog = True
 EFBToTextureEnable = True
@@ -21,7 +21,3 @@ ShowFPS = True
 ShowVPS = True
 ShowSpeed = True
 ShowSpeedColors = True
-
-[Video_Enhancements]
-ForceTrueColor = False
-DisableCopyFilter = False

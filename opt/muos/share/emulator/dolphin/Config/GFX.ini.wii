@@ -1,0 +1,18 @@
+[Hardware]
+VSync = False
+Adapter = 0
+
+[Settings]
+BackendMultithreading = True
+InternalResolution = 38
+EnableGPUTextureDecoding = True
+DisableFog = True
+EFBToTextureEnable = True
+ImmediateXFBEnable = True
+FastDepthCalc = True
+SafeTextureCacheColorSamples = 128
+ShaderCache = True
+ShowFPS = True
+ShowVPS = True
+ShowSpeed = True
+ShowSpeedColors = True

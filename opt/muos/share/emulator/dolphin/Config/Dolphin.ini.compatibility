@@ -9,19 +9,16 @@ EmulationSpeed = 1.00000000
 GFXBackend = OGL
 
 [Video_Settings]
-InternalResolution = 50
+InternalResolution = 45
 EnableGPUTextureDecoding = True
-DisableFog = True
+DisableFog = False
 EFBToTextureEnable = True
 ImmediateXFBEnable = True
 FastDepthCalc = True
 SafeTextureCacheColorSamples = 128
 ShaderCache = True
+WaitForShadersBeforeStarting = True
 ShowFPS = True
 ShowVPS = True
 ShowSpeed = True
 ShowSpeedColors = True
-
-[Video_Enhancements]
-ForceTrueColor = False
-DisableCopyFilter = False
