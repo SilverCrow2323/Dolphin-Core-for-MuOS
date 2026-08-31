@@ -308,8 +308,7 @@
     function getCoverUrl(gameId, regionName, consoleType) {
       if (!gameId) return null;
       const regionCode = getRegionCode(regionName);
-      const system = consoleType === 'gc' ? 'gc' : 'wii';
-      return `https://art.gametdb.com/${system}/cover/${regionCode}/${gameId}.png`;
+      return `https://art.gametdb.com/wii/cover/${regionCode}/${gameId}.png`;
     }
 
     function escapeHtml(str) {
