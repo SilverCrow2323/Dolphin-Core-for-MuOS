@@ -16,18 +16,27 @@ body:
             <img src="https://img.shields.io/badge/OS-muOS-orange?style=flat-square">
           </p>
           <p><em>Community-driven testing database for Dolphin emulation on muOS &amp; H700 chipset</em></p>
-          <br>
-          <strong>⚠️ Before submitting</strong><br>
-          Please check if this game has already been reported in the 
-          <a href="https://github.com/your-repo/issues?q=is%3Aissue+label%3Atest-report">database</a>.
         </div>
+        ---
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 🎯 Target Details
+
+        | Field | Value |
+        |-------|-------|
+        | **Platform** | *(select below)* |
+        | **Game Title** | *(enter below)* |
+        | **Region** | *(select below)* |
+        | **Game ID** | *(auto-detected or enter manually)* |
+
         ---
 
   - type: dropdown
     id: platform
     attributes:
       label: "🎮 Platform *"
-      description: "Select the console you tested on."
       options:
         - "GameCube"
         - "Wii"
@@ -38,25 +47,9 @@ body:
     id: game_title
     attributes:
       label: "📖 Game Title *"
-      description: "The full title of the game (e.g., Super Mario Sunshine)."
       placeholder: "e.g., Super Mario Sunshine, Wii Sports"
     validations:
       required: true
-
-  - type: input
-    id: game_id
-    attributes:
-      label: "🎯 Game ID (optional)"
-      description: "If you already know the Game ID (e.g., GMSE01, RSPE01), you can enter it here. Otherwise, it will be auto-detected from the title."
-      placeholder: "e.g., GMSE01"
-    validations:
-      required: false
-
-  - type: markdown
-    attributes:
-      value: |
-        ---
-        ## 📊 Test Results
 
   - type: dropdown
     id: region
@@ -70,29 +63,83 @@ body:
     validations:
       required: true
 
-  - type: dropdown
-    id: rating
-    attributes:
-      label: "⭐ Performance Rating *"
-      description: "5★ = virtually perfect. 0★ = does not boot at all."
-      options:
-        - "5 - PERFECT (no issues)"
-        - "4 - GREAT (minor issues)"
-        - "3 - PLAYABLE (needs tweaks)"
-        - "2 - POOR (slow but boots)"
-        - "1 - BAD (unplayable)"
-        - "0 - DOES NOT BOOT"
-    validations:
-      required: true
-
   - type: input
-    id: fps
+    id: game_id
     attributes:
-      label: "🎬 FPS Range *"
-      description: "Min and max FPS observed (e.g., 30-60). Use `???` if unknown."
-      placeholder: "e.g., 30-60"
+      label: "🎯 Game ID (optional)"
+      description: "If you already know the Game ID (e.g., GMSE01, RSPE01), enter it here. Otherwise it will be auto-detected."
+      placeholder: "e.g., GMSE01"
     validations:
-      required: true
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## 📊 Test Overview
+
+        <div align="center">
+          <table>
+            <tr>
+              <td align="center" width="33%">
+                <strong>🔌 Boot</strong><br><br>
+                <em>Does the game start?</em>
+              </td>
+              <td align="center" width="33%">
+                <strong>🎮 Playable</strong><br><br>
+                <em>Can you play through the game?</em>
+              </td>
+              <td align="center" width="33%">
+                <strong>🎬 FPS Range</strong><br><br>
+                <em>Min / max observed</em>
+              </td>
+            </tr>
+            <tr>
+              <td align="center">⬇️ <em>select below</em></td>
+              <td align="center">⬇️ <em>select below</em></td>
+              <td align="center">⬇️ <em>enter below</em></td>
+            </tr>
+          </table>
+        </div>
+
+        <br>
+
+        <div align="center">
+          <strong>⭐ Performance Rating</strong><br>
+          <em>Hover over the stars to see descriptions</em><br><br>
+          <table>
+            <tr>
+              <td align="center">
+                <details><summary>⭐</summary>0 - DOES NOT BOOT</details>
+              </td>
+              <td align="center">
+                <details><summary>⭐⭐</summary>1 - BAD (unplayable)</details>
+              </td>
+              <td align="center">
+                <details><summary>⭐⭐⭐</summary>2 - POOR (slow but boots)</details>
+              </td>
+              <td align="center">
+                <details><summary>⭐⭐⭐⭐</summary>3 - PLAYABLE (needs tweaks)</details>
+              </td>
+              <td align="center">
+                <details><summary>⭐⭐⭐⭐⭐</summary>4 - GREAT (minor issues)</details>
+              </td>
+              <td align="center">
+                <details><summary>⭐⭐⭐⭐⭐⭐</summary>5 - PERFECT (no issues)</details>
+              </td>
+            </tr>
+            <tr>
+              <td align="center"><code>0★</code></td>
+              <td align="center"><code>1★</code></td>
+              <td align="center"><code>2★</code></td>
+              <td align="center"><code>3★</code></td>
+              <td align="center"><code>4★</code></td>
+              <td align="center"><code>5★</code></td>
+            </tr>
+          </table>
+        </div>
+
+        ---
 
   - type: dropdown
     id: boot
@@ -108,10 +155,32 @@ body:
     id: playable
     attributes:
       label: "🎮 Is the game playable? *"
-      description: "Can you actually play through the game, even with issues?"
       options:
         - "YES"
         - "NO"
+    validations:
+      required: true
+
+  - type: input
+    id: fps
+    attributes:
+      label: "🎬 FPS Range *"
+      placeholder: "e.g., 30-60, or ??? if unknown"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: rating
+    attributes:
+      label: "⭐ Performance Rating *"
+      description: "Select the rating that best matches the game's performance."
+      options:
+        - "5 - PERFECT (no issues)"
+        - "4 - GREAT (minor issues)"
+        - "3 - PLAYABLE (needs tweaks)"
+        - "2 - POOR (slow but boots)"
+        - "1 - BAD (unplayable)"
+        - "0 - DOES NOT BOOT"
     validations:
       required: true
 
@@ -119,62 +188,105 @@ body:
     id: core_profile
     attributes:
       label: "⚙️ Core Profile Used *"
+      description: "Select the Rt:Core profile you tested with."
       options:
-        - "Standard"
-        - "Performance"
-        - "Compatibility"
-        - "Wii"
-        - "Other (specify in notes)"
+        # General profiles
+        - "default"
+        - "performance"
+        - "compatibility"
+        - "troubleshooting"
+        - "lite"
+        - "widescreen"
+        - "debug / logger"
+        - "blackscreenfix"
+        - "speedup 1"
+        - "speedup 2"
+        # Wii-specific profiles
+        - "wii-performance"
+        - "wii-compatibility"
+        - "wii-safe"
     validations:
       required: true
-
-  - type: dropdown
-    id: wiimote_extension
-    attributes:
-      label: "🎮 Wiimote Extension (Wii only)"
-      description: "If testing a Wii game, select the controller setup used."
-      options:
-        - "N/A (GameCube)"
-        - "Wiimote Only"
-        - "Wiimote + Nunchuk"
-        - "Classic Controller"
-        - "GameCube Controller"
-        - "Other (specify in notes)"
-    validations:
-      required: false
 
   - type: markdown
     attributes:
       value: |
         ---
-        ## 🛠️ Advanced Configuration
+        ## 📝 Osservazioni aggiuntive e allegati
+
+        <div align="center">
+          <table>
+            <tr>
+              <td align="center" width="50%">
+                <strong>📝 Considerazioni & Note</strong><br><br>
+                <em>Performance, glitch, workarounds...</em>
+              </td>
+              <td align="center" width="50%">
+                <strong>⚙️ Custom Game Settings</strong><br><br>
+                <em>Enable if you used custom settings</em>
+              </td>
+            </tr>
+            <tr>
+              <td align="center">⬇️ <em>write below</em></td>
+              <td align="center">⬇️ <em>select below</em></td>
+            </tr>
+          </table>
+        </div>
+
+        ---
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "📝 Considerazioni & Note"
+      description: "Describe performance, graphical issues, audio problems, workarounds, or anything noteworthy."
+      placeholder: "Write your considerations, notes or performance details here"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: custom_settings
+    attributes:
+      label: "⚙️ Custom Game Settings"
+      description: "Did you use custom GameSettings (e.g., overclock, resolution tweaks)?"
+      options:
+        - "No custom settings"
+        - "Yes, I used custom settings"
+    validations:
+      required: false
 
   - type: textarea
     id: game_settings_used
     attributes:
       label: "📝 GameSettings Configuration"
-      description: "If you used a custom GameSettings file, paste its content or describe the key changes."
-      placeholder: "Overclock = 0.55, InternalResolution = 50, VISkip = True, etc."
+      description: "Paste your custom GameSettings configuration here."
+      placeholder: "Overclock = 0.55\nInternalResolution = 50\nVISkip = True"
     validations:
       required: false
+    if:
+      - custom_settings: "Yes, I used custom settings"
 
-  - type: textarea
-    id: notes
+  - type: dropdown
+    id: has_attachments
     attributes:
-      label: "📝 Considerations & Notes"
-      description: "Describe performance, graphical issues, audio problems, workarounds, or anything noteworthy."
-      placeholder: "Write your considerations, notes or performance details here"
+      label: "🖼️ Screenshots / Video"
+      description: "Do you have screenshots or video to share?"
+      options:
+        - "No attachments"
+        - "Yes, I have attachments"
     validations:
       required: false
 
   - type: textarea
     id: screenshots
     attributes:
-      label: "🖼️ Screenshots / Video (optional)"
+      label: "🔗 Attachment Links"
       description: "Paste links to Imgur, YouTube, or other hosting services."
-      placeholder: "https://i.imgur.com/abc123.jpg"
+      placeholder: "https://i.imgur.com/abc123.jpg\nhttps://youtu.be/xyz789"
     validations:
       required: false
+    if:
+      - has_attachments: "Yes, I have attachments"
 
   - type: markdown
     attributes:
@@ -196,23 +308,32 @@ body:
     attributes:
       label: "📱 Device Used *"
       description: "Which device did you test on?"
-      placeholder: "e.g., RG35XX H"
+      placeholder: "e.g., RG35XX H, RG40XX H, RG CubeXX"
     validations:
       required: true
 
-  - type: input
+  - type: dropdown
     id: muos_version
     attributes:
       label: "💾 muOS Version *"
-      description: "Which version of muOS are you running?"
-      placeholder: "e.g., Jacaranda"
+      description: "Select the version of muOS you are running."
+      options:
+        - "2601.1 Funky Jacaranda (current)"
+        - "2601.0 Jacaranda"
+        - "2508.4 Loose Goose"
+        - "2508.3 Golden Goose"
+        - "2508.2 Silly Goose"
+        - "2508.1 Canada Goose"
+        - "2508.0 Goose"
+        - "2502.0 Pixie"
     validations:
       required: true
 
   - type: dropdown
     id: dolphincore_version
     attributes:
-      label: "🐬 Dolphin Core Version *"
+      label: "🐬 Dolphin Rt:Core Version *"
+      description: "Select the Dolphin Rt:Core version you used."
       options:
         - "v10.5.3"
         - "v10.5-124"
