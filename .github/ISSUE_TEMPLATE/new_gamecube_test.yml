@@ -7,20 +7,29 @@ body:
     attributes:
       value: |
         ---
-        ## 🎮 GAMECUBE COMPATIBILITY REPORT
-        ![Badge](https://img.shields.io/badge/Platform-GameCube-FFA500?style=flat-square)
-        ![Badge](https://img.shields.io/badge/Core-Dolphin_Rt:Core-blue?style=flat-square)
-        ![Badge](https://img.shields.io/badge/OS-muOS-orange?style=flat-square)
-
-        *Before submitting, please check if this game has already been reported in the [database](https://github.com/your-repo/issues?q=is%3Aissue+label%3Agame-test).*
-
+        <div align="center">
+          <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdwfactory_logo.png" alt="SPDW Factory" width="120">
+          <h1>🎮 GAMECUBE COMPATIBILITY REPORT</h1>
+          <p>
+            <img src="https://img.shields.io/badge/Platform-GameCube-FFA500?style=flat-square">
+            <img src="https://img.shields.io/badge/Core-Dolphin_Rt:Core-blue?style=flat-square">
+            <img src="https://img.shields.io/badge/OS-muOS-orange?style=flat-square">
+          </p>
+          <p><em>Community-driven testing database for Dolphin emulation on muOS &amp; H700 chipset</em></p>
+          <br>
+          <strong>⚠️ Before submitting</strong><br>
+          Please check if this game has already been reported in the 
+          <a href="https://github.com/your-repo/issues?q=is%3Aissue+label%3Agame-test">database</a>.
+        </div>
         ---
 
-        ### 🔍 Game ID Autodetection
-        **Start typing the game title below.** The system will search the GameTDB database and automatically find the Game ID.  
-        ⚠️ **Wait a few seconds** after typing – the ID will appear in the next field.
+        ## 🔍 Game ID Autodetection
 
-        > 💡 **Need help?** Search manually on [GameTDB](https://www.gametdb.com/GameCube/).
+        | Step | Action |
+        |------|--------|
+        | 1️⃣ | Start typing the game title in the field below |
+        | 2️⃣ | Wait a few seconds – the ID will appear automatically |
+        | 3️⃣ | If auto-detection fails, search manually on [GameTDB](https://www.gametdb.com/GameCube/) |
 
         ---
 
@@ -46,13 +55,27 @@ body:
     attributes:
       value: |
         ---
+        <div align="center">
+          <h3>🖼️ Cover Art Preview</h3>
+          <p><em>If the Game ID was detected correctly, the cover will appear in the web dashboard.</em></p>
+          <p>🔗 <a href="https://www.gametdb.com/GameCube/{GAME_ID}">View cover on GameTDB</a></p>
+          <p><small>⚠️ Replace <code>{GAME_ID}</code> with the actual Game ID above if the link doesn't work.</small></p>
+        </div>
+        ---
 
-        ### 🖼️ Cover Art Preview
-        **If the Game ID was detected correctly, you can view the cover art here:**  
-        👉 [**View cover on GameTDB**](https://www.gametdb.com/GameCube/{GAME_ID})  
-        *(Replace `{GAME_ID}` with the actual Game ID above if the link doesn't work.)*
+  - type: markdown
+    attributes:
+      value: |
+        ## 📊 Test Results
 
-        > 📌 **Note:** The cover will also appear automatically in the web dashboard.
+        | Field | Description |
+        |-------|-------------|
+        | **Region** | Select the region of your game disc/ROM |
+        | **Performance** | 5★ = perfect, 0★ = does not boot |
+        | **FPS Range** | Min and max FPS observed |
+        | **Boot Status** | Does the game start? |
+        | **Playable** | Can you play through the game? |
+        | **Core Profile** | Which core profile was used? |
 
         ---
 
@@ -60,7 +83,6 @@ body:
     id: region
     attributes:
       label: "🌍 Region *"
-      description: "Select the region of your game disc/ROM."
       options:
         - "NTSC / USA"
         - "PAL"
@@ -127,6 +149,20 @@ body:
     validations:
       required: true
 
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## 🛠️ Advanced Configuration
+
+        | Setting | Description |
+        |---------|-------------|
+        | **GameSettings** | Paste custom configuration or describe key changes |
+        | **Notes** | Performance, graphical issues, audio problems, workarounds |
+        | **Screenshots/Video** | Links to Imgur, YouTube, or other hosting |
+
+        ---
+
   - type: textarea
     id: game_settings_used
     attributes:
@@ -153,6 +189,21 @@ body:
       placeholder: "https://i.imgur.com/abc123.jpg"
     validations:
       required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## 👤 Tester Information
+
+        | Field | Description |
+        |-------|-------------|
+        | **Username** | Your alias for credit in the database |
+        | **Device** | Which device did you test on? |
+        | **muOS Version** | Which version of muOS are you running? |
+        | **Dolphin Core** | Which Dolphin core version? |
+
+        ---
 
   - type: input
     id: tester
@@ -199,4 +250,11 @@ body:
     attributes:
       value: |
         ---
-        **Thank you for contributing to the Dolphin Rt:Core compatibility database!** 🙌
+        <div align="center">
+          <br>
+          <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="GameCube" width="48">
+          <br><br>
+          <strong>Thank you for contributing to the Dolphin Rt:Core compatibility database!</strong> 🙌
+          <br><br>
+          <small>🔄 This report will be automatically processed and added to the database.</small>
+        </div>
