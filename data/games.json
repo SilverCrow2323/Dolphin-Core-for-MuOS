@@ -17,7 +17,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "G18P01_default.ini",
+      "game_settings": "G18P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -30,7 +30,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "G18P01_default.ini",
+      "game_settings": "G18P01.ini",
       "notes": ""
     },
     "video": {
@@ -57,7 +57,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "G4BP01_default.ini",
+      "game_settings": "G4BP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -70,7 +70,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "G4BP01_default.ini",
+      "game_settings": "G4BP01.ini",
       "notes": ""
     },
     "video": {
@@ -97,7 +97,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "G8MP01_default.ini",
+      "game_settings": "G8MP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -110,7 +110,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "G8MP01_default.ini",
+      "game_settings": "G8MP01.ini",
       "notes": ""
     },
     "video": {
@@ -137,7 +137,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GAC2E01_default.ini",
+      "game_settings": "GAC2E01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -150,7 +150,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GAC2E01_default.ini",
+      "game_settings": "GAC2E01.ini",
       "notes": ""
     },
     "video": {
@@ -177,7 +177,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GAFE01_default.ini",
+      "game_settings": "GAFE01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -190,7 +190,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GAFE01_default.ini",
+      "game_settings": "GAFE01.ini",
       "notes": ""
     },
     "video": {
@@ -217,7 +217,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GAGE01_default.ini",
+      "game_settings": "GAGE01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -230,7 +230,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GAGE01_default.ini",
+      "game_settings": "GAGE01.ini",
       "notes": ""
     },
     "video": {
@@ -257,7 +257,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GAGEH01_default.ini",
+      "game_settings": "GAGEH01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -270,7 +270,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GAGEH01_default.ini",
+      "game_settings": "GAGEH01.ini",
       "notes": ""
     },
     "video": {
@@ -297,7 +297,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GAGG01_default.ini",
+      "game_settings": "GAGG01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -310,7 +310,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GAGG01_default.ini",
+      "game_settings": "GAGG01.ini",
       "notes": ""
     },
     "video": {
@@ -337,7 +337,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GALP01_default.ini",
+      "game_settings": "GALP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -350,7 +350,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GALP01_default.ini",
+      "game_settings": "GALP01.ini",
       "notes": ""
     },
     "video": {
@@ -377,7 +377,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GAOXL01_default.ini",
+      "game_settings": "GAOXL01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -390,7 +390,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GAOXL01_default.ini",
+      "game_settings": "GAOXL01.ini",
       "notes": ""
     },
     "video": {
@@ -417,7 +417,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GAVP01_default.ini",
+      "game_settings": "GAVP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -430,7 +430,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GAVP01_default.ini",
+      "game_settings": "GAVP01.ini",
       "notes": ""
     },
     "video": {
@@ -457,7 +457,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GBAM01_default.ini",
+      "game_settings": "GBAM01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -470,7 +470,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GBAM01_default.ini",
+      "game_settings": "GBAM01.ini",
       "notes": ""
     },
     "video": {
@@ -491,13 +491,13 @@
     "playable": "YES",
     "core": "Default",
     "core_version": "v10.5.300",
-    "considerations": "In older versions, simply changing the CPU overclock was enough to achieve a considerable FPS gain in the game. In these newer versions, this has been fixed; however, other settings have been added that significantly slow down the system. The configuration I'm using gives me around 15 FPS in the game and much more fluidity.\n\nGFX.ini\n[Hardware]\nVSync = False\nAdapter = 0\n[Enhancements]\nArbitraryMipmapDetection = True\nDisableCopyFilter = False\nForceTrueColor = True\nPostProcessingShader = \n[Hacks]\nBBoxEnable = True\nEFBAccessEnable = False\nEFBEmulateFormatChanges = False\nEFBScaledCopy = True\nEFBToTextureEnable = True\nImmediateXFBEnable = False\nNoMipmapping = True\nSkipDuplicateXFBs = True\nVertexRounding = True\nVISkip = True\n[Settings]\nBackendMultithreading = True\nDisableFog = True\nDumpBaseTextures = True\nDumpMipTextures = True\nEnableGPUTextureDecoding = True\nFastDepthCalc = True\nFrameDumpsResolutionType = 1\nSafeTextureCacheColorSamples = 128\nSaveTextureCacheToState = True\nShaderCache = True\nWaitForShadersBeforeStarting = False\nShowSpeedColors = True\nShowFPS = True\nInternalResolution = 66.6666666\nPNGCompressionLevel = 6\nShaderCompilationMode = 3\n\n\nDolphin.ini\n[General]\nShowLag = False\nShowFrameCount = False\nISOPaths = 0\nWirelessMac = 00:17:ab:a3:1f:27\nGDBSocket = \nGDBPort = -1\nHotkeysRequireFocus = False\nRecursiveISOPaths = False\nDumpPath = /run/muos/storage/save/dolphin/Dump/\nLoadPath = /run/muos/storage/save/dolphin/Load/\nNANDRootPath = Wii\nResourcePackPath = /run/muos/storage/save/dolphin/ResourcePack/\nWiiSDCardPath = /run/muos/storage/save/dolphin/Wii/sd.raw\n[Interface]\nScreen Orientation During Emulation = Landscape\nConfirmStop = False\nHideCursor = False\nLockCursor = False\nLanguageCode = \nExtendedFPSInfo = False\nShowActiveTitle = True\nUseBuiltinTitleDatabase = True\nThemeName = Clean\nPauseOnFocusLost = False\nDebugModeEnabled = False\nOnScreenDisplayMessages = True\nUsePanicHandlers = True\n[GameList]\nListDrives = False\nListWad = True\nListElfDol = True\nListWii = True\nListGC = True\nListJap = True\nListPal = True\nListUsa = True\nListAustralia = True\nListFrance = True\nListGermany = True\nListItaly = True\nListKorea = True\nListNetherlands = True\nListRussia = True\nListSpain = True\nListTaiwan = True\nListWorld = True\nListUnknown = True\nListSort = 3\nListSortSecondary = 0\nColumnPlatform = True\nColumnBanner = True\nColumnDescription = False\nColumnTitle = True\nColumnNotes = True\nColumnFileName = False\nColumnFilePath = False\nColumnID = False\nColumnRegion = True\nColumnSize = True\nColumnFileFormat = False\nColumnBlockSize = False\nColumnCompression = False\nColumnTags = False\n[Core]\nGCIFolderAPathOverride = /run/muos/storage/save/dolphin/Gamecube/MemcardA/\nGCIFolderBPathOverride = /run/muos/storage/save/dolphin/Gamecube/MemcardB/\nSkipIPL = True\nTimingVariance = 40\nCPUCore = 4\nFastmem = True\nCPUThread = True\nDSPHLE = True\nSyncOnSkipIdle = True\nSyncGPU = False\nSyncGpuMaxDistance = 200000\nSyncGpuMinDistance = -200000\nSyncGpuOverclock = 1.00000000\nFPRF = False\nAccurateNaNs = False\nSelectedLanguage = 0\nOverrideRegionSettings = False\nDPL2Decoder = False\nAudioLatency = 20\nAudioStretch = False\nAudioStretchMaxLatency = 80\nAgpCartAPath = \nAgpCartBPath = \nSerialPort1 = 255\nBBA_MAC = \nBBA_XLINK_IP = \nBBA_XLINK_CHAT_OSD = True\nSIDevice0 = 6\nAdapterRumble0 = True\nSimulateKonga0 = False\nSIDevice1 = 0\nAdapterRumble1 = True\nSimulateKonga1 = False\nSIDevice2 = 0\nAdapterRumble2 = True\nSimulateKonga2 = False\nSIDevice3 = 0\nAdapterRumble3 = True\nSimulateKonga3 = False\nWiiSDCard = True\nWiiKeyboard = False\nWiimoteContinuousScanning = False\nWiimoteEnableSpeaker = False\nWiimoteControllerInterface = False\nRunCompareServer = False\nRunCompareClient = False\nMMU = False\nEmulationSpeed = 1.00000000\nOverclock = 0.60000000\nOverclockEnable = True\nGPUDeterminismMode = auto\nPerfMapDir = \nEnableCustomRTC = False\nCustomRTCValue = \nGFXBackend = OGL\nDPL2Quality = 2\n[Movie]\nPauseMovie = False\nAuthor = \nDumpFrames = False\nDumpFramesSilent = False\nShowInputDisplay = False\nShowRTC = False\n[DSP]\nEnableJIT = True\nDumpAudio = False\nDumpAudioSilent = False\nDumpUCode = False\nBackend = ALSA\nVolume = 100\nCaptureLog = False\nDSPThread = False\n[Input]\nBackgroundInput = True\n[FifoPlayer]\nLoopReplay = True\n[BluetoothPassthrough]\nEnabled = False\nVID = -1\nPID = -1\nLinkKeys = \n[USBPassthrough]\nDevices = \n[AutoUpdate]\nUpdateTrack = \nHashOverride = \n[Debug]\nJitOff = False\nJitLoadStoreOff = False\nJitLoadStoreFloatingOff = False\nJitLoadStorePairedOff = False\nJitFloatingPointOff = False\nJitIntegerOff = False\nJitPairedOff = False\nJitSystemRegistersOff = False\nJitBranchOff = False\nJitRegisterCacheOff = False\n[Display]\nDisableScreenSaver = True\nRenderToMain = True\n[NetPlay]\nTraversalChoice = \n[GBA]\nBIOS = /run/muos/storage/bios/dolphin/GBA/\nRom1 = /run/muos/storage/bios/dolphin/GBAROM1/\nRom2 = /run/muos/storage/bios/dolphin/GBAROM2/\nRom3 = /run/muos/storage/bios/dolphin/GBAROM3/\nRom4 = /run/muos/storage/bios/dolphin/GBAROM4/\nSavesInRomPath = False\nSavesPath = /run/muos/storage/save/dolphin/GBA/Saves/\nThreads = True\n[Analytics]\nID = 3d907d498ba6b7942326af54e76b6eb6",
+    "considerations": "...",
     "source": "Luis Torrão",
     "device": "RG4xxxx",
     "issue": 7,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GLME01_default.ini",
+      "game_settings": "GLME01.ini",
       "overclock": 1.0,
       "resolution": 66.6666666
     },
@@ -510,7 +510,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GLME01_default.ini",
+      "game_settings": "GLME01.ini",
       "notes": ""
     },
     "video": {
@@ -537,7 +537,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GBBP01_default.ini",
+      "game_settings": "GBBP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -550,7 +550,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GBBP01_default.ini",
+      "game_settings": "GBBP01.ini",
       "notes": ""
     },
     "video": {
@@ -577,7 +577,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GBDP01_default.ini",
+      "game_settings": "GBDP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -590,7 +590,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GBDP01_default.ini",
+      "game_settings": "GBDP01.ini",
       "notes": ""
     },
     "video": {
@@ -617,7 +617,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GBEP01_default.ini",
+      "game_settings": "GBEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -630,7 +630,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GBEP01_default.ini",
+      "game_settings": "GBEP01.ini",
       "notes": ""
     },
     "video": {
@@ -657,7 +657,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GBGP01_default.ini",
+      "game_settings": "GBGP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -670,7 +670,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GBGP01_default.ini",
+      "game_settings": "GBGP01.ini",
       "notes": ""
     },
     "video": {
@@ -697,7 +697,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GBHP01_default.ini",
+      "game_settings": "GBHP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -710,7 +710,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GBHP01_default.ini",
+      "game_settings": "GBHP01.ini",
       "notes": ""
     },
     "video": {
@@ -737,7 +737,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GBIOE01_default.ini",
+      "game_settings": "GBIOE01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -750,7 +750,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GBIOE01_default.ini",
+      "game_settings": "GBIOE01.ini",
       "notes": ""
     },
     "video": {
@@ -777,7 +777,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GBJP01_default.ini",
+      "game_settings": "GBJP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -790,7 +790,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GBJP01_default.ini",
+      "game_settings": "GBJP01.ini",
       "notes": ""
     },
     "video": {
@@ -817,7 +817,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GBKP01_default.ini",
+      "game_settings": "GBKP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -830,7 +830,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GBKP01_default.ini",
+      "game_settings": "GBKP01.ini",
       "notes": ""
     },
     "video": {
@@ -857,7 +857,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GBMP01_default.ini",
+      "game_settings": "GBMP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -870,7 +870,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GBMP01_default.ini",
+      "game_settings": "GBMP01.ini",
       "notes": ""
     },
     "video": {
@@ -897,7 +897,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GBOP01_default.ini",
+      "game_settings": "GBOP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -910,7 +910,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GBOP01_default.ini",
+      "game_settings": "GBOP01.ini",
       "notes": ""
     },
     "video": {
@@ -937,7 +937,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GBRP01_default.ini",
+      "game_settings": "GBRP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -950,7 +950,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GBRP01_default.ini",
+      "game_settings": "GBRP01.ini",
       "notes": ""
     },
     "video": {
@@ -977,7 +977,7 @@
     "issue": 4,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GBSE01_default.ini",
+      "game_settings": "GBSE01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -990,7 +990,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GBSE01_default.ini",
+      "game_settings": "GBSE01.ini",
       "notes": ""
     },
     "video": {
@@ -1017,7 +1017,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GBUE01_default.ini",
+      "game_settings": "GBUE01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1030,7 +1030,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GBUE01_default.ini",
+      "game_settings": "GBUE01.ini",
       "notes": ""
     },
     "video": {
@@ -1057,7 +1057,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GB2P01_default.ini",
+      "game_settings": "GB2P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1070,7 +1070,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GB2P01_default.ini",
+      "game_settings": "GB2P01.ini",
       "notes": ""
     },
     "video": {
@@ -1097,7 +1097,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GC2P01_default.ini",
+      "game_settings": "GC2P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1110,7 +1110,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GC2P01_default.ini",
+      "game_settings": "GC2P01.ini",
       "notes": ""
     },
     "video": {
@@ -1137,7 +1137,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GCAPE01_default.ini",
+      "game_settings": "GCAPE01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1150,7 +1150,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GCAPE01_default.ini",
+      "game_settings": "GCAPE01.ini",
       "notes": ""
     },
     "video": {
@@ -1177,7 +1177,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GCBEP01_default.ini",
+      "game_settings": "GCBEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1190,7 +1190,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GCBEP01_default.ini",
+      "game_settings": "GCBEP01.ini",
       "notes": ""
     },
     "video": {
@@ -1217,7 +1217,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GCBH01_default.ini",
+      "game_settings": "GCBH01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1230,7 +1230,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GCBH01_default.ini",
+      "game_settings": "GCBH01.ini",
       "notes": ""
     },
     "video": {
@@ -1257,7 +1257,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GCDS01_default.ini",
+      "game_settings": "GCDS01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1270,7 +1270,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GCDS01_default.ini",
+      "game_settings": "GCDS01.ini",
       "notes": ""
     },
     "video": {
@@ -1297,7 +1297,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GCD2P01_default.ini",
+      "game_settings": "GCD2P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1310,7 +1310,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GCD2P01_default.ini",
+      "game_settings": "GCD2P01.ini",
       "notes": ""
     },
     "video": {
@@ -1337,7 +1337,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GCEP01_default.ini",
+      "game_settings": "GCEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1350,7 +1350,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GCEP01_default.ini",
+      "game_settings": "GCEP01.ini",
       "notes": ""
     },
     "video": {
@@ -1377,7 +1377,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Compatibility",
-      "game_settings": "GCFP01_default.ini",
+      "game_settings": "GCFP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1390,7 +1390,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Compatibility",
-      "game_settings": "GCFP01_default.ini",
+      "game_settings": "GCFP01.ini",
       "notes": ""
     },
     "video": {
@@ -1417,7 +1417,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GCHF01_default.ini",
+      "game_settings": "GCHF01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1430,7 +1430,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GCHF01_default.ini",
+      "game_settings": "GCHF01.ini",
       "notes": ""
     },
     "video": {
@@ -1457,7 +1457,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GCHP01_default.ini",
+      "game_settings": "GCHP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1470,7 +1470,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GCHP01_default.ini",
+      "game_settings": "GCHP01.ini",
       "notes": ""
     },
     "video": {
@@ -1497,7 +1497,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GCKD01_default.ini",
+      "game_settings": "GCKD01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1510,7 +1510,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GCKD01_default.ini",
+      "game_settings": "GCKD01.ini",
       "notes": ""
     },
     "video": {
@@ -1537,7 +1537,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GCLK01_default.ini",
+      "game_settings": "GCLK01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1550,7 +1550,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GCLK01_default.ini",
+      "game_settings": "GCLK01.ini",
       "notes": ""
     },
     "video": {
@@ -1577,7 +1577,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GCNP01_default.ini",
+      "game_settings": "GCNP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1590,7 +1590,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GCNP01_default.ini",
+      "game_settings": "GCNP01.ini",
       "notes": ""
     },
     "video": {
@@ -1617,7 +1617,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GCRP01_default.ini",
+      "game_settings": "GCRP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1630,7 +1630,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GCRP01_default.ini",
+      "game_settings": "GCRP01.ini",
       "notes": ""
     },
     "video": {
@@ -1657,7 +1657,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GCSD01_default.ini",
+      "game_settings": "GCSD01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1670,7 +1670,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GCSD01_default.ini",
+      "game_settings": "GCSD01.ini",
       "notes": ""
     },
     "video": {
@@ -1697,7 +1697,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GCLP01_default.ini",
+      "game_settings": "GCLP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1710,7 +1710,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GCLP01_default.ini",
+      "game_settings": "GCLP01.ini",
       "notes": ""
     },
     "video": {
@@ -1737,7 +1737,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GCUEP01_default.ini",
+      "game_settings": "GCUEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1750,7 +1750,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GCUEP01_default.ini",
+      "game_settings": "GCUEP01.ini",
       "notes": ""
     },
     "video": {
@@ -1777,7 +1777,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GCTE01_default.ini",
+      "game_settings": "GCTE01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1790,7 +1790,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GCTE01_default.ini",
+      "game_settings": "GCTE01.ini",
       "notes": ""
     },
     "video": {
@@ -1817,7 +1817,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GCTR01_default.ini",
+      "game_settings": "GCTR01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1830,7 +1830,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GCTR01_default.ini",
+      "game_settings": "GCTR01.ini",
       "notes": ""
     },
     "video": {
@@ -1857,7 +1857,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GD6P70_default.ini",
+      "game_settings": "GD6P70.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1873,7 +1873,7 @@
     ],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GD6P70_default.ini",
+      "game_settings": "GD6P70.ini",
       "notes": "Performance core recommended. Expect frame drops during heavy combat."
     },
     "video": {
@@ -1900,7 +1900,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GD7P01_default.ini",
+      "game_settings": "GD7P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1916,7 +1916,7 @@
     ],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GD7P01_default.ini",
+      "game_settings": "GD7P01.ini",
       "notes": "Standard core is recommended. Performance core hurts graphical quality too much."
     },
     "video": {
@@ -1943,7 +1943,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GDAP01_default.ini",
+      "game_settings": "GDAP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1956,7 +1956,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GDAP01_default.ini",
+      "game_settings": "GDAP01.ini",
       "notes": ""
     },
     "video": {
@@ -1983,7 +1983,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GDBP01_default.ini",
+      "game_settings": "GDBP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1996,7 +1996,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GDBP01_default.ini",
+      "game_settings": "GDBP01.ini",
       "notes": ""
     },
     "video": {
@@ -2023,7 +2023,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GDDP01_default.ini",
+      "game_settings": "GDDP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2036,7 +2036,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GDDP01_default.ini",
+      "game_settings": "GDDP01.ini",
       "notes": ""
     },
     "video": {
@@ -2063,7 +2063,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GDGP01_default.ini",
+      "game_settings": "GDGP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2076,7 +2076,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GDGP01_default.ini",
+      "game_settings": "GDGP01.ini",
       "notes": ""
     },
     "video": {
@@ -2103,7 +2103,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GDIP01_default.ini",
+      "game_settings": "GDIP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2116,7 +2116,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GDIP01_default.ini",
+      "game_settings": "GDIP01.ini",
       "notes": ""
     },
     "video": {
@@ -2143,7 +2143,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GDJPB2_default.ini",
+      "game_settings": "GDJPB2.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2160,7 +2160,7 @@
     ],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GDJPB2_default.ini",
+      "game_settings": "GDJPB2.ini",
       "notes": "Use Performance core for best results. Game runs smoothly with default settings."
     },
     "video": {
@@ -2187,7 +2187,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GDTP01_default.ini",
+      "game_settings": "GDTP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2200,7 +2200,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GDTP01_default.ini",
+      "game_settings": "GDTP01.ini",
       "notes": ""
     },
     "video": {
@@ -2227,7 +2227,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GEDP01_default.ini",
+      "game_settings": "GEDP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2240,7 +2240,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GEDP01_default.ini",
+      "game_settings": "GEDP01.ini",
       "notes": ""
     },
     "video": {
@@ -2267,7 +2267,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GESAP01_default.ini",
+      "game_settings": "GESAP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2280,7 +2280,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GESAP01_default.ini",
+      "game_settings": "GESAP01.ini",
       "notes": ""
     },
     "video": {
@@ -2307,7 +2307,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GF1P02_default.ini",
+      "game_settings": "GF1P02.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2320,7 +2320,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GF1P02_default.ini",
+      "game_settings": "GF1P02.ini",
       "notes": ""
     },
     "video": {
@@ -2347,7 +2347,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GF4P01_default.ini",
+      "game_settings": "GF4P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2360,7 +2360,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GF4P01_default.ini",
+      "game_settings": "GF4P01.ini",
       "notes": ""
     },
     "video": {
@@ -2387,7 +2387,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GFARP01_default.ini",
+      "game_settings": "GFARP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2400,7 +2400,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GFARP01_default.ini",
+      "game_settings": "GFARP01.ini",
       "notes": ""
     },
     "video": {
@@ -2427,7 +2427,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GFASEP01_default.ini",
+      "game_settings": "GFASEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2440,7 +2440,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GFASEP01_default.ini",
+      "game_settings": "GFASEP01.ini",
       "notes": ""
     },
     "video": {
@@ -2467,7 +2467,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GFBEP01_default.ini",
+      "game_settings": "GFBEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2480,7 +2480,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GFBEP01_default.ini",
+      "game_settings": "GFBEP01.ini",
       "notes": ""
     },
     "video": {
@@ -2507,7 +2507,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GFIF03_default.ini",
+      "game_settings": "GFIF03.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2520,7 +2520,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GFIF03_default.ini",
+      "game_settings": "GFIF03.ini",
       "notes": ""
     },
     "video": {
@@ -2547,7 +2547,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GFIF04_default.ini",
+      "game_settings": "GFIF04.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2560,7 +2560,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GFIF04_default.ini",
+      "game_settings": "GFIF04.ini",
       "notes": ""
     },
     "video": {
@@ -2587,7 +2587,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GFIF05_default.ini",
+      "game_settings": "GFIF05.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2600,7 +2600,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GFIF05_default.ini",
+      "game_settings": "GFIF05.ini",
       "notes": ""
     },
     "video": {
@@ -2627,7 +2627,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GFIF06_default.ini",
+      "game_settings": "GFIF06.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2640,7 +2640,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GFIF06_default.ini",
+      "game_settings": "GFIF06.ini",
       "notes": ""
     },
     "video": {
@@ -2667,7 +2667,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GFIF07_default.ini",
+      "game_settings": "GFIF07.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2680,7 +2680,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GFIF07_default.ini",
+      "game_settings": "GFIF07.ini",
       "notes": ""
     },
     "video": {
@@ -2707,7 +2707,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GFZP01_default.ini",
+      "game_settings": "GFZP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2720,7 +2720,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GFZP01_default.ini",
+      "game_settings": "GFZP01.ini",
       "notes": ""
     },
     "video": {
@@ -2747,7 +2747,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GGAD01_default.ini",
+      "game_settings": "GGAD01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2760,7 +2760,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GGAD01_default.ini",
+      "game_settings": "GGAD01.ini",
       "notes": ""
     },
     "video": {
@@ -2787,7 +2787,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GGUNP01_default.ini",
+      "game_settings": "GGUNP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2800,7 +2800,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GGUNP01_default.ini",
+      "game_settings": "GGUNP01.ini",
       "notes": ""
     },
     "video": {
@@ -2827,7 +2827,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GHMMP01_default.ini",
+      "game_settings": "GHMMP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2840,7 +2840,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GHMMP01_default.ini",
+      "game_settings": "GHMMP01.ini",
       "notes": ""
     },
     "video": {
@@ -2867,7 +2867,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GHP2P01_default.ini",
+      "game_settings": "GHP2P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2880,7 +2880,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GHP2P01_default.ini",
+      "game_settings": "GHP2P01.ini",
       "notes": ""
     },
     "video": {
@@ -2907,7 +2907,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GHGEP01_default.ini",
+      "game_settings": "GHGEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2920,7 +2920,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GHGEP01_default.ini",
+      "game_settings": "GHGEP01.ini",
       "notes": ""
     },
     "video": {
@@ -2947,7 +2947,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GHPP01_default.ini",
+      "game_settings": "GHPP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2960,7 +2960,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GHPP01_default.ini",
+      "game_settings": "GHPP01.ini",
       "notes": ""
     },
     "video": {
@@ -2987,7 +2987,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GHPP01_default.ini",
+      "game_settings": "GHPP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3000,7 +3000,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GHPP01_default.ini",
+      "game_settings": "GHPP01.ini",
       "notes": ""
     },
     "video": {
@@ -3027,7 +3027,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GHS2P01_default.ini",
+      "game_settings": "GHS2P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3040,7 +3040,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GHS2P01_default.ini",
+      "game_settings": "GHS2P01.ini",
       "notes": ""
     },
     "video": {
@@ -3067,7 +3067,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GKAF01_default.ini",
+      "game_settings": "GKAF01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3080,7 +3080,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GKAF01_default.ini",
+      "game_settings": "GKAF01.ini",
       "notes": ""
     },
     "video": {
@@ -3107,7 +3107,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GKAE01_default.ini",
+      "game_settings": "GKAE01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3120,7 +3120,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GKAE01_default.ini",
+      "game_settings": "GKAE01.ini",
       "notes": ""
     },
     "video": {
@@ -3147,7 +3147,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GKK2P01_default.ini",
+      "game_settings": "GKK2P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3160,7 +3160,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GKK2P01_default.ini",
+      "game_settings": "GKK2P01.ini",
       "notes": ""
     },
     "video": {
@@ -3187,7 +3187,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GKUE01_default.ini",
+      "game_settings": "GKUE01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3200,7 +3200,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GKUE01_default.ini",
+      "game_settings": "GKUE01.ini",
       "notes": ""
     },
     "video": {
@@ -3227,7 +3227,7 @@
     "issue": 1,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GKUE01_default.ini",
+      "game_settings": "GKUE01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3240,7 +3240,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GKUE01_default.ini",
+      "game_settings": "GKUE01.ini",
       "notes": ""
     },
     "video": {
@@ -3267,7 +3267,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GLMP01_default.ini",
+      "game_settings": "GLMP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3280,7 +3280,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GLMP01_default.ini",
+      "game_settings": "GLMP01.ini",
       "notes": ""
     },
     "video": {
@@ -3307,7 +3307,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GLOSP01_default.ini",
+      "game_settings": "GLOSP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3320,7 +3320,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GLOSP01_default.ini",
+      "game_settings": "GLOSP01.ini",
       "notes": ""
     },
     "video": {
@@ -3347,7 +3347,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GLSWP01_default.ini",
+      "game_settings": "GLSWP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3360,7 +3360,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GLSWP01_default.ini",
+      "game_settings": "GLSWP01.ini",
       "notes": ""
     },
     "video": {
@@ -3387,7 +3387,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GLS2E01_default.ini",
+      "game_settings": "GLS2E01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3400,7 +3400,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GLS2E01_default.ini",
+      "game_settings": "GLS2E01.ini",
       "notes": ""
     },
     "video": {
@@ -3427,7 +3427,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GLTBP01_default.ini",
+      "game_settings": "GLTBP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3440,7 +3440,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GLTBP01_default.ini",
+      "game_settings": "GLTBP01.ini",
       "notes": ""
     },
     "video": {
@@ -3467,7 +3467,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GM4P01_default.ini",
+      "game_settings": "GM4P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3480,7 +3480,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GM4P01_default.ini",
+      "game_settings": "GM4P01.ini",
       "notes": ""
     },
     "video": {
@@ -3507,7 +3507,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GMP4P01_default.ini",
+      "game_settings": "GMP4P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3520,7 +3520,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GMP4P01_default.ini",
+      "game_settings": "GMP4P01.ini",
       "notes": ""
     },
     "video": {
@@ -3547,7 +3547,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GMP7P01_default.ini",
+      "game_settings": "GMP7P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3560,7 +3560,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GMP7P01_default.ini",
+      "game_settings": "GMP7P01.ini",
       "notes": ""
     },
     "video": {
@@ -3587,7 +3587,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GM8P01_default.ini",
+      "game_settings": "GM8P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3600,7 +3600,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GM8P01_default.ini",
+      "game_settings": "GM8P01.ini",
       "notes": ""
     },
     "video": {
@@ -3627,7 +3627,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GMADP01_default.ini",
+      "game_settings": "GMADP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3640,7 +3640,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GMADP01_default.ini",
+      "game_settings": "GMADP01.ini",
       "notes": ""
     },
     "video": {
@@ -3667,7 +3667,7 @@
     "issue": 5,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GMAR01_default.ini",
+      "game_settings": "GMAR01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3680,7 +3680,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GMAR01_default.ini",
+      "game_settings": "GMAR01.ini",
       "notes": ""
     },
     "video": {
@@ -3707,7 +3707,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GMAXP01_default.ini",
+      "game_settings": "GMAXP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3720,7 +3720,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GMAXP01_default.ini",
+      "game_settings": "GMAXP01.ini",
       "notes": ""
     },
     "video": {
@@ -3747,7 +3747,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GMETP01_default.ini",
+      "game_settings": "GMETP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3760,7 +3760,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GMETP01_default.ini",
+      "game_settings": "GMETP01.ini",
       "notes": ""
     },
     "video": {
@@ -3787,7 +3787,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GMFP01_default.ini",
+      "game_settings": "GMFP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3800,7 +3800,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GMFP01_default.ini",
+      "game_settings": "GMFP01.ini",
       "notes": ""
     },
     "video": {
@@ -3827,7 +3827,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GMGP01_default.ini",
+      "game_settings": "GMGP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3840,7 +3840,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GMGP01_default.ini",
+      "game_settings": "GMGP01.ini",
       "notes": ""
     },
     "video": {
@@ -3867,7 +3867,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GMMP01_default.ini",
+      "game_settings": "GMMP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3880,7 +3880,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GMMP01_default.ini",
+      "game_settings": "GMMP01.ini",
       "notes": ""
     },
     "video": {
@@ -3907,7 +3907,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GMRP01_default.ini",
+      "game_settings": "GMRP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3920,7 +3920,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GMRP01_default.ini",
+      "game_settings": "GMRP01.ini",
       "notes": ""
     },
     "video": {
@@ -3947,7 +3947,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GMSP01_default.ini",
+      "game_settings": "GMSP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3960,7 +3960,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GMSP01_default.ini",
+      "game_settings": "GMSP01.ini",
       "notes": ""
     },
     "video": {
@@ -3987,7 +3987,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GMXP01_default.ini",
+      "game_settings": "GMXP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4000,7 +4000,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GMXP01_default.ini",
+      "game_settings": "GMXP01.ini",
       "notes": ""
     },
     "video": {
@@ -4027,7 +4027,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GNCP01_default.ini",
+      "game_settings": "GNCP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4040,7 +4040,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GNCP01_default.ini",
+      "game_settings": "GNCP01.ini",
       "notes": ""
     },
     "video": {
@@ -4067,7 +4067,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GNCP01_default.ini",
+      "game_settings": "GNCP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4080,7 +4080,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GNCP01_default.ini",
+      "game_settings": "GNCP01.ini",
       "notes": ""
     },
     "video": {
@@ -4107,7 +4107,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GNH2P01_default.ini",
+      "game_settings": "GNH2P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4120,7 +4120,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GNH2P01_default.ini",
+      "game_settings": "GNH2P01.ini",
       "notes": ""
     },
     "video": {
@@ -4147,7 +4147,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GNMWP01_default.ini",
+      "game_settings": "GNMWP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4160,7 +4160,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GNMWP01_default.ini",
+      "game_settings": "GNMWP01.ini",
       "notes": ""
     },
     "video": {
@@ -4187,7 +4187,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GNUEP01_default.ini",
+      "game_settings": "GNUEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4200,7 +4200,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GNUEP01_default.ini",
+      "game_settings": "GNUEP01.ini",
       "notes": ""
     },
     "video": {
@@ -4227,7 +4227,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GNU2P01_default.ini",
+      "game_settings": "GNU2P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4240,7 +4240,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GNU2P01_default.ini",
+      "game_settings": "GNU2P01.ini",
       "notes": ""
     },
     "video": {
@@ -4267,7 +4267,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GODAP01_default.ini",
+      "game_settings": "GODAP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4280,7 +4280,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GODAP01_default.ini",
+      "game_settings": "GODAP01.ini",
       "notes": ""
     },
     "video": {
@@ -4307,7 +4307,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GOPNP01_default.ini",
+      "game_settings": "GOPNP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4320,7 +4320,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GOPNP01_default.ini",
+      "game_settings": "GOPNP01.ini",
       "notes": ""
     },
     "video": {
@@ -4347,7 +4347,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GPBGP01_default.ini",
+      "game_settings": "GPBGP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4360,7 +4360,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GPBGP01_default.ini",
+      "game_settings": "GPBGP01.ini",
       "notes": ""
     },
     "video": {
@@ -4387,7 +4387,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GPIP01_default.ini",
+      "game_settings": "GPIP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4400,7 +4400,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GPIP01_default.ini",
+      "game_settings": "GPIP01.ini",
       "notes": ""
     },
     "video": {
@@ -4427,7 +4427,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GPKP01_default.ini",
+      "game_settings": "GPKP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4440,7 +4440,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GPKP01_default.ini",
+      "game_settings": "GPKP01.ini",
       "notes": ""
     },
     "video": {
@@ -4467,7 +4467,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GPKOS01_default.ini",
+      "game_settings": "GPKOS01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4480,7 +4480,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GPKOS01_default.ini",
+      "game_settings": "GPKOS01.ini",
       "notes": ""
     },
     "video": {
@@ -4507,7 +4507,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GPPFP01_default.ini",
+      "game_settings": "GPPFP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4520,7 +4520,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GPPFP01_default.ini",
+      "game_settings": "GPPFP01.ini",
       "notes": ""
     },
     "video": {
@@ -4547,7 +4547,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GPSOP01_default.ini",
+      "game_settings": "GPSOP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4560,7 +4560,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GPSOP01_default.ini",
+      "game_settings": "GPSOP01.ini",
       "notes": ""
     },
     "video": {
@@ -4587,7 +4587,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GPSOP01_default.ini",
+      "game_settings": "GPSOP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4600,7 +4600,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GPSOP01_default.ini",
+      "game_settings": "GPSOP01.ini",
       "notes": ""
     },
     "video": {
@@ -4627,7 +4627,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GPW2P01_default.ini",
+      "game_settings": "GPW2P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4640,7 +4640,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GPW2P01_default.ini",
+      "game_settings": "GPW2P01.ini",
       "notes": ""
     },
     "video": {
@@ -4667,7 +4667,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GPW3P01_default.ini",
+      "game_settings": "GPW3P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4680,7 +4680,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GPW3P01_default.ini",
+      "game_settings": "GPW3P01.ini",
       "notes": ""
     },
     "video": {
@@ -4707,7 +4707,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GPWRP01_default.ini",
+      "game_settings": "GPWRP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4720,7 +4720,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GPWRP01_default.ini",
+      "game_settings": "GPWRP01.ini",
       "notes": ""
     },
     "video": {
@@ -4747,7 +4747,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GQWEP01_default.ini",
+      "game_settings": "GQWEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4760,7 +4760,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GQWEP01_default.ini",
+      "game_settings": "GQWEP01.ini",
       "notes": ""
     },
     "video": {
@@ -4787,7 +4787,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GR3HP01_default.ini",
+      "game_settings": "GR3HP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4800,7 +4800,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GR3HP01_default.ini",
+      "game_settings": "GR3HP01.ini",
       "notes": ""
     },
     "video": {
@@ -4827,7 +4827,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GRAP01_default.ini",
+      "game_settings": "GRAP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4840,7 +4840,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GRAP01_default.ini",
+      "game_settings": "GRAP01.ini",
       "notes": ""
     },
     "video": {
@@ -4867,7 +4867,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GRATP01_default.ini",
+      "game_settings": "GRATP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4880,7 +4880,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GRATP01_default.ini",
+      "game_settings": "GRATP01.ini",
       "notes": ""
     },
     "video": {
@@ -4907,7 +4907,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GRF2P01_default.ini",
+      "game_settings": "GRF2P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4920,7 +4920,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GRF2P01_default.ini",
+      "game_settings": "GRF2P01.ini",
       "notes": ""
     },
     "video": {
@@ -4947,7 +4947,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GRKEP01_default.ini",
+      "game_settings": "GRKEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4960,7 +4960,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GRKEP01_default.ini",
+      "game_settings": "GRKEP01.ini",
       "notes": ""
     },
     "video": {
@@ -4987,7 +4987,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GROBP01_default.ini",
+      "game_settings": "GROBP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5000,7 +5000,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GROBP01_default.ini",
+      "game_settings": "GROBP01.ini",
       "notes": ""
     },
     "video": {
@@ -5027,7 +5027,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GSM2E01_default.ini",
+      "game_settings": "GSM2E01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5040,7 +5040,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GSM2E01_default.ini",
+      "game_settings": "GSM2E01.ini",
       "notes": ""
     },
     "video": {
@@ -5067,7 +5067,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Compatibility",
-      "game_settings": "GSA2P01_default.ini",
+      "game_settings": "GSA2P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5080,7 +5080,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Compatibility",
-      "game_settings": "GSA2P01_default.ini",
+      "game_settings": "GSA2P01.ini",
       "notes": ""
     },
     "video": {
@@ -5107,7 +5107,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GSBAM01_default.ini",
+      "game_settings": "GSBAM01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5120,7 +5120,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GSBAM01_default.ini",
+      "game_settings": "GSBAM01.ini",
       "notes": ""
     },
     "video": {
@@ -5147,7 +5147,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSBBP01_default.ini",
+      "game_settings": "GSBBP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5160,7 +5160,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSBBP01_default.ini",
+      "game_settings": "GSBBP01.ini",
       "notes": ""
     },
     "video": {
@@ -5187,7 +5187,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSCP01_default.ini",
+      "game_settings": "GSCP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5200,7 +5200,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSCP01_default.ini",
+      "game_settings": "GSCP01.ini",
       "notes": ""
     },
     "video": {
@@ -5227,7 +5227,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSDP01_default.ini",
+      "game_settings": "GSDP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5240,7 +5240,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSDP01_default.ini",
+      "game_settings": "GSDP01.ini",
       "notes": ""
     },
     "video": {
@@ -5267,7 +5267,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Compatibility",
-      "game_settings": "GSEDP01_default.ini",
+      "game_settings": "GSEDP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5280,7 +5280,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Compatibility",
-      "game_settings": "GSEDP01_default.ini",
+      "game_settings": "GSEDP01.ini",
       "notes": ""
     },
     "video": {
@@ -5307,7 +5307,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSELP01_default.ini",
+      "game_settings": "GSELP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5320,7 +5320,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSELP01_default.ini",
+      "game_settings": "GSELP01.ini",
       "notes": ""
     },
     "video": {
@@ -5347,7 +5347,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSERP01_default.ini",
+      "game_settings": "GSERP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5360,7 +5360,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSERP01_default.ini",
+      "game_settings": "GSERP01.ini",
       "notes": ""
     },
     "video": {
@@ -5387,7 +5387,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSFAP01_default.ini",
+      "game_settings": "GSFAP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5400,7 +5400,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSFAP01_default.ini",
+      "game_settings": "GSFAP01.ini",
       "notes": ""
     },
     "video": {
@@ -5427,7 +5427,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSFEP01_default.ini",
+      "game_settings": "GSFEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5440,7 +5440,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSFEP01_default.ini",
+      "game_settings": "GSFEP01.ini",
       "notes": ""
     },
     "video": {
@@ -5467,7 +5467,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSH2P01_default.ini",
+      "game_settings": "GSH2P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5480,7 +5480,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSH2P01_default.ini",
+      "game_settings": "GSH2P01.ini",
       "notes": ""
     },
     "video": {
@@ -5507,7 +5507,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSHAP01_default.ini",
+      "game_settings": "GSHAP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5520,7 +5520,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSHAP01_default.ini",
+      "game_settings": "GSHAP01.ini",
       "notes": ""
     },
     "video": {
@@ -5547,7 +5547,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSHEP01_default.ini",
+      "game_settings": "GSHEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5560,7 +5560,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSHEP01_default.ini",
+      "game_settings": "GSHEP01.ini",
       "notes": ""
     },
     "video": {
@@ -5587,7 +5587,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSHRE01_default.ini",
+      "game_settings": "GSHRE01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5600,7 +5600,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSHRE01_default.ini",
+      "game_settings": "GSHRE01.ini",
       "notes": ""
     },
     "video": {
@@ -5627,7 +5627,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSHTE01_default.ini",
+      "game_settings": "GSHTE01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5640,7 +5640,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSHTE01_default.ini",
+      "game_settings": "GSHTE01.ini",
       "notes": ""
     },
     "video": {
@@ -5667,7 +5667,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GSIM01_default.ini",
+      "game_settings": "GSIM01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5680,7 +5680,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GSIM01_default.ini",
+      "game_settings": "GSIM01.ini",
       "notes": ""
     },
     "video": {
@@ -5707,7 +5707,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GS2P01_default.ini",
+      "game_settings": "GS2P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5720,7 +5720,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GS2P01_default.ini",
+      "game_settings": "GS2P01.ini",
       "notes": ""
     },
     "video": {
@@ -5747,7 +5747,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSBOP01_default.ini",
+      "game_settings": "GSBOP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5760,7 +5760,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSBOP01_default.ini",
+      "game_settings": "GSBOP01.ini",
       "notes": ""
     },
     "video": {
@@ -5787,7 +5787,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSJAP01_default.ini",
+      "game_settings": "GSJAP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5800,7 +5800,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSJAP01_default.ini",
+      "game_settings": "GSJAP01.ini",
       "notes": ""
     },
     "video": {
@@ -5827,7 +5827,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSLP01_default.ini",
+      "game_settings": "GSLP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5840,7 +5840,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSLP01_default.ini",
+      "game_settings": "GSLP01.ini",
       "notes": ""
     },
     "video": {
@@ -5867,7 +5867,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSOAP01_default.ini",
+      "game_settings": "GSOAP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5880,7 +5880,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSOAP01_default.ini",
+      "game_settings": "GSOAP01.ini",
       "notes": ""
     },
     "video": {
@@ -5907,7 +5907,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSREP01_default.ini",
+      "game_settings": "GSREP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5920,7 +5920,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSREP01_default.ini",
+      "game_settings": "GSREP01.ini",
       "notes": ""
     },
     "video": {
@@ -5947,7 +5947,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSSMP01_default.ini",
+      "game_settings": "GSSMP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5960,7 +5960,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSSMP01_default.ini",
+      "game_settings": "GSSMP01.ini",
       "notes": ""
     },
     "video": {
@@ -5987,7 +5987,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSSRP01_default.ini",
+      "game_settings": "GSSRP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6000,7 +6000,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSSRP01_default.ini",
+      "game_settings": "GSSRP01.ini",
       "notes": ""
     },
     "video": {
@@ -6027,7 +6027,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GRS2P01_default.ini",
+      "game_settings": "GRS2P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6040,7 +6040,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GRS2P01_default.ini",
+      "game_settings": "GRS2P01.ini",
       "notes": ""
     },
     "video": {
@@ -6067,7 +6067,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSBHP01_default.ini",
+      "game_settings": "GSBHP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6080,7 +6080,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSBHP01_default.ini",
+      "game_settings": "GSBHP01.ini",
       "notes": ""
     },
     "video": {
@@ -6107,7 +6107,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GSCWP01_default.ini",
+      "game_settings": "GSCWP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6120,7 +6120,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GSCWP01_default.ini",
+      "game_settings": "GSCWP01.ini",
       "notes": ""
     },
     "video": {
@@ -6147,7 +6147,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GRS3P01_default.ini",
+      "game_settings": "GRS3P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6160,7 +6160,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GRS3P01_default.ini",
+      "game_settings": "GRS3P01.ini",
       "notes": ""
     },
     "video": {
@@ -6187,7 +6187,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GSTOP01_default.ini",
+      "game_settings": "GSTOP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6200,7 +6200,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GSTOP01_default.ini",
+      "game_settings": "GSTOP01.ini",
       "notes": ""
     },
     "video": {
@@ -6227,7 +6227,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GSMB01_default.ini",
+      "game_settings": "GSMB01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6240,7 +6240,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GSMB01_default.ini",
+      "game_settings": "GSMB01.ini",
       "notes": ""
     },
     "video": {
@@ -6267,7 +6267,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSMAP01_default.ini",
+      "game_settings": "GSMAP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6280,7 +6280,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSMAP01_default.ini",
+      "game_settings": "GSMAP01.ini",
       "notes": ""
     },
     "video": {
@@ -6307,7 +6307,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GMSAP01_default.ini",
+      "game_settings": "GMSAP01.ini",
       "overclock": 0.4,
       "resolution": 0.33
     },
@@ -6320,7 +6320,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GMSAP01_default.ini",
+      "game_settings": "GMSAP01.ini",
       "notes": ""
     },
     "video": {
@@ -6347,7 +6347,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSX3P01_default.ini",
+      "game_settings": "GSX3P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6360,7 +6360,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSX3P01_default.ini",
+      "game_settings": "GSX3P01.ini",
       "notes": ""
     },
     "video": {
@@ -6387,7 +6387,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSXOP01_default.ini",
+      "game_settings": "GSXOP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6400,7 +6400,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSXOP01_default.ini",
+      "game_settings": "GSXOP01.ini",
       "notes": ""
     },
     "video": {
@@ -6427,7 +6427,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSXOEP01_default.ini",
+      "game_settings": "GSXOEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6440,7 +6440,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSXOEP01_default.ini",
+      "game_settings": "GSXOEP01.ini",
       "notes": ""
     },
     "video": {
@@ -6467,7 +6467,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Compatibility",
-      "game_settings": "GSYEP01_default.ini",
+      "game_settings": "GSYEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6480,7 +6480,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Compatibility",
-      "game_settings": "GSYEP01_default.ini",
+      "game_settings": "GSYEP01.ini",
       "notes": ""
     },
     "video": {
@@ -6507,7 +6507,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GT2DP01_default.ini",
+      "game_settings": "GT2DP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6520,7 +6520,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GT2DP01_default.ini",
+      "game_settings": "GT2DP01.ini",
       "notes": ""
     },
     "video": {
@@ -6547,7 +6547,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GT2SP01_default.ini",
+      "game_settings": "GT2SP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6560,7 +6560,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GT2SP01_default.ini",
+      "game_settings": "GT2SP01.ini",
       "notes": ""
     },
     "video": {
@@ -6587,7 +6587,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTAZP01_default.ini",
+      "game_settings": "GTAZP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6600,7 +6600,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTAZP01_default.ini",
+      "game_settings": "GTAZP01.ini",
       "notes": ""
     },
     "video": {
@@ -6627,7 +6627,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTETP01_default.ini",
+      "game_settings": "GTETP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6640,7 +6640,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTETP01_default.ini",
+      "game_settings": "GTETP01.ini",
       "notes": ""
     },
     "video": {
@@ -6667,7 +6667,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GTFEP01_default.ini",
+      "game_settings": "GTFEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6680,7 +6680,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GTFEP01_default.ini",
+      "game_settings": "GTFEP01.ini",
       "notes": ""
     },
     "video": {
@@ -6707,7 +6707,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTIEP01_default.ini",
+      "game_settings": "GTIEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6720,7 +6720,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTIEP01_default.ini",
+      "game_settings": "GTIEP01.ini",
       "notes": ""
     },
     "video": {
@@ -6747,7 +6747,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTJWP01_default.ini",
+      "game_settings": "GTJWP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6760,7 +6760,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTJWP01_default.ini",
+      "game_settings": "GTJWP01.ini",
       "notes": ""
     },
     "video": {
@@ -6787,7 +6787,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTKCP01_default.ini",
+      "game_settings": "GTKCP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6800,7 +6800,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTKCP01_default.ini",
+      "game_settings": "GTKCP01.ini",
       "notes": ""
     },
     "video": {
@@ -6827,7 +6827,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTMNP01_default.ini",
+      "game_settings": "GTMNP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6840,7 +6840,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTMNP01_default.ini",
+      "game_settings": "GTMNP01.ini",
       "notes": ""
     },
     "video": {
@@ -6867,7 +6867,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTMMP01_default.ini",
+      "game_settings": "GTMMP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6880,7 +6880,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTMMP01_default.ini",
+      "game_settings": "GTMMP01.ini",
       "notes": ""
     },
     "video": {
@@ -6907,7 +6907,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GTOMP01_default.ini",
+      "game_settings": "GTOMP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6920,7 +6920,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GTOMP01_default.ini",
+      "game_settings": "GTOMP01.ini",
       "notes": ""
     },
     "video": {
@@ -6947,7 +6947,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTAWP01_default.ini",
+      "game_settings": "GTAWP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6960,7 +6960,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTAWP01_default.ini",
+      "game_settings": "GTAWP01.ini",
       "notes": ""
     },
     "video": {
@@ -6987,7 +6987,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTH3E01_default.ini",
+      "game_settings": "GTH3E01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7000,7 +7000,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTH3E01_default.ini",
+      "game_settings": "GTH3E01.ini",
       "notes": ""
     },
     "video": {
@@ -7027,7 +7027,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTH4E01_default.ini",
+      "game_settings": "GTH4E01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7040,7 +7040,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTH4E01_default.ini",
+      "game_settings": "GTH4E01.ini",
       "notes": ""
     },
     "video": {
@@ -7067,7 +7067,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTHUE01_default.ini",
+      "game_settings": "GTHUE01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7080,7 +7080,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTHUE01_default.ini",
+      "game_settings": "GTHUE01.ini",
       "notes": ""
     },
     "video": {
@@ -7107,7 +7107,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTHU2E01_default.ini",
+      "game_settings": "GTHU2E01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7120,7 +7120,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTHU2E01_default.ini",
+      "game_settings": "GTHU2E01.ini",
       "notes": ""
     },
     "video": {
@@ -7147,7 +7147,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTSP01_default.ini",
+      "game_settings": "GTSP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7160,7 +7160,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTSP01_default.ini",
+      "game_settings": "GTSP01.ini",
       "notes": ""
     },
     "video": {
@@ -7187,7 +7187,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTTEP01_default.ini",
+      "game_settings": "GTTEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7200,7 +7200,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTTEP01_default.ini",
+      "game_settings": "GTTEP01.ini",
       "notes": ""
     },
     "video": {
@@ -7227,7 +7227,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTT2E01_default.ini",
+      "game_settings": "GTT2E01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7240,7 +7240,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTT2E01_default.ini",
+      "game_settings": "GTT2E01.ini",
       "notes": ""
     },
     "video": {
@@ -7267,7 +7267,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTT3E01_default.ini",
+      "game_settings": "GTT3E01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7280,7 +7280,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTT3E01_default.ini",
+      "game_settings": "GTT3E01.ini",
       "notes": ""
     },
     "video": {
@@ -7307,7 +7307,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTURP01_default.ini",
+      "game_settings": "GTURP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7320,7 +7320,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTURP01_default.ini",
+      "game_settings": "GTURP01.ini",
       "notes": ""
     },
     "video": {
@@ -7347,7 +7347,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GUMEP01_default.ini",
+      "game_settings": "GUMEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7360,7 +7360,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GUMEP01_default.ini",
+      "game_settings": "GUMEP01.ini",
       "notes": ""
     },
     "video": {
@@ -7387,7 +7387,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GUSMP01_default.ini",
+      "game_settings": "GUSMP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7400,7 +7400,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GUSMP01_default.ini",
+      "game_settings": "GUSMP01.ini",
       "notes": ""
     },
     "video": {
@@ -7427,7 +7427,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GVJEP01_default.ini",
+      "game_settings": "GVJEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7440,7 +7440,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GVJEP01_default.ini",
+      "game_settings": "GVJEP01.ini",
       "notes": ""
     },
     "video": {
@@ -7467,7 +7467,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GVJ2P01_default.ini",
+      "game_settings": "GVJ2P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7480,7 +7480,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GVJ2P01_default.ini",
+      "game_settings": "GVJ2P01.ini",
       "notes": ""
     },
     "video": {
@@ -7507,7 +7507,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GVRP01_default.ini",
+      "game_settings": "GVRP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7520,7 +7520,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GVRP01_default.ini",
+      "game_settings": "GVRP01.ini",
       "notes": ""
     },
     "video": {
@@ -7547,7 +7547,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GVXEP01_default.ini",
+      "game_settings": "GVXEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7560,7 +7560,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GVXEP01_default.ini",
+      "game_settings": "GVXEP01.ini",
       "notes": ""
     },
     "video": {
@@ -7587,7 +7587,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GW3DP01_default.ini",
+      "game_settings": "GW3DP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7600,7 +7600,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GW3DP01_default.ini",
+      "game_settings": "GW3DP01.ini",
       "notes": ""
     },
     "video": {
@@ -7627,7 +7627,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GWAVP01_default.ini",
+      "game_settings": "GWAVP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7640,7 +7640,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GWAVP01_default.ini",
+      "game_settings": "GWAVP01.ini",
       "notes": ""
     },
     "video": {
@@ -7667,7 +7667,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GWBLP01_default.ini",
+      "game_settings": "GWBLP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7680,7 +7680,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GWBLP01_default.ini",
+      "game_settings": "GWBLP01.ini",
       "notes": ""
     },
     "video": {
@@ -7707,7 +7707,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GWWEP01_default.ini",
+      "game_settings": "GWWEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7720,7 +7720,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GWWEP01_default.ini",
+      "game_settings": "GWWEP01.ini",
       "notes": ""
     },
     "video": {
@@ -7747,7 +7747,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GWWIP01_default.ini",
+      "game_settings": "GWWIP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7760,7 +7760,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GWWIP01_default.ini",
+      "game_settings": "GWWIP01.ini",
       "notes": ""
     },
     "video": {
@@ -7787,7 +7787,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Compatibility",
-      "game_settings": "GXIIP01_default.ini",
+      "game_settings": "GXIIP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7800,7 +7800,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Compatibility",
-      "game_settings": "GXIIP01_default.ini",
+      "game_settings": "GXIIP01.ini",
       "notes": ""
     },
     "video": {
@@ -7827,7 +7827,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GXM2P01_default.ini",
+      "game_settings": "GXM2P01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7840,7 +7840,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GXM2P01_default.ini",
+      "game_settings": "GXM2P01.ini",
       "notes": ""
     },
     "video": {
@@ -7867,7 +7867,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GXDP01_default.ini",
+      "game_settings": "GXDP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7880,7 +7880,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GXDP01_default.ini",
+      "game_settings": "GXDP01.ini",
       "notes": ""
     },
     "video": {
@@ -7907,7 +7907,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GYUEP01_default.ini",
+      "game_settings": "GYUEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7920,7 +7920,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GYUEP01_default.ini",
+      "game_settings": "GYUEP01.ini",
       "notes": ""
     },
     "video": {
@@ -7947,7 +7947,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GZAPP01_default.ini",
+      "game_settings": "GZAPP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7960,7 +7960,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GZAPP01_default.ini",
+      "game_settings": "GZAPP01.ini",
       "notes": ""
     },
     "video": {
@@ -7987,7 +7987,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GZLP01_default.ini",
+      "game_settings": "GZLP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -8000,7 +8000,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GZLP01_default.ini",
+      "game_settings": "GZLP01.ini",
       "notes": ""
     },
     "video": {
@@ -8027,7 +8027,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GZOOP01_default.ini",
+      "game_settings": "GZOOP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -8040,47 +8040,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GZOOP01_default.ini",
-      "notes": ""
-    },
-    "video": {
-      "screenshot": "",
-      "video": ""
-    },
-    "variants": []
-  },
-  {
-    "game_id": "RZDP01",
-    "game": "Zelda - Twilight Princess",
-    "region": "PAL",
-    "rating": 2,
-    "fps": "5-15",
-    "fps_min": 5,
-    "fps_max": 15,
-    "boot": "YES",
-    "playable": "NO",
-    "core": "blacksceen fix",
-    "core_version": "v9 Goose or prior",
-    "considerations": "framerate is unplayably slow. dont even bother.",
-    "source": "Sexy_Shrek",
-    "device": "Unknown Device",
-    "issue": 0,
-    "configuration": {
-      "core_profile": "Compatibility",
-      "game_settings": "RZDP01_default.ini",
-      "overclock": null,
-      "resolution": null
-    },
-    "test_environment": {
-      "device": "Unknown Device",
-      "muos_version": "",
-      "dolphin_version": "v9 Goose or prior",
-      "sd_card": ""
-    },
-    "tags": [],
-    "profile_recommendation": {
-      "core": "Compatibility",
-      "game_settings": "RZDP01_default.ini",
+      "game_settings": "GZOOP01.ini",
       "notes": ""
     },
     "video": {
