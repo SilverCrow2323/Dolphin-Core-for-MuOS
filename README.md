@@ -102,8 +102,6 @@ Want to contribute to the chaos? If you test other titles, feel free to share yo
 - 🎮 [Send GameCube Report](https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=new_gamecube_test.yml)
 - 🌀 [Send Wii Report](https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=wii-game-test.yml)
 
-> *Data history note: All preliminary data has been meticulously extrapolated and ported over from the [Original Community Google Sheets Spreadsheet](https://docs.google.com/spreadsheets/u/0/d/1LHXQV78yAuvii8J77KUgEt3Ap6TagjQzN48gdB9iVKY/htmlview).*
-
 ---
 
 ## 🤝 Credits & Acknowledgments
