@@ -490,7 +490,7 @@
     "boot": "YES",
     "playable": "YES",
     "core": "Default",
-    "core_version": "v10.5.300",
+    "core_version": "v10.5.3",
     "considerations": "...",
     "source": "Luis Torrão",
     "device": "RG4xxxx",
@@ -504,7 +504,7 @@
     "test_environment": {
       "device": "RG4xxxx",
       "muos_version": "",
-      "dolphin_version": "v10.5.300",
+      "dolphin_version": "v10.5.3",
       "sd_card": ""
     },
     "tags": [],
@@ -1850,7 +1850,7 @@
     "boot": "YES",
     "playable": "YES",
     "core": "SpeedHack",
-    "core_version": "v10.5.300",
+    "core_version": "v10.5.3",
     "considerations": "Playable but has noticeable frame drops during combat. With further optimizations and tweaking, performance could improve significantly.",
     "source": "sirpips",
     "device": "RG35XX H",
@@ -1864,7 +1864,7 @@
     "test_environment": {
       "device": "RG35XX H",
       "muos_version": "Jacaranda",
-      "dolphin_version": "v10.5.300",
+      "dolphin_version": "v10.5.3",
       "sd_card": ""
     },
     "tags": [
@@ -1883,7 +1883,7 @@
     "variants": []
   },
   {
-    "game_id": "GD7P70",
+    "game_id": "GD7PB2",
     "game": "Dragon Ball Z Budokai",
     "region": "PAL",
     "rating": 3,
@@ -1892,22 +1892,22 @@
     "fps_max": 50,
     "boot": "YES",
     "playable": "YES",
-    "core": "Standard",
-    "core_version": "v10.5.300",
+    "core": "Default",
+    "core_version": "v10.6 (pre release)",
     "considerations": "Gameplay suffers from slowdowns during combat, but the visuals are excellent. The Standard core profile provides the best performance. The Performance core sacrifices too much graphical quality.",
     "source": "sirpips",
     "device": "RG35XX H",
     "issue": 0,
     "configuration": {
-      "core_profile": "Standard",
-      "game_settings": "GD7P01.ini",
+      "core_profile": "Default",
+      "game_settings": "GD7PB2.ini",
       "overclock": null,
       "resolution": null
     },
     "test_environment": {
       "device": "RG35XX H",
       "muos_version": "Jacaranda",
-      "dolphin_version": "v10.5.300",
+      "dolphin_version": "v10.5.3",
       "sd_card": ""
     },
     "tags": [
@@ -1966,7 +1966,7 @@
     "variants": []
   },
   {
-    "game_id": "GD7P70",
+    "game_id": "GD7PB2",
     "game": "Dragon Ball Z Budokai",
     "region": "PAL",
     "rating": 2,
@@ -1983,7 +1983,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GDBP01.ini",
+      "game_settings": "GD7PB2.ini",
       "overclock": null,
       "resolution": null
     },
@@ -2126,31 +2126,31 @@
     "variants": []
   },
   {
-    "game_id": "GDJPB2",
+    "game_id": "GDJEB2",
     "game": "Digimon World 4",
-    "region": "PAL",
+    "region": "NTSC / USA",
     "rating": 4,
     "fps": "30-50",
     "fps_min": 30,
     "fps_max": 50,
     "boot": "YES",
     "playable": "YES",
-    "core": "SpeedHack",
-    "core_version": "v10.5.300",
+    "core": "Speedup 1",
+    "core_version": "v10.6 (pre release)",
     "considerations": "Almost perfect. Some lag during intense scenes, but overall very playable. Further in-depth testing is needed to confirm full stability.",
     "source": "sirpips",
     "device": "RG35XX H",
     "issue": 0,
     "configuration": {
-      "core_profile": "Performance",
+      "core_profile": "Speedup 1",
       "game_settings": "GDJPB2.ini",
       "overclock": null,
       "resolution": null
     },
     "test_environment": {
       "device": "RG35XX H",
-      "muos_version": "Jacaranda",
-      "dolphin_version": "v10.5.300",
+      "muos_version": "Funky Jacaranda",
+      "dolphin_version": "v10.6 (pre release)",
       "sd_card": ""
     },
     "tags": [
@@ -3220,7 +3220,7 @@
     "boot": "YES",
     "playable": "YES",
     "core": "SpeedHack",
-    "core_version": "v10.5.300",
+    "core_version": "v10.5.3",
     "considerations": "Runs smoothly at 40 FPS. Gets a bit laggy in large / crowded spaces.\nVideo sequences are perfect.\nPlayable, with issues",
     "source": "sirpips",
     "device": "RG35XX H",
@@ -3234,7 +3234,7 @@
     "test_environment": {
       "device": "RG35XX H",
       "muos_version": "Funky Jacaranda",
-      "dolphin_version": "v10.5.300",
+      "dolphin_version": "v10.5.3",
       "sd_card": ""
     },
     "tags": [],
@@ -3660,7 +3660,7 @@
     "boot": "YES",
     "playable": "YES",
     "core": "All of them (tested multiple)",
-    "core_version": "v10.5.300",
+    "core_version": "v10.5.3",
     "considerations": "Perfectly playable, some minor lagging in video scenes.",
     "source": "sirpips",
     "device": "RG35XX H",
@@ -3674,7 +3674,7 @@
     "test_environment": {
       "device": "RG35XX H with muOS Jacaranda",
       "muos_version": "Funky Jacaranda",
-      "dolphin_version": "v10.5.300",
+      "dolphin_version": "v10.5.3",
       "sd_card": ""
     },
     "tags": [],
