@@ -1,0 +1,237 @@
+name: "🐬 Dolphin Rt:Core Test Report"
+description: "Submit test results for GameCube or Wii games on Dolphin Rt:Core / muOS"
+title: "[TEST]: "
+labels: ["test-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        <div align="center">
+          <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdwfactory_logo.png" alt="SPDW Factory" width="120">
+          <h1>🎮 DOLPHIN RT:CORE COMPATIBILITY REPORT</h1>
+          <p>
+            <img src="https://img.shields.io/badge/Platform-GameCube_%7C_Wii-FFA500?style=flat-square">
+            <img src="https://img.shields.io/badge/Core-Dolphin_Rt:Core-blue?style=flat-square">
+            <img src="https://img.shields.io/badge/OS-muOS-orange?style=flat-square">
+          </p>
+          <p><em>Community-driven testing database for Dolphin emulation on muOS &amp; H700 chipset</em></p>
+          <br>
+          <strong>⚠️ Before submitting</strong><br>
+          Please check if this game has already been reported in the 
+          <a href="https://github.com/your-repo/issues?q=is%3Aissue+label%3Atest-report">database</a>.
+        </div>
+        ---
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "🎮 Platform *"
+      description: "Select the console you tested on."
+      options:
+        - "GameCube"
+        - "Wii"
+    validations:
+      required: true
+
+  - type: input
+    id: game_title
+    attributes:
+      label: "📖 Game Title *"
+      description: "The full title of the game (e.g., Super Mario Sunshine)."
+      placeholder: "e.g., Super Mario Sunshine, Wii Sports"
+    validations:
+      required: true
+
+  - type: input
+    id: game_id
+    attributes:
+      label: "🎯 Game ID (optional)"
+      description: "If you already know the Game ID (e.g., GMSE01, RSPE01), you can enter it here. Otherwise, it will be auto-detected from the title."
+      placeholder: "e.g., GMSE01"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## 📊 Test Results
+
+  - type: dropdown
+    id: region
+    attributes:
+      label: "🌍 Region *"
+      options:
+        - "NTSC / USA"
+        - "PAL"
+        - "NTSC / JPN"
+        - "NTSC / KOR"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: rating
+    attributes:
+      label: "⭐ Performance Rating *"
+      description: "5★ = virtually perfect. 0★ = does not boot at all."
+      options:
+        - "5 - PERFECT (no issues)"
+        - "4 - GREAT (minor issues)"
+        - "3 - PLAYABLE (needs tweaks)"
+        - "2 - POOR (slow but boots)"
+        - "1 - BAD (unplayable)"
+        - "0 - DOES NOT BOOT"
+    validations:
+      required: true
+
+  - type: input
+    id: fps
+    attributes:
+      label: "🎬 FPS Range *"
+      description: "Min and max FPS observed (e.g., 30-60). Use `???` if unknown."
+      placeholder: "e.g., 30-60"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: boot
+    attributes:
+      label: "🔌 Does the game boot? *"
+      options:
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: playable
+    attributes:
+      label: "🎮 Is the game playable? *"
+      description: "Can you actually play through the game, even with issues?"
+      options:
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: core_profile
+    attributes:
+      label: "⚙️ Core Profile Used *"
+      options:
+        - "Standard"
+        - "Performance"
+        - "Compatibility"
+        - "Wii"
+        - "Other (specify in notes)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: wiimote_extension
+    attributes:
+      label: "🎮 Wiimote Extension (Wii only)"
+      description: "If testing a Wii game, select the controller setup used."
+      options:
+        - "N/A (GameCube)"
+        - "Wiimote Only"
+        - "Wiimote + Nunchuk"
+        - "Classic Controller"
+        - "GameCube Controller"
+        - "Other (specify in notes)"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## 🛠️ Advanced Configuration
+
+  - type: textarea
+    id: game_settings_used
+    attributes:
+      label: "📝 GameSettings Configuration"
+      description: "If you used a custom GameSettings file, paste its content or describe the key changes."
+      placeholder: "Overclock = 0.55, InternalResolution = 50, VISkip = True, etc."
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "📝 Considerations & Notes"
+      description: "Describe performance, graphical issues, audio problems, workarounds, or anything noteworthy."
+      placeholder: "Write your considerations, notes or performance details here"
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "🖼️ Screenshots / Video (optional)"
+      description: "Paste links to Imgur, YouTube, or other hosting services."
+      placeholder: "https://i.imgur.com/abc123.jpg"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## 👤 Tester Information
+
+  - type: input
+    id: tester
+    attributes:
+      label: "👤 Tester Username *"
+      description: "Your username or alias to credit in the database."
+      placeholder: "Write your username"
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: "📱 Device Used *"
+      description: "Which device did you test on?"
+      placeholder: "e.g., RG35XX H"
+    validations:
+      required: true
+
+  - type: input
+    id: muos_version
+    attributes:
+      label: "💾 muOS Version *"
+      description: "Which version of muOS are you running?"
+      placeholder: "e.g., Jacaranda"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: dolphincore_version
+    attributes:
+      label: "🐬 Dolphin Core Version *"
+      options:
+        - "v10.5.3"
+        - "v10.5-124"
+        - "v10.0 SPDW"
+        - "v9.0"
+        - "v8.0"
+        - "Other (specify in notes)"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        <div align="center">
+          <br>
+          <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="Console" width="48">
+          <br><br>
+          <strong>Thank you for contributing to the Dolphin Rt:Core compatibility database!</strong> 🙌
+          <br><br>
+          <small>🔄 This report will be automatically processed and added to the database.</small>
+        </div>
