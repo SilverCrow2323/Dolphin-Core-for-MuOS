@@ -1,9 +1,20 @@
-# 🏛️ Dolphin Core History & Archive
+
+
+<div align="center">
+
+# <img src="assets/dolphinrt.png" width="30" alt="Dolphin Rt:Core icon"> 🏛️ Dolphin (pre)Rt:Core for muOS - History & Archive
+<br>
+
+<img src="assets/dolphinmuos_corehistory.png" width="700" alt="Dolphin Rt:Core for muOS Archive Banner">
+
+<br><br>
 
 Welcome to the digital fossil record. This directory houses all previous iterations, test builds, and experimental packages of the Dolphin core for muOS, compiled *before* this repository officially existed to catalog the chaos.
 
-These builds stem from the pioneering work and legendary experiments by **@Speedrun**, originally documented on the [MustardOS Community Forum (Topic #491)](https://community.muos.dev/t/core-dolphin-for-muos-v9-take-3-by-speedrun/491).
+These builds stem from the pioneering work and legendary experiments by **@Speedrun**, originally documented on <br>
+[MustardOS Community Forum (Topic #491)](https://community.muos.dev/t/core-dolphin-for-muos-v9-take-3-by-speedrun/491).
 
+</div align>
 ---
 
 ## 📂 Available Historical Versions & Archives
