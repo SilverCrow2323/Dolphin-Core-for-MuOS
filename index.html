@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="htmlRoot">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -189,12 +189,10 @@
 </head>
 <body id="appBody" class="theme-gc font-sans antialiased transition-colors duration-500 min-h-screen">
 
-  <!-- HEADER -->
+  <!-- HEADER (identico a prima, con assets da repo) -->
   <header id="appHeader" class="sticky top-0 z-40 transition-colors duration-500 border-b border-purple-900/40 bg-gc-950/90 backdrop-blur-xl shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-        
-        <!-- Left: Title & Console Switcher -->
         <div class="space-y-3">
           <div class="flex flex-wrap items-center gap-3">
             <div class="inline-flex p-1 rounded-2xl bg-black/30 border border-white/10 backdrop-blur-md">
@@ -221,8 +219,6 @@
             <p id="dashboardDesc" class="text-xs italic text-slate-400 mt-1 transition-colors">Community-driven testing database for Dolphin emulation on muOS &amp; H700 chipset</p>
           </div>
         </div>
-
-        <!-- Right: Stats Panel -->
         <div id="spdwPanel" class="gc-glass rounded-2xl p-4 w-full lg:w-auto min-w-[220px] transition-all duration-500">
           <div class="flex items-center justify-between gap-3 mb-2 pb-1.5 border-b border-white/10">
             <span id="spdwBrand" class="flex items-center gap-1.5 font-black text-gc-400 tracking-wider text-xs uppercase">
@@ -246,20 +242,14 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- FILTRI E GRIGLIA (come prima) -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-4">
-    
-    <!-- FILTERS BAR -->
     <div id="filterPanel" class="gc-glass rounded-2xl p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500">
       <div class="relative w-full md:w-72 shrink-0">
-        <input type="text" id="searchInput" placeholder="Search game title..." 
-          class="w-full bg-slate-950/60 text-slate-100 placeholder-slate-500 border border-white/10 rounded-xl pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-gc-500 transition-all">
-        <svg class="w-4 h-4 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-        </svg>
+        <input type="text" id="searchInput" placeholder="Search game title..." class="w-full bg-slate-950/60 text-slate-100 placeholder-slate-500 border border-white/10 rounded-xl pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-gc-500 transition-all">
+        <svg class="w-4 h-4 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         <div id="searchDropdown" class="search-dropdown gc-glass border border-white/10 rounded-xl overflow-hidden shadow-2xl"></div>
       </div>
-
       <div class="flex flex-wrap items-center justify-center gap-2">
         <select id="regionFilter" class="bg-slate-950/60 border border-white/10 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-gc-500 transition-all">
           <option value="all">🌍 All Regions</option>
@@ -267,80 +257,51 @@
           <option value="PAL">🇪🇺 PAL</option>
           <option value="JPN">🇯🇵 JPN</option>
         </select>
-
         <select id="bootFilter" class="bg-slate-950/60 border border-white/10 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-gc-500 transition-all">
           <option value="all">💿 Boot: All</option>
           <option value="YES">✅ Boots</option>
           <option value="NO">❌ Won't Boot</option>
         </select>
-
         <select id="sortKey" class="bg-slate-950/60 border border-white/10 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-gc-500 transition-all">
           <option value="title">📝 Sort: Title</option>
           <option value="rating">⭐ Sort: Best Rating</option>
           <option value="fps">🚀 Sort: Best FPS</option>
           <option value="entries">📊 Sort: Most Tested</option>
         </select>
-
         <button id="sortOrderBtn" class="bg-slate-950/60 border border-white/10 hover:border-white/30 px-3 py-2 rounded-xl text-sm flex items-center gap-1.5 transition-colors">
           <span id="sortOrderLabel">Asc</span>
-          <svg id="sortOrderIcon" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-          </svg>
+          <svg id="sortOrderIcon" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
-
-        <button id="resetFiltersBtn" class="bg-rose-950/40 text-rose-400 border border-rose-800/40 hover:bg-rose-900/50 px-3 py-2 rounded-xl text-sm font-semibold transition-colors">
-          ↺ Reset
-        </button>
+        <button id="resetFiltersBtn" class="bg-rose-950/40 text-rose-400 border border-rose-800/40 hover:bg-rose-900/50 px-3 py-2 rounded-xl text-sm font-semibold transition-colors">↺ Reset</button>
       </div>
     </div>
 
-    <!-- RATING FILTER PANELS -->
     <div class="grid grid-cols-5 gap-2 max-w-4xl mx-auto w-full">
       <button data-rating="5" class="rating-panel gc-glass border border-emerald-500/30 hover:border-emerald-500/70 p-2.5 rounded-2xl flex items-center justify-between transition-all duration-200 group cursor-pointer">
-        <div class="space-y-0.5">
-          <div class="flex items-center gap-1 text-emerald-500 font-bold text-sm"><span>5★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Perfect</span></div>
-          <div class="text-[10px] text-slate-500 font-medium hidden md:block">Full Speed</div>
-        </div>
+        <div class="space-y-0.5"><div class="flex items-center gap-1 text-emerald-500 font-bold text-sm"><span>5★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Perfect</span></div><div class="text-[10px] text-slate-500 font-medium hidden md:block">Full Speed</div></div>
         <span id="count-5" class="bg-emerald-950/80 text-emerald-400 border border-emerald-700/60 font-mono font-bold text-sm px-3 py-0.5 rounded-lg">0</span>
       </button>
       <button data-rating="4" class="rating-panel gc-glass border border-teal-500/30 hover:border-teal-500/70 p-2.5 rounded-2xl flex items-center justify-between transition-all duration-200 group cursor-pointer">
-        <div class="space-y-0.5">
-          <div class="flex items-center gap-1 text-teal-500 font-bold text-sm"><span>4★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Great</span></div>
-          <div class="text-[10px] text-slate-500 font-medium hidden md:block">Minor Issues</div>
-        </div>
+        <div class="space-y-0.5"><div class="flex items-center gap-1 text-teal-500 font-bold text-sm"><span>4★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Great</span></div><div class="text-[10px] text-slate-500 font-medium hidden md:block">Minor Issues</div></div>
         <span id="count-4" class="bg-teal-950/80 text-teal-400 border border-teal-700/60 font-mono font-bold text-sm px-3 py-0.5 rounded-lg">0</span>
       </button>
       <button data-rating="3" class="rating-panel gc-glass border border-amber-500/30 hover:border-amber-500/70 p-2.5 rounded-2xl flex items-center justify-between transition-all duration-200 group cursor-pointer">
-        <div class="space-y-0.5">
-          <div class="flex items-center gap-1 text-amber-500 font-bold text-sm"><span>3★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Playable</span></div>
-          <div class="text-[10px] text-slate-500 font-medium hidden md:block">Needs Tweaks</div>
-        </div>
+        <div class="space-y-0.5"><div class="flex items-center gap-1 text-amber-500 font-bold text-sm"><span>3★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Playable</span></div><div class="text-[10px] text-slate-500 font-medium hidden md:block">Needs Tweaks</div></div>
         <span id="count-3" class="bg-amber-950/80 text-amber-400 border border-amber-700/60 font-mono font-bold text-sm px-3 py-0.5 rounded-lg">0</span>
       </button>
       <button data-rating="2" class="rating-panel gc-glass border border-orange-500/30 hover:border-orange-500/70 p-2.5 rounded-2xl flex items-center justify-between transition-all duration-200 group cursor-pointer">
-        <div class="space-y-0.5">
-          <div class="flex items-center gap-1 text-orange-500 font-bold text-sm"><span>2★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Poor</span></div>
-          <div class="text-[10px] text-slate-500 font-medium hidden md:block">Slow</div>
-        </div>
+        <div class="space-y-0.5"><div class="flex items-center gap-1 text-orange-500 font-bold text-sm"><span>2★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Poor</span></div><div class="text-[10px] text-slate-500 font-medium hidden md:block">Slow</div></div>
         <span id="count-2" class="bg-orange-950/80 text-orange-400 border border-orange-700/60 font-mono font-bold text-sm px-3 py-0.5 rounded-lg">0</span>
       </button>
       <button data-rating="1" class="rating-panel gc-glass border border-rose-500/30 hover:border-rose-500/70 p-2.5 rounded-2xl flex items-center justify-between transition-all duration-200 group cursor-pointer">
-        <div class="space-y-0.5">
-          <div class="flex items-center gap-1 text-rose-500 font-bold text-sm"><span>1-0★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Bad</span></div>
-          <div class="text-[10px] text-slate-500 font-medium hidden md:block">No Boot</div>
-        </div>
+        <div class="space-y-0.5"><div class="flex items-center gap-1 text-rose-500 font-bold text-sm"><span>1-0★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Bad</span></div><div class="text-[10px] text-slate-500 font-medium hidden md:block">No Boot</div></div>
         <span id="count-1" class="bg-rose-950/80 text-rose-400 border border-rose-700/60 font-mono font-bold text-sm px-3 py-0.5 rounded-lg">0</span>
       </button>
     </div>
 
-    <!-- GAMES GRID -->
     <div id="gamesGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 max-w-7xl mx-auto w-full"></div>
-
-    <!-- EMPTY STATE -->
     <div id="emptyState" class="hidden text-center py-16 bg-slate-900/30 border border-dashed border-white/10 rounded-2xl max-w-4xl mx-auto">
-      <svg class="w-12 h-12 text-slate-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-      </svg>
+      <svg class="w-12 h-12 text-slate-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
       <p id="emptyStateText" class="text-slate-400 text-sm font-medium">No games found matching the current filters.</p>
       <button id="clearFiltersBtn" class="mt-4 px-4 py-2 bg-gc-600 text-white rounded-xl text-sm font-semibold hover:bg-gc-500 transition-colors shadow-lg">Clear Filters</button>
     </div>
@@ -349,15 +310,11 @@
   <!-- MODAL -->
   <div id="gameModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md hidden">
     <div id="modalCard" class="gc-glass border border-gc-700/80 rounded-3xl max-w-4xl w-full max-h-[94vh] flex flex-col p-6 shadow-2xl relative modal-anim">
-      
       <button id="closeModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-full bg-black/20 hover:bg-black/40 transition-colors z-10">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
-
-      <!-- HEADER MODAL: Titolo, regione, ID, cover -->
       <div id="modalHeader" class="border-b border-white/10 pb-4 pr-10 shrink-0 space-y-4">
         <div class="flex flex-col md:flex-row gap-4 items-start md:items-center">
-          <!-- Cover thumbnail -->
           <div id="modalCoverContainer" class="w-24 h-32 rounded-xl overflow-hidden bg-slate-800/50 flex-shrink-0 border border-white/10">
             <img id="modalCoverImg" src="" alt="Cover" class="w-full h-full object-cover">
           </div>
@@ -368,32 +325,16 @@
               <span id="modalRegionBadge" class="text-[10px] font-mono px-2 py-0.5 rounded bg-gc-900 text-gc-300 border border-gc-700/60 uppercase font-bold shrink-0"></span>
               <span id="modalGameId" class="text-[10px] font-mono px-2 py-0.5 rounded bg-gc-800/60 text-gc-400 border border-gc-600/40 font-bold shrink-0"></span>
             </div>
-            <!-- Stats riassuntive -->
             <div class="grid grid-cols-4 gap-2 mt-3 text-center">
-              <div class="p-2 rounded-xl bg-black/30 border border-white/10">
-                <span class="text-[9px] uppercase tracking-wider font-bold text-slate-400">Best Rating</span>
-                <div id="modalBestRatingVal" class="flex items-center justify-center gap-1 mt-1 font-bold text-sm"></div>
-              </div>
-              <div class="p-2 rounded-xl bg-black/30 border border-white/10">
-                <span class="text-[9px] uppercase tracking-wider font-bold text-slate-400">Best FPS</span>
-                <span id="modalBestFpsVal" class="text-sm font-mono font-bold mt-1 block text-gc-300"></span>
-              </div>
-              <div class="p-2 rounded-xl bg-black/30 border border-white/10">
-                <span class="text-[9px] uppercase tracking-wider font-bold text-slate-400">Avg Rating</span>
-                <span id="modalAvgRatingVal" class="text-sm font-mono font-bold mt-1 block"></span>
-              </div>
-              <div class="p-2 rounded-xl bg-black/30 border border-white/10">
-                <span class="text-[9px] uppercase tracking-wider font-bold text-slate-400">Avg FPS</span>
-                <span id="modalAvgFpsVal" class="text-sm font-mono font-bold mt-1 block text-gc-300"></span>
-              </div>
+              <div class="p-2 rounded-xl bg-black/30 border border-white/10"><span class="text-[9px] uppercase tracking-wider font-bold text-slate-400">Best Rating</span><div id="modalBestRatingVal" class="flex items-center justify-center gap-1 mt-1 font-bold text-sm"></div></div>
+              <div class="p-2 rounded-xl bg-black/30 border border-white/10"><span class="text-[9px] uppercase tracking-wider font-bold text-slate-400">Best FPS</span><span id="modalBestFpsVal" class="text-sm font-mono font-bold mt-1 block text-gc-300"></span></div>
+              <div class="p-2 rounded-xl bg-black/30 border border-white/10"><span class="text-[9px] uppercase tracking-wider font-bold text-slate-400">Avg Rating</span><span id="modalAvgRatingVal" class="text-sm font-mono font-bold mt-1 block"></span></div>
+              <div class="p-2 rounded-xl bg-black/30 border border-white/10"><span class="text-[9px] uppercase tracking-wider font-bold text-slate-400">Avg FPS</span><span id="modalAvgFpsVal" class="text-sm font-mono font-bold mt-1 block text-gc-300"></span></div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- LISTA ENTRY -->
       <div class="flex-1 overflow-y-auto my-4 space-y-4 pr-1" id="modalEntriesContainer"></div>
-
       <div class="pt-3 border-t border-white/10 flex justify-between items-center text-xs text-slate-400 shrink-0">
         <span id="modalTotalEntriesText">Total Tests: 0</span>
         <button onclick="closeModal()" class="px-4 py-1.5 rounded-xl font-bold bg-black/20 hover:bg-black/40 border border-white/10 transition-colors">Close</button>
@@ -435,28 +376,25 @@
     };
 
     const FLAG_MAP = { 'PAL': 'eu', 'NTSC': 'us', 'NTSC / USA': 'us', 'JPN': 'jp' };
+    function getFlagUrl(region) { const code = FLAG_MAP[region] || 'un'; return `https://flagcdn.com/w40/${code}.png`; }
 
-    function getFlagUrl(region) {
-      const code = FLAG_MAP[region] || 'un';
-      return `https://flagcdn.com/w40/${code}.png`;
-    }
-
-    // -------- CORREZIONE COVER --------
+    // -------- MAPPA REGIONE PER GAMETDB --------
     function getRegionCode(regionName) {
       const map = {
-        'NTSC / USA': 'US',
-        'PAL': 'EU',
-        'NTSC / JPN': 'JP',
-        'NTSC / KOR': 'KO',
-        'NTSC': 'US',
-        'JPN': 'JP',
-        'KOR': 'KO',
-        'EU': 'EU',
-        'US': 'US'
+        'NTSC / USA': 'US', 'PAL': 'EU', 'NTSC / JPN': 'JP', 'NTSC / KOR': 'KO',
+        'NTSC': 'US', 'JPN': 'JP', 'KOR': 'KO', 'EU': 'EU', 'US': 'US'
       };
       return map[regionName] || 'US';
     }
 
+    // -------- GENERAZIONE GAME ID PROVVISORIO --------
+    function generateGameId(title, consoleType) {
+      const clean = title.replace(/[^a-zA-Z]/g, '').slice(0, 3).toUpperCase();
+      const prefix = consoleType === 'gc' ? 'G' : 'R';
+      return `${prefix}${clean}01`;
+    }
+
+    // -------- URL COPERTINA CORRETTO --------
     function getCoverUrl(gameId, regionName, consoleType) {
       if (!gameId) return null;
       const regionCode = getRegionCode(regionName);
@@ -469,14 +407,8 @@
       return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
     }
 
-    // ============================================================
-    //  RATING STARS
-    // ============================================================
     function renderStars(rating, size = 14) {
-      const colors = {
-        5: 'text-emerald-500', 4: 'text-teal-500', 3: 'text-amber-500',
-        2: 'text-orange-500', 1: 'text-rose-500', 0: 'text-slate-400'
-      };
+      const colors = {5:'text-emerald-500',4:'text-teal-500',3:'text-amber-500',2:'text-orange-500',1:'text-rose-500',0:'text-slate-400'};
       const colorClass = colors[rating] || 'text-amber-500';
       const full = Math.min(5, Math.max(0, rating));
       let html = `<div class="rating-stars">`;
@@ -489,7 +421,7 @@
     }
 
     // ============================================================
-    //  GROUPING (migliorato: calcola bestEntryIndex)
+    //  GROUPING (genera game_id se mancante)
     // ============================================================
     function groupGames(rawList) {
       const groups = new Map();
@@ -519,6 +451,7 @@
           totalRating += r;
           if (e.boot === "YES") bestBoot = "YES";
           if (e.playable === "YES") bestPlayable = "YES";
+          // Prendi game_id dalla prima entry che lo ha
           if (!gameId && e.game_id) gameId = e.game_id;
 
           const fpsMax = parseInt(e.fps_max || 0, 10);
@@ -534,6 +467,11 @@
             bestEntryIndex = idx;
           }
         });
+
+        // Se nessuna entry ha game_id, generane uno dal titolo
+        if (!gameId) {
+          gameId = generateGameId(group.game, currentConsole);
+        }
 
         const avgRating = (totalRating / group.entries.length).toFixed(1);
         const avgFps = validFpsCount > 0 ? Math.round(totalFpsSum / validFpsCount) : "N/A";
@@ -558,14 +496,13 @@
     }
 
     // ============================================================
-    //  CONSOLE SWITCH
+    //  CONSOLE SWITCH, RENDER GRID, MODAL (come prima, ma con le cover)
     // ============================================================
     function switchConsole(target) {
       currentConsole = target;
       const isGC = target === 'gc';
-
-      document.getElementById('consoleLogo').src = isGC 
-        ? 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg' 
+      document.getElementById('consoleLogo').src = isGC
+        ? 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg'
         : 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg';
       document.getElementById('appBody').className = isGC ? 'theme-gc font-sans antialiased transition-colors duration-500 min-h-screen' : 'theme-wii font-sans antialiased transition-colors duration-500 min-h-screen';
       document.getElementById('appHeader').className = isGC ? 'sticky top-0 z-40 transition-colors duration-500 border-b border-purple-900/40 bg-gc-950/90 backdrop-blur-xl shadow-lg' : 'sticky top-0 z-40 transition-colors duration-500 border-b border-slate-300 bg-white/95 backdrop-blur-xl shadow-lg';
@@ -608,9 +545,6 @@
       loadConsoleData();
     }
 
-    // ============================================================
-    //  RENDER GRID
-    // ============================================================
     function renderGrid() {
       document.querySelectorAll('.rating-panel').forEach(p => {
         const val = p.getAttribute('data-rating');
@@ -660,7 +594,8 @@
 
       const isGC = currentConsole === 'gc';
       grid.innerHTML = currentFilteredGames.map((item, idx) => {
-        const coverUrl = item.gameId ? getCoverUrl(item.gameId, item.region, currentConsole) : null;
+        // Usa l'ID generato (che ora è sempre presente)
+        const coverUrl = getCoverUrl(item.gameId, item.region, currentConsole);
         const delay = Math.min(idx * 20, 300);
         const regionColor = item.region.includes('NTSC') ? 'text-emerald-400' : (item.region === 'PAL' ? 'text-amber-400' : 'text-slate-400');
 
@@ -672,6 +607,7 @@
                 <div class="cover-placeholder absolute inset-0 w-full h-full ${coverUrl ? 'hidden' : 'flex'} flex-col items-center justify-center text-4xl">
                   🎮
                   <span class="text-[10px] mt-1 opacity-40 font-mono">${item.gameId || '???'}</span>
+                  ${!item.gameId ? '<span class="text-[8px] text-amber-400 mt-0.5">(Game ID mancante)</span>' : ''}
                 </div>
                 ${coverUrl ? `<div class="absolute inset-0 w-full h-full flex flex-col items-center justify-center text-4xl opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-sm"><span class="text-xs font-medium text-white/80">${item.gameId || ''}</span></div>` : ''}
               </div>
@@ -698,9 +634,7 @@
       }).join('');
     }
 
-    // ============================================================
-    //  MODAL (arricchito)
-    // ============================================================
+    // --- MODAL (identico a prima) ---
     function openModal(index) {
       const item = currentFilteredGames[index];
       if (!item) return;
@@ -723,7 +657,7 @@
       gameIdEl.textContent = item.gameId || 'ID Unknown';
 
       const coverImg = document.getElementById('modalCoverImg');
-      const coverUrl = item.gameId ? getCoverUrl(item.gameId, item.region, currentConsole) : null;
+      const coverUrl = getCoverUrl(item.gameId, item.region, currentConsole);
       if (coverUrl) {
         coverImg.src = coverUrl;
         coverImg.onerror = () => { coverImg.style.display = 'none'; };
@@ -803,7 +737,6 @@
     function closeModal() {
       document.getElementById('gameModal').classList.add('hidden');
     }
-
     document.getElementById('closeModalBtn').addEventListener('click', closeModal);
     document.getElementById('gameModal').addEventListener('click', e => { if (e.target === document.getElementById('gameModal')) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
@@ -814,7 +747,6 @@
     function updateStats() {
       document.getElementById('statTested').textContent = GROUPED_GAMES.length;
       document.getElementById('statTotal').textContent = RAW_GAMES.length;
-
       const counts = {5:0,4:0,3:0,2:0,1:0};
       GROUPED_GAMES.forEach(g => {
         const r = g.bestRating;
