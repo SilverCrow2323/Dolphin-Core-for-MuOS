@@ -40,7 +40,7 @@
     "variants": []
   },
   {
-    "game_id": "RMNE01",
+    "game_id": "RMNP01",
     "game": "New Super Mario Bros Wii",
     "region": "PAL",
     "rating": 2,
@@ -57,7 +57,7 @@
     "issue": 8,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "RMNE01_default.ini",
+      "game_settings": "RMNP01_default.ini",
       "overclock": null,
       "resolution": null
     },
@@ -70,7 +70,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "RMNE01_default.ini",
+      "game_settings": "RMNP01_default.ini",
       "notes": ""
     },
     "video": {
