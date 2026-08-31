@@ -8050,29 +8050,29 @@
     "variants": []
   },
   {
-    "game_id": "UNKNOWN",
-    "game": "",
+    "game_id": "GVJP08",
+    "game": "Viewtiful Joe",
     "region": "NTSC / USA",
-    "rating": 3,
-    "fps": "???",
-    "fps_min": 0,
-    "fps_max": 0,
-    "boot": "NO",
-    "playable": "NO",
+    "rating": 2,
+    "fps": "25-35",
+    "fps_min": 25,
+    "fps_max": 35,
+    "boot": "YES",
+    "playable": "YES",
     "core": "default",
-    "core_version": "v10.5.300",
-    "considerations": "\n⚠️ Game ID non rilevato automaticamente. Usato placeholder 'UNKNOWN'.",
-    "source": "Anonymous",
-    "device": "Unknown Device",
+    "core_version": "v10.5.3",
+    "considerations": "Still running in slowmotion, the graphics look good but like this is absolutely not playable",
+    "source": "sirpips",
+    "device": "RG 35XX H",
     "issue": 0,
     "configuration": {
       "core_profile": "default",
-      "game_settings": "UNKNOWN_default.ini",
+      "game_settings": "GVJP08.ini",
       "overclock": null,
       "resolution": null
     },
     "test_environment": {
-      "device": "Unknown Device",
+      "device": "RG 35XX H",
       "muos_version": "2601.1 Funky Jacaranda (current)",
       "dolphin_version": "v10.5.300",
       "sd_card": ""
@@ -8080,7 +8080,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "default",
-      "game_settings": "UNKNOWN_default.ini",
+      "game_settings": "GVJP08.ini",
       "notes": ""
     },
     "video": {
