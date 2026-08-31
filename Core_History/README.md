@@ -2,10 +2,10 @@
 
 <div align="center">
 
-# <img src="assets/dolphinrt.png" width="30" alt="Dolphin Rt:Core icon"> 🏛️ Dolphin (pre)Rt:Core for muOS - History & Archive
+<img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt.png" alt="Dolphin Rt:Core" width="30"> 🏛️ Dolphin (pre)Rt:Core for muOS - History & Archive
 <br>
 
-<img src="assets/dolphinmuos_corehistory.png" width="700" alt="Dolphin Rt:Core for muOS Archive Banner">
+<img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinmuos_corehistory.png" alt="Core History" width="500">
 
 <br><br>
 
