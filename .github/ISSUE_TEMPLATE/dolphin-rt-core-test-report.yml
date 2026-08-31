@@ -228,10 +228,15 @@ body:
             </tr>
             <tr>
               <td align="center">⬇️ <em>write below</em></td>
-              <td align="center">⬇️ <em>select below</em></td>
+              <td align="center">⬇️ <em>write below if applicable</em></td>
             </tr>
           </table>
         </div>
+
+        <br>
+
+        <strong>⚠️ Custom Game Settings:</strong> If you used custom settings, please describe them below.<br>
+        <strong>🖼️ Screenshots / Video:</strong> If you have attachments, paste links below.
 
         ---
 
@@ -244,49 +249,23 @@ body:
     validations:
       required: false
 
-  - type: dropdown
-    id: custom_settings
-    attributes:
-      label: "⚙️ Custom Game Settings"
-      description: "Did you use custom GameSettings (e.g., overclock, resolution tweaks)?"
-      options:
-        - "No custom settings"
-        - "Yes, I used custom settings"
-    validations:
-      required: false
-
   - type: textarea
     id: game_settings_used
     attributes:
-      label: "📝 GameSettings Configuration"
-      description: "Paste your custom GameSettings configuration here."
+      label: "⚙️ Custom Game Settings (optional)"
+      description: "If you used custom GameSettings (e.g., overclock, resolution tweaks), paste your configuration here."
       placeholder: "Overclock = 0.55\nInternalResolution = 50\nVISkip = True"
-    validations:
-      required: false
-    if:
-      - custom_settings: "Yes, I used custom settings"
-
-  - type: dropdown
-    id: has_attachments
-    attributes:
-      label: "🖼️ Screenshots / Video"
-      description: "Do you have screenshots or video to share?"
-      options:
-        - "No attachments"
-        - "Yes, I have attachments"
     validations:
       required: false
 
   - type: textarea
     id: screenshots
     attributes:
-      label: "🔗 Attachment Links"
+      label: "🖼️ Screenshots / Video Links (optional)"
       description: "Paste links to Imgur, YouTube, or other hosting services."
       placeholder: "https://i.imgur.com/abc123.jpg\nhttps://youtu.be/xyz789"
     validations:
       required: false
-    if:
-      - has_attachments: "Yes, I have attachments"
 
   - type: markdown
     attributes:
