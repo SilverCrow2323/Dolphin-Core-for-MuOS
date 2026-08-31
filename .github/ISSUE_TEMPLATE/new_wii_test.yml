@@ -6,24 +6,28 @@ body:
   - type: markdown
     attributes:
       value: |
+        ---
         ## 📺 WII COMPATIBILITY REPORT
+        ![Badge](https://img.shields.io/badge/Platform-Wii-00A859?style=flat-square)
+        ![Badge](https://img.shields.io/badge/Core-Dolphin_Rt:Core-blue?style=flat-square)
+        ![Badge](https://img.shields.io/badge/OS-muOS-orange?style=flat-square)
 
-        *Before submitting, please check if this game has already been reported.*
-        *Search the database for the game title.*
+        *Before submitting, please check if this game has already been reported in the [database](https://github.com/your-repo/issues?q=is%3Aissue+label%3Awii-game-test).*
 
         ---
 
         ### 🔍 Game ID Autodetection
-        **Start typing the game title below. The system will search GameTDB database and automatically find the Game ID.**
+        **Start typing the game title below.** The system will search the GameTDB database and automatically find the Game ID.  
+        ⚠️ **Wait a few seconds** after typing – the ID will appear in the next field.
 
-        **Once the Game ID is found, the cover art will appear automatically!**
+        > 💡 **Need help?** Search manually on [GameTDB](https://www.gametdb.com/Wii/).
 
         ---
 
   - type: input
     id: game_title
     attributes:
-      label: "📖 Game Title"
+      label: "📖 Game Title *"
       description: "Start typing the game title. Autocomplete will help you!"
       placeholder: "e.g., Wii Sports, Mario Kart Wii, Super Mario Galaxy"
     validations:
@@ -32,11 +36,11 @@ body:
   - type: input
     id: game_id_display
     attributes:
-      label: "🎯 Game ID (Auto-detected)"
+      label: "🎯 Game ID (Auto-detected) *"
       description: "This will be automatically filled when you type the title above"
       placeholder: "RSPE01, RMCE01, etc."
     validations:
-      required: false
+      required: true   # Rendo obbligatorio per evitare errori
 
   - type: markdown
     attributes:
@@ -44,17 +48,19 @@ body:
         ---
 
         ### 🖼️ Cover Art Preview
+        **If the Game ID was detected correctly, you can view the cover art here:**  
+        👉 [**View cover on GameTDB**](https://www.gametdb.com/Wii/{GAME_ID})  
+        *(Replace `{GAME_ID}` with the actual Game ID above if the link doesn't work.)*
 
-        *If the Game ID was detected correctly, a cover image will appear below.*
-
-        ![](https://art.gametdb.com/wiitdb/artwork/{GAME_ID}.png)
+        > 📌 **Note:** GameTDB automatically shows the correct region cover based on your selection below.
 
         ---
 
   - type: dropdown
     id: region
     attributes:
-      label: "🌍 Region"
+      label: "🌍 Region *"
+      description: "Select the region of your game disc/ROM."
       options:
         - "NTSC / USA"
         - "PAL"
@@ -66,7 +72,7 @@ body:
   - type: dropdown
     id: rating
     attributes:
-      label: "⭐ Performance Rating"
+      label: "⭐ Performance Rating *"
       description: "5★ = virtually perfect. 0★ = does not boot at all."
       options:
         - "5 - PERFECT (no issues)"
@@ -81,8 +87,8 @@ body:
   - type: input
     id: fps
     attributes:
-      label: "🎬 FPS Range"
-      description: "Min and max FPS observed (e.g., 30-60). Use ??? if unknown."
+      label: "🎬 FPS Range *"
+      description: "Min and max FPS observed (e.g., 30-60). Use `???` if unknown."
       placeholder: "e.g., 30-60"
     validations:
       required: true
@@ -90,7 +96,7 @@ body:
   - type: dropdown
     id: boot
     attributes:
-      label: "🔌 Does the game boot?"
+      label: "🔌 Does the game boot? *"
       options:
         - "YES"
         - "NO"
@@ -100,7 +106,7 @@ body:
   - type: dropdown
     id: playable
     attributes:
-      label: "🎮 Is the game playable?"
+      label: "🎮 Is the game playable? *"
       description: "Can you actually play through the game, even with issues?"
       options:
         - "YES"
@@ -111,7 +117,7 @@ body:
   - type: dropdown
     id: core_profile
     attributes:
-      label: "⚙️ Core Profile Used"
+      label: "⚙️ Core Profile Used *"
       options:
         - "Standard"
         - "Performance"
@@ -124,7 +130,7 @@ body:
   - type: dropdown
     id: wiimote_extension
     attributes:
-      label: "🎮 Wiimote Extension Used"
+      label: "🎮 Wiimote Extension Used *"
       description: "Which controller setup did you use?"
       options:
         - "Wiimote Only"
@@ -165,7 +171,7 @@ body:
   - type: input
     id: tester
     attributes:
-      label: "👤 Tester Username"
+      label: "👤 Tester Username *"
       description: "Your username or alias to credit in the database."
       placeholder: "Write your username"
     validations:
@@ -174,7 +180,7 @@ body:
   - type: input
     id: device
     attributes:
-      label: "📱 Device Used"
+      label: "📱 Device Used *"
       description: "Which device did you test on?"
       placeholder: "e.g., RG35XX H"
     validations:
@@ -183,7 +189,7 @@ body:
   - type: input
     id: muos_version
     attributes:
-      label: "💾 muOS Version"
+      label: "💾 muOS Version *"
       description: "Which version of muOS are you running?"
       placeholder: "e.g., Jacaranda"
     validations:
@@ -192,7 +198,7 @@ body:
   - type: dropdown
     id: dolphincore_version
     attributes:
-      label: "🐬 Dolphin Core Version"
+      label: "🐬 Dolphin Core Version *"
       options:
         - "v10.5.300"
         - "v10.5-124"
@@ -202,3 +208,9 @@ body:
         - "Other (specify in notes)"
     validations:
       required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Thank you for contributing to the Dolphin Rt:Core compatibility database!** 🙌
