@@ -164,9 +164,9 @@ body:
     attributes:
       value: |
         ---
-        ## 📝 Osservazioni aggiuntive e allegati
+        ## 📝 Additional Observations & Attachments
 
-        **📝 Considerazioni & Note** – write below  
+        **📝 Considerations & Notes** – write below  
         **⚙️ Custom Game Settings** – if used, describe below  
         **🖼️ Screenshots / Video** – paste links below if available  
 
@@ -175,7 +175,7 @@ body:
   - type: textarea
     id: notes
     attributes:
-      label: "📝 Considerazioni & Note"
+      label: "📝 Considerations & Notes"
       description: "Describe performance, graphical issues, audio problems, workarounds, or anything noteworthy."
       placeholder: "Write your considerations, notes or performance details here"
     validations:
