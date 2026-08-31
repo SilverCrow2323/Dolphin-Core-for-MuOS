@@ -78,40 +78,33 @@ body:
         ---
         ## 📊 Test Overview
 
-        **🔌 Boot** – Does the game start? *(select below)*  
-        **🎮 Playable** – Can you play through the game? *(select below)*  
-        **🎬 FPS Range** – Min / max observed *(enter below)*  
+        **🔌 Boot & Performance Rating** – select the option that matches both the boot status and the overall performance.
 
-        **⭐ Performance Rating**
+        | Selection | Meaning |
+        |-----------|---------|
+        | NO - 0★ | Game does not boot at all |
+        | YES - 1★ | Boots but is unplayable |
+        | YES - 2★ | Boots, slow but playable with patience |
+        | YES - 3★ | Playable, needs tweaks |
+        | YES - 4★ | Great, minor issues only |
+        | YES - 5★ | Perfect, no issues |
 
-        | Rating | Description |
-        |--------|-------------|
-        |  0★ | DOES NOT BOOT |
-        | ⭐ 1★ | BAD (unplayable) |
-        | ⭐⭐ 2★ | POOR (slow but boots) |
-        | ⭐⭐⭐ 3★ | PLAYABLE (needs tweaks) |
-        | ⭐⭐⭐⭐ 4★ | GREAT (minor issues) |
-        | ⭐⭐⭐⭐⭐ 5★ | PERFECT (no issues) |
+        **🎬 FPS Range** – enter the min and max FPS observed.
 
         ---
 
   - type: dropdown
-    id: boot
+    id: boot_rating
     attributes:
-      label: "🔌 Does the game boot? *"
+      label: "🔌 Boot Status & Performance Rating *"
+      description: "Select the option that describes both boot and performance."
       options:
-        - "YES"
-        - "NO"
-    validations:
-      required: true
-
-  - type: dropdown
-    id: playable
-    attributes:
-      label: "🎮 Is the game playable? *"
-      options:
-        - "YES"
-        - "NO"
+        - "NO - 0★ (DOES NOT BOOT)"
+        - "YES - 1★ (BAD - unplayable)"
+        - "YES - 2★ (POOR - slow but boots)"
+        - "YES - 3★ (PLAYABLE - needs tweaks)"
+        - "YES - 4★ (GREAT - minor issues)"
+        - "YES - 5★ (PERFECT - no issues)"
     validations:
       required: true
 
@@ -120,21 +113,6 @@ body:
     attributes:
       label: "🎬 FPS Range *"
       placeholder: "e.g., 30-60, or ??? if unknown"
-    validations:
-      required: true
-
-  - type: dropdown
-    id: rating
-    attributes:
-      label: "⭐ Performance Rating *"
-      description: "Select the rating that best matches the game's performance."
-      options:
-        - "5 - PERFECT (no issues)"
-        - "4 - GREAT (minor issues)"
-        - "3 - PLAYABLE (needs tweaks)"
-        - "2 - POOR (slow but boots)"
-        - "1 - BAD (unplayable)"
-        - "0 - DOES NOT BOOT"
     validations:
       required: true
 
