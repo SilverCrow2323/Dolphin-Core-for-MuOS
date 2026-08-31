@@ -4021,4 +4021,4072 @@
     "playable": "NO",
     "core": "SpeedHack",
     "core_version": "v9 Goose or prior",
-    "considerations": "too slow to be any
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GNCP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GNCP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GNCP01",
+    "game": "Need for Speed - Carbon",
+    "region": "NTSC",
+    "rating": 2,
+    "fps": "3-8",
+    "fps_min": 3,
+    "fps_max": 8,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "framerate too low to be playable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GNCP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GNCP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GNH2P01",
+    "game": "Need for Speed - Hot Pursuit 2",
+    "region": "NTSC",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "all of them",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Black Screen",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Standard",
+      "game_settings": "GNH2P01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Standard",
+      "game_settings": "GNH2P01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GNMWP01",
+    "game": "Need for Speed - Most Wanted",
+    "region": "NTSC",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "all of them",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Black Screen",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Standard",
+      "game_settings": "GNMWP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Standard",
+      "game_settings": "GNMWP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GNUEP01",
+    "game": "Need for Speed - Underground",
+    "region": "NTSC",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "all of them",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Black Screen",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Standard",
+      "game_settings": "GNUEP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Standard",
+      "game_settings": "GNUEP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GNU2P01",
+    "game": "Need for Speed - Underground 2",
+    "region": "NTSC",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "all of them",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Black Screen",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Standard",
+      "game_settings": "GNU2P01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Standard",
+      "game_settings": "GNU2P01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GODAP01",
+    "game": "Odama",
+    "region": "PAL",
+    "rating": 1,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "text doesnt render making gamepaly impossible, controls also dont seem to work for some reason",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GODAP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GODAP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GOPNP01",
+    "game": "Open Season",
+    "region": "PAL",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "unplayable, blocked on a green screen",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GOPNP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GOPNP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GPBGP01",
+    "game": "Disney's Piglet's Big Game",
+    "region": "NTSC",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "all of them",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Black Screen",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Standard",
+      "game_settings": "GPBGP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Standard",
+      "game_settings": "GPBGP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GPIP01",
+    "game": "Pikmin",
+    "region": "PAL",
+    "rating": 3,
+    "fps": "20-25",
+    "fps_min": 20,
+    "fps_max": 25,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Menus are slow, gameplay is almost perfect",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GPIP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GPIP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GPKP01",
+    "game": "Peter Jackson's King Kong",
+    "region": "PAL",
+    "rating": 3,
+    "fps": "8-13",
+    "fps_min": 8,
+    "fps_max": 13,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "playable with a LOT of patience, its better to just play the PSP version",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GPKP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GPKP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GPKOS01",
+    "game": "Disney's PK - Out of the Shadows",
+    "region": "NTSC",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Crashes",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GPKOS01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GPKOS01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GPPFP01",
+    "game": "Puyo Puyo Fever",
+    "region": "PAL",
+    "rating": 5,
+    "fps": "36-45",
+    "fps_min": 36,
+    "fps_max": 45,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Runs almost perfectly",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GPPFP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GPPFP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GPSOP01",
+    "game": "Prince of Persia: The Sands of Time",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "7-12",
+    "fps_min": 7,
+    "fps_max": 12,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GPSOP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GPSOP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GPSOP01",
+    "game": "Phantasy Star Online",
+    "region": "NTSC",
+    "rating": 2,
+    "fps": "10-18",
+    "fps_min": 10,
+    "fps_max": 18,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "default",
+    "core_version": "v9 Goose or prior",
+    "considerations": "a bit slow but playable, the date setup at the start crashes the emulator so youre going to need to import a save from an external source to bypass that. online doesnt work, solo does.",
+    "source": "Lucaspec72",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Standard",
+      "game_settings": "GPSOP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Standard",
+      "game_settings": "GPSOP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GPW2P01",
+    "game": "Pac-Man World 2",
+    "region": "PAL",
+    "rating": 4,
+    "fps": "16-30",
+    "fps_min": 16,
+    "fps_max": 30,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "playable but framerate can vary",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GPW2P01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GPW2P01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GPW3P01",
+    "game": "Pac-Man World 3",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "9-12",
+    "fps_min": 9,
+    "fps_max": 12,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GPW3P01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GPW3P01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GPWRP01",
+    "game": "Pac-Man World Rally",
+    "region": "PAL",
+    "rating": 4,
+    "fps": "13-28",
+    "fps_min": 13,
+    "fps_max": 28,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "performance varies but it's playable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GPWRP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GPWRP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GQWEP01",
+    "game": "Harry Potter: Quidditch World Cup",
+    "region": "PAL",
+    "rating": 5,
+    "fps": "21-50",
+    "fps_min": 21,
+    "fps_max": 50,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Framerate varies but it's perfectly playable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GQWEP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GQWEP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GR3HP01",
+    "game": "Rayman 3 - Hoodlum Havoc",
+    "region": "PAL",
+    "rating": 4,
+    "fps": "17-25",
+    "fps_min": 17,
+    "fps_max": 25,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "default",
+    "core_version": "v9 Goose or prior",
+    "considerations": "playable with framerate dips in larger areas",
+    "source": "Danster21",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Standard",
+      "game_settings": "GR3HP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Standard",
+      "game_settings": "GR3HP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GRAP01",
+    "game": "Rayman Arena",
+    "region": "NTSC",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "all of them",
+    "core_version": "v9 Goose or prior",
+    "considerations": "crashes immidiatly",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Standard",
+      "game_settings": "GRAP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Standard",
+      "game_settings": "GRAP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GRATP01",
+    "game": "Disney-Pixar Ratatouille",
+    "region": "NTSC",
+    "rating": 3,
+    "fps": "14-17",
+    "fps_min": 14,
+    "fps_max": 17,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Broken cutscenes but in-game runs fine",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GRATP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GRATP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GRF2P01",
+    "game": "Red Faction II",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "5-12",
+    "fps_min": 5,
+    "fps_max": 12,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "frameratte too low to be playable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GRF2P01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GRF2P01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GRKEP01",
+    "game": "Ribbit King",
+    "region": "NTSC",
+    "rating": 3,
+    "fps": "7-30",
+    "fps_min": 7,
+    "fps_max": 30,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "playable, but can be laggy",
+    "source": "Speedrun [+.[🐬].%]",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GRKEP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GRKEP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GROBP01",
+    "game": "Robots",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "5-6",
+    "fps_min": 5,
+    "fps_max": 6,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack/default",
+    "core_version": "v9 Goose or prior",
+    "considerations": "framerate too low to be playable",
+    "source": "eleot",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GROBP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GROBP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSM2E01",
+    "game": "Super Monkey Ball 2",
+    "region": "NTSC",
+    "rating": 5,
+    "fps": "30-60",
+    "fps_min": 30,
+    "fps_max": 60,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "standard",
+    "core_version": "v9 Goose or prior",
+    "considerations": "playable at relativly high framerate if you use the debug mode to disable stuff. i suggest BACKGROUND, STOBJ, EFFECTS, APE, MINIMAP",
+    "source": "Row",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Standard",
+      "game_settings": "GSM2E01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Standard",
+      "game_settings": "GSM2E01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSA2P01",
+    "game": "Sonic Adventure 2 DX",
+    "region": "PAL",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "blacksceen fix",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Doesnt start",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Compatibility",
+      "game_settings": "GSA2P01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Compatibility",
+      "game_settings": "GSA2P01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSBAM01",
+    "game": "Super Bust-A-Move All Stars",
+    "region": "PAL",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "all of them",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Black Screen",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Standard",
+      "game_settings": "GSBAM01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Standard",
+      "game_settings": "GSBAM01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSBBP01",
+    "game": "Spongebob - Battle for Bikini Bottom",
+    "region": "PAL",
+    "rating": 4,
+    "fps": "22-50",
+    "fps_min": 22,
+    "fps_max": 50,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "framerate varies, but playable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSBBP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSBBP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSCP01",
+    "game": "Sphinx and the Cursed Mummy",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "18-24",
+    "fps_min": 18,
+    "fps_max": 24,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSCP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSCP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSDP01",
+    "game": "Sonic Adventure DX",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "4-13",
+    "fps_min": 4,
+    "fps_max": 13,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "too slow to be anykind of enjoyable, play the dreamcast version instead",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSDP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSDP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSEDP01",
+    "game": "Spyro - Enter the Dragonfly",
+    "region": "NTSC",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "blacksceen fix",
+    "core_version": "v9 Goose or prior",
+    "considerations": "it boots, but freezes almost immidiatly.",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Compatibility",
+      "game_settings": "GSEDP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Compatibility",
+      "game_settings": "GSEDP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSELP01",
+    "game": "Shrek Extra Large",
+    "region": "NTSC",
+    "rating": 2,
+    "fps": "7-9",
+    "fps_min": 7,
+    "fps_max": 9,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "frameratte too low to be playable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSELP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSELP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSERP01",
+    "game": "Serious Sam Next Encounter",
+    "region": "PAL",
+    "rating": 4,
+    "fps": "15-50",
+    "fps_min": 15,
+    "fps_max": 50,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Videos runs Slow, it can struggle a bit, especialy during battles and larger levels but its still decently playable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSERP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSERP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSFAP01",
+    "game": "Star Fox Adventures",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "20-25",
+    "fps_min": 20,
+    "fps_max": 25,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "playable, framerate can sometimes vary",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSFAP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSFAP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSFEP01",
+    "game": "Star Fox - Assault",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "18-23",
+    "fps_min": 18,
+    "fps_max": 23,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "text doesnt render in the menu making the game almost unplayable, apart from that its very much playable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSFEP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSFEP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSH2P01",
+    "game": "Shrek 2",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "6-13",
+    "fps_min": 6,
+    "fps_max": 13,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "frameratte too low to be playable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSH2P01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSH2P01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSHAP01",
+    "game": "Shadow the Hedgehog",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "7-12",
+    "fps_min": 7,
+    "fps_max": 12,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSHAP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSHAP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSHEP01",
+    "game": "Sonic Heroes",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "13-18",
+    "fps_min": 13,
+    "fps_max": 18,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSHEP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSHEP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSHRE01",
+    "game": "The Simpsons - Hit & Run",
+    "region": "NTSC",
+    "rating": 3,
+    "fps": "12-25",
+    "fps_min": 12,
+    "fps_max": 25,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "slow cutscenes, can be quite unstable with the default underclock. in Dolphin.ini set Overlock = 0.23000000 to resolve crashing and other issues.",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSHRE01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSHRE01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSHTE01",
+    "game": "Spyro - A Hero's Tail",
+    "region": "NTSC",
+    "rating": 2,
+    "fps": "8-11",
+    "fps_min": 8,
+    "fps_max": 11,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSHTE01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSHTE01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSIM01",
+    "game": "The Sims",
+    "region": "NTSC",
+    "rating": 2,
+    "fps": "10-15",
+    "fps_min": 10,
+    "fps_max": 15,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "Standard",
+    "core_version": "v9 Goose or prior",
+    "considerations": "playable, if a bit slow. Surprisingly the SpeedHack core makes the game run slower",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Standard",
+      "game_settings": "GSIM01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Standard",
+      "game_settings": "GSIM01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GS2P01",
+    "game": "The Sims 2",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "6-20",
+    "fps_min": 6,
+    "fps_max": 20,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "stutters quite a lot especialy at the start of the game, playable, but only if you can handle low framerates",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GS2P01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GS2P01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSBOP01",
+    "game": "The Sims Bustin' out",
+    "region": "PAL",
+    "rating": 1,
+    "fps": "2-6",
+    "fps_min": 2,
+    "fps_max": 6,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack/default",
+    "core_version": "v9 Goose or prior",
+    "considerations": "framerate too low to be playable",
+    "source": "eleot",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSBOP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSBOP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSJAP01",
+    "game": "Samurai Jack: The Shadow of Aku",
+    "region": "PAL",
+    "rating": 3,
+    "fps": "15-23",
+    "fps_min": 15,
+    "fps_max": 23,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "playable but with lot of patience",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSJAP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSJAP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSLP01",
+    "game": "Soulcalibur II",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "6-12",
+    "fps_min": 6,
+    "fps_max": 12,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "crashes sometimes and has graphical glitches in the ui, low framerate makes it unplayable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSLP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSLP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSOAP01",
+    "game": "Skies of Arcadia Legends",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "10-25",
+    "fps_min": 10,
+    "fps_max": 25,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "bit slow, but perfectly playable, the dreamcast version is still more stable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSOAP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSOAP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSREP01",
+    "game": "Sonic Riders",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "11-18",
+    "fps_min": 11,
+    "fps_max": 18,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSREP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSREP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSSMP01",
+    "game": "The SpongeBob SquarePants Movie",
+    "region": "PAL",
+    "rating": 4,
+    "fps": "20-25",
+    "fps_min": 20,
+    "fps_max": 25,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "few stutters here and there, but playable. Might need higher cpu clock to avoid crashing.",
+    "source": "Speedrun [+.[🐬].%]",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSSMP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSSMP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSSRP01",
+    "game": "Shrek - Smash n' Crash Racing",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "10-18",
+    "fps_min": 10,
+    "fps_max": 18,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "playable, but playing either the DS or PSP version is preferable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSSRP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSSRP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GRS2P01",
+    "game": "Star Wars - Rogue Squadron II - Rogue Leader",
+    "region": "PAL",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "all fo them",
+    "core_version": "v9 Goose or prior",
+    "considerations": "crashes immidiatly",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Standard",
+      "game_settings": "GRS2P01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Standard",
+      "game_settings": "GRS2P01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSBHP01",
+    "game": "Star Wars: Bounty Hunter",
+    "region": "PAL",
+    "rating": 4,
+    "fps": "18-24",
+    "fps_min": 18,
+    "fps_max": 24,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Few stutters here and there but playable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSBHP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSBHP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSCWP01",
+    "game": "Star Wars: Clone Wars",
+    "region": "PAL",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "all of them",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Black Screen",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Standard",
+      "game_settings": "GSCWP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Standard",
+      "game_settings": "GSCWP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GRS3P01",
+    "game": "Star Wars: Rogue Squadron III",
+    "region": "PAL",
+    "rating": 1,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Freezes at the starting credits screen.",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GRS3P01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GRS3P01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSTOP01",
+    "game": "SSX Tricky",
+    "region": "PAL",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "All of the",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Starts, but crashes shortly after",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Standard",
+      "game_settings": "GSTOP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Standard",
+      "game_settings": "GSTOP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSMB01",
+    "game": "Super Monkey Ball",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "25-30",
+    "fps_min": 25,
+    "fps_max": 30,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "All of them",
+    "core_version": "v9 Goose or prior",
+    "considerations": "it requires files from this link to work. https://github.com/libretro/dolphin/archive/master.zip only workswith NTSC iso. try the DS game.",
+    "source": "DeadPlant, Sexy_Shrek, SEIRO",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Standard",
+      "game_settings": "GSMB01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Standard",
+      "game_settings": "GSMB01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSMAP01",
+    "game": "Super Monkey Ball Adventure",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "7-25",
+    "fps_min": 7,
+    "fps_max": 25,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "framerate flactuations make the game unplayable",
+    "source": "Danster21",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSMAP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSMAP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GMSAP01",
+    "game": "Super Mario Strikers",
+    "region": "NTSC",
+    "rating": 3,
+    "fps": "10-25",
+    "fps_min": 10,
+    "fps_max": 25,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Overclock = .4 Resolution = .33 playable",
+    "source": "Mercquick",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GMSAP01_default.ini",
+      "overclock": 0.4,
+      "resolution": 0.33
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GMSAP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSX3P01",
+    "game": "SSX 3",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "3-7",
+    "fps_min": 3,
+    "fps_max": 7,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "stutters a lot, completly unplayable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSX3P01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSX3P01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSXOP01",
+    "game": "SSX on Tour",
+    "region": "PAL",
+    "rating": 1,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "got stuck on character creation. unplayable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSXOP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSXOP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSXOEP01",
+    "game": "SSX on Tour",
+    "region": "NTSC",
+    "rating": 1,
+    "fps": "1-3",
+    "fps_min": 1,
+    "fps_max": 3,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Unplayably slow",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GSXOEP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GSXOEP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GSYEP01",
+    "game": "Spyro - A New Beginning",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "7-8",
+    "fps_min": 7,
+    "fps_max": 8,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "blacksceen fix",
+    "core_version": "v9 Goose or prior",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Compatibility",
+      "game_settings": "GSYEP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Compatibility",
+      "game_settings": "GSYEP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GT2DP01",
+    "game": "Tak 2: The Staff of Dreams",
+    "region": "NTSC",
+    "rating": 2,
+    "fps": "8-13",
+    "fps_min": 8,
+    "fps_max": 13,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "framerate too low to be playable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GT2DP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GT2DP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GT2SP01",
+    "game": "TimeSplitters 2",
+    "region": "NTSC",
+    "rating": 2,
+    "fps": "14-32",
+    "fps_min": 14,
+    "fps_max": 32,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "The game runs, but performance is too low for me to consider it playable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GT2SP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GT2SP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTAZP01",
+    "game": "Taz Wanted",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "6-10",
+    "fps_min": 6,
+    "fps_max": 10,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GTAZP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GTAZP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTETP01",
+    "game": "Tetris Worlds",
+    "region": "NTSC",
+    "rating": 2,
+    "fps": "29-31",
+    "fps_min": 29,
+    "fps_max": 31,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Too slow to be anykind of playable.",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GTETP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GTETP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTFEP01",
+    "game": "TimeSplitters Future Perfect",
+    "region": "PAL",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "all of them",
+    "core_version": "v9 Goose or prior",
+    "considerations": "only gives a black screen",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Standard",
+      "game_settings": "GTFEP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Standard",
+      "game_settings": "GTFEP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTIEP01",
+    "game": "Disney-Pixar The Incredibles",
+    "region": "PAL",
+    "rating": 3,
+    "fps": "11-24",
+    "fps_min": 11,
+    "fps_max": 24,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "severe slowdowns on large areas, barely playable but not really enjoyable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GTIEP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GTIEP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTJWP01",
+    "game": "Tom and Jerry in War of the Whiskers",
+    "region": "NTSC",
+    "rating": 2,
+    "fps": "11-14",
+    "fps_min": 11,
+    "fps_max": 14,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GTJWP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GTJWP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTKCP01",
+    "game": "Tak: The Great Juju Challenge",
+    "region": "NTSC",
+    "rating": 2,
+    "fps": "8-10",
+    "fps_min": 8,
+    "fps_max": 10,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "framerate too low to be playable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GTKCP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GTKCP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTMNP01",
+    "game": "TMNT",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "12-16",
+    "fps_min": 12,
+    "fps_max": 16,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GTMNP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GTMNP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTMMP01",
+    "game": "TMNT Mutant Melee",
+    "region": "NTSC",
+    "rating": 2,
+    "fps": "13-21",
+    "fps_min": 13,
+    "fps_max": 21,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Too slow to be anykind of playable.",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GTMMP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GTMMP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTOMP01",
+    "game": "Tom Clancy's Splinter Cell",
+    "region": "PAL",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "all of them",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Black Screen",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Standard",
+      "game_settings": "GTOMP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Standard",
+      "game_settings": "GTOMP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTAWP01",
+    "game": "Tony Hawk's American Wasteland",
+    "region": "PAL",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Crashes at starting logo.",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GTAWP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GTAWP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTH3E01",
+    "game": "Tony Hawk's Pro Skater 3",
+    "region": "NTSC",
+    "rating": 4,
+    "fps": "14-27",
+    "fps_min": 14,
+    "fps_max": 27,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Performance varies, playable but not enjoyable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GTH3E01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GTH3E01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTH4E01",
+    "game": "Tony Hawk's Pro Skater 4",
+    "region": "NTSC",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Freezes at the starting screen.",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GTH4E01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GTH4E01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTHUE01",
+    "game": "Tony Hawk's Underground",
+    "region": "NTSC",
+    "rating": 2,
+    "fps": "1-9",
+    "fps_min": 1,
+    "fps_max": 9,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Too slow to be anykind of playable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GTHUE01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GTHUE01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTHU2E01",
+    "game": "Tony Hawk's Underground 2",
+    "region": "NTSC",
+    "rating": 1,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Freezes at the Loading screen.",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GTHU2E01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GTHU2E01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTSP01",
+    "game": "Tales of Symphonia",
+    "region": "PAL",
+    "rating": 3,
+    "fps": "16-25",
+    "fps_min": 16,
+    "fps_max": 25,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "The unskippable prologue is unbearably slow, but after that, in-game its completly playable.",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GTSP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GTSP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTTEP01",
+    "game": "Ty the Tasmanian Tiger",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "11-16",
+    "fps_min": 11,
+    "fps_max": 16,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "frameratte too low to be playable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GTTEP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GTTEP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTT2E01",
+    "game": "Ty the Tasmanian Tiger 2",
+    "region": "NTSC",
+    "rating": 2,
+    "fps": "6-9",
+    "fps_min": 6,
+    "fps_max": 9,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "framerate too low to be playable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GTT2E01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GTT2E01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTT3E01",
+    "game": "Ty the Tasmanian Tiger 3",
+    "region": "NTSC",
+    "rating": 1,
+    "fps": "3-6",
+    "fps_min": 3,
+    "fps_max": 6,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "framerate too low to be playable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GTT3E01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GTT3E01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GTURP01",
+    "game": "Turok Evolution",
+    "region": "PAL",
+    "rating": 3,
+    "fps": "9-25",
+    "fps_min": 9,
+    "fps_max": 25,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Videos runs Slow, it can struggle a bit, running most of the time around 15 fps but its still decently playable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GTURP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GTURP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GUMEP01",
+    "game": "Ultimate Muscle: Legends vs New Generatio",
+    "region": "NTSC",
+    "rating": 3,
+    "fps": "19-28",
+    "fps_min": 19,
+    "fps_max": 28,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack/default",
+    "core_version": "v9 Goose or prior",
+    "considerations": "gameplay needs a bit of patience",
+    "source": "eleot",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GUMEP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GUMEP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GUSMP01",
+    "game": "Ultimate Spider-Man",
+    "region": "PAL",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Crashes immidiatly",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GUSMP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GUSMP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GVJEP01",
+    "game": "Viewtiful Joe",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "20-30",
+    "fps_min": 20,
+    "fps_max": 30,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "audio desynchs during the intro which takes a very long time, framarate seems high, but the game essentialy runs in slow motion.",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GVJEP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GVJEP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GVJ2P01",
+    "game": "Viewtiful Joe 2",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "30",
+    "fps_min": 30,
+    "fps_max": 30,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "audio desynchs during the intro which takes a very long time, framarate seems high, but the game essentialy runs in slow motion.",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GVJ2P01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GVJ2P01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GVRP01",
+    "game": "V-Rally 3",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "10-12",
+    "fps_min": 10,
+    "fps_max": 12,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GVRP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GVRP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GVXEP01",
+    "game": "Vexx",
+    "region": "PAL",
+    "rating": 3,
+    "fps": "11-23",
+    "fps_min": 11,
+    "fps_max": 23,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "few stutters but otherwise playable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GVXEP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GVXEP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GW3DP01",
+    "game": "Worms 3D",
+    "region": "PAL",
+    "rating": 3,
+    "fps": "8-18",
+    "fps_min": 8,
+    "fps_max": 18,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Performance varies, but its pretty static game so i'd say it's playable, with lots patience.",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GW3DP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GW3DP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GWAVP01",
+    "game": "Wave Race: Blue Storm",
+    "region": "NTSC",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Stuck at black screen after the main menu",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GWAVP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GWAVP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GWBLP01",
+    "game": "Worms Blast",
+    "region": "PAL",
+    "rating": 5,
+    "fps": "48-50",
+    "fps_min": 48,
+    "fps_max": 50,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Almost Perfect",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GWBLP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GWBLP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GWWEP01",
+    "game": "Wario World",
+    "region": "PAL",
+    "rating": 4,
+    "fps": "10-45",
+    "fps_min": 10,
+    "fps_max": 45,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "texture problems with the ui make it difficult to start a new game, performance is low in the start lobby, but gets better in levels.",
+    "source": "Sexy_Shrek, Speedrun [+.[🐬].%]",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GWWEP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GWWEP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GWWIP01",
+    "game": "WarioWare Inc. - Mega Party Game$!",
+    "region": "PAL",
+    "rating": 5,
+    "fps": "40-50",
+    "fps_min": 40,
+    "fps_max": 50,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "Runs nearly flawlessly. 40fps inbetween the minigames, tho minigames run fullspeed. Can run on the default core but is 20% slower and slightly its less playable.",
+    "source": "Danster21",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GWWIP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GWWIP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GXIIP01",
+    "game": "XIII",
+    "region": "PAL",
+    "rating": 0,
+    "fps": "???",
+    "fps_min": 0,
+    "fps_max": 0,
+    "boot": "NO",
+    "playable": "NO",
+    "core": "blacksceen fix",
+    "core_version": "v9 Goose or prior",
+    "considerations": "it boots, but freezes almost immidiatly.",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Compatibility",
+      "game_settings": "GXIIP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Compatibility",
+      "game_settings": "GXIIP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GXM2P01",
+    "game": "X-Men 2: Wolverine's Revenge",
+    "region": "PAL",
+    "rating": 3,
+    "fps": "13-25",
+    "fps_min": 13,
+    "fps_max": 25,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "some framedrops can happen, still very playable",
+    "source": "S1eepy",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GXM2P01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GXM2P01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GXDP01",
+    "game": "Pokemon XD",
+    "region": "PAL",
+    "rating": 4,
+    "fps": "25",
+    "fps_min": 25,
+    "fps_max": 25,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "glitchy text, playable with a few frame drops",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GXDP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GXDP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GYUEP01",
+    "game": "Yu-Gi-Oh: The Falsebound Kingdo",
+    "region": "PAL",
+    "rating": 3,
+    "fps": "11-25",
+    "fps_min": 11,
+    "fps_max": 25,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "overworld runs good, battles not as good",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GYUEP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GYUEP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GZAPP01",
+    "game": "Zapper",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "11-13",
+    "fps_min": 11,
+    "fps_max": 13,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "framerate too low to be playable",
+    "source": "SkullXavier",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GZAPP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GZAPP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GZLP01",
+    "game": "Zelda - The Wind Waker",
+    "region": "PAL",
+    "rating": 1,
+    "fps": "4-5",
+    "fps_min": 4,
+    "fps_max": 5,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "framerate is unplayably slow. dont even bother.",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GZLP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GZLP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "GZOOP01",
+    "game": "Zoocube",
+    "region": "PAL",
+    "rating": 4,
+    "fps": "30-40",
+    "fps_min": 30,
+    "fps_max": 40,
+    "boot": "YES",
+    "playable": "YES",
+    "core": "SpeedHack",
+    "core_version": "v9 Goose or prior",
+    "considerations": "choose 50hz mode at the start",
+    "source": "Speedrun [+.[🐬].%]",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "GZOOP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "GZOOP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  },
+  {
+    "game_id": "RZDP01",
+    "game": "Zelda - Twilight Princess",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "5-15",
+    "fps_min": 5,
+    "fps_max": 15,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "blacksceen fix",
+    "core_version": "v9 Goose or prior",
+    "considerations": "framerate is unplayably slow. dont even bother.",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Compatibility",
+      "game_settings": "RZDP01_default.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Compatibility",
+      "game_settings": "RZDP01_default.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
+  }
+]
