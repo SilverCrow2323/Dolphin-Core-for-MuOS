@@ -86,12 +86,12 @@ body:
 
         | Rating | Description |
         |--------|-------------|
-        | ⭐ 0★ | DOES NOT BOOT |
-        | ⭐⭐ 1★ | BAD (unplayable) |
-        | ⭐⭐⭐ 2★ | POOR (slow but boots) |
-        | ⭐⭐⭐⭐ 3★ | PLAYABLE (needs tweaks) |
-        | ⭐⭐⭐⭐⭐ 4★ | GREAT (minor issues) |
-        | ⭐⭐⭐⭐⭐⭐ 5★ | PERFECT (no issues) |
+        |  0★ | DOES NOT BOOT |
+        | ⭐ 1★ | BAD (unplayable) |
+        | ⭐⭐ 2★ | POOR (slow but boots) |
+        | ⭐⭐⭐ 3★ | PLAYABLE (needs tweaks) |
+        | ⭐⭐⭐⭐ 4★ | GREAT (minor issues) |
+        | ⭐⭐⭐⭐⭐ 5★ | PERFECT (no issues) |
 
         ---
 
