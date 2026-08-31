@@ -17,7 +17,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "RCLP01_default.ini",
+      "game_settings": "RCLP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -30,7 +30,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "RCLP01_default.ini",
+      "game_settings": "RCLP01.ini",
       "notes": ""
     },
     "video": {
@@ -57,7 +57,7 @@
     "issue": 8,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "RMNP01_default.ini",
+      "game_settings": "RMNP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -70,7 +70,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "RMNP01_default.ini",
+      "game_settings": "RMNP01.ini",
       "notes": ""
     },
     "video": {
@@ -97,7 +97,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Compatibility",
-      "game_settings": "RZDP01_default.ini",
+      "game_settings": "RZDP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -110,7 +110,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Compatibility",
-      "game_settings": "RZDP01_default.ini",
+      "game_settings": "RZDP01.ini",
       "notes": ""
     },
     "video": {
