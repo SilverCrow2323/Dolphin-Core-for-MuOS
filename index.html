@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dolphin Rt:Core | Compatibility Database</title>
-  <link id="favicon" rel="icon" type="image/png" href="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png">
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
   <script>
@@ -12,21 +12,10 @@
       darkMode: 'class',
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Outfit', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
+          fontFamily: { sans: ['Outfit', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
           colors: {
-            wii: {
-              50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc',
-              400: '#38bdf8', 500: '#00a3e0', 600: '#0284c7', 700: '#0369a1',
-              800: '#075985', 900: '#0c4a6e',
-            },
-            gc: {
-              50: '#f5f3ff', 100: '#ede9fe', 200: '#ddd6fe', 300: '#c4b5fd',
-              400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9',
-              800: '#5b21b6', 900: '#4c1d95', 950: '#1e112a',
-            }
+            wii: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',300:'#7dd3fc',400:'#38bdf8',500:'#00a3e0',600:'#0284c7',700:'#0369a1',800:'#075985',900:'#0c4a6e' },
+            gc: { 50:'#f5f3ff',100:'#ede9fe',200:'#ddd6fe',300:'#c4b5fd',400:'#a78bfa',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95',950:'#1e112a' }
           }
         }
       }
@@ -34,162 +23,57 @@
   </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body.theme-gc {
-      background: linear-gradient(145deg, #090511 0%, #160b24 50%, #0d0716 100%);
-      color: #f1f5f9;
-    }
+    body.theme-gc { background: linear-gradient(145deg, #090511 0%, #160b24 50%, #0d0716 100%); color: #f1f5f9; }
     body.theme-gc ::-webkit-scrollbar-track { background: #0d0716; }
     body.theme-gc ::-webkit-scrollbar-thumb { background: #2e1847; border-radius: 4px; }
     body.theme-gc ::-webkit-scrollbar-thumb:hover { background: #6d28d9; }
-
-    body.theme-wii {
-      background: linear-gradient(145deg, #f8fafc 0%, #e2e8f0 100%);
-      color: #0f172a;
-    }
+    body.theme-wii { background: linear-gradient(145deg, #f8fafc 0%, #e2e8f0 100%); color: #0f172a; }
     body.theme-wii ::-webkit-scrollbar-track { background: #f1f5f9; }
     body.theme-wii ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
     body.theme-wii ::-webkit-scrollbar-thumb:hover { background: #00a3e0; }
-
     ::-webkit-scrollbar { width: 6px; height: 6px; }
-
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes pulseGlow { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
     @keyframes slideIn { from { opacity: 0; transform: scale(0.95) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
-
     .card-anim { animation: fadeIn 0.25s ease-out forwards; opacity: 0; }
     .modal-anim { animation: slideIn 0.2s ease-out forwards; }
-
-    .gc-glass {
-      background: rgba(22, 11, 36, 0.75);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(124, 58, 237, 0.25);
-      box-shadow: 0 4px 20px -2px rgba(124, 58, 237, 0.15), 0 2px 6px -1px rgba(0, 0, 0, 0.4);
-    }
-
-    .wii-glass {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(203, 213, 225, 0.8);
-      box-shadow: 0 4px 20px -2px rgba(0, 163, 224, 0.12), 0 2px 6px -1px rgba(0, 0, 0, 0.05);
-    }
-
-    .cover-placeholder {
-      background: linear-gradient(145deg, #1a1a2e, #16213e);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      color: rgba(255,255,255,0.15);
-    }
-    .theme-wii .cover-placeholder {
-      background: linear-gradient(145deg, #e2e8f0, #cbd5e1);
-      color: rgba(0,0,0,0.10);
-    }
-
-    .cover-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
+    .gc-glass { background: rgba(22, 11, 36, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(124, 58, 237, 0.25); box-shadow: 0 4px 20px -2px rgba(124, 58, 237, 0.15), 0 2px 6px -1px rgba(0, 0, 0, 0.4); }
+    .wii-glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(203, 213, 225, 0.8); box-shadow: 0 4px 20px -2px rgba(0, 163, 224, 0.12), 0 2px 6px -1px rgba(0, 0, 0, 0.05); }
+    .cover-placeholder { background: linear-gradient(145deg, #1a1a2e, #16213e); display: flex; align-items: center; justify-content: center; font-size: 28px; color: rgba(255,255,255,0.15); }
+    .theme-wii .cover-placeholder { background: linear-gradient(145deg, #e2e8f0, #cbd5e1); color: rgba(0,0,0,0.10); }
+    .cover-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
     .game-card:hover .cover-img { transform: scale(1.03); }
-
-    .glow-border {
-      position: relative;
-    }
-    .glow-border::before {
-      content: '';
-      position: absolute;
-      inset: -2px;
-      border-radius: 16px;
-      padding: 2px;
-      background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(139,92,246,0.1));
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
+    .glow-border { position: relative; }
+    .glow-border::before { content: ''; position: absolute; inset: -2px; border-radius: 16px; padding: 2px; background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(139,92,246,0.1)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; }
     .game-card:hover .glow-border::before { opacity: 1; }
-
-    .theme-wii .glow-border::before {
-      background: linear-gradient(135deg, rgba(0,163,224,0.3), rgba(56,189,248,0.1));
-    }
-
+    .theme-wii .glow-border::before { background: linear-gradient(135deg, rgba(0,163,224,0.3), rgba(56,189,248,0.1)); }
     .rating-stars { display: flex; gap: 1px; }
     .rating-stars svg { width: 14px; height: 14px; }
-
-    .search-dropdown {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      max-height: 300px;
-      overflow-y: auto;
-      border-radius: 12px;
-      z-index: 50;
-      display: none;
-    }
+    .search-dropdown { position: absolute; top: 100%; left: 0; right: 0; max-height: 300px; overflow-y: auto; border-radius: 12px; z-index: 50; display: none; }
     .search-dropdown.active { display: block; }
-
-    .search-dropdown-item {
-      padding: 8px 12px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      transition: background 0.15s ease;
-    }
+    .search-dropdown-item { padding: 8px 12px; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: background 0.15s ease; }
     .search-dropdown-item:hover { background: rgba(124,58,237,0.15); }
     .theme-wii .search-dropdown-item:hover { background: rgba(0,163,224,0.08); }
     .search-dropdown-item img { width: 24px; height: 24px; object-fit: cover; border-radius: 4px; }
-
-    .badge-core {
-      font-size: 9px;
-      padding: 2px 8px;
-      border-radius: 20px;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-    }
+    .badge-core { font-size: 9px; padding: 2px 8px; border-radius: 20px; font-weight: 700; letter-spacing: 0.3px; }
     .badge-core.gc { background: rgba(139,92,246,0.2); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3); }
     .badge-core.wii { background: rgba(0,163,224,0.12); color: #0369a1; border: 1px solid rgba(0,163,224,0.2); }
-
-    .fps-badge {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 2px 10px;
-      border-radius: 20px;
-    }
+    .fps-badge { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; }
     .fps-badge.gc { background: rgba(0,200,255,0.1); color: #7dd3fc; border: 1px solid rgba(0,200,255,0.15); }
     .fps-badge.wii { background: rgba(0,163,224,0.08); color: #0284c7; border: 1px solid rgba(0,163,224,0.12); }
-
     .boot-badge.gc-yes { background: rgba(60,255,120,0.12); color: #4ade80; border: 1px solid rgba(60,255,120,0.2); }
     .boot-badge.gc-no { background: rgba(255,60,60,0.12); color: #f87171; border: 1px solid rgba(255,60,60,0.2); }
     .boot-badge.wii-yes { background: rgba(60,255,120,0.10); color: #16a34a; border: 1px solid rgba(60,255,120,0.15); }
     .boot-badge.wii-no { background: rgba(255,60,60,0.10); color: #dc2626; border: 1px solid rgba(255,60,60,0.15); }
-
-    .best-badge {
-      font-size: 10px;
-      padding: 2px 10px;
-      border-radius: 20px;
-      font-weight: 700;
-      background: rgba(255,215,0,0.15);
-      color: #fbbf24;
-      border: 1px solid rgba(255,215,0,0.3);
-    }
-    .theme-wii .best-badge {
-      background: rgba(255,215,0,0.10);
-      color: #a16207;
-      border-color: rgba(255,215,0,0.2);
-    }
+    .best-badge { font-size: 10px; padding: 2px 10px; border-radius: 20px; font-weight: 700; background: rgba(255,215,0,0.15); color: #fbbf24; border: 1px solid rgba(255,215,0,0.3); }
+    .theme-wii .best-badge { background: rgba(255,215,0,0.10); color: #a16207; border-color: rgba(255,215,0,0.2); }
+    .btn-primary { @apply px-4 py-2 rounded-xl font-bold text-sm transition-all duration-200 shadow-lg; }
+    .btn-primary.gc { @apply bg-gc-600 hover:bg-gc-500 text-white shadow-gc-900/50; }
+    .btn-primary.wii { @apply bg-wii-500 hover:bg-wii-400 text-white shadow-wii-500/30; }
   </style>
 </head>
 <body id="appBody" class="theme-gc font-sans antialiased transition-colors duration-500 min-h-screen">
 
-  <!-- HEADER (identico a prima, con assets da repo) -->
+  <!-- HEADER -->
   <header id="appHeader" class="sticky top-0 z-40 transition-colors duration-500 border-b border-purple-900/40 bg-gc-950/90 backdrop-blur-xl shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
@@ -219,8 +103,9 @@
             <p id="dashboardDesc" class="text-xs italic text-slate-400 mt-1 transition-colors">Community-driven testing database for Dolphin emulation on muOS &amp; H700 chipset</p>
           </div>
         </div>
-        <div id="spdwPanel" class="gc-glass rounded-2xl p-4 w-full lg:w-auto min-w-[220px] transition-all duration-500">
-          <div class="flex items-center justify-between gap-3 mb-2 pb-1.5 border-b border-white/10">
+        <!-- Right: Stats + Actions -->
+        <div id="spdwPanel" class="gc-glass rounded-2xl p-4 w-full lg:w-auto min-w-[220px] transition-all duration-500 space-y-3">
+          <div class="flex items-center justify-between gap-3 pb-1.5 border-b border-white/10">
             <span id="spdwBrand" class="flex items-center gap-1.5 font-black text-gc-400 tracking-wider text-xs uppercase">
               <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" alt="SPDW" class="w-4 h-4">
               SPDW Factory
@@ -237,13 +122,42 @@
               <span id="statTotal" class="font-bold text-slate-200">0</span>
             </div>
           </div>
+          <!-- Quick Actions -->
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-white/10">
+            <a id="newIssueBtnGC" href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?assignees=&labels=game-test%2Cgamecube&template=name---new-gamecube-game-test.txt&title=%5BTEST+GC%5D%3A+" target="_blank" class="btn-primary gc text-xs flex items-center gap-1.5" style="display:inline-flex">
+              <span>➕</span> New GC Test
+            </a>
+            <a id="newIssueBtnWii" href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?assignees=&labels=wii-game-test%2Cwii&template=name---new-wii-game-test.txt&title=%5BTEST+WII%5D%3A+" target="_blank" class="btn-primary wii text-xs flex items-center gap-1.5" style="display:inline-flex">
+              <span>➕</span> New Wii Test
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- FILTRI E GRIGLIA (come prima) -->
+  <!-- MAIN CONTENT -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-4">
+    <!-- Badge bar -->
+    <div class="flex flex-wrap items-center justify-center gap-3 text-xs">
+      <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS" target="_blank" class="flex items-center gap-1 text-slate-400 hover:text-white transition-colors">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.15 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.62.24 2.85.12 3.15.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        <span>Repository</span>
+      </a>
+      <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases/latest" target="_blank" class="flex items-center gap-1 text-slate-400 hover:text-white transition-colors">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4 2"/></svg>
+        <span>Latest Release</span>
+      </a>
+      <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues" target="_blank" class="flex items-center gap-1 text-slate-400 hover:text-white transition-colors">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4 2"/></svg>
+        <span>All Issues</span>
+      </a>
+      <span class="text-slate-500">|</span>
+      <img src="https://img.shields.io/github/v/release/SilverCrow2323/Dolphin-Core-for-MuOS?style=flat-square&label=release&color=blue" alt="Release">
+      <img src="https://img.shields.io/github/issues/SilverCrow2323/Dolphin-Core-for-MuOS?style=flat-square&label=issues" alt="Issues">
+    </div>
+
+    <!-- FILTERS BAR -->
     <div id="filterPanel" class="gc-glass rounded-2xl p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500">
       <div class="relative w-full md:w-72 shrink-0">
         <input type="text" id="searchInput" placeholder="Search game title..." class="w-full bg-slate-950/60 text-slate-100 placeholder-slate-500 border border-white/10 rounded-xl pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-gc-500 transition-all">
@@ -276,6 +190,7 @@
       </div>
     </div>
 
+    <!-- RATING FILTER PANELS -->
     <div class="grid grid-cols-5 gap-2 max-w-4xl mx-auto w-full">
       <button data-rating="5" class="rating-panel gc-glass border border-emerald-500/30 hover:border-emerald-500/70 p-2.5 rounded-2xl flex items-center justify-between transition-all duration-200 group cursor-pointer">
         <div class="space-y-0.5"><div class="flex items-center gap-1 text-emerald-500 font-bold text-sm"><span>5★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Perfect</span></div><div class="text-[10px] text-slate-500 font-medium hidden md:block">Full Speed</div></div>
@@ -299,6 +214,7 @@
       </button>
     </div>
 
+    <!-- GAMES GRID -->
     <div id="gamesGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 max-w-7xl mx-auto w-full"></div>
     <div id="emptyState" class="hidden text-center py-16 bg-slate-900/30 border border-dashed border-white/10 rounded-2xl max-w-4xl mx-auto">
       <svg class="w-12 h-12 text-slate-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -345,18 +261,19 @@
   <!-- FOOTER -->
   <footer class="border-t border-slate-300/20 bg-black/10 mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-center text-xs text-slate-500 font-medium">
-      <div class="flex items-center justify-center gap-4">
+      <div class="flex flex-wrap items-center justify-center gap-4">
         <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" alt="SPDW" class="h-5 w-auto">
         <span>🐬 Dolphin Rt:Core Compatibility Database</span>
         <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdwfactory_logo.png" alt="SPDW Factory" class="h-5 w-auto">
       </div>
-      <p class="mt-1">Data sourced from community testing reports · SPDW Factory</p>
+      <p class="mt-1">Data sourced from community testing reports · <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS" target="_blank" class="hover:underline">SPDW Factory</a></p>
+      <p class="mt-1 opacity-60">📌 Powered by GitHub Issues & GameTDB</p>
     </div>
   </footer>
 
   <script>
     // ============================================================
-    //  STATE
+    //  STATE – URL JSON DIRETTI DALLA REPO
     // ============================================================
     let currentConsole = 'gc';
     let RAW_GAMES = [];
@@ -370,15 +287,13 @@
     let selectedBoot = 'all';
 
     const URLS = {
-      gc: "./data/games.json",
-      gc_fallback: "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/games.json",
-      wii: "./data/games2.json"
+      gc: "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/games.json",
+      wii: "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/games2.json"
     };
 
     const FLAG_MAP = { 'PAL': 'eu', 'NTSC': 'us', 'NTSC / USA': 'us', 'JPN': 'jp' };
     function getFlagUrl(region) { const code = FLAG_MAP[region] || 'un'; return `https://flagcdn.com/w40/${code}.png`; }
 
-    // -------- MAPPA REGIONE PER GAMETDB --------
     function getRegionCode(regionName) {
       const map = {
         'NTSC / USA': 'US', 'PAL': 'EU', 'NTSC / JPN': 'JP', 'NTSC / KOR': 'KO',
@@ -387,14 +302,12 @@
       return map[regionName] || 'US';
     }
 
-    // -------- GENERAZIONE GAME ID PROVVISORIO --------
     function generateGameId(title, consoleType) {
       const clean = title.replace(/[^a-zA-Z]/g, '').slice(0, 3).toUpperCase();
       const prefix = consoleType === 'gc' ? 'G' : 'R';
       return `${prefix}${clean}01`;
     }
 
-    // -------- URL COPERTINA CORRETTO --------
     function getCoverUrl(gameId, regionName, consoleType) {
       if (!gameId) return null;
       const regionCode = getRegionCode(regionName);
@@ -451,7 +364,6 @@
           totalRating += r;
           if (e.boot === "YES") bestBoot = "YES";
           if (e.playable === "YES") bestPlayable = "YES";
-          // Prendi game_id dalla prima entry che lo ha
           if (!gameId && e.game_id) gameId = e.game_id;
 
           const fpsMax = parseInt(e.fps_max || 0, 10);
@@ -468,7 +380,6 @@
           }
         });
 
-        // Se nessuna entry ha game_id, generane uno dal titolo
         if (!gameId) {
           gameId = generateGameId(group.game, currentConsole);
         }
@@ -496,7 +407,7 @@
     }
 
     // ============================================================
-    //  CONSOLE SWITCH, RENDER GRID, MODAL (come prima, ma con le cover)
+    //  CONSOLE SWITCH
     // ============================================================
     function switchConsole(target) {
       currentConsole = target;
@@ -545,6 +456,9 @@
       loadConsoleData();
     }
 
+    // ============================================================
+    //  RENDER GRID
+    // ============================================================
     function renderGrid() {
       document.querySelectorAll('.rating-panel').forEach(p => {
         const val = p.getAttribute('data-rating');
@@ -594,7 +508,6 @@
 
       const isGC = currentConsole === 'gc';
       grid.innerHTML = currentFilteredGames.map((item, idx) => {
-        // Usa l'ID generato (che ora è sempre presente)
         const coverUrl = getCoverUrl(item.gameId, item.region, currentConsole);
         const delay = Math.min(idx * 20, 300);
         const regionColor = item.region.includes('NTSC') ? 'text-emerald-400' : (item.region === 'PAL' ? 'text-amber-400' : 'text-slate-400');
@@ -607,7 +520,6 @@
                 <div class="cover-placeholder absolute inset-0 w-full h-full ${coverUrl ? 'hidden' : 'flex'} flex-col items-center justify-center text-4xl">
                   🎮
                   <span class="text-[10px] mt-1 opacity-40 font-mono">${item.gameId || '???'}</span>
-                  ${!item.gameId ? '<span class="text-[8px] text-amber-400 mt-0.5">(Game ID mancante)</span>' : ''}
                 </div>
                 ${coverUrl ? `<div class="absolute inset-0 w-full h-full flex flex-col items-center justify-center text-4xl opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-sm"><span class="text-xs font-medium text-white/80">${item.gameId || ''}</span></div>` : ''}
               </div>
@@ -634,7 +546,9 @@
       }).join('');
     }
 
-    // --- MODAL (identico a prima) ---
+    // ============================================================
+    //  MODAL
+    // ============================================================
     function openModal(index) {
       const item = currentFilteredGames[index];
       if (!item) return;
@@ -763,7 +677,6 @@
       RAW_GAMES = [];
       GROUPED_GAMES = [];
       const url = URLS[currentConsole];
-      const fallback = currentConsole === 'gc' ? URLS.gc_fallback : null;
 
       if (window.location.protocol === 'file:') {
         document.getElementById('emptyStateText').innerHTML = `<strong class="text-rose-500">CORS Error:</strong> Load via local server (python3 -m http.server 8000)`;
@@ -772,8 +685,7 @@
       }
 
       try {
-        let res = await fetch(url);
-        if (!res.ok && fallback) res = await fetch(fallback);
+        const res = await fetch(url);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         RAW_GAMES = await res.json();
         GROUPED_GAMES = groupGames(RAW_GAMES);
@@ -825,6 +737,20 @@
     // ============================================================
     //  INIT
     // ============================================================
+    // Aggiorna i link dei pulsanti "New Test" in base alla console corrente
+    function updateIssueLinks() {
+      const gcBtn = document.getElementById('newIssueBtnGC');
+      const wiiBtn = document.getElementById('newIssueBtnWii');
+      // I link sono già fissi, ma li lasciamo statici
+    }
+    // Chiamata all'avvio e dopo switchConsole
+    const origSwitch = switchConsole;
+    switchConsole = function(target) {
+      origSwitch(target);
+      updateIssueLinks();
+    };
+    updateIssueLinks();
+
     loadConsoleData();
   </script>
 </body>
