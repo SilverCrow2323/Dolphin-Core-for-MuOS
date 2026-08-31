@@ -237,7 +237,7 @@ body:
     attributes:
       label: "🐬 Dolphin Core Version *"
       options:
-        - "v10.5.300"
+        - "v10.5.3"
         - "v10.5-124"
         - "v10.0 SPDW"
         - "v9.0"
