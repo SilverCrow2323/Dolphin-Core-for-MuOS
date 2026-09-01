@@ -400,7 +400,7 @@
     "variants": []
   },
   {
-    "game_id": "GTAP01",
+    "game_id": "GTEP01",
     "game": "1080 Avalanche",
     "region": "PAL",
     "rating": 2,
@@ -417,7 +417,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GAVP01.ini",
+      "game_settings": "GTEP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -430,7 +430,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GAVP01.ini",
+      "game_settings": "GTEP01.ini",
       "notes": ""
     },
     "video": {
@@ -1480,7 +1480,7 @@
     "variants": []
   },
   {
-    "game_id": "GKZP54",
+    "game_id": "GKZE9G",
     "game": "Codename K1ds Next Door Operation V.I.D.E.O.G.A.M.E.",
     "region": "NTSC",
     "rating": 4,
@@ -1497,7 +1497,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GKZP54_default.ini",
+      "game_settings": "GKZE9G.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1510,7 +1510,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GKZP54_default.ini",
+      "game_settings": "GKZE9G.ini",
       "notes": ""
     },
     "video": {
