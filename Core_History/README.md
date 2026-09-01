@@ -1,102 +1,164 @@
 <div align="center">
 
-# **<img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt.png" alt="Dolphin Rt:Core" width="30"> Dolphin (pre)Rt:Core for muOS — History & Archive**
+# **🎮 Dolphin (pre)Rt:Core for muOS — History & Archive 🏛️**
 
 <br>
 
-<img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinmuos_corehistory.png" alt="Core History" width="500">
+<img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinmuos_corehistory.png" alt="Core History" width="520">
 
 <br><br>
 
-Welcome to the digital fossil record. This directory houses all previous iterations, test builds, and experimental packages of the Dolphin core for muOS, compiled *before* this repository officially existed to catalog the chaos.
-
-These builds stem from the pioneering work and legendary experiments by **@Speedrun**, originally documented on <br>
-[MustardOS Community Forum (Topic #491)](https://community.muos.dev/t/core-dolphin-for-muos-v9-take-3-by-speedrun/491).
+> 🏛️ *Welcome to the <u>**digital fossil record**</u>.*  
+> This directory houses all previous iterations, test builds, and experimental packages of the <u>**Dolphin Core**</u> (**Nintendo GameCube** & **Nintendo Wii**) for **muOS**, compiled _before_ this repository officially existed to catalog the chaos.  
+>  
+> These builds stem from the **pioneering work** and **legendary experiments** by **@Speedrun**, originally documented on the  
+> [**MustardOS Community Forum (Topic #491)**](https://community.muos.dev/t/core-dolphin-for-muos-v9-take-3-by-speedrun/491).
 
 </div>
 
 ---
 
-## **📂 Historical Release Index & File Inventory**
+## **📌 1. OVERVIEW & SYSTEM COMPATIBILITY**
 
-| Version | File Name | Target Hardware / Description |
-| :--- | :--- | :--- |
-| **v7** | `Dolphin for muOS V7-hasjoys.zip` | Version tailored for dual-joystick handheld configurations. |
-| **v7** | `Dolphin for muOS V7-nojoys.zip` | Version tailored for devices lacking physical joysticks. |
-| **v8** | `Dolphin for muOS V8-hasjoy.zip` | Introduced single-joystick compatibility layouts. |
-| **v8** | `Dolphin for muOS V8-hasjoys.zip` | Optimized dual-joystick build. |
-| **v8** | `Dolphin for muOS V8-nojoys.zip` | Build optimized for joystick-free hardware. |
-| **v9 (Take 1)** | `Dolphin for muOS V9-take1.muxupd` | Early V9 consolidation attempt. |
-| **v9 (Take 2)** | `Dolphin for muOS V9-take2.muxupd` | Iterative bugfix build. |
-| **v9 (Take 3)** | `Dolphin for muOS V9-take3.muxupd` | The milestone release by **@Speedrun** unifying builds into a single package. |
-| **v9 (Goose)** | `Dolphin for muOS V9-Goose.muxupd` | Community-adapted update file restructured by **@bitter_bizarro** for **muOS Goose** firmware compatibility. |
-| **v10 [SPDW]** | `Dolphin for muOS v10_SPDW.muxupd` | Initial custom fork release of the core. |
-| **v10.5 [SPDW]** | `Dolphin_for_MuOS_v10.5.124_SPDW.muxupd` | Sub-version 10.5 build pushing experimental tweaks further. |
+This repository serves as a *technical* and *historical archive* for the Dolphin emulator port designed for <u>**muOS**</u> (operating on **Allwinner H700** handheld devices). It enables standalone emulation testing for both **Nintendo GameCube** and **Nintendo Wii** games.
+
+* **🎯 Target Hardware:** Devices running **muOS** equipped with _0, 1, or 2 analog joysticks_ (e.g., **Anbernic RG35XX H**, **RG35XX SP**, **RG40XX H**, etc.).
+* **⚠️ Incompatible Hardware:** <u>**Anbernic RG28XX is NOT supported**</u> due to display aspect ratio and physical hardware constraints.
 
 ---
 
-## **📜 Technical Evolution & Detailed Changelog**
+## **💬 2. ORIGINAL COMMUNITY ANNOUNCEMENT & ARCHIVE RECORD**
 
-### **📌 Key Contributors & Credits**
+Below is the preserved announcement from the **MustardOS Community Forum (Topic #491)**, capturing the exact post and context when the Dolphin core was first shared with the community.
 
-| Contributor | Role & Major Contributions |
+<details>
+<summary><b>🔍 Click here to expand Original Forum Post & Screenshot</b></summary>
+
+<br>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/muos_post.png" alt="Original Forum Post Screenshot" width="720">
+</div>
+
+<br>
+
+> **Original Post Content by @Magnaderra (preserves @Speedrun's work):**
+> 
+> *"Hi everyone, this is a project to port the **Dolphin emulator**, the core for emulating the _Nintendo GameCube_ and _Nintendo Wii_.  
+> Its author - dear **@Speedrun** [+.[].%] - has done his best and is leaving it to <u>posterity</u>.  
+> 
+> Screenshot 2025-06-05 at 01-11-40 • Discord #🎮｜general MustardOS  
+> 
+> You can download it here (Google Drive) and here (Mega)  
+> Game compatability list is here  
+> <u>**RG28XX is not supported**</u>  
+> Huge thanks to **@FireBattleInMtl** for all changes after V8.  
+> 
+> **Changes in V5-V8:**  
+> V@FireBattleInMtl Fixed permiss@FireBattleInMtlFi@SnowV8eBattleInMtlons thanks to @FireBattleInMtl@Snow  
+> Updated dolphin binary  
+> @SnowV8 Newly c@Snowmpiled binary file thanks to @Snow  
+> **Changes to gcpadnew.ini for systems without joysticks and with only one joystick:**  
+> V6 For no joysticks D-Pad defaults to the Main Stick.  
+> V6 For no joysticks L2+D-Pad direction for D-pad.  
+> V8 L2+A/B/X/Y for C-Stick.  
+> **Future proofing the installation process:**  
+> V5 The archive includes a script to add dolphin to muOS’ launch.sh thanks to @FireBattleInMtl  
+> **Device-specific downloads:**  
+> V8 Separate downloads are available for devices with (hasjoys), without (nojoys), and now introducing single joystick compatability! (hasjoy)  
+> V9 consolidated it into a single version for all devices, but this will not account for a device which has 0 or 1 joysticks but connected to a controller which has 2 joysticks (it would be treated as what the device has built in).  
+> **Exiting the core:**  
+> To exit the core safely, use the Safe Reset Hotkey: press L1 + L2 + R1 + R2 + hold the power button for 2 seconds.  
+> 
+> I think it’s a really cool thing that it even exists. And I think people should know about it.  
+> I’m not a developer and I don’t know how/won’t develop it. But you can if you wanna.  
+> 
+> **[UPD]** Now compatible with Goose! You can get adopted version here. Thanks to **@bitter_bizarro** !"*
+
+</details>
+
+---
+
+## **📂 3. HISTORICAL RELEASE INDEX & FILE INVENTORY**
+
+All archived releases preserved in this directory are cataloged below:
+
+| Version | File Name | Format | Target Hardware & Notes |
+| :--- | :--- | :--- | :--- |
+| **v7** | `Dolphin for muOS V7-hasjoys.zip` | *Archive* | Tailored for <u>dual-joystick</u> handheld configurations. |
+| **v7** | `Dolphin for muOS V7-nojoys.zip` | *Archive* | Tailored for devices <u>lacking physical joysticks</u>. |
+| **v8** | `Dolphin for muOS V8-hasjoy.zip` | *Archive* | Introduced <u>single-joystick</u> compatibility layouts. |
+| **v8** | `Dolphin for muOS V8-hasjoys.zip` | *Archive* | Optimized dual-joystick build with **recompiled binary**. |
+| **v8** | `Dolphin for muOS V8-nojoys.zip` | *Archive* | Build optimized for <u>joystick-free hardware</u>. |
+| **v9 (Take 1)** | `Dolphin for muOS V9-take1.muxupd` | **Package** | Early V9 _universal consolidation_ attempt. |
+| **v9 (Take 2)** | `Dolphin for muOS V9-take2.muxupd` | **Package** | Iterative bugfix and _control layout update_. |
+| **v9 (Take 3)** | `Dolphin for muOS V9-take3.muxupd` | **Package** | <u>**Milestone Release**</u> by **@Speedrun** unifying all hardware profiles. |
+| **v9 (Goose)** | `Dolphin for muOS V9-Goose.muxupd` | **Package** | Restructured by **@bitter_bizarro** for <u>**muOS Goose**</u> firmware. |
+| **v10 [SPDW]** | `Dolphin for muOS v10_SPDW.muxupd` | **Package** | First version of our _custom core fork_. |
+| **v10.5 [SPDW]** | `Dolphin_for_MuOS_v10.5.124_SPDW.muxupd` | **Package** | Sub-version 10.5 pushing <u>experimental performance tweaks</u>. |
+
+---
+
+## **📜 4. TECHNICAL EVOLUTION & DETAILED CHANGELOG**
+
+### **👥 Key Contributors & Credits**
+
+| Contributor | Role & Contributions |
 | :--- | :--- |
-| **@Speedrun** | Initial port creation, conceptual proof-of-concept, and author of the milestone V9 unified releases. |
-| **@Magnaderra** | Co-pioneer in testing GameCube/Wii emulation feasibility on H700 hardware. |
-| **@FireBattleInMtl** | Developed launch scripts for `launch.sh` integration and resolved critical file permissions. |
-| **@Snow** | Maintained file permissions and provided fresh, performance-optimized Dolphin binary compilations. |
-| **@bitter_bizarro** | Restructured V9 package layout for compatibility with newer **muOS Goose** firmware. |
+| **@Speedrun** | **Core Developer** & Author of the original port, key optimizations, and V9 <u>unified release</u>. |
+| **@Magnaderra** | Documented and published the original core release on *MustardOS community forums*. |
+| **@FireBattleInMtl** | Created `launch.sh` <u>auto-injection scripts</u> and fixed core file permissions post-V8. |
+| **@Snow** | Provided **freshly compiled** Dolphin binaries from source and fixed permissions. |
+| **@bitter_bizarro** | Adapted V9 package structures to ensure full compatibility with <u>**muOS Goose**</u> firmware. |
+| **@SilverCrow2323** | Curator of the **SPDW custom core iterations** (V10 / V10.5) and repository archive maintainer. |
 
 ---
 
-### **🚀 Version History & Feature Milestones**
+### **🚀 Version History & Technical Milestones**
 
-#### **🟢 Early Integration & Automated Scripts (V5 – V6)**
+#### **🟢 [V5 – V6] Early Experiments & System Integration**
 * **V5 Release:**
-  * **System Launch Integration:** Included an automated script to inject Dolphin directly into muOS's `launch.sh` execution flow *(Thanks to @FireBattleInMtl)*.
-  * **Permissions Fix:** Corrected binary file execution permissions across system packages *(Thanks to @FireBattleInMtl & @Snow)*.
+  * **System Integration:** Included an automated script to inject Dolphin directly into muOS's `launch.sh` execution flow *(Thanks to **@FireBattleInMtl**)*.
+  * **Permissions:** Fixed <u>binary file execution permissions</u> *(Thanks to **@FireBattleInMtl** & **@Snow**)*.
 * **V6 Release:**
-  * **Control Remapping (`gcpadnew.ini`):** Enhanced control schemes for handheld devices without physical joysticks:
-    * `D-Pad` defaults to functioning as the **Main Stick**.
-    * `L2 + D-Pad Direction` triggers native D-Pad inputs.
+  * **Control Remapping (`gcpadnew.ini`):** Solved input layout for devices _without analog joysticks_:
+    * `D-Pad` defaults to functioning as the <u>**Main Stick**</u>.
+    * `L2 + D-Pad Direction` sends native _D-Pad directional inputs_.
 
-#### **🟡 Hardware-Specific Era (V7 – V8)**
+#### **🟡 [V7 – V8] Hardware-Specific Era & C-Stick Emulation**
 * **V7 Release:**
-  * **Device-Specific Builds:** Separated core packages to match physical hardware layouts:
-    * `hasjoys`: Dedicated build for dual-analog hardware.
-    * `nojoys`: Dedicated build for devices without physical joysticks.
+  * **Split Builds:** Divided core releases into separate `hasjoys` (*dual analog*) and `nojoys` (*zero analog*) packages.
 * **V8 Release:**
-  * **Updated Dolphin Binary:** Recompiled core binary from source for improved performance and stability *(Thanks to @Snow)*.
-  * **Single-Joystick Layout:** Introduced the `hasjoy` configuration package alongside `hasjoys` and `nojoys`.
-  * **C-Stick Emulation (`gcpadnew.ini`):** Added `L2 + A / B / X / Y` mapping to simulate C-Stick inputs on constrained hardware.
+  * **Recompiled Binary:** Recompiled Dolphin core binary from source for <u>enhanced CPU performance</u> *(Thanks to **@Snow**)*.
+  * **Single-Joystick Support:** Introduced `hasjoy` configuration package alongside existing layouts.
+  * **C-Stick Emulation (`gcpadnew.ini`):** Added `L2 + A / B / X / Y` mapping to simulate <u>**C-Stick inputs**</u> on hardware missing a second analog stick.
 
-#### **🔴 Unification & Modern Firmware Adapters (V9 – V10)**
+#### **🔴 [V9 – V10] Universal Unification, Firmware Adapters & Custom Forks**
 * **V9 Milestone Releases (Take 1 – Take 3):**
-  * **Universal Consolidation:** Merged `hasjoys`, `hasjoy`, and `nojoys` into a single, unified installation package.
-  * *Note on External Controllers:* Default mapping prioritizes built-in device hardware; connecting a 2-joystick controller to a 0 or 1 joystick device uses internal hardware layout profile.
-* **V9 Goose Update:**
-  * Package structure revised and maintained by **@bitter_bizarro** for seamless operation on newer **muOS Goose** firmware versions.
+  * **Universal Consolidation:** Merged `hasjoys`, `hasjoy`, and `nojoys` into a <u>single universal auto-detecting package</u>.
+  * *External Pads Behavior:* Internal hardware layout takes precedence. Connecting a 2-joystick external gamepad to a 0 or 1 joystick device uses the _internal hardware profile_.
+* **V9 Goose Adapter:**
+  * Package structure adapted by **@bitter_bizarro** for seamless operation on <u>**muOS Goose**</u> firmware.
 * **V10 & V10.5 SPDW Custom Fork Iterations:**
-  * `v10_SPDW`: Initial custom fork release of the core.
-  * `v10.5.124_SPDW`: Advanced experimental sub-version pushing performance tweaks and internal core adjustments further.
+  * `v10_SPDW`: Initial _custom fork release_ of the core.
+  * `v10.5.124_SPDW`: Advanced <u>experimental sub-version</u> pushing internal optimizations further.
 
 ---
 
-## **🎮 Control Shortcuts & Hotkeys (`gcpadnew.ini`)**
+## **🎮 5. CONTROL SHORTCUTS & HOTKEYS (gcpadnew.ini)**
 
-| Action / Command | Button Combination | Hardware Scope / Notes |
+| Action / Command | Button Combination | Scope & Notes |
 | :--- | :--- | :--- |
-| **Safe Core Exit** | `L1` + `L2` + `R1` + `R2` + **Hold Power (2s)** | Universal safe reset hotkey combo |
-| **Main Stick Navigation** | `D-Pad` | Devices without joysticks (V6+) |
-| **Native D-Pad Input** | `L2` + `D-Pad Direction` | Devices without joysticks (V6+) |
-| **C-Stick Emulation** | `L2` + `A` / `B` / `X` / `Y` | Limited/Single joystick handhelds (V8+) |
+| **Safe Core Exit** | `L1` + `L2` + `R1` + `R2` + **Hold Power (2s)** | <u>**Essential:**</u> Safe reset combo to exit Dolphin without corrupting system files. |
+| **Main Stick Navigation** | `D-Pad` | Pre-configured for _zero-joystick devices_ (V6+). |
+| **Native D-Pad Trigger** | `L2` + `D-Pad Direction` | Devices _without joysticks_ (V6+). |
+| **C-Stick Emulation** | `L2` + `A` / `B` / `X` / `Y` | Limited or <u>single-joystick handhelds</u> (V8+). |
 
 ---
 
-## **📚 Sources, References & External Archives**
+## **🔗 6. SOURCES, REFERENCES & COMMUNITY ARCHIVES**
 
-* 💬 **Primary Discussion Thread:** [MustardOS Community Forum - Core Dolphin for muOS v9 (Take 3) by Speedrun](https://community.muos.dev/t/core-dolphin-for-muos-v9-take-3-by-speedrun/491)
-* 📊 **Original Compatibility Spreadsheet:** [Community Google Sheets Database](https://docs.google.com/spreadsheets/u/0/d/1LHXQV78yAuvii8J77KUgEt3Ap6TagjQzN48gdB9iVKY/htmlview)
-* ☁️ **Community Cloud Mirrors & External Storage:**
-  * Legacy mirror packages hosted across community-shared [Google Drive](https://drive.google.com/drive/folders/1oIdjzDEuOw0CfErXUgp5cKmyypjnrjoJ?usp=sharing) and [MEGA](https://mega.nz/folder/OtViWDyR#9FMAES423bckWKd3Rwsjdw) links distributed by contributors (`@Speedrun`, `@Snow`, `@bitter_bizarro`, and others) during the early, decentralized experimental phases of the core before this repository's establishment.
-
+* 💬 **Primary Discussion Thread:** [MustardOS Forum — Core Dolphin for muOS v9 (Take 3) by Speedrun](https://community.muos.dev/t/core-dolphin-for-muos-v9-take-3-by-speedrun/491)
+* 📊 **Compatibility Spreadsheet:** [Community GameCube/Wii Compatibility Database](https://docs.google.com/spreadsheets/u/0/d/1LHXQV78yAuvii8J77KUgEt3Ap6TagjQzN48gdB9iVKY/htmlview)
+* ☁️ **Community Cloud Mirrors:**
+  * Legacy mirror packages hosted on [Google Drive Mirror](https://drive.google.com/drive/folders/1oIdjzDEuOw0CfErXUgp5cKmyypjnrjoJ?usp=sharing) and [MEGA Mirror](https://mega.nz/folder/OtViWDyR#9FMAES423bckWKd3Rwsjdw) distributed during early community testing.
