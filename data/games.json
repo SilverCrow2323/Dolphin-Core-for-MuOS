@@ -520,7 +520,7 @@
     "variants": []
   },
   {
-    "game_id": "GINP69",
+    "game_id": "GINX69",
     "game": "Batman Begins",
     "region": "PAL",
     "rating": 2,
@@ -537,7 +537,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GINX69_default.ini",
+      "game_settings": "GINX69.ini",
       "overclock": null,
       "resolution": null
     },
@@ -550,7 +550,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GINX69_default.ini",
+      "game_settings": "GINX69.ini",
       "notes": ""
     },
     "video": {
@@ -600,7 +600,7 @@
     "variants": []
   },
   {
-    "game_id": "GGEY41",
+    "game_id": "GGEP41",
     "game": "Beyond Good & Evil",
     "region": "PAL",
     "rating": 2,
@@ -617,7 +617,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GGEY41_default.ini",
+      "game_settings": "GGEP41.ini",
       "overclock": null,
       "resolution": null
     },
@@ -630,7 +630,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GGEY41_default.ini",
+      "game_settings": "GGEP41.ini",
       "notes": ""
     },
     "video": {
@@ -640,7 +640,7 @@
     "variants": []
   },
   {
-    "game_id": "GBGP7D",
+    "game_id": "GBGE5G",
     "game": "Bomberman Generation",
     "region": "NTSC",
     "rating": 2,
@@ -657,7 +657,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GBGP7D_default.ini",
+      "game_settings": "GBGE5G.ini",
       "overclock": null,
       "resolution": null
     },
@@ -670,7 +670,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GBGP7D_default.ini",
+      "game_settings": "GBGE5G.ini",
       "notes": ""
     },
     "video": {
@@ -960,7 +960,7 @@
     "variants": []
   },
   {
-    "game_id": "GBTP70",
+    "game_id": "GBTE70",
     "game": "Beyblade Super Tournament Battle",
     "region": "NTSC / USA",
     "rating": 0,
@@ -973,17 +973,17 @@
     "core_version": "v9 Goose or prior",
     "considerations": "",
     "source": "sirpips",
-    "device": "RG35XX H with muOS Jacaranda",
+    "device": "RG35XX H",
     "issue": 4,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GBTP70_default.ini",
+      "game_settings": "GBTE70.ini",
       "overclock": null,
       "resolution": null
     },
     "test_environment": {
-      "device": "RG35XX H with muOS Jacaranda",
-      "muos_version": "",
+      "device": "RG35XX H",
+      "muos_version": "Funky Jacaranda",
       "dolphin_version": "v9 Goose or prior",
       "sd_card": ""
     },
@@ -1883,7 +1883,7 @@
     "variants": []
   },
   {
-    "game_id": "GD7P01",
+    "game_id": "GD7PB2",
     "game": "Dragon Ball Z Budokai",
     "region": "PAL",
     "rating": 3,
@@ -1916,7 +1916,7 @@
     ],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GD7P01.ini",
+      "game_settings": "GD7PB2.ini",
       "notes": "Standard core is recommended. Performance core hurts graphical quality too much."
     },
     "video": {
@@ -1966,7 +1966,7 @@
     "variants": []
   },
   {
-    "game_id": "GD7P01",
+    "game_id": "GD7PB2",
     "game": "Dragon Ball Z Budokai",
     "region": "PAL",
     "rating": 2,
@@ -1996,7 +1996,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GDBP01.ini",
+      "game_settings": "GD7PB2.ini",
       "notes": ""
     },
     "video": {
@@ -2801,46 +2801,6 @@
     "profile_recommendation": {
       "core": "Standard",
       "game_settings": "GGUNP01.ini",
-      "notes": ""
-    },
-    "video": {
-      "screenshot": "",
-      "video": ""
-    },
-    "variants": []
-  },
-  {
-    "game_id": "G4AP09",
-    "game": "Harvest Moon Magical Melody",
-    "region": "PAL",
-    "rating": 2,
-    "fps": "7-13",
-    "fps_min": 7,
-    "fps_max": 13,
-    "boot": "YES",
-    "playable": "NO",
-    "core": "SpeedHack/default",
-    "core_version": "v9 Goose or prior",
-    "considerations": "too slow to be anykind of enjoyable",
-    "source": "Sexy_Shrek",
-    "device": "Unknown Device",
-    "issue": 0,
-    "configuration": {
-      "core_profile": "Performance",
-      "game_settings": "G4AEE9_default.ini",
-      "overclock": null,
-      "resolution": null
-    },
-    "test_environment": {
-      "device": "Unknown Device",
-      "muos_version": "",
-      "dolphin_version": "v9 Goose or prior",
-      "sd_card": ""
-    },
-    "tags": [],
-    "profile_recommendation": {
-      "core": "Performance",
-      "game_settings": "G4AEE9_default.ini",
       "notes": ""
     },
     "video": {
@@ -4850,7 +4810,7 @@
     "variants": []
   },
   {
-    "game_id": "GLLF78",
+    "game_id": "GLLE78",
     "game": "Disney-Pixar Ratatouille",
     "region": "NTSC",
     "rating": 3,
@@ -4867,7 +4827,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GLLF78_default.ini",
+      "game_settings": "GLLE78.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4880,7 +4840,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GLLF78_default.ini",
+      "game_settings": "GLLE78.ini",
       "notes": ""
     },
     "video": {
