@@ -118,5 +118,45 @@
       "video": ""
     },
     "variants": []
+  },
+    {
+    "game_id": "RHMP99",
+    "game": "Harvest Moon Magical Melody",
+    "region": "PAL",
+    "rating": 2,
+    "fps": "7-13",
+    "fps_min": 7,
+    "fps_max": 13,
+    "boot": "YES",
+    "playable": "NO",
+    "core": "SpeedHack/default",
+    "core_version": "v9 Goose or prior",
+    "considerations": "too slow to be anykind of enjoyable",
+    "source": "Sexy_Shrek",
+    "device": "Unknown Device",
+    "issue": 0,
+    "configuration": {
+      "core_profile": "Performance",
+      "game_settings": "RHMP99.ini",
+      "overclock": null,
+      "resolution": null
+    },
+    "test_environment": {
+      "device": "Unknown Device",
+      "muos_version": "",
+      "dolphin_version": "v9 Goose or prior",
+      "sd_card": ""
+    },
+    "tags": [],
+    "profile_recommendation": {
+      "core": "Performance",
+      "game_settings": "RHMP99.ini",
+      "notes": ""
+    },
+    "video": {
+      "screenshot": "",
+      "video": ""
+    },
+    "variants": []
   }
 ]
