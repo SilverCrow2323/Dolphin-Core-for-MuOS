@@ -160,7 +160,7 @@
     "variants": []
   },
   {
-    "game_id": "GAFU01",
+    "game_id": "GAFE01",
     "game": "Animal Crossing",
     "region": "NTSC",
     "rating": 3,
@@ -400,7 +400,7 @@
     "variants": []
   },
   {
-    "game_id": "GTEP01",
+    "game_id": "GTAP01",
     "game": "1080 Avalanche",
     "region": "PAL",
     "rating": 2,
@@ -520,7 +520,7 @@
     "variants": []
   },
   {
-    "game_id": "GINX69",
+    "game_id": "GINP69",
     "game": "Batman Begins",
     "region": "PAL",
     "rating": 2,
@@ -920,7 +920,7 @@
     "variants": []
   },
   {
-    "game_id": "GBDS7D",
+    "game_id": "GBDP7D",
     "game": "BloodRayne",
     "region": "PAL",
     "rating": 0,
@@ -1080,7 +1080,7 @@
     "variants": []
   },
   {
-    "game_id": "GQCS52",
+    "game_id": "GQCP52",
     "game": "Call of Duty 2 - Big Red One",
     "region": "PAL",
     "rating": 0,
@@ -1520,7 +1520,7 @@
     "variants": []
   },
   {
-    "game_id": "GHCP4Q",
+    "game_id": "GHCE4Q",
     "game": "Disney's Chicken Little",
     "region": "NTSC",
     "rating": 2,
@@ -1640,7 +1640,7 @@
     "variants": []
   },
   {
-    "game_id": "G3DX6L",
+    "game_id": "G3DE6L",
     "game": "Carmen Sandiego: The Secret of the Stolen Drums",
     "region": "NTSC",
     "rating": 3,
@@ -1883,7 +1883,7 @@
     "variants": []
   },
   {
-    "game_id": "GD7PB2",
+    "game_id": "GD7P01",
     "game": "Dragon Ball Z Budokai",
     "region": "PAL",
     "rating": 3,
@@ -1966,7 +1966,7 @@
     "variants": []
   },
   {
-    "game_id": "GD7PB2",
+    "game_id": "GD7P01",
     "game": "Dragon Ball Z Budokai",
     "region": "PAL",
     "rating": 2,
@@ -2250,7 +2250,7 @@
     "variants": []
   },
   {
-    "game_id": "GEXY52",
+    "game_id": "GEXP52",
     "game": "Disney's Extreme Skate Adventure",
     "region": "PAL",
     "rating": 0,
@@ -2330,7 +2330,7 @@
     "variants": []
   },
   {
-    "game_id": "GF4S52",
+    "game_id": "GF4P52",
     "game": "Fantastic 4",
     "region": "PAL",
     "rating": 0,
@@ -2450,7 +2450,7 @@
     "variants": []
   },
   {
-    "game_id": "GFGPA4",
+    "game_id": "GFGEA4",
     "game": "Frogger Beyond",
     "region": "NTSC",
     "rating": 4,
@@ -2530,7 +2530,7 @@
     "variants": []
   },
   {
-    "game_id": "GXFS69",
+    "game_id": "GXFP69",
     "game": "FIFA Football 2004",
     "region": "PAL",
     "rating": 2,
@@ -2570,7 +2570,7 @@
     "variants": []
   },
   {
-    "game_id": "GF5S69",
+    "game_id": "GF5P69",
     "game": "FIFA Football 2005",
     "region": "PAL",
     "rating": 2,
@@ -2610,7 +2610,7 @@
     "variants": []
   },
   {
-    "game_id": "GF6S69",
+    "game_id": "GF6P69",
     "game": "FIFA 06",
     "region": "PAL",
     "rating": 2,
@@ -2810,7 +2810,7 @@
     "variants": []
   },
   {
-    "game_id": "G4AEE9",
+    "game_id": "G4AP09",
     "game": "Harvest Moon Magical Melody",
     "region": "PAL",
     "rating": 2,
@@ -2850,7 +2850,7 @@
     "variants": []
   },
   {
-    "game_id": "GHSY69",
+    "game_id": "GHSP69",
     "game": "Harry Potter and the Chamber of the Secrets",
     "region": "PAL",
     "rating": 2,
@@ -2890,7 +2890,7 @@
     "variants": []
   },
   {
-    "game_id": "GH4P69",
+    "game_id": "GH4E69",
     "game": "Harry Potter and the Goblet of Fire",
     "region": "NTSC",
     "rating": 1,
@@ -2970,7 +2970,7 @@
     "variants": []
   },
   {
-    "game_id": "GHLZ69",
+    "game_id": "GHLP69",
     "game": "Harry Potter and the Philosopher's Stone",
     "region": "PAL",
     "rating": 2,
@@ -3250,7 +3250,7 @@
     "variants": []
   },
   {
-    "game_id": "GLMERP",
+    "game_id": "GLMP01",
     "game": "Luigi's Mansion",
     "region": "PAL",
     "rating": 2,
@@ -3330,7 +3330,7 @@
     "variants": []
   },
   {
-    "game_id": "GL5X4F",
+    "game_id": "GL5P4F",
     "game": "LEGO Star Wars",
     "region": "PAL",
     "rating": 2,
@@ -3370,7 +3370,7 @@
     "variants": []
   },
   {
-    "game_id": "GL7P64",
+    "game_id": "GL7E64",
     "game": "LEGO Star Wars II - The Original Trilogy",
     "region": "NTSC",
     "rating": 4,
@@ -3490,7 +3490,7 @@
     "variants": []
   },
   {
-    "game_id": "GMPW01",
+    "game_id": "GMPP01",
     "game": "Mario Party 4",
     "region": "PAL",
     "rating": 2,
@@ -3610,7 +3610,7 @@
     "variants": []
   },
   {
-    "game_id": "GGZX52",
+    "game_id": "GGZP52",
     "game": "Dreamworks Madagascar",
     "region": "PAL",
     "rating": 2,
@@ -3770,7 +3770,7 @@
     "variants": []
   },
   {
-    "game_id": "GMFS69",
+    "game_id": "GMFP69",
     "game": "Medal of Honor - Frontline",
     "region": "PAL",
     "rating": 2,
@@ -4010,7 +4010,7 @@
     "variants": []
   },
   {
-    "game_id": "GNREDA",
+    "game_id": "GNRP01",
     "game": "Naruto: Clash of Ninja",
     "region": "PAL",
     "rating": 2,
@@ -4050,7 +4050,7 @@
     "variants": []
   },
   {
-    "game_id": "GW5P69",
+    "game_id": "GW5E69",
     "game": "Need for Speed - Carbon",
     "region": "NTSC",
     "rating": 2,
@@ -4090,7 +4090,7 @@
     "variants": []
   },
   {
-    "game_id": "GH2P69",
+    "game_id": "GH2E69",
     "game": "Need for Speed - Hot Pursuit 2",
     "region": "NTSC",
     "rating": 0,
@@ -4130,7 +4130,7 @@
     "variants": []
   },
   {
-    "game_id": "GOWP69",
+    "game_id": "GOWE69",
     "game": "Need for Speed - Most Wanted",
     "region": "NTSC",
     "rating": 0,
@@ -4170,7 +4170,7 @@
     "variants": []
   },
   {
-    "game_id": "GNDP69",
+    "game_id": "GNDE69",
     "game": "Need for Speed - Underground",
     "region": "NTSC",
     "rating": 0,
@@ -4210,7 +4210,7 @@
     "variants": []
   },
   {
-    "game_id": "GUGP69",
+    "game_id": "GUGE69",
     "game": "Need for Speed - Underground 2",
     "region": "NTSC",
     "rating": 0,
@@ -4290,7 +4290,7 @@
     "variants": []
   },
   {
-    "game_id": "GOSX41",
+    "game_id": "GOSP41",
     "game": "Open Season",
     "region": "PAL",
     "rating": 0,
@@ -4330,7 +4330,7 @@
     "variants": []
   },
   {
-    "game_id": "GPLP9G",
+    "game_id": "GPLE9G",
     "game": "Disney's Piglet's Big Game",
     "region": "NTSC",
     "rating": 0,
@@ -4690,7 +4690,7 @@
     "variants": []
   },
   {
-    "game_id": "G89EAF",
+    "game_id": "G89PAF",
     "game": "Pac-Man World Rally",
     "region": "PAL",
     "rating": 4,
@@ -4730,7 +4730,7 @@
     "variants": []
   },
   {
-    "game_id": "GQWX69",
+    "game_id": "GQWP69",
     "game": "Harry Potter: Quidditch World Cup",
     "region": "PAL",
     "rating": 5,
@@ -4930,7 +4930,7 @@
     "variants": []
   },
   {
-    "game_id": "GKRPB2",
+    "game_id": "GKREB2",
     "game": "Ribbit King",
     "region": "NTSC",
     "rating": 3,
@@ -5010,7 +5010,7 @@
     "variants": []
   },
   {
-    "game_id": "GM2P8P",
+    "game_id": "GM2E8P",
     "game": "Super Monkey Ball 2",
     "region": "NTSC",
     "rating": 5,
@@ -5250,7 +5250,7 @@
     "variants": []
   },
   {
-    "game_id": "GS8P7D",
+    "game_id": "GS8E7D",
     "game": "Spyro - Enter the Dragonfly",
     "region": "NTSC",
     "rating": 0,
@@ -5290,7 +5290,7 @@
     "variants": []
   },
   {
-    "game_id": "GS9P6S",
+    "game_id": "GS9E6S",
     "game": "Shrek Extra Large",
     "region": "NTSC",
     "rating": 2,
@@ -5570,7 +5570,7 @@
     "variants": []
   },
   {
-    "game_id": "GHQP7D",
+    "game_id": "GHQE7D",
     "game": "The Simpsons - Hit & Run",
     "region": "NTSC",
     "rating": 3,
@@ -5610,7 +5610,7 @@
     "variants": []
   },
   {
-    "game_id": "G5SP7D",
+    "game_id": "G5SE7D",
     "game": "Spyro - A Hero's Tail",
     "region": "NTSC",
     "rating": 2,
@@ -5650,7 +5650,7 @@
     "variants": []
   },
   {
-    "game_id": "GCIP69",
+    "game_id": "GCIE69",
     "game": "The Sims",
     "region": "NTSC",
     "rating": 2,
@@ -5890,7 +5890,7 @@
     "variants": []
   },
   {
-    "game_id": "RS9P8P",
+    "game_id": "GSRP8P",
     "game": "Sonic Riders",
     "region": "PAL",
     "rating": 2,
@@ -6010,7 +6010,7 @@
     "variants": []
   },
   {
-    "game_id": "GSWS64",
+    "game_id": "GSWP64",
     "game": "Star Wars - Rogue Squadron II - Rogue Leader",
     "region": "PAL",
     "rating": 0,
@@ -6050,7 +6050,7 @@
     "variants": []
   },
   {
-    "game_id": "GBWS64",
+    "game_id": "GBWP64",
     "game": "Star Wars: Bounty Hunter",
     "region": "PAL",
     "rating": 4,
@@ -6210,7 +6210,7 @@
     "variants": []
   },
   {
-    "game_id": "RSMP8P",
+    "game_id": "GSMP8P",
     "game": "Super Monkey Ball",
     "region": "PAL",
     "rating": 2,
@@ -6370,7 +6370,7 @@
     "variants": []
   },
   {
-    "game_id": "GXOX69",
+    "game_id": "GXOP69",
     "game": "SSX on Tour",
     "region": "PAL",
     "rating": 1,
@@ -6410,7 +6410,7 @@
     "variants": []
   },
   {
-    "game_id": "GXOX69",
+    "game_id": "GXOP69",
     "game": "SSX on Tour",
     "region": "NTSC",
     "rating": 1,
@@ -6490,7 +6490,7 @@
     "variants": []
   },
   {
-    "game_id": "G2FP78",
+    "game_id": "G2FE78",
     "game": "Tak 2: The Staff of Dreams",
     "region": "NTSC",
     "rating": 2,
@@ -6530,7 +6530,7 @@
     "variants": []
   },
   {
-    "game_id": "GTSP4F",
+    "game_id": "GTSE4F",
     "game": "TimeSplitters 2",
     "region": "NTSC",
     "rating": 2,
@@ -6610,7 +6610,7 @@
     "variants": []
   },
   {
-    "game_id": "GTRP78",
+    "game_id": "GTRE78",
     "game": "Tetris Worlds",
     "region": "NTSC",
     "rating": 2,
@@ -6770,7 +6770,7 @@
     "variants": []
   },
   {
-    "game_id": "GJWP78",
+    "game_id": "GJWE78",
     "game": "Tak: The Great Juju Challenge",
     "region": "NTSC",
     "rating": 2,
@@ -6970,7 +6970,7 @@
     "variants": []
   },
   {
-    "game_id": "GT3P52",
+    "game_id": "GT3E52",
     "game": "Tony Hawk's Pro Skater 3",
     "region": "NTSC",
     "rating": 4,
@@ -7010,7 +7010,7 @@
     "variants": []
   },
   {
-    "game_id": "GT4P52",
+    "game_id": "GT4E52",
     "game": "Tony Hawk's Pro Skater 4",
     "region": "NTSC",
     "rating": 0,
@@ -7050,7 +7050,7 @@
     "variants": []
   },
   {
-    "game_id": "GTDP52",
+    "game_id": "GTDE52",
     "game": "Tony Hawk's Underground",
     "region": "NTSC",
     "rating": 2,
@@ -7090,7 +7090,7 @@
     "variants": []
   },
   {
-    "game_id": "G2TP52",
+    "game_id": "G2TE52",
     "game": "Tony Hawk's Underground 2",
     "region": "NTSC",
     "rating": 1,
@@ -7130,7 +7130,7 @@
     "variants": []
   },
   {
-    "game_id": "GQSSAF",
+    "game_id": "GQSPAF",
     "game": "Tales of Symphonia",
     "region": "PAL",
     "rating": 3,
@@ -7370,7 +7370,7 @@
     "variants": []
   },
   {
-    "game_id": "GUTS52",
+    "game_id": "GUTP52",
     "game": "Ultimate Spider-Man",
     "region": "PAL",
     "rating": 0,
@@ -7610,7 +7610,7 @@
     "variants": []
   },
   {
-    "game_id": "GWRP01",
+    "game_id": "GWRE01",
     "game": "Wave Race: Blue Storm",
     "region": "NTSC",
     "rating": 0,
@@ -7770,7 +7770,7 @@
     "variants": []
   },
   {
-    "game_id": "GX3X41",
+    "game_id": "GX3P41",
     "game": "XIII",
     "region": "PAL",
     "rating": 0,
@@ -7810,7 +7810,7 @@
     "variants": []
   },
   {
-    "game_id": "GWVX52",
+    "game_id": "GWVP52",
     "game": "X-Men 2: Wolverine's Revenge",
     "region": "PAL",
     "rating": 3,
@@ -7850,7 +7850,7 @@
     "variants": []
   },
   {
-    "game_id": "GPAU01",
+    "game_id": "GXXP01",
     "game": "Pokemon XD",
     "region": "PAL",
     "rating": 4,
