@@ -22,7 +22,7 @@
 
 A brand new, interactive compatibility database is now live! It gathers and organizes all test results performed across previous core versions into a detailed, searchable format complete with user ratings and performance metrics:
 
-### 🌐 [Dolphin Core for muOS Interactive List](https://silvercrow2323.github.io/Dolphin-Core-for-MuOS/)
+### 🌐 [Dolphin Rt:Core for muOS - Interactive Compatibility List](https://silvercrow2323.github.io/Dolphin-Core-for-MuOS/)
 
 The database features:
 - **GameCube & Wii** compatibility ratings
@@ -36,7 +36,7 @@ The database features:
 
 Want to contribute to the chaos? If you test other titles, feel free to share your results by opening a new issue using our dedicated GameCube and Wii Test Template:
 
-- 🎮 [Send Test Report](https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=dolphin-rt-core-test-report.yml)
+- 🎮 [SEND YOUR TEST REPORT](https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=dolphin-rt-core-test-report.yml)
 
 ---
 
@@ -87,7 +87,6 @@ Gamepad combos are translated by `gptokeyb` on the RG35XX H:
 | **Toggle OSD** | `Menu` + `A` | `F8` |
 | **Reset** | `Menu` + `B` | `F6` |
 | **Fullscreen** | `Menu` + `X` | `F5` |
-| **Screenshot** | `Menu` + `Y` | `F7` |
 
 ### 🗂️ Per-Game Settings
 
@@ -113,9 +112,7 @@ Overclock = 0.85
 - **Strategic Underclocking:** Fine-tuning parameters like `Overclock` to reduce virtual CPU load and prevent audio stuttering on the H700 chipset.
 - **Adaptive Scaling:** Resolution adjustments and precise graphic flag management (`ImmediateXFBEnable`, `EFBToTextureEnable`) to maintain playable frame rates.
 - **Visual Glitch Prevention:** Strict handling of `VISkip` to avoid breaking rendering engines on complex scenes.
-
-### 📀 The Golden Tip: The Power of PAL ROMs
-> 💡 **PRO TIP:** If you are struggling to squeeze every single frame out of your handheld, **always look for PAL ROMs**. Running natively at **50fps** (instead of 60fps NTSC) drastically reduces the processing load on the core, often making the difference between an unplayable slideshow and a remarkably smooth experience.
+- 💡 **PAL TIP:** If you are struggling to squeeze every single frame out of your handheld, **always look for PAL ROMs**. Running natively at **50fps** (instead of 60fps NTSC) drastically reduces the processing load on the core, often making the difference between an unplayable slideshow and a remarkably smooth experience.
 
 ---
 
@@ -224,22 +221,6 @@ sudo cp -r "Nintendo Wii" /opt/muos/share/info/assign/
 2. Enable `Logger` profile — Captures detailed logs
 3. Check logs at `/opt/muos/share/emulator/dolphin/GameDumps/`
 4. Check muOS logs via `LOG_INFO` in the launcher script
-
----
-
-## 💾 Legacy Notes & Core Info
-
-Here are some critical legacy notes regarding the core itself you should be aware of:
-
-- **Hardware Support:** **RG28XX is NOT supported**.
-- **Exiting the Core:** To exit the core safely, use the Safe Reset Hotkey: press **`L1 + L2 + R1 + R2`** + **hold Power for 2 seconds**. *(Note: muOS standard hotkeys may also apply depending on your firmware version).*
-- **Controller Logic (`gcpadnew.ini`):**
-  - **V6:** For systems with no joysticks, the D-Pad defaults to the Main Stick.
-  - **V6:** For systems with no joystigned, use **`L2` + D-Pad direction** for standard D-Pad actions.
-  - **V8:** **`L2` + `A/B/X/Y`** mapped for C-Stick functionality.
-- **Consolidated Build:** V9 consolidated the core into a single version for all devices, treating controller capabilities based on the device's built-in hardware (it will not account for a device with 0 or 1 joysticks connected to an external controller with 2 joysticks).
-
-
 
 ---
 
