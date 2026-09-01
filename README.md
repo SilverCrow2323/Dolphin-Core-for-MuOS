@@ -2,8 +2,8 @@
 
 # <img src="assets/spdw_symbol.png" width="30" alt="SPDW Symbol"> Dolphin Rt:Core for MuOS
 
-**The definitive Dolphin Core optimization hub for muOS.**  
-*A handheld running an ARM SoC deserves to squeeze every drop of performance out of GameCube and Wii.*
+**Central hub about the development of GameCub and Wii emulation on muOS.**  
+*A handheld running an ARM SoC deserves to squeeze every drop of performance out for the Mecha-Dolphin!!*
 
 [![muOS](https://img.shields.io/badge/muOS-Compatible-7B68EE?style=flat-square)](#)
 [![Device](https://img.shields.io/badge/Device-RG35XX--H-FF6F00?style=flat-square)](#)
@@ -34,10 +34,9 @@ The database features:
 
 ### 🧪 Contribute Your Results
 
-Want to contribute to the chaos? If you test other titles, feel free to share your results by opening a new issue using our dedicated GameCube and Wii Test Templates:
+Want to contribute to the chaos? If you test other titles, feel free to share your results by opening a new issue using our dedicated GameCube and Wii Test Template:
 
-- 🎮 [Send GameCube Report](https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?assignees=&labels=game-test%2Cgamecube&template=name---new_gamecube_test.txt&title=%5BTEST+GC%5D%3A+)
-- 🌀 [Send Wii Report](https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?assignees=&labels=wii-game-test%2Cwii&template=name---new_wii_test.txt&title=%5BTEST+WII%5D%3A+)
+- 🎮 [Send Test Report](https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=dolphin-rt-core-test-report.yml)
 
 ---
 
@@ -68,7 +67,7 @@ The goal of **Dolphin Rt:Core** — now included as part of the **[V0iD Project]
 - `wii-compatibility` - For problematic Wii titles
 - `wii-safe` - Ultra-conservative, "last resort" profile
 
-### ⌨️ Global Hotkey System
+### ⌨️ Under Development: Global Hotkey System
 
 All hotkeys are centralized and work across **every profile**.  
 Gamepad combos are translated by `gptokeyb` on the RG35XX H:
@@ -166,7 +165,6 @@ dolphin/
 
 ### Prerequisites
 - **muOS** installed on your device (tested on RG35XX H)
-- **Dolphin Core** from this repository
 
 ### Quick Install via .muxupd
 
@@ -184,7 +182,7 @@ git clone https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS.git
 sudo cp -r Dolphin-Core-for-MuOS/opt/muos/share/emulator/dolphin/* /opt/muos/share/emulator/dolphin/
 
 # Set up profile assignments
-sudo cp -r "Nintendo Gamecube" /opt/muos/share/info/assign/
+sudo cp -r "Nintendo GameCube" /opt/muos/share/info/assign/
 sudo cp -r "Nintendo Wii" /opt/muos/share/info/assign/
 ```
 
@@ -196,12 +194,7 @@ sudo cp -r "Nintendo Wii" /opt/muos/share/info/assign/
 2. **Locate Your Games:** Browse to the directory where you stored your Nintendo GameCube or Nintendo Wii ROMs.
 3. **Assign Core Profile:** Match the game (or folder) with one of the available Dolphin core profiles:
    - `Dolphin Rt:Core` — Standard balanced profile
-   - `Dolphin Rt:Core [Perfo---
-### 🗣️ [Join the Official Discussion on the muOS Forum](https://community.muos.dev/t/core-dolphin-for-muos-v9-take-3-by-speedrun/491)
-
-> ℹ️ **IMPORTANT DISCLAIMER & COMMUNITY ACKNOWLEDGMENT**  
-> This repository is **not** an original core built from scratch. Full credit for porting and pioneering GameCube/Wii emulation on muOS goes to the **original community developers**. This project represents a **fine-tuning, optimization, and repository management effort** built directly upon their foundation.
-rmance]` — Maximum speed
+   - `Dolphin Rt:Core [Performance]` — Maximum speed
    - `Dolphin Rt:Core [Compatibility]` — Stability-first
    - `Dolphin Rt:Core [Troubleshooting]` — Best of both
    - `Dolphin Rt:Core [Lite]` — Ultra-lightweight
@@ -212,9 +205,8 @@ rmance]` — Maximum speed
 4. **Launch & Play:** Boot up the title and test the performance!
 
 > ⚠️ **IMPORTANT NOTE ON EXITING THE EMULATOR:**  
-> Dedicated in-core hotkeys to directly exit Dolphin are fully operational. Use the following shortcuts:  
-> 👉 **`Menu` + `Start`** (**Graceful Exit**)  
-> 👉 **`Start` + `Select` + `Menu`** (**Force Exit**)
+> Dedicated in-core hotkeys to directly exit Dolphin are still under development and in an experimental state. To safely exit the emulator you can use the default muOS hotkey:  
+> 👉 **`L2` + `R2` + `Start`** (**Restart your device**)  
 
 ---
 
@@ -223,9 +215,9 @@ rmance]` — Maximum speed
 ### For Best Performance
 - **Use PAL ROMs** — They run at 50 FPS instead of 60, giving a significant speed boost
 - **Start with `Troubleshooting`** — It's the most balanced profile for most games
-- **Try `Lite` for 2D games** — Games like *Paper Mario* or *WarioWare* run great
+- **Try `Lite` for 2D games** — Games like *Paper Mario* or *Wario Ware* should run better
 - **Disable `wideScreenHack`** if you see visual glitches
-- **Create per-game configs** for problematic titles (`GameSettings/{GAME_ID}.ini`)
+- **Create per-game configs** for problematic titles or to test your custom configuration (`GameSettings/{GAME_ID}.ini`)
 
 ### Debugging a Game
 1. Use the `Debug` profile — It uses the interpreter (slower but more accurate)
@@ -237,7 +229,7 @@ rmance]` — Maximum speed
 
 ## 💾 Legacy Notes & Core Info
 
-Before **SPDW Factory** took over the optimization side, the foundation was laid by the original devs. Here are some critical legacy notes regarding the core itself you should be aware of:
+Here are some critical legacy notes regarding the core itself you should be aware of:
 
 - **Hardware Support:** **RG28XX is NOT supported**.
 - **Exiting the Core:** To exit the core safely, use the Safe Reset Hotkey: press **`L1 + L2 + R1 + R2`** + **hold Power for 2 seconds**. *(Note: muOS standard hotkeys may also apply depending on your firmware version).*
@@ -247,18 +239,13 @@ Before **SPDW Factory** took over the optimization side, the foundation was laid
   - **V8:** **`L2` + `A/B/X/Y`** mapped for C-Stick functionality.
 - **Consolidated Build:** V9 consolidated the core into a single version for all devices, treating controller capabilities based on the device's built-in hardware (it will not account for a device with 0 or 1 joysticks connected to an external controller with 2 joysticks).
 
-> *Looking for ancient artifacts? Check out the [Core History Archive](Core_History/) to browse legacy builds (V7, V8, V9) and read up on their evolution.*
+
 
 ---
 
 ## 📝 Upcoming
 
-> 💡 **Something is brewing b---
-### 🗣️ [Join the Official Discussion on the muOS Forum](https://community.muos.dev/t/core-dolphin-for-muos-v9-take-3-by-speedrun/491)
-
-> ℹ️ **IMPORTANT DISCLAIMER & COMMUNITY ACKNOWLEDGMENT**  
-> This repository is **not** an original core built from scratch. Full credit for porting and pioneering GameCube/Wii emulation on muOS goes to the **original community developers**. This project represents a **fine-tuning, optimization, and repository management effort** built directly upon their foundation.
-ehind the scenes...**
+> 💡 **Something is brewing behind the scenes...**
 >
 > A new frontend experience is in development — built from the ground up for muOS, designed to bring a modern, intuitive interface to Dolphin on handhelds. Stay tuned!
 
@@ -287,6 +274,10 @@ This project stands upon the shoulders of the talented developers and community 
 - **@razorbeamz**, **@arkun**, **@SkiffguardLando**, **@chronoss0109**, **@Kirky**, **@Mikethe3ird**, **@Symphonial**, **@giodude**, **@lasagnesetting**, **@joshuarcastillo** — For testing, reporting issues, and improving the core
 - **muOS Development Team** — For ongoing firmware maintenance and structural support
 
+> *Check out the [Core History Archive](Core_History/) to browse legacy builds (V7, V8, V9) and read up on their evolution.*
+
+---
+
 ### 📋 Game Compatibility Database Contributors
 
 The original game compatibility list, which served as the foundation for the Rt:Core database, was created and maintained by the community:
@@ -311,15 +302,14 @@ The original game compatibility list, which served as the foundation for the Rt:
 
 The muOS community is vibrant and welcoming. You can find us here:
 
-- **muOS Community Forum**: [https://community.muos.dev](https://community.muos.dev) — The main hub for discussions, support, and announcements
-- **muOS Discord**: [https://discord.gg/muos](https://discord.gg/muos) — For real-time chat, testing discussions, and direct support
-- **muOS Website**: [https://muos.dev](https://muos.dev) — Official project page and documentation
+- [muOS Community Forum](https://community.muos.dev) — The main hub for discussions, support, and announcements
+- [muOS Discord](https://discord.gg/muos) — For real-time chat, testing discussions, and direct support
+- [muOS Website](https://muos.dev) — Official project page and documentation
 
 A special thanks to **duncanyoyo** and other Discord members who helped with the transition to the new muOS core structure.
 
 ---
 
-### 🗣️ [Join the Official Discussion on the muOS Forum](https://community.muos.dev/t/core-dolphin-for-muos-v9-take-3-by-speedrun/491)
 
 > ℹ️ **IMPORTANT DISCLAIMER & COMMUNITY ACKNOWLEDGMENT**  
 > This repository is **not** an original core built from scratch. Full credit for porting and pioneering GameCube/Wii emulation on muOS goes to the **original community developers**. This project represents a **fine-tuning, optimization, and repository management effort** built directly upon their foundation.
@@ -346,6 +336,6 @@ This project is open-source and licensed under the **MIT License**.
 
   <img src="assets/minoru_symbol.png" width="80" alt="Minoru Symbol">
   <br>
-  *continua a smontare le cose.*
+  *-Keep up the Sbrobbing. And forever Rintromping.*
 
 </div>
