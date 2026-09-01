@@ -480,7 +480,7 @@
     "variants": []
   },
   {
-    "game_id": "GLMP01",
+    "game_id": "GLME01",
     "game": "Luigi's Mansion",
     "region": "NTSC / USA",
     "rating": 3,
@@ -497,7 +497,7 @@
     "issue": 7,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GLMP01_default.ini",
+      "game_settings": "GLME01.ini",
       "overclock": 1.0,
       "resolution": 66.6666666
     },
@@ -510,7 +510,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GLMP01_default.ini",
+      "game_settings": "GLME01.ini",
       "notes": ""
     },
     "video": {
@@ -3010,8 +3010,8 @@
     "variants": []
   },
   {
-    "game_id": "GDXE01",
-    "game": "Kirby Air Ride FREE RUN MODE",
+    "game_id": "GKYP01",
+    "game": "Kirby Air Ride",
     "region": "PAL",
     "rating": 5,
     "fps": "30-40",
@@ -3021,13 +3021,13 @@
     "playable": "YES",
     "core": "SpeedHack",
     "core_version": "v9 Goose or prior",
-    "considerations": "very much playable, framerate not perfect tho",
+    "considerations": "[FREE RUN MODE] very much playable, framerate not perfect tho",
     "source": "Sexy_Shrek",
     "device": "Unknown Device",
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GDXE01_default.ini",
+      "game_settings": "GKYP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3040,7 +3040,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GDXE01_default.ini",
+      "game_settings": "GKYP01.ini",
       "notes": ""
     },
     "video": {
@@ -3227,7 +3227,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GLMERP_default.ini",
+      "game_settings": "GLMP01.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3240,7 +3240,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GLMERP_default.ini",
+      "game_settings": "GLMP01.ini",
       "notes": ""
     },
     "video": {
@@ -3970,7 +3970,7 @@
     "variants": []
   },
   {
-    "game_id": "GNRP01",
+    "game_id": "GNUPDA",
     "game": "Naruto: Clash of Ninja",
     "region": "PAL",
     "rating": 2,
@@ -3987,7 +3987,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GNREDA_default.ini",
+      "game_settings": "GNUPDA.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4000,7 +4000,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GNREDA_default.ini",
+      "game_settings": "GNUPDA.ini",
       "notes": ""
     },
     "video": {
@@ -4530,7 +4530,7 @@
     "variants": []
   },
   {
-    "game_id": "GPOJ8P",
+    "game_id": "GPOE8P",
     "game": "Phantasy Star Online",
     "region": "NTSC",
     "rating": 2,
@@ -4547,7 +4547,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "GPOJ8P_default.ini",
+      "game_settings": "GPOE8P.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4560,7 +4560,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "GPOJ8P_default.ini",
+      "game_settings": "GPOE8P.ini",
       "notes": ""
     },
     "video": {
@@ -4650,9 +4650,9 @@
     "variants": []
   },
   {
-    "game_id": "G89PAF",
+    "game_id": "G89EAF",
     "game": "Pac-Man World Rally",
-    "region": "PAL",
+    "region": "NTSC / USA",
     "rating": 4,
     "fps": "13-28",
     "fps_min": 13,
@@ -4667,7 +4667,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "G89EAF_default.ini",
+      "game_settings": "G89EAF.ini",
       "overclock": null,
       "resolution": null
     },
@@ -4680,7 +4680,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "G89EAF_default.ini",
+      "game_settings": "G89EAF.ini",
       "notes": ""
     },
     "video": {
@@ -5450,7 +5450,7 @@
     "variants": []
   },
   {
-    "game_id": "GUPR8P",
+    "game_id": "GUPP8P",
     "game": "Shadow the Hedgehog",
     "region": "PAL",
     "rating": 2,
@@ -5467,7 +5467,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GUPR8P_default.ini",
+      "game_settings": "GUPP8P.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5480,7 +5480,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GUPR8P_default.ini",
+      "game_settings": "GUPP8P.ini",
       "notes": ""
     },
     "video": {
@@ -5850,7 +5850,7 @@
     "variants": []
   },
   {
-    "game_id": "GSRP8P",
+    "game_id": "RS9P8P",
     "game": "Sonic Riders",
     "region": "PAL",
     "rating": 2,
@@ -5867,7 +5867,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "RS9P8P_default.ini",
+      "game_settings": "RS9P8P.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5880,7 +5880,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "RS9P8P_default.ini",
+      "game_settings": "RS9P8P.ini",
       "notes": ""
     },
     "video": {
@@ -5890,7 +5890,7 @@
     "variants": []
   },
   {
-    "game_id": "GGVX78",
+    "game_id": "GGVP69",
     "game": "The SpongeBob SquarePants Movie",
     "region": "PAL",
     "rating": 4,
@@ -5907,7 +5907,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GGVX78_default.ini",
+      "game_settings": "GGVP69.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5920,7 +5920,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GGVX78_default.ini",
+      "game_settings": "GGVP69.ini",
       "notes": ""
     },
     "video": {
@@ -5947,7 +5947,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSSRP01.ini",
+      "game_settings": "G4IP52.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5960,7 +5960,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSSRP01.ini",
+      "game_settings": "G4IP52.ini",
       "notes": ""
     },
     "video": {
@@ -6170,7 +6170,7 @@
     "variants": []
   },
   {
-    "game_id": "GSMP8P",
+    "game_id": "GMBP8P",
     "game": "Super Monkey Ball",
     "region": "PAL",
     "rating": 2,
@@ -6187,7 +6187,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Standard",
-      "game_settings": "RSMP8P_default.ini",
+      "game_settings": "GMBP8P.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6200,7 +6200,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Standard",
-      "game_settings": "RSMP8P_default.ini",
+      "game_settings": "GMBP8P.ini",
       "notes": ""
     },
     "video": {
@@ -6370,7 +6370,7 @@
     "variants": []
   },
   {
-    "game_id": "GXOP69",
+    "game_id": "GXOE69",
     "game": "SSX on Tour",
     "region": "NTSC",
     "rating": 1,
@@ -6387,7 +6387,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GXOX69_default.ini",
+      "game_settings": "GXOE69.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6400,7 +6400,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GXOX69_default.ini",
+      "game_settings": "GXOE69.ini",
       "notes": ""
     },
     "video": {
@@ -6890,7 +6890,7 @@
     "variants": []
   },
   {
-    "game_id": "GWJE52",
+    "game_id": "GH9P52",
     "game": "Tony Hawk's American Wasteland",
     "region": "PAL",
     "rating": 0,
@@ -6907,7 +6907,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GWJE52_default.ini",
+      "game_settings": "GH9P52.ini",
       "overclock": null,
       "resolution": null
     },
@@ -6920,7 +6920,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GWJE52_default.ini",
+      "game_settings": "GH9P52.ini",
       "notes": ""
     },
     "video": {
@@ -7170,7 +7170,7 @@
     "variants": []
   },
   {
-    "game_id": "GTYP69",
+    "game_id": "GYTE69",
     "game": "Ty the Tasmanian Tiger 2",
     "region": "NTSC",
     "rating": 2,
@@ -7187,7 +7187,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTYP69_default.ini",
+      "game_settings": "GYTE69.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7200,7 +7200,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTYP69_default.ini",
+      "game_settings": "GYTE69.ini",
       "notes": ""
     },
     "video": {
@@ -7210,7 +7210,7 @@
     "variants": []
   },
   {
-    "game_id": "GTYP69",
+    "game_id": "GIZE69",
     "game": "Ty the Tasmanian Tiger 3",
     "region": "NTSC",
     "rating": 1,
@@ -7227,7 +7227,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GTYP69_default.ini",
+      "game_settings": "GIZE69.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7240,7 +7240,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GTYP69_default.ini",
+      "game_settings": "GIZE69.ini",
       "notes": ""
     },
     "video": {
@@ -8010,7 +8010,7 @@
     "variants": []
   },
   {
-    "game_id": "GVJP08",
+    "game_id": "GVJE08",
     "game": "Viewtiful Joe",
     "region": "NTSC / USA",
     "rating": 2,
@@ -8027,7 +8027,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "default",
-      "game_settings": "GVJP08.ini",
+      "game_settings": "GVJE08.ini",
       "overclock": null,
       "resolution": null
     },
@@ -8040,7 +8040,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "default",
-      "game_settings": "GVJP08.ini",
+      "game_settings": "GVJE08.ini",
       "notes": ""
     },
     "video": {
