@@ -299,8 +299,10 @@
       height: 100%;
       object-fit: cover;
     }
+
     .game-card-info {
       padding: 0.75rem;
+      text-align: center; /* centra tutto il contenuto della card */
     }
     .game-card-title {
       font-size: 0.85rem;
@@ -312,17 +314,51 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-    .game-card-meta {
+    .stars-container {
       display: flex;
-      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2px;
+      margin-bottom: 0.5rem;
+    }
+    .badge-row {
+      display: flex;
+      justify-content: center;
       gap: 0.4rem;
-      font-size: 0.7rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.3rem;
     }
     .badge {
       padding: 0.2rem 0.5rem;
       border-radius: 9999px;
       font-weight: 700;
       font-size: 0.65rem;
+    }
+    .badge.boot-yes {
+      background: rgba(16,185,129,0.15);
+      color: #10b981;
+    }
+    .badge.boot-no {
+      background: rgba(239,68,68,0.15);
+      color: #ef4444;
+    }
+    .badge.play-yes {
+      background: rgba(16,185,129,0.15);
+      color: #10b981;
+    }
+    .badge.play-no {
+      background: rgba(239,68,68,0.15);
+      color: #ef4444;
+    }
+    .badge.fps {
+      background: rgba(56,189,248,0.15);
+      color: #38bdf8;
+    }
+    .badge.region {
+      background: transparent;
+      color: inherit;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
     }
 
     /* List Card */
@@ -370,17 +406,22 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      margin-bottom: 0.3rem;
     }
     .list-card-meta {
       display: flex;
       gap: 0.5rem;
       flex-wrap: wrap;
-      margin-top: 0.3rem;
+      margin-bottom: 0.3rem;
       font-size: 0.7rem;
       color: #94a3b8;
     }
     body.wii .list-card-meta {
       color: #64748b;
+    }
+    .list-card-stars {
+      display: flex;
+      gap: 2px;
     }
 
     /* Modal */
@@ -570,7 +611,7 @@
 
     function renderStars(rating) {
       const full = Math.max(0, Math.min(5, rating));
-      let html = '<div style="display:flex;gap:2px">';
+      let html = '<div class="stars-container">';
       for (let i = 1; i <= 5; i++) {
         const filled = i <= full;
         const color = i >= 5 ? '#10b981' : i >= 4 ? '#14b8a6' : i >= 3 ? '#f59e0b' : i >= 2 ? '#f97316' : '#ef4444';
@@ -679,11 +720,14 @@
             </div>
             <div class="game-card-info">
               <div class="game-card-title">${escapeHtml(game.game)}</div>
-              <div style="margin-bottom:0.4rem">${renderStars(game.bestRating)}</div>
-              <div class="game-card-meta">
-                <span class="badge" style="background:rgba(16,185,129,0.15);color:#10b981">${game.bestPlayable === 'YES' ? 'Playable' : 'Unplayable'}</span>
-                <span class="badge" style="background:rgba(239,68,68,0.15);color:#ef4444">${game.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
-                <span class="badge" style="background:rgba(56,189,248,0.15);color:#38bdf8">${game.bestFpsStr !== '???' ? game.bestFpsStr + ' FPS' : 'N/A'}</span>
+              ${renderStars(game.bestRating)}
+              <div class="badge-row">
+                <span class="badge ${game.bestBoot === 'YES' ? 'boot-yes' : 'boot-no'}">${game.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
+                <span class="badge ${game.bestPlayable === 'YES' ? 'play-yes' : 'play-no'}">${game.bestPlayable === 'YES' ? 'Playable' : 'Unplayable'}</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge fps">${game.bestFpsStr !== '???' ? game.bestFpsStr + ' FPS' : 'N/A'}</span>
+                <span class="badge region"><img src="https://flagcdn.com/w20/${getFlagCode(game.region)}.png" style="width:16px;height:12px;border-radius:2px" alt="${game.region}"> ${game.region}</span>
               </div>
             </div>
           </div>
@@ -697,17 +741,21 @@
             <div class="list-card-info">
               <div class="list-card-title">${escapeHtml(game.game)}</div>
               <div class="list-card-meta">
-                <span>${game.region}</span>
-                <span>${game.entriesCount} tests</span>
-                <span style="color:${game.bestPlayable === 'YES' ? '#10b981' : '#ef4444'}">${game.bestPlayable === 'YES' ? 'Playable' : 'Unplayable'}</span>
-                <span style="color:${game.bestBoot === 'YES' ? '#10b981' : '#ef4444'}">${game.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
-                <span style="color:#38bdf8">${game.bestFpsStr !== '???' ? game.bestFpsStr + ' FPS' : 'N/A'}</span>
+                <span class="badge ${game.bestBoot === 'YES' ? 'boot-yes' : 'boot-no'}">${game.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
+                <span class="badge ${game.bestPlayable === 'YES' ? 'play-yes' : 'play-no'}">${game.bestPlayable === 'YES' ? 'Playable' : 'Unplayable'}</span>
+                <span class="badge fps">${game.bestFpsStr !== '???' ? game.bestFpsStr + ' FPS' : 'N/A'}</span>
+                <span class="badge region"><img src="https://flagcdn.com/w20/${getFlagCode(game.region)}.png" style="width:16px;height:12px;border-radius:2px" alt="${game.region}"> ${game.region}</span>
               </div>
-              <div style="margin-top:0.3rem">${renderStars(game.bestRating)}</div>
+              ${renderStars(game.bestRating)}
             </div>
           </div>
         `).join('');
       }
+    }
+
+    function getFlagCode(region) {
+      const map = { 'NTSC / USA': 'us', 'PAL': 'eu', 'NTSC / JPN': 'jp', 'NTSC / KOR': 'kr' };
+      return map[region] || 'us';
     }
 
     // Modal
@@ -726,9 +774,9 @@
             <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:0.3rem">${escapeHtml(game.game)}</h2>
             <p style="color:#94a3b8;margin-bottom:0.5rem">${game.region} · ${game.gameId || 'Unknown'}</p>
             <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
-              <span class="badge" style="background:rgba(16,185,129,0.15);color:#10b981">${game.bestPlayable === 'YES' ? 'Playable' : 'Unplayable'}</span>
-              <span class="badge" style="background:rgba(239,68,68,0.15);color:#ef4444">${game.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
-              <span class="badge" style="background:rgba(56,189,248,0.15);color:#38bdf8">${game.bestFpsStr !== '???' ? game.bestFpsStr + ' FPS' : 'N/A'}</span>
+              <span class="badge ${game.bestBoot === 'YES' ? 'boot-yes' : 'boot-no'}">${game.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
+              <span class="badge ${game.bestPlayable === 'YES' ? 'play-yes' : 'play-no'}">${game.bestPlayable === 'YES' ? 'Playable' : 'Unplayable'}</span>
+              <span class="badge fps">${game.bestFpsStr !== '???' ? game.bestFpsStr + ' FPS' : 'N/A'}</span>
             </div>
           </div>
         </div>
@@ -758,9 +806,9 @@
               <span style="font-size:0.8rem;color:#94a3b8">${escapeHtml(tester)}</span>
             </div>
             <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.5rem">
-              <span class="badge" style="background:rgba(16,185,129,0.15);color:#10b981">${boot === 'YES' ? 'Boots' : 'No Boot'}</span>
-              <span class="badge" style="background:rgba(16,185,129,0.15);color:#10b981">${playable === 'YES' ? 'Playable' : 'Unplayable'}</span>
-              <span class="badge" style="background:rgba(56,189,248,0.15);color:#38bdf8">${fps} FPS</span>
+              <span class="badge ${boot === 'YES' ? 'boot-yes' : 'boot-no'}">${boot === 'YES' ? 'Boots' : 'No Boot'}</span>
+              <span class="badge ${playable === 'YES' ? 'play-yes' : 'play-no'}">${playable === 'YES' ? 'Playable' : 'Unplayable'}</span>
+              <span class="badge fps">${fps} FPS</span>
               <span class="badge" style="background:rgba(124,58,237,0.15);color:#a78bfa">${escapeHtml(coreProfile)}</span>
             </div>
             ${considerations ? `<p style="font-size:0.8rem;font-style:italic;color:#94a3b8">${escapeHtml(considerations)}</p>` : ''}
