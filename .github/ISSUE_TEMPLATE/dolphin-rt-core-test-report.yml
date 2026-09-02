@@ -76,7 +76,7 @@ body:
     id: cover_art
     attributes:
       label: "🖼️ Cover Art URL (optional)"
-      description: "If you have a direct link to a cover image (e.g., Imgur, GameTDB), paste it here. It will override the auto-generated cover based on Game ID."
+      description: "If you have a direct link to a cover image, paste it here. It overrides the auto-generated cover."
       placeholder: "https://example.com/cover.jpg"
     validations:
       required: false
@@ -87,18 +87,18 @@ body:
         ---
         ## 📊 Test Overview
 
-        **🔌 Boot & Performance Rating** – select the option that matches both the boot status and the overall performance.
+        **🔌 Boot & Performance Rating** – select the option that matches both boot and performance.
 
         | Selection | Meaning |
         |-----------|---------|
-        | NO - 0★ | Game does not boot at all |
-        | YES - 1★ | Boots but is unplayable |
-        | YES - 2★ | Boots, slow but playable with patience |
+        | NO - 0★ | Game does not boot |
+        | YES - 1★ | Boots but unplayable |
+        | YES - 2★ | Boots, slow but playable |
         | YES - 3★ | Playable, needs tweaks |
-        | YES - 4★ | Great, minor issues only |
+        | YES - 4★ | Great, minor issues |
         | YES - 5★ | Perfect, no issues |
 
-        **🎬 FPS Range** – enter the min and max FPS observed.
+        **🎬 FPS Range** – enter the min and max FPS.
 
         ---
 
@@ -106,7 +106,6 @@ body:
     id: boot_rating
     attributes:
       label: "🔌 Boot Status & Performance Rating *"
-      description: "Select the option that describes both boot and performance."
       options:
         - "NO - 0★ (DOES NOT BOOT)"
         - "YES - 1★ (BAD - unplayable)"
@@ -129,7 +128,6 @@ body:
     id: core_profile
     attributes:
       label: "⚙️ Core Profile Used *"
-      description: "Select the Rt:Core profile you tested with."
       options:
         - "default"
         - "performance"
@@ -151,38 +149,217 @@ body:
     attributes:
       value: |
         ---
-        ## 📝 Additional Observations & Attachments
-
-        **📝 Considerations & Notes** – write below  
-        **⚙️ Custom Game Settings** – if used, describe below (one per line, pipe-separated)  
-        **🖼️ Screenshots / Video** – paste links below if available (one per line, pipe-separated)  
-
-        ---
+        ## 📝 Additional Observations
 
   - type: textarea
     id: notes
     attributes:
       label: "📝 Considerations & Notes"
-      description: "Describe performance, graphical issues, audio problems, workarounds, or anything noteworthy."
-      placeholder: "Write your considerations, notes or performance details here"
+      description: "Describe performance, graphical issues, audio problems, workarounds, anything noteworthy."
+      placeholder: "Write your considerations here"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## ⚙️ Custom Settings (optional – fill as many as needed, leave empty for unused)
+
+        *Each custom setting can be added by filling the fields below. If you don't need a setting, leave all its fields empty.*
+
+  - type: dropdown
+    id: cs1_type
+    attributes:
+      label: "Custom Settings 1 – Type"
+      options:
+        - "Game Setting"
+        - "Texture Mod"
+        - "Hack"
+        - "Cheats"
+        - "Other"
+    validations:
+      required: false
+
+  - type: input
+    id: cs1_title
+    attributes:
+      label: "Custom Settings 1 – Subject / Title"
+      placeholder: "e.g., Overclock tweak, HD Texture Pack"
+    validations:
+      required: false
+
+  - type: input
+    id: cs1_url
+    attributes:
+      label: "Custom Settings 1 – Download Link"
+      placeholder: "https://..."
     validations:
       required: false
 
   - type: textarea
-    id: custom_settings
+    id: cs1_notes
     attributes:
-      label: "⚙️ Custom Settings (optional)"
-      description: "Paste one custom setting per line in this format: `type|name|filename|url|notes`. type must be one of: Game Setting, Texture Mod, Hack, Cheats, Other. Example:\n`Game Setting|Overclock tweak|GMSE01.ini|https://...|Overclock=0.55`"
-      placeholder: "Game Setting|Overclock tweak|GMSE01.ini|https://...|Overclock=0.55\nTexture Mod|HD Texture|GMS_1080.zip|https://...|Visual upgrade"
+      label: "Custom Settings 1 – Additional Notes"
+      placeholder: "e.g., Overclock=0.55, Resolution=0.33"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: cs2_type
+    attributes:
+      label: "Custom Settings 2 – Type"
+      options:
+        - "Game Setting"
+        - "Texture Mod"
+        - "Hack"
+        - "Cheats"
+        - "Other"
+    validations:
+      required: false
+
+  - type: input
+    id: cs2_title
+    attributes:
+      label: "Custom Settings 2 – Subject / Title"
+      placeholder: "e.g., Shader fix, Cheat code"
+    validations:
+      required: false
+
+  - type: input
+    id: cs2_url
+    attributes:
+      label: "Custom Settings 2 – Download Link"
+      placeholder: "https://..."
     validations:
       required: false
 
   - type: textarea
-    id: attachments
+    id: cs2_notes
     attributes:
-      label: "🖼️ Attachments (Screenshots / Video) (optional)"
-      description: "Paste one attachment per line in this format: `image|Title|URL` or `video|Title|URL`."
-      placeholder: "image|Screenshot 1|https://i.imgur.com/abc123.jpg\nvideo|Gameplay|https://youtu.be/xyz789"
+      label: "Custom Settings 2 – Additional Notes"
+      placeholder: "e.g., Improve water effects"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: cs3_type
+    attributes:
+      label: "Custom Settings 3 – Type"
+      options:
+        - "Game Setting"
+        - "Texture Mod"
+        - "Hack"
+        - "Cheats"
+        - "Other"
+    validations:
+      required: false
+
+  - type: input
+    id: cs3_title
+    attributes:
+      label: "Custom Settings 3 – Subject / Title"
+      placeholder: "e.g., Controller config"
+    validations:
+      required: false
+
+  - type: input
+    id: cs3_url
+    attributes:
+      label: "Custom Settings 3 – Download Link"
+      placeholder: "https://..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: cs3_notes
+    attributes:
+      label: "Custom Settings 3 – Additional Notes"
+      placeholder: "e.g., Fix audio stuttering"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## 🖼️ Attachments (optional – fill as many as needed, leave empty for unused)
+
+  - type: dropdown
+    id: att1_type
+    attributes:
+      label: "Attachment 1 – Type"
+      options:
+        - "image"
+        - "video"
+    validations:
+      required: false
+
+  - type: input
+    id: att1_title
+    attributes:
+      label: "Attachment 1 – Title"
+      placeholder: "e.g., Screenshot 1"
+    validations:
+      required: false
+
+  - type: input
+    id: att1_url
+    attributes:
+      label: "Attachment 1 – URL"
+      placeholder: "https://..."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: att2_type
+    attributes:
+      label: "Attachment 2 – Type"
+      options:
+        - "image"
+        - "video"
+    validations:
+      required: false
+
+  - type: input
+    id: att2_title
+    attributes:
+      label: "Attachment 2 – Title"
+      placeholder: "e.g., Gameplay video"
+    validations:
+      required: false
+
+  - type: input
+    id: att2_url
+    attributes:
+      label: "Attachment 2 – URL"
+      placeholder: "https://..."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: att3_type
+    attributes:
+      label: "Attachment 3 – Type"
+      options:
+        - "image"
+        - "video"
+    validations:
+      required: false
+
+  - type: input
+    id: att3_title
+    attributes:
+      label: "Attachment 3 – Title"
+      placeholder: "e.g., Screenshot 2"
+    validations:
+      required: false
+
+  - type: input
+    id: att3_url
+    attributes:
+      label: "Attachment 3 – URL"
+      placeholder: "https://..."
     validations:
       required: false
 
@@ -196,7 +373,6 @@ body:
     id: tester
     attributes:
       label: "👤 Tester Username *"
-      description: "Your username or alias to credit in the database."
       placeholder: "Write your username"
     validations:
       required: true
@@ -205,7 +381,6 @@ body:
     id: device
     attributes:
       label: "📱 Device Used *"
-      description: "Which device did you test on?"
       placeholder: "e.g., RG35XX H, RG40XX H, RG CubeXX"
     validations:
       required: true
@@ -214,7 +389,6 @@ body:
     id: muos_version
     attributes:
       label: "💾 muOS Version *"
-      description: "Select the version of muOS you are running."
       options:
         - "2601.1 Funky Jacaranda (current)"
         - "2601.0 Jacaranda"
@@ -231,7 +405,6 @@ body:
     id: dolphincore_version
     attributes:
       label: "🐬 Dolphin Rt:Core Version *"
-      description: "Select the Dolphin Rt:Core version you used."
       options:
         - "v10.5.3"
         - "v10.5-124"
@@ -250,7 +423,7 @@ body:
           <br>
           <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="Console" width="48">
           <br><br>
-          <strong>Thank you for contributing to the Dolphin Rt:Core compatibility database!</strong> 🙌
+          <strong>Thank you for contributing!</strong> 🙌
           <br><br>
-          <small>🔄 This report will be automatically processed and added to the database.</small>
+          <small>Your report will be automatically processed and added to the database.</small>
         </div>
