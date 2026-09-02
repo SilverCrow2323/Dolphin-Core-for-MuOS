@@ -3,382 +3,461 @@
   "last_update": "2026-09-02",
   "items": [
     {
-      "id": "bootmii-cfg-editor",
+      "id": "hbgc001_swiss-gc",
+      "category": "homebrew",
+      "system": "gc",
+      "name": "Swiss (GameCube)",
+      "description": "Swiss is the Swiss Army Knife of GameCube homebrew. It is an all-in-one utility that allows you to launch games and homebrew from a variety of devices (SD Gecko, SD2SP2, IDE-EXI, USB Gecko, network shares, and more). It can force 480p video output on games that don't natively support it, provides a virtual Broadband Adapter for LAN play, and is essential for any GameCube enthusiast [citation:1][citation:4][citation:7].",
+      "author": "emukidid, Extrems",
+      "version": "0.6r2073",
+      "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/swiss-gc.zip",
+      "icon_url": "",
+      "icon_file": "icon.png",
+      "size_mb": 1.2,
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbgc/swiss-gc"
+    },
+    {
+      "id": "hbw001_bootmii-cfg-editor",
       "category": "homebrew",
       "system": "wii",
       "name": "BootMii CFG Editor",
-      "description": "Editor for BootMii configuration files.",
+      "description": "A graphical tool to edit and manage BootMii configuration files. BootMii is a bootloader for the Wii, and this editor simplifies the process of changing boot options, theme settings, and backup configurations [citation:6].",
       "author": "AlexDP",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/BootMii%20CFG%20Editor.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 0.5,
-      "install_path": "data/rtenhancer/wii/bootmii-cfg-editor"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/bootmii-cfg-editor"
     },
     {
-      "id": "calibrator",
+      "id": "hbw002_calibrator",
       "category": "homebrew",
       "system": "wii",
       "name": "Calibrator",
-      "description": "Screen calibration tool.",
+      "description": "A utility for calibrating the Wii Remote and the sensor bar. It helps fix pointer accuracy issues and ensures precise cursor movement, which can be useful if you are using a third-party sensor bar or after hardware modifications.",
       "author": "Unknown",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/Calibrator.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 0.2,
-      "install_path": "data/rtenhancer/wii/calibrator"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/calibrator"
     },
     {
-      "id": "cfg-usb-loader",
+      "id": "hbw003_cfg-usb-loader",
       "category": "homebrew",
       "system": "wii",
       "name": "CFG USB Loader",
-      "description": "USB Loader for Wii games.",
-      "author": "Unknown",
+      "description": "A popular USB loader for launching Wii games from external drives. It supports multiple formats (ISO, WBFS) and offers per-game settings, a clean interface, and good performance.",
+      "author": "Various",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/CFG%20USB%20Loader.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 2.0,
-      "install_path": "data/rtenhancer/wii/cfg-usb-loader"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/cfg-usb-loader"
     },
     {
-      "id": "gc-linux-alpha",
+      "id": "hbw004_gc-linux-alpha",
       "category": "homebrew",
       "system": "wii",
       "name": "GC Linux alpha",
-      "description": "Linux port for GameCube/Wii (experimental).",
-      "author": "Unknown",
+      "description": "An experimental port of Linux for the GameCube and Wii. This is a developer tool for enthusiasts who want to experiment with running a Linux distribution on the hardware. It is not a user-friendly application for everyday use.",
+      "author": "Various",
       "version": "Alpha",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/GC%20Linux%20alpha.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 5.0,
-      "install_path": "data/rtenhancer/wii/gc-linux-alpha"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/gc-linux-alpha"
     },
     {
-      "id": "gc-memory-manager",
+      "id": "hbw005_gc-memory-manager",
       "category": "homebrew",
       "system": "wii",
       "name": "GC Memory Manager",
-      "description": "Manage GameCube memory cards.",
+      "description": "A tool for managing GameCube memory card files (.raw). It allows you to backup, restore, and edit saved games directly from your Wii or in a development environment [citation:10].",
       "author": "Unknown",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/GC%20Memory%20Manager.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 1.0,
-      "install_path": "data/rtenhancer/wii/gc-memory-manager"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/gc-memory-manager"
     },
     {
-      "id": "homebrew-browser",
+      "id": "hbw006_homebrew-browser",
       "category": "homebrew",
       "system": "wii",
       "name": "Homebrew Browser",
-      "description": "Browse and download homebrew apps.",
-      "author": "Unknown",
+      "description": "A community-driven application that allows you to browse and download homebrew apps directly from an online repository. The Open Shop Channel is a modern revival of this concept, providing a centralized place to discover new software [citation:12].",
+      "author": "Various",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/homebrew_browser.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 1.5,
-      "install_path": "data/rtenhancer/wii/homebrew-browser"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/homebrew-browser"
     },
     {
-      "id": "loadmii",
+      "id": "hbw007_loadmii",
       "category": "homebrew",
       "system": "wii",
       "name": "loadMii",
-      "description": "Load Wii homebrew from SD/USB.",
+      "description": "A lightweight loader that starts homebrew applications from an SD card or USB drive. It supports many formats and can automatically detect the correct boot.dol, making it a simple and reliable way to run software on the Wii.",
       "author": "Unknown",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/loadMii.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 0.8,
-      "install_path": "data/rtenhancer/wii/loadmii"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/loadmii"
     },
     {
-      "id": "nintendont",
+      "id": "hbw008_nintendont",
       "category": "homebrew",
       "system": "wii",
       "name": "Nintendont",
-      "description": "GameCube loader for Wii and vWii.",
-      "author": "FIX94",
-      "version": "v5.5",
+      "description": "The definitive GameCube loader for Wii and vWii. It runs on all Wii models, including those without GameCube controller ports, and supports ISO, RVZ, and WBFS formats. It features virtual memory cards, USB controller support, and per-game settings, making it an essential tool for playing GC games on a Wii [citation:9][citation:12].",
+      "author": "Crediar, FIX94",
+      "version": "6.503",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/Nintendont.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 2.5,
-      "install_path": "data/rtenhancer/wii/nintendont"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/nintendont"
     },
     {
-      "id": "pimp-my-wii",
+      "id": "hbw009_pimp-my-wii",
       "category": "homebrew",
       "system": "wii",
       "name": "Pimp My Wii",
-      "description": "System tweaks and customizations.",
-      "author": "Unknown",
-      "version": "1.0",
+      "description": "A powerful system tweak tool that installs missing or outdated IOS/titles, installs cIOS and mIOS, and manages custom channels. It is a go-to utility for setting up a modded Wii for homebrew [citation:3].",
+      "author": "Attila",
+      "version": "3.0.2",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/Pimp%20My%20Wii.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 1.2,
-      "install_path": "data/rtenhancer/wii/pimp-my-wii"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/pimp-my-wii"
     },
     {
-      "id": "priiloader",
+      "id": "hbw010_priiloader",
       "category": "homebrew",
       "system": "wii",
       "name": "PriiLoader",
-      "description": "Bootloader for Wii with many features.",
+      "description": "An advanced bootloader that replaces the Wii's system menu with a more flexible one. It can prevent and fix user-level bricks, block updates, enable region-free gameplay, and launch homebrew directly [citation:3].",
       "author": "DacoTaco",
-      "version": "0.10",
+      "version": "0.10.0 RC3",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/PriiLoader.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 1.0,
-      "install_path": "data/rtenhancer/wii/priiloader"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/priiloader"
     },
     {
-      "id": "settings-editor-gui",
+      "id": "hbw011_settings-editor-gui",
       "category": "homebrew",
       "system": "wii",
       "name": "Settings Editor GUI",
-      "description": "GUI to edit system settings.",
+      "description": "A graphical editor for Wii system settings. It allows you to change region, language, screen resolution, and other hidden system parameters, useful for customization and region-free play.",
       "author": "Unknown",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/Settings%20Editor%20GUI.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 0.6,
-      "install_path": "data/rtenhancer/wii/settings-editor-gui"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/settings-editor-gui"
     },
     {
-      "id": "swiss-gc",
-      "category": "homebrew",
-      "system": "gc",
-      "name": "Swiss (GameCube)",
-      "description": "Homebrew loader for GameCube, supports ISO, RVZ, cheats.",
-      "author": "emukidid",
-      "version": "0.5r1234",
-      "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/swiss-gc.zip",
-      "icon_url": "",
-      "icon_file": "icon.png",
-      "size_mb": 1.2,
-      "install_path": "data/rtenhancer/gc/swiss-gc"
-    },
-    {
-      "id": "usb-loader-gx",
+      "id": "hbw012_usb-loader-gx",
       "category": "homebrew",
       "system": "wii",
       "name": "USB Loader GX",
-      "description": "Popular USB loader for Wii games.",
+      "description": "The premier backup loader for Wii games. It offers a beautiful, customizable interface with support for themes, cover art, and cheats. It integrates directly with Nintendont for GameCube games and Wiimmfi for online play [citation:12].",
       "author": "GX Team",
       "version": "3.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/USB%20Loader%20GX.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 4.0,
-      "install_path": "data/rtenhancer/wii/usb-loader-gx"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/usb-loader-gx"
     },
     {
-      "id": "vbagx",
+      "id": "hbw013_vbagx",
       "category": "homebrew",
       "system": "wii",
       "name": "VBA GX",
-      "description": "Game Boy Advance emulator for Wii.",
-      "author": "Unknown",
+      "description": "A Game Boy Advance emulator for the Wii. It supports GBA, GBC, and GB ROMs, and includes features like save states and cheat codes. It is a well-regarded retro emulator for the platform [citation:6].",
+      "author": "Various",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/vbagx.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 1.8,
-      "install_path": "data/rtenhancer/wii/vbagx"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/vbagx"
     },
     {
-      "id": "wiibrowser",
+      "id": "hbw014_wiibrowser",
       "category": "homebrew",
       "system": "wii",
       "name": "WiiBrowser",
-      "description": "Web browser for Wii.",
-      "author": "Unknown",
+      "description": "A web browser for the Wii. It supports basic HTML and JavaScript, allowing you to browse the internet on your console. While not as full-featured as modern browsers, it can be useful for quick web searches [citation:6].",
+      "author": "Various",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/WiiBrowser.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 1.0,
-      "install_path": "data/rtenhancer/wii/wiibrowser"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/wiibrowser"
     },
     {
-      "id": "wiiflow",
+      "id": "hbw015_wiiflow",
       "category": "homebrew",
       "system": "wii",
       "name": "WiiFlow",
-      "description": "A stylish USB loader for Wii.",
+      "description": "A stylish and highly customizable USB loader. It features animated banners, game covers, and a sleek interface, and supports many themes and plugins to enhance the experience [citation:9].",
       "author": "Fledge",
       "version": "4.3",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/WiiFlow.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 5.0,
-      "install_path": "data/rtenhancer/wii/wiiflow"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/wiiflow"
     },
     {
-      "id": "wiimc",
+      "id": "hbw016_wiimc",
       "category": "homebrew",
       "system": "wii",
       "name": "WiiMC",
-      "description": "Media center for Wii.",
+      "description": "A comprehensive media center for the Wii. It can play video and audio files from SD/USB, stream internet content, and display images. Notably, WiiMC can restore DVD playback, which Nintendo disabled to avoid licensing fees [citation:12].",
       "author": "WiiMC Team",
-      "version": "1.0",
+      "version": "3.0.0-2024",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/WiiMC.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 2.0,
-      "install_path": "data/rtenhancer/wii/wiimc"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/wiimc"
     },
     {
-      "id": "wiitweet",
+      "id": "hbw017_wiitweet",
       "category": "homebrew",
       "system": "wii",
       "name": "WiiTweet",
-      "description": "Twitter client for Wii.",
-      "author": "Unknown",
+      "description": "A Twitter client for the Wii. It allows you to post tweets, read timelines, and engage with your followers from your console. A nostalgic way to stay connected, though the underlying API may no longer be functional.",
+      "author": "Various",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/WiiTweet.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 0.8,
-      "install_path": "data/rtenhancer/wii/wiitweet"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/wiitweet"
     },
     {
-      "id": "wiixplorer",
+      "id": "hbw018_wiixplorer",
       "category": "homebrew",
       "system": "wii",
       "name": "WiiXplorer",
-      "description": "File manager for Wii.",
-      "author": "Unknown",
+      "description": "A powerful file manager for the Wii. It supports FTP, SMB, and USB drives, and allows you to copy, move, rename, and delete files. It can also extract archives and view images, making it essential for managing homebrew files [citation:12].",
+      "author": "Various",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/WiiXplorer.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 1.5,
-      "install_path": "data/rtenhancer/wii/wiixplorer"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/wiixplorer"
     },
     {
-      "id": "wsm-player",
+      "id": "hbw019_wsm-player",
       "category": "homebrew",
       "system": "wii",
       "name": "WSM Player",
-      "description": "Wii Speech and Media player?",
-      "author": "Unknown",
+      "description": "A media player for the Wii that supports a variety of audio and video formats. It can play files from an SD card or USB drive and offers a straightforward interface for media consumption.",
+      "author": "Various",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/WSM%20Player.zip",
       "icon_url": "",
       "icon_file": "icon.png",
       "size_mb": 1.0,
-      "install_path": "data/rtenhancer/wii/wsm-player"
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/wsm-player"
     },
     {
-      "id": "zelda-wind-waker-hd",
+      "id": "rp001_gc_gmse01",
+      "category": "resource",
+      "system": "gc",
+      "name": "Super Mario Sunshine UHD (qashto)",
+      "description": "The definitive texture pack by qashto & razius that brings Super Mario Sunshine to modern graphical standards with high-resolution AI-upscaled textures. Includes enhanced water effects and a 4K option. Recommended for muOS devices with 1GB RAM, though the 4K version may require more resources.",
+      "author": "qashto",
+      "version": "2.1.1",
+      "source_url": "https://github.com/qashto/Super_Mario_Sunshine_UHD_Texture_Pack",
+      "icon_url": "",
+      "icon_file": "",
+      "size_mb": 1191,
+      "downloads": [
+        {
+          "label": "Full Pack (1080p)",
+          "description": "High-quality 1080p textures. Ideal balance between visual fidelity and performance on H700 devices.",
+          "url": "https://github.com/qashto/Super_Mario_Sunshine_UHD_Texture_Pack/releases/download/2.1.1/GMS_1080.zip",
+          "size_mb": 250,
+          "install_path": "/opt/muos/share/emulator/dolphin/Load/Textures/GMSE01/"
+        },
+        {
+          "label": "Full Pack (4K)",
+          "description": "Ultimate 4K textures. Maximum visual upgrade, but may impact performance on lower-end devices.",
+          "url": "https://github.com/qashto/Super_Mario_Sunshine_UHD_Texture_Pack/releases/download/2.1.1/GMS.zip",
+          "size_mb": 941,
+          "install_path": "/opt/muos/share/emulator/dolphin/Load/Textures/GMSE01/"
+        }
+      ],
+      "extra_content": [
+        {
+          "type": "settings",
+          "label": "Recommended GameSettings (GMSE01_resourcepack.ini)",
+          "description": "Pre-configured Dolphin settings tailored for this texture pack, including DDS BC7 support and stutter-free caching. Apply in Game Settings menu.",
+          "url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/rp/GMSE01_resourcepack.ini",
+          "install_path": "/opt/muos/share/emulator/dolphin/GameSettings/",
+          "filename": "GMSE01_resourcepack.ini"
+        }
+      ]
+    },
+    {
+      "id": "rp002_gc_gzle01",
       "category": "resource",
       "system": "gc",
       "name": "Zelda Wind Waker HD (Hypatia)",
-      "description": "High-definition texture pack for The Legend of Zelda: Wind Waker by Hypatia. Requires Dolphin 5.x development build.",
+      "description": "A famous high-definition texture pack for The Legend of Zelda: Wind Waker. It dramatically improves the game's visuals with crisp, high-resolution textures, making the cel-shaded world even more vibrant. Requires a recent Dolphin development build for best results.",
       "author": "Hypatia",
       "version": "v2.0001a",
-      "download_url": "https://gamebanana.com/mods/153174",
+      "source_url": "https://gamebanana.com/mods/153174",
       "icon_url": "",
       "icon_file": "",
       "size_mb": 480,
-      "install_path": "Load/Textures/GZLE01"
+      "downloads": [
+        {
+          "label": "Full Pack",
+          "description": "Complete HD texture pack, including all major textures upscaled to 1080p.",
+          "url": "https://gamebanana.com/mods/153174",
+          "size_mb": 480,
+          "install_path": "/opt/muos/share/emulator/dolphin/Load/Textures/GZLE01/"
+        }
+      ],
+      "extra_content": []
     },
     {
-      "id": "luigis-mansion-4k",
+      "id": "rp003_gc_glme01",
       "category": "resource",
       "system": "gc",
       "name": "Luigi's Mansion 4K HD Texture Pack",
-      "description": "4K texture pack for Luigi's Mansion by Henriko Magnifico. Available in 720p, 1080p and 4K versions.",
+      "description": "A stunning texture pack by Henriko Magnifico that recreates every texture in the game in high resolution. Available in multiple versions (720p, 1080p, 4K) to suit different hardware capabilities.",
       "author": "Henriko Magnifico",
       "version": "1.0.2",
-      "download_url": "https://forums.dolphin-emu.org/Thread-luigi-s-mansion-4k-texture-pack-1-0-2-2020-08-01",
+      "source_url": "https://forums.dolphin-emu.org/Thread-luigi-s-mansion-4k-texture-pack-1-0-2-2020-08-01",
       "icon_url": "",
       "icon_file": "",
       "size_mb": 610,
-      "install_path": "Load/Textures/GLME01"
+      "downloads": [
+        {
+          "label": "Full Pack (4K)",
+          "description": "The highest quality version of the pack. Requires more RAM and GPU resources.",
+          "url": "https://forums.dolphin-emu.org/Thread-luigi-s-mansion-4k-texture-pack-1-0-2-2020-08-01",
+          "size_mb": 610,
+          "install_path": "/opt/muos/share/emulator/dolphin/Load/Textures/GLME01/"
+        }
+      ],
+      "extra_content": []
     },
     {
-      "id": "metroid-prime-full-hd",
+      "id": "rp004_gc_gm8e01",
       "category": "resource",
       "system": "gc",
       "name": "Metroid Prime Full HD Texture Pack (Collige)",
-      "description": "AI-enhanced (ESRGAN) 1.8GB texture pack for Metroid Prime. Over 9000 improved textures using multiple AI models.",
+      "description": "A massive AI-enhanced texture pack for Metroid Prime, created by Collige. Uses multiple AI models (ESRGAN, waifu2x) to upscale every texture with incredible detail, making the game look phenomenal on modern displays.",
       "author": "Collige",
       "version": "1.0",
-      "download_url": "https://github.com/Collige/MetroidPrimeHD",
+      "source_url": "https://github.com/Collige/MetroidPrimeHD",
       "icon_url": "",
       "icon_file": "",
       "size_mb": 1800,
-      "install_path": "Load/Textures/GM8E01"
+      "downloads": [
+        {
+          "label": "Full Pack",
+          "description": "Complete HD texture pack (1.8GB) with over 9000 improved textures.",
+          "url": "https://github.com/Collige/MetroidPrimeHD",
+          "size_mb": 1800,
+          "install_path": "/opt/muos/share/emulator/dolphin/Load/Textures/GM8E01/"
+        }
+      ],
+      "extra_content": []
     },
     {
-      "id": "melee-hd-3x-upscale",
+      "id": "rp005_gc_gale01",
       "category": "resource",
       "system": "gc",
       "name": "Melee HD 3x AI Upscale",
-      "description": "Super Smash Bros Melee HD 3x AI texture upscale pack for Dolphin.",
+      "description": "A community project that upscales all character portraits, stages, and items of Super Smash Bros. Melee using AI models, giving the iconic game a fresh, sharper look while preserving its essence.",
       "author": "Community",
       "version": "3.0",
-      "download_url": "https://gamebanana.com/gamefiles/4897",
+      "source_url": "https://gamebanana.com/gamefiles/4897",
       "icon_url": "",
       "icon_file": "",
       "size_mb": 250,
-      "install_path": "Load/Textures/GALE01"
+      "downloads": [
+        {
+          "label": "Full Pack",
+          "description": "3x AI upscale textures that improve the clarity of all in-game visuals.",
+          "url": "https://gamebanana.com/gamefiles/4897",
+          "size_mb": 250,
+          "install_path": "/opt/muos/share/emulator/dolphin/Load/Textures/GALE01/"
+        }
+      ],
+      "extra_content": []
     },
     {
-      "id": "paper-mario-ttyd-hd",
+      "id": "rp006_gc_g8me01",
       "category": "resource",
       "system": "gc",
       "name": "Paper Mario TTYD HD Texture Pack",
-      "description": "HD texture pack for Paper Mario: The Thousand-Year Door. Forum thread with multiple versions.",
+      "description": "HD texture pack for Paper Mario: The Thousand-Year Door. Significantly improves the visuals of the beloved RPG by sharpening textures and adding subtle details that make the paper world pop.",
       "author": "Dolphin HD Projects",
       "version": "v1.9",
-      "download_url": "https://forums.dolphin-emu.org/Thread-paper-mario-ttyd-hd-texture-pack-v1-9-april-1st-2020",
+      "source_url": "https://forums.dolphin-emu.org/Thread-paper-mario-ttyd-hd-texture-pack-v1-9-april-1st-2020",
       "icon_url": "",
       "icon_file": "",
       "size_mb": 400,
-      "install_path": "Load/Textures/G8ME01"
+      "downloads": [
+        {
+          "label": "Full Pack",
+          "description": "Complete HD texture pack for Paper Mario: The Thousand-Year Door.",
+          "url": "https://forums.dolphin-emu.org/Thread-paper-mario-ttyd-hd-texture-pack-v1-9-april-1st-2020",
+          "size_mb": 400,
+          "install_path": "/opt/muos/share/emulator/dolphin/Load/Textures/G8ME01/"
+        }
+      ],
+      "extra_content": []
     },
     {
-      "id": "wii-sports-4k",
+      "id": "rp007_wii_rspe01",
       "category": "resource",
       "system": "wii",
       "name": "Wii Sports 4K HD Texture Pack",
-      "description": "Full 4K texture pack for Wii Sports by Henriko Magnifico. Over 300 recreated 4K textures.",
+      "description": "Full 4K texture pack for Wii Sports by Henriko Magnifico. Recreates all original textures in stunning 4K, with over 300 recreated textures for all sports activities.",
       "author": "Henriko Magnifico",
       "version": "1.0.1b",
-      "download_url": "https://www.patreon.com/henrikomagnifico/posts/wii-sports-4k-hd-47497250",
+      "source_url": "https://www.patreon.com/henrikomagnifico/posts/wii-sports-4k-hd-47497250",
       "icon_url": "",
       "icon_file": "",
       "size_mb": 500,
-      "install_path": "Load/Textures/RSPE01"
-    },
-     {
-      "id": "super-mario-sunshine-hd",
-      "category": "resource",
-      "system": "gc",
-      "name": "Super Mario Sunshine HD 1080p",
-      "description": "HD texture pack for Super Mario Sunshine.",
-      "author": "qashto",
-      "version": "2.1.1",
-      "download_url": "https://github.com/qashto/Super_Mario_Sunshine_UHD_Texture_Pack/releases/download/2.1.1/GMS_1080.zip",
-      "icon_url": "",
-      "icon_file": "",
-      "size_mb": 149,
-      "install_path": "Load/Textures/GMSE01"
+      "downloads": [
+        {
+          "label": "Full Pack (4K)",
+          "description": "4K texture pack for all Wii Sports minigames.",
+          "url": "https://www.patreon.com/henrikomagnifico/posts/wii-sports-4k-hd-47497250",
+          "size_mb": 500,
+          "install_path": "/opt/muos/share/emulator/dolphin/Load/Textures/RSPE01/"
+        }
+      ],
+      "extra_content": []
     }
   ]
 }
