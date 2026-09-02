@@ -1320,7 +1320,7 @@
     "variants": []
   },
   {
-    "game_id": "GCLP69",
+    "game_id": "GCLE69",
     "game": "Cel Damage",
     "region": "NTSC",
     "rating": 2,
@@ -1337,7 +1337,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GCEP01.ini",
+      "game_settings": "GCLE69.ini",
       "overclock": null,
       "resolution": null
     },
@@ -1350,7 +1350,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GCEP01.ini",
+      "game_settings": "GCLE69.ini",
       "notes": ""
     },
     "video": {
@@ -2086,8 +2086,8 @@
     "variants": []
   },
   {
-    "game_id": "GDIP01",
-    "game": "Diet Melee Classic v1.03 MOD",
+    "game_id": "GALE01",
+    "game": "Super Smash Bros. Melee",
     "region": "NTSC",
     "rating": 4,
     "fps": "13-43",
@@ -2103,7 +2103,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GDIP01.ini",
+      "game_settings": "Texture Mod: Diet Melee Classic v1.03",
       "overclock": null,
       "resolution": null
     },
@@ -2116,7 +2116,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GDIP01.ini",
+      "game_settings": "Texture Mod: Diet Melee Classic v1.03",
       "notes": ""
     },
     "video": {
@@ -3650,7 +3650,7 @@
     "variants": []
   },
   {
-    "game_id": "GMAXP01",
+    "game_id": "GNHE5",
     "game": "MaxPlay Volume 01",
     "region": "PAL",
     "rating": 2,
@@ -3667,7 +3667,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GMAXP01.ini",
+      "game_settings": "GNHE5.ini",
       "overclock": null,
       "resolution": null
     },
@@ -3680,7 +3680,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GMAXP01.ini",
+      "game_settings": "GNHE5.ini",
       "notes": ""
     },
     "video": {
@@ -5090,7 +5090,7 @@
     "variants": []
   },
   {
-    "game_id": "GQPP78",
+    "game_id": "GGVX78",
     "game": "Spongebob - Battle for Bikini Bottom",
     "region": "PAL",
     "rating": 4,
@@ -5107,7 +5107,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GSBBP01.ini",
+      "game_settings": "GGVX78.ini",
       "overclock": null,
       "resolution": null
     },
@@ -5120,7 +5120,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GSBBP01.ini",
+      "game_settings": "GGVX78.ini",
       "notes": ""
     },
     "video": {
@@ -7210,7 +7210,7 @@
     "variants": []
   },
   {
-    "game_id": "GIZE69",
+    "game_id": "GIZE52",
     "game": "Ty the Tasmanian Tiger 3",
     "region": "NTSC",
     "rating": 1,
@@ -7227,7 +7227,7 @@
     "issue": 0,
     "configuration": {
       "core_profile": "Performance",
-      "game_settings": "GIZE69.ini",
+      "game_settings": "GIZE52.ini",
       "overclock": null,
       "resolution": null
     },
@@ -7240,7 +7240,7 @@
     "tags": [],
     "profile_recommendation": {
       "core": "Performance",
-      "game_settings": "GIZE69.ini",
+      "game_settings": "GIZE52.ini",
       "notes": ""
     },
     "video": {
