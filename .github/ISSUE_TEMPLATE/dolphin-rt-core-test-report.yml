@@ -72,6 +72,15 @@ body:
     validations:
       required: false
 
+  - type: input
+    id: cover_art
+    attributes:
+      label: "🖼️ Cover Art URL (optional)"
+      description: "If you have a direct link to a cover image (e.g., Imgur, GameTDB), paste it here. It will override the auto-generated cover based on Game ID."
+      placeholder: "https://example.com/cover.jpg"
+    validations:
+      required: false
+
   - type: markdown
     attributes:
       value: |
@@ -145,8 +154,8 @@ body:
         ## 📝 Additional Observations & Attachments
 
         **📝 Considerations & Notes** – write below  
-        **⚙️ Custom Game Settings** – if used, describe below  
-        **🖼️ Screenshots / Video** – paste links below if available  
+        **⚙️ Custom Game Settings** – if used, describe below (one per line, pipe-separated)  
+        **🖼️ Screenshots / Video** – paste links below if available (one per line, pipe-separated)  
 
         ---
 
@@ -160,20 +169,20 @@ body:
       required: false
 
   - type: textarea
-    id: game_settings_used
+    id: custom_settings
     attributes:
-      label: "⚙️ Custom Game Settings (optional)"
-      description: "If you used custom GameSettings (e.g., overclock, resolution tweaks), paste your configuration here."
-      placeholder: "Overclock = 0.55\nInternalResolution = 50\nVISkip = True"
+      label: "⚙️ Custom Settings (optional)"
+      description: "Paste one custom setting per line in this format: `type|name|filename|url|notes`. type must be one of: Game Setting, Texture Mod, Hack, Cheats, Other. Example:\n`Game Setting|Overclock tweak|GMSE01.ini|https://...|Overclock=0.55`"
+      placeholder: "Game Setting|Overclock tweak|GMSE01.ini|https://...|Overclock=0.55\nTexture Mod|HD Texture|GMS_1080.zip|https://...|Visual upgrade"
     validations:
       required: false
 
   - type: textarea
-    id: screenshots
+    id: attachments
     attributes:
-      label: "🖼️ Screenshots / Video Links (optional)"
-      description: "Paste links to Imgur, YouTube, or other hosting services."
-      placeholder: "https://i.imgur.com/abc123.jpg\nhttps://youtu.be/xyz789"
+      label: "🖼️ Attachments (Screenshots / Video) (optional)"
+      description: "Paste one attachment per line in this format: `image|Title|URL` or `video|Title|URL`."
+      placeholder: "image|Screenshot 1|https://i.imgur.com/abc123.jpg\nvideo|Gameplay|https://youtu.be/xyz789"
     validations:
       required: false
 
