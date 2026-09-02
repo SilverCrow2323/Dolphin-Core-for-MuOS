@@ -342,16 +342,28 @@
       "test_details": {
         "rtcore_version": "v10.5.3",
         "core_profile": "Default",
-        "considerations": "..."
+        "considerations": "In older versions, simply changing the CPU overclock was enough to achieve a considerable FPS gain in the game. In these newer versions, this has been fixed; however, other settings have been added that significantly slow down the system. The configuration I'm using gives me around 15 FPS in the game and much more fluidity."
       },
       "test_environment": {
         "tester": "Luis Torrão",
         "device": "RG4xxxx",
         "muos_version": ""
       },
-      "cover_art": "",
-      "custom_settings": [],
-      "attachments": []
+        "cover_art": "",
+  "custom_settings": [
+    {
+      "set_type": "Game Setting",
+      "set_name": "[note by sirpips: Config created from test by Luis Torrão (RG4xxxx, Dolphin Rt:Core v10.5)]",
+      "set_filename": "GLME01.ini",
+      "set_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/refs/heads/main/opt/muos/share/emulator/dolphin/GameSettings/GLME01.ini",
+      "set_note": "Settings:\n- Overclock = 0.60000000: slightly lowers virtual CPU clock to reduce load and improve stability on devices like RG35XX.\n- CPUCore = 4: uses the latest, fastest JIT core.\n- CPUThread = True: enables multi-threaded emulation (improves performance).\n- DSPHLE = True: uses HLE audio (faster, less accurate but sufficient).\n- SkipIPL = True: skips the console boot animation – faster startup.\n- InternalResolution = 66.666...%: internal resolution at 66% – balance between graphics and FPS.\n- NoMipmapping = True: disables mipmaps to reduce GPU load.\n- VISkip = True: skips some vertex information – helps performance in 3D games.\n- Backend = OpenSLES: changes audio backend from ALSA to OpenSLES for better muOS compatibility.\n- Additional tweaks: BBoxEnable, EFBAccessEnable off, EFBEmulateFormatChanges off, VertexRounding, FastDepthCalc, ShaderCache, VSync off, ForceTrueColor, SkipDuplicateXFBs, EFBScaledCopy, SafeTextureCacheColorSamples=128."
+    }
+  ],
+      "attachments": [
+    {
+      "media_type": "video",
+      "media_title": "Luigi's Mansion on an Anbernic device with the Allwinner H700 - MUOS",
+      "media_url": "https://www.youtube.com/watch?v=FG76ZUNnYBY"
     },
     {
       "game_info": {
