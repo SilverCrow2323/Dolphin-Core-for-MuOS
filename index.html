@@ -3,918 +3,1190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dolphin Rt:Core Compatibility Database</title>
+  <title>Dolphin Rt:Core for muOS</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Audiowide&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Outfit', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'], electric: ['Audiowide', 'Orbitron', 'sans-serif'], mechanical: ['Share Tech Mono', 'Orbitron', 'monospace'] },
+          colors: {
+            wii: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',300:'#7dd3fc',400:'#38bdf8',500:'#00a3e0',600:'#0284c7',700:'#0369a1',800:'#075985',900:'#0c4a6e' },
+            gc: { 50:'#f5f3ff',100:'#ede9fe',200:'#ddd6fe',300:'#c4b5fd',400:'#a78bfa',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95',950:'#1e112a' }
+          }
+        }
+      }
+    }
+  </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    body.theme-gc { background: linear-gradient(145deg, #090511 0%, #160b24 50%, #0d0716 100%); color: #f1f5f9; }
+    body.theme-gc ::-webkit-scrollbar-track { background: #0d0716; }
+    body.theme-gc ::-webkit-scrollbar-thumb { background: #2e1847; border-radius: 4px; }
+    body.theme-gc ::-webkit-scrollbar-thumb:hover { background: #6d28d9; }
+    body.theme-wii { background: linear-gradient(145deg, #eef2f6 0%, #dce4ec 100%); color: #0f172a; }
+    body.theme-wii ::-webkit-scrollbar-track { background: #eef2f6; }
+    body.theme-wii ::-webkit-scrollbar-thumb { background: #b0c4d8; border-radius: 4px; }
+    body.theme-wii ::-webkit-scrollbar-thumb:hover { background: #00a3e0; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideIn { from { opacity: 0; transform: scale(0.95) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    @keyframes starPop { 0% { transform: scale(1); } 50% { transform: scale(1.3); } 100% { transform: scale(1); } }
+    .card-anim { animation: fadeIn 0.25s ease-out forwards; opacity: 0; }
+    .modal-anim { animation: slideIn 0.2s ease-out forwards; }
+    .gc-glass { background: rgba(22, 11, 36, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(124, 58, 237, 0.25); box-shadow: 0 4px 20px -2px rgba(124, 58, 237, 0.15), 0 2px 6px -1px rgba(0, 0, 0, 0.4); }
+    .wii-glass { background: rgba(240, 248, 255, 0.92); backdrop-filter: blur(12px); border: 1px solid rgba(180, 210, 235, 0.7); box-shadow: 0 4px 20px -2px rgba(0, 163, 224, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04); }
+    .cover-placeholder { background: linear-gradient(145deg, #1a1a2e, #16213e); display: flex; align-items: center; justify-content: center; font-size: 28px; color: rgba(255,255,255,0.15); }
+    .theme-wii .cover-placeholder { background: linear-gradient(145deg, #dce4ec, #c8d4df); color: rgba(0,0,0,0.08); }
+    .cover-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+    .game-card:hover .cover-img { transform: scale(1.03); }
+    .glow-border { position: relative; }
+    .glow-border::before { content: ''; position: absolute; inset: -2px; border-radius: 16px; padding: 2px; background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(139,92,246,0.1)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; }
+    .game-card:hover .glow-border::before { opacity: 1; }
+    .theme-wii .glow-border::before { background: linear-gradient(135deg, rgba(0,163,224,0.25), rgba(56,189,248,0.08)); }
+    .rating-stars { display: flex; gap: 1px; }
+    .rating-stars svg { width: 14px; height: 14px; }
+    .search-dropdown { position: absolute; top: 100%; left: 0; right: 0; max-height: 300px; overflow-y: auto; border-radius: 12px; z-index: 50; display: none; }
+    .search-dropdown.active { display: block; }
+    .search-dropdown-item { padding: 8px 12px; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: background 0.15s ease; }
+    .search-dropdown-item:hover { background: rgba(124,58,237,0.15); }
+    .theme-wii .search-dropdown-item:hover { background: rgba(0,163,224,0.08); }
+    .search-dropdown-item img { width: 24px; height: 24px; object-fit: cover; border-radius: 4px; }
+    .badge-core { font-size: 9px; padding: 2px 8px; border-radius: 20px; font-weight: 700; letter-spacing: 0.3px; }
+    .badge-core.gc { background: rgba(139,92,246,0.2); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3); }
+    .badge-core.wii { background: rgba(0,163,224,0.10); color: #0369a1; border: 1px solid rgba(0,163,224,0.15); }
+    .fps-badge { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; }
+    .fps-badge.gc { background: rgba(0,200,255,0.1); color: #7dd3fc; border: 1px solid rgba(0,200,255,0.15); }
+    .fps-badge.wii { background: rgba(0,163,224,0.06); color: #0284c7; border: 1px solid rgba(0,163,224,0.08); }
+    .boot-badge.gc-yes { background: rgba(60,255,120,0.12); color: #4ade80; border: 1px solid rgba(60,255,120,0.2); }
+    .boot-badge.gc-no { background: rgba(255,60,60,0.12); color: #f87171; border: 1px solid rgba(255,60,60,0.2); }
+    .boot-badge.wii-yes { background: rgba(60,255,120,0.08); color: #16a34a; border: 1px solid rgba(60,255,120,0.12); }
+    .boot-badge.wii-no { background: rgba(255,60,60,0.08); color: #dc2626; border: 1px solid rgba(255,60,60,0.12); }
+    .best-badge { font-size: 10px; padding: 2px 10px; border-radius: 20px; font-weight: 700; background: rgba(255,215,0,0.15); color: #fbbf24; border: 1px solid rgba(255,215,0,0.3); }
+    .theme-wii .best-badge { background: rgba(255,215,0,0.10); color: #a16207; border-color: rgba(255,215,0,0.2); }
+    .btn-primary { @apply px-4 py-2 rounded-xl font-bold text-sm transition-all duration-200 shadow-lg; }
+    .btn-primary.gc { @apply bg-gc-600 hover:bg-gc-500 text-white shadow-gc-900/50; }
+    .btn-primary.wii { @apply bg-wii-500 hover:bg-wii-400 text-white shadow-wii-500/30; }
 
-    body.gc {
-      background: #0d0716;
-      color: #f1f5f9;
-      font-family: 'Inter', sans-serif;
-    }
-    body.wii {
-      background: #f0f4f8;
-      color: #0f172a;
-      font-family: 'Inter', sans-serif;
-    }
+    /* RT ELECTRIC */
+    .rt-electric { font-family: 'Audiowide', 'Orbitron', sans-serif; display: inline-block; position: relative; color: #a78bfa; text-shadow: 0 0 8px rgba(139,92,246,0.6), 0 0 20px rgba(124,58,237,0.3), 0 0 40px rgba(124,58,237,0.1); letter-spacing: 0.04em; }
+    .rt-electric .spark { position: absolute; pointer-events: none; border-radius: 50%; background: #a78bfa; box-shadow: 0 0 6px #a78bfa, 0 0 12px #7c3aed; opacity: 0; animation: sparkFade 1.2s ease-out infinite; }
+    @keyframes sparkFade { 0% { opacity: 0; transform: scale(0.2) translate(0,0); } 20% { opacity: 1; transform: scale(1.2) translate(-4px,-6px); } 60% { opacity: 0.8; transform: scale(0.8) translate(6px,4px); } 100% { opacity: 0; transform: scale(0.2) translate(10px,10px); } }
+    .rt-electric .spark:nth-child(1) { animation-delay: 0.0s; }
+    .rt-electric .spark:nth-child(2) { animation-delay: 0.6s; }
+    .rt-electric .spark:nth-child(3) { animation-delay: 1.2s; }
+    .rt-electric .spark:nth-child(4) { animation-delay: 0.3s; }
+    .rt-electric .spark:nth-child(5) { animation-delay: 0.9s; }
 
-    /* Header */
-    .header {
-      padding: 1rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    body.wii .header {
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-    }
+    /* STAR ON muOS */
+    .muos-star { display: inline-block; position: relative; }
+    .muos-star .star-sparkle { position: absolute; top: -6px; left: 50%; transform: translateX(-50%) rotate(0deg); width: 12px; height: 12px; opacity: 0; pointer-events: none; animation: starSpin 6s ease-in-out infinite; }
+    .muos-star .star-sparkle svg { width: 100%; height: 100%; fill: rgba(255,215,0,0.5); filter: drop-shadow(0 0 4px rgba(255,215,0,0.3)); }
+    @keyframes starSpin { 0% { opacity: 0; transform: translateX(-50%) rotate(0deg) scale(0.4); } 8% { opacity: 0.7; transform: translateX(-50%) rotate(60deg) scale(1); } 16% { opacity: 0.2; transform: translateX(-50%) rotate(120deg) scale(0.6); } 24% { opacity: 0.8; transform: translateX(-50%) rotate(180deg) scale(1.1); } 32% { opacity: 0; transform: translateX(-50%) rotate(240deg) scale(0.3); } 100% { opacity: 0; transform: translateX(-50%) rotate(360deg) scale(0.4); } }
 
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .header-logo {
-      width: 32px;
-      height: 32px;
-    }
-    .header-title {
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-    body.gc .header-title span {
-      color: #a78bfa;
-    }
-    body.wii .header-title span {
-      color: #0284c7;
-    }
+    /* BADGE Rt:Core v10.5.3 */
+    .rtcore-badge { display: inline-flex; align-items: center; gap: 2px; font-weight: 700; letter-spacing: 0.02em; }
+    .rtcore-badge .rt-part { font-family: 'Audiowide', 'Orbitron', sans-serif; font-size: 0.85rem; color: #a78bfa; text-shadow: 0 0 6px rgba(139,92,246,0.5), 0 0 16px rgba(124,58,237,0.2); position: relative; display: inline-block; }
+    .rtcore-badge .rt-part .mini-spark { position: absolute; pointer-events: none; border-radius: 50%; background: #a78bfa; box-shadow: 0 0 4px #a78bfa; opacity: 0; animation: miniSpark 1.8s ease-out infinite; }
+    @keyframes miniSpark { 0% { opacity: 0; transform: scale(0.2) translate(0,0); } 25% { opacity: 0.9; transform: scale(1) translate(-2px,-4px); } 70% { opacity: 0.4; transform: scale(0.6) translate(4px,2px); } 100% { opacity: 0; transform: scale(0.1) translate(6px,6px); } }
+    .rtcore-badge .core-part { font-family: 'Share Tech Mono', 'Orbitron', monospace; font-size: 0.75rem; color: #94a3b8; letter-spacing: 0.06em; font-weight: 700; }
+    .rtcore-badge .version-part { font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 800; color: #38bdf8; background: rgba(56,189,248,0.12); padding: 0 6px; border-radius: 6px; border: 1px solid rgba(56,189,248,0.15); margin-left: 2px; letter-spacing: 0.02em; }
+    .theme-wii .rtcore-badge .version-part { color: #0284c7; background: rgba(0,163,224,0.08); border-color: rgba(0,163,224,0.12); }
+    .theme-wii .rtcore-badge .core-part { color: #64748b; }
 
-    .console-switch {
-      display: flex;
-      background: rgba(0,0,0,0.3);
-      border-radius: 9999px;
-      padding: 0.25rem;
-      gap: 0.25rem;
-    }
-    body.wii .console-switch {
-      background: rgba(0,0,0,0.05);
-    }
-    .console-btn {
-      padding: 0.4rem 1rem;
-      border-radius: 9999px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      cursor: pointer;
-      border: none;
+    /* FLIP HORIZONTAL ANIMATION */
+    .flip-horizontal { animation: flipHorizontal 0.5s ease-in-out; }
+    @keyframes flipHorizontal { 0% { transform: perspective(800px) rotateY(0deg); opacity: 0.5; } 50% { transform: perspective(800px) rotateY(12deg); opacity: 0.9; } 100% { transform: perspective(800px) rotateY(0deg); opacity: 1; } }
+
+    /* MODAL */
+    .modal-test-card {
+      border-radius: 1.25rem;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+      border: 1px solid rgba(255,255,255,0.06);
       transition: all 0.2s;
-      background: transparent;
     }
-    body.gc .console-btn.active {
-      background: #7c3aed;
-      color: white;
+    .theme-wii .modal-test-card { border-color: rgba(0,0,0,0.06); }
+    .modal-test-card:last-child { margin-bottom: 0; }
+
+    .rating-circle-container {
+      position: relative;
+      width: 110px;
+      height: 110px;
+      flex-shrink: 0;
     }
-    body.wii .console-btn.active {
-      background: #0284c7;
-      color: white;
+    .rating-circle-container svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
     }
-    body.gc .console-btn:not(.active) {
-      color: #94a3b8;
+    .rating-circle-container .center-number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1;
     }
-    body.wii .console-btn:not(.active) {
-      color: #64748b;
-    }
-    body.gc .console-btn:hover:not(.active) {
-      color: white;
-    }
-    body.wii .console-btn:hover:not(.active) {
-      color: #0f172a;
+    .star-3d {
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+      font-weight: 700;
+      paint-order: stroke;
+      stroke-width: 0.5px;
+      stroke: rgba(255,255,255,0.15);
     }
 
-    .header-right {
+    .status-pill {
+      padding: 0.25rem 0.8rem;
+      border-radius: 2rem;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.02em;
+      display: inline-block;
+      border: 1px solid transparent;
+      text-align: center;
+      min-width: 80px;
+    }
+    .status-pill.boots-yes { background: rgba(60,255,120,0.12); color: #4ade80; border-color: rgba(60,255,120,0.2); }
+    .status-pill.boots-no { background: rgba(255,60,60,0.12); color: #f87171; border-color: rgba(255,60,60,0.2); }
+    .status-pill.playable-yes { background: rgba(60,255,120,0.12); color: #4ade80; border-color: rgba(60,255,120,0.2); }
+    .status-pill.playable-no { background: rgba(255,60,60,0.12); color: #f87171; border-color: rgba(255,60,60,0.2); }
+    .theme-wii .status-pill.boots-yes { background: rgba(60,255,120,0.08); color: #16a34a; border-color: rgba(60,255,120,0.12); }
+    .theme-wii .status-pill.boots-no { background: rgba(255,60,60,0.08); color: #dc2626; border-color: rgba(255,60,60,0.12); }
+    .theme-wii .status-pill.playable-yes { background: rgba(60,255,120,0.08); color: #16a34a; border-color: rgba(60,255,120,0.12); }
+    .theme-wii .status-pill.playable-no { background: rgba(255,60,60,0.08); color: #dc2626; border-color: rgba(255,60,60,0.12); }
+
+    .fps-range-box {
+      background: rgba(0,0,0,0.15);
+      border-radius: 0.75rem;
+      padding: 0.3rem 0.8rem;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 0.8rem;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .theme-wii .fps-range-box { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.06); }
+
+    .core-profile-box {
+      background: rgba(0,0,0,0.12);
+      border-radius: 0.75rem;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.7rem;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .theme-wii .core-profile-box { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.06); }
+
+    .considerations-box {
+      background: rgba(0,0,0,0.15);
+      border-radius: 0.75rem;
+      padding: 0.6rem 1rem;
+      font-size: 0.8rem;
+      font-style: italic;
+      border-left: 3px solid rgba(124,58,237,0.4);
+    }
+    .theme-wii .considerations-box { background: rgba(0,0,0,0.03); border-left-color: rgba(0,163,224,0.3); }
+
+    .settings-type-badge {
+      font-size: 0.6rem;
+      padding: 0.1rem 0.6rem;
+      border-radius: 20px;
+      font-weight: 700;
+      background: rgba(124,58,237,0.15);
+      color: #a78bfa;
+      border: 1px solid rgba(124,58,237,0.2);
+    }
+    .theme-wii .settings-type-badge { background: rgba(0,163,224,0.08); color: #0369a1; border-color: rgba(0,163,224,0.12); }
+
+    .attachment-item {
+      background: rgba(0,0,0,0.1);
+      border-radius: 0.75rem;
+      padding: 0.4rem 0.8rem;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      font-size: 0.8rem;
-    }
-    .link-btn {
-      padding: 0.4rem 0.8rem;
-      border-radius: 0.5rem;
-      text-decoration: none;
-      font-weight: 600;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      border: 1px solid rgba(255,255,255,0.05);
       transition: background 0.2s;
     }
-    body.gc .link-btn {
-      color: #94a3b8;
-    }
-    body.wii .link-btn {
-      color: #64748b;
-    }
-    body.gc .link-btn:hover {
-      color: white;
-    }
-    body.wii .link-btn:hover {
-      color: #0f172a;
-    }
+    .attachment-item:hover { background: rgba(124,58,237,0.1); }
+    .theme-wii .attachment-item { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.06); }
+    .theme-wii .attachment-item:hover { background: rgba(0,163,224,0.05); }
+    .attachment-item a { color: #a78bfa; text-decoration: none; }
+    .theme-wii .attachment-item a { color: #0284c7; }
+    .attachment-item a:hover { text-decoration: underline; }
 
-    /* Filters */
-    .filters {
-      padding: 1rem 1.5rem;
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      align-items: center;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    .filter-input, .filter-select {
-      padding: 0.5rem 0.75rem;
-      border-radius: 0.5rem;
-      font-size: 0.85rem;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(0,0,0,0.2);
-      color: inherit;
-      outline: none;
-    }
-    body.wii .filter-input, body.wii .filter-select {
-      background: white;
-      border-color: rgba(0,0,0,0.1);
-    }
-    .filter-input:focus {
-      border-color: #7c3aed;
-    }
-    body.wii .filter-input:focus {
-      border-color: #0284c7;
-    }
-    .search-box {
-      position: relative;
-      flex: 1;
-      max-width: 300px;
-    }
-    .search-box input {
-      width: 100%;
-      padding-left: 2.5rem;
-    }
-    .search-box svg {
-      position: absolute;
-      left: 0.75rem;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 16px;
-      height: 16px;
-      color: #94a3b8;
-    }
-    .view-toggle {
-      display: flex;
-      background: rgba(0,0,0,0.3);
-      border-radius: 0.5rem;
-      padding: 0.25rem;
-    }
-    body.wii .view-toggle {
-      background: rgba(0,0,0,0.05);
-    }
-    .view-toggle button {
-      padding: 0.3rem 0.6rem;
-      border-radius: 0.4rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-      background: transparent;
-      color: #94a3b8;
-    }
-    body.wii .view-toggle button {
-      color: #64748b;
-    }
-    .view-toggle button.active {
-      background: #7c3aed;
-      color: white;
-    }
-    body.wii .view-toggle button.active {
-      background: #0284c7;
-      color: white;
-    }
-
-    /* Stats */
-    .stats {
-      display: flex;
-      gap: 1.5rem;
-      padding: 0 1.5rem 0.5rem;
-      font-size: 0.8rem;
-      color: #94a3b8;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    body.wii .stats {
-      color: #64748b;
-    }
-    .stats span strong {
-      color: #a78bfa;
-    }
-    body.wii .stats span strong {
-      color: #0284c7;
-    }
-
-    /* Rating filter */
-    .rating-filter {
-      display: flex;
-      gap: 0.5rem;
-      padding: 0 1.5rem 0.75rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    .rating-pill {
-      padding: 0.3rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      cursor: pointer;
+    /* BEST / AVERAGE PANELS */
+    .result-panel {
+      border-radius: 1rem;
+      padding: 0.5rem 0.8rem;
+      text-align: center;
       border: 1px solid transparent;
       transition: all 0.2s;
     }
-    .rating-pill[data-rating="5"] { background: rgba(16,185,129,0.15); color: #10b981; border-color: rgba(16,185,129,0.3); }
-    .rating-pill[data-rating="4"] { background: rgba(20,184,166,0.15); color: #14b8a6; border-color: rgba(20,184,166,0.3); }
-    .rating-pill[data-rating="3"] { background: rgba(245,158,11,0.15); color: #f59e0b; border-color: rgba(245,158,11,0.3); }
-    .rating-pill[data-rating="2"] { background: rgba(249,115,22,0.15); color: #f97316; border-color: rgba(249,115,22,0.3); }
-    .rating-pill[data-rating="1"] { background: rgba(239,68,68,0.15); color: #ef4444; border-color: rgba(239,68,68,0.3); }
-    .rating-pill.active {
-      transform: scale(1.05);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    .result-panel.best {
+      background: rgba(251,191,36,0.12);
+      border-color: rgba(251,191,36,0.35);
+    }
+    .result-panel.average {
+      background: rgba(148,163,184,0.08);
+      border-color: rgba(148,163,184,0.15);
+    }
+    .theme-wii .result-panel.best { background: rgba(251,191,36,0.15); border-color: rgba(251,191,36,0.40); }
+    .theme-wii .result-panel.average { background: rgba(200, 225, 245, 0.7); border-color: rgba(150, 190, 215, 0.5); }
+    .theme-wii .result-panel.average .text-slate-200 { color: #0f172a !important; }
+    .theme-wii .result-panel.average .text-slate-300 { color: #1e293b !important; }
+    .theme-wii .result-panel.average .text-slate-400 { color: #334155 !important; }
+
+    /* TEMA WII - TITOLO NERO */
+    .theme-wii .title-dark { color: #0f172a !important; }
+    .theme-wii .title-dark .rt-electric { color: #0284c7 !important; text-shadow: 0 0 8px rgba(0,163,224,0.4), 0 0 20px rgba(0,163,224,0.15) !important; }
+    .theme-wii .title-dark .text-gc-400 { color: #0f172a !important; }
+
+    /* TEMA WII - Pannelli filtro e rating azzurri */
+    .theme-wii .filter-panel-wii { background: rgba(240, 248, 255, 0.92) !important; border-color: rgba(180, 210, 235, 0.7) !important; }
+    .theme-wii .rating-panel-wii { background: rgba(240, 248, 255, 0.85) !important; border-color: rgba(180, 210, 235, 0.5) !important; }
+    .theme-wii .rating-panel-wii:hover { background: rgba(240, 248, 255, 0.95) !important; }
+
+    /* TEMA WII - Tests: nero */
+    .theme-wii .total-entries-dark { color: #0f172a !important; }
+    .theme-wii .total-entries-accent-dark { color: #0284c7 !important; }
+
+    /* TEMA WII - Badge regione e game ID azzurri */
+    .theme-wii .badge-region-wii { background: rgba(200, 225, 245, 0.7) !important; color: #0f172a !important; border-color: rgba(150, 190, 215, 0.4) !important; }
+    .theme-wii .badge-gameid-wii { background: rgba(200, 225, 245, 0.5) !important; color: #0f172a !important; border-color: rgba(150, 190, 215, 0.3) !important; }
+
+    /* TEMA WII - Colori modali */
+    .theme-wii .modal-test-card { background: rgba(255,255,255,0.85) !important; border-color: rgba(200, 215, 230, 0.5) !important; }
+    .theme-wii .modal-test-card .border-white\/10 { border-color: rgba(0,0,0,0.08) !important; }
+    .theme-wii .modal-test-card .text-slate-300 { color: #1e293b !important; }
+    .theme-wii .modal-test-card .text-slate-400 { color: #475569 !important; }
+    .theme-wii .modal-test-card .text-gc-300 { color: #0369a1 !important; }
+    .theme-wii .modal-test-card .text-gc-400 { color: #0284c7 !important; }
+    .theme-wii .modal-test-card .bg-black\/20 { background: rgba(0,0,0,0.04) !important; }
+
+    /* SWITCH TAB - selettore */
+    .switch-tab-active-gc {
+      background: #7c3aed !important;
+      color: white !important;
+      box-shadow: 0 0 20px rgba(124,58,237,0.4) !important;
+    }
+    .switch-tab-active-wii {
+      background: #0284c7 !important;
+      color: white !important;
+      box-shadow: 0 0 20px rgba(0,163,224,0.4) !important;
+    }
+    .switch-tab-inactive-gc {
+      color: #94a3b8 !important;
+      background: transparent !important;
+    }
+    .switch-tab-inactive-gc:hover {
+      color: white !important;
+    }
+    .switch-tab-inactive-wii {
+      color: #64748b !important;
+      background: transparent !important;
+    }
+    .switch-tab-inactive-wii:hover {
+      color: #0f172a !important;
     }
 
-    /* Grid */
-    .grid-container {
+    /* GRID / LIST VIEW */
+    #gamesGrid.grid-view {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 1rem;
-      padding: 0 1.5rem 2rem;
-      max-width: 1400px;
-      margin: 0 auto;
     }
-    .grid-container.list {
+    #gamesGrid.list-view {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 0.75rem;
-      max-width: 700px;
-      margin: 0 auto;
     }
-
-    /* Game Card (Grid) */
-    .game-card {
-      background: rgba(0,0,0,0.3);
-      border-radius: 0.75rem;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-    body.wii .game-card {
-      background: white;
-      border-color: rgba(0,0,0,0.05);
-    }
-    .game-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    }
-    .game-card-cover {
-      aspect-ratio: 3/4;
-      width: 100%;
-      background: linear-gradient(145deg, #1a1a2e, #16213e);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      color: rgba(255,255,255,0.2);
-      position: relative;
-    }
-    body.wii .game-card-cover {
-      background: linear-gradient(145deg, #dce4ec, #c8d4df);
-      color: rgba(0,0,0,0.15);
-    }
-    .game-card-cover img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .game-card-info {
-      padding: 0.75rem;
-      text-align: center; /* centra tutto il contenuto della card */
-    }
-    .game-card-title {
-      font-size: 0.85rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 0.5rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .stars-container {
-      display: flex;
-      justify-content: center;
-      gap: 2px;
-      margin-bottom: 0.5rem;
-    }
-    .badge-row {
-      display: flex;
-      justify-content: center;
-      gap: 0.4rem;
-      flex-wrap: wrap;
-      margin-bottom: 0.3rem;
-    }
-    .badge {
-      padding: 0.2rem 0.5rem;
-      border-radius: 9999px;
-      font-weight: 700;
-      font-size: 0.65rem;
-    }
-    .badge.boot-yes {
-      background: rgba(16,185,129,0.15);
-      color: #10b981;
-    }
-    .badge.boot-no {
-      background: rgba(239,68,68,0.15);
-      color: #ef4444;
-    }
-    .badge.play-yes {
-      background: rgba(16,185,129,0.15);
-      color: #10b981;
-    }
-    .badge.play-no {
-      background: rgba(239,68,68,0.15);
-      color: #ef4444;
-    }
-    .badge.fps {
-      background: rgba(56,189,248,0.15);
-      color: #38bdf8;
-    }
-    .badge.region {
-      background: transparent;
-      color: inherit;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.2rem;
-    }
-
-    /* List Card */
     .list-card {
+      width: 100%;
+      max-width: 700px;
       display: flex;
       align-items: center;
       gap: 1rem;
-      background: rgba(0,0,0,0.3);
-      border-radius: 0.75rem;
+      background: rgba(0,0,0,0.1);
+      border-radius: 1rem;
       padding: 0.75rem;
-      cursor: pointer;
-      transition: background 0.2s;
       border: 1px solid rgba(255,255,255,0.05);
-    }
-    body.wii .list-card {
-      background: white;
-      border-color: rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
     .list-card:hover {
-      background: rgba(0,0,0,0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
-    body.wii .list-card:hover {
-      background: #f8fafc;
-    }
+    .theme-wii .list-card { background: rgba(255,255,255,0.85); border-color: rgba(0,0,0,0.06); }
     .list-card-cover {
-      width: 56px;
-      height: 72px;
+      width: 72px;
+      height: 96px;
       border-radius: 0.5rem;
       overflow: hidden;
       flex-shrink: 0;
       background: rgba(0,0,0,0.2);
     }
-    .list-card-cover img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .list-card-info {
-      flex: 1;
-      min-width: 0;
-    }
-    .list-card-title {
-      font-weight: 700;
-      font-size: 0.9rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      margin-bottom: 0.3rem;
-    }
-    .list-card-meta {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 0.3rem;
-      font-size: 0.7rem;
-      color: #94a3b8;
-    }
-    body.wii .list-card-meta {
-      color: #64748b;
-    }
-    .list-card-stars {
-      display: flex;
-      gap: 2px;
-    }
-
-    /* Modal */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.8);
-      backdrop-filter: blur(4px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 100;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s;
-    }
-    .modal-overlay.open {
-      opacity: 1;
-      visibility: visible;
-    }
-    .modal-card {
-      background: #1a1029;
-      border-radius: 1rem;
-      max-width: 800px;
-      width: 95%;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 1.5rem;
-      position: relative;
-    }
-    body.wii .modal-card {
-      background: white;
-    }
-    .modal-close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(255,255,255,0.1);
-      color: inherit;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    body.wii .modal-close {
-      background: rgba(0,0,0,0.05);
-    }
-
-    /* Footer */
-    .footer {
-      padding: 1rem 1.5rem;
-      text-align: center;
-      font-size: 0.75rem;
-      color: #94a3b8;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-    body.wii .footer {
-      border-top: 1px solid rgba(0,0,0,0.05);
-      color: #64748b;
-    }
-    .footer a {
-      color: #a78bfa;
-    }
-    body.wii .footer a {
-      color: #0284c7;
-    }
+    .list-card-cover img { width: 100%; height: 100%; object-fit: cover; }
+    .list-card-info { flex: 1; min-width: 0; }
+    .list-card-title { font-weight: 700; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .list-card-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.25rem; font-size: 0.7rem; color: var(--text-muted); }
+    .list-card-stars { display: flex; gap: 2px; }
   </style>
 </head>
-<body class="gc">
-  <!-- Header -->
-  <header class="header">
-    <div class="header-left">
-      <img src="https://i.ibb.co/s9Px9PyL/dolphinrt.png" alt="Logo" class="header-logo">
-      <div class="header-title">Dolphin <span>Rt:Core</span> <span style="font-weight:400">for muOS</span></div>
-    </div>
-    <div class="console-switch">
-      <button class="console-btn active" onclick="switchConsole('gc')">GameCube</button>
-      <button class="console-btn" onclick="switchConsole('wii')">Wii</button>
-    </div>
-    <div class="header-right">
-      <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=dolphin-rt-core-test-report.yml" target="_blank" class="link-btn">📤 Send Report</a>
-      <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS" target="_blank" class="link-btn">GitHub</a>
+<body id="appBody" class="theme-gc font-sans antialiased transition-colors duration-500 min-h-screen">
+
+  <!-- HEADER -->
+  <header id="appHeader" class="sticky top-0 z-40 transition-colors duration-500 border-b border-purple-900/40 bg-gc-950/90 backdrop-blur-xl shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-4 text-xs font-medium">
+          <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/tree/main" target="_blank" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.15 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.62.24 2.85.12 3.15.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            Repository
+          </a>
+          <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases" target="_blank" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4 2"/></svg>
+            Latest Release
+          </a>
+        </div>
+        <!-- SWITCH TAB CENTRATO -->
+        <div class="inline-flex p-1 rounded-2xl bg-black/30 border border-white/10 backdrop-blur-md">
+          <button id="btnConsoleGC" onclick="switchConsole('gc')" class="flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 bg-gc-600 text-white shadow-lg shadow-gc-900/50">
+            <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="GC" class="w-4 h-4 fill-current"><span>GameCube</span>
+          </button>
+          <button id="btnConsoleWii" onclick="switchConsole('wii')" class="flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 text-slate-400 hover:text-white">
+            <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg" alt="Wii" class="w-4 h-4 fill-current"><span>Nintendo Wii</span>
+          </button>
+        </div>
+        <div class="flex items-center gap-4 text-xs font-medium">
+          <a id="newIssueBtn" href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=dolphin-rt-core-test-report.yml" target="_blank" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1"><span>📤</span> Send Report</a>
+          <a href="#" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1"><span>ℹ️</span> About & Rt:Doc</a>
+        </div>
+      </div>
+      <!-- TITOLO PRINCIPALE -->
+      <div class="flex items-center justify-between mt-3 gap-4">
+        <div class="flex items-center gap-3 flex-1 min-w-0">
+          <img id="consoleLogo" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="Logo" class="w-8 h-8 object-contain flex-shrink-0">
+          <div class="min-w-0">
+            <h1 id="mainTitle" class="text-2xl sm:text-3xl font-black tracking-tight text-white whitespace-nowrap">
+              Dolphin <span class="rt-electric" id="titleRt">Rt<span class="spark" style="width:4px;height:4px;top:-2px;left:8px;"></span><span class="spark" style="width:3px;height:3px;top:4px;left:18px;"></span><span class="spark" style="width:5px;height:5px;top:-6px;left:24px;"></span><span class="spark" style="width:3px;height:3px;top:2px;left:2px;"></span><span class="spark" style="width:4px;height:4px;top:-4px;left:14px;"></span></span>:Core <span class="muos-star">fo<span style="position:relative;">r<span class="star-sparkle"><svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg></span></span></span> <span id="muosText" class="text-gc-400" style="font-weight:400;">muOS</span>
+            </h1>
+            <hr class="w-full max-w-[400px] my-1 border-gc-400/60">
+            <p id="dashboardSubtitle" class="text-base sm:text-lg mt-0.5 transition-colors">
+              <span id="consoleName" class="font-bold text-gc-400">GameCube</span> <span style="font-weight:400;">Compatibility Database</span>
+            </p>
+            <figcaption id="dashboardDesc" class="text-xs italic text-slate-400 transition-colors">Community-driven testing database for Dolphin emulation on muOS &amp; H700 chipset</figcaption>
+          </div>
+        </div>
+        <div id="spdwPanel" class="gc-glass rounded-xl p-2.5 px-4 flex-shrink-0 transition-all duration-500 space-y-1.5 min-w-[180px]">
+          <div class="flex items-center justify-between gap-2 pb-1 border-b border-white/10">
+            <span id="spdwBrand" class="flex items-center gap-1 font-black text-gc-400 tracking-wider text-[10px] uppercase">
+              <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" alt="SPDW" class="w-3 h-3"> SPDW
+            </span>
+            <span id="coreBadge" class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-gc-900 text-gc-300 border border-gc-700/60 font-bold">
+              <span class="rtcore-badge"><span class="rt-part text-[10px]">Rt<span class="mini-spark" style="width:2px;height:2px;top:-1px;left:5px;"></span><span class="mini-spark" style="width:2px;height:2px;top:2px;left:9px;"></span></span><span class="core-part text-[9px]">Core</span><span class="version-part text-[11px]">v10.5.3</span></span>
+            </span>
+          </div>
+          <div class="flex items-center justify-between gap-3 text-[10px]">
+            <div id="statTestedBox" class="text-[9px] font-black bg-gc-900/80 border border-gc-600/50 rounded-lg px-2 py-0.5 flex items-center gap-2 shadow-inner">
+              <span class="tracking-wider uppercase">Games:</span>
+              <span id="statTested" class="bg-gc-500 text-white px-1.5 py-0.5 rounded-lg font-mono font-black text-sm shadow-sm">0</span>
+            </div>
+            <div id="totalEntriesContainer" class="text-[9px] font-mono flex items-center gap-1 text-slate-400">
+              <span><strong id="totalEntriesAccent" class="text-gc-400">##</strong> Tests:</span>
+              <span id="statTotal" class="font-bold text-slate-200">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Filters -->
-  <div class="filters">
-    <div class="search-box">
-      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-      <input type="text" class="filter-input" id="searchInput" placeholder="Search games...">
+  <!-- MAIN CONTENT -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-4">
+    <div id="filterPanel" class="gc-glass rounded-2xl p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500">
+      <div class="relative w-full md:w-72 shrink-0">
+        <input type="text" id="searchInput" placeholder="Search game title..." class="w-full bg-slate-950/60 text-slate-100 placeholder-slate-500 border border-white/10 rounded-xl pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-gc-500 transition-all">
+        <svg class="w-4 h-4 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <div id="searchDropdown" class="search-dropdown gc-glass border border-white/10 rounded-xl overflow-hidden shadow-2xl"></div>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-2">
+        <select id="regionFilter" class="bg-slate-950/60 border border-white/10 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-gc-500 transition-all">
+          <option value="all">🌍 All Regions</option>
+          <option value="NTSC">🇺🇸 NTSC / USA</option>
+          <option value="PAL">🇪🇺 PAL</option>
+          <option value="JPN">🇯🇵 JPN</option>
+        </select>
+        <select id="bootFilter" class="bg-slate-950/60 border border-white/10 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-gc-500 transition-all">
+          <option value="all">💿 Boot: All</option>
+          <option value="YES">✅ Boots</option>
+          <option value="NO">❌ Won't Boot</option>
+        </select>
+        <select id="sortKey" class="bg-slate-950/60 border border-white/10 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-gc-500 transition-all">
+          <option value="title">📝 Sort: Title</option>
+          <option value="rating">⭐ Sort: Best Rating</option>
+          <option value="fps">🚀 Sort: Best FPS</option>
+          <option value="entries">📊 Sort: Most Tested</option>
+        </select>
+        <button id="sortOrderBtn" class="bg-slate-950/60 border border-white/10 hover:border-white/30 px-3 py-2 rounded-xl text-sm flex items-center gap-1.5 transition-colors">
+          <span id="sortOrderLabel">Asc</span>
+          <svg id="sortOrderIcon" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <button id="viewModeBtn" class="bg-slate-950/60 border border-white/10 hover:border-white/30 px-3 py-2 rounded-xl text-sm flex items-center gap-1.5 transition-colors" title="Toggle Grid/List View">
+          <svg id="viewModeIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <span id="viewModeLabel">List</span>
+        </button>
+        <button id="resetFiltersBtn" class="bg-rose-950/40 text-rose-400 border border-rose-800/40 hover:bg-rose-900/50 px-3 py-2 rounded-xl text-sm font-semibold transition-colors">↺ Reset</button>
+      </div>
     </div>
-    <select class="filter-select" id="regionFilter">
-      <option value="all">All Regions</option>
-      <option value="NTSC">NTSC</option>
-      <option value="PAL">PAL</option>
-      <option value="JPN">JPN</option>
-    </select>
-    <select class="filter-select" id="bootFilter">
-      <option value="all">All Boots</option>
-      <option value="YES">Boots</option>
-      <option value="NO">No Boot</option>
-    </select>
-    <select class="filter-select" id="sortKey">
-      <option value="title">Sort: Title</option>
-      <option value="rating">Sort: Rating</option>
-      <option value="fps">Sort: FPS</option>
-      <option value="entries">Sort: Tests</option>
-    </select>
-    <button class="filter-input" onclick="toggleSortOrder()" style="cursor:pointer">
-      <span id="sortOrderLabel">Asc</span>
-    </button>
-    <div class="view-toggle">
-      <button id="gridBtn" class="active" onclick="setViewMode('grid')">Grid</button>
-      <button id="listBtn" onclick="setViewMode('list')">List</button>
+
+    <div id="ratingPanels" class="grid grid-cols-5 gap-2 max-w-4xl mx-auto w-full">
+      <button data-rating="5" class="rating-panel gc-glass border border-emerald-500/30 hover:border-emerald-500/70 p-2.5 rounded-2xl flex items-center justify-between transition-all duration-200 group cursor-pointer">
+        <div class="space-y-0.5"><div class="flex items-center gap-1 text-emerald-500 font-bold text-sm"><span>5★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Perfect</span></div><div class="text-[10px] text-slate-500 font-medium hidden md:block">Full Speed</div></div>
+        <span id="count-5" class="bg-emerald-950/80 text-emerald-400 border border-emerald-700/60 font-mono font-bold text-sm px-3 py-0.5 rounded-lg">0</span>
+      </button>
+      <button data-rating="4" class="rating-panel gc-glass border border-teal-500/30 hover:border-teal-500/70 p-2.5 rounded-2xl flex items-center justify-between transition-all duration-200 group cursor-pointer">
+        <div class="space-y-0.5"><div class="flex items-center gap-1 text-teal-500 font-bold text-sm"><span>4★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Great</span></div><div class="text-[10px] text-slate-500 font-medium hidden md:block">Minor Issues</div></div>
+        <span id="count-4" class="bg-teal-950/80 text-teal-400 border border-teal-700/60 font-mono font-bold text-sm px-3 py-0.5 rounded-lg">0</span>
+      </button>
+      <button data-rating="3" class="rating-panel gc-glass border border-amber-500/30 hover:border-amber-500/70 p-2.5 rounded-2xl flex items-center justify-between transition-all duration-200 group cursor-pointer">
+        <div class="space-y-0.5"><div class="flex items-center gap-1 text-amber-500 font-bold text-sm"><span>3★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Playable</span></div><div class="text-[10px] text-slate-500 font-medium hidden md:block">Needs Tweaks</div></div>
+        <span id="count-3" class="bg-amber-950/80 text-amber-400 border border-amber-700/60 font-mono font-bold text-sm px-3 py-0.5 rounded-lg">0</span>
+      </button>
+      <button data-rating="2" class="rating-panel gc-glass border border-orange-500/30 hover:border-orange-500/70 p-2.5 rounded-2xl flex items-center justify-between transition-all duration-200 group cursor-pointer">
+        <div class="space-y-0.5"><div class="flex items-center gap-1 text-orange-500 font-bold text-sm"><span>2★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Poor</span></div><div class="text-[10px] text-slate-500 font-medium hidden md:block">Slow</div></div>
+        <span id="count-2" class="bg-orange-950/80 text-orange-400 border border-orange-700/60 font-mono font-bold text-sm px-3 py-0.5 rounded-lg">0</span>
+      </button>
+      <button data-rating="1" class="rating-panel gc-glass border border-rose-500/30 hover:border-rose-500/70 p-2.5 rounded-2xl flex items-center justify-between transition-all duration-200 group cursor-pointer">
+        <div class="space-y-0.5"><div class="flex items-center gap-1 text-rose-500 font-bold text-sm"><span>1-0★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Bad</span></div><div class="text-[10px] text-slate-500 font-medium hidden md:block">No Boot</div></div>
+        <span id="count-1" class="bg-rose-950/80 text-rose-400 border border-rose-700/60 font-mono font-bold text-sm px-3 py-0.5 rounded-lg">0</span>
+      </button>
     </div>
-    <button class="filter-input" onclick="resetFilters()" style="cursor:pointer;color:#ef4444">↺ Reset</button>
-  </div>
 
-  <!-- Stats -->
-  <div class="stats">
-    <span><strong id="statGames">0</strong> games</span>
-    <span><strong id="statTests">0</strong> tests</span>
-  </div>
+    <div id="gamesGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 max-w-7xl mx-auto w-full grid-view"></div>
+    <div id="emptyState" class="hidden text-center py-16 bg-slate-900/30 border border-dashed border-white/10 rounded-2xl max-w-4xl mx-auto">
+      <svg class="w-12 h-12 text-slate-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <p id="emptyStateText" class="text-slate-400 text-sm font-medium">No games found matching the current filters.</p>
+      <button id="clearFiltersBtn" class="mt-4 px-4 py-2 bg-gc-600 text-white rounded-xl text-sm font-semibold hover:bg-gc-500 transition-colors shadow-lg">Clear Filters</button>
+    </div>
+  </main>
 
-  <!-- Rating Filter -->
-  <div class="rating-filter">
-    <button class="rating-pill" data-rating="all" onclick="filterByRating('all')">All</button>
-    <button class="rating-pill" data-rating="5" onclick="filterByRating('5')">5★</button>
-    <button class="rating-pill" data-rating="4" onclick="filterByRating('4')">4★</button>
-    <button class="rating-pill" data-rating="3" onclick="filterByRating('3')">3★</button>
-    <button class="rating-pill" data-rating="2" onclick="filterByRating('2')">2★</button>
-    <button class="rating-pill" data-rating="1" onclick="filterByRating('1')">1★</button>
-  </div>
-
-  <!-- Games Grid/List -->
-  <div class="grid-container" id="gamesGrid"></div>
-
-  <!-- Modal -->
-  <div class="modal-overlay" id="gameModal">
-    <div class="modal-card">
-      <button class="modal-close" onclick="closeModal()">✕</button>
-      <div id="modalContent"></div>
+  <!-- MODAL -->
+  <div id="gameModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md hidden">
+    <div id="modalCard" class="gc-glass border border-gc-700/80 rounded-3xl max-w-5xl w-full max-h-[94vh] flex flex-col p-5 shadow-2xl relative modal-anim">
+      <button id="closeModalBtn" class="absolute top-3 right-3 text-slate-400 hover:text-white p-2 rounded-full bg-black/20 hover:bg-black/40 transition-colors z-10">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <div class="border-b border-white/10 pb-3 pr-10 shrink-0">
+        <div class="flex flex-col md:flex-row gap-3 items-start md:items-center">
+          <div class="w-20 h-28 rounded-xl overflow-hidden bg-slate-800/50 flex-shrink-0 border border-white/10">
+            <img id="modalCoverImg" src="" alt="Cover" class="w-full h-full object-cover">
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 flex-wrap">
+              <img id="modalFlag" src="" alt="Flag" class="w-6 h-4 object-cover rounded border border-slate-300/20 shrink-0">
+              <h3 id="modalTitle" class="text-xl font-black leading-tight truncate"></h3>
+              <span id="modalRegionBadge" class="text-[9px] font-mono px-2 py-0.5 rounded bg-gc-900 text-gc-300 border border-gc-700/60 uppercase font-bold shrink-0">NTSC / USA</span>
+              <span id="modalGameId" class="text-[9px] font-mono px-2 py-0.5 rounded bg-gc-800/60 text-gc-400 border border-gc-600/40 font-bold shrink-0">GAMEID</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 mt-2">
+              <div class="result-panel best">
+                <div class="text-[9px] uppercase tracking-wider font-bold text-amber-400 flex items-center justify-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1z"/><path d="M6 6a1 1 0 011-1h6a1 1 0 010 2H7a1 1 0 01-1-1z"/><path d="M5 9a1 1 0 011-1h8a1 1 0 010 2H6a1 1 0 01-1-1z"/><path d="M4 13a1 1 0 011-1h10a1 1 0 010 2H5a1 1 0 01-1-1z"/><path d="M3 17a1 1 0 011-1h12a1 1 0 010 2H4a1 1 0 01-1-1z"/></svg> BEST RESULT</div>
+                <div class="flex items-center justify-center gap-2 mt-0.5">
+                  <div id="modalBestRatingVal" class="flex items-center gap-0.5 text-sm font-bold"></div>
+                  <span class="text-xs font-mono text-slate-400">|</span>
+                  <span id="modalBestFpsVal" class="text-sm font-mono font-bold text-amber-300"></span>
+                </div>
+              </div>
+              <div class="result-panel average">
+                <div class="text-[9px] uppercase tracking-wider font-bold text-slate-400 flex items-center justify-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm8-6a6 6 0 100 12 6 6 0 000-12z"/><path d="M10 4a1 1 0 00-1 1v5a1 1 0 001 1h3a1 1 0 100-2h-2V5a1 1 0 00-1-1z"/></svg> AVERAGE PERFORMANCE</div>
+                <div class="flex items-center justify-center gap-2 mt-0.5">
+                  <span id="modalAvgRatingVal" class="text-sm font-bold text-slate-200"></span>
+                  <span class="text-xs font-mono text-slate-400">|</span>
+                  <span id="modalAvgFpsVal" class="text-sm font-mono font-bold text-slate-300"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-1 overflow-y-auto my-3 space-y-3 pr-1" id="modalEntriesContainer"></div>
+      <div class="pt-2 border-t border-white/10 flex justify-between items-center text-xs text-slate-400 shrink-0">
+        <span id="modalTotalEntriesText">Total Tests: 0</span>
+        <button onclick="closeModal()" class="px-4 py-1 rounded-xl font-bold bg-black/20 hover:bg-black/40 border border-white/10 transition-colors">Close</button>
+      </div>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    Powered by <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS" target="_blank">SPDW Factory</a> · GitHub Issues · GameTDB
+  <footer class="border-t border-slate-300/20 bg-black/10 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-center text-xs text-slate-500 font-medium">
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <svg class="w-5 h-5 text-slate-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4 2"/></svg>
+        <span>Dolphin Rt:Core Compatibility Database</span>
+        <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdwfactory_logo.png" alt="SPDW Factory" class="h-5 w-auto">
+      </div>
+      <p class="mt-1">Data sourced from community testing reports · <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS" target="_blank" class="hover:underline">SPDW Factory</a></p>
+      <p class="mt-1 opacity-60 flex items-center justify-center gap-2">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Powered by GitHub Issues & GameTDB
+      </p>
+    </div>
   </footer>
 
   <script>
-    // State
+    // ============================================================
+    //  STATE
+    // ============================================================
     let currentConsole = 'gc';
-    let allGames = [];
-    let currentGames = [];
-    let viewMode = 'grid';
+    let RAW_GAMES = [];
+    let GROUPED_GAMES = [];
+    let currentFilteredGames = [];
+    let currentSortKey = 'title';
+    let currentSortOrder = 'asc';
     let searchQuery = '';
+    let selectedStars = 'all';
     let selectedRegion = 'all';
     let selectedBoot = 'all';
-    let selectedRating = 'all';
-    let sortKey = 'title';
-    let sortOrder = 'asc';
+    let viewMode = 'grid';  // 'grid' or 'list'
 
-    // Data URL – CORRETTO
-    const DATA_URL = 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/games_data.json';
+    const URL = "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/games_data.json";
 
-    // Utility
-    function escapeHtml(str) {
-      return String(str || '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
+    const FLAG_MAP = { 'PAL': 'eu', 'NTSC': 'us', 'NTSC / USA': 'us', 'JPN': 'jp' };
+    function getFlagUrl(region) { const code = FLAG_MAP[region] || 'un'; return `https://flagcdn.com/w40/${code}.png`; }
+
+    function getRegionCode(regionName) {
+      const map = { 'NTSC / USA': 'US', 'PAL': 'EN', 'NTSC / JPN': 'JP', 'NTSC / KOR': 'KO', 'NTSC': 'US', 'JPN': 'JP', 'KOR': 'KO', 'EU': 'EN', 'US': 'US' };
+      return map[regionName] || 'US';
     }
 
-    function getCoverUrl(gameId, region) {
+    function getCoverUrl(gameId, regionName, consoleType) {
       if (!gameId) return null;
-      const regionMap = { 'NTSC / USA': 'US', 'PAL': 'EN', 'NTSC / JPN': 'JP', 'NTSC / KOR': 'KO' };
-      const code = regionMap[region] || 'US';
-      return `https://art.gametdb.com/wii/cover/${code}/${gameId}.png`;
+      const regionCode = getRegionCode(regionName);
+      return `https://art.gametdb.com/wii/cover/${regionCode}/${gameId}.png`;
     }
 
-    function renderStars(rating) {
-      const full = Math.max(0, Math.min(5, rating));
-      let html = '<div class="stars-container">';
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    }
+
+    function renderStars(rating, size = 14) {
+      const colors = {5:'text-emerald-500',4:'text-teal-500',3:'text-amber-500',2:'text-orange-500',1:'text-rose-500',0:'text-slate-400'};
+      const colorClass = colors[rating] || 'text-amber-500';
+      const full = Math.min(5, Math.max(0, rating));
+      let html = `<div class="rating-stars">`;
       for (let i = 1; i <= 5; i++) {
-        const filled = i <= full;
-        const color = i >= 5 ? '#10b981' : i >= 4 ? '#14b8a6' : i >= 3 ? '#f59e0b' : i >= 2 ? '#f97316' : '#ef4444';
-        html += `<svg width="12" height="12" viewBox="0 0 20 20" fill="${filled ? color : 'none'}" stroke="${color}" stroke-width="1.5"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>`;
+        const cls = i <= full ? `fill-current ${colorClass}` : 'fill-slate-300 text-slate-300 dark:fill-slate-700 dark:text-slate-700';
+        html += `<svg class="w-${size/2} h-${size/2} ${cls}" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>`;
       }
-      return html + '</div>';
+      html += '</div>';
+      return html;
     }
 
-    // Group games by title + region (best rating per group)
+    // ============================================================
+    //  GROUPING (NEW STRUCTURE)
+    // ============================================================
     function groupGames(rawList) {
       const groups = new Map();
-      rawList.forEach(entry => {
-        const info = entry.game_info || {};
+      rawList.forEach(item => {
+        const info = item.game_info || {};
         const title = (info.game || '').trim();
-        const region = (info.region || 'Unknown').trim();
+        const region = (info.region || 'NTSC / USA').trim();
         if (!title) return;
         const key = `${title.toLowerCase()}___${region.toLowerCase()}`;
         if (!groups.has(key)) {
           groups.set(key, { game: title, region, entries: [] });
         }
-        groups.get(key).entries.push(entry);
+        groups.get(key).entries.push(item);
       });
 
       const result = [];
       groups.forEach(group => {
-        let bestRating = 0;
-        let bestFpsStr = '???';
-        let bestFpsMax = 0;
-        let bestBoot = 'NO';
-        let bestPlayable = 'NO';
+        group.entries.sort((a, b) => (parseInt(a.issue||0) - parseInt(b.issue||0)) || 0);
+        let bestRating = 0, bestFpsMax = -1, bestFpsStr = "???";
+        let totalRating = 0, validFpsCount = 0, totalFpsSum = 0;
+        let bestBoot = "NO", bestPlayable = "NO";
         let gameId = null;
+        let bestEntryIndex = 0;
 
-        group.entries.forEach(entry => {
-          const review = entry.test_review || {};
-          const info = entry.game_info || {};
-          const rating = parseInt(review.rating || 0);
-          if (rating > bestRating) bestRating = rating;
-          if (review.fps && review.fps !== '???') bestFpsStr = review.fps;
-          if (parseInt(review.fps_max || 0) > bestFpsMax) bestFpsMax = parseInt(review.fps_max || 0);
-          if (review.boot === 'YES') bestBoot = 'YES';
-          if (review.playable === 'YES') bestPlayable = 'YES';
+        group.entries.forEach((e, idx) => {
+          const review = e.test_review || {};
+          const details = e.test_details || {};
+          const info = e.game_info || {};
+
+          const r = parseInt(review.rating || 0, 10);
+          if (r > bestRating) bestRating = r;
+          totalRating += r;
+
+          const boot = review.boot || (r >= 1 ? "YES" : "NO");
+          const playable = review.playable || (r >= 3 ? "YES" : "NO");
+          if (boot === "YES") bestBoot = "YES";
+          if (playable === "YES") bestPlayable = "YES";
+
           if (!gameId && info.game_id) gameId = info.game_id;
+
+          const fpsRaw = (review.fps || '???').trim();
+          const fpsMax = parseInt(review.fps_max || 0, 10);
+          const hasNum = /\d+/.test(fpsRaw) && fpsRaw !== "???";
+          if (hasNum && fpsMax > bestFpsMax) { bestFpsMax = fpsMax; bestFpsStr = fpsRaw; }
+          else if (bestFpsMax === -1 && fpsRaw && fpsRaw !== "???") bestFpsStr = fpsRaw;
+          if (hasNum && fpsMax > 0) { totalFpsSum += fpsMax; validFpsCount++; }
+
+          const currentScore = (r * 1000) + (hasNum ? fpsMax : -1);
+          const bestScore = (bestRating * 1000) + (bestFpsMax > 0 ? bestFpsMax : -1);
+          if (currentScore > bestScore) {
+            bestEntryIndex = idx;
+          }
         });
+
+        if (!gameId) gameId = 'UNKNOWN';
+
+        const avgRating = (totalRating / group.entries.length).toFixed(1);
+        const avgFps = validFpsCount > 0 ? Math.round(totalFpsSum / validFpsCount) : "N/A";
 
         result.push({
           game: group.game,
           region: group.region,
+          entries: group.entries,
+          entriesCount: group.entries.length,
           bestRating,
           bestFpsStr,
           bestFpsMax,
           bestBoot,
           bestPlayable,
+          avgRating: parseFloat(avgRating),
+          avgFps,
           gameId,
-          entriesCount: group.entries.length,
-          entries: group.entries
+          bestEntryIndex
         });
       });
-
       return result;
     }
 
-    // Filter + Sort
-    function applyFilters() {
-      currentGames = allGames.filter(game => {
-        if (searchQuery && !game.game.toLowerCase().includes(searchQuery)) return false;
-        if (selectedRegion !== 'all' && !game.region.includes(selectedRegion)) return false;
-        if (selectedBoot !== 'all' && game.bestBoot !== selectedBoot) return false;
-        if (selectedRating !== 'all') {
-          const r = parseInt(selectedRating);
-          if (r === 1) {
-            if (game.bestRating > 1) return false;
-          } else if (game.bestRating !== r) return false;
+    // ============================================================
+    //  CONSOLE SWITCH
+    // ============================================================
+    function switchConsole(target) {
+      currentConsole = target;
+      const isGC = target === 'gc';
+      const header = document.getElementById('appHeader');
+
+      header.classList.remove('flip-horizontal');
+      void header.offsetWidth;
+      header.classList.add('flip-horizontal');
+
+      document.getElementById('consoleLogo').src = isGC
+        ? 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg'
+        : 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg';
+
+      document.getElementById('consoleName').textContent = isGC ? 'GameCube' : 'Wii';
+      document.getElementById('consoleName').className = isGC ? 'font-bold text-gc-400' : 'font-bold text-wii-500';
+
+      const btnGC = document.getElementById('btnConsoleGC');
+      const btnWii = document.getElementById('btnConsoleWii');
+      if (isGC) {
+        btnGC.className = 'flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 switch-tab-active-gc';
+        btnWii.className = 'flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 switch-tab-inactive-wii';
+      } else {
+        btnWii.className = 'flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 switch-tab-active-wii';
+        btnGC.className = 'flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 switch-tab-inactive-gc';
+      }
+
+      const mainTitle = document.getElementById('mainTitle');
+      const muosText = document.getElementById('muosText');
+      const titleRt = document.getElementById('titleRt');
+
+      if (isGC) {
+        mainTitle.className = 'text-2xl sm:text-3xl font-black tracking-tight text-white whitespace-nowrap';
+        muosText.className = 'text-gc-400';
+        muosText.style.fontWeight = '400';
+        document.querySelector('#dashboardSubtitle').className = 'text-base sm:text-lg mt-0.5 transition-colors';
+        document.querySelector('#dashboardDesc').className = 'text-xs italic text-slate-400 transition-colors';
+        document.getElementById('filterPanel').className = 'gc-glass rounded-2xl p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500';
+        document.getElementById('ratingPanels').querySelectorAll('.rating-panel').forEach(el => {
+          el.className = el.className.replace(/wii-glass/g, 'gc-glass');
+        });
+        document.getElementById('spdwPanel').className = 'gc-glass rounded-xl p-2.5 px-4 flex-shrink-0 transition-all duration-500 space-y-1.5 min-w-[180px]';
+        document.getElementById('spdwBrand').className = 'flex items-center gap-1 font-black text-gc-400 tracking-wider text-[10px] uppercase';
+        document.getElementById('coreBadge').className = 'text-[9px] font-mono px-2 py-0.5 rounded-full bg-gc-900 text-gc-300 border border-gc-700/60 font-bold';
+        document.getElementById('statTestedBox').className = 'text-[9px] font-black bg-gc-900/80 border border-gc-600/50 rounded-lg px-2 py-0.5 flex items-center gap-2 shadow-inner';
+        document.getElementById('statTested').className = 'bg-gc-500 text-white px-1.5 py-0.5 rounded-lg font-mono font-black text-sm shadow-sm';
+        document.getElementById('totalEntriesAccent').className = 'text-gc-400';
+        document.getElementById('totalEntriesContainer').className = 'text-[9px] font-mono flex items-center gap-1 text-slate-400';
+        document.getElementById('statTotal').className = 'font-bold text-slate-200';
+        document.getElementById('newIssueBtn').className = 'text-slate-400 hover:text-white transition-colors flex items-center gap-1';
+        document.getElementById('modalCard').className = 'gc-glass border border-gc-700/80 rounded-3xl max-w-5xl w-full max-h-[94vh] flex flex-col p-5 shadow-2xl relative modal-anim';
+        document.getElementById('modalRegionBadge').className = 'text-[9px] font-mono px-2 py-0.5 rounded bg-gc-900 text-gc-300 border border-gc-700/60 uppercase font-bold shrink-0';
+        document.getElementById('modalGameId').className = 'text-[9px] font-mono px-2 py-0.5 rounded bg-gc-800/60 text-gc-400 border border-gc-600/40 font-bold shrink-0';
+        document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b border-purple-900/40 bg-gc-950/90 backdrop-blur-xl shadow-lg';
+        document.getElementById('appBody').className = 'theme-gc font-sans antialiased transition-colors duration-500 min-h-screen';
+      } else {
+        mainTitle.className = 'text-2xl sm:text-3xl font-black tracking-tight title-dark whitespace-nowrap';
+        muosText.className = 'text-gc-400';
+        muosText.style.fontWeight = '400';
+        muosText.style.color = '#0f172a';
+        document.querySelector('#dashboardSubtitle').className = 'text-base sm:text-lg mt-0.5 transition-colors text-slate-800';
+        document.querySelector('#dashboardDesc').className = 'text-xs italic text-slate-600 transition-colors';
+        document.getElementById('filterPanel').className = 'wii-glass rounded-2xl p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500';
+        document.getElementById('ratingPanels').querySelectorAll('.rating-panel').forEach(el => {
+          el.className = el.className.replace(/gc-glass/g, 'wii-glass rating-panel-wii');
+        });
+        document.getElementById('spdwPanel').className = 'wii-glass rounded-xl p-2.5 px-4 flex-shrink-0 transition-all duration-500 space-y-1.5 min-w-[180px] border border-slate-300 shadow-sm';
+        document.getElementById('spdwBrand').className = 'flex items-center gap-1 font-black text-wii-700 tracking-wider text-[10px] uppercase';
+        document.getElementById('coreBadge').className = 'text-[9px] font-mono px-2 py-0.5 rounded-full bg-wii-100 text-wii-900 border border-wii-300 font-bold';
+        document.getElementById('statTestedBox').className = 'text-[9px] font-black text-slate-800 bg-wii-50 border border-wii-200 rounded-lg px-2 py-0.5 flex items-center gap-2 shadow-inner';
+        document.getElementById('statTested').className = 'bg-wii-500 text-white px-1.5 py-0.5 rounded-lg font-mono font-black text-sm shadow-sm';
+        document.getElementById('totalEntriesAccent').className = 'text-wii-700 font-bold';
+        document.getElementById('totalEntriesContainer').className = 'text-[9px] font-mono flex items-center gap-1 text-slate-700';
+        document.getElementById('statTotal').className = 'font-bold text-slate-800';
+        document.getElementById('newIssueBtn').className = 'text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1';
+        document.getElementById('modalCard').className = 'wii-glass border border-slate-300 rounded-3xl max-w-5xl w-full max-h-[94vh] flex flex-col p-5 shadow-2xl relative modal-anim';
+        document.getElementById('modalRegionBadge').className = 'text-[9px] font-mono px-2 py-0.5 rounded bg-wii-100 text-wii-900 border border-wii-300 uppercase font-bold shrink-0 badge-region-wii';
+        document.getElementById('modalGameId').className = 'text-[9px] font-mono px-2 py-0.5 rounded bg-wii-200/60 text-wii-700 border border-wii-300/60 font-bold shrink-0 badge-gameid-wii';
+        document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b border-slate-300 bg-white/95 backdrop-blur-xl shadow-lg';
+        document.getElementById('appBody').className = 'theme-wii font-sans antialiased transition-colors duration-500 min-h-screen';
+      }
+
+      loadConsoleData();
+    }
+
+    // ============================================================
+    //  RENDER GRID / LIST
+    // ============================================================
+    function renderGrid() {
+      document.querySelectorAll('.rating-panel').forEach(p => {
+        const val = p.getAttribute('data-rating');
+        const ring = currentConsole === 'gc' ? 'ring-gc-500' : 'ring-wii-500';
+        if (selectedStars === val) {
+          p.classList.add('ring-2', ring, 'scale-[1.02]');
+          p.classList.remove('opacity-60');
+        } else {
+          p.classList.remove('ring-2', 'ring-gc-500', 'ring-wii-500', 'scale-[1.02]');
+          p.classList.toggle('opacity-60', selectedStars !== 'all');
         }
+      });
+
+      currentFilteredGames = GROUPED_GAMES.filter(item => {
+        if (searchQuery && !item.game.toLowerCase().includes(searchQuery) && !item.entries.some(e => (e.test_details?.considerations||'').toLowerCase().includes(searchQuery))) return false;
+        if (selectedStars !== 'all') {
+          const s = parseInt(selectedStars);
+          if (s === 1) { if (item.bestRating > 1) return false; }
+          else if (item.bestRating !== s) return false;
+        }
+        if (selectedRegion !== 'all') {
+          if (selectedRegion === 'NTSC' && !item.region.includes('NTSC')) return false;
+          if (selectedRegion !== 'NTSC' && item.region !== selectedRegion) return false;
+        }
+        if (selectedBoot !== 'all' && item.bestBoot !== selectedBoot) return false;
         return true;
       });
 
-      currentGames.sort((a, b) => {
+      currentFilteredGames.sort((a, b) => {
         let cmp = 0;
-        if (sortKey === 'title') cmp = a.game.localeCompare(b.game);
-        else if (sortKey === 'rating') cmp = a.bestRating - b.bestRating;
-        else if (sortKey === 'fps') cmp = a.bestFpsMax - b.bestFpsMax;
-        else if (sortKey === 'entries') cmp = a.entriesCount - b.entriesCount;
-        return sortOrder === 'asc' ? cmp : -cmp;
+        if (currentSortKey === 'title') cmp = (a.game||'').localeCompare(b.game||'');
+        else if (currentSortKey === 'rating') cmp = (a.bestRating||0) - (b.bestRating||0);
+        else if (currentSortKey === 'fps') cmp = (a.bestFpsMax||0) - (b.bestFpsMax||0);
+        else if (currentSortKey === 'entries') cmp = (a.entriesCount||0) - (b.entriesCount||0);
+        return currentSortOrder === 'asc' ? cmp : -cmp;
       });
 
-      renderGames();
-      updateStats();
-    }
-
-    // Render games
-    function renderGames() {
       const grid = document.getElementById('gamesGrid');
-      grid.className = `grid-container ${viewMode === 'list' ? 'list' : ''}`;
+      const empty = document.getElementById('emptyState');
 
-      if (currentGames.length === 0) {
-        grid.innerHTML = '<p style="padding:2rem;text-align:center;color:#94a3b8">No games found.</p>';
+      if (currentFilteredGames.length === 0) {
+        grid.innerHTML = '';
+        empty.classList.remove('hidden');
         return;
       }
+      empty.classList.add('hidden');
 
       if (viewMode === 'grid') {
-        grid.innerHTML = currentGames.map(game => `
-          <div class="game-card" onclick="openModal(${currentGames.indexOf(game)})">
-            <div class="game-card-cover">
-              ${game.gameId ? `<img src="${getCoverUrl(game.gameId, game.region)}" alt="${escapeHtml(game.game)}" loading="lazy" onerror="this.style.display='none'">` : ''}
-              <span>🎮</span>
-            </div>
-            <div class="game-card-info">
-              <div class="game-card-title">${escapeHtml(game.game)}</div>
-              ${renderStars(game.bestRating)}
-              <div class="badge-row">
-                <span class="badge ${game.bestBoot === 'YES' ? 'boot-yes' : 'boot-no'}">${game.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
-                <span class="badge ${game.bestPlayable === 'YES' ? 'play-yes' : 'play-no'}">${game.bestPlayable === 'YES' ? 'Playable' : 'Unplayable'}</span>
-              </div>
-              <div class="badge-row">
-                <span class="badge fps">${game.bestFpsStr !== '???' ? game.bestFpsStr + ' FPS' : 'N/A'}</span>
-                <span class="badge region"><img src="https://flagcdn.com/w20/${getFlagCode(game.region)}.png" style="width:16px;height:12px;border-radius:2px" alt="${game.region}"> ${game.region}</span>
-              </div>
-            </div>
-          </div>
-        `).join('');
+        grid.classList.remove('list-view');
+        grid.classList.add('grid-view');
+        grid.innerHTML = renderGridCards();
       } else {
-        grid.innerHTML = currentGames.map(game => `
-          <div class="list-card" onclick="openModal(${currentGames.indexOf(game)})">
-            <div class="list-card-cover">
-              ${game.gameId ? `<img src="${getCoverUrl(game.gameId, game.region)}" alt="${escapeHtml(game.game)}" loading="lazy" onerror="this.style.display='none'">` : ''}
-            </div>
-            <div class="list-card-info">
-              <div class="list-card-title">${escapeHtml(game.game)}</div>
-              <div class="list-card-meta">
-                <span class="badge ${game.bestBoot === 'YES' ? 'boot-yes' : 'boot-no'}">${game.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
-                <span class="badge ${game.bestPlayable === 'YES' ? 'play-yes' : 'play-no'}">${game.bestPlayable === 'YES' ? 'Playable' : 'Unplayable'}</span>
-                <span class="badge fps">${game.bestFpsStr !== '???' ? game.bestFpsStr + ' FPS' : 'N/A'}</span>
-                <span class="badge region"><img src="https://flagcdn.com/w20/${getFlagCode(game.region)}.png" style="width:16px;height:12px;border-radius:2px" alt="${game.region}"> ${game.region}</span>
-              </div>
-              ${renderStars(game.bestRating)}
-            </div>
-          </div>
-        `).join('');
+        grid.classList.remove('grid-view');
+        grid.classList.add('list-view');
+        grid.innerHTML = renderListCards();
       }
     }
 
-    function getFlagCode(region) {
-      const map = { 'NTSC / USA': 'us', 'PAL': 'eu', 'NTSC / JPN': 'jp', 'NTSC / KOR': 'kr' };
-      return map[region] || 'us';
-    }
+    function renderGridCards() {
+      const isGC = currentConsole === 'gc';
+      return currentFilteredGames.map((item, idx) => {
+        const coverUrl = item.entries[item.bestEntryIndex].cover_art || getCoverUrl(item.gameId, item.region, currentConsole);
+        const delay = Math.min(idx * 20, 300);
+        const regionColor = item.region.includes('NTSC') ? 'text-emerald-400' : (item.region === 'PAL' ? 'text-amber-400' : 'text-slate-400');
+        const cardBg = isGC ? 'bg-gc-950/90' : 'bg-white/95';
+        const cardText = isGC ? 'text-white' : 'text-slate-900';
 
-    // Modal
-    function openModal(index) {
-      const game = currentGames[index];
-      if (!game) return;
-      const modal = document.getElementById('gameModal');
-      const content = document.getElementById('modalContent');
+        const playableBadge = item.bestPlayable === 'YES'
+          ? `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-emerald-950/50 text-emerald-400 border border-emerald-700/40">Playable</span>`
+          : `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-rose-950/50 text-rose-400 border border-rose-700/40">Unplayable</span>`;
 
-      let html = `
-        <div style="display:flex;gap:1rem;margin-bottom:1rem">
-          <div style="width:100px;height:140px;border-radius:0.5rem;overflow:hidden;background:rgba(0,0,0,0.2)">
-            ${game.gameId ? `<img src="${getCoverUrl(game.gameId, game.region)}" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">` : ''}
-          </div>
-          <div style="flex:1">
-            <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:0.3rem">${escapeHtml(game.game)}</h2>
-            <p style="color:#94a3b8;margin-bottom:0.5rem">${game.region} · ${game.gameId || 'Unknown'}</p>
-            <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
-              <span class="badge ${game.bestBoot === 'YES' ? 'boot-yes' : 'boot-no'}">${game.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
-              <span class="badge ${game.bestPlayable === 'YES' ? 'play-yes' : 'play-no'}">${game.bestPlayable === 'YES' ? 'Playable' : 'Unplayable'}</span>
-              <span class="badge fps">${game.bestFpsStr !== '???' ? game.bestFpsStr + ' FPS' : 'N/A'}</span>
+        return `
+          <div class="card-anim game-card group relative cursor-pointer rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl" style="animation-delay: ${delay}ms" onclick="openModal(${idx})">
+            <div class="glow-border">
+              <div class="relative aspect-[3/4] w-full overflow-hidden bg-slate-900/50">
+                ${coverUrl ? `<img src="${coverUrl}" alt="${escapeHtml(item.game)}" class="cover-img w-full h-full object-cover" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` : ''}
+                <div class="cover-placeholder absolute inset-0 w-full h-full ${coverUrl ? 'hidden' : 'flex'} flex-col items-center justify-center text-4xl">
+                  🎮
+                  <span class="text-[10px] mt-1 opacity-40 font-mono">${item.gameId || '???'}</span>
+                </div>
+                ${coverUrl ? `<div class="absolute inset-0 w-full h-full flex flex-col items-center justify-center text-4xl opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-sm"><span class="text-xs font-medium text-white/80">${item.gameId || ''}</span></div>` : ''}
+              </div>
+              <div class="p-2.5 space-y-1.5 ${cardBg}">
+                <div class="flex items-start justify-between gap-1">
+                  <h4 class="text-sm font-bold truncate flex-1 ${cardText}">${escapeHtml(item.game)}</h4>
+                  ${renderStars(item.bestRating, 12)}
+                </div>
+                <div class="flex items-center justify-between text-[10px]">
+                  <span class="flex items-center gap-1 ${regionColor} font-semibold">
+                    <img src="${getFlagUrl(item.region)}" class="w-4 h-3 object-cover rounded border border-slate-400/20"> ${item.region}
+                  </span>
+                  <span class="font-mono text-slate-400">${item.entriesCount} test${item.entriesCount!==1?'s':''}</span>
+                </div>
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <span class="fps-badge ${isGC ? 'gc' : 'wii'}">${item.bestFpsStr !== "???" ? item.bestFpsStr + ' FPS' : 'N/A'}</span>
+                  <span class="text-[9px] font-mono px-2 py-0.5 rounded-full ${item.bestBoot === 'YES' ? (isGC ? 'boot-badge gc-yes' : 'boot-badge wii-yes') : (isGC ? 'boot-badge gc-no' : 'boot-badge wii-no')}">${item.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
+                  ${playableBadge}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div style="margin-bottom:1rem">${renderStars(game.bestRating)} <span style="font-size:0.8rem;color:#94a3b8">(${game.entriesCount} tests)</span></div>
-        <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.5rem">Test Results</h3>
-      `;
-
-      game.entries.forEach((entry, idx) => {
-        const review = entry.test_review || {};
-        const details = entry.test_details || {};
-        const env = entry.test_environment || {};
-        const rating = parseInt(review.rating || 0);
-        const boot = review.boot || (rating >= 1 ? 'YES' : 'NO');
-        const playable = review.playable || (rating >= 3 ? 'YES' : 'NO');
-        const fps = review.fps || '???';
-        const coreVersion = details.rtcore_version || 'Unknown';
-        const coreProfile = details.core_profile || 'Unknown';
-        const considerations = details.considerations || '';
-        const tester = env.tester || 'Anonymous';
-        const device = env.device || 'Unknown';
-        const muos = env.muos_version || 'Unknown';
-
-        html += `
-          <div style="padding:0.75rem;border-radius:0.5rem;background:rgba(0,0,0,0.1);margin-bottom:0.5rem">
-            <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem">
-              <span style="font-size:0.8rem;font-weight:700">Test #${idx + 1}</span>
-              <span style="font-size:0.8rem;color:#94a3b8">${escapeHtml(tester)}</span>
-            </div>
-            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.5rem">
-              <span class="badge ${boot === 'YES' ? 'boot-yes' : 'boot-no'}">${boot === 'YES' ? 'Boots' : 'No Boot'}</span>
-              <span class="badge ${playable === 'YES' ? 'play-yes' : 'play-no'}">${playable === 'YES' ? 'Playable' : 'Unplayable'}</span>
-              <span class="badge fps">${fps} FPS</span>
-              <span class="badge" style="background:rgba(124,58,237,0.15);color:#a78bfa">${escapeHtml(coreProfile)}</span>
-            </div>
-            ${considerations ? `<p style="font-size:0.8rem;font-style:italic;color:#94a3b8">${escapeHtml(considerations)}</p>` : ''}
-            <div style="font-size:0.75rem;color:#94a3b8;margin-top:0.3rem">Device: ${escapeHtml(device)} · muOS: ${escapeHtml(muos)}</div>
-            ${renderStars(rating)}
           </div>
         `;
-      });
+      }).join('');
+    }
 
-      content.innerHTML = html;
-      modal.classList.add('open');
+    function renderListCards() {
+      const isGC = currentConsole === 'gc';
+      return currentFilteredGames.map((item, idx) => {
+        const coverUrl = item.entries[item.bestEntryIndex].cover_art || getCoverUrl(item.gameId, item.region, currentConsole);
+        const regionColor = item.region.includes('NTSC') ? 'text-emerald-500' : (item.region === 'PAL' ? 'text-amber-500' : 'text-slate-400');
+
+        const playableBadge = item.bestPlayable === 'YES'
+          ? `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-emerald-950/50 text-emerald-400 border border-emerald-700/40">Playable</span>`
+          : `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-rose-950/50 text-rose-400 border border-rose-700/40">Unplayable</span>`;
+
+        return `
+          <div class="card-anim list-card" style="animation-delay: ${Math.min(idx * 20, 300)}ms" onclick="openModal(${idx})">
+            <div class="list-card-cover">
+              ${coverUrl ? `<img src="${coverUrl}" alt="${escapeHtml(item.game)}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=&quot;cover-placeholder&quot;>🎮</div>'">` : `<div class="cover-placeholder">🎮</div>`}
+            </div>
+            <div class="list-card-info">
+              <div class="list-card-title ${isGC ? 'text-white' : 'text-slate-900'}">${escapeHtml(item.game)}</div>
+              <div class="list-card-meta">
+                <span class="flex items-center gap-1 ${regionColor}">
+                  <img src="${getFlagUrl(item.region)}" class="w-4 h-3 object-cover rounded border border-slate-400/20"> ${item.region}
+                </span>
+                <span class="font-mono">${item.entriesCount} test${item.entriesCount!==1?'s':''}</span>
+                <span class="fps-badge ${isGC ? 'gc' : 'wii'}">${item.bestFpsStr !== "???" ? item.bestFpsStr + ' FPS' : 'N/A'}</span>
+                <span class="text-[9px] font-mono px-2 py-0.5 rounded-full ${item.bestBoot === 'YES' ? (isGC ? 'boot-badge gc-yes' : 'boot-badge wii-yes') : (isGC ? 'boot-badge gc-no' : 'boot-badge wii-no')}">${item.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
+                ${playableBadge}
+              </div>
+              <div class="list-card-stars mt-1">${renderStars(item.bestRating, 12)}</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ============================================================
+    //  MODAL
+    // ============================================================
+    function openModal(index) {
+      const item = currentFilteredGames[index];
+      if (!item) return;
+      const isGC = currentConsole === 'gc';
+
+      document.getElementById('modalTitle').textContent = item.game;
+      document.getElementById('modalFlag').src = getFlagUrl(item.region);
+      document.getElementById('modalRegionBadge').textContent = item.region;
+      document.getElementById('modalGameId').textContent = item.gameId || 'ID Unknown';
+
+      const coverImg = document.getElementById('modalCoverImg');
+      const coverUrl = item.entries[item.bestEntryIndex].cover_art || getCoverUrl(item.gameId, item.region, currentConsole);
+      if (coverUrl) {
+        coverImg.src = coverUrl;
+        coverImg.onerror = () => { coverImg.style.display = 'none'; };
+        coverImg.style.display = 'block';
+      } else {
+        coverImg.style.display = 'none';
+      }
+
+      // Best / Average
+      document.getElementById('modalBestRatingVal').innerHTML = renderStars(item.bestRating, 16);
+      const bestFpsEl = document.getElementById('modalBestFpsVal');
+      bestFpsEl.textContent = item.bestFpsStr !== "???" ? `${item.bestFpsStr} FPS` : 'N/A';
+      bestFpsEl.className = isGC ? 'text-sm font-mono font-bold text-amber-300' : 'text-sm font-mono font-bold text-amber-600';
+
+      document.getElementById('modalAvgRatingVal').textContent = `${item.avgRating} / 5 ⭐`;
+      const avgFpsEl = document.getElementById('modalAvgFpsVal');
+      avgFpsEl.textContent = item.avgFps !== "N/A" ? `${item.avgFps} FPS` : 'N/A';
+      avgFpsEl.className = isGC ? 'text-sm font-mono font-bold text-slate-300' : 'text-sm font-mono font-bold text-slate-800';
+
+      // Entries
+      const container = document.getElementById('modalEntriesContainer');
+      container.innerHTML = item.entries.map((e, idx) => {
+        const isBest = (idx === item.bestEntryIndex);
+        const num = idx + 1;
+
+        const review = e.test_review || {};
+        const details = e.test_details || {};
+        const info = e.game_info || {};
+        const env = e.test_environment || {};
+
+        const rating = parseInt(review.rating || 0);
+        const boot = review.boot || (rating >= 1 ? "YES" : "NO");
+        const playable = review.playable || (rating >= 3 ? "YES" : "NO");
+        const fpsRaw = (review.fps || '???').trim();
+        const fpsMin = parseInt(review.fps_min || 0);
+        const fpsMax = parseInt(review.fps_max || 0);
+        const fpsRange = (fpsMin > 0 && fpsMax > 0) ? `${fpsMin} - ${fpsMax}` : (fpsRaw !== '???' ? fpsRaw : 'N/A');
+        const coreVersion = details.rtcore_version || details.core_version || 'Default';
+        const coreUsed = details.core_profile || 'Default';
+        const device = env.device || 'Unknown Device';
+        const muosVer = env.muos_version || 'Unknown';
+        const considerations = details.considerations || '';
+        const tester = env.tester || 'Anonymous';
+        const attachments = e.attachments || [];
+        const customSettings = e.custom_settings || [];
+
+        const ratingColor = rating >= 5 ? '#34d399' : rating >= 4 ? '#2dd4bf' : rating >= 3 ? '#f59e0b' : rating >= 2 ? '#f97316' : '#f43f5e';
+        const circumference = 2 * Math.PI * 42;
+        const offset = circumference * (1 - (rating / 5));
+
+        // Build custom settings HTML
+        let settingsHtml = '';
+        if (customSettings.length > 0) {
+          settingsHtml = customSettings.map(cs => {
+            const type = cs.set_type || 'Other';
+            const name = cs.set_name || '';
+            const url = cs.set_url || '';
+            const note = cs.set_note || '';
+            return `
+              <div class="flex flex-col gap-1 p-2 rounded-lg bg-black/10">
+                <div class="flex items-center gap-2">
+                  <span class="settings-type-badge">${escapeHtml(type)}</span>
+                  ${name ? `<span class="text-xs font-semibold">${escapeHtml(name)}</span>` : ''}
+                </div>
+                ${url ? `<a href="${url}" target="_blank" class="text-xs text-gc-400 underline hover:text-gc-300">${escapeHtml(url)}</a>` : ''}
+                ${note ? `<p class="text-xs italic text-slate-400">${escapeHtml(note)}</p>` : ''}
+              </div>
+            `;
+          }).join('');
+        }
+
+        // Build attachments HTML
+        let attHtml = '';
+        if (attachments.length > 0) {
+          attHtml = attachments.map(a => `
+            <div class="attachment-item">
+              ${a.media_type === 'video' ? '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>' : '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>'}
+              <a href="${a.media_url}" target="_blank" class="truncate">${escapeHtml(a.media_title || a.media_url)}</a>
+            </div>
+          `).join('');
+        }
+
+        return `
+          <div class="modal-test-card ${isGC ? 'bg-black/20 border-white/10' : 'bg-white/85 border-slate-200'}" style="font-size:0.9rem;">
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-2 border-b ${isGC ? 'border-white/10' : 'border-slate-200'}">
+              <div class="flex items-center gap-3 flex-wrap">
+                <span class="text-[12px] font-mono font-black px-2 py-0.5 rounded-full ${isGC ? 'bg-gc-600/30 text-gc-300 border-gc-500/40' : 'bg-wii-500/20 text-wii-800 border-wii-300'} border">#${num}</span>
+                <span class="text-sm font-semibold">Tester: <strong class="${isGC ? 'text-gc-400' : 'text-wii-700'}">${escapeHtml(tester)}</strong></span>
+                ${isBest ? `<span class="best-badge">🏆 Best Test</span>` : ''}
+              </div>
+              <div class="flex items-center gap-3 text-[11px] font-mono ${isGC ? 'text-slate-400' : 'text-slate-600'}">
+                <span class="flex items-center gap-1 font-bold">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                  Device: <strong>${escapeHtml(device)}</strong>
+                </span>
+                <span class="flex items-center gap-1 font-bold">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 2a1 1 0 00-1 1v2a1 1 0 001 1h6a1 1 0 001-1V3a1 1 0 00-1-1H9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h12a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"/></svg>
+                  muOS: <strong>${escapeHtml(muosVer)}</strong>
+                </span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <div class="rating-circle-container">
+                <svg viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="42" fill="none" stroke="${isGC ? '#2a1a3a' : '#d1d9e0'}" stroke-width="5"/>
+                  <circle cx="50" cy="50" r="42" fill="none" stroke="${ratingColor}" stroke-width="5"
+                    stroke-dasharray="${circumference}" stroke-dashoffset="${offset}" stroke-linecap="round"
+                    style="transition: stroke-dashoffset 0.5s ease;"/>
+                  ${[0,1,2,3,4].map(i => {
+                    const angle = (i / 5) * 360 - 90;
+                    const x = 50 + 44 * Math.cos(angle * Math.PI / 180);
+                    const y = 50 + 44 * Math.sin(angle * Math.PI / 180);
+                    const filled = i < rating;
+                    return `<text x="${x}" y="${y+6}" text-anchor="middle" font-size="22" 
+                      fill="${filled ? ratingColor : (isGC ? '#3a2a4a' : '#c8d4df')}" 
+                      font-family="sans-serif" font-weight="700" 
+                      class="star-3d" 
+                      style="${filled ? `animation: starPop 0.3s ease; filter: drop-shadow(0 2px 4px ${ratingColor}80);` : ''}">★</text>`;
+                  }).join('')}
+                </svg>
+                <div class="center-number" style="color:${ratingColor}">${rating}</div>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-2 flex-1">
+                <div class="flex flex-col gap-1">
+                  <span class="status-pill ${boot === 'YES' ? 'boots-yes' : 'boots-no'}">${boot === 'YES' ? '✅ BOOTS' : '⛔ NO BOOT'}</span>
+                  <span class="status-pill ${playable === 'YES' ? 'playable-yes' : 'playable-no'}">${playable === 'YES' ? '✅ PLAYABLE' : '⛔ UNPLAYABLE'}</span>
+                </div>
+                <div class="flex flex-col items-center ml-1">
+                  <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400">FPS</div>
+                  <div class="fps-range-box ${isGC ? 'text-gc-300' : 'text-slate-800'}">${fpsRange}</div>
+                </div>
+                <div class="flex flex-col items-start ml-1">
+                  <div class="core-profile-box ${isGC ? 'text-slate-300' : 'text-slate-700'}">
+                    <div><span class="text-[10px] uppercase font-bold text-slate-400">Rt:Core</span> <span class="font-mono font-bold text-sm">${escapeHtml(coreVersion)}</span></div>
+                    <div><span class="text-[10px] uppercase font-bold text-slate-400">Profile</span> <span class="font-mono font-bold text-sm">${escapeHtml(coreUsed)}</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            ${considerations ? `
+            <div class="mt-2">
+              <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400">Considerations</div>
+              <div class="considerations-box ${isGC ? 'text-slate-300 border-gc-500/30' : 'text-slate-700 border-wii-500/30'}">${escapeHtml(considerations)}</div>
+            </div>` : ''}
+
+            ${(customSettings.length > 0 || attachments.length > 0) ? `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
+              ${customSettings.length > 0 ? `
+              <div>
+                <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-0.5">Custom Settings</div>
+                <div class="space-y-2">${settingsHtml}</div>
+              </div>` : ''}
+              ${attachments.length > 0 ? `
+              <div>
+                <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-0.5">Attachments</div>
+                <div class="space-y-1">${attHtml}</div>
+              </div>` : ''}
+            </div>` : ''}
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('modalTotalEntriesText').textContent = `Total Tests: ${item.entriesCount}`;
+      document.getElementById('gameModal').classList.remove('hidden');
     }
 
     function closeModal() {
-      document.getElementById('gameModal').classList.remove('open');
+      document.getElementById('gameModal').classList.add('hidden');
+    }
+    document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+    document.getElementById('gameModal').addEventListener('click', e => { if (e.target === document.getElementById('gameModal')) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // ============================================================
+    //  LOAD DATA (UNIFIED)
+    // ============================================================
+    function updateStats() {
+      document.getElementById('statTested').textContent = GROUPED_GAMES.length;
+      document.getElementById('statTotal').textContent = RAW_GAMES.length;
+      const counts = {5:0,4:0,3:0,2:0,1:0};
+      GROUPED_GAMES.forEach(g => {
+        const r = g.bestRating;
+        if (r >= 5) counts[5]++; else if (r >= 4) counts[4]++; else if (r >= 3) counts[3]++; else if (r >= 2) counts[2]++; else if (r >= 1) counts[1]++;
+      });
+      document.getElementById('count-5').textContent = counts[5];
+      document.getElementById('count-4').textContent = counts[4];
+      document.getElementById('count-3').textContent = counts[3];
+      document.getElementById('count-2').textContent = counts[2];
+      document.getElementById('count-1').textContent = counts[1];
     }
 
-    // Load data
-    async function loadData() {
+    async function loadConsoleData() {
+      RAW_GAMES = [];
+      GROUPED_GAMES = [];
+
+      if (window.location.protocol === 'file:') {
+        document.getElementById('emptyStateText').innerHTML = `<strong class="text-rose-500">CORS Error:</strong> Load via local server (python3 -m http.server 8000)`;
+        document.getElementById('emptyState').classList.remove('hidden');
+        updateStats(); renderGrid(); return;
+      }
+
       try {
-        const res = await fetch(DATA_URL);
-        if (!res.ok) throw new Error('Network error');
+        const res = await fetch(URL);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
+        RAW_GAMES = data.games || [];
         const system = currentConsole === 'gc' ? 'GC' : 'Wii';
-        const filtered = data.games.filter(g => (g.game_info?.system || '') === system);
-        allGames = groupGames(filtered);
-        applyFilters();
+        const filtered = RAW_GAMES.filter(g => (g.game_info?.system || '') === system);
+        GROUPED_GAMES = groupGames(filtered);
+        document.getElementById('emptyStateText').textContent = 'No games found.';
       } catch (err) {
-        console.error(err);
-        document.getElementById('gamesGrid').innerHTML = '<p style="padding:2rem;text-align:center;color:#ef4444">Error loading data. Check connection.</p>';
+        document.getElementById('emptyStateText').innerHTML = `<strong class="text-rose-500">Error loading data:</strong> ${err.message}`;
+        document.getElementById('emptyState').classList.remove('hidden');
+      } finally {
+        updateStats();
+        renderGrid();
       }
     }
 
-    // Actions
-    function switchConsole(target) {
-      currentConsole = target;
-      document.body.className = target === 'gc' ? 'gc' : 'wii';
-      document.querySelectorAll('.console-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.textContent.toLowerCase() === target);
+    // ============================================================
+    //  EVENTS
+    // ============================================================
+    document.getElementById('searchInput').addEventListener('input', e => { searchQuery = e.target.value.toLowerCase().trim(); renderGrid(); });
+    document.getElementById('regionFilter').addEventListener('change', e => { selectedRegion = e.target.value; renderGrid(); });
+    document.getElementById('bootFilter').addEventListener('change', e => { selectedBoot = e.target.value; renderGrid(); });
+    document.getElementById('sortKey').addEventListener('change', e => { currentSortKey = e.target.value; renderGrid(); });
+    document.getElementById('sortOrderBtn').addEventListener('click', () => {
+      currentSortOrder = currentSortOrder === 'asc' ? 'desc' : 'asc';
+      document.getElementById('sortOrderLabel').textContent = currentSortOrder === 'asc' ? 'Asc' : 'Desc';
+      document.getElementById('sortOrderIcon').classList.toggle('rotate-180');
+      renderGrid();
+    });
+    document.getElementById('viewModeBtn').addEventListener('click', () => {
+      viewMode = viewMode === 'grid' ? 'list' : 'grid';
+      const btn = document.getElementById('viewModeBtn');
+      const label = document.getElementById('viewModeLabel');
+      const icon = document.getElementById('viewModeIcon');
+      if (viewMode === 'grid') {
+        label.textContent = 'Grid';
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
+      } else {
+        label.textContent = 'List';
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h6M4 12h6M4 19h6M14 5h6M14 12h6M14 19h6"/>';
+      }
+      renderGrid();
+    });
+    document.querySelectorAll('.rating-panel').forEach(p => {
+      p.addEventListener('click', () => {
+        const v = p.getAttribute('data-rating');
+        selectedStars = selectedStars === v ? 'all' : v;
+        renderGrid();
       });
-      loadData();
-    }
-
-    function setViewMode(mode) {
-      viewMode = mode;
-      document.getElementById('gridBtn').classList.toggle('active', mode === 'grid');
-      document.getElementById('listBtn').classList.toggle('active', mode === 'list');
-      renderGames();
-    }
-
-    function filterByRating(r) {
-      selectedRating = r;
-      document.querySelectorAll('.rating-pill').forEach(pill => {
-        pill.classList.toggle('active', pill.dataset.rating === r);
-      });
-      applyFilters();
-    }
-
-    function toggleSortOrder() {
-      sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
-      document.getElementById('sortOrderLabel').textContent = sortOrder === 'asc' ? 'Asc' : 'Desc';
-      applyFilters();
-    }
-
-    function resetFilters() {
-      searchQuery = '';
+    });
+    document.getElementById('resetFiltersBtn').addEventListener('click', () => {
       document.getElementById('searchInput').value = '';
-      selectedRegion = 'all';
       document.getElementById('regionFilter').value = 'all';
-      selectedBoot = 'all';
       document.getElementById('bootFilter').value = 'all';
-      sortKey = 'title';
       document.getElementById('sortKey').value = 'title';
-      sortOrder = 'asc';
+      currentSortOrder = 'asc';
       document.getElementById('sortOrderLabel').textContent = 'Asc';
-      selectedRating = 'all';
-      filterByRating('all');
-      applyFilters();
-    }
-
-    // Events
-    document.getElementById('searchInput').addEventListener('input', e => {
-      searchQuery = e.target.value.toLowerCase().trim();
-      applyFilters();
+      document.getElementById('sortOrderIcon').classList.remove('rotate-180');
+      searchQuery = ''; selectedStars = 'all'; selectedRegion = 'all'; selectedBoot = 'all';
+      renderGrid();
     });
-    document.getElementById('regionFilter').addEventListener('change', e => {
-      selectedRegion = e.target.value;
-      applyFilters();
-    });
-    document.getElementById('bootFilter').addEventListener('change', e => {
-      selectedBoot = e.target.value;
-      applyFilters();
-    });
-    document.getElementById('sortKey').addEventListener('change', e => {
-      sortKey = e.target.value;
-      applyFilters();
-    });
-    document.getElementById('gameModal').addEventListener('click', e => {
-      if (e.target === document.getElementById('gameModal')) closeModal();
-    });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
+    document.getElementById('clearFiltersBtn').addEventListener('click', () => {
+      document.getElementById('resetFiltersBtn').click();
     });
 
-    // Initialize
-    loadData();
+    // ============================================================
+    //  INIT
+    // ============================================================
+    switchConsole('gc');
   </script>
 </body>
 </html>
