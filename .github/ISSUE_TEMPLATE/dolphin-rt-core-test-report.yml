@@ -19,19 +19,12 @@ body:
         </div>
         ---
 
+  # ================= SECTION 1 =================
   - type: markdown
     attributes:
       value: |
-        ## 🎯 Target Details
-
-        | Field | Value |
-        |-------|-------|
-        | **Platform** | *(select below)* |
-        | **Game Title** | *(enter below)* |
-        | **Region** | *(select below)* |
-        | **Game ID** | *(auto-detected or enter manually)* |
-
-        ---
+        ## <u>**1. 🎯 TARGET DETAILS**</u>
+        <small><em>Select the platform, enter the game title, region, and ID (if known).</em></small>
 
   - type: dropdown
     id: platform
@@ -67,7 +60,7 @@ body:
     id: game_id
     attributes:
       label: "🎯 Game ID (optional)"
-      description: "If you already know the Game ID (e.g., GMSE01, RSPE01), enter it here. Otherwise it will be auto-detected."
+      description: "If you know the Game ID (e.g., GMSE01, RSPE01), enter it here. Otherwise it will be auto-detected."
       placeholder: "e.g., GMSE01"
     validations:
       required: false
@@ -81,26 +74,13 @@ body:
     validations:
       required: false
 
+  # ================= SECTION 2 =================
   - type: markdown
     attributes:
       value: |
         ---
-        ## 📊 Test Overview
-
-        **🔌 Boot & Performance Rating** – select the option that matches both boot and performance.
-
-        | Selection | Meaning |
-        |-----------|---------|
-        | NO - 0★ | Game does not boot |
-        | YES - 1★ | Boots but unplayable |
-        | YES - 2★ | Boots, slow but playable |
-        | YES - 3★ | Playable, needs tweaks |
-        | YES - 4★ | Great, minor issues |
-        | YES - 5★ | Perfect, no issues |
-
-        **🎬 FPS Range** – enter the min and max FPS.
-
-        ---
+        ## <u>**2. 📊 TEST OVERVIEW**</u>
+        <small><em>Rate the game's behavior: overall rating, FPS range, and core profile used.</em></small>
 
   - type: dropdown
     id: boot_rating
@@ -128,246 +108,102 @@ body:
     id: core_profile
     attributes:
       label: "⚙️ Core Profile Used *"
+      description: "For GameCube, use the GC profiles (first 14). For Wii, use the Wii profiles (last 4)."
       options:
-        - "default"
-        - "performance"
-        - "compatibility"
-        - "troubleshooting"
-        - "lite"
-        - "widescreen"
-        - "debug / logger"
-        - "blackscreenfix"
-        - "speedup 1"
-        - "speedup 2"
-        - "wii-performance"
-        - "wii-compatibility"
-        - "wii-safe"
+        - "Default"
+        - "Speedhacks"
+        - "Performance"
+        - "Compatibility"
+        - "Lite"
+        - "Troubleshooting"
+        - "Widescreen"
+        - "Blackscreenfix"
+        - "Logger"
+        - "Debug"
+        - "Debug Logger"
+        - "Safe"
+        - "Speedup 1"
+        - "Speedup 2"
+        - "Wii"
+        - "Wii Performance"
+        - "Wii Compatibility"
+        - "Wii Safe"
     validations:
       required: true
 
+  # ================= SECTION 3 =================
   - type: markdown
     attributes:
       value: |
         ---
-        ## 📝 Additional Observations
+        ## <u>**3. 📝 RESULTS IN DEPTH**</u>
+        <small><em>Describe any issues, solutions, workarounds, or detailed notes.</em></small>
 
   - type: textarea
     id: notes
     attributes:
       label: "📝 Considerations & Notes"
-      description: "Describe performance, graphical issues, audio problems, workarounds, anything noteworthy."
+      description: "Describe performance, graphical issues, audio problems, bugs, etc."
       placeholder: "Write your considerations here"
     validations:
       required: false
 
+  # ================= SECTION 4 =================
   - type: markdown
     attributes:
       value: |
         ---
-        ## ⚙️ Custom Settings (optional – fill as many as needed, leave empty for unused)
-
-        *Each custom setting can be added by filling the fields below. If you don't need a setting, leave all its fields empty.*
+        ## <u>**4. 🧩 ADDITIONAL DATA**</u>
+        <small><em>Add any recommended custom settings and/or links to screenshots/videos.</em></small>
 
   - type: dropdown
-    id: cs1_type
+    id: recommend_custom_settings
     attributes:
-      label: "Custom Settings 1 – Type"
+      label: "📦 Do you want to recommend Custom Settings?"
       options:
-        - "Game Setting"
-        - "Texture Mod"
+        - "No"
+        - "Yes"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: cs_type
+    attributes:
+      label: "Customization Type (if Yes)"
+      options:
+        - "Config"
+        - "Texture"
         - "Hack"
         - "Cheats"
-        - "Other"
-    validations:
-      required: false
-
-  - type: input
-    id: cs1_title
-    attributes:
-      label: "Custom Settings 1 – Subject / Title"
-      placeholder: "e.g., Overclock tweak, HD Texture Pack"
-    validations:
-      required: false
-
-  - type: input
-    id: cs1_url
-    attributes:
-      label: "Custom Settings 1 – Download Link"
-      placeholder: "https://..."
+        - "Others"
     validations:
       required: false
 
   - type: textarea
-    id: cs1_notes
+    id: cs_details
     attributes:
-      label: "Custom Settings 1 – Additional Notes"
-      placeholder: "e.g., Overclock=0.55, Resolution=0.33"
-    validations:
-      required: false
-
-  - type: dropdown
-    id: cs2_type
-    attributes:
-      label: "Custom Settings 2 – Type"
-      options:
-        - "Game Setting"
-        - "Texture Mod"
-        - "Hack"
-        - "Cheats"
-        - "Other"
-    validations:
-      required: false
-
-  - type: input
-    id: cs2_title
-    attributes:
-      label: "Custom Settings 2 – Subject / Title"
-      placeholder: "e.g., Shader fix, Cheat code"
-    validations:
-      required: false
-
-  - type: input
-    id: cs2_url
-    attributes:
-      label: "Custom Settings 2 – Download Link"
-      placeholder: "https://..."
+      label: "Configuration Details (if Yes)"
+      description: "Enter a brief description or the content of the configuration (e.g., Overclock=0.55, Resolution=0.33)."
+      placeholder: "Overclock = 0.55\nInternalResolution = 50\nVISkip = True"
     validations:
       required: false
 
   - type: textarea
-    id: cs2_notes
+    id: attachments_urls
     attributes:
-      label: "Custom Settings 2 – Additional Notes"
-      placeholder: "e.g., Improve water effects"
+      label: "🖼️ Attachments (URLs of screenshots/videos)"
+      description: "Enter one URL per line. They will be added as attachments."
+      placeholder: "https://i.imgur.com/abc123.jpg\nhttps://youtu.be/xyz789"
     validations:
       required: false
 
-  - type: dropdown
-    id: cs3_type
-    attributes:
-      label: "Custom Settings 3 – Type"
-      options:
-        - "Game Setting"
-        - "Texture Mod"
-        - "Hack"
-        - "Cheats"
-        - "Other"
-    validations:
-      required: false
-
-  - type: input
-    id: cs3_title
-    attributes:
-      label: "Custom Settings 3 – Subject / Title"
-      placeholder: "e.g., Controller config"
-    validations:
-      required: false
-
-  - type: input
-    id: cs3_url
-    attributes:
-      label: "Custom Settings 3 – Download Link"
-      placeholder: "https://..."
-    validations:
-      required: false
-
-  - type: textarea
-    id: cs3_notes
-    attributes:
-      label: "Custom Settings 3 – Additional Notes"
-      placeholder: "e.g., Fix audio stuttering"
-    validations:
-      required: false
-
+  # ================= SECTION 5 =================
   - type: markdown
     attributes:
       value: |
         ---
-        ## 🖼️ Attachments (optional – fill as many as needed, leave empty for unused)
-
-  - type: dropdown
-    id: att1_type
-    attributes:
-      label: "Attachment 1 – Type"
-      options:
-        - "image"
-        - "video"
-    validations:
-      required: false
-
-  - type: input
-    id: att1_title
-    attributes:
-      label: "Attachment 1 – Title"
-      placeholder: "e.g., Screenshot 1"
-    validations:
-      required: false
-
-  - type: input
-    id: att1_url
-    attributes:
-      label: "Attachment 1 – URL"
-      placeholder: "https://..."
-    validations:
-      required: false
-
-  - type: dropdown
-    id: att2_type
-    attributes:
-      label: "Attachment 2 – Type"
-      options:
-        - "image"
-        - "video"
-    validations:
-      required: false
-
-  - type: input
-    id: att2_title
-    attributes:
-      label: "Attachment 2 – Title"
-      placeholder: "e.g., Gameplay video"
-    validations:
-      required: false
-
-  - type: input
-    id: att2_url
-    attributes:
-      label: "Attachment 2 – URL"
-      placeholder: "https://..."
-    validations:
-      required: false
-
-  - type: dropdown
-    id: att3_type
-    attributes:
-      label: "Attachment 3 – Type"
-      options:
-        - "image"
-        - "video"
-    validations:
-      required: false
-
-  - type: input
-    id: att3_title
-    attributes:
-      label: "Attachment 3 – Title"
-      placeholder: "e.g., Screenshot 2"
-    validations:
-      required: false
-
-  - type: input
-    id: att3_url
-    attributes:
-      label: "Attachment 3 – URL"
-      placeholder: "https://..."
-    validations:
-      required: false
-
-  - type: markdown
-    attributes:
-      value: |
-        ---
-        ## 👤 Tester Information
+        ## <u>**5. 👤 TESTER INFO**</u>
+        <small><em>Who performed the test, on which device, and with which muOS/Dolphin version.</em></small>
 
   - type: input
     id: tester
