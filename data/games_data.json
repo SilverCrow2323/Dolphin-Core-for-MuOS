@@ -326,45 +326,6 @@
       "custom_settings": [],
       "attachments": []
     },
-    {
-      "game_info": {
-        "game_id": "GLME01",
-        "system": "GC",
-        "game": "Luigi's Mansion",
-        "region": "NTSC"
-      },
-      "test_review": {
-        "rating": 3,
-        "fps": "15",
-        "boot": "YES",
-        "playable": "YES"
-      },
-      "test_details": {
-        "rtcore_version": "v10.5.3",
-        "core_profile": "Default",
-        "considerations": "In older versions, simply changing the CPU overclock was enough to achieve a considerable FPS gain in the game. In these newer versions, this has been fixed; however, other settings have been added that significantly slow down the system. The configuration I'm using gives me around 15 FPS in the game and much more fluidity."
-      },
-      "test_environment": {
-        "tester": "Luis Torrão",
-        "device": "RG4xxxx",
-        "muos_version": ""
-      },
-      "cover_art": "",
-      "custom_settings": [
-        {
-          "set_type": "Game Setting",
-          "set_name": "[note by sirpips: Config created from test by Luis Torrão (RG4xxxx, Dolphin Rt:Core v10.5)]",
-          "set_filename": "GLME01.ini",
-          "set_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/refs/heads/main/opt/muos/share/emulator/dolphin/GameSettings/GLME01.ini",
-          "set_note": ""
-        }
-      ],
-      "attachments": [
-        {
-          "media_type": "video",
-          "media_title": "Luigi's Mansion on an Anbernic device with the Allwinner H700 - MUOS",
-          "media_url": "https://www.youtube.com/watch?v=FG76ZUNnYBY"
-        },
         {
           "game_info": {
             "game_id": "GINX69",
