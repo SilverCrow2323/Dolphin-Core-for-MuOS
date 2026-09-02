@@ -49,10 +49,8 @@ body:
     attributes:
       label: "Region *"
       options:
-        - "NTSC / USA"
+        - "NTSC"
         - "PAL"
-        - "NTSC / JPN"
-        - "NTSC / KOR"
     validations:
       required: true
 
