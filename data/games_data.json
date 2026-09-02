@@ -331,7 +331,7 @@
         "game_id": "GLME01",
         "system": "GC",
         "game": "Luigi's Mansion",
-        "region": "NTSC / USA"
+        "region": "NTSC"
       },
       "test_review": {
         "rating": 3,
@@ -655,7 +655,7 @@
         "game_id": "GBTE70",
         "system": "GC",
         "game": "Beyblade Super Tournament Battle",
-        "region": "NTSC / USA"
+        "region": "NTSC"
       },
       "test_review": {
         "rating": 0,
@@ -1438,7 +1438,7 @@
         "game_id": "GDJEB2",
         "system": "GC",
         "game": "Digimon World 4",
-        "region": "NTSC / USA"
+        "region": "NTSC"
       },
       "test_review": {
         "rating": 4,
@@ -2113,7 +2113,7 @@
         "game_id": "GKUE9G",
         "system": "GC",
         "game": "Scaler",
-        "region": "NTSC / USA"
+        "region": "NTSC"
       },
       "test_review": {
         "rating": 3,
@@ -2140,7 +2140,7 @@
         "game_id": "GKUE9G",
         "system": "GC",
         "game": "Scaler",
-        "region": "NTSC / USA"
+        "region": "NTSC"
       },
       "test_review": {
         "rating": 4,
@@ -3139,7 +3139,7 @@
         "game_id": "G89EAF",
         "system": "GC",
         "game": "Pac-Man World Rally",
-        "region": "NTSC / USA"
+        "region": "NTSC"
       },
       "test_review": {
         "rating": 4,
@@ -5407,7 +5407,7 @@
         "game_id": "GVJE08",
         "system": "GC",
         "game": "Viewtiful Joe",
-        "region": "NTSC / USA"
+        "region": "NTSC"
       },
       "test_review": {
         "rating": 2,
@@ -5434,7 +5434,7 @@
         "game_id": "SCAE18",
         "system": "Wii",
         "game": "Calling",
-        "region": "NTSC / USA"
+        "region": "NTSC"
       },
       "test_review": {
         "rating": 2,
