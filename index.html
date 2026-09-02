@@ -457,7 +457,7 @@
   <!-- Header -->
   <header class="header">
     <div class="header-left">
-      <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt.png" alt="Logo" class="header-logo">
+      <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphin_icon.png" alt="Logo" class="header-logo">
       <div class="header-title">Dolphin <span>Rt:Core</span> <span style="font-weight:400">for muOS</span></div>
     </div>
     <div class="console-switch">
@@ -548,8 +548,8 @@
     let sortKey = 'title';
     let sortOrder = 'asc';
 
-    // Data URL
-    const DATA_URL = 'const DATA_URL = 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/refs/heads/main/data/games_data.json';
+    // Data URL – CORRETTO
+    const DATA_URL = 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/games_data.json';
 
     // Utility
     function escapeHtml(str) {
@@ -573,7 +573,7 @@
       let html = '<div style="display:flex;gap:2px">';
       for (let i = 1; i <= 5; i++) {
         const filled = i <= full;
-        const color = i <= 5 ? (i >= 5 ? '#10b981' : i >= 4 ? '#14b8a6' : i >= 3 ? '#f59e0b' : i >= 2 ? '#f97316' : '#ef4444') : '#94a3b8';
+        const color = i >= 5 ? '#10b981' : i >= 4 ? '#14b8a6' : i >= 3 ? '#f59e0b' : i >= 2 ? '#f97316' : '#ef4444';
         html += `<svg width="12" height="12" viewBox="0 0 20 20" fill="${filled ? color : 'none'}" stroke="${color}" stroke-width="1.5"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>`;
       }
       return html + '</div>';
@@ -596,7 +596,6 @@
 
       const result = [];
       groups.forEach(group => {
-        // Find best entry
         let bestRating = 0;
         let bestFpsStr = '???';
         let bestFpsMax = 0;
