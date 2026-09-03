@@ -1,6 +1,8 @@
 <div align="center">
 
-# **🎮 Dolphin (pre)Rt:Core for muOS — History & Archive 🏛️**
+# <img src="https://imgs.search.brave.com/tyQv6MFjbbp1NULahYsqy1k4QZTSTi0ieuSbkCkdPS0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi81LzUzL0Rv/bHBoaW5fRW11bGF0/b3JfTG9nb19SZWZy/ZXNoLnN2Zy8yNTBw/eC1Eb2xwaGluX0Vt/dWxhdG9yX0xvZ29f/UmVmcmVzaC5zdmcu/cG5nP3V0bV9zb3Vy/Y2U9d3d3Lndpa2lk/YXRhLm9yZyZhbXA7/dXRtX2NhbXBhaWdu/PWluZGV4JmFtcDt1/dG1fY29udGVudD10/aHVtYm5haWw" width="30" alt="SPDW Symbol"> Dolphin <i>(pre)</i>Rt:Core:// **🏛️ History & Archive** 
+  <br>
+
 
 <br>
 
@@ -8,7 +10,7 @@
 
 <br><br>
 
-> 🏛️ *Welcome to the <u>**digital fossil record**</u>.*  
+> ## 🏛️ *Welcome to the <u>**digital fossil record**</u>.*  
 > This directory houses all previous iterations, test builds, and experimental packages of the <u>**Dolphin Core**</u> (**Nintendo GameCube** & **Nintendo Wii**) for **muOS**, compiled _before_ this repository officially existed to catalog the chaos.  
 >  
 > These builds stem from the **pioneering work** and **legendary experiments** by **@Speedrun**, originally documented on the  
@@ -149,7 +151,7 @@ All archived releases preserved in this directory are cataloged below:
 
 | Action / Command | Button Combination | Scope & Notes |
 | :--- | :--- | :--- |
-| **Safe Core Exit** | `L1` + `L2` + `R1` + `R2` + **Hold Power (2s)** | <u>**Essential:**</u> Safe reset combo to exit Dolphin without corrupting system files. |
+| **Safe Core Exit** | `L1` + `L2` + `R1` + `R2` + **Hold Power (2s)** | <u>**Essential:**</u> This hotkey is NOT working. |
 | **Main Stick Navigation** | `D-Pad` | Pre-configured for _zero-joystick devices_ (V6+). |
 | **Native D-Pad Trigger** | `L2` + `D-Pad Direction` | Devices _without joysticks_ (V6+). |
 | **C-Stick Emulation** | `L2` + `A` / `B` / `X` / `Y` | Limited or <u>single-joystick handhelds</u> (V8+). |
