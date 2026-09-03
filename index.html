@@ -593,81 +593,147 @@
     //  GROUPING (NEW STRUCTURE)
     // ============================================================
     function groupGames(rawList) {
-      const groups = new Map();
-      rawList.forEach(item => {
-        const info = item.game_info || {};
-        const title = (info.game || '').trim();
-        const region = (info.region || 'NTSC / USA').trim();
-        if (!title) return;
-        const key = `${title.toLowerCase()}___${region.toLowerCase()}`;
-        if (!groups.has(key)) {
-          groups.set(key, { game: title, region, entries: [] });
-        }
-        groups.get(key).entries.push(item);
-      });
+  const groups = new Map();
 
-      const result = [];
-      groups.forEach(group => {
-        group.entries.sort((a, b) => (parseInt(a.issue||0) - parseInt(b.issue||0)) || 0);
-        let bestRating = 0, bestFpsMax = -1, bestFpsStr = "???";
-        let totalRating = 0, validFpsCount = 0, totalFpsSum = 0;
-        let bestBoot = "NO", bestPlayable = "NO";
-        let gameId = null;
-        let bestEntryIndex = 0;
+  rawList.forEach(item => {
+    // Ogni item ora ha una struttura con "game_info" e "entries"
+    const info = item.game_info || {};
+    const entries = item.entries || [];
+    const title = (info.game || '').trim();
+    const region = (info.region || 'NTSC / USA').trim();
+    if (!title || entries.length === 0) return;
 
-        group.entries.forEach((e, idx) => {
-          const review = e.test_review || {};
-          const details = e.test_details || {};
-          const info = e.game_info || {};
-
-          const r = parseInt(review.rating || 0, 10);
-          if (r > bestRating) bestRating = r;
-          totalRating += r;
-
-          const boot = review.boot || (r >= 1 ? "YES" : "NO");
-          const playable = review.playable || (r >= 3 ? "YES" : "NO");
-          if (boot === "YES") bestBoot = "YES";
-          if (playable === "YES") bestPlayable = "YES";
-
-          if (!gameId && info.game_id) gameId = info.game_id;
-
-          const fpsRaw = (review.fps || '???').trim();
-          const fpsMax = parseInt(review.fps_max || 0, 10);
-          const hasNum = /\d+/.test(fpsRaw) && fpsRaw !== "???";
-          if (hasNum && fpsMax > bestFpsMax) { bestFpsMax = fpsMax; bestFpsStr = fpsRaw; }
-          else if (bestFpsMax === -1 && fpsRaw && fpsRaw !== "???") bestFpsStr = fpsRaw;
-          if (hasNum && fpsMax > 0) { totalFpsSum += fpsMax; validFpsCount++; }
-
-          const currentScore = (r * 1000) + (hasNum ? fpsMax : -1);
-          const bestScore = (bestRating * 1000) + (bestFpsMax > 0 ? bestFpsMax : -1);
-          if (currentScore > bestScore) {
-            bestEntryIndex = idx;
-          }
-        });
-
-        if (!gameId) gameId = 'UNKNOWN';
-
-        const avgRating = (totalRating / group.entries.length).toFixed(1);
-        const avgFps = validFpsCount > 0 ? Math.round(totalFpsSum / validFpsCount) : "N/A";
-
-        result.push({
-          game: group.game,
-          region: group.region,
-          entries: group.entries,
-          entriesCount: group.entries.length,
-          bestRating,
-          bestFpsStr,
-          bestFpsMax,
-          bestBoot,
-          bestPlayable,
-          avgRating: parseFloat(avgRating),
-          avgFps,
-          gameId,
-          bestEntryIndex
-        });
-      });
-      return result;
+    const key = `${title.toLowerCase()}___${region.toLowerCase()}`;
+    if (!groups.has(key)) {
+      groups.set(key, { game: title, region, entries: [] });
     }
+    // Aggiungi TUTTI gli entry del gioco
+    entries.forEach(e => groups.get(key).entries.push(e));
+  });
+
+  const result = [];
+  groups.forEach(group => {
+    group.entries.sort((a, b) => (parseInt(a.issue || 0) - parseInt(b.issue || 0)) || 0);
+
+    let bestRating = 0;
+    let bestFpsMax = -1;
+    let bestFpsStr = "???";
+    let totalRating = 0;
+    let totalFpsMinSum = 0;
+    let totalFpsMaxSum = 0;
+    let validFpsCount = 0;
+    let bestBoot = "NO";
+    let bestPlayable = "NO";
+    let gameId = null;
+    let bestEntryIndex = 0;
+
+    group.entries.forEach((e, idx) => {
+      // Ora i dati sono dentro e (che è un singolo entry)
+      const review = e.test_review || {};
+      const details = e.test_details || {};
+      const env = e.test_environment || {};
+      const info = e.game_info || {};
+
+      // Rating
+      const r = parseInt(review.rating, 10);
+      const rating = isNaN(r) ? 0 : r;
+      if (rating > bestRating) bestRating = rating;
+      totalRating += rating;
+
+      // Boot
+      const bootVal = review.boot || (rating >= 1 ? "YES" : "NO");
+      if (bootVal === "YES") bestBoot = "YES";
+
+      // Playable
+      let playVal = review.playable || (rating >= 3 ? "YES" : "NO");
+      if (rating === 3 && playVal === "YES") playVal = "YES WITH ISSUES";
+      if (playVal === "YES" || playVal === "YES WITH ISSUES") bestPlayable = playVal;
+
+      // Game ID
+      if (!gameId && info.game_id) gameId = info.game_id;
+
+      // FPS – parsing robusto
+      let fpsMin = parseInt(review.fps_min, 10);
+      let fpsMax = parseInt(review.fps_max, 10);
+      const fpsRaw = (review.fps || '???').trim();
+
+      if (isNaN(fpsMin) || isNaN(fpsMax)) {
+        const numbers = fpsRaw.match(/\d+/g);
+        if (numbers) {
+          const nums = numbers.map(Number);
+          if (nums.length >= 2) {
+            fpsMin = nums[0];
+            fpsMax = nums[1];
+          } else if (nums.length === 1) {
+            fpsMin = nums[0];
+            fpsMax = nums[0];
+          }
+        }
+      }
+      if (isNaN(fpsMin)) fpsMin = 0;
+      if (isNaN(fpsMax)) fpsMax = 0;
+
+      // Aggiorna best FPS
+      if (fpsMax > bestFpsMax) {
+        bestFpsMax = fpsMax;
+        if (fpsRaw && fpsRaw !== '???') {
+          bestFpsStr = fpsRaw;
+        } else if (fpsMin > 0 && fpsMax > 0) {
+          bestFpsStr = `${fpsMin} - ${fpsMax}`;
+        }
+      }
+
+      // Accumula per la media
+      if (fpsMin > 0) {
+        totalFpsMinSum += fpsMin;
+        totalFpsMaxSum += fpsMax;
+        validFpsCount++;
+      }
+
+      // Best entry index
+      const currentScore = (rating * 1000) + (fpsMax > 0 ? fpsMax : -1);
+      const bestScore = (bestRating * 1000) + (bestFpsMax > 0 ? bestFpsMax : -1);
+      if (currentScore > bestScore) {
+        bestEntryIndex = idx;
+      }
+    });
+
+    if (bestFpsStr === "???" && bestFpsMax > 0) {
+      bestFpsStr = `${bestFpsMax}`;
+    }
+    if (bestFpsStr === "???" && bestFpsMax <= 0) {
+      bestFpsStr = "???";
+    }
+
+    const avgRating = group.entries.length > 0 ? (totalRating / group.entries.length).toFixed(1) : "0.0";
+    let avgFps = "N/A";
+    if (validFpsCount > 0) {
+      const avgMin = Math.round(totalFpsMinSum / validFpsCount);
+      const avgMax = Math.round(totalFpsMaxSum / validFpsCount);
+      avgFps = `${avgMin} - ${avgMax}`;
+    }
+
+    if (!gameId) gameId = 'UNKNOWN';
+
+    result.push({
+      game: group.game,
+      region: group.region,
+      entries: group.entries,
+      entriesCount: group.entries.length,
+      bestRating: bestRating,
+      bestFpsStr: bestFpsStr,
+      bestFpsMax: bestFpsMax,
+      bestBoot: bestBoot,
+      bestPlayable: bestPlayable,
+      avgRating: parseFloat(avgRating),
+      avgFps: avgFps,
+      gameId: gameId,
+      bestEntryIndex: bestEntryIndex
+    });
+  });
+
+  return result;
+}
 
     // ============================================================
     //  CONSOLE SWITCH
