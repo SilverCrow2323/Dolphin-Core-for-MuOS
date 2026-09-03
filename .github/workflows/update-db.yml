@@ -1,322 +1,218 @@
-name: Update Dolphin Database from Issues
+# ---------- Estrai campi ----------
+print("📋 Extracting fields...")
+platform = extract_val("Platform", issue_body) or "GameCube"
+game_title = extract_val("Game Title", issue_body)
+region = extract_val("Region", issue_body) or "NTSC / USA"
+fps_min_raw = extract_val("FPS Range - Minimum", issue_body)
+fps_max_raw = extract_val("FPS Range - Maximum", issue_body)
+core_profile = extract_val("Core Profile Used", issue_body) or "default"
+core_version = extract_val("Dolphin Rt:Core Version", issue_body) or "v10.5.300"
+considerations = extract_val("Considerations & Gameplay Experience", issue_body) or ""
+tester = extract_val("Tester Username", issue_body) or "Anonymous"
+device = extract_val("Device Used", issue_body) or "Unknown Device"
+muos_version = extract_val("muOS Version", issue_body) or "2601.1 Funky Jacaranda (current)"
+cover_art = extract_val("Cover Art URL", issue_body) or ""
 
-on:
-  issues:
-    types: [closed]
-  workflow_dispatch:
-    inputs:
-      issue_number:
-        description: 'Numero issue da processare manualmente (es. 12)'
-        required: true
-        type: string
+print(f"  📌 Game: {game_title}")
+print(f"  📌 Platform: {platform}")
+print(f"  📌 Region: {region}")
 
-permissions:
-  contents: write
-  issues: read
-  pull-requests: write
+if not game_title:
+    print("❌ Game Title is required!")
+    sys.exit(1)
 
-jobs:
-  update-db:
-    # Controlla se l'issue ha il label "GameCube" o "Wii" (o è manuale)
-    if: |
-      github.event_name == 'workflow_dispatch' ||
-      contains(github.event.issue.labels.*.name, 'GameCube') ||
-      contains(github.event.issue.labels.*.name, 'Wii')
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+# ---------- Parse FPS ----------
+fps_min = 0
+fps_max = 0
+fps_str = "???"
+if fps_min_raw and fps_max_raw:
+    try:
+        fps_min = int(fps_min_raw)
+        fps_max = int(fps_max_raw)
+        fps_str = f"{fps_min} - {fps_max}"
+    except ValueError:
+        print(f"⚠️ Invalid FPS values: min={fps_min_raw}, max={fps_max_raw}")
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+# ---------- Parse Rating ----------
+boot_rating_raw = extract_val("Performance Rating", issue_body) or ""
+boot = "NO"
+rating = 0
+if boot_rating_raw:
+    match = re.search(r'(\d+)★', boot_rating_raw)
+    if match:
+        rating = int(match.group(1))
+    else:
+        nums = re.findall(r'\d+', boot_rating_raw)
+        if nums:
+            rating = int(nums[0])
+    if "NO BOOT" in boot_rating_raw.upper():
+        boot = "NO"
+    else:
+        boot = "YES"
 
-      - name: Debug - Show issue info
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "📌 Event name: ${{ github.event_name }}"
-          echo "📌 Issue number: ${{ github.event.issue.number }}"
-          echo "📌 Issue labels: ${{ join(github.event.issue.labels.*.name, ', ') }}"
-          if [ -n "${{ inputs.issue_number }}" ]; then
-            echo "📌 Manual issue: ${{ inputs.issue_number }}"
-          fi
+if rating == 0 and boot == "YES":
+    rating = 3
 
-      - name: Process Issue and Update JSON
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MANUAL_ISSUE: ${{ inputs.issue_number }}
-        run: |
-          python3 << 'PYSCRIPT'
-          import json, os, re, sys, subprocess
-          from difflib import get_close_matches
+print(f"  ⭐ Rating: {rating}★, Boot: {boot}")
 
-          print("🔍 Starting script...")
+# ---------- Game ID ----------
+user_game_id = extract_val("Game ID", issue_body) or ""
+game_id = None
+note_missing = ""
+if user_game_id and re.match(r'[GR][A-Z0-9]{5}', user_game_id):
+    game_id = user_game_id.upper()
+    print(f"  🆔 Game ID from user: {game_id}")
+else:
+    id_match = re.search(r'[GR][A-Z0-9]{5}', issue_body)
+    if id_match:
+        game_id = id_match.group(0)
+        print(f"  🆔 Game ID found in body: {game_id}")
+    else:
+        if game_title:
+            clean = re.sub(r'[^a-zA-Z]', '', game_title)[:3].upper()
+            game_id = f"{'G' if platform.lower() == 'gamecube' else 'R'}{clean}01"
+        else:
+            game_id = "UNKNOWN"
+        note_missing = f"⚠️ Game ID not auto-detected. Using placeholder '{game_id}'."
+        print(f"  ⚠️ {note_missing}")
 
-          # ---------- Get issue body ----------
-          issue_body = ""
-          issue_number = ""
-          try:
-              if os.environ.get('MANUAL_ISSUE'):
-                  issue_num = os.environ.get('MANUAL_ISSUE')
-                  print(f"📥 Manual mode: processing issue #{issue_num}")
-                  result = subprocess.run(
-                      ['gh', 'issue', 'view', issue_num, '--json', 'body', '-q', '.body'],
-                      capture_output=True, text=True, check=False
-                  )
-                  if result.returncode != 0:
-                      print(f"❌ gh command failed: {result.stderr}")
-                      sys.exit(1)
-                  issue_body = result.stdout
-                  issue_number = issue_num
-              else:
-                  print("📥 Automatic mode: reading from GitHub event")
-                  issue_body = """${{ github.event.issue.body }}"""
-                  issue_number = "${{ github.event.issue.number }}"
-          except Exception as e:
-              print(f"❌ Error getting issue body: {e}")
-              sys.exit(1)
+# ---------- Custom Settings ----------
+recommend_cs = extract_val("Do you want to recommend Custom Settings?", issue_body) or "No"
+custom_settings = []
+if recommend_cs.strip().lower() in ["yes", "sì", "si"]:
+    cs_type = extract_val("Custom Settings - Type", issue_body) or ""
+    cs_name = extract_val("Custom Settings - Name / Title", issue_body) or ""
+    cs_url = extract_val("Custom Settings - URL", issue_body) or ""
+    cs_details = extract_val("Custom Settings - Details", issue_body) or ""
+    # Validazione: type non deve essere "Select a type...", name non vuoto, details almeno 10 caratteri
+    if (cs_type and cs_type != "Select a type..." and cs_name.strip() and len(cs_details.strip()) >= 10):
+        custom_settings.append({
+            "set_type": cs_type,
+            "set_name": cs_name,
+            "set_filename": "",
+            "set_url": cs_url,
+            "set_note": cs_details
+        })
+        print(f"  ⚙️ Custom settings added")
+    else:
+        print(f"  ⚠️ Custom settings skipped: missing required fields")
 
-          if not issue_body or not issue_body.strip():
-              print("❌ Issue body is empty!")
-              sys.exit(1)
+# ---------- Attachments ----------
+attachments = []
+attachments_raw = extract_val("Attachments (URLs of screenshots / videos)", issue_body) or ""
+if attachments_raw.strip():
+    for line in attachments_raw.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        # Cerca separatore ":" o " - "
+        title = None
+        url = line
+        for sep in [':', ' - ']:
+            if sep in line:
+                parts = line.split(sep, 1)
+                title = parts[0].strip()
+                url = parts[1].strip()
+                break
+        if not title:
+            title = f"Media {len(attachments)+1}"
+        # Determina media_type
+        url_lower = url.lower()
+        if any(x in url_lower for x in ['youtube.com', 'youtu.be', 'dailymotion', 'vimeo']) or url_lower.endswith(('.mp4', '.webm', '.mov')):
+            media_type = "video"
+        else:
+            media_type = "image"
+        attachments.append({
+            "media_type": media_type,
+            "media_title": title,
+            "media_url": url
+        })
+    print(f"  📎 {len(attachments)} attachments found")
 
-          print(f"📄 Issue body length: {len(issue_body)} chars")
+# ---------- Target JSON ----------
+json_path = "data/games_data.json"
+system = "GC" if platform.lower() == "gamecube" else "Wii"
 
-          # ---------- Helper functions ----------
-          def extract_val(label, body):
-              """Extract a field value from issue body."""
-              if not body:
-                  return ""
-              safe_label = re.escape(label)
-              pattern = rf"###\s*{safe_label}\s*\n\s*(.*?)(?=\n###\s|\Z)"
-              match = re.search(pattern, body, re.DOTALL | re.IGNORECASE)
-              if not match:
-                  return ""
-              val = match.group(1).strip()
-              # Pulizia markdown
-              val = re.sub(r'\*\*(.*?)\*\*', r'\1', val)
-              val = re.sub(r'\*(.*?)\*', r'\1', val)
-              val = re.sub(r'^\s*[-\*]\s*', '', val, flags=re.MULTILINE).strip()
-              if val.lower() in ["_no response_", "no response", "n/a", "none", ""]:
-                  return ""
-              return val
+# Carica o crea il file JSON
+data = []
+if os.path.exists(json_path):
+    try:
+        with open(json_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        print(f"📂 Loaded {len(data)} entries from {json_path}")
+    except json.JSONDecodeError as e:
+        print(f"❌ JSON decode error: {e}")
+        print("   Creating new file...")
+        data = []
+else:
+    print(f"📂 {json_path} not found, creating new file")
+    os.makedirs(os.path.dirname(json_path), exist_ok=True)
 
-          def parse_rating(boot_rating_raw):
-              """Parse rating from boot status string."""
-              boot = "NO"
-              rating = 0
-              if boot_rating_raw:
-                  match = re.search(r'(\d+)★', boot_rating_raw)
-                  if match:
-                      rating = int(match.group(1))
-                  else:
-                      nums = re.findall(r'\d+', boot_rating_raw)
-                      if nums:
-                          rating = int(nums[0])
-                  if "YES" in boot_rating_raw.upper():
-                      boot = "YES"
-              return rating, boot
+# Crea nuovo entry
+new_entry = {
+    "game_info": {
+        "game_id": game_id,
+        "system": system,
+        "game": game_title,
+        "region": region
+    },
+    "test_review": {
+        "rating": rating,
+        "fps": fps_str,
+        "fps_min": fps_min,
+        "fps_max": fps_max,
+        "boot": boot,
+        "playable": "YES" if rating >= 1 else "NO"
+    },
+    "test_details": {
+        "rtcore_version": core_version,
+        "core_profile": core_profile,
+        "considerations": considerations + ("\n" + note_missing if note_missing else "")
+    },
+    "test_environment": {
+        "tester": tester,
+        "device": device,
+        "muos_version": muos_version
+    },
+    "cover_art": cover_art,
+    "custom_settings": custom_settings,
+    "attachments": attachments
+}
 
-          # ---------- Estrai campi ----------
-          print("📋 Extracting fields...")
-          platform = extract_val("Platform", issue_body) or "GameCube"
-          game_title = extract_val("Game Title", issue_body)
-          region = extract_val("Region", issue_body) or "NTSC / USA"
-          fps_raw = extract_val("FPS Range", issue_body)
-          core_profile = extract_val("Core Profile Used", issue_body) or "default"
-          core_version = extract_val("Dolphin Rt:Core Version", issue_body) or "v10.5.300"
-          considerations = extract_val("Considerations & Notes", issue_body) or ""
-          tester = extract_val("Tester Username", issue_body) or "Anonymous"
-          device = extract_val("Device Used", issue_body) or "Unknown Device"
-          muos_version = extract_val("muOS Version", issue_body) or "2601.1 Funky Jacaranda (current)"
-          cover_art = extract_val("Cover Art URL", issue_body) or ""
+# Update o append
+existing_idx = None
+for i, g in enumerate(data):
+    if g.get("game_info", {}).get("game_id") == game_id:
+        existing_idx = i
+        break
 
-          print(f"  📌 Game: {game_title}")
-          print(f"  📌 Platform: {platform}")
-          print(f"  📌 Region: {region}")
+if existing_idx is not None:
+    data[existing_idx] = new_entry
+    action = "updated"
+    print(f"🔄 Updated existing entry for {game_id}")
+else:
+    data.append(new_entry)
+    action = "added"
+    print(f"➕ Added new entry for {game_id}")
 
-          if not game_title:
-              print("❌ Game Title is required!")
-              sys.exit(1)
+# Salva JSON
+try:
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    print(f"✅ JSON saved successfully")
+except Exception as e:
+    print(f"❌ Error saving JSON: {e}")
+    sys.exit(1)
 
-          # ---------- Parse Rating ----------
-          boot_rating_raw = extract_val("Boot Status & Performance Rating", issue_body) or ""
-          rating, boot = parse_rating(boot_rating_raw)
-          if rating == 0 and boot_rating_raw:
-              # Fallback: cerca nel testo
-              nums = re.findall(r'\d+', boot_rating_raw)
-              if nums:
-                  rating = int(nums[0])
-              if "YES" in boot_rating_raw.upper():
-                  boot = "YES"
+# Set environment variables for commit message
+github_env = os.environ.get('GITHUB_ENV')
+if github_env:
+    with open(github_env, 'a', encoding='utf-8') as f:
+        f.write(f"ACTION={action}\n")
+        f.write(f"GAME_ID={game_id}\n")
+        f.write(f"GAME_TITLE={game_title}\n")
+        f.write(f"TARGET_ISSUE_NUM={issue_number}\n")
 
-          # Backward compatibility
-          if rating == 0:
-              boot_raw = extract_val("Does the game boot?", issue_body)
-              rating_raw = extract_val("Performance Rating", issue_body)
-              if not rating_raw:
-                  rating_raw = extract_val("Performance Rating (Stars)", issue_body)
-              if boot_raw and "yes" in boot_raw.lower():
-                  boot = "YES"
-              if rating_raw:
-                  nums = re.findall(r'\d+', rating_raw)
-                  rating = int(nums[0]) if nums else 3
-
-          if rating == 0 and boot == "YES":
-              rating = 3  # Default se boots ma non c'è rating
-
-          print(f"  ⭐ Rating: {rating}★, Boot: {boot}")
-
-          # ---------- Game ID ----------
-          user_game_id = extract_val("Game ID", issue_body) or ""
-          game_id = None
-          note_missing = ""
-          if user_game_id and re.match(r'[GR][A-Z0-9]{5}', user_game_id):
-              game_id = user_game_id.upper()
-              print(f"  🆔 Game ID from user: {game_id}")
-          else:
-              id_match = re.search(r'[GR][A-Z0-9]{5}', issue_body)
-              if id_match:
-                  game_id = id_match.group(0)
-                  print(f"  🆔 Game ID found in body: {game_id}")
-              else:
-                  if game_title:
-                      clean = re.sub(r'[^a-zA-Z]', '', game_title)[:3].upper()
-                      game_id = f"{'G' if platform.lower() == 'gamecube' else 'R'}{clean}01"
-                  else:
-                      game_id = "UNKNOWN"
-                  note_missing = f"⚠️ Game ID not auto-detected. Using placeholder '{game_id}'."
-                  print(f"  ⚠️ {note_missing}")
-
-          # ---------- Custom Settings ----------
-          recommend_cs = extract_val("Do you want to recommend Custom Settings?", issue_body) or "No"
-          custom_settings = []
-          if recommend_cs.strip().lower() in ["yes", "sì", "si"]:
-              cs_type = extract_val("Customization Type (if Yes)", issue_body) or "Config"
-              cs_details = extract_val("Configuration Details (if Yes)", issue_body) or ""
-              if cs_details.strip():
-                  custom_settings.append({
-                      "set_type": cs_type,
-                      "set_name": "Custom Setting",
-                      "set_filename": "",
-                      "set_url": "",
-                      "set_note": cs_details
-                  })
-                  print(f"  ⚙️ Custom settings added")
-
-          # ---------- Attachments ----------
-          attachments = []
-          attachments_raw = extract_val("Attachments (URLs of screenshots/videos)", issue_body) or ""
-          if attachments_raw.strip():
-              for line in attachments_raw.splitlines():
-                  line = line.strip()
-                  if not line:
-                      continue
-                  media_type = "video" if "youtu" in line.lower() or line.lower().endswith('.mp4') else "image"
-                  attachments.append({
-                      "media_type": media_type,
-                      "media_title": f"Attachment {len(attachments)+1}",
-                      "media_url": line
-                  })
-              print(f"  📎 {len(attachments)} attachments found")
-
-          # ---------- Target JSON ----------
-          json_path = "data/games_data.json"
-          system = "GC" if platform.lower() == "gamecube" else "Wii"
-
-          # Carica o crea il file JSON
-          data = []
-          if os.path.exists(json_path):
-              try:
-                  with open(json_path, "r", encoding="utf-8") as f:
-                      data = json.load(f)
-                  print(f"📂 Loaded {len(data)} entries from {json_path}")
-              except json.JSONDecodeError as e:
-                  print(f"❌ JSON decode error: {e}")
-                  print("   Creating new file...")
-                  data = []
-          else:
-              print(f"📂 {json_path} not found, creating new file")
-              os.makedirs(os.path.dirname(json_path), exist_ok=True)
-
-          # Crea nuovo entry
-          new_entry = {
-              "game_info": {
-                  "game_id": game_id,
-                  "system": system,
-                  "game": game_title,
-                  "region": region
-              },
-              "test_review": {
-                  "rating": rating,
-                  "fps": fps_raw if fps_raw else "???",
-                  "boot": boot,
-                  "playable": "YES" if rating >= 1 else "NO"
-              },
-              "test_details": {
-                  "rtcore_version": core_version,
-                  "core_profile": core_profile,
-                  "considerations": considerations + ("\n" + note_missing if note_missing else "")
-              },
-              "test_environment": {
-                  "tester": tester,
-                  "device": device,
-                  "muos_version": muos_version
-              },
-              "cover_art": cover_art,
-              "custom_settings": custom_settings,
-              "attachments": attachments
-          }
-
-          # Update o append
-          existing_idx = None
-          for i, g in enumerate(data):
-              if g.get("game_info", {}).get("game_id") == game_id:
-                  existing_idx = i
-                  break
-
-          if existing_idx is not None:
-              data[existing_idx] = new_entry
-              action = "updated"
-              print(f"🔄 Updated existing entry for {game_id}")
-          else:
-              data.append(new_entry)
-              action = "added"
-              print(f"➕ Added new entry for {game_id}")
-
-          # Salva JSON
-          try:
-              with open(json_path, "w", encoding="utf-8") as f:
-                  json.dump(data, f, indent=2, ensure_ascii=False)
-              print(f"✅ JSON saved successfully")
-          except Exception as e:
-              print(f"❌ Error saving JSON: {e}")
-              sys.exit(1)
-
-          # Set environment variables for commit message
-          github_env = os.environ.get('GITHUB_ENV')
-          if github_env:
-              with open(github_env, 'a', encoding='utf-8') as f:
-                  f.write(f"ACTION={action}\n")
-                  f.write(f"GAME_ID={game_id}\n")
-                  f.write(f"GAME_TITLE={game_title}\n")
-                  f.write(f"TARGET_ISSUE_NUM={issue_number}\n")
-
-          print(f"\n✅ {game_title} ({game_id}) {action} successfully.")
-          if note_missing:
-              print(f"⚠️ {note_missing}")
-          PYSCRIPT
-
-      - name: Commit and Push changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/games_data.json
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "auto: ${{ env.ACTION }} ${{ env.GAME_TITLE }} (${{ env.GAME_ID }}) from Issue #${{ env.TARGET_ISSUE_NUM }}"
-            git push
-          fi
+print(f"\n✅ {game_title} ({game_id}) {action} successfully.")
+if note_missing:
+    print(f"⚠️ {note_missing}")
