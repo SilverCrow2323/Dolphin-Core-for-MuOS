@@ -1,218 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dolphin Rt:Core for muOS</title>
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png">
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Audiowide&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Outfit', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'], electric: ['Audiowide', 'Orbitron', 'sans-serif'], mechanical: ['Share Tech Mono', 'Orbitron', 'monospace'] },
-          colors: {
-            wii: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',300:'#7dd3fc',400:'#38bdf8',500:'#00a3e0',600:'#0284c7',700:'#0369a1',800:'#075985',900:'#0c4a6e' },
-            gc: { 50:'#f5f3ff',100:'#ede9fe',200:'#ddd6fe',300:'#c4b5fd',400:'#a78bfa',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95',950:'#1e112a' }
-          }
-        }
-      }
-    }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Audiowide&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Outfit', sans-serif; transition: background 0.4s, color 0.4s; min-height: 100vh; }
     body.theme-gc { background: linear-gradient(145deg, #090511 0%, #160b24 50%, #0d0716 100%); color: #f1f5f9; }
+    body.theme-wii { background: linear-gradient(145deg, #eef2f6 0%, #dce4ec 100%); color: #0f172a; }
+
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
     body.theme-gc ::-webkit-scrollbar-track { background: #0d0716; }
     body.theme-gc ::-webkit-scrollbar-thumb { background: #2e1847; border-radius: 4px; }
     body.theme-gc ::-webkit-scrollbar-thumb:hover { background: #6d28d9; }
-    body.theme-wii { background: linear-gradient(145deg, #eef2f6 0%, #dce4ec 100%); color: #0f172a; }
     body.theme-wii ::-webkit-scrollbar-track { background: #eef2f6; }
     body.theme-wii ::-webkit-scrollbar-thumb { background: #b0c4d8; border-radius: 4px; }
     body.theme-wii ::-webkit-scrollbar-thumb:hover { background: #00a3e0; }
-    ::-webkit-scrollbar { width: 6px; height: 6px; }
+
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes slideIn { from { opacity: 0; transform: scale(0.95) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes sparkFade {
+      0% { opacity: 0; transform: scale(0.2) translate(0,0); }
+      20% { opacity: 1; transform: scale(1.2) translate(-4px,-6px); }
+      60% { opacity: 0.8; transform: scale(0.8) translate(6px,4px); }
+      100% { opacity: 0; transform: scale(0.2) translate(10px,10px); }
+    }
+    @keyframes miniSpark {
+      0% { opacity: 0; transform: scale(0.2) translate(0,0); }
+      25% { opacity: 0.9; transform: scale(1) translate(-2px,-4px); }
+      70% { opacity: 0.4; transform: scale(0.6) translate(4px,2px); }
+      100% { opacity: 0; transform: scale(0.1) translate(6px,6px); }
+    }
     @keyframes starPop { 0% { transform: scale(1); } 50% { transform: scale(1.3); } 100% { transform: scale(1); } }
-    .card-anim { animation: fadeIn 0.25s ease-out forwards; opacity: 0; }
-    .modal-anim { animation: slideIn 0.2s ease-out forwards; }
+    @keyframes starSpin {
+      0% { opacity: 0; transform: translateX(-50%) rotate(0deg) scale(0.4); }
+      8% { opacity: 0.7; transform: translateX(-50%) rotate(60deg) scale(1); }
+      16% { opacity: 0.2; transform: translateX(-50%) rotate(120deg) scale(0.6); }
+      24% { opacity: 0.8; transform: translateX(-50%) rotate(180deg) scale(1.1); }
+      32% { opacity: 0; transform: translateX(-50%) rotate(240deg) scale(0.3); }
+      100% { opacity: 0; transform: translateX(-50%) rotate(360deg) scale(0.4); }
+    }
+    @keyframes flipHorizontal {
+      0% { transform: perspective(800px) rotateY(0deg); opacity: 0.5; }
+      50% { transform: perspective(800px) rotateY(12deg); opacity: 0.9; }
+      100% { transform: perspective(800px) rotateY(0deg); opacity: 1; }
+    }
+
     .gc-glass { background: rgba(22, 11, 36, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(124, 58, 237, 0.25); box-shadow: 0 4px 20px -2px rgba(124, 58, 237, 0.15), 0 2px 6px -1px rgba(0, 0, 0, 0.4); }
     .wii-glass { background: rgba(240, 248, 255, 0.92); backdrop-filter: blur(12px); border: 1px solid rgba(180, 210, 235, 0.7); box-shadow: 0 4px 20px -2px rgba(0, 163, 224, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04); }
+
+    .card-anim { animation: fadeIn 0.25s ease-out forwards; opacity: 0; }
+    .modal-anim { animation: slideIn 0.2s ease-out forwards; }
+
     .cover-placeholder { background: linear-gradient(145deg, #1a1a2e, #16213e); display: flex; align-items: center; justify-content: center; font-size: 28px; color: rgba(255,255,255,0.15); }
     .theme-wii .cover-placeholder { background: linear-gradient(145deg, #dce4ec, #c8d4df); color: rgba(0,0,0,0.08); }
     .cover-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
     .game-card:hover .cover-img { transform: scale(1.03); }
+
     .glow-border { position: relative; }
-    .glow-border::before { content: ''; position: absolute; inset: -2px; border-radius: 16px; padding: 2px; background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(139,92,246,0.1)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; }
+    .glow-border::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 16px;
+      padding: 2px;
+      background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(139,92,246,0.1));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
     .game-card:hover .glow-border::before { opacity: 1; }
     .theme-wii .glow-border::before { background: linear-gradient(135deg, rgba(0,163,224,0.25), rgba(56,189,248,0.08)); }
-    .rating-stars { display: flex; gap: 1px; }
-    .rating-stars svg { width: 14px; height: 14px; }
-    .search-dropdown { position: absolute; top: 100%; left: 0; right: 0; max-height: 300px; overflow-y: auto; border-radius: 12px; z-index: 50; display: none; }
-    .search-dropdown.active { display: block; }
-    .search-dropdown-item { padding: 8px 12px; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: background 0.15s ease; }
-    .search-dropdown-item:hover { background: rgba(124,58,237,0.15); }
-    .theme-wii .search-dropdown-item:hover { background: rgba(0,163,224,0.08); }
-    .search-dropdown-item img { width: 24px; height: 24px; object-fit: cover; border-radius: 4px; }
+
     .badge-core { font-size: 9px; padding: 2px 8px; border-radius: 20px; font-weight: 700; letter-spacing: 0.3px; }
     .badge-core.gc { background: rgba(139,92,246,0.2); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3); }
     .badge-core.wii { background: rgba(0,163,224,0.10); color: #0369a1; border: 1px solid rgba(0,163,224,0.15); }
+
     .fps-badge { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; }
     .fps-badge.gc { background: rgba(0,200,255,0.1); color: #7dd3fc; border: 1px solid rgba(0,200,255,0.15); }
     .fps-badge.wii { background: rgba(0,163,224,0.06); color: #0284c7; border: 1px solid rgba(0,163,224,0.08); }
+
     .boot-badge.gc-yes { background: rgba(60,255,120,0.12); color: #4ade80; border: 1px solid rgba(60,255,120,0.2); }
     .boot-badge.gc-no { background: rgba(255,60,60,0.12); color: #f87171; border: 1px solid rgba(255,60,60,0.2); }
     .boot-badge.wii-yes { background: rgba(60,255,120,0.08); color: #16a34a; border: 1px solid rgba(60,255,120,0.12); }
     .boot-badge.wii-no { background: rgba(255,60,60,0.08); color: #dc2626; border: 1px solid rgba(255,60,60,0.12); }
+
     .best-badge { font-size: 10px; padding: 2px 10px; border-radius: 20px; font-weight: 700; background: rgba(255,215,0,0.15); color: #fbbf24; border: 1px solid rgba(255,215,0,0.3); }
     .theme-wii .best-badge { background: rgba(255,215,0,0.10); color: #a16207; border-color: rgba(255,215,0,0.2); }
-    .btn-primary { @apply px-4 py-2 rounded-xl font-bold text-sm transition-all duration-200 shadow-lg; }
-    .btn-primary.gc { @apply bg-gc-600 hover:bg-gc-500 text-white shadow-gc-900/50; }
-    .btn-primary.wii { @apply bg-wii-500 hover:bg-wii-400 text-white shadow-wii-500/30; }
 
-    /* RT ELECTRIC */
-    .rt-electric { font-family: 'Audiowide', 'Orbitron', sans-serif; display: inline-block; position: relative; color: #a78bfa; text-shadow: 0 0 8px rgba(139,92,246,0.6), 0 0 20px rgba(124,58,237,0.3), 0 0 40px rgba(124,58,237,0.1); letter-spacing: 0.04em; }
-    .rt-electric .spark { position: absolute; pointer-events: none; border-radius: 50%; background: #a78bfa; box-shadow: 0 0 6px #a78bfa, 0 0 12px #7c3aed; opacity: 0; animation: sparkFade 1.2s ease-out infinite; }
-    @keyframes sparkFade { 0% { opacity: 0; transform: scale(0.2) translate(0,0); } 20% { opacity: 1; transform: scale(1.2) translate(-4px,-6px); } 60% { opacity: 0.8; transform: scale(0.8) translate(6px,4px); } 100% { opacity: 0; transform: scale(0.2) translate(10px,10px); } }
-    .rt-electric .spark:nth-child(1) { animation-delay: 0.0s; }
-    .rt-electric .spark:nth-child(2) { animation-delay: 0.6s; }
-    .rt-electric .spark:nth-child(3) { animation-delay: 1.2s; }
-    .rt-electric .spark:nth-child(4) { animation-delay: 0.3s; }
-    .rt-electric .spark:nth-child(5) { animation-delay: 0.9s; }
-
-    /* STAR ON muOS */
-    .muos-star { display: inline-block; position: relative; }
-    .muos-star .star-sparkle { position: absolute; top: -6px; left: 50%; transform: translateX(-50%) rotate(0deg); width: 12px; height: 12px; opacity: 0; pointer-events: none; animation: starSpin 6s ease-in-out infinite; }
-    .muos-star .star-sparkle svg { width: 100%; height: 100%; fill: rgba(255,215,0,0.5); filter: drop-shadow(0 0 4px rgba(255,215,0,0.3)); }
-    @keyframes starSpin { 0% { opacity: 0; transform: translateX(-50%) rotate(0deg) scale(0.4); } 8% { opacity: 0.7; transform: translateX(-50%) rotate(60deg) scale(1); } 16% { opacity: 0.2; transform: translateX(-50%) rotate(120deg) scale(0.6); } 24% { opacity: 0.8; transform: translateX(-50%) rotate(180deg) scale(1.1); } 32% { opacity: 0; transform: translateX(-50%) rotate(240deg) scale(0.3); } 100% { opacity: 0; transform: translateX(-50%) rotate(360deg) scale(0.4); } }
-
-    /* BADGE Rt:Core v10.5.3 */
-    .rtcore-badge { display: inline-flex; align-items: center; gap: 2px; font-weight: 700; letter-spacing: 0.02em; }
-    .rtcore-badge .rt-part { font-family: 'Audiowide', 'Orbitron', sans-serif; font-size: 0.85rem; color: #a78bfa; text-shadow: 0 0 6px rgba(139,92,246,0.5), 0 0 16px rgba(124,58,237,0.2); position: relative; display: inline-block; }
-    .rtcore-badge .rt-part .mini-spark { position: absolute; pointer-events: none; border-radius: 50%; background: #a78bfa; box-shadow: 0 0 4px #a78bfa; opacity: 0; animation: miniSpark 1.8s ease-out infinite; }
-    @keyframes miniSpark { 0% { opacity: 0; transform: scale(0.2) translate(0,0); } 25% { opacity: 0.9; transform: scale(1) translate(-2px,-4px); } 70% { opacity: 0.4; transform: scale(0.6) translate(4px,2px); } 100% { opacity: 0; transform: scale(0.1) translate(6px,6px); } }
-    .rtcore-badge .core-part { font-family: 'Share Tech Mono', 'Orbitron', monospace; font-size: 0.75rem; color: #94a3b8; letter-spacing: 0.06em; font-weight: 700; }
-    .rtcore-badge .version-part { font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 800; color: #38bdf8; background: rgba(56,189,248,0.12); padding: 0 6px; border-radius: 6px; border: 1px solid rgba(56,189,248,0.15); margin-left: 2px; letter-spacing: 0.02em; }
-    .theme-wii .rtcore-badge .version-part { color: #0284c7; background: rgba(0,163,224,0.08); border-color: rgba(0,163,224,0.12); }
-    .theme-wii .rtcore-badge .core-part { color: #64748b; }
-
-    /* FLIP HORIZONTAL ANIMATION */
-    .flip-horizontal { animation: flipHorizontal 0.5s ease-in-out; }
-    @keyframes flipHorizontal { 0% { transform: perspective(800px) rotateY(0deg); opacity: 0.5; } 50% { transform: perspective(800px) rotateY(12deg); opacity: 0.9; } 100% { transform: perspective(800px) rotateY(0deg); opacity: 1; } }
-
-    /* MODAL */
-    .modal-test-card {
-      border-radius: 1.25rem;
-      padding: 1rem 1.25rem;
-      margin-bottom: 0.75rem;
-      border: 1px solid rgba(255,255,255,0.06);
-      transition: all 0.2s;
-    }
-    .theme-wii .modal-test-card { border-color: rgba(0,0,0,0.06); }
-    .modal-test-card:last-child { margin-bottom: 0; }
-
-    .rating-circle-container {
-      position: relative;
-      width: 110px;
-      height: 110px;
-      flex-shrink: 0;
-    }
-    .rating-circle-container svg {
-      width: 100%;
-      height: 100%;
-      transform: rotate(-90deg);
-    }
-    .rating-circle-container .center-number {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 2rem;
-      font-weight: 900;
-      line-height: 1;
-    }
-    .star-3d {
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
-      font-weight: 700;
-      paint-order: stroke;
-      stroke-width: 0.5px;
-      stroke: rgba(255,255,255,0.15);
-    }
-
-    .status-pill {
-      padding: 0.25rem 0.8rem;
-      border-radius: 2rem;
-      font-weight: 700;
-      font-size: 0.7rem;
-      letter-spacing: 0.02em;
-      display: inline-block;
-      border: 1px solid transparent;
-      text-align: center;
-      min-width: 80px;
-    }
+    .status-pill { padding: 0.25rem 0.8rem; border-radius: 2rem; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.02em; display: inline-block; border: 1px solid transparent; text-align: center; min-width: 80px; }
     .status-pill.boots-yes { background: rgba(60,255,120,0.12); color: #4ade80; border-color: rgba(60,255,120,0.2); }
     .status-pill.boots-no { background: rgba(255,60,60,0.12); color: #f87171; border-color: rgba(255,60,60,0.2); }
     .status-pill.playable-yes { background: rgba(60,255,120,0.12); color: #4ade80; border-color: rgba(60,255,120,0.2); }
     .status-pill.playable-no { background: rgba(255,60,60,0.12); color: #f87171; border-color: rgba(255,60,60,0.2); }
+    .status-pill.playable-issues { background: rgba(251,191,36,0.15); color: #fbbf24; border-color: rgba(251,191,36,0.25); }
+    .theme-wii .status-pill.playable-issues { background: rgba(251,191,36,0.10); color: #a16207; border-color: rgba(251,191,36,0.2); }
     .theme-wii .status-pill.boots-yes { background: rgba(60,255,120,0.08); color: #16a34a; border-color: rgba(60,255,120,0.12); }
     .theme-wii .status-pill.boots-no { background: rgba(255,60,60,0.08); color: #dc2626; border-color: rgba(255,60,60,0.12); }
     .theme-wii .status-pill.playable-yes { background: rgba(60,255,120,0.08); color: #16a34a; border-color: rgba(60,255,120,0.12); }
     .theme-wii .status-pill.playable-no { background: rgba(255,60,60,0.08); color: #dc2626; border-color: rgba(255,60,60,0.12); }
 
-    .fps-range-box {
-      background: rgba(0,0,0,0.15);
-      border-radius: 0.75rem;
-      padding: 0.3rem 0.8rem;
-      text-align: center;
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: 700;
-      font-size: 0.8rem;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
+    .rating-stars { display: flex; gap: 1px; }
+    .rating-stars svg { width: 14px; height: 14px; }
+
+    .fps-range-box { background: rgba(0,0,0,0.15); border-radius: 0.75rem; padding: 0.3rem 0.8rem; text-align: center; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.05); }
     .theme-wii .fps-range-box { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.06); }
 
-    .core-profile-box {
-      background: rgba(0,0,0,0.12);
-      border-radius: 0.75rem;
-      padding: 0.3rem 0.8rem;
-      font-size: 0.7rem;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
+    .core-profile-box { background: rgba(0,0,0,0.12); border-radius: 0.75rem; padding: 0.3rem 0.8rem; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.05); }
     .theme-wii .core-profile-box { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.06); }
 
-    .considerations-box {
-      background: rgba(0,0,0,0.15);
-      border-radius: 0.75rem;
-      padding: 0.6rem 1rem;
-      font-size: 0.8rem;
-      font-style: italic;
-      border-left: 3px solid rgba(124,58,237,0.4);
-    }
+    .considerations-box { background: rgba(0,0,0,0.15); border-radius: 0.75rem; padding: 0.6rem 1rem; font-size: 0.8rem; font-style: italic; border-left: 3px solid rgba(124,58,237,0.4); }
     .theme-wii .considerations-box { background: rgba(0,0,0,0.03); border-left-color: rgba(0,163,224,0.3); }
 
-    .settings-type-badge {
-      font-size: 0.6rem;
-      padding: 0.1rem 0.6rem;
-      border-radius: 20px;
-      font-weight: 700;
-      background: rgba(124,58,237,0.15);
-      color: #a78bfa;
-      border: 1px solid rgba(124,58,237,0.2);
-    }
-    .theme-wii .settings-type-badge { background: rgba(0,163,224,0.08); color: #0369a1; border-color: rgba(0,163,224,0.12); }
-
-    .attachment-item {
-      background: rgba(0,0,0,0.1);
-      border-radius: 0.75rem;
-      padding: 0.4rem 0.8rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.7rem;
-      border: 1px solid rgba(255,255,255,0.05);
-      transition: background 0.2s;
-    }
+    .attachment-item { background: rgba(0,0,0,0.1); border-radius: 0.75rem; padding: 0.4rem 0.8rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.05); transition: background 0.2s; }
     .attachment-item:hover { background: rgba(124,58,237,0.1); }
     .theme-wii .attachment-item { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.06); }
     .theme-wii .attachment-item:hover { background: rgba(0,163,224,0.05); }
@@ -220,47 +128,26 @@
     .theme-wii .attachment-item a { color: #0284c7; }
     .attachment-item a:hover { text-decoration: underline; }
 
-    /* BEST / AVERAGE PANELS */
-    .result-panel {
-      border-radius: 1rem;
-      padding: 0.5rem 0.8rem;
-      text-align: center;
-      border: 1px solid transparent;
-      transition: all 0.2s;
-    }
-    .result-panel.best {
-      background: rgba(251,191,36,0.12);
-      border-color: rgba(251,191,36,0.35);
-    }
-    .result-panel.average {
-      background: rgba(148,163,184,0.08);
-      border-color: rgba(148,163,184,0.15);
-    }
+    .result-panel { border-radius: 1rem; padding: 0.5rem 0.8rem; text-align: center; border: 1px solid transparent; transition: all 0.2s; }
+    .result-panel.best { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.35); }
+    .result-panel.average { background: rgba(148,163,184,0.08); border-color: rgba(148,163,184,0.15); }
     .theme-wii .result-panel.best { background: rgba(251,191,36,0.15); border-color: rgba(251,191,36,0.40); }
     .theme-wii .result-panel.average { background: rgba(200, 225, 245, 0.7); border-color: rgba(150, 190, 215, 0.5); }
     .theme-wii .result-panel.average .text-slate-200 { color: #0f172a !important; }
     .theme-wii .result-panel.average .text-slate-300 { color: #1e293b !important; }
     .theme-wii .result-panel.average .text-slate-400 { color: #334155 !important; }
 
-    /* TEMA WII - TITOLO NERO */
     .theme-wii .title-dark { color: #0f172a !important; }
     .theme-wii .title-dark .rt-electric { color: #0284c7 !important; text-shadow: 0 0 8px rgba(0,163,224,0.4), 0 0 20px rgba(0,163,224,0.15) !important; }
     .theme-wii .title-dark .text-gc-400 { color: #0f172a !important; }
 
-    /* TEMA WII - Pannelli filtro e rating azzurri */
     .theme-wii .filter-panel-wii { background: rgba(240, 248, 255, 0.92) !important; border-color: rgba(180, 210, 235, 0.7) !important; }
     .theme-wii .rating-panel-wii { background: rgba(240, 248, 255, 0.85) !important; border-color: rgba(180, 210, 235, 0.5) !important; }
     .theme-wii .rating-panel-wii:hover { background: rgba(240, 248, 255, 0.95) !important; }
-
-    /* TEMA WII - Tests: nero */
     .theme-wii .total-entries-dark { color: #0f172a !important; }
     .theme-wii .total-entries-accent-dark { color: #0284c7 !important; }
-
-    /* TEMA WII - Badge regione e game ID azzurri */
     .theme-wii .badge-region-wii { background: rgba(200, 225, 245, 0.7) !important; color: #0f172a !important; border-color: rgba(150, 190, 215, 0.4) !important; }
     .theme-wii .badge-gameid-wii { background: rgba(200, 225, 245, 0.5) !important; color: #0f172a !important; border-color: rgba(150, 190, 215, 0.3) !important; }
-
-    /* TEMA WII - Colori modali */
     .theme-wii .modal-test-card { background: rgba(255,255,255,0.85) !important; border-color: rgba(200, 215, 230, 0.5) !important; }
     .theme-wii .modal-test-card .border-white\/10 { border-color: rgba(0,0,0,0.08) !important; }
     .theme-wii .modal-test-card .text-slate-300 { color: #1e293b !important; }
@@ -269,74 +156,68 @@
     .theme-wii .modal-test-card .text-gc-400 { color: #0284c7 !important; }
     .theme-wii .modal-test-card .bg-black\/20 { background: rgba(0,0,0,0.04) !important; }
 
-    /* SWITCH TAB - selettore */
-    .switch-tab-active-gc {
-      background: #7c3aed !important;
-      color: white !important;
-      box-shadow: 0 0 20px rgba(124,58,237,0.4) !important;
-    }
-    .switch-tab-active-wii {
-      background: #0284c7 !important;
-      color: white !important;
-      box-shadow: 0 0 20px rgba(0,163,224,0.4) !important;
-    }
-    .switch-tab-inactive-gc {
-      color: #94a3b8 !important;
-      background: transparent !important;
-    }
-    .switch-tab-inactive-gc:hover {
-      color: white !important;
-    }
-    .switch-tab-inactive-wii {
-      color: #64748b !important;
-      background: transparent !important;
-    }
-    .switch-tab-inactive-wii:hover {
-      color: #0f172a !important;
-    }
+    .switch-tab-active-gc { background: #7c3aed !important; color: white !important; box-shadow: 0 0 20px rgba(124,58,237,0.4) !important; }
+    .switch-tab-active-wii { background: #0284c7 !important; color: white !important; box-shadow: 0 0 20px rgba(0,163,224,0.4) !important; }
+    .switch-tab-inactive-gc { color: #94a3b8 !important; background: transparent !important; }
+    .switch-tab-inactive-gc:hover { color: white !important; }
+    .switch-tab-inactive-wii { color: #64748b !important; background: transparent !important; }
+    .switch-tab-inactive-wii:hover { color: #0f172a !important; }
 
-    /* GRID / LIST VIEW */
-    #gamesGrid.grid-view {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
-    }
-    #gamesGrid.list-view {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .list-card {
-      width: 100%;
-      max-width: 700px;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: rgba(0,0,0,0.1);
-      border-radius: 1rem;
-      padding: 0.75rem;
-      border: 1px solid rgba(255,255,255,0.05);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .list-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
+    #gamesGrid.grid-view { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    #gamesGrid.list-view { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+    .list-card { width: 100%; max-width: 700px; display: flex; align-items: center; gap: 1rem; background: rgba(0,0,0,0.1); border-radius: 1rem; padding: 0.75rem; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s, box-shadow 0.2s; }
+    .list-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
     .theme-wii .list-card { background: rgba(255,255,255,0.85); border-color: rgba(0,0,0,0.06); }
-    .list-card-cover {
-      width: 72px;
-      height: 96px;
-      border-radius: 0.5rem;
-      overflow: hidden;
-      flex-shrink: 0;
-      background: rgba(0,0,0,0.2);
-    }
+    .list-card-cover { width: 72px; height: 96px; border-radius: 0.5rem; overflow: hidden; flex-shrink: 0; background: rgba(0,0,0,0.2); }
     .list-card-cover img { width: 100%; height: 100%; object-fit: cover; }
     .list-card-info { flex: 1; min-width: 0; }
     .list-card-title { font-weight: 700; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .list-card-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.25rem; font-size: 0.7rem; color: var(--text-muted); }
+    .list-card-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.25rem; font-size: 0.7rem; }
     .list-card-stars { display: flex; gap: 2px; }
+
+    .search-dropdown { position: absolute; top: 100%; left: 0; right: 0; max-height: 300px; overflow-y: auto; border-radius: 12px; z-index: 50; display: none; }
+    .search-dropdown.active { display: block; }
+    .search-dropdown-item { padding: 8px 12px; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: background 0.15s ease; }
+    .search-dropdown-item:hover { background: rgba(124,58,237,0.15); }
+    .theme-wii .search-dropdown-item:hover { background: rgba(0,163,224,0.08); }
+    .search-dropdown-item img { width: 24px; height: 24px; object-fit: cover; border-radius: 4px; }
+
+    .loader { border: 4px solid rgba(255,255,255,0.1); border-top: 4px solid #a78bfa; border-radius: 50%; width: 40px; height: 40px; animation: spin 0.8s linear infinite; }
+    .theme-wii .loader { border-top-color: #0284c7; }
+
+    .rt-electric { font-family: 'Audiowide', 'Orbitron', sans-serif; display: inline-block; position: relative; color: #a78bfa; text-shadow: 0 0 8px rgba(139,92,246,0.6), 0 0 20px rgba(124,58,237,0.3), 0 0 40px rgba(124,58,237,0.1); letter-spacing: 0.04em; }
+    .rt-electric .spark { position: absolute; pointer-events: none; border-radius: 50%; background: #a78bfa; box-shadow: 0 0 6px #a78bfa, 0 0 12px #7c3aed; opacity: 0; animation: sparkFade 1.2s ease-out infinite; }
+    .rt-electric .spark:nth-child(1) { animation-delay: 0.0s; }
+    .rt-electric .spark:nth-child(2) { animation-delay: 0.6s; }
+    .rt-electric .spark:nth-child(3) { animation-delay: 1.2s; }
+    .rt-electric .spark:nth-child(4) { animation-delay: 0.3s; }
+    .rt-electric .spark:nth-child(5) { animation-delay: 0.9s; }
+
+    .muos-star { display: inline-block; position: relative; }
+    .muos-star .star-sparkle { position: absolute; top: -6px; left: 50%; transform: translateX(-50%) rotate(0deg); width: 12px; height: 12px; opacity: 0; pointer-events: none; animation: starSpin 6s ease-in-out infinite; }
+    .muos-star .star-sparkle svg { width: 100%; height: 100%; fill: rgba(255,215,0,0.5); filter: drop-shadow(0 0 4px rgba(255,215,0,0.3)); }
+
+    .rtcore-badge { display: inline-flex; align-items: center; gap: 2px; font-weight: 700; letter-spacing: 0.02em; }
+    .rtcore-badge .rt-part { font-family: 'Audiowide', 'Orbitron', sans-serif; font-size: 0.85rem; color: #a78bfa; text-shadow: 0 0 6px rgba(139,92,246,0.5), 0 0 16px rgba(124,58,237,0.2); position: relative; display: inline-block; }
+    .rtcore-badge .rt-part .mini-spark { position: absolute; pointer-events: none; border-radius: 50%; background: #a78bfa; box-shadow: 0 0 4px #a78bfa; opacity: 0; animation: miniSpark 1.8s ease-out infinite; }
+    .rtcore-badge .core-part { font-family: 'Share Tech Mono', 'Orbitron', monospace; font-size: 0.75rem; color: #94a3b8; letter-spacing: 0.06em; font-weight: 700; }
+    .rtcore-badge .version-part { font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 800; color: #38bdf8; background: rgba(56,189,248,0.12); padding: 0 6px; border-radius: 6px; border: 1px solid rgba(56,189,248,0.15); margin-left: 2px; letter-spacing: 0.02em; }
+    .theme-wii .rtcore-badge .version-part { color: #0284c7; background: rgba(0,163,224,0.08); border-color: rgba(0,163,224,0.12); }
+    .theme-wii .rtcore-badge .core-part { color: #64748b; }
+
+    .flip-horizontal { animation: flipHorizontal 0.5s ease-in-out; }
+
+    .settings-type-badge { font-size: 0.6rem; padding: 0.1rem 0.6rem; border-radius: 20px; font-weight: 700; background: rgba(124,58,237,0.15); color: #a78bfa; border: 1px solid rgba(124,58,237,0.2); }
+    .theme-wii .settings-type-badge { background: rgba(0,163,224,0.08); color: #0369a1; border-color: rgba(0,163,224,0.12); }
+
+    .modal-test-card { border-radius: 1.25rem; padding: 1rem 1.25rem; margin-bottom: 0.75rem; border: 1px solid rgba(255,255,255,0.06); transition: all 0.2s; }
+    .theme-wii .modal-test-card { border-color: rgba(0,0,0,0.06); }
+    .modal-test-card:last-child { margin-bottom: 0; }
+
+    .rating-circle-container { position: relative; width: 110px; height: 110px; flex-shrink: 0; }
+    .rating-circle-container svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+    .rating-circle-container .center-number { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2rem; font-weight: 900; line-height: 1; }
+    .star-3d { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4)); font-weight: 700; paint-order: stroke; stroke-width: 0.5px; stroke: rgba(255,255,255,0.15); }
   </style>
 </head>
 <body id="appBody" class="theme-gc font-sans antialiased transition-colors duration-500 min-h-screen">
@@ -346,38 +227,37 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
       <div class="flex flex-wrap items-center justify-between gap-3">
         <div class="flex items-center gap-4 text-xs font-medium">
-          <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/tree/main" target="_blank" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1">
+          <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/tree/main" target="_blank" rel="noopener" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.15 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.62.24 2.85.12 3.15.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
             Repository
           </a>
-          <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases" target="_blank" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1">
+          <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases" target="_blank" rel="noopener" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4 2"/></svg>
             Latest Release
           </a>
         </div>
-        <!-- SWITCH TAB CENTRATO -->
         <div class="inline-flex p-1 rounded-2xl bg-black/30 border border-white/10 backdrop-blur-md">
           <button id="btnConsoleGC" onclick="switchConsole('gc')" class="flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 bg-gc-600 text-white shadow-lg shadow-gc-900/50">
-            <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="GC" class="w-4 h-4 fill-current"><span>GameCube</span>
+            <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="GC" class="w-4 h-4" /> GameCube
           </button>
           <button id="btnConsoleWii" onclick="switchConsole('wii')" class="flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 text-slate-400 hover:text-white">
-            <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg" alt="Wii" class="w-4 h-4 fill-current"><span>Nintendo Wii</span>
+            <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg" alt="Wii" class="w-4 h-4" /> Nintendo Wii
           </button>
         </div>
         <div class="flex items-center gap-4 text-xs font-medium">
-          <a id="newIssueBtn" href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=dolphin-rt-core-test-report.yml" target="_blank" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1"><span>📤</span> Send Report</a>
+          <a id="newIssueBtn" href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=dolphin-rt-core-test-report.yml" target="_blank" rel="noopener" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1"><span>📤</span> Send Report</a>
           <a href="#" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1"><span>ℹ️</span> About & Rt:Doc</a>
         </div>
       </div>
-      <!-- TITOLO PRINCIPALE -->
+
       <div class="flex items-center justify-between mt-3 gap-4">
         <div class="flex items-center gap-3 flex-1 min-w-0">
-          <img id="consoleLogo" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="Logo" class="w-8 h-8 object-contain flex-shrink-0">
+          <img id="consoleLogo" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="Logo" class="w-8 h-8 object-contain flex-shrink-0" />
           <div class="min-w-0">
             <h1 id="mainTitle" class="text-2xl sm:text-3xl font-black tracking-tight text-white whitespace-nowrap">
               Dolphin <span class="rt-electric" id="titleRt">Rt<span class="spark" style="width:4px;height:4px;top:-2px;left:8px;"></span><span class="spark" style="width:3px;height:3px;top:4px;left:18px;"></span><span class="spark" style="width:5px;height:5px;top:-6px;left:24px;"></span><span class="spark" style="width:3px;height:3px;top:2px;left:2px;"></span><span class="spark" style="width:4px;height:4px;top:-4px;left:14px;"></span></span>:Core <span class="muos-star">fo<span style="position:relative;">r<span class="star-sparkle"><svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg></span></span></span> <span id="muosText" class="text-gc-400" style="font-weight:400;">muOS</span>
             </h1>
-            <hr class="w-full max-w-[400px] my-1 border-gc-400/60">
+            <hr class="w-full max-w-[400px] my-1 border-gc-400/60" />
             <p id="dashboardSubtitle" class="text-base sm:text-lg mt-0.5 transition-colors">
               <span id="consoleName" class="font-bold text-gc-400">GameCube</span> <span style="font-weight:400;">Compatibility Database</span>
             </p>
@@ -387,7 +267,7 @@
         <div id="spdwPanel" class="gc-glass rounded-xl p-2.5 px-4 flex-shrink-0 transition-all duration-500 space-y-1.5 min-w-[180px]">
           <div class="flex items-center justify-between gap-2 pb-1 border-b border-white/10">
             <span id="spdwBrand" class="flex items-center gap-1 font-black text-gc-400 tracking-wider text-[10px] uppercase">
-              <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" alt="SPDW" class="w-3 h-3"> SPDW
+              <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" alt="SPDW" class="w-3 h-3" /> SPDW
             </span>
             <span id="coreBadge" class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-gc-900 text-gc-300 border border-gc-700/60 font-bold">
               <span class="rtcore-badge"><span class="rt-part text-[10px]">Rt<span class="mini-spark" style="width:2px;height:2px;top:-1px;left:5px;"></span><span class="mini-spark" style="width:2px;height:2px;top:2px;left:9px;"></span></span><span class="core-part text-[9px]">Core</span><span class="version-part text-[11px]">v10.5.3</span></span>
@@ -408,11 +288,11 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-4">
     <div id="filterPanel" class="gc-glass rounded-2xl p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500">
       <div class="relative w-full md:w-72 shrink-0">
-        <input type="text" id="searchInput" placeholder="Search game title..." class="w-full bg-slate-950/60 text-slate-100 placeholder-slate-500 border border-white/10 rounded-xl pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-gc-500 transition-all">
+        <input type="text" id="searchInput" placeholder="Search game title..." class="w-full bg-slate-950/60 text-slate-100 placeholder-slate-500 border border-white/10 rounded-xl pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-gc-500 transition-all" />
         <svg class="w-4 h-4 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         <div id="searchDropdown" class="search-dropdown gc-glass border border-white/10 rounded-xl overflow-hidden shadow-2xl"></div>
       </div>
@@ -470,6 +350,12 @@
     </div>
 
     <div id="gamesGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 max-w-7xl mx-auto w-full grid-view"></div>
+
+    <div id="loaderContainer" class="flex justify-center items-center py-16">
+      <div class="loader"></div>
+      <span class="ml-3 text-slate-400 text-sm font-medium">Loading games...</span>
+    </div>
+
     <div id="emptyState" class="hidden text-center py-16 bg-slate-900/30 border border-dashed border-white/10 rounded-2xl max-w-4xl mx-auto">
       <svg class="w-12 h-12 text-slate-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
       <p id="emptyStateText" class="text-slate-400 text-sm font-medium">No games found matching the current filters.</p>
@@ -486,11 +372,11 @@
       <div class="border-b border-white/10 pb-3 pr-10 shrink-0">
         <div class="flex flex-col md:flex-row gap-3 items-start md:items-center">
           <div class="w-20 h-28 rounded-xl overflow-hidden bg-slate-800/50 flex-shrink-0 border border-white/10">
-            <img id="modalCoverImg" src="" alt="Cover" class="w-full h-full object-cover">
+            <img id="modalCoverImg" src="" alt="Cover" class="w-full h-full object-cover" />
           </div>
           <div class="flex-1 min-w-0">
             <div class="flex items-center gap-2 flex-wrap">
-              <img id="modalFlag" src="" alt="Flag" class="w-6 h-4 object-cover rounded border border-slate-300/20 shrink-0">
+              <img id="modalFlag" src="" alt="Flag" class="w-6 h-4 object-cover rounded border border-slate-300/20 shrink-0" />
               <h3 id="modalTitle" class="text-xl font-black leading-tight truncate"></h3>
               <span id="modalRegionBadge" class="text-[9px] font-mono px-2 py-0.5 rounded bg-gc-900 text-gc-300 border border-gc-700/60 uppercase font-bold shrink-0">NTSC / USA</span>
               <span id="modalGameId" class="text-[9px] font-mono px-2 py-0.5 rounded bg-gc-800/60 text-gc-400 border border-gc-600/40 font-bold shrink-0">GAMEID</span>
@@ -529,9 +415,9 @@
       <div class="flex flex-wrap items-center justify-center gap-4">
         <svg class="w-5 h-5 text-slate-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4 2"/></svg>
         <span>Dolphin Rt:Core Compatibility Database</span>
-        <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdwfactory_logo.png" alt="SPDW Factory" class="h-5 w-auto">
+        <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdwfactory_logo.png" alt="SPDW Factory" class="h-5 w-auto" />
       </div>
-      <p class="mt-1">Data sourced from community testing reports · <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS" target="_blank" class="hover:underline">SPDW Factory</a></p>
+      <p class="mt-1">Data sourced from community testing reports · <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS" target="_blank" rel="noopener" class="hover:underline">SPDW Factory</a></p>
       <p class="mt-1 opacity-60 flex items-center justify-center gap-2">
         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
         Powered by GitHub Issues & GameTDB
@@ -543,29 +429,37 @@
     // ============================================================
     //  STATE
     // ============================================================
-    let currentConsole = 'gc';
-    let RAW_GAMES = [];
-    let GROUPED_GAMES = [];
-    let currentFilteredGames = [];
-    let currentSortKey = 'title';
-    let currentSortOrder = 'asc';
-    let searchQuery = '';
-    let selectedStars = 'all';
-    let selectedRegion = 'all';
-    let selectedBoot = 'all';
-    let viewMode = 'grid';  // 'grid' or 'list'
+    const state = {
+      console: 'gc',
+      rawGames: [],
+      groupedGames: [],
+      filtered: [],
+      sortKey: 'title',
+      sortOrder: 'asc',
+      search: '',
+      selectedStars: 'all',
+      selectedRegion: 'all',
+      selectedBoot: 'all',
+      viewMode: 'grid'
+    };
 
     const URL = "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/games_data.json";
-
     const FLAG_MAP = { 'PAL': 'eu', 'NTSC': 'us', 'NTSC / USA': 'us', 'JPN': 'jp' };
-    function getFlagUrl(region) { const code = FLAG_MAP[region] || 'un'; return `https://flagcdn.com/w40/${code}.png`; }
+
+    // ============================================================
+    //  HELPERS
+    // ============================================================
+    function getFlagUrl(region) {
+      const code = FLAG_MAP[region] || 'un';
+      return `https://flagcdn.com/w40/${code}.png`;
+    }
 
     function getRegionCode(regionName) {
       const map = { 'NTSC / USA': 'US', 'PAL': 'EN', 'NTSC / JPN': 'JP', 'NTSC / KOR': 'KO', 'NTSC': 'US', 'JPN': 'JP', 'KOR': 'KO', 'EU': 'EN', 'US': 'US' };
       return map[regionName] || 'US';
     }
 
-    function getCoverUrl(gameId, regionName, consoleType) {
+    function getCoverUrl(gameId, regionName) {
       if (!gameId) return null;
       const regionCode = getRegionCode(regionName);
       return `https://art.gametdb.com/wii/cover/${regionCode}/${gameId}.png`;
@@ -577,7 +471,7 @@
     }
 
     function renderStars(rating, size = 14) {
-      const colors = {5:'text-emerald-500',4:'text-teal-500',3:'text-amber-500',2:'text-orange-500',1:'text-rose-500',0:'text-slate-400'};
+      const colors = { 5: 'text-emerald-500', 4: 'text-teal-500', 3: 'text-amber-500', 2: 'text-orange-500', 1: 'text-rose-500', 0: 'text-slate-400' };
       const colorClass = colors[rating] || 'text-amber-500';
       const full = Math.min(5, Math.max(0, rating));
       let html = `<div class="rating-stars">`;
@@ -590,289 +484,194 @@
     }
 
     // ============================================================
-    //  GROUPING (NEW STRUCTURE)
+    //  GROUPING – CORRETTA PER STRUTTURA CON "entries"
     // ============================================================
     function groupGames(rawList) {
-  const groups = new Map();
+      const groups = new Map();
 
-  rawList.forEach(item => {
-    // Ogni item ora ha una struttura con "game_info" e "entries"
-    const info = item.game_info || {};
-    const entries = item.entries || [];
-    const title = (info.game || '').trim();
-    const region = (info.region || 'NTSC / USA').trim();
-    if (!title || entries.length === 0) return;
+      rawList.forEach(item => {
+        const info = item.game_info || {};
+        const entries = item.entries || [];
+        const title = (info.game || '').trim();
+        const region = (info.region || 'NTSC / USA').trim();
+        if (!title || entries.length === 0) return;
 
-    const key = `${title.toLowerCase()}___${region.toLowerCase()}`;
-    if (!groups.has(key)) {
-      groups.set(key, { game: title, region, entries: [] });
-    }
-    // Aggiungi TUTTI gli entry del gioco
-    entries.forEach(e => groups.get(key).entries.push(e));
-  });
+        const key = `${title.toLowerCase()}___${region.toLowerCase()}`;
+        if (!groups.has(key)) {
+          groups.set(key, { game: title, region, entries: [] });
+        }
+        entries.forEach(e => groups.get(key).entries.push(e));
+      });
 
-  const result = [];
-  groups.forEach(group => {
-    group.entries.sort((a, b) => (parseInt(a.issue || 0) - parseInt(b.issue || 0)) || 0);
+      const result = [];
+      groups.forEach(group => {
+        group.entries.sort((a, b) => (parseInt(a.issue || 0) - parseInt(b.issue || 0)) || 0);
 
-    let bestRating = 0;
-    let bestFpsMax = -1;
-    let bestFpsStr = "???";
-    let totalRating = 0;
-    let totalFpsMinSum = 0;
-    let totalFpsMaxSum = 0;
-    let validFpsCount = 0;
-    let bestBoot = "NO";
-    let bestPlayable = "NO";
-    let gameId = null;
-    let bestEntryIndex = 0;
+        let bestRating = 0;
+        let bestFpsMax = -1;
+        let bestFpsStr = "???";
+        let totalRating = 0;
+        let totalFpsMinSum = 0;
+        let totalFpsMaxSum = 0;
+        let validFpsCount = 0;
+        let bestBoot = "NO";
+        let bestPlayable = "NO";
+        let gameId = null;
+        let bestEntryIndex = 0;
 
-    group.entries.forEach((e, idx) => {
-      // Ora i dati sono dentro e (che è un singolo entry)
-      const review = e.test_review || {};
-      const details = e.test_details || {};
-      const env = e.test_environment || {};
-      const info = e.game_info || {};
+        group.entries.forEach((e, idx) => {
+          const review = e.test_review || {};
+          const details = e.test_details || {};
+          const env = e.test_environment || {};
+          const info = e.game_info || {};
 
-      // Rating
-      const r = parseInt(review.rating, 10);
-      const rating = isNaN(r) ? 0 : r;
-      if (rating > bestRating) bestRating = rating;
-      totalRating += rating;
+          const r = parseInt(review.rating, 10);
+          const rating = isNaN(r) ? 0 : r;
+          if (rating > bestRating) bestRating = rating;
+          totalRating += rating;
 
-      // Boot
-      const bootVal = review.boot || (rating >= 1 ? "YES" : "NO");
-      if (bootVal === "YES") bestBoot = "YES";
+          const bootVal = review.boot || (rating >= 1 ? "YES" : "NO");
+          if (bootVal === "YES") bestBoot = "YES";
 
-      // Playable
-      let playVal = review.playable || (rating >= 3 ? "YES" : "NO");
-      if (rating === 3 && playVal === "YES") playVal = "YES WITH ISSUES";
-      if (playVal === "YES" || playVal === "YES WITH ISSUES") bestPlayable = playVal;
+          let playVal = review.playable || (rating >= 3 ? "YES" : "NO");
+          if (rating === 3 && playVal === "YES") playVal = "YES WITH ISSUES";
+          if (playVal === "YES" || playVal === "YES WITH ISSUES") bestPlayable = playVal;
 
-      // Game ID
-      if (!gameId && info.game_id) gameId = info.game_id;
+          if (!gameId && info.game_id) gameId = info.game_id;
 
-      // FPS – parsing robusto
-      let fpsMin = parseInt(review.fps_min, 10);
-      let fpsMax = parseInt(review.fps_max, 10);
-      const fpsRaw = (review.fps || '???').trim();
+          let fpsMin = parseInt(review.fps_min, 10);
+          let fpsMax = parseInt(review.fps_max, 10);
+          const fpsRaw = (review.fps || '???').trim();
 
-      if (isNaN(fpsMin) || isNaN(fpsMax)) {
-        const numbers = fpsRaw.match(/\d+/g);
-        if (numbers) {
-          const nums = numbers.map(Number);
-          if (nums.length >= 2) {
-            fpsMin = nums[0];
-            fpsMax = nums[1];
-          } else if (nums.length === 1) {
-            fpsMin = nums[0];
-            fpsMax = nums[0];
+          if (isNaN(fpsMin) || isNaN(fpsMax)) {
+            const numbers = fpsRaw.match(/\d+/g);
+            if (numbers) {
+              const nums = numbers.map(Number);
+              if (nums.length >= 2) {
+                fpsMin = nums[0];
+                fpsMax = nums[1];
+              } else if (nums.length === 1) {
+                fpsMin = nums[0];
+                fpsMax = nums[0];
+              }
+            }
           }
-        }
-      }
-      if (isNaN(fpsMin)) fpsMin = 0;
-      if (isNaN(fpsMax)) fpsMax = 0;
+          if (isNaN(fpsMin)) fpsMin = 0;
+          if (isNaN(fpsMax)) fpsMax = 0;
 
-      // Aggiorna best FPS
-      if (fpsMax > bestFpsMax) {
-        bestFpsMax = fpsMax;
-        if (fpsRaw && fpsRaw !== '???') {
-          bestFpsStr = fpsRaw;
-        } else if (fpsMin > 0 && fpsMax > 0) {
-          bestFpsStr = `${fpsMin} - ${fpsMax}`;
-        }
-      }
+          if (fpsMax > bestFpsMax) {
+            bestFpsMax = fpsMax;
+            if (fpsRaw && fpsRaw !== '???') {
+              bestFpsStr = fpsRaw;
+            } else if (fpsMin > 0 && fpsMax > 0) {
+              bestFpsStr = `${fpsMin} - ${fpsMax}`;
+            }
+          }
 
-      // Accumula per la media
-      if (fpsMin > 0) {
-        totalFpsMinSum += fpsMin;
-        totalFpsMaxSum += fpsMax;
-        validFpsCount++;
-      }
+          if (fpsMin > 0) {
+            totalFpsMinSum += fpsMin;
+            totalFpsMaxSum += fpsMax;
+            validFpsCount++;
+          }
 
-      // Best entry index
-      const currentScore = (rating * 1000) + (fpsMax > 0 ? fpsMax : -1);
-      const bestScore = (bestRating * 1000) + (bestFpsMax > 0 ? bestFpsMax : -1);
-      if (currentScore > bestScore) {
-        bestEntryIndex = idx;
-      }
-    });
-
-    if (bestFpsStr === "???" && bestFpsMax > 0) {
-      bestFpsStr = `${bestFpsMax}`;
-    }
-    if (bestFpsStr === "???" && bestFpsMax <= 0) {
-      bestFpsStr = "???";
-    }
-
-    const avgRating = group.entries.length > 0 ? (totalRating / group.entries.length).toFixed(1) : "0.0";
-    let avgFps = "N/A";
-    if (validFpsCount > 0) {
-      const avgMin = Math.round(totalFpsMinSum / validFpsCount);
-      const avgMax = Math.round(totalFpsMaxSum / validFpsCount);
-      avgFps = `${avgMin} - ${avgMax}`;
-    }
-
-    if (!gameId) gameId = 'UNKNOWN';
-
-    result.push({
-      game: group.game,
-      region: group.region,
-      entries: group.entries,
-      entriesCount: group.entries.length,
-      bestRating: bestRating,
-      bestFpsStr: bestFpsStr,
-      bestFpsMax: bestFpsMax,
-      bestBoot: bestBoot,
-      bestPlayable: bestPlayable,
-      avgRating: parseFloat(avgRating),
-      avgFps: avgFps,
-      gameId: gameId,
-      bestEntryIndex: bestEntryIndex
-    });
-  });
-
-  return result;
-}
-
-    // ============================================================
-    //  CONSOLE SWITCH
-    // ============================================================
-    function switchConsole(target) {
-      currentConsole = target;
-      const isGC = target === 'gc';
-      const header = document.getElementById('appHeader');
-
-      header.classList.remove('flip-horizontal');
-      void header.offsetWidth;
-      header.classList.add('flip-horizontal');
-
-      document.getElementById('consoleLogo').src = isGC
-        ? 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg'
-        : 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg';
-
-      document.getElementById('consoleName').textContent = isGC ? 'GameCube' : 'Wii';
-      document.getElementById('consoleName').className = isGC ? 'font-bold text-gc-400' : 'font-bold text-wii-500';
-
-      const btnGC = document.getElementById('btnConsoleGC');
-      const btnWii = document.getElementById('btnConsoleWii');
-      if (isGC) {
-        btnGC.className = 'flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 switch-tab-active-gc';
-        btnWii.className = 'flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 switch-tab-inactive-wii';
-      } else {
-        btnWii.className = 'flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 switch-tab-active-wii';
-        btnGC.className = 'flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 switch-tab-inactive-gc';
-      }
-
-      const mainTitle = document.getElementById('mainTitle');
-      const muosText = document.getElementById('muosText');
-      const titleRt = document.getElementById('titleRt');
-
-      if (isGC) {
-        mainTitle.className = 'text-2xl sm:text-3xl font-black tracking-tight text-white whitespace-nowrap';
-        muosText.className = 'text-gc-400';
-        muosText.style.fontWeight = '400';
-        document.querySelector('#dashboardSubtitle').className = 'text-base sm:text-lg mt-0.5 transition-colors';
-        document.querySelector('#dashboardDesc').className = 'text-xs italic text-slate-400 transition-colors';
-        document.getElementById('filterPanel').className = 'gc-glass rounded-2xl p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500';
-        document.getElementById('ratingPanels').querySelectorAll('.rating-panel').forEach(el => {
-          el.className = el.className.replace(/wii-glass/g, 'gc-glass');
+          const currentScore = (rating * 1000) + (fpsMax > 0 ? fpsMax : -1);
+          const bestScore = (bestRating * 1000) + (bestFpsMax > 0 ? bestFpsMax : -1);
+          if (currentScore > bestScore) {
+            bestEntryIndex = idx;
+          }
         });
-        document.getElementById('spdwPanel').className = 'gc-glass rounded-xl p-2.5 px-4 flex-shrink-0 transition-all duration-500 space-y-1.5 min-w-[180px]';
-        document.getElementById('spdwBrand').className = 'flex items-center gap-1 font-black text-gc-400 tracking-wider text-[10px] uppercase';
-        document.getElementById('coreBadge').className = 'text-[9px] font-mono px-2 py-0.5 rounded-full bg-gc-900 text-gc-300 border border-gc-700/60 font-bold';
-        document.getElementById('statTestedBox').className = 'text-[9px] font-black bg-gc-900/80 border border-gc-600/50 rounded-lg px-2 py-0.5 flex items-center gap-2 shadow-inner';
-        document.getElementById('statTested').className = 'bg-gc-500 text-white px-1.5 py-0.5 rounded-lg font-mono font-black text-sm shadow-sm';
-        document.getElementById('totalEntriesAccent').className = 'text-gc-400';
-        document.getElementById('totalEntriesContainer').className = 'text-[9px] font-mono flex items-center gap-1 text-slate-400';
-        document.getElementById('statTotal').className = 'font-bold text-slate-200';
-        document.getElementById('newIssueBtn').className = 'text-slate-400 hover:text-white transition-colors flex items-center gap-1';
-        document.getElementById('modalCard').className = 'gc-glass border border-gc-700/80 rounded-3xl max-w-5xl w-full max-h-[94vh] flex flex-col p-5 shadow-2xl relative modal-anim';
-        document.getElementById('modalRegionBadge').className = 'text-[9px] font-mono px-2 py-0.5 rounded bg-gc-900 text-gc-300 border border-gc-700/60 uppercase font-bold shrink-0';
-        document.getElementById('modalGameId').className = 'text-[9px] font-mono px-2 py-0.5 rounded bg-gc-800/60 text-gc-400 border border-gc-600/40 font-bold shrink-0';
-        document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b border-purple-900/40 bg-gc-950/90 backdrop-blur-xl shadow-lg';
-        document.getElementById('appBody').className = 'theme-gc font-sans antialiased transition-colors duration-500 min-h-screen';
-      } else {
-        mainTitle.className = 'text-2xl sm:text-3xl font-black tracking-tight title-dark whitespace-nowrap';
-        muosText.className = 'text-gc-400';
-        muosText.style.fontWeight = '400';
-        muosText.style.color = '#0f172a';
-        document.querySelector('#dashboardSubtitle').className = 'text-base sm:text-lg mt-0.5 transition-colors text-slate-800';
-        document.querySelector('#dashboardDesc').className = 'text-xs italic text-slate-600 transition-colors';
-        document.getElementById('filterPanel').className = 'wii-glass rounded-2xl p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500';
-        document.getElementById('ratingPanels').querySelectorAll('.rating-panel').forEach(el => {
-          el.className = el.className.replace(/gc-glass/g, 'wii-glass rating-panel-wii');
-        });
-        document.getElementById('spdwPanel').className = 'wii-glass rounded-xl p-2.5 px-4 flex-shrink-0 transition-all duration-500 space-y-1.5 min-w-[180px] border border-slate-300 shadow-sm';
-        document.getElementById('spdwBrand').className = 'flex items-center gap-1 font-black text-wii-700 tracking-wider text-[10px] uppercase';
-        document.getElementById('coreBadge').className = 'text-[9px] font-mono px-2 py-0.5 rounded-full bg-wii-100 text-wii-900 border border-wii-300 font-bold';
-        document.getElementById('statTestedBox').className = 'text-[9px] font-black text-slate-800 bg-wii-50 border border-wii-200 rounded-lg px-2 py-0.5 flex items-center gap-2 shadow-inner';
-        document.getElementById('statTested').className = 'bg-wii-500 text-white px-1.5 py-0.5 rounded-lg font-mono font-black text-sm shadow-sm';
-        document.getElementById('totalEntriesAccent').className = 'text-wii-700 font-bold';
-        document.getElementById('totalEntriesContainer').className = 'text-[9px] font-mono flex items-center gap-1 text-slate-700';
-        document.getElementById('statTotal').className = 'font-bold text-slate-800';
-        document.getElementById('newIssueBtn').className = 'text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1';
-        document.getElementById('modalCard').className = 'wii-glass border border-slate-300 rounded-3xl max-w-5xl w-full max-h-[94vh] flex flex-col p-5 shadow-2xl relative modal-anim';
-        document.getElementById('modalRegionBadge').className = 'text-[9px] font-mono px-2 py-0.5 rounded bg-wii-100 text-wii-900 border border-wii-300 uppercase font-bold shrink-0 badge-region-wii';
-        document.getElementById('modalGameId').className = 'text-[9px] font-mono px-2 py-0.5 rounded bg-wii-200/60 text-wii-700 border border-wii-300/60 font-bold shrink-0 badge-gameid-wii';
-        document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b border-slate-300 bg-white/95 backdrop-blur-xl shadow-lg';
-        document.getElementById('appBody').className = 'theme-wii font-sans antialiased transition-colors duration-500 min-h-screen';
-      }
 
-      loadConsoleData();
+        if (bestFpsStr === "???" && bestFpsMax > 0) {
+          bestFpsStr = `${bestFpsMax}`;
+        }
+        if (bestFpsStr === "???" && bestFpsMax <= 0) {
+          bestFpsStr = "???";
+        }
+
+        const avgRating = group.entries.length > 0 ? (totalRating / group.entries.length).toFixed(1) : "0.0";
+        let avgFps = "N/A";
+        if (validFpsCount > 0) {
+          const avgMin = Math.round(totalFpsMinSum / validFpsCount);
+          const avgMax = Math.round(totalFpsMaxSum / validFpsCount);
+          avgFps = `${avgMin} - ${avgMax}`;
+        }
+
+        if (!gameId) gameId = 'UNKNOWN';
+
+        result.push({
+          game: group.game,
+          region: group.region,
+          entries: group.entries,
+          entriesCount: group.entries.length,
+          bestRating: bestRating,
+          bestFpsStr: bestFpsStr,
+          bestFpsMax: bestFpsMax,
+          bestBoot: bestBoot,
+          bestPlayable: bestPlayable,
+          avgRating: parseFloat(avgRating),
+          avgFps: avgFps,
+          gameId: gameId,
+          bestEntryIndex: bestEntryIndex
+        });
+      });
+
+      return result;
     }
 
     // ============================================================
-    //  RENDER GRID / LIST
+    //  RENDER
     // ============================================================
-    function renderGrid() {
+    function render() {
       document.querySelectorAll('.rating-panel').forEach(p => {
         const val = p.getAttribute('data-rating');
-        const ring = currentConsole === 'gc' ? 'ring-gc-500' : 'ring-wii-500';
-        if (selectedStars === val) {
+        const ring = state.console === 'gc' ? 'ring-gc-500' : 'ring-wii-500';
+        if (state.selectedStars === val) {
           p.classList.add('ring-2', ring, 'scale-[1.02]');
           p.classList.remove('opacity-60');
         } else {
           p.classList.remove('ring-2', 'ring-gc-500', 'ring-wii-500', 'scale-[1.02]');
-          p.classList.toggle('opacity-60', selectedStars !== 'all');
+          p.classList.toggle('opacity-60', state.selectedStars !== 'all');
         }
       });
 
-      currentFilteredGames = GROUPED_GAMES.filter(item => {
-        if (searchQuery && !item.game.toLowerCase().includes(searchQuery) && !item.entries.some(e => (e.test_details?.considerations||'').toLowerCase().includes(searchQuery))) return false;
-        if (selectedStars !== 'all') {
-          const s = parseInt(selectedStars);
+      state.filtered = state.groupedGames.filter(item => {
+        if (state.search && !item.game.toLowerCase().includes(state.search) &&
+            !item.entries.some(e => (e.test_details?.considerations || '').toLowerCase().includes(state.search))) return false;
+        if (state.selectedStars !== 'all') {
+          const s = parseInt(state.selectedStars);
           if (s === 1) { if (item.bestRating > 1) return false; }
           else if (item.bestRating !== s) return false;
         }
-        if (selectedRegion !== 'all') {
-          if (selectedRegion === 'NTSC' && !item.region.includes('NTSC')) return false;
-          if (selectedRegion !== 'NTSC' && item.region !== selectedRegion) return false;
+        if (state.selectedRegion !== 'all') {
+          if (state.selectedRegion === 'NTSC' && !item.region.includes('NTSC')) return false;
+          if (state.selectedRegion !== 'NTSC' && item.region !== state.selectedRegion) return false;
         }
-        if (selectedBoot !== 'all' && item.bestBoot !== selectedBoot) return false;
+        if (state.selectedBoot !== 'all' && item.bestBoot !== state.selectedBoot) return false;
         return true;
       });
 
-      currentFilteredGames.sort((a, b) => {
+      state.filtered.sort((a, b) => {
         let cmp = 0;
-        if (currentSortKey === 'title') cmp = (a.game||'').localeCompare(b.game||'');
-        else if (currentSortKey === 'rating') cmp = (a.bestRating||0) - (b.bestRating||0);
-        else if (currentSortKey === 'fps') cmp = (a.bestFpsMax||0) - (b.bestFpsMax||0);
-        else if (currentSortKey === 'entries') cmp = (a.entriesCount||0) - (b.entriesCount||0);
-        return currentSortOrder === 'asc' ? cmp : -cmp;
+        if (state.sortKey === 'title') cmp = (a.game || '').localeCompare(b.game || '');
+        else if (state.sortKey === 'rating') cmp = (a.bestRating || 0) - (b.bestRating || 0);
+        else if (state.sortKey === 'fps') cmp = (a.bestFpsMax || 0) - (b.bestFpsMax || 0);
+        else if (state.sortKey === 'entries') cmp = (a.entriesCount || 0) - (b.entriesCount || 0);
+        return state.sortOrder === 'asc' ? cmp : -cmp;
       });
+
+      document.getElementById('loaderContainer').classList.add('hidden');
 
       const grid = document.getElementById('gamesGrid');
       const empty = document.getElementById('emptyState');
 
-      if (currentFilteredGames.length === 0) {
+      if (state.filtered.length === 0) {
         grid.innerHTML = '';
         empty.classList.remove('hidden');
         return;
       }
       empty.classList.add('hidden');
 
-      if (viewMode === 'grid') {
+      if (state.viewMode === 'grid') {
         grid.classList.remove('list-view');
         grid.classList.add('grid-view');
         grid.innerHTML = renderGridCards();
@@ -884,9 +683,10 @@
     }
 
     function renderGridCards() {
-      const isGC = currentConsole === 'gc';
-      return currentFilteredGames.map((item, idx) => {
-        const coverUrl = item.entries[item.bestEntryIndex].cover_art || getCoverUrl(item.gameId, item.region, currentConsole);
+      const isGC = state.console === 'gc';
+      return state.filtered.map((item, idx) => {
+        const bestEntry = item.entries[item.bestEntryIndex] || {};
+        const coverUrl = bestEntry.cover_art || getCoverUrl(item.gameId, item.region);
         const delay = Math.min(idx * 20, 300);
         const regionColor = item.region.includes('NTSC') ? 'text-emerald-400' : (item.region === 'PAL' ? 'text-amber-400' : 'text-slate-400');
         const cardBg = isGC ? 'bg-gc-950/90' : 'bg-white/95';
@@ -894,7 +694,9 @@
 
         const playableBadge = item.bestPlayable === 'YES'
           ? `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-emerald-950/50 text-emerald-400 border border-emerald-700/40">Playable</span>`
-          : `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-rose-950/50 text-rose-400 border border-rose-700/40">Unplayable</span>`;
+          : item.bestPlayable === 'YES WITH ISSUES'
+            ? `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-amber-950/50 text-amber-400 border border-amber-700/40">With Issues</span>`
+            : `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-rose-950/50 text-rose-400 border border-rose-700/40">Unplayable</span>`;
 
         return `
           <div class="card-anim game-card group relative cursor-pointer rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl" style="animation-delay: ${delay}ms" onclick="openModal(${idx})">
@@ -910,13 +712,16 @@
               <div class="p-2.5 space-y-1.5 ${cardBg}">
                 <div class="flex items-start justify-between gap-1">
                   <h4 class="text-sm font-bold truncate flex-1 ${cardText}">${escapeHtml(item.game)}</h4>
-                  ${renderStars(item.bestRating, 12)}
+                  <div class="flex items-center gap-1">
+                    ${renderStars(item.bestRating, 12)}
+                    <span class="text-[10px] font-mono text-slate-500">${item.bestRating}</span>
+                  </div>
                 </div>
                 <div class="flex items-center justify-between text-[10px]">
                   <span class="flex items-center gap-1 ${regionColor} font-semibold">
-                    <img src="${getFlagUrl(item.region)}" class="w-4 h-3 object-cover rounded border border-slate-400/20"> ${item.region}
+                    <img src="${getFlagUrl(item.region)}" class="w-4 h-3 object-cover rounded border border-slate-400/20" /> ${item.region}
                   </span>
-                  <span class="font-mono text-slate-400">${item.entriesCount} test${item.entriesCount!==1?'s':''}</span>
+                  <span class="font-mono text-slate-400">${item.entriesCount} test${item.entriesCount !== 1 ? 's' : ''}</span>
                 </div>
                 <div class="flex items-center gap-1.5 flex-wrap">
                   <span class="fps-badge ${isGC ? 'gc' : 'wii'}">${item.bestFpsStr !== "???" ? item.bestFpsStr + ' FPS' : 'N/A'}</span>
@@ -931,14 +736,17 @@
     }
 
     function renderListCards() {
-      const isGC = currentConsole === 'gc';
-      return currentFilteredGames.map((item, idx) => {
-        const coverUrl = item.entries[item.bestEntryIndex].cover_art || getCoverUrl(item.gameId, item.region, currentConsole);
+      const isGC = state.console === 'gc';
+      return state.filtered.map((item, idx) => {
+        const bestEntry = item.entries[item.bestEntryIndex] || {};
+        const coverUrl = bestEntry.cover_art || getCoverUrl(item.gameId, item.region);
         const regionColor = item.region.includes('NTSC') ? 'text-emerald-500' : (item.region === 'PAL' ? 'text-amber-500' : 'text-slate-400');
 
         const playableBadge = item.bestPlayable === 'YES'
           ? `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-emerald-950/50 text-emerald-400 border border-emerald-700/40">Playable</span>`
-          : `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-rose-950/50 text-rose-400 border border-rose-700/40">Unplayable</span>`;
+          : item.bestPlayable === 'YES WITH ISSUES'
+            ? `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-amber-950/50 text-amber-400 border border-amber-700/40">With Issues</span>`
+            : `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-rose-950/50 text-rose-400 border border-rose-700/40">Unplayable</span>`;
 
         return `
           <div class="card-anim list-card" style="animation-delay: ${Math.min(idx * 20, 300)}ms" onclick="openModal(${idx})">
@@ -949,9 +757,9 @@
               <div class="list-card-title ${isGC ? 'text-white' : 'text-slate-900'}">${escapeHtml(item.game)}</div>
               <div class="list-card-meta">
                 <span class="flex items-center gap-1 ${regionColor}">
-                  <img src="${getFlagUrl(item.region)}" class="w-4 h-3 object-cover rounded border border-slate-400/20"> ${item.region}
+                  <img src="${getFlagUrl(item.region)}" class="w-4 h-3 object-cover rounded border border-slate-400/20" /> ${item.region}
                 </span>
-                <span class="font-mono">${item.entriesCount} test${item.entriesCount!==1?'s':''}</span>
+                <span class="font-mono">${item.entriesCount} test${item.entriesCount !== 1 ? 's' : ''}</span>
                 <span class="fps-badge ${isGC ? 'gc' : 'wii'}">${item.bestFpsStr !== "???" ? item.bestFpsStr + ' FPS' : 'N/A'}</span>
                 <span class="text-[9px] font-mono px-2 py-0.5 rounded-full ${item.bestBoot === 'YES' ? (isGC ? 'boot-badge gc-yes' : 'boot-badge wii-yes') : (isGC ? 'boot-badge gc-no' : 'boot-badge wii-no')}">${item.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
                 ${playableBadge}
@@ -967,9 +775,9 @@
     //  MODAL
     // ============================================================
     function openModal(index) {
-      const item = currentFilteredGames[index];
+      const item = state.filtered[index];
       if (!item) return;
-      const isGC = currentConsole === 'gc';
+      const isGC = state.console === 'gc';
 
       document.getElementById('modalTitle').textContent = item.game;
       document.getElementById('modalFlag').src = getFlagUrl(item.region);
@@ -977,7 +785,8 @@
       document.getElementById('modalGameId').textContent = item.gameId || 'ID Unknown';
 
       const coverImg = document.getElementById('modalCoverImg');
-      const coverUrl = item.entries[item.bestEntryIndex].cover_art || getCoverUrl(item.gameId, item.region, currentConsole);
+      const bestEntry = item.entries[item.bestEntryIndex] || {};
+      const coverUrl = bestEntry.cover_art || getCoverUrl(item.gameId, item.region);
       if (coverUrl) {
         coverImg.src = coverUrl;
         coverImg.onerror = () => { coverImg.style.display = 'none'; };
@@ -986,7 +795,6 @@
         coverImg.style.display = 'none';
       }
 
-      // Best / Average
       document.getElementById('modalBestRatingVal').innerHTML = renderStars(item.bestRating, 16);
       const bestFpsEl = document.getElementById('modalBestFpsVal');
       bestFpsEl.textContent = item.bestFpsStr !== "???" ? `${item.bestFpsStr} FPS` : 'N/A';
@@ -997,7 +805,6 @@
       avgFpsEl.textContent = item.avgFps !== "N/A" ? `${item.avgFps} FPS` : 'N/A';
       avgFpsEl.className = isGC ? 'text-sm font-mono font-bold text-slate-300' : 'text-sm font-mono font-bold text-slate-800';
 
-      // Entries
       const container = document.getElementById('modalEntriesContainer');
       container.innerHTML = item.entries.map((e, idx) => {
         const isBest = (idx === item.bestEntryIndex);
@@ -1008,13 +815,27 @@
         const info = e.game_info || {};
         const env = e.test_environment || {};
 
-        const rating = parseInt(review.rating || 0);
+        const rating = parseInt(review.rating, 10) || 0;
         const boot = review.boot || (rating >= 1 ? "YES" : "NO");
-        const playable = review.playable || (rating >= 3 ? "YES" : "NO");
+        let playable = review.playable || (rating >= 3 ? "YES" : "NO");
+        if (rating === 3 && playable === "YES") playable = "YES WITH ISSUES";
+
         const fpsRaw = (review.fps || '???').trim();
-        const fpsMin = parseInt(review.fps_min || 0);
-        const fpsMax = parseInt(review.fps_max || 0);
+        let fpsMin = parseInt(review.fps_min, 10);
+        let fpsMax = parseInt(review.fps_max, 10);
+        if (isNaN(fpsMin) || isNaN(fpsMax)) {
+          const nums = fpsRaw.match(/\d+/g);
+          if (nums) {
+            const n = nums.map(Number);
+            fpsMin = n[0] || 0;
+            fpsMax = n[1] || n[0] || 0;
+          } else {
+            fpsMin = 0;
+            fpsMax = 0;
+          }
+        }
         const fpsRange = (fpsMin > 0 && fpsMax > 0) ? `${fpsMin} - ${fpsMax}` : (fpsRaw !== '???' ? fpsRaw : 'N/A');
+
         const coreVersion = details.rtcore_version || details.core_version || 'Default';
         const coreUsed = details.core_profile || 'Default';
         const device = env.device || 'Unknown Device';
@@ -1028,7 +849,6 @@
         const circumference = 2 * Math.PI * 42;
         const offset = circumference * (1 - (rating / 5));
 
-        // Build custom settings HTML
         let settingsHtml = '';
         if (customSettings.length > 0) {
           settingsHtml = customSettings.map(cs => {
@@ -1042,20 +862,19 @@
                   <span class="settings-type-badge">${escapeHtml(type)}</span>
                   ${name ? `<span class="text-xs font-semibold">${escapeHtml(name)}</span>` : ''}
                 </div>
-                ${url ? `<a href="${url}" target="_blank" class="text-xs text-gc-400 underline hover:text-gc-300">${escapeHtml(url)}</a>` : ''}
+                ${url ? `<a href="${url}" target="_blank" rel="noopener" class="text-xs text-gc-400 underline hover:text-gc-300">${escapeHtml(url)}</a>` : ''}
                 ${note ? `<p class="text-xs italic text-slate-400">${escapeHtml(note)}</p>` : ''}
               </div>
             `;
           }).join('');
         }
 
-        // Build attachments HTML
         let attHtml = '';
         if (attachments.length > 0) {
           attHtml = attachments.map(a => `
             <div class="attachment-item">
               ${a.media_type === 'video' ? '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>' : '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>'}
-              <a href="${a.media_url}" target="_blank" class="truncate">${escapeHtml(a.media_title || a.media_url)}</a>
+              <a href="${a.media_url}" target="_blank" rel="noopener" class="truncate">${escapeHtml(a.media_title || a.media_url)}</a>
             </div>
           `).join('');
         }
@@ -1105,7 +924,7 @@
               <div class="flex flex-wrap items-center gap-2 flex-1">
                 <div class="flex flex-col gap-1">
                   <span class="status-pill ${boot === 'YES' ? 'boots-yes' : 'boots-no'}">${boot === 'YES' ? '✅ BOOTS' : '⛔ NO BOOT'}</span>
-                  <span class="status-pill ${playable === 'YES' ? 'playable-yes' : 'playable-no'}">${playable === 'YES' ? '✅ PLAYABLE' : '⛔ UNPLAYABLE'}</span>
+                  <span class="status-pill ${playable === 'YES' ? 'playable-yes' : playable === 'YES WITH ISSUES' ? 'playable-issues' : 'playable-no'}">${playable === 'YES' ? '✅ PLAYABLE' : playable === 'YES WITH ISSUES' ? '⚠️ WITH ISSUES' : '⛔ UNPLAYABLE'}</span>
                 </div>
                 <div class="flex flex-col items-center ml-1">
                   <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400">FPS</div>
@@ -1150,20 +969,21 @@
     function closeModal() {
       document.getElementById('gameModal').classList.add('hidden');
     }
-    document.getElementById('closeModalBtn').addEventListener('click', closeModal);
-    document.getElementById('gameModal').addEventListener('click', e => { if (e.target === document.getElementById('gameModal')) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
     // ============================================================
-    //  LOAD DATA (UNIFIED)
+    //  DATA LOADING
     // ============================================================
     function updateStats() {
-      document.getElementById('statTested').textContent = GROUPED_GAMES.length;
-      document.getElementById('statTotal').textContent = RAW_GAMES.length;
-      const counts = {5:0,4:0,3:0,2:0,1:0};
-      GROUPED_GAMES.forEach(g => {
+      document.getElementById('statTested').textContent = state.groupedGames.length;
+      document.getElementById('statTotal').textContent = state.rawGames.length;
+      const counts = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
+      state.groupedGames.forEach(g => {
         const r = g.bestRating;
-        if (r >= 5) counts[5]++; else if (r >= 4) counts[4]++; else if (r >= 3) counts[3]++; else if (r >= 2) counts[2]++; else if (r >= 1) counts[1]++;
+        if (r >= 5) counts[5]++;
+        else if (r >= 4) counts[4]++;
+        else if (r >= 3) counts[3]++;
+        else if (r >= 2) counts[2]++;
+        else if (r >= 1) counts[1]++;
       });
       document.getElementById('count-5').textContent = counts[5];
       document.getElementById('count-4').textContent = counts[4];
@@ -1173,65 +993,171 @@
     }
 
     async function loadConsoleData() {
-      RAW_GAMES = [];
-      GROUPED_GAMES = [];
+      document.getElementById('loaderContainer').classList.remove('hidden');
+      document.getElementById('gamesGrid').innerHTML = '';
+      document.getElementById('emptyState').classList.add('hidden');
 
       if (window.location.protocol === 'file:') {
+        document.getElementById('loaderContainer').classList.add('hidden');
         document.getElementById('emptyStateText').innerHTML = `<strong class="text-rose-500">CORS Error:</strong> Load via local server (python3 -m http.server 8000)`;
         document.getElementById('emptyState').classList.remove('hidden');
-        updateStats(); renderGrid(); return;
+        return;
       }
 
       try {
         const res = await fetch(URL);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        RAW_GAMES = data.games || [];
-        const system = currentConsole === 'gc' ? 'GC' : 'Wii';
-        const filtered = RAW_GAMES.filter(g => (g.game_info?.system || '') === system);
-        GROUPED_GAMES = groupGames(filtered);
+        state.rawGames = data.games || [];
+        const system = state.console === 'gc' ? 'GC' : 'Wii';
+        const filtered = state.rawGames.filter(g => (g.game_info?.system || '') === system);
+        state.groupedGames = groupGames(filtered);
         document.getElementById('emptyStateText').textContent = 'No games found.';
+        updateStats();
+        render();
       } catch (err) {
+        document.getElementById('loaderContainer').classList.add('hidden');
         document.getElementById('emptyStateText').innerHTML = `<strong class="text-rose-500">Error loading data:</strong> ${err.message}`;
         document.getElementById('emptyState').classList.remove('hidden');
-      } finally {
-        updateStats();
-        renderGrid();
       }
     }
 
     // ============================================================
-    //  EVENTS
+    //  CONSOLE SWITCH
     // ============================================================
-    document.getElementById('searchInput').addEventListener('input', e => { searchQuery = e.target.value.toLowerCase().trim(); renderGrid(); });
-    document.getElementById('regionFilter').addEventListener('change', e => { selectedRegion = e.target.value; renderGrid(); });
-    document.getElementById('bootFilter').addEventListener('change', e => { selectedBoot = e.target.value; renderGrid(); });
-    document.getElementById('sortKey').addEventListener('change', e => { currentSortKey = e.target.value; renderGrid(); });
+    function switchConsole(target) {
+      state.console = target;
+      const isGC = target === 'gc';
+      const header = document.getElementById('appHeader');
+
+      header.classList.remove('flip-horizontal');
+      void header.offsetWidth;
+      header.classList.add('flip-horizontal');
+
+      document.getElementById('consoleLogo').src = isGC
+        ? 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg'
+        : 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg';
+
+      document.getElementById('consoleName').textContent = isGC ? 'GameCube' : 'Wii';
+      document.getElementById('consoleName').className = isGC ? 'font-bold text-gc-400' : 'font-bold text-wii-500';
+
+      const btnGC = document.getElementById('btnConsoleGC');
+      const btnWii = document.getElementById('btnConsoleWii');
+      if (isGC) {
+        btnGC.className = 'flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 switch-tab-active-gc';
+        btnWii.className = 'flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 switch-tab-inactive-wii';
+      } else {
+        btnWii.className = 'flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 switch-tab-active-wii';
+        btnGC.className = 'flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 switch-tab-inactive-gc';
+      }
+
+      const isWii = !isGC;
+      const mainTitle = document.getElementById('mainTitle');
+      const muosText = document.getElementById('muosText');
+      const subtitle = document.querySelector('#dashboardSubtitle');
+      const desc = document.querySelector('#dashboardDesc');
+
+      if (isGC) {
+        mainTitle.className = 'text-2xl sm:text-3xl font-black tracking-tight text-white whitespace-nowrap';
+        muosText.className = 'text-gc-400';
+        muosText.style.fontWeight = '400';
+        subtitle.className = 'text-base sm:text-lg mt-0.5 transition-colors';
+        desc.className = 'text-xs italic text-slate-400 transition-colors';
+        document.getElementById('filterPanel').className = 'gc-glass rounded-2xl p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500';
+        document.querySelectorAll('.rating-panel').forEach(el => {
+          el.className = el.className.replace(/wii-glass/g, 'gc-glass');
+        });
+        document.getElementById('spdwPanel').className = 'gc-glass rounded-xl p-2.5 px-4 flex-shrink-0 transition-all duration-500 space-y-1.5 min-w-[180px]';
+        document.getElementById('spdwBrand').className = 'flex items-center gap-1 font-black text-gc-400 tracking-wider text-[10px] uppercase';
+        document.getElementById('coreBadge').className = 'text-[9px] font-mono px-2 py-0.5 rounded-full bg-gc-900 text-gc-300 border border-gc-700/60 font-bold';
+        document.getElementById('statTestedBox').className = 'text-[9px] font-black bg-gc-900/80 border border-gc-600/50 rounded-lg px-2 py-0.5 flex items-center gap-2 shadow-inner';
+        document.getElementById('statTested').className = 'bg-gc-500 text-white px-1.5 py-0.5 rounded-lg font-mono font-black text-sm shadow-sm';
+        document.getElementById('totalEntriesAccent').className = 'text-gc-400';
+        document.getElementById('totalEntriesContainer').className = 'text-[9px] font-mono flex items-center gap-1 text-slate-400';
+        document.getElementById('statTotal').className = 'font-bold text-slate-200';
+        document.getElementById('newIssueBtn').className = 'text-slate-400 hover:text-white transition-colors flex items-center gap-1';
+        document.getElementById('modalCard').className = 'gc-glass border border-gc-700/80 rounded-3xl max-w-5xl w-full max-h-[94vh] flex flex-col p-5 shadow-2xl relative modal-anim';
+        document.getElementById('modalRegionBadge').className = 'text-[9px] font-mono px-2 py-0.5 rounded bg-gc-900 text-gc-300 border border-gc-700/60 uppercase font-bold shrink-0';
+        document.getElementById('modalGameId').className = 'text-[9px] font-mono px-2 py-0.5 rounded bg-gc-800/60 text-gc-400 border border-gc-600/40 font-bold shrink-0';
+        document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b border-purple-900/40 bg-gc-950/90 backdrop-blur-xl shadow-lg';
+        document.getElementById('appBody').className = 'theme-gc font-sans antialiased transition-colors duration-500 min-h-screen';
+      } else {
+        mainTitle.className = 'text-2xl sm:text-3xl font-black tracking-tight title-dark whitespace-nowrap';
+        muosText.className = 'text-gc-400';
+        muosText.style.fontWeight = '400';
+        muosText.style.color = '#0f172a';
+        subtitle.className = 'text-base sm:text-lg mt-0.5 transition-colors text-slate-800';
+        desc.className = 'text-xs italic text-slate-600 transition-colors';
+        document.getElementById('filterPanel').className = 'wii-glass rounded-2xl p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500';
+        document.querySelectorAll('.rating-panel').forEach(el => {
+          el.className = el.className.replace(/gc-glass/g, 'wii-glass rating-panel-wii');
+        });
+        document.getElementById('spdwPanel').className = 'wii-glass rounded-xl p-2.5 px-4 flex-shrink-0 transition-all duration-500 space-y-1.5 min-w-[180px] border border-slate-300 shadow-sm';
+        document.getElementById('spdwBrand').className = 'flex items-center gap-1 font-black text-wii-700 tracking-wider text-[10px] uppercase';
+        document.getElementById('coreBadge').className = 'text-[9px] font-mono px-2 py-0.5 rounded-full bg-wii-100 text-wii-900 border border-wii-300 font-bold';
+        document.getElementById('statTestedBox').className = 'text-[9px] font-black text-slate-800 bg-wii-50 border border-wii-200 rounded-lg px-2 py-0.5 flex items-center gap-2 shadow-inner';
+        document.getElementById('statTested').className = 'bg-wii-500 text-white px-1.5 py-0.5 rounded-lg font-mono font-black text-sm shadow-sm';
+        document.getElementById('totalEntriesAccent').className = 'text-wii-700 font-bold';
+        document.getElementById('totalEntriesContainer').className = 'text-[9px] font-mono flex items-center gap-1 text-slate-700';
+        document.getElementById('statTotal').className = 'font-bold text-slate-800';
+        document.getElementById('newIssueBtn').className = 'text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1';
+        document.getElementById('modalCard').className = 'wii-glass border border-slate-300 rounded-3xl max-w-5xl w-full max-h-[94vh] flex flex-col p-5 shadow-2xl relative modal-anim';
+        document.getElementById('modalRegionBadge').className = 'text-[9px] font-mono px-2 py-0.5 rounded bg-wii-100 text-wii-900 border border-wii-300 uppercase font-bold shrink-0 badge-region-wii';
+        document.getElementById('modalGameId').className = 'text-[9px] font-mono px-2 py-0.5 rounded bg-wii-200/60 text-wii-700 border border-wii-300/60 font-bold shrink-0 badge-gameid-wii';
+        document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b border-slate-300 bg-white/95 backdrop-blur-xl shadow-lg';
+        document.getElementById('appBody').className = 'theme-wii font-sans antialiased transition-colors duration-500 min-h-screen';
+      }
+
+      loadConsoleData();
+    }
+
+    // ============================================================
+    //  EVENTS & INIT
+    // ============================================================
+    document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+    document.getElementById('gameModal').addEventListener('click', e => { if (e.target === document.getElementById('gameModal')) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    document.getElementById('searchInput').addEventListener('input', e => {
+      state.search = e.target.value.toLowerCase().trim();
+      render();
+    });
+    document.getElementById('regionFilter').addEventListener('change', e => {
+      state.selectedRegion = e.target.value;
+      render();
+    });
+    document.getElementById('bootFilter').addEventListener('change', e => {
+      state.selectedBoot = e.target.value;
+      render();
+    });
+    document.getElementById('sortKey').addEventListener('change', e => {
+      state.sortKey = e.target.value;
+      render();
+    });
     document.getElementById('sortOrderBtn').addEventListener('click', () => {
-      currentSortOrder = currentSortOrder === 'asc' ? 'desc' : 'asc';
-      document.getElementById('sortOrderLabel').textContent = currentSortOrder === 'asc' ? 'Asc' : 'Desc';
+      state.sortOrder = state.sortOrder === 'asc' ? 'desc' : 'asc';
+      document.getElementById('sortOrderLabel').textContent = state.sortOrder === 'asc' ? 'Asc' : 'Desc';
       document.getElementById('sortOrderIcon').classList.toggle('rotate-180');
-      renderGrid();
+      render();
     });
     document.getElementById('viewModeBtn').addEventListener('click', () => {
-      viewMode = viewMode === 'grid' ? 'list' : 'grid';
-      const btn = document.getElementById('viewModeBtn');
+      state.viewMode = state.viewMode === 'grid' ? 'list' : 'grid';
       const label = document.getElementById('viewModeLabel');
       const icon = document.getElementById('viewModeIcon');
-      if (viewMode === 'grid') {
+      if (state.viewMode === 'grid') {
         label.textContent = 'Grid';
         icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
       } else {
         label.textContent = 'List';
         icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h6M4 12h6M4 19h6M14 5h6M14 12h6M14 19h6"/>';
       }
-      renderGrid();
+      render();
     });
     document.querySelectorAll('.rating-panel').forEach(p => {
       p.addEventListener('click', () => {
         const v = p.getAttribute('data-rating');
-        selectedStars = selectedStars === v ? 'all' : v;
-        renderGrid();
+        state.selectedStars = state.selectedStars === v ? 'all' : v;
+        render();
       });
     });
     document.getElementById('resetFiltersBtn').addEventListener('click', () => {
@@ -1239,19 +1165,19 @@
       document.getElementById('regionFilter').value = 'all';
       document.getElementById('bootFilter').value = 'all';
       document.getElementById('sortKey').value = 'title';
-      currentSortOrder = 'asc';
+      state.sortOrder = 'asc';
       document.getElementById('sortOrderLabel').textContent = 'Asc';
       document.getElementById('sortOrderIcon').classList.remove('rotate-180');
-      searchQuery = ''; selectedStars = 'all'; selectedRegion = 'all'; selectedBoot = 'all';
-      renderGrid();
+      state.search = '';
+      state.selectedStars = 'all';
+      state.selectedRegion = 'all';
+      state.selectedBoot = 'all';
+      render();
     });
     document.getElementById('clearFiltersBtn').addEventListener('click', () => {
       document.getElementById('resetFiltersBtn').click();
     });
 
-    // ============================================================
-    //  INIT
-    // ============================================================
     switchConsole('gc');
   </script>
 </body>
