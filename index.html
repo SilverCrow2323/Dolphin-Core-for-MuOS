@@ -6,21 +6,127 @@
   <title>Dolphin Rt:Core for muOS</title>
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Audiowide&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Audiowide&family=Outfit:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   <style>
+    /* ===== RESET & BASE ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Outfit', sans-serif; transition: background 0.4s, color 0.4s; min-height: 100vh; }
-    body.theme-gc { background: linear-gradient(145deg, #090511 0%, #160b24 50%, #0d0716 100%); color: #f1f5f9; }
-    body.theme-wii { background: linear-gradient(145deg, #eef2f6 0%, #dce4ec 100%); color: #0f172a; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      transition: background 0.4s, color 0.4s;
+      min-height: 100vh;
+    }
 
-    ::-webkit-scrollbar { width: 6px; height: 6px; }
-    body.theme-gc ::-webkit-scrollbar-track { background: #0d0716; }
-    body.theme-gc ::-webkit-scrollbar-thumb { background: #2e1847; border-radius: 4px; }
-    body.theme-gc ::-webkit-scrollbar-thumb:hover { background: #6d28d9; }
-    body.theme-wii ::-webkit-scrollbar-track { background: #eef2f6; }
-    body.theme-wii ::-webkit-scrollbar-thumb { background: #b0c4d8; border-radius: 4px; }
-    body.theme-wii ::-webkit-scrollbar-thumb:hover { background: #00a3e0; }
+    /* ===== THEME GAMECUBE – Cyberpunk Violaceo ===== */
+    body.theme-gc {
+      background: #0a0618;
+      color: #f1f5f9;
+      background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(139, 92, 246, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(236, 72, 153, 0.06) 0%, transparent 60%);
+    }
+    body.theme-gc .cyber-border {
+      border: 3px solid #2a1a4a;
+      outline: 2px solid rgba(139, 92, 246, 0.25);
+      outline-offset: 2px;
+      box-shadow: 6px 6px 0 #1a0a2e, 0 0 30px rgba(139, 92, 246, 0.05);
+      clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    body.theme-gc .cyber-border::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: 16px;
+      height: 16px;
+      background: inherit;
+      clip-path: polygon(0% 0%, 60% 0%, 100% 40%, 100% 100%, 0% 100%, 0% 0%);
+      transform: rotate(40deg);
+      pointer-events: none;
+      z-index: 1;
+    }
+    body.theme-gc .cyber-border::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      right: -3px;
+      width: 18px;
+      height: 18px;
+      background: inherit;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 60% 100%, 0% 60%);
+      transform: rotate(-12deg);
+      pointer-events: none;
+      z-index: 1;
+    }
+    body.theme-gc .cyber-border:hover {
+      outline-color: rgba(139, 92, 246, 0.6);
+      box-shadow: 8px 8px 0 #1a0a2e, 0 0 40px rgba(139, 92, 246, 0.15);
+    }
+    body.theme-gc .cyber-glow {
+      text-shadow: 0 0 10px rgba(139, 92, 246, 0.3), 0 0 30px rgba(139, 92, 246, 0.1);
+    }
 
+    /* ===== THEME WII – Pastello Azzurro ===== */
+    body.theme-wii {
+      background: #e8f0f8;
+      color: #0f172a;
+      background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(0, 163, 224, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(56, 189, 248, 0.03) 0%, transparent 60%);
+    }
+    body.theme-wii .cyber-border {
+      border: 3px solid #b0c4d8;
+      outline: 2px solid rgba(0, 163, 224, 0.15);
+      outline-offset: 2px;
+      box-shadow: 6px 6px 0 #c8d4df, 0 0 30px rgba(0, 163, 224, 0.03);
+      clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    body.theme-wii .cyber-border::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: 16px;
+      height: 16px;
+      background: inherit;
+      clip-path: polygon(0% 0%, 60% 0%, 100% 40%, 100% 100%, 0% 100%, 0% 0%);
+      transform: rotate(40deg);
+      pointer-events: none;
+      z-index: 1;
+    }
+    body.theme-wii .cyber-border::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      right: -3px;
+      width: 18px;
+      height: 18px;
+      background: inherit;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 60% 100%, 0% 60%);
+      transform: rotate(-12deg);
+      pointer-events: none;
+      z-index: 1;
+    }
+    body.theme-wii .cyber-border:hover {
+      outline-color: rgba(0, 163, 224, 0.4);
+      box-shadow: 8px 8px 0 #c8d4df, 0 0 30px rgba(0, 163, 224, 0.08);
+    }
+    body.theme-wii .cyber-glow {
+      text-shadow: 0 0 10px rgba(0, 163, 224, 0.15);
+    }
+
+    /* ===== SCROLLBAR CYBER ===== */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    body.theme-gc ::-webkit-scrollbar-track { background: #0a0618; border: 1px solid #2a1a4a; clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%); }
+    body.theme-gc ::-webkit-scrollbar-thumb { background: #8b5cf6; border: 1px solid #2a1a4a; border-radius: 0; clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%); }
+    body.theme-wii ::-webkit-scrollbar-track { background: #e8f0f8; border: 1px solid #b0c4d8; clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%); }
+    body.theme-wii ::-webkit-scrollbar-thumb { background: #00a3e0; border: 1px solid #b0c4d8; border-radius: 0; clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%); }
+
+    /* ===== KEYFRAMES ===== */
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes slideIn { from { opacity: 0; transform: scale(0.95) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
     @keyframes spin { to { transform: rotate(360deg); } }
@@ -36,7 +142,6 @@
       70% { opacity: 0.4; transform: scale(0.6) translate(4px,2px); }
       100% { opacity: 0; transform: scale(0.1) translate(6px,6px); }
     }
-    @keyframes starPop { 0% { transform: scale(1); } 50% { transform: scale(1.3); } 100% { transform: scale(1); } }
     @keyframes starSpin {
       0% { opacity: 0; transform: translateX(-50%) rotate(0deg) scale(0.4); }
       8% { opacity: 0.7; transform: translateX(-50%) rotate(60deg) scale(1); }
@@ -51,25 +156,37 @@
       100% { transform: perspective(800px) rotateY(0deg); opacity: 1; }
     }
 
-    .gc-glass { background: rgba(22, 11, 36, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(124, 58, 237, 0.25); box-shadow: 0 4px 20px -2px rgba(124, 58, 237, 0.15), 0 2px 6px -1px rgba(0, 0, 0, 0.4); }
-    .wii-glass { background: rgba(240, 248, 255, 0.92); backdrop-filter: blur(12px); border: 1px solid rgba(180, 210, 235, 0.7); box-shadow: 0 4px 20px -2px rgba(0, 163, 224, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04); }
-
+    /* ===== CARDS & CONTAINERS ===== */
     .card-anim { animation: fadeIn 0.25s ease-out forwards; opacity: 0; }
     .modal-anim { animation: slideIn 0.2s ease-out forwards; }
 
-    .cover-placeholder { background: linear-gradient(145deg, #1a1a2e, #16213e); display: flex; align-items: center; justify-content: center; font-size: 28px; color: rgba(255,255,255,0.15); }
-    .theme-wii .cover-placeholder { background: linear-gradient(145deg, #dce4ec, #c8d4df); color: rgba(0,0,0,0.08); }
-    .cover-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+    .cover-placeholder {
+      background: #1a0a2e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      color: rgba(255,255,255,0.1);
+      clip-path: polygon(0% 5%, 5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%);
+    }
+    body.theme-wii .cover-placeholder { background: #d0dce8; color: rgba(0,0,0,0.06); }
+    .cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      clip-path: polygon(0% 5%, 5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%);
+    }
     .game-card:hover .cover-img { transform: scale(1.03); }
 
     .glow-border { position: relative; }
     .glow-border::before {
       content: '';
       position: absolute;
-      inset: -2px;
-      border-radius: 16px;
-      padding: 2px;
-      background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(139,92,246,0.1));
+      inset: -4px;
+      border-radius: 0;
+      padding: 3px;
+      clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
       -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
@@ -77,116 +194,418 @@
       opacity: 0;
       transition: opacity 0.3s ease;
     }
+    body.theme-gc .glow-border::before { background: linear-gradient(135deg, rgba(139,92,246,0.5), rgba(236,72,153,0.2)); }
+    body.theme-wii .glow-border::before { background: linear-gradient(135deg, rgba(0,163,224,0.4), rgba(56,189,248,0.15)); }
     .game-card:hover .glow-border::before { opacity: 1; }
-    .theme-wii .glow-border::before { background: linear-gradient(135deg, rgba(0,163,224,0.25), rgba(56,189,248,0.08)); }
 
-    .badge-core { font-size: 9px; padding: 2px 8px; border-radius: 20px; font-weight: 700; letter-spacing: 0.3px; }
-    .badge-core.gc { background: rgba(139,92,246,0.2); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3); }
-    .badge-core.wii { background: rgba(0,163,224,0.10); color: #0369a1; border: 1px solid rgba(0,163,224,0.15); }
+    /* ===== BADGES ===== */
+    .badge-core { font-size: 10px; padding: 2px 14px; border-radius: 0; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; border: 2px solid; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); }
+    body.theme-gc .badge-core.gc { background: rgba(139,92,246,0.2); color: #a78bfa; border-color: #6d28d9; }
+    body.theme-gc .badge-core.wii { background: rgba(0,163,224,0.1); color: #7dd3fc; border-color: #0369a1; }
+    body.theme-wii .badge-core.gc { background: rgba(139,92,246,0.12); color: #6d28d9; border-color: #8b5cf6; }
+    body.theme-wii .badge-core.wii { background: rgba(0,163,224,0.08); color: #0284c7; border-color: #00a3e0; }
 
-    .fps-badge { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; }
-    .fps-badge.gc { background: rgba(0,200,255,0.1); color: #7dd3fc; border: 1px solid rgba(0,200,255,0.15); }
-    .fps-badge.wii { background: rgba(0,163,224,0.06); color: #0284c7; border: 1px solid rgba(0,163,224,0.08); }
+    .fps-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 12px;
+      border-radius: 0;
+      border: 2px solid;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
+    body.theme-gc .fps-badge.gc { background: rgba(251,191,36,0.12); color: #fbbf24; border-color: #f59e0b; }
+    body.theme-gc .fps-badge.wii { background: rgba(56,189,248,0.08); color: #7dd3fc; border-color: #38bdf8; }
+    body.theme-wii .fps-badge.gc { background: rgba(251,191,36,0.10); color: #a16207; border-color: #fbbf24; }
+    body.theme-wii .fps-badge.wii { background: rgba(0,163,224,0.06); color: #0284c7; border-color: #00a3e0; }
 
-    .boot-badge.gc-yes { background: rgba(60,255,120,0.12); color: #4ade80; border: 1px solid rgba(60,255,120,0.2); }
-    .boot-badge.gc-no { background: rgba(255,60,60,0.12); color: #f87171; border: 1px solid rgba(255,60,60,0.2); }
-    .boot-badge.wii-yes { background: rgba(60,255,120,0.08); color: #16a34a; border: 1px solid rgba(60,255,120,0.12); }
-    .boot-badge.wii-no { background: rgba(255,60,60,0.08); color: #dc2626; border: 1px solid rgba(255,60,60,0.12); }
+    .boot-badge {
+      font-size: 9px;
+      font-weight: 900;
+      padding: 2px 12px;
+      border-radius: 0;
+      border: 2px solid;
+      text-transform: uppercase;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
+    body.theme-gc .boot-badge.yes { background: rgba(60,255,120,0.15); color: #4ade80; border-color: #22c55e; }
+    body.theme-gc .boot-badge.no { background: rgba(255,60,60,0.15); color: #f87171; border-color: #ef4444; }
+    body.theme-wii .boot-badge.yes { background: rgba(60,255,120,0.10); color: #16a34a; border-color: #22c55e; }
+    body.theme-wii .boot-badge.no { background: rgba(255,60,60,0.10); color: #dc2626; border-color: #ef4444; }
 
-    .best-badge { font-size: 10px; padding: 2px 10px; border-radius: 20px; font-weight: 700; background: rgba(255,215,0,0.15); color: #fbbf24; border: 1px solid rgba(255,215,0,0.3); }
-    .theme-wii .best-badge { background: rgba(255,215,0,0.10); color: #a16207; border-color: rgba(255,215,0,0.2); }
+    .playable-badge {
+      font-size: 9px;
+      font-weight: 900;
+      padding: 2px 12px;
+      border-radius: 0;
+      border: 2px solid;
+      text-transform: uppercase;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
+    body.theme-gc .playable-badge.yes { background: rgba(60,255,120,0.15); color: #4ade80; border-color: #22c55e; }
+    body.theme-gc .playable-badge.no { background: rgba(255,60,60,0.15); color: #f87171; border-color: #ef4444; }
+    body.theme-gc .playable-badge.issues { background: rgba(251,191,36,0.15); color: #fbbf24; border-color: #f59e0b; }
+    body.theme-wii .playable-badge.yes { background: rgba(60,255,120,0.10); color: #16a34a; border-color: #22c55e; }
+    body.theme-wii .playable-badge.no { background: rgba(255,60,60,0.10); color: #dc2626; border-color: #ef4444; }
+    body.theme-wii .playable-badge.issues { background: rgba(251,191,36,0.10); color: #a16207; border-color: #fbbf24; }
 
-    .status-pill { padding: 0.25rem 0.8rem; border-radius: 2rem; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.02em; display: inline-block; border: 1px solid transparent; text-align: center; min-width: 80px; }
-    .status-pill.boots-yes { background: rgba(60,255,120,0.12); color: #4ade80; border-color: rgba(60,255,120,0.2); }
-    .status-pill.boots-no { background: rgba(255,60,60,0.12); color: #f87171; border-color: rgba(255,60,60,0.2); }
-    .status-pill.playable-yes { background: rgba(60,255,120,0.12); color: #4ade80; border-color: rgba(60,255,120,0.2); }
-    .status-pill.playable-no { background: rgba(255,60,60,0.12); color: #f87171; border-color: rgba(255,60,60,0.2); }
-    .status-pill.playable-issues { background: rgba(251,191,36,0.15); color: #fbbf24; border-color: rgba(251,191,36,0.25); }
-    .theme-wii .status-pill.playable-issues { background: rgba(251,191,36,0.10); color: #a16207; border-color: rgba(251,191,36,0.2); }
-    .theme-wii .status-pill.boots-yes { background: rgba(60,255,120,0.08); color: #16a34a; border-color: rgba(60,255,120,0.12); }
-    .theme-wii .status-pill.boots-no { background: rgba(255,60,60,0.08); color: #dc2626; border-color: rgba(255,60,60,0.12); }
-    .theme-wii .status-pill.playable-yes { background: rgba(60,255,120,0.08); color: #16a34a; border-color: rgba(60,255,120,0.12); }
-    .theme-wii .status-pill.playable-no { background: rgba(255,60,60,0.08); color: #dc2626; border-color: rgba(255,60,60,0.12); }
+    .best-badge {
+      font-size: 10px;
+      padding: 2px 14px;
+      border-radius: 0;
+      font-weight: 900;
+      border: 2px solid;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
+    body.theme-gc .best-badge { background: rgba(251,191,36,0.15); color: #fbbf24; border-color: #f59e0b; }
+    body.theme-wii .best-badge { background: rgba(251,191,36,0.10); color: #a16207; border-color: #fbbf24; }
 
-    .rating-stars { display: flex; gap: 1px; }
-    .rating-stars svg { width: 14px; height: 14px; }
+    .status-pill {
+      padding: 4px 14px;
+      border-radius: 0;
+      font-weight: 900;
+      font-size: 10px;
+      letter-spacing: 0.04em;
+      display: inline-block;
+      border: 2px solid;
+      text-align: center;
+      min-width: 80px;
+      text-transform: uppercase;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
+    body.theme-gc .status-pill.boots-yes { background: rgba(60,255,120,0.12); color: #4ade80; border-color: #22c55e; }
+    body.theme-gc .status-pill.boots-no { background: rgba(255,60,60,0.12); color: #f87171; border-color: #ef4444; }
+    body.theme-gc .status-pill.playable-yes { background: rgba(60,255,120,0.12); color: #4ade80; border-color: #22c55e; }
+    body.theme-gc .status-pill.playable-no { background: rgba(255,60,60,0.12); color: #f87171; border-color: #ef4444; }
+    body.theme-gc .status-pill.playable-issues { background: rgba(251,191,36,0.12); color: #fbbf24; border-color: #f59e0b; }
+    body.theme-wii .status-pill.boots-yes { background: rgba(60,255,120,0.08); color: #16a34a; border-color: #22c55e; }
+    body.theme-wii .status-pill.boots-no { background: rgba(255,60,60,0.08); color: #dc2626; border-color: #ef4444; }
+    body.theme-wii .status-pill.playable-yes { background: rgba(60,255,120,0.08); color: #16a34a; border-color: #22c55e; }
+    body.theme-wii .status-pill.playable-no { background: rgba(255,60,60,0.08); color: #dc2626; border-color: #ef4444; }
+    body.theme-wii .status-pill.playable-issues { background: rgba(251,191,36,0.08); color: #a16207; border-color: #fbbf24; }
 
-    .fps-range-box { background: rgba(0,0,0,0.15); border-radius: 0.75rem; padding: 0.3rem 0.8rem; text-align: center; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.05); }
-    .theme-wii .fps-range-box { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.06); }
+    /* ===== RATING STARS ===== */
+    .rating-stars { display: flex; gap: 2px; }
+    .rating-stars svg { width: 16px; height: 16px; }
 
-    .core-profile-box { background: rgba(0,0,0,0.12); border-radius: 0.75rem; padding: 0.3rem 0.8rem; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.05); }
-    .theme-wii .core-profile-box { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.06); }
+    /* ===== FPS RANGE BOX ===== */
+    .fps-range-box {
+      border: 2px solid;
+      padding: 4px 14px;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 800;
+      font-size: 13px;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
+    body.theme-gc .fps-range-box { background: rgba(139,92,246,0.08); color: #a78bfa; border-color: #6d28d9; }
+    body.theme-wii .fps-range-box { background: rgba(0,163,224,0.04); color: #0369a1; border-color: #b0c4d8; }
 
-    .considerations-box { background: rgba(0,0,0,0.15); border-radius: 0.75rem; padding: 0.6rem 1rem; font-size: 0.8rem; font-style: italic; border-left: 3px solid rgba(124,58,237,0.4); }
-    .theme-wii .considerations-box { background: rgba(0,0,0,0.03); border-left-color: rgba(0,163,224,0.3); }
+    .core-profile-box {
+      border: 2px solid;
+      padding: 4px 14px;
+      font-size: 11px;
+      font-weight: 800;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
+    body.theme-gc .core-profile-box { background: rgba(139,92,246,0.06); color: #c4b5fd; border-color: #6d28d9; }
+    body.theme-wii .core-profile-box { background: rgba(0,163,224,0.04); color: #1e293b; border-color: #b0c4d8; }
 
-    .attachment-item { background: rgba(0,0,0,0.1); border-radius: 0.75rem; padding: 0.4rem 0.8rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.05); transition: background 0.2s; }
-    .attachment-item:hover { background: rgba(124,58,237,0.1); }
-    .theme-wii .attachment-item { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.06); }
-    .theme-wii .attachment-item:hover { background: rgba(0,163,224,0.05); }
-    .attachment-item a { color: #a78bfa; text-decoration: none; }
-    .theme-wii .attachment-item a { color: #0284c7; }
+    .considerations-box {
+      padding: 8px 16px;
+      font-size: 13px;
+      font-style: italic;
+      border: 2px solid;
+      border-left-width: 4px;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
+    body.theme-gc .considerations-box { background: rgba(139,92,246,0.06); color: #c4b5fd; border-color: #6d28d9; border-left-color: #8b5cf6; }
+    body.theme-wii .considerations-box { background: rgba(0,163,224,0.04); color: #1e293b; border-color: #b0c4d8; border-left-color: #00a3e0; }
+
+    .attachment-item {
+      padding: 4px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      border: 2px solid;
+      transition: all 0.2s;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
+    body.theme-gc .attachment-item { background: rgba(139,92,246,0.06); border-color: #6d28d9; color: #c4b5fd; }
+    body.theme-gc .attachment-item:hover { background: rgba(139,92,246,0.12); }
+    body.theme-wii .attachment-item { background: rgba(0,163,224,0.04); border-color: #b0c4d8; color: #1e293b; }
+    body.theme-wii .attachment-item:hover { background: rgba(0,163,224,0.08); }
+    .attachment-item a { text-decoration: none; font-weight: 900; }
+    body.theme-gc .attachment-item a { color: #a78bfa; }
+    body.theme-wii .attachment-item a { color: #0284c7; }
     .attachment-item a:hover { text-decoration: underline; }
 
-    .result-panel { border-radius: 1rem; padding: 0.5rem 0.8rem; text-align: center; border: 1px solid transparent; transition: all 0.2s; }
-    .result-panel.best { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.35); }
-    .result-panel.average { background: rgba(148,163,184,0.08); border-color: rgba(148,163,184,0.15); }
-    .theme-wii .result-panel.best { background: rgba(251,191,36,0.15); border-color: rgba(251,191,36,0.40); }
-    .theme-wii .result-panel.average { background: rgba(200, 225, 245, 0.7); border-color: rgba(150, 190, 215, 0.5); }
-    .theme-wii .result-panel.average .text-slate-200 { color: #0f172a !important; }
-    .theme-wii .result-panel.average .text-slate-300 { color: #1e293b !important; }
-    .theme-wii .result-panel.average .text-slate-400 { color: #334155 !important; }
+    .result-panel {
+      padding: 8px 16px;
+      text-align: center;
+      border: 2px solid;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
+    body.theme-gc .result-panel.best { background: rgba(251,191,36,0.12); border-color: #f59e0b; color: #fbbf24; }
+    body.theme-gc .result-panel.average { background: rgba(148,163,184,0.06); border-color: #475569; color: #94a3b8; }
+    body.theme-wii .result-panel.best { background: rgba(251,191,36,0.10); border-color: #fbbf24; color: #a16207; }
+    body.theme-wii .result-panel.average { background: rgba(200,225,245,0.5); border-color: #b0c4d8; color: #0f172a; }
 
-    .theme-wii .title-dark { color: #0f172a !important; }
-    .theme-wii .title-dark .rt-electric { color: #0284c7 !important; text-shadow: 0 0 8px rgba(0,163,224,0.4), 0 0 20px rgba(0,163,224,0.15) !important; }
-    .theme-wii .title-dark .text-gc-400 { color: #0f172a !important; }
+    .settings-type-badge {
+      font-size: 9px;
+      padding: 2px 12px;
+      border-radius: 0;
+      font-weight: 900;
+      border: 2px solid;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
+    body.theme-gc .settings-type-badge { background: rgba(139,92,246,0.12); color: #a78bfa; border-color: #6d28d9; }
+    body.theme-wii .settings-type-badge { background: rgba(0,163,224,0.06); color: #0369a1; border-color: #b0c4d8; }
 
-    .theme-wii .filter-panel-wii { background: rgba(240, 248, 255, 0.92) !important; border-color: rgba(180, 210, 235, 0.7) !important; }
-    .theme-wii .rating-panel-wii { background: rgba(240, 248, 255, 0.85) !important; border-color: rgba(180, 210, 235, 0.5) !important; }
-    .theme-wii .rating-panel-wii:hover { background: rgba(240, 248, 255, 0.95) !important; }
-    .theme-wii .total-entries-dark { color: #0f172a !important; }
-    .theme-wii .total-entries-accent-dark { color: #0284c7 !important; }
-    .theme-wii .badge-region-wii { background: rgba(200, 225, 245, 0.7) !important; color: #0f172a !important; border-color: rgba(150, 190, 215, 0.4) !important; }
-    .theme-wii .badge-gameid-wii { background: rgba(200, 225, 245, 0.5) !important; color: #0f172a !important; border-color: rgba(150, 190, 215, 0.3) !important; }
-    .theme-wii .modal-test-card { background: rgba(255,255,255,0.85) !important; border-color: rgba(200, 215, 230, 0.5) !important; }
-    .theme-wii .modal-test-card .border-white\/10 { border-color: rgba(0,0,0,0.08) !important; }
-    .theme-wii .modal-test-card .text-slate-300 { color: #1e293b !important; }
-    .theme-wii .modal-test-card .text-slate-400 { color: #475569 !important; }
-    .theme-wii .modal-test-card .text-gc-300 { color: #0369a1 !important; }
-    .theme-wii .modal-test-card .text-gc-400 { color: #0284c7 !important; }
-    .theme-wii .modal-test-card .bg-black\/20 { background: rgba(0,0,0,0.04) !important; }
+    /* ===== MODAL TEST CARD ===== */
+    .modal-test-card {
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      border: 2px solid;
+      clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
+      position: relative;
+      transition: all 0.2s;
+    }
+    body.theme-gc .modal-test-card {
+      background: rgba(26, 10, 46, 0.6);
+      border-color: #2a1a4a;
+    }
+    body.theme-wii .modal-test-card {
+      background: rgba(255,255,255,0.7);
+      border-color: #b0c4d8;
+    }
+    .modal-test-card:last-child { margin-bottom: 0; }
 
-    .switch-tab-active-gc { background: #7c3aed !important; color: white !important; box-shadow: 0 0 20px rgba(124,58,237,0.4) !important; }
-    .switch-tab-active-wii { background: #0284c7 !important; color: white !important; box-shadow: 0 0 20px rgba(0,163,224,0.4) !important; }
-    .switch-tab-inactive-gc { color: #94a3b8 !important; background: transparent !important; }
-    .switch-tab-inactive-gc:hover { color: white !important; }
-    .switch-tab-inactive-wii { color: #64748b !important; background: transparent !important; }
-    .switch-tab-inactive-wii:hover { color: #0f172a !important; }
+    /* ===== RATING STAR CONTAINER ===== */
+    .rating-star-container {
+      position: relative;
+      width: 76px;
+      height: 76px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .rating-star-container svg {
+      width: 100%;
+      height: 100%;
+    }
+    .rating-star-container .star-number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      pointer-events: none;
+      text-shadow:
+        -2px -2px 0 #1a0a2e,
+        2px -2px 0 #1a0a2e,
+        -2px 2px 0 #1a0a2e,
+        2px 2px 0 #1a0a2e,
+        0 0 12px rgba(0,0,0,0.6);
+    }
+    body.theme-wii .rating-star-container .star-number {
+      text-shadow:
+        -2px -2px 0 #e8f0f8,
+        2px -2px 0 #e8f0f8,
+        -2px 2px 0 #e8f0f8,
+        2px 2px 0 #e8f0f8,
+        0 0 12px rgba(0,0,0,0.4);
+    }
 
-    #gamesGrid.grid-view { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
-    #gamesGrid.list-view { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
-    .list-card { width: 100%; max-width: 700px; display: flex; align-items: center; gap: 1rem; background: rgba(0,0,0,0.1); border-radius: 1rem; padding: 0.75rem; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s, box-shadow 0.2s; }
-    .list-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-    .theme-wii .list-card { background: rgba(255,255,255,0.85); border-color: rgba(0,0,0,0.06); }
-    .list-card-cover { width: 72px; height: 96px; border-radius: 0.5rem; overflow: hidden; flex-shrink: 0; background: rgba(0,0,0,0.2); }
+    /* ===== DOLPHIN COMPATIBILITY BAR (MINI, SENZA RIQUADRO) ===== */
+    .dolphin-compat-mini {
+      display: inline-flex;
+      gap: 2px;
+      align-items: center;
+      margin-left: 4px;
+    }
+    .dolphin-compat-mini .seg {
+      width: 10px;
+      height: 10px;
+      border: 1px solid;
+      transition: all 0.4s ease;
+      clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%);
+    }
+    body.theme-gc .dolphin-compat-mini .seg { border-color: #2a1a4a; background: rgba(255,255,255,0.04); }
+    body.theme-gc .dolphin-compat-mini .seg.filled { background: linear-gradient(90deg, #8b5cf6, #ec4899); border-color: #6d28d9; box-shadow: 0 0 8px rgba(139,92,246,0.2); }
+    body.theme-wii .dolphin-compat-mini .seg { border-color: #b0c4d8; background: rgba(0,0,0,0.03); }
+    body.theme-wii .dolphin-compat-mini .seg.filled { background: linear-gradient(90deg, #00a3e0, #38bdf8); border-color: #0284c7; box-shadow: 0 0 8px rgba(0,163,224,0.1); }
+    .dolphin-compat-mini .wiki-link {
+      font-size: 9px;
+      font-weight: 900;
+      text-decoration: none;
+      margin-left: 4px;
+      padding: 0 4px;
+      border: 1px solid;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+      line-height: 1.4;
+    }
+    body.theme-gc .dolphin-compat-mini .wiki-link { color: #a78bfa; border-color: #6d28d9; }
+    body.theme-gc .dolphin-compat-mini .wiki-link:hover { background: rgba(139,92,246,0.1); }
+    body.theme-wii .dolphin-compat-mini .wiki-link { color: #0284c7; border-color: #b0c4d8; }
+    body.theme-wii .dolphin-compat-mini .wiki-link:hover { background: rgba(0,163,224,0.05); }
+
+    /* ===== SWITCH TAB ===== */
+    .switch-tab-active-gc {
+      background: #8b5cf6 !important;
+      color: white !important;
+      border: 2px solid #6d28d9 !important;
+      box-shadow: 0 0 30px rgba(139,92,246,0.2) !important;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%) !important;
+    }
+    .switch-tab-active-wii {
+      background: #00a3e0 !important;
+      color: white !important;
+      border: 2px solid #0284c7 !important;
+      box-shadow: 0 0 30px rgba(0,163,224,0.15) !important;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%) !important;
+    }
+    .switch-tab-inactive-gc {
+      color: #94a3b8 !important;
+      background: transparent !important;
+      border: 2px solid transparent !important;
+    }
+    .switch-tab-inactive-gc:hover { color: white !important; border-color: #6d28d9 !important; }
+    .switch-tab-inactive-wii {
+      color: #64748b !important;
+      background: transparent !important;
+      border: 2px solid transparent !important;
+    }
+    .switch-tab-inactive-wii:hover { color: #0f172a !important; border-color: #b0c4d8 !important; }
+
+    /* ===== GRID / LIST ===== */
+    #gamesGrid.grid-view {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 20px;
+    }
+    #gamesGrid.list-view {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .list-card {
+      width: 100%;
+      max-width: 700px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px;
+      border: 2px solid;
+      clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
+      transition: all 0.2s;
+    }
+    body.theme-gc .list-card { background: rgba(26,10,46,0.6); border-color: #2a1a4a; }
+    body.theme-wii .list-card { background: rgba(255,255,255,0.7); border-color: #b0c4d8; }
+    .list-card:hover { transform: translateY(-3px); }
+    body.theme-gc .list-card:hover { box-shadow: 0 8px 30px rgba(139,92,246,0.08); border-color: #6d28d9; }
+    body.theme-wii .list-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.04); border-color: #00a3e0; }
+    .list-card-cover {
+      width: 72px;
+      height: 96px;
+      border-radius: 0;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 2px solid;
+      clip-path: polygon(0% 5%, 5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%);
+    }
+    body.theme-gc .list-card-cover { border-color: #2a1a4a; }
+    body.theme-wii .list-card-cover { border-color: #b0c4d8; }
     .list-card-cover img { width: 100%; height: 100%; object-fit: cover; }
     .list-card-info { flex: 1; min-width: 0; }
-    .list-card-title { font-weight: 700; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .list-card-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.25rem; font-size: 0.7rem; }
-    .list-card-stars { display: flex; gap: 2px; }
+    .list-card-title { font-weight: 900; font-size: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .list-card-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; font-size: 11px; font-weight: 700; }
+    .list-card-stars { display: flex; gap: 2px; margin-top: 2px; }
 
-    .search-dropdown { position: absolute; top: 100%; left: 0; right: 0; max-height: 300px; overflow-y: auto; border-radius: 12px; z-index: 50; display: none; }
+    /* ===== SEARCH DROPDOWN ===== */
+    .search-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      max-height: 300px;
+      overflow-y: auto;
+      z-index: 50;
+      display: none;
+      border: 2px solid;
+      clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
+    }
+    body.theme-gc .search-dropdown { background: rgba(10,6,24,0.95); border-color: #2a1a4a; backdrop-filter: blur(10px); }
+    body.theme-wii .search-dropdown { background: rgba(232,240,248,0.95); border-color: #b0c4d8; backdrop-filter: blur(10px); }
     .search-dropdown.active { display: block; }
-    .search-dropdown-item { padding: 8px 12px; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: background 0.15s ease; }
-    .search-dropdown-item:hover { background: rgba(124,58,237,0.15); }
-    .theme-wii .search-dropdown-item:hover { background: rgba(0,163,224,0.08); }
-    .search-dropdown-item img { width: 24px; height: 24px; object-fit: cover; border-radius: 4px; }
+    .search-dropdown-item {
+      padding: 8px 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.15s ease;
+      font-weight: 700;
+      border-bottom: 1px solid;
+    }
+    body.theme-gc .search-dropdown-item { border-color: rgba(42,26,74,0.4); }
+    body.theme-wii .search-dropdown-item { border-color: rgba(176,196,216,0.3); }
+    .search-dropdown-item:hover {
+      background: rgba(139,92,246,0.08);
+    }
+    .search-dropdown-item img {
+      width: 24px;
+      height: 24px;
+      object-fit: cover;
+      border: 1px solid;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
+    body.theme-gc .search-dropdown-item img { border-color: #2a1a4a; }
+    body.theme-wii .search-dropdown-item img { border-color: #b0c4d8; }
 
-    .loader { border: 4px solid rgba(255,255,255,0.1); border-top: 4px solid #a78bfa; border-radius: 50%; width: 40px; height: 40px; animation: spin 0.8s linear infinite; }
-    .theme-wii .loader { border-top-color: #0284c7; }
+    .loader {
+      border: 4px solid rgba(255,255,255,0.05);
+      border-top: 4px solid #8b5cf6;
+      border-radius: 0;
+      width: 48px;
+      height: 48px;
+      animation: spin 0.8s linear infinite;
+      clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%);
+    }
+    body.theme-wii .loader { border-top-color: #00a3e0; }
 
-    .rt-electric { font-family: 'Audiowide', 'Orbitron', sans-serif; display: inline-block; position: relative; color: #a78bfa; text-shadow: 0 0 8px rgba(139,92,246,0.6), 0 0 20px rgba(124,58,237,0.3), 0 0 40px rgba(124,58,237,0.1); letter-spacing: 0.04em; }
-    .rt-electric .spark { position: absolute; pointer-events: none; border-radius: 50%; background: #a78bfa; box-shadow: 0 0 6px #a78bfa, 0 0 12px #7c3aed; opacity: 0; animation: sparkFade 1.2s ease-out infinite; }
+    /* ===== TITLES ===== */
+    .rt-electric {
+      font-family: 'Audiowide', 'Orbitron', sans-serif;
+      display: inline-block;
+      position: relative;
+      letter-spacing: 0.04em;
+    }
+    body.theme-gc .rt-electric {
+      color: #a78bfa;
+      text-shadow: 0 0 8px rgba(139,92,246,0.6), 0 0 30px rgba(139,92,246,0.2);
+    }
+    body.theme-wii .rt-electric {
+      color: #0284c7;
+      text-shadow: 0 0 8px rgba(0,163,224,0.3), 0 0 30px rgba(0,163,224,0.08);
+    }
+    .rt-electric .spark {
+      position: absolute;
+      pointer-events: none;
+      border-radius: 50%;
+      opacity: 0;
+      animation: sparkFade 1.2s ease-out infinite;
+    }
+    body.theme-gc .rt-electric .spark { background: #a78bfa; box-shadow: 0 0 6px #a78bfa; }
+    body.theme-wii .rt-electric .spark { background: #38bdf8; box-shadow: 0 0 6px #38bdf8; }
     .rt-electric .spark:nth-child(1) { animation-delay: 0.0s; }
     .rt-electric .spark:nth-child(2) { animation-delay: 0.6s; }
     .rt-electric .spark:nth-child(3) { animation-delay: 1.2s; }
@@ -194,93 +613,226 @@
     .rt-electric .spark:nth-child(5) { animation-delay: 0.9s; }
 
     .muos-star { display: inline-block; position: relative; }
-    .muos-star .star-sparkle { position: absolute; top: -6px; left: 50%; transform: translateX(-50%) rotate(0deg); width: 12px; height: 12px; opacity: 0; pointer-events: none; animation: starSpin 6s ease-in-out infinite; }
-    .muos-star .star-sparkle svg { width: 100%; height: 100%; fill: rgba(255,215,0,0.5); filter: drop-shadow(0 0 4px rgba(255,215,0,0.3)); }
+    .muos-star .star-sparkle {
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%) rotate(0deg);
+      width: 14px;
+      height: 14px;
+      opacity: 0;
+      pointer-events: none;
+      animation: starSpin 6s ease-in-out infinite;
+    }
+    .muos-star .star-sparkle svg { width: 100%; height: 100%; fill: #fbbf24; filter: drop-shadow(0 0 6px #fbbf24); }
 
-    .rtcore-badge { display: inline-flex; align-items: center; gap: 2px; font-weight: 700; letter-spacing: 0.02em; }
-    .rtcore-badge .rt-part { font-family: 'Audiowide', 'Orbitron', sans-serif; font-size: 0.85rem; color: #a78bfa; text-shadow: 0 0 6px rgba(139,92,246,0.5), 0 0 16px rgba(124,58,237,0.2); position: relative; display: inline-block; }
-    .rtcore-badge .rt-part .mini-spark { position: absolute; pointer-events: none; border-radius: 50%; background: #a78bfa; box-shadow: 0 0 4px #a78bfa; opacity: 0; animation: miniSpark 1.8s ease-out infinite; }
-    .rtcore-badge .core-part { font-family: 'Share Tech Mono', 'Orbitron', monospace; font-size: 0.75rem; color: #94a3b8; letter-spacing: 0.06em; font-weight: 700; }
-    .rtcore-badge .version-part { font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 800; color: #38bdf8; background: rgba(56,189,248,0.12); padding: 0 6px; border-radius: 6px; border: 1px solid rgba(56,189,248,0.15); margin-left: 2px; letter-spacing: 0.02em; }
-    .theme-wii .rtcore-badge .version-part { color: #0284c7; background: rgba(0,163,224,0.08); border-color: rgba(0,163,224,0.12); }
-    .theme-wii .rtcore-badge .core-part { color: #64748b; }
+    .rtcore-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+    }
+    .rtcore-badge .rt-part {
+      font-family: 'Audiowide', 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      position: relative;
+      display: inline-block;
+    }
+    body.theme-gc .rtcore-badge .rt-part { color: #a78bfa; text-shadow: 0 0 6px rgba(139,92,246,0.4); }
+    body.theme-wii .rtcore-badge .rt-part { color: #0284c7; text-shadow: 0 0 6px rgba(0,163,224,0.15); }
+    .rtcore-badge .rt-part .mini-spark {
+      position: absolute;
+      pointer-events: none;
+      border-radius: 50%;
+      opacity: 0;
+      animation: miniSpark 1.8s ease-out infinite;
+    }
+    body.theme-gc .rtcore-badge .rt-part .mini-spark { background: #a78bfa; box-shadow: 0 0 4px #a78bfa; }
+    body.theme-wii .rtcore-badge .rt-part .mini-spark { background: #38bdf8; box-shadow: 0 0 4px #38bdf8; }
+    .rtcore-badge .core-part {
+      font-family: 'Share Tech Mono', 'Orbitron', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      font-weight: 900;
+    }
+    body.theme-gc .rtcore-badge .core-part { color: #94a3b8; }
+    body.theme-wii .rtcore-badge .core-part { color: #64748b; }
+    .rtcore-badge .version-part {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      font-weight: 900;
+      padding: 0 8px;
+      border-radius: 0;
+      border: 1px solid;
+      margin-left: 2px;
+      letter-spacing: 0.02em;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
+    body.theme-gc .rtcore-badge .version-part { color: #fbbf24; background: rgba(251,191,36,0.08); border-color: #f59e0b; }
+    body.theme-wii .rtcore-badge .version-part { color: #0284c7; background: rgba(0,163,224,0.04); border-color: #b0c4d8; }
 
     .flip-horizontal { animation: flipHorizontal 0.5s ease-in-out; }
 
-    .settings-type-badge { font-size: 0.6rem; padding: 0.1rem 0.6rem; border-radius: 20px; font-weight: 700; background: rgba(124,58,237,0.15); color: #a78bfa; border: 1px solid rgba(124,58,237,0.2); }
-    .theme-wii .settings-type-badge { background: rgba(0,163,224,0.08); color: #0369a1; border-color: rgba(0,163,224,0.12); }
+    /* ===== FILTER ELEMENTS ===== */
+    select, input {
+      font-weight: 700;
+      border: 2px solid;
+      border-radius: 0;
+      padding: 8px 16px;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+      background: transparent;
+      transition: all 0.2s;
+    }
+    body.theme-gc select, body.theme-gc input {
+      background: rgba(10,6,24,0.6);
+      border-color: #2a1a4a;
+      color: #e2e8f0;
+    }
+    body.theme-gc select:focus, body.theme-gc input:focus {
+      outline: none;
+      border-color: #8b5cf6;
+      box-shadow: 0 0 20px rgba(139,92,246,0.1);
+    }
+    body.theme-wii select, body.theme-wii input {
+      background: rgba(255,255,255,0.6);
+      border-color: #b0c4d8;
+      color: #0f172a;
+    }
+    body.theme-wii select:focus, body.theme-wii input:focus {
+      outline: none;
+      border-color: #00a3e0;
+      box-shadow: 0 0 20px rgba(0,163,224,0.05);
+    }
 
-    .modal-test-card { border-radius: 1.25rem; padding: 1rem 1.25rem; margin-bottom: 0.75rem; border: 1px solid rgba(255,255,255,0.06); transition: all 0.2s; }
-    .theme-wii .modal-test-card { border-color: rgba(0,0,0,0.06); }
-    .modal-test-card:last-child { margin-bottom: 0; }
+    button {
+      font-weight: 900;
+      border: 2px solid;
+      border-radius: 0;
+      padding: 8px 18px;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+      transition: all 0.08s linear;
+      cursor: pointer;
+      background: transparent;
+    }
+    body.theme-gc button {
+      border-color: #2a1a4a;
+      color: #e2e8f0;
+    }
+    body.theme-gc button:hover {
+      border-color: #8b5cf6;
+      background: rgba(139,92,246,0.05);
+    }
+    body.theme-wii button {
+      border-color: #b0c4d8;
+      color: #0f172a;
+    }
+    body.theme-wii button:hover {
+      border-color: #00a3e0;
+      background: rgba(0,163,224,0.03);
+    }
+    button:active { transform: translate(2px, 2px); }
 
-    .rating-circle-container { position: relative; width: 110px; height: 110px; flex-shrink: 0; }
-    .rating-circle-container svg { width: 100%; height: 100%; transform: rotate(-90deg); }
-    .rating-circle-container .center-number { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2rem; font-weight: 900; line-height: 1; }
-    .star-3d { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4)); font-weight: 700; paint-order: stroke; stroke-width: 0.5px; stroke: rgba(255,255,255,0.15); }
+    .btn-primary.gc { background: #8b5cf6 !important; color: white !important; border-color: #6d28d9 !important; }
+    .btn-primary.gc:hover { background: #7c3aed !important; border-color: #5b21b6 !important; }
+    .btn-primary.wii { background: #00a3e0 !important; color: white !important; border-color: #0284c7 !important; }
+    .btn-primary.wii:hover { background: #0284c7 !important; border-color: #0369a1 !important; }
+
+    /* ===== RATING PANELS ===== */
+    .rating-panel {
+      padding: 12px 16px;
+      border: 2px solid;
+      clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+    }
+    body.theme-gc .rating-panel {
+      border-color: #2a1a4a;
+      background: rgba(10,6,24,0.4);
+    }
+    body.theme-gc .rating-panel:hover { border-color: #6d28d9; background: rgba(139,92,246,0.05); }
+    body.theme-wii .rating-panel {
+      border-color: #b0c4d8;
+      background: rgba(255,255,255,0.3);
+    }
+    body.theme-wii .rating-panel:hover { border-color: #00a3e0; background: rgba(255,255,255,0.5); }
+    body.theme-gc .rating-panel .count { background: rgba(139,92,246,0.08); border: 1px solid #2a1a4a; }
+    body.theme-wii .rating-panel .count { background: rgba(255,255,255,0.5); border: 1px solid #b0c4d8; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      #gamesGrid.grid-view { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .rating-star-container { width: 60px; height: 60px; }
+      .rating-star-container .star-number { font-size: 24px; }
+      .modal-test-card { padding: 12px 16px; }
+    }
   </style>
 </head>
 <body id="appBody" class="theme-gc font-sans antialiased transition-colors duration-500 min-h-screen">
 
-  <!-- HEADER -->
-  <header id="appHeader" class="sticky top-0 z-40 transition-colors duration-500 border-b border-purple-900/40 bg-gc-950/90 backdrop-blur-xl shadow-lg">
+  <!-- ===== HEADER ===== -->
+  <header id="appHeader" class="sticky top-0 z-40 transition-colors duration-500 border-b-2 bg-opacity-90 backdrop-blur-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
       <div class="flex flex-wrap items-center justify-between gap-3">
-        <div class="flex items-center gap-4 text-xs font-medium">
-          <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/tree/main" target="_blank" rel="noopener" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1">
+        <div class="flex items-center gap-3 text-xs font-black">
+          <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/tree/main" target="_blank" rel="noopener" class="flex items-center gap-1 transition-colors hover:underline px-3 py-1 border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.15 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.62.24 2.85.12 3.15.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
             Repository
           </a>
-          <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases" target="_blank" rel="noopener" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1">
+          <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases" target="_blank" rel="noopener" class="flex items-center gap-1 transition-colors hover:underline px-3 py-1 border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4 2"/></svg>
             Latest Release
           </a>
         </div>
-        <div class="inline-flex p-1 rounded-2xl bg-black/30 border border-white/10 backdrop-blur-md">
-          <button id="btnConsoleGC" onclick="switchConsole('gc')" class="flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 bg-gc-600 text-white shadow-lg shadow-gc-900/50">
+        <div class="inline-flex p-1 border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">
+          <button id="btnConsoleGC" onclick="switchConsole('gc')" class="flex items-center gap-2 px-4 py-1.5 text-xs font-black transition-all duration-300 switch-tab-active-gc">
             <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="GC" class="w-4 h-4" /> GameCube
           </button>
-          <button id="btnConsoleWii" onclick="switchConsole('wii')" class="flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 text-slate-400 hover:text-white">
+          <button id="btnConsoleWii" onclick="switchConsole('wii')" class="flex items-center gap-2 px-4 py-1.5 text-xs font-black transition-all duration-300 switch-tab-inactive-wii">
             <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg" alt="Wii" class="w-4 h-4" /> Nintendo Wii
           </button>
         </div>
-        <div class="flex items-center gap-4 text-xs font-medium">
-          <a id="newIssueBtn" href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=dolphin-rt-core-test-report.yml" target="_blank" rel="noopener" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1"><span>📤</span> Send Report</a>
-          <a href="#" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1"><span>ℹ️</span> About & Rt:Doc</a>
+        <div class="flex items-center gap-3 text-xs font-black">
+          <a id="newIssueBtn" href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=dolphin-rt-core-test-report.yml" target="_blank" rel="noopener" class="flex items-center gap-1 transition-colors hover:underline px-3 py-1 border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);"><span>📤</span> Send Report</a>
+          <a href="#" class="flex items-center gap-1 transition-colors hover:underline px-3 py-1 border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);"><span>ℹ️</span> About & Rt:Doc</a>
         </div>
       </div>
 
       <div class="flex items-center justify-between mt-3 gap-4">
         <div class="flex items-center gap-3 flex-1 min-w-0">
-          <img id="consoleLogo" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="Logo" class="w-8 h-8 object-contain flex-shrink-0" />
+          <img id="consoleLogo" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="Logo" class="w-9 h-9 object-contain flex-shrink-0" />
           <div class="min-w-0">
-            <h1 id="mainTitle" class="text-2xl sm:text-3xl font-black tracking-tight text-white whitespace-nowrap">
+            <h1 id="mainTitle" class="text-2xl sm:text-3xl font-black tracking-tight whitespace-nowrap" style="font-family: 'Audiowide', 'Orbitron', sans-serif;">
               Dolphin <span class="rt-electric" id="titleRt">Rt<span class="spark" style="width:4px;height:4px;top:-2px;left:8px;"></span><span class="spark" style="width:3px;height:3px;top:4px;left:18px;"></span><span class="spark" style="width:5px;height:5px;top:-6px;left:24px;"></span><span class="spark" style="width:3px;height:3px;top:2px;left:2px;"></span><span class="spark" style="width:4px;height:4px;top:-4px;left:14px;"></span></span>:Core <span class="muos-star">fo<span style="position:relative;">r<span class="star-sparkle"><svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg></span></span></span> <span id="muosText" class="text-gc-400" style="font-weight:400;">muOS</span>
             </h1>
-            <hr class="w-full max-w-[400px] my-1 border-gc-400/60" />
-            <p id="dashboardSubtitle" class="text-base sm:text-lg mt-0.5 transition-colors">
-              <span id="consoleName" class="font-bold text-gc-400">GameCube</span> <span style="font-weight:400;">Compatibility Database</span>
+            <hr class="w-full max-w-[400px] my-1 border-2" />
+            <p id="dashboardSubtitle" class="text-base sm:text-lg mt-0.5 transition-colors font-black">
+              <span id="consoleName" class="font-black text-gc-400">GameCube</span> <span style="font-weight:400;">Compatibility Database</span>
             </p>
-            <figcaption id="dashboardDesc" class="text-xs italic text-slate-400 transition-colors">Community-driven testing database for Dolphin emulation on muOS &amp; H700 chipset</figcaption>
+            <figcaption id="dashboardDesc" class="text-xs italic font-bold transition-colors opacity-70">Community-driven testing database for Dolphin emulation on muOS &amp; H700 chipset</figcaption>
           </div>
         </div>
-        <div id="spdwPanel" class="gc-glass rounded-xl p-2.5 px-4 flex-shrink-0 transition-all duration-500 space-y-1.5 min-w-[180px]">
-          <div class="flex items-center justify-between gap-2 pb-1 border-b border-white/10">
-            <span id="spdwBrand" class="flex items-center gap-1 font-black text-gc-400 tracking-wider text-[10px] uppercase">
+        <div id="spdwPanel" class="cyber-border p-2.5 px-4 flex-shrink-0 transition-all duration-500 space-y-1.5 min-w-[160px]">
+          <div class="flex items-center justify-between gap-2 pb-1 border-b-2">
+            <span id="spdwBrand" class="flex items-center gap-1 font-black tracking-wider text-[10px] uppercase">
               <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" alt="SPDW" class="w-3 h-3" /> SPDW
             </span>
-            <span id="coreBadge" class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-gc-900 text-gc-300 border border-gc-700/60 font-bold">
-              <span class="rtcore-badge"><span class="rt-part text-[10px]">Rt<span class="mini-spark" style="width:2px;height:2px;top:-1px;left:5px;"></span><span class="mini-spark" style="width:2px;height:2px;top:2px;left:9px;"></span></span><span class="core-part text-[9px]">Core</span><span class="version-part text-[11px]">v10.5.3</span></span>
+            <span id="coreBadge" class="text-[9px] font-mono px-2 py-0.5 border-2 font-black" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">
+              <span class="rtcore-badge"><span class="rt-part text-[10px]">Rt<span class="mini-spark" style="width:2px;height:2px;top:-1px;left:5px;"></span><span class="mini-spark" style="width:2px;height:2px;top:2px;left:9px;"></span></span><span class="core-part text-[8px]">Core</span><span class="version-part text-[10px]">v10.5.3</span></span>
             </span>
           </div>
           <div class="flex items-center justify-between gap-3 text-[10px]">
-            <div id="statTestedBox" class="text-[9px] font-black bg-gc-900/80 border border-gc-600/50 rounded-lg px-2 py-0.5 flex items-center gap-2 shadow-inner">
+            <div id="statTestedBox" class="font-black border-2 px-2 py-0.5 flex items-center gap-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">
               <span class="tracking-wider uppercase">Games:</span>
-              <span id="statTested" class="bg-gc-500 text-white px-1.5 py-0.5 rounded-lg font-mono font-black text-sm shadow-sm">0</span>
+              <span id="statTested" class="px-1.5 py-0.5 font-mono font-black text-sm">0</span>
             </div>
-            <div id="totalEntriesContainer" class="text-[9px] font-mono flex items-center gap-1 text-slate-400">
-              <span><strong id="totalEntriesAccent" class="text-gc-400">##</strong> Tests:</span>
-              <span id="statTotal" class="font-bold text-slate-200">0</span>
+            <div id="totalEntriesContainer" class="font-mono flex items-center gap-1 font-black">
+              <span><strong id="totalEntriesAccent">##</strong> Tests:</span>
+              <span id="statTotal">0</span>
             </div>
           </div>
         </div>
@@ -288,114 +840,121 @@
     </div>
   </header>
 
-  <!-- MAIN -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-4">
-    <div id="filterPanel" class="gc-glass rounded-2xl p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500">
+  <!-- ===== MAIN ===== -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-5">
+    <!-- FILTER -->
+    <div id="filterPanel" class="cyber-border p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500">
       <div class="relative w-full md:w-72 shrink-0">
-        <input type="text" id="searchInput" placeholder="Search game title..." class="w-full bg-slate-950/60 text-slate-100 placeholder-slate-500 border border-white/10 rounded-xl pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-gc-500 transition-all" />
-        <svg class="w-4 h-4 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-        <div id="searchDropdown" class="search-dropdown gc-glass border border-white/10 rounded-xl overflow-hidden shadow-2xl"></div>
+        <input type="text" id="searchInput" placeholder="Search game title..." class="w-full pl-9 pr-4 py-2 text-sm" />
+        <svg class="w-4 h-4 absolute left-2.5 top-2.5 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <div id="searchDropdown" class="search-dropdown"></div>
       </div>
       <div class="flex flex-wrap items-center justify-center gap-2">
-        <select id="regionFilter" class="bg-slate-950/60 border border-white/10 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-gc-500 transition-all">
+        <select id="regionFilter">
           <option value="all">🌍 All Regions</option>
           <option value="NTSC">🇺🇸 NTSC / USA</option>
           <option value="PAL">🇪🇺 PAL</option>
           <option value="JPN">🇯🇵 JPN</option>
         </select>
-        <select id="bootFilter" class="bg-slate-950/60 border border-white/10 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-gc-500 transition-all">
+        <select id="bootFilter">
           <option value="all">💿 Boot: All</option>
           <option value="YES">✅ Boots</option>
           <option value="NO">❌ Won't Boot</option>
         </select>
-        <select id="sortKey" class="bg-slate-950/60 border border-white/10 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-gc-500 transition-all">
+        <select id="sortKey">
           <option value="title">📝 Sort: Title</option>
           <option value="rating">⭐ Sort: Best Rating</option>
           <option value="fps">🚀 Sort: Best FPS</option>
           <option value="entries">📊 Sort: Most Tested</option>
         </select>
-        <button id="sortOrderBtn" class="bg-slate-950/60 border border-white/10 hover:border-white/30 px-3 py-2 rounded-xl text-sm flex items-center gap-1.5 transition-colors">
+        <button id="sortOrderBtn" class="flex items-center gap-1.5 text-sm">
           <span id="sortOrderLabel">Asc</span>
           <svg id="sortOrderIcon" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
-        <button id="viewModeBtn" class="bg-slate-950/60 border border-white/10 hover:border-white/30 px-3 py-2 rounded-xl text-sm flex items-center gap-1.5 transition-colors" title="Toggle Grid/List View">
+        <button id="viewModeBtn" class="flex items-center gap-1.5 text-sm" title="Toggle Grid/List View">
           <svg id="viewModeIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
           <span id="viewModeLabel">List</span>
         </button>
-        <button id="resetFiltersBtn" class="bg-rose-950/40 text-rose-400 border border-rose-800/40 hover:bg-rose-900/50 px-3 py-2 rounded-xl text-sm font-semibold transition-colors">↺ Reset</button>
+        <button id="resetFiltersBtn" class="text-sm font-black transition-colors">↺ Reset</button>
       </div>
     </div>
 
+    <!-- RATING PANELS -->
     <div id="ratingPanels" class="grid grid-cols-5 gap-2 max-w-4xl mx-auto w-full">
-      <button data-rating="5" class="rating-panel gc-glass border border-emerald-500/30 hover:border-emerald-500/70 p-2.5 rounded-2xl flex items-center justify-between transition-all duration-200 group cursor-pointer">
-        <div class="space-y-0.5"><div class="flex items-center gap-1 text-emerald-500 font-bold text-sm"><span>5★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Perfect</span></div><div class="text-[10px] text-slate-500 font-medium hidden md:block">Full Speed</div></div>
-        <span id="count-5" class="bg-emerald-950/80 text-emerald-400 border border-emerald-700/60 font-mono font-bold text-sm px-3 py-0.5 rounded-lg">0</span>
+      <button data-rating="5" class="rating-panel">
+        <div class="space-y-0.5"><div class="flex items-center gap-1 font-black text-sm"><span>5★</span><span class="text-[10px] uppercase tracking-wider hidden sm:inline">Perfect</span></div></div>
+        <span id="count-5" class="count font-mono font-black text-sm px-3 py-0.5">0</span>
       </button>
-      <button data-rating="4" class="rating-panel gc-glass border border-teal-500/30 hover:border-teal-500/70 p-2.5 rounded-2xl flex items-center justify-between transition-all duration-200 group cursor-pointer">
-        <div class="space-y-0.5"><div class="flex items-center gap-1 text-teal-500 font-bold text-sm"><span>4★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Great</span></div><div class="text-[10px] text-slate-500 font-medium hidden md:block">Minor Issues</div></div>
-        <span id="count-4" class="bg-teal-950/80 text-teal-400 border border-teal-700/60 font-mono font-bold text-sm px-3 py-0.5 rounded-lg">0</span>
+      <button data-rating="4" class="rating-panel">
+        <div class="space-y-0.5"><div class="flex items-center gap-1 font-black text-sm"><span>4★</span><span class="text-[10px] uppercase tracking-wider hidden sm:inline">Great</span></div></div>
+        <span id="count-4" class="count font-mono font-black text-sm px-3 py-0.5">0</span>
       </button>
-      <button data-rating="3" class="rating-panel gc-glass border border-amber-500/30 hover:border-amber-500/70 p-2.5 rounded-2xl flex items-center justify-between transition-all duration-200 group cursor-pointer">
-        <div class="space-y-0.5"><div class="flex items-center gap-1 text-amber-500 font-bold text-sm"><span>3★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Playable</span></div><div class="text-[10px] text-slate-500 font-medium hidden md:block">Needs Tweaks</div></div>
-        <span id="count-3" class="bg-amber-950/80 text-amber-400 border border-amber-700/60 font-mono font-bold text-sm px-3 py-0.5 rounded-lg">0</span>
+      <button data-rating="3" class="rating-panel">
+        <div class="space-y-0.5"><div class="flex items-center gap-1 font-black text-sm"><span>3★</span><span class="text-[10px] uppercase tracking-wider hidden sm:inline">Playable</span></div></div>
+        <span id="count-3" class="count font-mono font-black text-sm px-3 py-0.5">0</span>
       </button>
-      <button data-rating="2" class="rating-panel gc-glass border border-orange-500/30 hover:border-orange-500/70 p-2.5 rounded-2xl flex items-center justify-between transition-all duration-200 group cursor-pointer">
-        <div class="space-y-0.5"><div class="flex items-center gap-1 text-orange-500 font-bold text-sm"><span>2★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Poor</span></div><div class="text-[10px] text-slate-500 font-medium hidden md:block">Slow</div></div>
-        <span id="count-2" class="bg-orange-950/80 text-orange-400 border border-orange-700/60 font-mono font-bold text-sm px-3 py-0.5 rounded-lg">0</span>
+      <button data-rating="2" class="rating-panel">
+        <div class="space-y-0.5"><div class="flex items-center gap-1 font-black text-sm"><span>2★</span><span class="text-[10px] uppercase tracking-wider hidden sm:inline">Poor</span></div></div>
+        <span id="count-2" class="count font-mono font-black text-sm px-3 py-0.5">0</span>
       </button>
-      <button data-rating="1" class="rating-panel gc-glass border border-rose-500/30 hover:border-rose-500/70 p-2.5 rounded-2xl flex items-center justify-between transition-all duration-200 group cursor-pointer">
-        <div class="space-y-0.5"><div class="flex items-center gap-1 text-rose-500 font-bold text-sm"><span>1-0★</span><span class="text-[10px] uppercase tracking-wider font-semibold opacity-90 hidden sm:inline">Bad</span></div><div class="text-[10px] text-slate-500 font-medium hidden md:block">No Boot</div></div>
-        <span id="count-1" class="bg-rose-950/80 text-rose-400 border border-rose-700/60 font-mono font-bold text-sm px-3 py-0.5 rounded-lg">0</span>
+      <button data-rating="1" class="rating-panel">
+        <div class="space-y-0.5"><div class="flex items-center gap-1 font-black text-sm"><span>1-0★</span><span class="text-[10px] uppercase tracking-wider hidden sm:inline">Bad</span></div></div>
+        <span id="count-1" class="count font-mono font-black text-sm px-3 py-0.5">0</span>
       </button>
     </div>
 
+    <!-- GAMES GRID -->
     <div id="gamesGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 max-w-7xl mx-auto w-full grid-view"></div>
 
+    <!-- LOADER -->
     <div id="loaderContainer" class="flex justify-center items-center py-16">
       <div class="loader"></div>
-      <span class="ml-3 text-slate-400 text-sm font-medium">Loading games...</span>
+      <span class="ml-3 text-sm font-black opacity-60">Loading games...</span>
     </div>
 
-    <div id="emptyState" class="hidden text-center py-16 bg-slate-900/30 border border-dashed border-white/10 rounded-2xl max-w-4xl mx-auto">
-      <svg class="w-12 h-12 text-slate-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      <p id="emptyStateText" class="text-slate-400 text-sm font-medium">No games found matching the current filters.</p>
-      <button id="clearFiltersBtn" class="mt-4 px-4 py-2 bg-gc-600 text-white rounded-xl text-sm font-semibold hover:bg-gc-500 transition-colors shadow-lg">Clear Filters</button>
+    <!-- EMPTY STATE -->
+    <div id="emptyState" class="hidden text-center py-16 border-2 max-w-4xl mx-auto" style="clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);">
+      <svg class="w-14 h-14 mx-auto mb-3 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <p id="emptyStateText" class="text-sm font-black opacity-60">No games found matching the current filters.</p>
+      <button id="clearFiltersBtn" class="mt-4 px-5 py-2 text-sm font-black transition-colors btn-primary">Clear Filters</button>
     </div>
   </main>
 
-  <!-- MODAL -->
-  <div id="gameModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md hidden">
-    <div id="modalCard" class="gc-glass border border-gc-700/80 rounded-3xl max-w-5xl w-full max-h-[94vh] flex flex-col p-5 shadow-2xl relative modal-anim">
-      <button id="closeModalBtn" class="absolute top-3 right-3 text-slate-400 hover:text-white p-2 rounded-full bg-black/20 hover:bg-black/40 transition-colors z-10">
+  <!-- ===== MODAL ===== -->
+  <div id="gameModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden">
+    <div id="modalCard" class="cyber-border max-w-5xl w-full max-h-[94vh] flex flex-col p-5 relative modal-anim">
+      <button id="closeModalBtn" class="absolute top-3 right-3 p-2 border-2 transition-colors z-10" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
-      <div class="border-b border-white/10 pb-3 pr-10 shrink-0">
+      <div class="border-b-2 pb-3 pr-10 shrink-0">
         <div class="flex flex-col md:flex-row gap-3 items-start md:items-center">
-          <div class="w-20 h-28 rounded-xl overflow-hidden bg-slate-800/50 flex-shrink-0 border border-white/10">
+          <div class="w-20 h-28 overflow-hidden flex-shrink-0 border-2" style="clip-path: polygon(0% 5%, 5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%);">
             <img id="modalCoverImg" src="" alt="Cover" class="w-full h-full object-cover" />
           </div>
           <div class="flex-1 min-w-0">
             <div class="flex items-center gap-2 flex-wrap">
-              <img id="modalFlag" src="" alt="Flag" class="w-6 h-4 object-cover rounded border border-slate-300/20 shrink-0" />
+              <img id="modalFlag" src="" alt="Flag" class="w-6 h-4 object-cover rounded border-2 shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" />
               <h3 id="modalTitle" class="text-xl font-black leading-tight truncate"></h3>
-              <span id="modalRegionBadge" class="text-[9px] font-mono px-2 py-0.5 rounded bg-gc-900 text-gc-300 border border-gc-700/60 uppercase font-bold shrink-0">NTSC / USA</span>
-              <span id="modalGameId" class="text-[9px] font-mono px-2 py-0.5 rounded bg-gc-800/60 text-gc-400 border border-gc-600/40 font-bold shrink-0">GAMEID</span>
+              <span id="modalRegionBadge" class="text-[9px] font-mono px-2 py-0.5 border-2 uppercase font-black shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">NTSC / USA</span>
+              <span id="modalGameId" class="text-[9px] font-mono px-2 py-0.5 border-2 font-black shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">GAMEID</span>
+              <!-- DOLPHIN COMPAT MINI – affiancato al Game ID -->
+              <span id="dolphinCompatMini" class="dolphin-compat-mini"></span>
             </div>
-            <div class="grid grid-cols-2 gap-3 mt-2">
+            <div class="grid grid-cols-2 gap-2 mt-2">
               <div class="result-panel best">
-                <div class="text-[9px] uppercase tracking-wider font-bold text-amber-400 flex items-center justify-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1z"/><path d="M6 6a1 1 0 011-1h6a1 1 0 010 2H7a1 1 0 01-1-1z"/><path d="M5 9a1 1 0 011-1h8a1 1 0 010 2H6a1 1 0 01-1-1z"/><path d="M4 13a1 1 0 011-1h10a1 1 0 010 2H5a1 1 0 01-1-1z"/><path d="M3 17a1 1 0 011-1h12a1 1 0 010 2H4a1 1 0 01-1-1z"/></svg> BEST RESULT</div>
+                <div class="text-[9px] uppercase tracking-wider font-black flex items-center justify-center gap-1">🏆 BEST</div>
                 <div class="flex items-center justify-center gap-2 mt-0.5">
-                  <div id="modalBestRatingVal" class="flex items-center gap-0.5 text-sm font-bold"></div>
-                  <span class="text-xs font-mono text-slate-400">|</span>
-                  <span id="modalBestFpsVal" class="text-sm font-mono font-bold text-amber-300"></span>
+                  <div id="modalBestRatingVal" class="flex items-center gap-0.5 text-sm font-black"></div>
+                  <span class="text-xs font-mono opacity-50">|</span>
+                  <span id="modalBestFpsVal" class="text-sm font-mono font-black"></span>
                 </div>
               </div>
               <div class="result-panel average">
-                <div class="text-[9px] uppercase tracking-wider font-bold text-slate-400 flex items-center justify-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm8-6a6 6 0 100 12 6 6 0 000-12z"/><path d="M10 4a1 1 0 00-1 1v5a1 1 0 001 1h3a1 1 0 100-2h-2V5a1 1 0 00-1-1z"/></svg> AVERAGE PERFORMANCE</div>
+                <div class="text-[9px] uppercase tracking-wider font-black flex items-center justify-center gap-1">📊 AVG</div>
                 <div class="flex items-center justify-center gap-2 mt-0.5">
-                  <span id="modalAvgRatingVal" class="text-sm font-bold text-slate-200"></span>
-                  <span class="text-xs font-mono text-slate-400">|</span>
-                  <span id="modalAvgFpsVal" class="text-sm font-mono font-bold text-slate-300"></span>
+                  <span id="modalAvgRatingVal" class="text-sm font-black"></span>
+                  <span class="text-xs font-mono opacity-50">|</span>
+                  <span id="modalAvgFpsVal" class="text-sm font-mono font-black"></span>
                 </div>
               </div>
             </div>
@@ -403,22 +962,23 @@
         </div>
       </div>
       <div class="flex-1 overflow-y-auto my-3 space-y-3 pr-1" id="modalEntriesContainer"></div>
-      <div class="pt-2 border-t border-white/10 flex justify-between items-center text-xs text-slate-400 shrink-0">
+      <div class="pt-2 border-t-2 flex justify-between items-center text-xs font-black shrink-0">
         <span id="modalTotalEntriesText">Total Tests: 0</span>
-        <button onclick="closeModal()" class="px-4 py-1 rounded-xl font-bold bg-black/20 hover:bg-black/40 border border-white/10 transition-colors">Close</button>
+        <button onclick="closeModal()" class="px-4 py-1 border-2 font-black transition-colors" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">Close</button>
       </div>
     </div>
   </div>
 
-  <footer class="border-t border-slate-300/20 bg-black/10 mt-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-center text-xs text-slate-500 font-medium">
-      <div class="flex flex-wrap items-center justify-center gap-4">
-        <svg class="w-5 h-5 text-slate-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4 2"/></svg>
+  <!-- ===== FOOTER ===== -->
+  <footer class="border-t-2 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-center text-xs font-black">
+      <div class="flex flex-wrap items-center justify-center gap-4 opacity-60">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4 2"/></svg>
         <span>Dolphin Rt:Core Compatibility Database</span>
         <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdwfactory_logo.png" alt="SPDW Factory" class="h-5 w-auto" />
       </div>
-      <p class="mt-1">Data sourced from community testing reports · <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS" target="_blank" rel="noopener" class="hover:underline">SPDW Factory</a></p>
-      <p class="mt-1 opacity-60 flex items-center justify-center gap-2">
+      <p class="mt-1 opacity-50">Data sourced from community testing reports · <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS" target="_blank" rel="noopener" class="hover:underline">SPDW Factory</a></p>
+      <p class="mt-1 opacity-30 flex items-center justify-center gap-2 text-[10px]">
         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
         Powered by GitHub Issues & GameTDB
       </p>
@@ -447,6 +1007,41 @@
     const FLAG_MAP = { 'PAL': 'eu', 'NTSC': 'us', 'NTSC / USA': 'us', 'JPN': 'jp' };
 
     // ============================================================
+    //  DOLPHIN OFFICIAL COMPATIBILITY – MAPPA STATICA
+    //  (da aggiornare con dati reali dalla wiki di Dolphin)
+    // ============================================================
+    const DOLPHIN_COMPAT = {
+      // GameCube
+      'GM8P01': 4,   // Metroid Prime (GC) – 4★
+      'GM4P01': 5,   // Mario Kart Double Dash – 5★
+      'GALE01': 4,   // Super Smash Bros. Melee – 4★
+      'GMSP01': 5,   // Super Mario Sunshine – 5★
+      'GZLP01': 5,   // Zelda Wind Waker – 5★
+      'GALP01': 4,   // SSBM PAL – 4★
+      'G4BP08': 4,   // Resident Evil 4 – 4★
+      'GCTP51': 5,   // Crazy Taxi – 5★
+      'GD7PB2': 4,   // DBZ Budokai – 4★
+      'GKYP01': 5,   // Kirby Air Ride – 5★
+      'GLME01': 5,   // Luigi's Mansion – 5★
+      'GGVX78': 5,   // SpongeBob BFBB – 5★
+      'GQWP69': 5,   // Harry Potter Quidditch – 5★
+      'GVJE08': 4,   // Viewtiful Joe – 4★
+      'GXXP01': 4,   // Pokemon XD – 4★
+      // Wii
+      'SMNP01': 5,   // New Super Mario Bros Wii – 5★
+      'RZDP01': 5,   // Zelda Twilight Princess – 5★
+      'SCAE18': 3,   // Calling – 3★
+      'RHMP99': 4,   // Harvest Moon Magical Melody – 4★
+      // Default (se non trovato)
+      'default': 4
+    };
+
+    function getDolphinWikiLink(gameId) {
+      if (!gameId) return 'https://wiki.dolphin-emu.org/';
+      return `https://wiki.dolphin-emu.org/index.php?title=${gameId}`;
+    }
+
+    // ============================================================
     //  HELPERS
     // ============================================================
     function getFlagUrl(region) {
@@ -470,13 +1065,13 @@
       return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
     }
 
-    function renderStars(rating, size = 14) {
-      const colors = { 5: 'text-emerald-500', 4: 'text-teal-500', 3: 'text-amber-500', 2: 'text-orange-500', 1: 'text-rose-500', 0: 'text-slate-400' };
-      const colorClass = colors[rating] || 'text-amber-500';
+    function renderStars(rating, size = 16) {
+      const colors = { 5: 'text-emerald-400', 4: 'text-teal-400', 3: 'text-amber-400', 2: 'text-orange-400', 1: 'text-rose-400', 0: 'text-slate-500' };
+      const colorClass = colors[rating] || 'text-amber-400';
       const full = Math.min(5, Math.max(0, rating));
       let html = `<div class="rating-stars">`;
       for (let i = 1; i <= 5; i++) {
-        const cls = i <= full ? `fill-current ${colorClass}` : 'fill-slate-300 text-slate-300 dark:fill-slate-700 dark:text-slate-700';
+        const cls = i <= full ? `fill-current ${colorClass}` : 'fill-slate-700 text-slate-700';
         html += `<svg class="w-${size/2} h-${size/2} ${cls}" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>`;
       }
       html += '</div>';
@@ -484,7 +1079,7 @@
     }
 
     // ============================================================
-    //  GROUPING – CORRETTA PER STRUTTURA CON "entries"
+    //  GROUPING
     // ============================================================
     function groupGames(rawList) {
       const groups = new Map();
@@ -624,12 +1219,11 @@
     function render() {
       document.querySelectorAll('.rating-panel').forEach(p => {
         const val = p.getAttribute('data-rating');
-        const ring = state.console === 'gc' ? 'ring-gc-500' : 'ring-wii-500';
         if (state.selectedStars === val) {
-          p.classList.add('ring-2', ring, 'scale-[1.02]');
+          p.classList.add('cyber-border');
           p.classList.remove('opacity-60');
         } else {
-          p.classList.remove('ring-2', 'ring-gc-500', 'ring-wii-500', 'scale-[1.02]');
+          p.classList.remove('cyber-border');
           p.classList.toggle('opacity-60', state.selectedStars !== 'all');
         }
       });
@@ -689,44 +1283,42 @@
         const coverUrl = bestEntry.cover_art || getCoverUrl(item.gameId, item.region);
         const delay = Math.min(idx * 20, 300);
         const regionColor = item.region.includes('NTSC') ? 'text-emerald-400' : (item.region === 'PAL' ? 'text-amber-400' : 'text-slate-400');
-        const cardBg = isGC ? 'bg-gc-950/90' : 'bg-white/95';
-        const cardText = isGC ? 'text-white' : 'text-slate-900';
 
-        const playableBadge = item.bestPlayable === 'YES'
-          ? `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-emerald-950/50 text-emerald-400 border border-emerald-700/40">Playable</span>`
-          : item.bestPlayable === 'YES WITH ISSUES'
-            ? `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-amber-950/50 text-amber-400 border border-amber-700/40">With Issues</span>`
-            : `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-rose-950/50 text-rose-400 border border-rose-700/40">Unplayable</span>`;
+        // Colori per i badge – ora con classi corrette
+        const bootColor = item.bestBoot === 'YES' ? 'yes' : 'no';
+        let playableClass = 'no';
+        if (item.bestPlayable === 'YES') playableClass = 'yes';
+        else if (item.bestPlayable === 'YES WITH ISSUES') playableClass = 'issues';
 
         return `
-          <div class="card-anim game-card group relative cursor-pointer rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl" style="animation-delay: ${delay}ms" onclick="openModal(${idx})">
-            <div class="glow-border">
-              <div class="relative aspect-[3/4] w-full overflow-hidden bg-slate-900/50">
+          <div class="card-anim game-card group relative cursor-pointer transition-all duration-300 hover:-translate-y-1" style="animation-delay: ${delay}ms" onclick="openModal(${idx})">
+            <div class="glow-border cyber-border">
+              <div class="relative aspect-[3/4] w-full overflow-hidden">
                 ${coverUrl ? `<img src="${coverUrl}" alt="${escapeHtml(item.game)}" class="cover-img w-full h-full object-cover" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` : ''}
                 <div class="cover-placeholder absolute inset-0 w-full h-full ${coverUrl ? 'hidden' : 'flex'} flex-col items-center justify-center text-4xl">
                   🎮
-                  <span class="text-[10px] mt-1 opacity-40 font-mono">${item.gameId || '???'}</span>
+                  <span class="text-[10px] mt-1 opacity-40 font-mono font-black">${item.gameId || '???'}</span>
                 </div>
-                ${coverUrl ? `<div class="absolute inset-0 w-full h-full flex flex-col items-center justify-center text-4xl opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-sm"><span class="text-xs font-medium text-white/80">${item.gameId || ''}</span></div>` : ''}
+                ${coverUrl ? `<div class="absolute inset-0 w-full h-full flex flex-col items-center justify-center text-4xl opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black/30 backdrop-blur-sm"><span class="text-xs font-black text-white">${item.gameId || ''}</span></div>` : ''}
               </div>
-              <div class="p-2.5 space-y-1.5 ${cardBg}">
+              <div class="p-2.5 space-y-1.5 border-t-2">
                 <div class="flex items-start justify-between gap-1">
-                  <h4 class="text-sm font-bold truncate flex-1 ${cardText}">${escapeHtml(item.game)}</h4>
+                  <h4 class="text-sm font-black truncate flex-1">${escapeHtml(item.game)}</h4>
                   <div class="flex items-center gap-1">
                     ${renderStars(item.bestRating, 12)}
-                    <span class="text-[10px] font-mono text-slate-500">${item.bestRating}</span>
+                    <span class="text-[10px] font-mono font-black opacity-60">${item.bestRating}</span>
                   </div>
                 </div>
                 <div class="flex items-center justify-between text-[10px]">
-                  <span class="flex items-center gap-1 ${regionColor} font-semibold">
-                    <img src="${getFlagUrl(item.region)}" class="w-4 h-3 object-cover rounded border border-slate-400/20" /> ${item.region}
+                  <span class="flex items-center gap-1 ${regionColor} font-black">
+                    <img src="${getFlagUrl(item.region)}" class="w-4 h-3 object-cover rounded border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" /> ${item.region}
                   </span>
-                  <span class="font-mono text-slate-400">${item.entriesCount} test${item.entriesCount !== 1 ? 's' : ''}</span>
+                  <span class="font-mono font-black opacity-60">${item.entriesCount} test${item.entriesCount !== 1 ? 's' : ''}</span>
                 </div>
                 <div class="flex items-center gap-1.5 flex-wrap">
                   <span class="fps-badge ${isGC ? 'gc' : 'wii'}">${item.bestFpsStr !== "???" ? item.bestFpsStr + ' FPS' : 'N/A'}</span>
-                  <span class="text-[9px] font-mono px-2 py-0.5 rounded-full ${item.bestBoot === 'YES' ? (isGC ? 'boot-badge gc-yes' : 'boot-badge wii-yes') : (isGC ? 'boot-badge gc-no' : 'boot-badge wii-no')}">${item.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
-                  ${playableBadge}
+                  <span class="boot-badge ${bootColor}">${item.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
+                  <span class="playable-badge ${playableClass}">${item.bestPlayable === 'YES' ? 'Playable' : item.bestPlayable === 'YES WITH ISSUES' ? 'With Issues' : 'Unplayable'}</span>
                 </div>
               </div>
             </div>
@@ -742,11 +1334,10 @@
         const coverUrl = bestEntry.cover_art || getCoverUrl(item.gameId, item.region);
         const regionColor = item.region.includes('NTSC') ? 'text-emerald-500' : (item.region === 'PAL' ? 'text-amber-500' : 'text-slate-400');
 
-        const playableBadge = item.bestPlayable === 'YES'
-          ? `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-emerald-950/50 text-emerald-400 border border-emerald-700/40">Playable</span>`
-          : item.bestPlayable === 'YES WITH ISSUES'
-            ? `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-amber-950/50 text-amber-400 border border-amber-700/40">With Issues</span>`
-            : `<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-rose-950/50 text-rose-400 border border-rose-700/40">Unplayable</span>`;
+        const bootColor = item.bestBoot === 'YES' ? 'yes' : 'no';
+        let playableClass = 'no';
+        if (item.bestPlayable === 'YES') playableClass = 'yes';
+        else if (item.bestPlayable === 'YES WITH ISSUES') playableClass = 'issues';
 
         return `
           <div class="card-anim list-card" style="animation-delay: ${Math.min(idx * 20, 300)}ms" onclick="openModal(${idx})">
@@ -754,15 +1345,15 @@
               ${coverUrl ? `<img src="${coverUrl}" alt="${escapeHtml(item.game)}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=&quot;cover-placeholder&quot;>🎮</div>'">` : `<div class="cover-placeholder">🎮</div>`}
             </div>
             <div class="list-card-info">
-              <div class="list-card-title ${isGC ? 'text-white' : 'text-slate-900'}">${escapeHtml(item.game)}</div>
+              <div class="list-card-title">${escapeHtml(item.game)}</div>
               <div class="list-card-meta">
                 <span class="flex items-center gap-1 ${regionColor}">
-                  <img src="${getFlagUrl(item.region)}" class="w-4 h-3 object-cover rounded border border-slate-400/20" /> ${item.region}
+                  <img src="${getFlagUrl(item.region)}" class="w-4 h-3 object-cover rounded border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" /> ${item.region}
                 </span>
                 <span class="font-mono">${item.entriesCount} test${item.entriesCount !== 1 ? 's' : ''}</span>
                 <span class="fps-badge ${isGC ? 'gc' : 'wii'}">${item.bestFpsStr !== "???" ? item.bestFpsStr + ' FPS' : 'N/A'}</span>
-                <span class="text-[9px] font-mono px-2 py-0.5 rounded-full ${item.bestBoot === 'YES' ? (isGC ? 'boot-badge gc-yes' : 'boot-badge wii-yes') : (isGC ? 'boot-badge gc-no' : 'boot-badge wii-no')}">${item.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
-                ${playableBadge}
+                <span class="boot-badge ${bootColor}">${item.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
+                <span class="playable-badge ${playableClass}">${item.bestPlayable === 'YES' ? 'Playable' : item.bestPlayable === 'YES WITH ISSUES' ? 'With Issues' : 'Unplayable'}</span>
               </div>
               <div class="list-card-stars mt-1">${renderStars(item.bestRating, 12)}</div>
             </div>
@@ -784,6 +1375,18 @@
       document.getElementById('modalRegionBadge').textContent = item.region;
       document.getElementById('modalGameId').textContent = item.gameId || 'ID Unknown';
 
+      // --- DOLPHIN COMPAT MINI ---
+      const gameId = item.gameId;
+      const compatRating = DOLPHIN_COMPAT[gameId] || DOLPHIN_COMPAT['default'] || 4;
+      const wikiLink = getDolphinWikiLink(gameId);
+      const compatContainer = document.getElementById('dolphinCompatMini');
+      let segHtml = '';
+      for (let i = 0; i < 5; i++) {
+        segHtml += `<span class="seg ${i < compatRating ? 'filled' : ''}"></span>`;
+      }
+      compatContainer.innerHTML = segHtml + `<a href="${wikiLink}" target="_blank" rel="noopener" class="wiki-link" title="Dolphin Wiki">🌐</a>`;
+
+      // --- COVER ---
       const coverImg = document.getElementById('modalCoverImg');
       const bestEntry = item.entries[item.bestEntryIndex] || {};
       const coverUrl = bestEntry.cover_art || getCoverUrl(item.gameId, item.region);
@@ -795,16 +1398,16 @@
         coverImg.style.display = 'none';
       }
 
+      // --- BEST / AVG ---
       document.getElementById('modalBestRatingVal').innerHTML = renderStars(item.bestRating, 16);
       const bestFpsEl = document.getElementById('modalBestFpsVal');
       bestFpsEl.textContent = item.bestFpsStr !== "???" ? `${item.bestFpsStr} FPS` : 'N/A';
-      bestFpsEl.className = isGC ? 'text-sm font-mono font-bold text-amber-300' : 'text-sm font-mono font-bold text-amber-600';
 
       document.getElementById('modalAvgRatingVal').textContent = `${item.avgRating} / 5 ⭐`;
       const avgFpsEl = document.getElementById('modalAvgFpsVal');
       avgFpsEl.textContent = item.avgFps !== "N/A" ? `${item.avgFps} FPS` : 'N/A';
-      avgFpsEl.className = isGC ? 'text-sm font-mono font-bold text-slate-300' : 'text-sm font-mono font-bold text-slate-800';
 
+      // --- ENTRIES ---
       const container = document.getElementById('modalEntriesContainer');
       container.innerHTML = item.entries.map((e, idx) => {
         const isBest = (idx === item.bestEntryIndex);
@@ -845,9 +1448,10 @@
         const attachments = e.attachments || [];
         const customSettings = e.custom_settings || [];
 
-        const ratingColor = rating >= 5 ? '#34d399' : rating >= 4 ? '#2dd4bf' : rating >= 3 ? '#f59e0b' : rating >= 2 ? '#f97316' : '#f43f5e';
-        const circumference = 2 * Math.PI * 42;
-        const offset = circumference * (1 - (rating / 5));
+        const ratingColors = {
+          5: '#34d399', 4: '#2dd4bf', 3: '#fbbf24', 2: '#fb923c', 1: '#f87171', 0: '#f87171'
+        };
+        const ratingColor = ratingColors[rating] || '#fbbf24';
 
         let settingsHtml = '';
         if (customSettings.length > 0) {
@@ -857,13 +1461,13 @@
             const url = cs.set_url || '';
             const note = cs.set_note || '';
             return `
-              <div class="flex flex-col gap-1 p-2 rounded-lg bg-black/10">
+              <div class="flex flex-col gap-1 p-2 border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">
                 <div class="flex items-center gap-2">
                   <span class="settings-type-badge">${escapeHtml(type)}</span>
-                  ${name ? `<span class="text-xs font-semibold">${escapeHtml(name)}</span>` : ''}
+                  ${name ? `<span class="text-xs font-black">${escapeHtml(name)}</span>` : ''}
                 </div>
-                ${url ? `<a href="${url}" target="_blank" rel="noopener" class="text-xs text-gc-400 underline hover:text-gc-300">${escapeHtml(url)}</a>` : ''}
-                ${note ? `<p class="text-xs italic text-slate-400">${escapeHtml(note)}</p>` : ''}
+                ${url ? `<a href="${url}" target="_blank" rel="noopener" class="text-xs font-black underline">${escapeHtml(url)}</a>` : ''}
+                ${note ? `<p class="text-xs italic font-bold opacity-70">${escapeHtml(note)}</p>` : ''}
               </div>
             `;
           }).join('');
@@ -873,52 +1477,44 @@
         if (attachments.length > 0) {
           attHtml = attachments.map(a => `
             <div class="attachment-item">
-              ${a.media_type === 'video' ? '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>' : '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>'}
+              ${a.media_type === 'video' ? '🎬' : '🖼️'}
               <a href="${a.media_url}" target="_blank" rel="noopener" class="truncate">${escapeHtml(a.media_title || a.media_url)}</a>
             </div>
           `).join('');
         }
 
         return `
-          <div class="modal-test-card ${isGC ? 'bg-black/20 border-white/10' : 'bg-white/85 border-slate-200'}" style="font-size:0.9rem;">
-            <div class="flex flex-wrap items-center justify-between gap-2 pb-2 border-b ${isGC ? 'border-white/10' : 'border-slate-200'}">
+          <div class="modal-test-card">
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-2 border-b-2">
               <div class="flex items-center gap-3 flex-wrap">
-                <span class="text-[12px] font-mono font-black px-2 py-0.5 rounded-full ${isGC ? 'bg-gc-600/30 text-gc-300 border-gc-500/40' : 'bg-wii-500/20 text-wii-800 border-wii-300'} border">#${num}</span>
-                <span class="text-sm font-semibold">Tester: <strong class="${isGC ? 'text-gc-400' : 'text-wii-700'}">${escapeHtml(tester)}</strong></span>
+                <span class="text-[11px] font-mono font-black px-2 py-0.5 border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">#${num}</span>
+                <span class="text-sm font-black">Tester: <strong class="underline">${escapeHtml(tester)}</strong></span>
                 ${isBest ? `<span class="best-badge">🏆 Best Test</span>` : ''}
               </div>
-              <div class="flex items-center gap-3 text-[11px] font-mono ${isGC ? 'text-slate-400' : 'text-slate-600'}">
-                <span class="flex items-center gap-1 font-bold">
-                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-                  Device: <strong>${escapeHtml(device)}</strong>
-                </span>
-                <span class="flex items-center gap-1 font-bold">
-                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 2a1 1 0 00-1 1v2a1 1 0 001 1h6a1 1 0 001-1V3a1 1 0 00-1-1H9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h12a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"/></svg>
-                  muOS: <strong>${escapeHtml(muosVer)}</strong>
-                </span>
+              <div class="flex items-center gap-3 text-[11px] font-mono font-black opacity-70">
+                <span class="flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg> ${escapeHtml(device)}</span>
+                <span class="flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 2a1 1 0 00-1 1v2a1 1 0 001 1h6a1 1 0 001-1V3a1 1 0 00-1-1H9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h12a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"/></svg> ${escapeHtml(muosVer)}</span>
               </div>
             </div>
 
             <div class="flex flex-wrap items-center gap-3 pt-2">
-              <div class="rating-circle-container">
-                <svg viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="42" fill="none" stroke="${isGC ? '#2a1a3a' : '#d1d9e0'}" stroke-width="5"/>
-                  <circle cx="50" cy="50" r="42" fill="none" stroke="${ratingColor}" stroke-width="5"
-                    stroke-dasharray="${circumference}" stroke-dashoffset="${offset}" stroke-linecap="round"
-                    style="transition: stroke-dashoffset 0.5s ease;"/>
-                  ${[0,1,2,3,4].map(i => {
-                    const angle = (i / 5) * 360 - 90;
-                    const x = 50 + 44 * Math.cos(angle * Math.PI / 180);
-                    const y = 50 + 44 * Math.sin(angle * Math.PI / 180);
-                    const filled = i < rating;
-                    return `<text x="${x}" y="${y+6}" text-anchor="middle" font-size="22" 
-                      fill="${filled ? ratingColor : (isGC ? '#3a2a4a' : '#c8d4df')}" 
-                      font-family="sans-serif" font-weight="700" 
-                      class="star-3d" 
-                      style="${filled ? `animation: starPop 0.3s ease; filter: drop-shadow(0 2px 4px ${ratingColor}80);` : ''}">★</text>`;
-                  }).join('')}
+              <div class="rating-star-container">
+                <svg viewBox="0 0 120 120">
+                  <defs>
+                    <filter id="starShadow_${idx}">
+                      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.6)"/>
+                    </filter>
+                  </defs>
+                  <polygon
+                    points="60,10 76,46 115,46 84,68 94,105 60,86 26,105 36,68 5,46 44,46"
+                    fill="${ratingColor}"
+                    stroke="${isGC ? '#0a0618' : '#e8f0f8'}"
+                    stroke-width="5"
+                    stroke-linejoin="round"
+                    filter="url(#starShadow_${idx})"
+                  />
                 </svg>
-                <div class="center-number" style="color:${ratingColor}">${rating}</div>
+                <div class="star-number">${rating}</div>
               </div>
 
               <div class="flex flex-wrap items-center gap-2 flex-1">
@@ -927,13 +1523,13 @@
                   <span class="status-pill ${playable === 'YES' ? 'playable-yes' : playable === 'YES WITH ISSUES' ? 'playable-issues' : 'playable-no'}">${playable === 'YES' ? '✅ PLAYABLE' : playable === 'YES WITH ISSUES' ? '⚠️ WITH ISSUES' : '⛔ UNPLAYABLE'}</span>
                 </div>
                 <div class="flex flex-col items-center ml-1">
-                  <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400">FPS</div>
-                  <div class="fps-range-box ${isGC ? 'text-gc-300' : 'text-slate-800'}">${fpsRange}</div>
+                  <div class="text-[10px] uppercase tracking-wider font-black opacity-60">FPS</div>
+                  <div class="fps-range-box">${fpsRange}</div>
                 </div>
                 <div class="flex flex-col items-start ml-1">
-                  <div class="core-profile-box ${isGC ? 'text-slate-300' : 'text-slate-700'}">
-                    <div><span class="text-[10px] uppercase font-bold text-slate-400">Rt:Core</span> <span class="font-mono font-bold text-sm">${escapeHtml(coreVersion)}</span></div>
-                    <div><span class="text-[10px] uppercase font-bold text-slate-400">Profile</span> <span class="font-mono font-bold text-sm">${escapeHtml(coreUsed)}</span></div>
+                  <div class="core-profile-box">
+                    <div><span class="text-[10px] uppercase font-black opacity-60">Rt:Core</span> <span class="font-mono font-black">${escapeHtml(coreVersion)}</span></div>
+                    <div><span class="text-[10px] uppercase font-black opacity-60">Profile</span> <span class="font-mono font-black">${escapeHtml(coreUsed)}</span></div>
                   </div>
                 </div>
               </div>
@@ -941,20 +1537,20 @@
 
             ${considerations ? `
             <div class="mt-2">
-              <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400">Considerations</div>
-              <div class="considerations-box ${isGC ? 'text-slate-300 border-gc-500/30' : 'text-slate-700 border-wii-500/30'}">${escapeHtml(considerations)}</div>
+              <div class="text-[10px] uppercase tracking-wider font-black opacity-60">Considerations</div>
+              <div class="considerations-box">${escapeHtml(considerations)}</div>
             </div>` : ''}
 
             ${(customSettings.length > 0 || attachments.length > 0) ? `
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
               ${customSettings.length > 0 ? `
               <div>
-                <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-0.5">Custom Settings</div>
+                <div class="text-[10px] uppercase tracking-wider font-black opacity-60 mb-0.5">Custom Settings</div>
                 <div class="space-y-2">${settingsHtml}</div>
               </div>` : ''}
               ${attachments.length > 0 ? `
               <div>
-                <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-0.5">Attachments</div>
+                <div class="text-[10px] uppercase tracking-wider font-black opacity-60 mb-0.5">Attachments</div>
                 <div class="space-y-1">${attHtml}</div>
               </div>` : ''}
             </div>` : ''}
@@ -1039,73 +1635,68 @@
         : 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg';
 
       document.getElementById('consoleName').textContent = isGC ? 'GameCube' : 'Wii';
-      document.getElementById('consoleName').className = isGC ? 'font-bold text-gc-400' : 'font-bold text-wii-500';
+      document.getElementById('consoleName').className = isGC ? 'font-black text-gc-400' : 'font-black text-wii-500';
 
       const btnGC = document.getElementById('btnConsoleGC');
       const btnWii = document.getElementById('btnConsoleWii');
       if (isGC) {
-        btnGC.className = 'flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 switch-tab-active-gc';
-        btnWii.className = 'flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 switch-tab-inactive-wii';
+        btnGC.className = 'flex items-center gap-2 px-4 py-1.5 text-xs font-black transition-all duration-300 switch-tab-active-gc';
+        btnWii.className = 'flex items-center gap-2 px-4 py-1.5 text-xs font-black transition-all duration-300 switch-tab-inactive-wii';
       } else {
-        btnWii.className = 'flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 switch-tab-active-wii';
-        btnGC.className = 'flex items-center gap-2 px-4 py-1.5 rounded-xl font-bold text-xs transition-all duration-300 switch-tab-inactive-gc';
+        btnWii.className = 'flex items-center gap-2 px-4 py-1.5 text-xs font-black transition-all duration-300 switch-tab-active-wii';
+        btnGC.className = 'flex items-center gap-2 px-4 py-1.5 text-xs font-black transition-all duration-300 switch-tab-inactive-gc';
       }
 
-      const isWii = !isGC;
       const mainTitle = document.getElementById('mainTitle');
       const muosText = document.getElementById('muosText');
       const subtitle = document.querySelector('#dashboardSubtitle');
       const desc = document.querySelector('#dashboardDesc');
 
       if (isGC) {
-        mainTitle.className = 'text-2xl sm:text-3xl font-black tracking-tight text-white whitespace-nowrap';
+        mainTitle.className = 'text-2xl sm:text-3xl font-black tracking-tight whitespace-nowrap text-white';
+        mainTitle.style.fontFamily = "'Audiowide', 'Orbitron', sans-serif";
         muosText.className = 'text-gc-400';
         muosText.style.fontWeight = '400';
-        subtitle.className = 'text-base sm:text-lg mt-0.5 transition-colors';
-        desc.className = 'text-xs italic text-slate-400 transition-colors';
-        document.getElementById('filterPanel').className = 'gc-glass rounded-2xl p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500';
+        subtitle.className = 'text-base sm:text-lg mt-0.5 transition-colors font-black text-white';
+        desc.className = 'text-xs italic font-bold text-slate-400 transition-colors';
+        document.getElementById('filterPanel').className = 'cyber-border p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500';
         document.querySelectorAll('.rating-panel').forEach(el => {
           el.className = el.className.replace(/wii-glass/g, 'gc-glass');
         });
-        document.getElementById('spdwPanel').className = 'gc-glass rounded-xl p-2.5 px-4 flex-shrink-0 transition-all duration-500 space-y-1.5 min-w-[180px]';
-        document.getElementById('spdwBrand').className = 'flex items-center gap-1 font-black text-gc-400 tracking-wider text-[10px] uppercase';
-        document.getElementById('coreBadge').className = 'text-[9px] font-mono px-2 py-0.5 rounded-full bg-gc-900 text-gc-300 border border-gc-700/60 font-bold';
-        document.getElementById('statTestedBox').className = 'text-[9px] font-black bg-gc-900/80 border border-gc-600/50 rounded-lg px-2 py-0.5 flex items-center gap-2 shadow-inner';
-        document.getElementById('statTested').className = 'bg-gc-500 text-white px-1.5 py-0.5 rounded-lg font-mono font-black text-sm shadow-sm';
+        document.getElementById('spdwPanel').className = 'cyber-border p-2.5 px-4 flex-shrink-0 transition-all duration-500 space-y-1.5 min-w-[160px]';
+        document.getElementById('spdwBrand').className = 'flex items-center gap-1 font-black tracking-wider text-[10px] uppercase text-gc-400';
+        document.getElementById('coreBadge').className = 'text-[9px] font-mono px-2 py-0.5 border-2 font-black border-gc-700/60 text-gc-300';
+        document.getElementById('statTestedBox').className = 'font-black border-2 px-2 py-0.5 flex items-center gap-2 border-gc-600/50 text-gc-300';
+        document.getElementById('statTested').className = 'bg-gc-500 text-white px-1.5 py-0.5 font-mono font-black text-sm';
         document.getElementById('totalEntriesAccent').className = 'text-gc-400';
-        document.getElementById('totalEntriesContainer').className = 'text-[9px] font-mono flex items-center gap-1 text-slate-400';
-        document.getElementById('statTotal').className = 'font-bold text-slate-200';
-        document.getElementById('newIssueBtn').className = 'text-slate-400 hover:text-white transition-colors flex items-center gap-1';
-        document.getElementById('modalCard').className = 'gc-glass border border-gc-700/80 rounded-3xl max-w-5xl w-full max-h-[94vh] flex flex-col p-5 shadow-2xl relative modal-anim';
-        document.getElementById('modalRegionBadge').className = 'text-[9px] font-mono px-2 py-0.5 rounded bg-gc-900 text-gc-300 border border-gc-700/60 uppercase font-bold shrink-0';
-        document.getElementById('modalGameId').className = 'text-[9px] font-mono px-2 py-0.5 rounded bg-gc-800/60 text-gc-400 border border-gc-600/40 font-bold shrink-0';
-        document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b border-purple-900/40 bg-gc-950/90 backdrop-blur-xl shadow-lg';
+        document.getElementById('totalEntriesContainer').className = 'font-mono flex items-center gap-1 font-black text-slate-400';
+        document.getElementById('statTotal').className = 'font-black text-slate-200';
+        document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b-2 bg-gc-950/90 bg-opacity-90 backdrop-blur-xl';
         document.getElementById('appBody').className = 'theme-gc font-sans antialiased transition-colors duration-500 min-h-screen';
+        document.getElementById('modalCard').className = 'cyber-border max-w-5xl w-full max-h-[94vh] flex flex-col p-5 relative modal-anim bg-gc-950/90';
       } else {
-        mainTitle.className = 'text-2xl sm:text-3xl font-black tracking-tight title-dark whitespace-nowrap';
+        mainTitle.className = 'text-2xl sm:text-3xl font-black tracking-tight whitespace-nowrap title-dark text-slate-900';
+        mainTitle.style.fontFamily = "'Outfit', sans-serif";
         muosText.className = 'text-gc-400';
         muosText.style.fontWeight = '400';
         muosText.style.color = '#0f172a';
-        subtitle.className = 'text-base sm:text-lg mt-0.5 transition-colors text-slate-800';
-        desc.className = 'text-xs italic text-slate-600 transition-colors';
-        document.getElementById('filterPanel').className = 'wii-glass rounded-2xl p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500';
+        subtitle.className = 'text-base sm:text-lg mt-0.5 transition-colors font-black text-slate-800';
+        desc.className = 'text-xs italic font-bold text-slate-600 transition-colors';
+        document.getElementById('filterPanel').className = 'cyber-border p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500 bg-white/80';
         document.querySelectorAll('.rating-panel').forEach(el => {
-          el.className = el.className.replace(/gc-glass/g, 'wii-glass rating-panel-wii');
+          el.className = el.className.replace(/gc-glass/g, 'wii-glass');
         });
-        document.getElementById('spdwPanel').className = 'wii-glass rounded-xl p-2.5 px-4 flex-shrink-0 transition-all duration-500 space-y-1.5 min-w-[180px] border border-slate-300 shadow-sm';
-        document.getElementById('spdwBrand').className = 'flex items-center gap-1 font-black text-wii-700 tracking-wider text-[10px] uppercase';
-        document.getElementById('coreBadge').className = 'text-[9px] font-mono px-2 py-0.5 rounded-full bg-wii-100 text-wii-900 border border-wii-300 font-bold';
-        document.getElementById('statTestedBox').className = 'text-[9px] font-black text-slate-800 bg-wii-50 border border-wii-200 rounded-lg px-2 py-0.5 flex items-center gap-2 shadow-inner';
-        document.getElementById('statTested').className = 'bg-wii-500 text-white px-1.5 py-0.5 rounded-lg font-mono font-black text-sm shadow-sm';
-        document.getElementById('totalEntriesAccent').className = 'text-wii-700 font-bold';
-        document.getElementById('totalEntriesContainer').className = 'text-[9px] font-mono flex items-center gap-1 text-slate-700';
-        document.getElementById('statTotal').className = 'font-bold text-slate-800';
-        document.getElementById('newIssueBtn').className = 'text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1';
-        document.getElementById('modalCard').className = 'wii-glass border border-slate-300 rounded-3xl max-w-5xl w-full max-h-[94vh] flex flex-col p-5 shadow-2xl relative modal-anim';
-        document.getElementById('modalRegionBadge').className = 'text-[9px] font-mono px-2 py-0.5 rounded bg-wii-100 text-wii-900 border border-wii-300 uppercase font-bold shrink-0 badge-region-wii';
-        document.getElementById('modalGameId').className = 'text-[9px] font-mono px-2 py-0.5 rounded bg-wii-200/60 text-wii-700 border border-wii-300/60 font-bold shrink-0 badge-gameid-wii';
-        document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b border-slate-300 bg-white/95 backdrop-blur-xl shadow-lg';
+        document.getElementById('spdwPanel').className = 'cyber-border p-2.5 px-4 flex-shrink-0 transition-all duration-500 space-y-1.5 min-w-[160px] bg-white/80';
+        document.getElementById('spdwBrand').className = 'flex items-center gap-1 font-black tracking-wider text-[10px] uppercase text-wii-700';
+        document.getElementById('coreBadge').className = 'text-[9px] font-mono px-2 py-0.5 border-2 font-black border-wii-300 text-wii-800 bg-wii-100';
+        document.getElementById('statTestedBox').className = 'font-black border-2 px-2 py-0.5 flex items-center gap-2 border-wii-200 text-slate-800 bg-wii-50';
+        document.getElementById('statTested').className = 'bg-wii-500 text-white px-1.5 py-0.5 font-mono font-black text-sm';
+        document.getElementById('totalEntriesAccent').className = 'text-wii-700';
+        document.getElementById('totalEntriesContainer').className = 'font-mono flex items-center gap-1 font-black text-slate-700';
+        document.getElementById('statTotal').className = 'font-black text-slate-800';
+        document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b-2 bg-white/95 bg-opacity-90 backdrop-blur-xl';
         document.getElementById('appBody').className = 'theme-wii font-sans antialiased transition-colors duration-500 min-h-screen';
+        document.getElementById('modalCard').className = 'cyber-border max-w-5xl w-full max-h-[94vh] flex flex-col p-5 relative modal-anim bg-white/95';
       }
 
       loadConsoleData();
