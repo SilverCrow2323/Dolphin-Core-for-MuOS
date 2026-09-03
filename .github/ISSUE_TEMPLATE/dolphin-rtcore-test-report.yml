@@ -1,6 +1,6 @@
 name: "🐬 Dolphin Rt:Core Test Report"
 description: "Submit test results for GameCube or Wii games on Dolphin Rt:Core / muOS"
-title: "[TEST]: "
+title: "[TEST REPORT]: "
 labels: ["test-report"]
 body:
   - type: markdown
@@ -9,7 +9,7 @@ body:
         ---
         <div align="center">
           <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdwfactory_logo.png" alt="SPDW Factory" width="120">
-          <h1>🐬 DOLPHIN RT:CORE COMPATIBILITY REPORT</h1>
+          <h1>🎮 DOLPHIN RT:CORE COMPATIBILITY REPORT</h1>
           <p>
             <img src="https://img.shields.io/badge/Platform-GameCube_%7C_Wii-FFA500?style=flat-square">
             <img src="https://img.shields.io/badge/Core-Dolphin_Rt:Core-blue?style=flat-square">
@@ -89,23 +89,23 @@ body:
         | Rating | Boot | Description |
         |:---:|:---:|---|
         | **0★** | ❌ NO BOOT | Immediate crash on launch; emulator fails to start or crashes instantly. |
-        | **1★** | ⚠️ BOOT | Crashes within 5 seconds after boot, or game is severely corrupted / unrecognizable. |
-        | **2★** | ⚠️ BOOT | No crashes, but major issues are widespread. A glimpse of playability, but not there yet. |
-        | **3★** | ✅ BOOT | No crashes; the game runs, but has several issues that affect the experience. |
-        | **4★** | ✅ BOOT | Playable, with some noticeable issues that may be annoying but not game-breaking. |
-        | **5★** | ✅ BOOT | Practically perfect. Any minor issues are negligible or do not affect gameplay. |
+        | **1★** |  ⚠️ BOOT  | Crashes within 5 seconds after boot, or game is severely corrupted / unrecognizable. |
+        | **2★** |  ⚠️ BOOT  | No crashes, but major issues are widespread. A glimpse of playability, but not there yet. |
+        | **3★** |  ✅ BOOT  | No crashes; the game runs, but has several issues that affect the experience. |
+        | **4★** |  ✅ BOOT  | Playable, with some noticeable issues that may be annoying but not game-breaking. |
+        | **5★** |  ✅ BOOT  | Practically perfect. Any minor issues are negligible or do not affect gameplay. |
 
   - type: dropdown
     id: boot_rating
     attributes:
       label: "Performance Rating *"
       options:
-        - "0★ - NO BOOT (immediate crash)"
-        - "1★ - BOOT UNPLAYABLE (crashes after 5s or severe corruption)"
-        - "2★ - BOOT UNPLAYABLE (no crashes but major issues)"
-        - "3★ - BOOT WITH ISSUES (runs but has several problems)"
-        - "4★ - BOOT PLAYABLE (playable with some issues)"
-        - "5★ - BOOT PLAYABLE (practically perfect)"
+        - "0★ - DOESN'T BOOT (immediate crash)"
+        - "1★ - BOOTS & UNPLAYABLE (crashes during the session, sever bugs or heavy corruption)"
+        - "2★ - BOOTS & UNPLAYABLE (no crashes but major issues)"
+        - "3★ - BOOTS WITH ISSUES (runs but has several problems)"
+        - "4★ - BOOTS & PLAYABLE (playable with secondary issues)"
+        - "5★ - BOOTS & FULLY PLAYABLE (practically perfect)"
     validations:
       required: true
 
@@ -131,19 +131,15 @@ body:
     id: core_profile
     attributes:
       label: "Core Profile Used *"
-      description: "For GameCube, use the GC profiles (first 14). For Wii, use the Wii profiles (last 4)."
+      description: "Select the profile you tested."
       options:
         - "Default"
         - "Speedhacks"
+        - "Blackscreenfix"
         - "Performance"
         - "Compatibility"
         - "Lite"
         - "Troubleshooting"
-        - "Widescreen"
-        - "Blackscreenfix"
-        - "Logger"
-        - "Debug"
-        - "Debug Logger"
         - "Safe"
         - "Speedup 1"
         - "Speedup 2"
