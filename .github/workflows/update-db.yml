@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
     inputs:
       issue_number:
-        description: 'Issue number to process manually (e.g., 12)'
-        required: false
+        description: 'Numero issue da processare manualmente (es. 12)'
+        required: true
         type: string
 
 permissions:
@@ -17,8 +17,11 @@ permissions:
 
 jobs:
   update-db:
-    # Rimuovi la condizione per test, poi ripristina
-    # if: github.event_name == 'workflow_dispatch' || contains(github.event.issue.labels.*.name, 'test-report')
+    # Controlla se l'issue ha il label "GameCube" o "Wii" (o è manuale)
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.issue.labels.*.name, 'GameCube') ||
+      contains(github.event.issue.labels.*.name, 'Wii')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -28,6 +31,17 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
+      - name: Debug - Show issue info
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "📌 Event name: ${{ github.event_name }}"
+          echo "📌 Issue number: ${{ github.event.issue.number }}"
+          echo "📌 Issue labels: ${{ join(github.event.issue.labels.*.name, ', ') }}"
+          if [ -n "${{ inputs.issue_number }}" ]; then
+            echo "📌 Manual issue: ${{ inputs.issue_number }}"
+          fi
 
       - name: Process Issue and Update JSON
         env:
@@ -58,7 +72,7 @@ jobs:
                   issue_number = issue_num
               else:
                   print("📥 Automatic mode: reading from GitHub event")
-                  issue_body = "${{ github.event.issue.body }}"
+                  issue_body = """${{ github.event.issue.body }}"""
                   issue_number = "${{ github.event.issue.number }}"
           except Exception as e:
               print(f"❌ Error getting issue body: {e}")
@@ -76,19 +90,34 @@ jobs:
               if not body:
                   return ""
               safe_label = re.escape(label)
-              # Cerca il pattern: ### label \n value
               pattern = rf"###\s*{safe_label}\s*\n\s*(.*?)(?=\n###\s|\Z)"
               match = re.search(pattern, body, re.DOTALL | re.IGNORECASE)
               if not match:
                   return ""
               val = match.group(1).strip()
-              # Pulizia
+              # Pulizia markdown
               val = re.sub(r'\*\*(.*?)\*\*', r'\1', val)
               val = re.sub(r'\*(.*?)\*', r'\1', val)
               val = re.sub(r'^\s*[-\*]\s*', '', val, flags=re.MULTILINE).strip()
               if val.lower() in ["_no response_", "no response", "n/a", "none", ""]:
                   return ""
               return val
+
+          def parse_rating(boot_rating_raw):
+              """Parse rating from boot status string."""
+              boot = "NO"
+              rating = 0
+              if boot_rating_raw:
+                  match = re.search(r'(\d+)★', boot_rating_raw)
+                  if match:
+                      rating = int(match.group(1))
+                  else:
+                      nums = re.findall(r'\d+', boot_rating_raw)
+                      if nums:
+                          rating = int(nums[0])
+                  if "YES" in boot_rating_raw.upper():
+                      boot = "YES"
+              return rating, boot
 
           # ---------- Estrai campi ----------
           print("📋 Extracting fields...")
@@ -112,32 +141,31 @@ jobs:
               print("❌ Game Title is required!")
               sys.exit(1)
 
-          # ---------- Parse Boot Rating ----------
+          # ---------- Parse Rating ----------
           boot_rating_raw = extract_val("Boot Status & Performance Rating", issue_body) or ""
-          boot = "NO"
-          rating = 0
-          if boot_rating_raw:
-              match = re.search(r'(\d+)★', boot_rating_raw)
-              if match:
-                  rating = int(match.group(1))
-              else:
-                  nums = re.findall(r'\d+', boot_rating_raw)
-                  if nums:
-                      rating = int(nums[0])
+          rating, boot = parse_rating(boot_rating_raw)
+          if rating == 0 and boot_rating_raw:
+              # Fallback: cerca nel testo
+              nums = re.findall(r'\d+', boot_rating_raw)
+              if nums:
+                  rating = int(nums[0])
               if "YES" in boot_rating_raw.upper():
                   boot = "YES"
-          else:
-              # Backward compatibility
+
+          # Backward compatibility
+          if rating == 0:
               boot_raw = extract_val("Does the game boot?", issue_body)
               rating_raw = extract_val("Performance Rating", issue_body)
               if not rating_raw:
                   rating_raw = extract_val("Performance Rating (Stars)", issue_body)
-              boot = "YES" if boot_raw and "yes" in boot_raw.lower() else "NO"
+              if boot_raw and "yes" in boot_raw.lower():
+                  boot = "YES"
               if rating_raw:
                   nums = re.findall(r'\d+', rating_raw)
                   rating = int(nums[0]) if nums else 3
-              else:
-                  rating = 3
+
+          if rating == 0 and boot == "YES":
+              rating = 3  # Default se boots ma non c'è rating
 
           print(f"  ⭐ Rating: {rating}★, Boot: {boot}")
 
@@ -149,13 +177,11 @@ jobs:
               game_id = user_game_id.upper()
               print(f"  🆔 Game ID from user: {game_id}")
           else:
-              # Cerca nel corpo dell'issue
               id_match = re.search(r'[GR][A-Z0-9]{5}', issue_body)
               if id_match:
                   game_id = id_match.group(0)
                   print(f"  🆔 Game ID found in body: {game_id}")
               else:
-                  # Genera placeholder
                   if game_title:
                       clean = re.sub(r'[^a-zA-Z]', '', game_title)[:3].upper()
                       game_id = f"{'G' if platform.lower() == 'gamecube' else 'R'}{clean}01"
@@ -213,7 +239,6 @@ jobs:
                   data = []
           else:
               print(f"📂 {json_path} not found, creating new file")
-              # Crea la directory se non esiste
               os.makedirs(os.path.dirname(json_path), exist_ok=True)
 
           # Crea nuovo entry
@@ -279,7 +304,7 @@ jobs:
                   f.write(f"GAME_TITLE={game_title}\n")
                   f.write(f"TARGET_ISSUE_NUM={issue_number}\n")
 
-          print(f"✅ {game_title} ({game_id}) {action} successfully.")
+          print(f"\n✅ {game_title} ({game_id}) {action} successfully.")
           if note_missing:
               print(f"⚠️ {note_missing}")
           PYSCRIPT
