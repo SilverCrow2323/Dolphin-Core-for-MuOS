@@ -1,8 +1,8 @@
 <div align="center">
 
-# <img src="assets/spdw_symbol.png" width="30" alt="SPDW Symbol"> Dolphin Rt:Core for MuOS
+# <img src="https://imgs.search.brave.com/tyQv6MFjbbp1NULahYsqy1k4QZTSTi0ieuSbkCkdPS0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi81LzUzL0Rv/bHBoaW5fRW11bGF0/b3JfTG9nb19SZWZy/ZXNoLnN2Zy8yNTBw/eC1Eb2xwaGluX0Vt/dWxhdG9yX0xvZ29f/UmVmcmVzaC5zdmcu/cG5nP3V0bV9zb3Vy/Y2U9d3d3Lndpa2lk/YXRhLm9yZyZhbXA7/dXRtX2NhbXBhaWdu/PWluZGV4JmFtcDt1/dG1fY29udGVudD10/aHVtYm5haWw" width="30" alt="SPDW Symbol"> Dolphin Rt:Core for MuOS
 
-**Central hub about the development of GameCub and Wii emulation on muOS.**  
+**Central hub about the development of GameCube and Wii emulation on muOS handhelds with Dolphin Emulator.**  
 *A handheld running an ARM SoC deserves to squeeze every drop of performance out for the Mecha-Dolphin!!*
 
 [![muOS](https://img.shields.io/badge/muOS-Compatible-7B68EE?style=flat-square)](#)
