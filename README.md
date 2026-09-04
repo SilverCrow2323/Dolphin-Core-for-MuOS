@@ -69,24 +69,6 @@ The goal of **Dolphin Rt:Core** — now included as part of the **[V0iD Project]
 
 ### ⌨️ Under Development: Global Hotkey System
 
-All hotkeys are centralized and work across **every profile**.  
-Gamepad combos are translated by `gptokeyb` on the RG35XX H:
-
-| Action | Combo | Key Sent |
-|--------|-------|----------|
-| **Graceful Exit** | `Menu` + `Start` | `ESC` |
-| **Force Exit** | `Start` + `Select` + `Menu` | `killall dolphin` |
-| **Save State 1** | `Menu` + `L1` | `F1` |
-| **Load State 1** | `Menu` + `R1` | `Shift+F1` |
-| **Save State 2** | `Menu` + `L2` | `F2` |
-| **Load State 2** | `Menu` + `R2` | `Shift+F2` |
-| **Toggle FPS** | `Menu` + `D-Pad Up` | `F9` |
-| **Toggle Pause** | `Menu` + `D-Pad Down` | `F10` |
-| **Toggle Stats** | `Menu` + `D-Pad Left` | `F11` |
-| **Toggle Speed** | `Menu` + `D-Pad Right` | `F12` |
-| **Toggle OSD** | `Menu` + `A` | `F8` |
-| **Reset** | `Menu` + `B` | `F6` |
-| **Fullscreen** | `Menu` + `X` | `F5` |
 
 ### 🗂️ Per-Game Settings
 
