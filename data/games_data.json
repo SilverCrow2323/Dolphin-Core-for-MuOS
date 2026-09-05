@@ -5029,7 +5029,7 @@
     },
     {
       "game_info": {
-        "game_id": "GQPP78",
+        "game_id": "GGVX78",
         "system": "GC",
         "game": "Spongebob - Battle for Bikini Bottom",
         "region": "PAL"
@@ -5037,7 +5037,7 @@
       "entries": [
         {
           "game_info": {
-            "game_id": "GQPP78",
+            "game_id": "GGVX78",
             "system": "GC",
             "game": "Spongebob - Battle for Bikini Bottom",
             "region": "PAL"
@@ -5060,7 +5060,7 @@
             "device": "Unknown Device",
             "muos_version": ""
           },
-          "cover_art": "https://art.gametdb.com/wii/cover/EN/GQPP78.png?1352719164",
+          "cover_art": "",
           "custom_settings": [],
           "attachments": []
         }
@@ -5809,7 +5809,7 @@
     },
     {
       "game_info": {
-        "game_id": "GGVE78",
+        "game_id": "GGVP69",
         "system": "GC",
         "game": "The SpongeBob SquarePants Movie",
         "region": "PAL"
@@ -5817,7 +5817,7 @@
       "entries": [
         {
           "game_info": {
-            "game_id": "GGVP78",
+            "game_id": "GGVP69",
             "system": "GC",
             "game": "The SpongeBob SquarePants Movie",
             "region": "PAL"
@@ -5840,7 +5840,7 @@
             "device": "Unknown Device",
             "muos_version": ""
           },
-          "cover_art": "https://art.gametdb.com/wii/cover/EN/GGVP78.png?1337164580",
+          "cover_art": "",
           "custom_settings": [],
           "attachments": []
         }
@@ -5879,7 +5879,7 @@
             "device": "Unknown Device",
             "muos_version": ""
           },
-          "cover_art": "https://art.gametdb.com/wii/cover/FR/G4IP52.png?1317735978",
+          "cover_art": "",
           "custom_settings": [],
           "attachments": []
         }
@@ -8031,14 +8031,6 @@
       ]
     },
         {
-      "game_info": {
-        "game_id": "RHMP99",
-        "system": "Wii",
-        "game": "Harvest Moon Magical Melody",
-        "region": "PAL"
-      },
-      "entries": [
-            {
       "game_info": {
         "game_id": "RHMP99",
         "system": "Wii",
