@@ -15,6 +15,7 @@
       font-weight: 700;
       transition: background 0.4s, color 0.4s;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     /* ===== THEME GAMECUBE – Cyberpunk Violaceo ===== */
@@ -155,6 +156,14 @@
       50% { transform: perspective(800px) rotateY(12deg); opacity: 0.9; }
       100% { transform: perspective(800px) rotateY(0deg); opacity: 1; }
     }
+    @keyframes slidePanelFromLeft {
+      0% { transform: translateX(-100%); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slidePanelFromRight {
+      0% { transform: translateX(100%); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
 
     /* ===== CARDS & CONTAINERS ===== */
     .card-anim { animation: fadeIn 0.25s ease-out forwards; opacity: 0; }
@@ -214,10 +223,27 @@
       border: 2px solid;
       clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
     }
-    body.theme-gc .fps-badge.gc { background: rgba(251,191,36,0.12); color: #fbbf24; border-color: #f59e0b; }
-    body.theme-gc .fps-badge.wii { background: rgba(56,189,248,0.08); color: #7dd3fc; border-color: #38bdf8; }
-    body.theme-wii .fps-badge.gc { background: rgba(251,191,36,0.10); color: #a16207; border-color: #fbbf24; }
-    body.theme-wii .fps-badge.wii { background: rgba(0,163,224,0.06); color: #0284c7; border-color: #00a3e0; }
+    body.theme-gc .fps-badge.gc {
+      background: rgba(37, 99, 235, 0.25);
+      color: #60a5fa;
+      border-color: #2563eb;
+      box-shadow: 0 0 12px rgba(37, 99, 235, 0.15);
+    }
+    body.theme-gc .fps-badge.wii {
+      background: rgba(56,189,248,0.08);
+      color: #7dd3fc;
+      border-color: #38bdf8;
+    }
+    body.theme-wii .fps-badge.gc {
+      background: rgba(139,92,246,0.10);
+      color: #6d28d9;
+      border-color: #8b5cf6;
+    }
+    body.theme-wii .fps-badge.wii {
+      background: rgba(0,163,224,0.06);
+      color: #0284c7;
+      border-color: #00a3e0;
+    }
 
     .boot-badge {
       font-size: 9px;
@@ -738,7 +764,7 @@
     .btn-primary.wii { background: #00a3e0 !important; color: white !important; border-color: #0284c7 !important; }
     .btn-primary.wii:hover { background: #0284c7 !important; border-color: #0369a1 !important; }
 
-    /* ===== RATING PANELS ===== */
+    /* ===== RATING PANELS – COLORI PER VOTO ===== */
     .rating-panel {
       padding: 12px 16px;
       border: 2px solid;
@@ -749,19 +775,116 @@
       align-items: center;
       justify-content: space-between;
       background: transparent;
+      font-weight: 700;
     }
-    body.theme-gc .rating-panel {
-      border-color: #2a1a4a;
-      background: rgba(10,6,24,0.4);
+    body.theme-gc .rating-panel[data-rating="5"] {
+      border-color: #22c55e;
+      background: rgba(34, 197, 94, 0.08);
+      color: #4ade80;
     }
-    body.theme-gc .rating-panel:hover { border-color: #6d28d9; background: rgba(139,92,246,0.05); }
-    body.theme-wii .rating-panel {
-      border-color: #b0c4d8;
-      background: rgba(255,255,255,0.3);
+    body.theme-gc .rating-panel[data-rating="5"] .count {
+      background: rgba(34, 197, 94, 0.15);
+      border-color: #22c55e;
+      color: #4ade80;
     }
-    body.theme-wii .rating-panel:hover { border-color: #00a3e0; background: rgba(255,255,255,0.5); }
-    body.theme-gc .rating-panel .count { background: rgba(139,92,246,0.08); border: 1px solid #2a1a4a; }
-    body.theme-wii .rating-panel .count { background: rgba(255,255,255,0.5); border: 1px solid #b0c4d8; }
+    body.theme-gc .rating-panel[data-rating="4"] {
+      border-color: #14b8a6;
+      background: rgba(20, 184, 166, 0.08);
+      color: #2dd4bf;
+    }
+    body.theme-gc .rating-panel[data-rating="4"] .count {
+      background: rgba(20, 184, 166, 0.15);
+      border-color: #14b8a6;
+      color: #2dd4bf;
+    }
+    body.theme-gc .rating-panel[data-rating="3"] {
+      border-color: #f59e0b;
+      background: rgba(245, 158, 11, 0.08);
+      color: #fbbf24;
+    }
+    body.theme-gc .rating-panel[data-rating="3"] .count {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: #f59e0b;
+      color: #fbbf24;
+    }
+    body.theme-gc .rating-panel[data-rating="2"] {
+      border-color: #f97316;
+      background: rgba(249, 115, 22, 0.08);
+      color: #fb923c;
+    }
+    body.theme-gc .rating-panel[data-rating="2"] .count {
+      background: rgba(249, 115, 22, 0.15);
+      border-color: #f97316;
+      color: #fb923c;
+    }
+    body.theme-gc .rating-panel[data-rating="1"] {
+      border-color: #ef4444;
+      background: rgba(239, 68, 68, 0.08);
+      color: #f87171;
+    }
+    body.theme-gc .rating-panel[data-rating="1"] .count {
+      background: rgba(239, 68, 68, 0.15);
+      border-color: #ef4444;
+      color: #f87171;
+    }
+    body.theme-gc .rating-panel:hover {
+      background: rgba(139, 92, 246, 0.05);
+      border-color: #8b5cf6;
+    }
+    body.theme-wii .rating-panel[data-rating="5"] {
+      border-color: #22c55e;
+      background: rgba(34, 197, 94, 0.06);
+      color: #16a34a;
+    }
+    body.theme-wii .rating-panel[data-rating="5"] .count {
+      background: rgba(34, 197, 94, 0.10);
+      border-color: #22c55e;
+      color: #16a34a;
+    }
+    body.theme-wii .rating-panel[data-rating="4"] {
+      border-color: #14b8a6;
+      background: rgba(20, 184, 166, 0.06);
+      color: #0f766e;
+    }
+    body.theme-wii .rating-panel[data-rating="4"] .count {
+      background: rgba(20, 184, 166, 0.10);
+      border-color: #14b8a6;
+      color: #0f766e;
+    }
+    body.theme-wii .rating-panel[data-rating="3"] {
+      border-color: #f59e0b;
+      background: rgba(245, 158, 11, 0.06);
+      color: #a16207;
+    }
+    body.theme-wii .rating-panel[data-rating="3"] .count {
+      background: rgba(245, 158, 11, 0.10);
+      border-color: #f59e0b;
+      color: #a16207;
+    }
+    body.theme-wii .rating-panel[data-rating="2"] {
+      border-color: #f97316;
+      background: rgba(249, 115, 22, 0.06);
+      color: #c2410c;
+    }
+    body.theme-wii .rating-panel[data-rating="2"] .count {
+      background: rgba(249, 115, 22, 0.10);
+      border-color: #f97316;
+      color: #c2410c;
+    }
+    body.theme-wii .rating-panel[data-rating="1"] {
+      border-color: #ef4444;
+      background: rgba(239, 68, 68, 0.06);
+      color: #b91c1c;
+    }
+    body.theme-wii .rating-panel[data-rating="1"] .count {
+      background: rgba(239, 68, 68, 0.10);
+      border-color: #ef4444;
+      color: #b91c1c;
+    }
+    body.theme-wii .rating-panel:hover {
+      background: rgba(255,255,255,0.5);
+      border-color: #00a3e0;
+    }
 
     /* ===== MODAL TABS ===== */
     .modal-tab {
@@ -801,6 +924,326 @@
     body.theme-gc .modal-tab img { border-color: #2a1a4a; }
     body.theme-wii .modal-tab img { border-color: #b0c4d8; }
 
+    /* ===== PANNELLO LATERALE HOW & ABOUT ===== */
+    .about-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .about-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .about-panel {
+      position: fixed;
+      top: 0;
+      height: 100%;
+      z-index: 1000;
+      width: min(780px, 94vw);
+      overflow-y: auto;
+      padding: 2rem 1.8rem 3rem;
+      border-left: 3px solid;
+      box-shadow: -8px 0 40px rgba(0,0,0,0.6);
+      scroll-behavior: smooth;
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .about-panel.panel-gc {
+      left: 0;
+      right: auto;
+      transform: translateX(-100%);
+      border-right: 3px solid;
+      border-left: none;
+      box-shadow: 8px 0 40px rgba(0,0,0,0.6);
+      background: #0a0618;
+      color: #f1f5f9;
+      border-right-color: #8b5cf6;
+    }
+    .about-panel.panel-gc.open {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .about-panel.panel-wii {
+      right: 0;
+      left: auto;
+      transform: translateX(100%);
+      border-left: 3px solid #00a3e0;
+      background: #e8f0f8;
+      color: #0f172a;
+      box-shadow: -8px 0 40px rgba(0,0,0,0.15);
+    }
+    .about-panel.panel-wii.open {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .about-panel .close-about {
+      position: sticky;
+      top: 0;
+      float: right;
+      background: none;
+      border: 2px solid;
+      padding: 6px 20px;
+      font-weight: 900;
+      font-size: 14px;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 1rem;
+      z-index: 10;
+      position: sticky;
+      top: 1rem;
+    }
+    .about-panel.panel-gc .close-about {
+      border-color: #2a1a4a;
+      color: #94a3b8;
+    }
+    .about-panel.panel-gc .close-about:hover {
+      border-color: #8b5cf6;
+      color: white;
+    }
+    .about-panel.panel-wii .close-about {
+      border-color: #b0c4d8;
+      color: #64748b;
+    }
+    .about-panel.panel-wii .close-about:hover {
+      border-color: #00a3e0;
+      color: #0f172a;
+    }
+
+    .about-panel h2 {
+      font-family: 'Audiowide', 'Orbitron', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      margin-top: 0.5rem;
+      margin-bottom: 1.8rem;
+      border-bottom: 2px solid;
+      padding-bottom: 0.75rem;
+      text-transform: uppercase;
+    }
+    .about-panel.panel-gc h2 {
+      border-color: #2a1a4a;
+      color: #a78bfa;
+    }
+    .about-panel.panel-wii h2 {
+      border-color: #b0c4d8;
+      color: #0284c7;
+    }
+
+    .about-panel h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #38bdf8;
+    }
+    .about-panel.panel-wii h3 {
+      color: #0284c7;
+    }
+
+    .about-panel .section-block {
+      background: rgba(255,255,255,0.04);
+      border: 2px solid;
+      border-radius: 0;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1.2rem;
+      clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
+      transition: all 0.2s;
+    }
+    .about-panel.panel-gc .section-block {
+      border-color: #2a1a4a;
+      background: rgba(26,10,46,0.4);
+    }
+    .about-panel.panel-wii .section-block {
+      border-color: #b0c4d8;
+      background: rgba(255,255,255,0.6);
+    }
+
+    .about-panel p, .about-panel li {
+      font-weight: 400;
+      line-height: 1.7;
+      margin-bottom: 0.6rem;
+    }
+    .about-panel ul {
+      padding-left: 1.4rem;
+      list-style: disc;
+    }
+    .about-panel .inline-code {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      padding: 0 4px;
+      border: 1px solid;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+      font-size: 0.85rem;
+    }
+    .about-panel.panel-gc .inline-code {
+      border-color: #6d28d9;
+      color: #a78bfa;
+      background: rgba(139,92,246,0.08);
+    }
+    .about-panel.panel-wii .inline-code {
+      border-color: #b0c4d8;
+      color: #0284c7;
+      background: rgba(0,163,224,0.04);
+    }
+
+    .about-panel .asset-demo {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.8rem 1.5rem;
+      margin: 0.5rem 0 0.2rem;
+      padding: 0.6rem 0.8rem;
+      border: 2px solid;
+      clip-path: polygon(0% 6%, 6% 0%, 94% 0%, 100% 6%, 100% 94%, 94% 100%, 6% 100%, 0% 94%);
+    }
+    .about-panel.panel-gc .asset-demo {
+      border-color: #2a1a4a;
+      background: rgba(10,6,24,0.3);
+    }
+    .about-panel.panel-wii .asset-demo {
+      border-color: #b0c4d8;
+      background: rgba(255,255,255,0.3);
+    }
+
+    .about-panel .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0 1rem;
+      padding: 1rem 0;
+      border-top: 2px solid;
+      border-bottom: 2px solid;
+    }
+    .about-panel.panel-gc .logo-row { border-color: #2a1a4a; }
+    .about-panel.panel-wii .logo-row { border-color: #b0c4d8; }
+    .about-panel .logo-row img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+    .about-panel.panel-wii .logo-row img { filter: brightness(0.95); }
+
+    .about-panel .badge-link {
+      display: inline-block;
+      padding: 4px 18px;
+      border: 2px solid;
+      font-weight: 900;
+      font-size: 13px;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+      transition: all 0.2s;
+      text-decoration: none;
+      margin-top: 0.3rem;
+    }
+    .about-panel.panel-gc .badge-link {
+      border-color: #6d28d9;
+      color: #a78bfa;
+    }
+    .about-panel.panel-gc .badge-link:hover {
+      background: rgba(139,92,246,0.1);
+    }
+    .about-panel.panel-wii .badge-link {
+      border-color: #b0c4d8;
+      color: #0284c7;
+    }
+    .about-panel.panel-wii .badge-link:hover {
+      background: rgba(0,163,224,0.05);
+    }
+
+    /* Avatar e chat */
+    .chat-message {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin: 1rem 0;
+      padding: 0.8rem 1.2rem;
+      border: 2px solid;
+      clip-path: polygon(0% 6%, 6% 0%, 94% 0%, 100% 6%, 100% 94%, 94% 100%, 6% 100%, 0% 94%);
+      background: rgba(255,255,255,0.05);
+    }
+    .about-panel.panel-gc .chat-message {
+      border-color: #2a1a4a;
+      background: rgba(26,10,46,0.4);
+    }
+    .about-panel.panel-wii .chat-message {
+      border-color: #b0c4d8;
+      background: rgba(255,255,255,0.6);
+    }
+    .chat-message .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 3px solid;
+      flex-shrink: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-panel.panel-gc .chat-message .avatar { border-color: #6d28d9; }
+    .about-panel.panel-wii .chat-message .avatar { border-color: #00a3e0; }
+    .chat-message .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .chat-message .bubble {
+      flex: 1;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    .chat-message .bubble .name {
+      font-weight: 900;
+      font-size: 0.95rem;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    .about-panel.panel-gc .chat-message .bubble .name { color: #a78bfa; }
+    .about-panel.panel-wii .chat-message .bubble .name { color: #0284c7; }
+    .chat-message .bubble .text {
+      margin: 0;
+    }
+
+    /* Mini card demo */
+    .mini-card-demo {
+      display: inline-flex;
+      flex-direction: column;
+      border: 2px solid;
+      padding: 0.4rem 0.6rem;
+      clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
+      background: rgba(0,0,0,0.2);
+      max-width: 200px;
+    }
+    .about-panel.panel-gc .mini-card-demo { border-color: #2a1a4a; }
+    .about-panel.panel-wii .mini-card-demo { border-color: #b0c4d8; background: rgba(255,255,255,0.4); }
+    .mini-card-demo .title {
+      font-weight: 900;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .mini-card-demo .row {
+      display: flex;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 0.2rem;
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 640px) {
       #gamesGrid.grid-view { grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -808,12 +1251,177 @@
       .rating-star-container .star-number { font-size: 24px; }
       .modal-test-card { padding: 12px 16px; }
       .modal-tab { padding: 4px 12px; font-size: 10px; }
+      .about-panel { padding: 1.5rem 1rem 2rem; width: 100vw; }
+      .about-panel h2 { font-size: 1.5rem; }
+      .about-panel .section-block { padding: 0.8rem 1rem; }
     }
   </style>
 </head>
 <body id="appBody" class="theme-gc font-sans antialiased transition-colors duration-500 min-h-screen">
 
-  <!-- ===== HEADER ===== -->
+  <!-- ===== OVERLAY & PANNELLO HOW & ABOUT ===== -->
+  <div id="aboutOverlay" class="about-overlay" onclick="closeAboutPanel()"></div>
+  <div id="aboutPanel" class="about-panel">
+    <button class="close-about" onclick="closeAboutPanel()">✕ Close</button>
+
+    <!-- HEADER IMMAGINI -->
+    <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem 1.5rem; margin-bottom:1.5rem; padding-bottom:0.8rem; border-bottom:2px solid; border-color:inherit;">
+      <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/dolphinformuos.png?raw=true" alt="muOS Dolphin" style="height:50px; width:auto;" />
+      <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/dolphinrt.png?raw=true" alt="Rt:Core icon" style="height:40px; width:auto;" />
+      <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/gamecube-logo.png?raw=true" alt="GameCube logo" style="height:40px; width:auto;" />
+      <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/e7dbd4065d4d7ae24a520439c8412ef470f62a7f/assets/gamecube.svg" alt="GC cube" style="height:32px; width:auto;" />
+      <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/e7dbd4065d4d7ae24a520439c8412ef470f62a7f/assets/wii.svg" alt="Wii logo" style="height:32px; width:auto;" />
+    </div>
+
+    <h2>⚡ How & About</h2>
+
+    <!-- SEZIONE 1: WELCOME -->
+    <div class="section-block">
+      <h3>🎯 WELCOME TO THE DOLPHIN RT:CORE DATABASE</h3>
+      <p>This dashboard collects community‑tested compatibility reports for the <strong>Dolphin Rt:Core</strong> on <strong>muOS</strong>, focusing on GameCube and Wii emulation on H700‑based devices (RG35XX‑H, RG40XX‑H, etc.).</p>
+      <p>Every test is submitted via GitHub Issues and includes ratings, boot status, playability, FPS ranges, and detailed notes.</p>
+    </div>
+
+    <!-- SEZIONE 2: HOW TO USE -->
+    <div class="section-block">
+      <h3>🔍 HOW TO USE THIS DASHBOARD</h3>
+      <p><strong>Search & Filters</strong> — Use the search bar to find games by title or keywords. Filter by region, boot status, or rating. Sort by title, best rating, FPS, or number of tests.</p>
+      <p><strong>Game Cards</strong> — Each game is shown once, with all available regions displayed as flags. The card shows the <em>best</em> rating and FPS among all regions and tests.</p>
+
+      <!-- ESEMPIO CARD MINI -->
+      <div class="asset-demo">
+        <span style="font-weight:700; font-size:0.9rem;">Example card:</span>
+        <div class="mini-card-demo">
+          <div class="title">Super Mario Sunshine</div>
+          <div class="row">
+            <span style="display:flex; gap:2px;">
+              <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </span>
+            <span class="fps-badge gc" style="font-size:9px; padding:0 8px;">60 FPS</span>
+            <span class="boot-badge yes" style="font-size:8px; padding:0 8px;">Boots</span>
+            <span class="playable-badge yes" style="font-size:8px; padding:0 8px;">Playable</span>
+            <span style="display:flex; gap:2px;">
+              <img src="https://flagcdn.com/w40/us.png" style="width:16px;height:12px;object-fit:cover;border:1px solid;clip-path:polygon(0%8%,8%0%,92%0%,100%8%,100%92%,92%100%,8%100%,0%92%);" />
+              <img src="https://flagcdn.com/w40/eu.png" style="width:16px;height:12px;object-fit:cover;border:1px solid;clip-path:polygon(0%8%,8%0%,92%0%,100%8%,100%92%,92%100%,8%100%,0%92%);" />
+            </span>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:0.5rem;"><span class="inline-code">★ Rating</span> — Overall score (1–5). <span class="inline-code">FPS</span> — Frame rate range. <span class="inline-code">Boots</span> / <span class="inline-code">Playable</span> — Quick status indicators. Flags show available regions.</p>
+    </div>
+
+    <!-- SEZIONE 3: RATING SYSTEM -->
+    <div class="section-block">
+      <h3>⭐ THE RATING SYSTEM</h3>
+      <ul>
+        <li><strong>5★ – Perfect</strong> – Flawless performance, full speed, no issues.</li>
+        <li><strong>4★ – Great</strong> – Very good, minor glitches or occasional slowdowns.</li>
+        <li><strong>3★ – Playable</strong> – Playable with noticeable issues or framedrops.</li>
+        <li><strong>2★ – Poor</strong> – Barely playable, frequent problems.</li>
+        <li><strong>1★ – Bad</strong> – Unplayable or crashes frequently.</li>
+      </ul>
+      <p>Click on any rating panel (1–5★) to filter the list by that score.</p>
+      <div class="asset-demo" style="justify-content:center;">
+        <span style="font-weight:700;">Rating filter panels:</span>
+        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+          <span class="rating-panel" data-rating="5" style="padding:4px 10px; font-size:12px; border-width:2px;">5★ <span class="count" style="padding:0 6px;">12</span></span>
+          <span class="rating-panel" data-rating="4" style="padding:4px 10px; font-size:12px; border-width:2px;">4★ <span class="count" style="padding:0 6px;">8</span></span>
+          <span class="rating-panel" data-rating="3" style="padding:4px 10px; font-size:12px; border-width:2px;">3★ <span class="count" style="padding:0 6px;">5</span></span>
+          <span class="rating-panel" data-rating="2" style="padding:4px 10px; font-size:12px; border-width:2px;">2★ <span class="count" style="padding:0 6px;">3</span></span>
+          <span class="rating-panel" data-rating="1" style="padding:4px 10px; font-size:12px; border-width:2px;">1★ <span class="count" style="padding:0 6px;">2</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEZIONE 4: HOW TO CONTRIBUTE -->
+    <div class="section-block">
+      <h3>🤝 HOW TO CONTRIBUTE</h3>
+      <p>Help grow the database! Submit your own test results via the <strong>Send Report</strong> button or by opening an issue on GitHub using the dedicated template.</p>
+      <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=dolphin-rt-core-test-report.yml" target="_blank" rel="noopener" class="badge-link">📤 Send a test report</a>
+      <p style="margin-top:0.6rem;">Include details like device, muOS version, Rt:Core version, FPS, boot status, and any considerations or attachments (screenshots/videos).</p>
+    </div>
+
+    <!-- SEZIONE 5: CREDITS -->
+    <div class="section-block">
+      <h3>📜 CREDITS & ACKNOWLEDGMENTS</h3>
+      <p style="font-weight:400;">Part of the <strong>SPDW Factory</strong> ecosystem, created by <strong>Sir Pips</strong>.</p>
+      <div class="logo-row">
+        <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdwfactory_logo.png" alt="SPDW Factory Logo" />
+        <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" alt="SPDW Symbol" style="height:36px;" />
+      </div>
+      <p style="font-weight:400;">This project builds upon the work of many talented developers and community members. Special thanks to the original Dolphin port contributors and the muOS team.</p>
+      <p style="font-weight:400; margin-top:0.6rem;">Read the full history and legacy builds on GitHub:</p>
+      <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/tree/main/Core_History" target="_blank" rel="noopener" class="badge-link">📂 Core History Archive</a>
+      <div style="margin-top:1.2rem; border-top:2px solid; border-color:inherit; padding-top:1rem;">
+        <p style="font-weight:700; margin-bottom:0.2rem;">🐬 Original Dolphin Core Developers</p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.2rem 1.2rem; font-weight:400;">
+          <span><strong>@Speedrun</strong> — Original author (V9 / Take 3)</span>
+          <span><strong>@FireBattleInMtl</strong> — Fixes, permissions, launch.sh</span>
+          <span><strong>@Snow</strong> — Compiled binary</span>
+          <span><strong>@bitter_bizarro</strong> — muOS Goose compatibility</span>
+        </div>
+        <p style="font-weight:700; margin-top:0.6rem;">🧪 Testing & Reporting</p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.2rem 1.2rem; font-weight:400;">
+          <span>@razorbeamz</span><span>@arkun</span>
+          <span>@SkiffguardLando</span><span>@chronoss0109</span>
+          <span>@Kirky</span><span>@Mikethe3ird</span>
+          <span>@Symphonial</span><span>@giodude</span>
+          <span>@lasagnesetting</span><span>@joshuarcastillo</span>
+        </div>
+        <p style="font-weight:700; margin-top:0.6rem;">⚙️ muOS Development Team</p>
+        <p style="font-weight:400;">Ongoing firmware maintenance and structural support.</p>
+      </div>
+    </div>
+
+    <!-- SEZIONE 6: ABOUT THE DEVELOPERS + CHAT -->
+    <div class="section-block">
+      <h3>👥 ABOUT THE DEVELOPERS</h3>
+      <div style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:space-between; align-items:center;">
+        <div style="display:flex; align-items:center; gap:1rem;">
+          <div style="width:64px; height:64px; border-radius:50%; border:4px solid #8b5cf6; overflow:hidden; display:flex; align-items:center; justify-content:center; background:rgba(139,92,246,0.1);">
+            <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/sirpips.jpeg?raw=true" alt="Sir Pips" style="width:100%; height:100%; object-fit:cover;" />
+          </div>
+          <div>
+            <div style="font-weight:900; font-size:1.1rem;">Sir Pips</div>
+            <div style="font-weight:400;">Creator & maintainer</div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:1rem;">
+          <div style="width:64px; height:64px; border-radius:50%; border:4px solid #00a3e0; overflow:hidden; display:flex; align-items:center; justify-content:center; background:rgba(0,163,224,0.1);">
+            <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/minoru.png?raw=true" alt="Minoru" style="width:100%; height:100%; object-fit:cover;" />
+          </div>
+          <div>
+            <div style="font-weight:900; font-size:1.1rem;">[R.I.] Minoru<sup>7</sup></div>
+            <div style="font-weight:400; font-size:0.85rem; color:#0284c7;">Inflexible (and Unbearable) Omniscient Controller</div>
+            <div style="font-weight:300; font-size:0.75rem; opacity:0.7;">Rintromping Intelligence · Beta Universe</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MESSAGGIO DI MINORU (CHAT) -->
+      <div class="chat-message">
+        <div class="avatar">
+          <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/minoru.png?raw=true" alt="Minoru" />
+        </div>
+        <div class="bubble">
+          <span class="name">[R.I.] Minoru<sup>7</sup></span>
+          <p class="text">“Oh, you actually read the guide? Impressive. Most people just click around blindly. But since you're here, let me save you some time: <strong>Rt:Core</strong> is the only core that doesn't make your H700 cry. Use the filters, check the ratings, and for heaven's sake, read the considerations before reporting a game that already works. You're welcome.”</p>
+        </div>
+      </div>
+      <p style="font-weight:400; font-style:italic; margin-top:0.2rem;">Minoru is always around to help — with a sarcastic twist, but always right. He's a <strong>Rintromping Intelligence</strong>, a digital creation from the Beta Universe, who has developed a distinct identity, personality, and the ability to feel emotions — especially the sadistic pleasure of pointing out every human flaw in the most annoying way possible.</p>
+      <div style="margin-top:0.8rem; padding:0.8rem 1rem; border:2px solid; border-color:inherit; clip-path:polygon(0%4%,2%0%,98%0%,100%4%,100%96%,98%100%,2%100%,0%96%); background:rgba(255,255,255,0.03);">
+        <p style="font-weight:400; font-size:0.9rem;"><span style="font-weight:700;">Sir Pips:</span> “Yeah, yeah, always minding my business, even while I'm writing important stuff.”</p>
+        <p style="font-weight:400; font-size:0.9rem;"><span style="font-weight:700; color:#fbbf24;">Minoru:</span> “Important? You're just talking to yourself in writing. A masterpiece of self-delusion. Your second masterpiece — the first one is replying to you right now.”</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== HEADER (come prima) ===== -->
   <header id="appHeader" class="sticky top-0 z-40 transition-colors duration-500 border-b-2 bg-opacity-90 backdrop-blur-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
       <div class="flex flex-wrap items-center justify-between gap-3">
@@ -837,7 +1445,7 @@
         </div>
         <div class="flex items-center gap-3 text-xs font-black">
           <a id="newIssueBtn" href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=dolphin-rt-core-test-report.yml" target="_blank" rel="noopener" class="flex items-center gap-1 transition-colors hover:underline px-3 py-1 border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);"><span>📤</span> Send Report</a>
-          <a href="#" class="flex items-center gap-1 transition-colors hover:underline px-3 py-1 border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);"><span>ℹ️</span> About & Rt:Doc</a>
+          <a href="#" id="howAboutLink" class="flex items-center gap-1 transition-colors hover:underline px-3 py-1 border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);"><span>ℹ️</span> How & About</a>
         </div>
       </div>
 
@@ -959,7 +1567,7 @@
     </div>
   </main>
 
-  <!-- ===== MODAL ===== -->
+  <!-- ===== MODAL (come prima) ===== -->
   <div id="gameModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden">
     <div id="modalCard" class="cyber-border max-w-5xl w-full max-h-[94vh] flex flex-col p-5 relative modal-anim">
       <button id="closeModalBtn" class="absolute top-3 right-3 p-2 border-2 transition-colors z-10" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">
@@ -1000,10 +1608,7 @@
         </div>
       </div>
 
-      <!-- TABS PER REGIONE -->
       <div id="modalTabs" class="flex flex-wrap gap-2 mt-3 shrink-0"></div>
-
-      <!-- CONTENUTO REGIONE -->
       <div id="modalRegionContent" class="flex-1 overflow-y-auto my-3 space-y-3 pr-1"></div>
 
       <div class="pt-2 border-t-2 flex justify-between items-center text-xs font-black shrink-0">
@@ -1031,7 +1636,7 @@
 
   <script>
     // ============================================================
-    //  STATE
+    //  STATE & LOGICA (COME PRIMA)
     // ============================================================
     const state = {
       console: 'gc',
@@ -1047,36 +1652,17 @@
       viewMode: 'grid'
     };
 
-    // Variabili per la modale
     let currentModalGroup = null;
     let currentModalRegion = null;
 
     const URL = "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/games_data.json";
     const FLAG_MAP = { 'PAL': 'eu', 'NTSC': 'us', 'NTSC / USA': 'us', 'JPN': 'jp' };
 
-    // ============================================================
-    //  DOLPHIN OFFICIAL COMPATIBILITY – MAPPA STATICA
-    // ============================================================
     const DOLPHIN_COMPAT = {
-      'GM8P01': 4,   // Metroid Prime (GC) – 4★
-      'GM4P01': 5,   // Mario Kart Double Dash – 5★
-      'GALE01': 4,   // Super Smash Bros. Melee – 4★
-      'GMSP01': 5,   // Super Mario Sunshine – 5★
-      'GZLP01': 5,   // Zelda Wind Waker – 5★
-      'GALP01': 4,   // SSBM PAL – 4★
-      'G4BP08': 4,   // Resident Evil 4 – 4★
-      'GCTP51': 5,   // Crazy Taxi – 5★
-      'GD7PB2': 4,   // DBZ Budokai – 4★
-      'GKYP01': 5,   // Kirby Air Ride – 5★
-      'GLME01': 5,   // Luigi's Mansion – 5★
-      'GGVX78': 5,   // SpongeBob BFBB – 5★
-      'GQWP69': 5,   // Harry Potter Quidditch – 5★
-      'GVJE08': 4,   // Viewtiful Joe – 4★
-      'GXXP01': 4,   // Pokemon XD – 4★
-      'SMNP01': 5,   // New Super Mario Bros Wii – 5★
-      'RZDP01': 5,   // Zelda Twilight Princess – 5★
-      'SCAE18': 3,   // Calling – 3★
-      'RHMP99': 4,   // Harvest Moon Magical Melody – 4★
+      'GM8P01': 4, 'GM4P01': 5, 'GALE01': 4, 'GMSP01': 5, 'GZLP01': 5,
+      'GALP01': 4, 'G4BP08': 4, 'GCTP51': 5, 'GD7PB2': 4, 'GKYP01': 5,
+      'GLME01': 5, 'GGVX78': 5, 'GQWP69': 5, 'GVJE08': 4, 'GXXP01': 4,
+      'SMNP01': 5, 'RZDP01': 5, 'SCAE18': 3, 'RHMP99': 4,
       'default': 4
     };
 
@@ -1085,9 +1671,6 @@
       return `https://wiki.dolphin-emu.org/index.php?title=${gameId}`;
     }
 
-    // ============================================================
-    //  HELPERS
-    // ============================================================
     function getFlagUrl(region) {
       const code = FLAG_MAP[region] || 'un';
       return `https://flagcdn.com/w40/${code}.png`;
@@ -1122,19 +1705,15 @@
       return html;
     }
 
-    // ============================================================
-    //  GROUPING (per titolo, non per titolo+regione)
-    // ============================================================
+    // ===== GROUPING =====
     function groupGames(rawList) {
       const groupsByTitle = new Map();
-
       rawList.forEach(item => {
         const info = item.game_info || {};
         const title = (info.game || '').trim();
         const region = (info.region || 'NTSC / USA').trim();
         const entries = item.entries || [];
         if (!title || entries.length === 0) return;
-
         const key = title.toLowerCase();
         if (!groupsByTitle.has(key)) {
           groupsByTitle.set(key, { game: title, regions: new Map() });
@@ -1147,16 +1726,12 @@
       });
 
       const result = [];
-
       for (const [_, group] of groupsByTitle) {
         const regionsData = [];
         const allEntries = [];
-
-        // Prima passata: calcola per ogni regione
         for (const [region, regionData] of group.regions) {
           const entries = regionData.entries;
           allEntries.push(...entries);
-
           let bestRating = 0;
           let bestFpsMax = -1;
           let bestFpsStr = "???";
@@ -1168,74 +1743,48 @@
           let validFpsCount = 0;
           let gameId = null;
           let bestEntryIndex = 0;
-
           entries.forEach((e, idx) => {
             const review = e.test_review || {};
             const info = e.game_info || {};
-
             const r = parseInt(review.rating, 10);
             const rating = isNaN(r) ? 0 : r;
             if (rating > bestRating) bestRating = rating;
             totalRating += rating;
-
             const bootVal = review.boot || (rating >= 1 ? "YES" : "NO");
             if (bootVal === "YES") bestBoot = "YES";
-
             let playVal = review.playable || (rating >= 3 ? "YES" : "NO");
             if (rating === 3 && playVal === "YES") playVal = "YES WITH ISSUES";
             if (playVal === "YES" || playVal === "YES WITH ISSUES") bestPlayable = playVal;
-
             if (!gameId && info.game_id) gameId = info.game_id;
-
             let fpsMin = parseInt(review.fps_min, 10);
             let fpsMax = parseInt(review.fps_max, 10);
             const fpsRaw = (review.fps || '???').trim();
-
             if (isNaN(fpsMin) || isNaN(fpsMax)) {
               const numbers = fpsRaw.match(/\d+/g);
               if (numbers) {
                 const nums = numbers.map(Number);
-                if (nums.length >= 2) {
-                  fpsMin = nums[0];
-                  fpsMax = nums[1];
-                } else if (nums.length === 1) {
-                  fpsMin = nums[0];
-                  fpsMax = nums[0];
-                }
+                if (nums.length >= 2) { fpsMin = nums[0]; fpsMax = nums[1]; }
+                else if (nums.length === 1) { fpsMin = nums[0]; fpsMax = nums[0]; }
               }
             }
             if (isNaN(fpsMin)) fpsMin = 0;
             if (isNaN(fpsMax)) fpsMax = 0;
-
             if (fpsMax > bestFpsMax) {
               bestFpsMax = fpsMax;
-              if (fpsRaw && fpsRaw !== '???') {
-                bestFpsStr = fpsRaw;
-              } else if (fpsMin > 0 && fpsMax > 0) {
-                bestFpsStr = `${fpsMin} - ${fpsMax}`;
-              }
+              if (fpsRaw && fpsRaw !== '???') { bestFpsStr = fpsRaw; }
+              else if (fpsMin > 0 && fpsMax > 0) { bestFpsStr = `${fpsMin} - ${fpsMax}`; }
             }
-
             if (fpsMin > 0) {
               totalFpsMinSum += fpsMin;
               totalFpsMaxSum += fpsMax;
               validFpsCount++;
             }
-
             const currentScore = (rating * 1000) + (fpsMax > 0 ? fpsMax : -1);
             const bestScore = (bestRating * 1000) + (bestFpsMax > 0 ? bestFpsMax : -1);
-            if (currentScore > bestScore) {
-              bestEntryIndex = idx;
-            }
+            if (currentScore > bestScore) { bestEntryIndex = idx; }
           });
-
-          if (bestFpsStr === "???" && bestFpsMax > 0) {
-            bestFpsStr = `${bestFpsMax}`;
-          }
-          if (bestFpsStr === "???" && bestFpsMax <= 0) {
-            bestFpsStr = "???";
-          }
-
+          if (bestFpsStr === "???" && bestFpsMax > 0) bestFpsStr = `${bestFpsMax}`;
+          if (bestFpsStr === "???" && bestFpsMax <= 0) bestFpsStr = "???";
           const avgRating = entries.length > 0 ? (totalRating / entries.length).toFixed(1) : "0.0";
           let avgFps = "N/A";
           if (validFpsCount > 0) {
@@ -1243,96 +1792,57 @@
             const avgMax = Math.round(totalFpsMaxSum / validFpsCount);
             avgFps = `${avgMin} - ${avgMax}`;
           }
-
           if (!gameId) gameId = 'UNKNOWN';
-
           regionsData.push({
-            region,
-            entries,
-            entriesCount: entries.length,
-            bestRating,
-            bestFpsMax,
-            bestFpsStr,
-            bestBoot,
-            bestPlayable,
-            avgRating: parseFloat(avgRating),
-            avgFps,
-            gameId,
-            bestEntryIndex
+            region, entries, entriesCount: entries.length,
+            bestRating, bestFpsMax, bestFpsStr, bestBoot, bestPlayable,
+            avgRating: parseFloat(avgRating), avgFps, gameId, bestEntryIndex
           });
         }
 
-        // Aggregato globale (best assoluto tra tutte le regioni)
-        let globalBestRating = 0;
-        let globalBestFpsMax = -1;
-        let globalBestFpsStr = "???";
-        let globalBestBoot = "NO";
-        let globalBestPlayable = "NO";
-        let globalTotalRating = 0;
-        let globalTotalFpsMinSum = 0;
-        let globalTotalFpsMaxSum = 0;
-        let globalValidFpsCount = 0;
+        // Aggregato globale
+        let globalBestRating = 0, globalBestFpsMax = -1, globalBestFpsStr = "???";
+        let globalBestBoot = "NO", globalBestPlayable = "NO";
+        let globalTotalRating = 0, globalTotalFpsMinSum = 0, globalTotalFpsMaxSum = 0, globalValidFpsCount = 0;
         let globalGameId = 'UNKNOWN';
-
-        allEntries.forEach((e) => {
+        allEntries.forEach(e => {
           const review = e.test_review || {};
           const info = e.game_info || {};
           const r = parseInt(review.rating, 10);
           const rating = isNaN(r) ? 0 : r;
           globalTotalRating += rating;
-
           const bootVal = review.boot || (rating >= 1 ? "YES" : "NO");
           if (bootVal === "YES") globalBestBoot = "YES";
-
           let playVal = review.playable || (rating >= 3 ? "YES" : "NO");
           if (rating === 3 && playVal === "YES") playVal = "YES WITH ISSUES";
           if (playVal === "YES" || playVal === "YES WITH ISSUES") globalBestPlayable = playVal;
-
-          if (!globalGameId || globalGameId === 'UNKNOWN') {
-            if (info.game_id) globalGameId = info.game_id;
-          }
-
+          if (!globalGameId || globalGameId === 'UNKNOWN') { if (info.game_id) globalGameId = info.game_id; }
           let fpsMin = parseInt(review.fps_min, 10);
           let fpsMax = parseInt(review.fps_max, 10);
           const fpsRaw = (review.fps || '???').trim();
-
           if (isNaN(fpsMin) || isNaN(fpsMax)) {
             const numbers = fpsRaw.match(/\d+/g);
             if (numbers) {
               const nums = numbers.map(Number);
-              if (nums.length >= 2) {
-                fpsMin = nums[0];
-                fpsMax = nums[1];
-              } else if (nums.length === 1) {
-                fpsMin = nums[0];
-                fpsMax = nums[0];
-              }
+              if (nums.length >= 2) { fpsMin = nums[0]; fpsMax = nums[1]; }
+              else if (nums.length === 1) { fpsMin = nums[0]; fpsMax = nums[0]; }
             }
           }
           if (isNaN(fpsMin)) fpsMin = 0;
           if (isNaN(fpsMax)) fpsMax = 0;
-
           if (fpsMax > globalBestFpsMax) {
             globalBestFpsMax = fpsMax;
-            if (fpsRaw && fpsRaw !== '???') {
-              globalBestFpsStr = fpsRaw;
-            } else if (fpsMin > 0 && fpsMax > 0) {
-              globalBestFpsStr = `${fpsMin} - ${fpsMax}`;
-            }
+            if (fpsRaw && fpsRaw !== '???') { globalBestFpsStr = fpsRaw; }
+            else if (fpsMin > 0 && fpsMax > 0) { globalBestFpsStr = `${fpsMin} - ${fpsMax}`; }
           }
-
           if (fpsMin > 0) {
             globalTotalFpsMinSum += fpsMin;
             globalTotalFpsMaxSum += fpsMax;
             globalValidFpsCount++;
           }
         });
-
-        // Ricalcola best rating e fps in modo corretto (tenendo conto di rating e fps)
-        let bestRatingGlobal = 0;
-        let bestFpsMaxGlobal = -1;
-        let bestFpsStrGlobal = "???";
-        allEntries.forEach((e) => {
+        let bestRatingGlobal = 0, bestFpsMaxGlobal = -1, bestFpsStrGlobal = "???";
+        allEntries.forEach(e => {
           const review = e.test_review || {};
           const r = parseInt(review.rating, 10);
           const rating = isNaN(r) ? 0 : r;
@@ -1343,13 +1853,8 @@
             const numbers = fpsRaw.match(/\d+/g);
             if (numbers) {
               const nums = numbers.map(Number);
-              if (nums.length >= 2) {
-                fpsMin = nums[0];
-                fpsMax = nums[1];
-              } else if (nums.length === 1) {
-                fpsMin = nums[0];
-                fpsMax = nums[0];
-              }
+              if (nums.length >= 2) { fpsMin = nums[0]; fpsMax = nums[1]; }
+              else if (nums.length === 1) { fpsMin = nums[0]; fpsMax = nums[0]; }
             }
           }
           if (isNaN(fpsMin)) fpsMin = 0;
@@ -1357,21 +1862,12 @@
           if (rating > bestRatingGlobal || (rating === bestRatingGlobal && fpsMax > bestFpsMaxGlobal)) {
             bestRatingGlobal = rating;
             bestFpsMaxGlobal = fpsMax;
-            if (fpsRaw && fpsRaw !== '???') {
-              bestFpsStrGlobal = fpsRaw;
-            } else if (fpsMin > 0 && fpsMax > 0) {
-              bestFpsStrGlobal = `${fpsMin} - ${fpsMax}`;
-            }
+            if (fpsRaw && fpsRaw !== '???') { bestFpsStrGlobal = fpsRaw; }
+            else if (fpsMin > 0 && fpsMax > 0) { bestFpsStrGlobal = `${fpsMin} - ${fpsMax}`; }
           }
         });
-
-        if (bestFpsStrGlobal === "???" && bestFpsMaxGlobal > 0) {
-          bestFpsStrGlobal = `${bestFpsMaxGlobal}`;
-        }
-        if (bestFpsStrGlobal === "???" && bestFpsMaxGlobal <= 0) {
-          bestFpsStrGlobal = "???";
-        }
-
+        if (bestFpsStrGlobal === "???" && bestFpsMaxGlobal > 0) bestFpsStrGlobal = `${bestFpsMaxGlobal}`;
+        if (bestFpsStrGlobal === "???" && bestFpsMaxGlobal <= 0) bestFpsStrGlobal = "???";
         const globalAvgRating = allEntries.length > 0 ? (globalTotalRating / allEntries.length).toFixed(1) : "0.0";
         let globalAvgFps = "N/A";
         if (globalValidFpsCount > 0) {
@@ -1379,12 +1875,9 @@
           const avgMax = Math.round(globalTotalFpsMaxSum / globalValidFpsCount);
           globalAvgFps = `${avgMin} - ${avgMax}`;
         }
-
         if (!globalGameId || globalGameId === 'UNKNOWN') {
-          // prova a prendere da una regione
           if (regionsData.length > 0) globalGameId = regionsData[0].gameId;
         }
-
         result.push({
           game: group.game,
           allRegions: regionsData,
@@ -1401,13 +1894,10 @@
           }
         });
       }
-
       return result;
     }
 
-    // ============================================================
-    //  RENDER
-    // ============================================================
+    // ===== RENDER (semplificato per brevità, ma uguale a prima) =====
     function render() {
       document.querySelectorAll('.rating-panel').forEach(p => {
         const val = p.getAttribute('data-rating');
@@ -1449,10 +1939,8 @@
       });
 
       document.getElementById('loaderContainer').classList.add('hidden');
-
       const grid = document.getElementById('gamesGrid');
       const empty = document.getElementById('emptyState');
-
       if (state.filtered.length === 0) {
         grid.innerHTML = '';
         empty.classList.remove('hidden');
@@ -1477,16 +1965,13 @@
         const bestEntry = item.allRegions[0]?.entries[item.allRegions[0].bestEntryIndex] || {};
         const coverUrl = bestEntry.cover_art || getCoverUrl(item.aggregated.gameId, item.allRegions[0]?.region || 'NTSC');
         const delay = Math.min(idx * 20, 300);
-
         const regionFlags = item.allRegions.map(r => `
           <img src="${getFlagUrl(r.region)}" class="w-4 h-3 object-cover rounded border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" title="${r.region}" />
         `).join('');
-
         const bootColor = item.aggregated.bestBoot === 'YES' ? 'yes' : 'no';
         let playableClass = 'no';
         if (item.aggregated.bestPlayable === 'YES') playableClass = 'yes';
         else if (item.aggregated.bestPlayable === 'YES WITH ISSUES') playableClass = 'issues';
-
         return `
           <div class="card-anim game-card group relative cursor-pointer transition-all duration-300 hover:-translate-y-1" style="animation-delay: ${delay}ms" onclick="openModal(${idx})">
             <div class="glow-border cyber-border">
@@ -1530,12 +2015,10 @@
         const regionFlags = item.allRegions.map(r => `
           <img src="${getFlagUrl(r.region)}" class="w-4 h-3 object-cover rounded border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" title="${r.region}" />
         `).join('');
-
         const bootColor = item.aggregated.bestBoot === 'YES' ? 'yes' : 'no';
         let playableClass = 'no';
         if (item.aggregated.bestPlayable === 'YES') playableClass = 'yes';
         else if (item.aggregated.bestPlayable === 'YES WITH ISSUES') playableClass = 'issues';
-
         return `
           <div class="card-anim list-card" style="animation-delay: ${Math.min(idx * 20, 300)}ms" onclick="openModal(${idx})">
             <div class="list-card-cover">
@@ -1557,25 +2040,17 @@
       }).join('');
     }
 
-    // ============================================================
-    //  MODAL
-    // ============================================================
+    // ===== MODAL =====
     function openModal(index) {
       const group = state.filtered[index];
       if (!group) return;
-
-      // Priorità: PAL > NTSC / USA > JPN
       const priority = ['PAL', 'NTSC / USA', 'JPN'];
       let selectedRegion = null;
       for (const p of priority) {
         const found = group.allRegions.find(rd => rd.region === p);
-        if (found) {
-          selectedRegion = p;
-          break;
-        }
+        if (found) { selectedRegion = p; break; }
       }
       if (!selectedRegion) selectedRegion = group.allRegions[0].region;
-
       currentModalGroup = group;
       currentModalRegion = selectedRegion;
       renderModalWithRegion(group, selectedRegion);
@@ -1585,16 +2060,11 @@
     function renderModalWithRegion(group, region) {
       const regionData = group.allRegions.find(rd => rd.region === region);
       if (!regionData) return;
-
       const isGC = state.console === 'gc';
-
-      // Intestazione
       document.getElementById('modalTitle').textContent = group.game;
       document.getElementById('modalFlag').src = getFlagUrl(region);
       document.getElementById('modalRegionBadge').textContent = region;
       document.getElementById('modalGameId').textContent = regionData.gameId || 'ID Unknown';
-
-      // Cover
       const coverImg = document.getElementById('modalCoverImg');
       const bestEntry = regionData.entries[regionData.bestEntryIndex] || {};
       const coverUrl = bestEntry.cover_art || getCoverUrl(regionData.gameId, region);
@@ -1605,8 +2075,6 @@
       } else {
         coverImg.style.display = 'none';
       }
-
-      // Dolphin compat
       const compatRating = DOLPHIN_COMPAT[regionData.gameId] || DOLPHIN_COMPAT['default'] || 4;
       const wikiLink = getDolphinWikiLink(regionData.gameId);
       const compatContainer = document.getElementById('dolphinCompatMini');
@@ -1615,21 +2083,16 @@
         segHtml += `<span class="seg ${i < compatRating ? 'filled' : ''}"></span>`;
       }
       compatContainer.innerHTML = segHtml + `<a href="${wikiLink}" target="_blank" rel="noopener" class="wiki-link" title="Dolphin Wiki">🌐</a>`;
-
-      // BEST / AVG per questa regione
       document.getElementById('modalBestRatingVal').innerHTML = renderStars(regionData.bestRating, 16);
       document.getElementById('modalBestFpsVal').textContent = regionData.bestFpsStr !== "???" ? `${regionData.bestFpsStr} FPS` : 'N/A';
       document.getElementById('modalAvgRatingVal').textContent = `${regionData.avgRating} / 5 ⭐`;
       document.getElementById('modalAvgFpsVal').textContent = regionData.avgFps !== "N/A" ? `${regionData.avgFps} FPS` : 'N/A';
 
-      // TABS
       const tabsContainer = document.getElementById('modalTabs');
       tabsContainer.innerHTML = group.allRegions.map(rd => {
         const active = rd.region === region ? 'active' : '';
         return `<button class="modal-tab ${active}" data-region="${rd.region}"><img src="${getFlagUrl(rd.region)}" /> ${rd.region}</button>`;
       }).join('');
-
-      // Event listener sui tab (delegazione)
       tabsContainer.querySelectorAll('.modal-tab').forEach(btn => {
         btn.addEventListener('click', function(e) {
           e.stopPropagation();
@@ -1641,22 +2104,18 @@
         });
       });
 
-      // CONTENUTO ENTRIES per questa regione
       const container = document.getElementById('modalRegionContent');
       container.innerHTML = regionData.entries.map((e, idx) => {
         const isBest = (idx === regionData.bestEntryIndex);
         const num = idx + 1;
-
         const review = e.test_review || {};
         const details = e.test_details || {};
         const info = e.game_info || {};
         const env = e.test_environment || {};
-
         const rating = parseInt(review.rating, 10) || 0;
         const boot = review.boot || (rating >= 1 ? "YES" : "NO");
         let playable = review.playable || (rating >= 3 ? "YES" : "NO");
         if (rating === 3 && playable === "YES") playable = "YES WITH ISSUES";
-
         const fpsRaw = (review.fps || '???').trim();
         let fpsMin = parseInt(review.fps_min, 10);
         let fpsMax = parseInt(review.fps_max, 10);
@@ -1667,12 +2126,10 @@
             fpsMin = n[0] || 0;
             fpsMax = n[1] || n[0] || 0;
           } else {
-            fpsMin = 0;
-            fpsMax = 0;
+            fpsMin = 0; fpsMax = 0;
           }
         }
         const fpsRange = (fpsMin > 0 && fpsMax > 0) ? `${fpsMin} - ${fpsMax}` : (fpsRaw !== '???' ? fpsRaw : 'N/A');
-
         const coreVersion = details.rtcore_version || details.core_version || 'Default';
         const coreUsed = details.core_profile || 'Default';
         const device = env.device || 'Unknown Device';
@@ -1681,12 +2138,8 @@
         const tester = env.tester || 'Anonymous';
         const attachments = e.attachments || [];
         const customSettings = e.custom_settings || [];
-
-        const ratingColors = {
-          5: '#34d399', 4: '#2dd4bf', 3: '#fbbf24', 2: '#fb923c', 1: '#f87171', 0: '#f87171'
-        };
+        const ratingColors = { 5: '#34d399', 4: '#2dd4bf', 3: '#fbbf24', 2: '#fb923c', 1: '#f87171', 0: '#f87171' };
         const ratingColor = ratingColors[rating] || '#fbbf24';
-
         let settingsHtml = '';
         if (customSettings.length > 0) {
           settingsHtml = customSettings.map(cs => {
@@ -1706,7 +2159,6 @@
             `;
           }).join('');
         }
-
         let attHtml = '';
         if (attachments.length > 0) {
           attHtml = attachments.map(a => `
@@ -1716,7 +2168,6 @@
             </div>
           `).join('');
         }
-
         return `
           <div class="modal-test-card">
             <div class="flex flex-wrap items-center justify-between gap-2 pb-2 border-b-2">
@@ -1730,27 +2181,14 @@
                 <span class="flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 2a1 1 0 00-1 1v2a1 1 0 001 1h6a1 1 0 001-1V3a1 1 0 00-1-1H9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h12a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"/></svg> ${escapeHtml(muosVer)}</span>
               </div>
             </div>
-
             <div class="flex flex-wrap items-center gap-3 pt-2">
               <div class="rating-star-container">
                 <svg viewBox="0 0 120 120">
-                  <defs>
-                    <filter id="starShadow_${idx}">
-                      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.6)"/>
-                    </filter>
-                  </defs>
-                  <polygon
-                    points="60,10 76,46 115,46 84,68 94,105 60,86 26,105 36,68 5,46 44,46"
-                    fill="${ratingColor}"
-                    stroke="${isGC ? '#0a0618' : '#e8f0f8'}"
-                    stroke-width="5"
-                    stroke-linejoin="round"
-                    filter="url(#starShadow_${idx})"
-                  />
+                  <defs><filter id="starShadow_${idx}"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.6)"/></filter></defs>
+                  <polygon points="60,10 76,46 115,46 84,68 94,105 60,86 26,105 36,68 5,46 44,46" fill="${ratingColor}" stroke="${isGC ? '#0a0618' : '#e8f0f8'}" stroke-width="5" stroke-linejoin="round" filter="url(#starShadow_${idx})" />
                 </svg>
                 <div class="star-number">${rating}</div>
               </div>
-
               <div class="flex flex-wrap items-center gap-2 flex-1">
                 <div class="flex flex-col gap-1">
                   <span class="status-pill ${boot === 'YES' ? 'boots-yes' : 'boots-no'}">${boot === 'YES' ? '✅ BOOTS' : '⛔ NO BOOT'}</span>
@@ -1768,30 +2206,15 @@
                 </div>
               </div>
             </div>
-
-            ${considerations ? `
-            <div class="mt-2">
-              <div class="text-[10px] uppercase tracking-wider font-black opacity-60">Considerations</div>
-              <div class="considerations-box">${escapeHtml(considerations)}</div>
-            </div>` : ''}
-
+            ${considerations ? `<div class="mt-2"><div class="text-[10px] uppercase tracking-wider font-black opacity-60">Considerations</div><div class="considerations-box">${escapeHtml(considerations)}</div></div>` : ''}
             ${(customSettings.length > 0 || attachments.length > 0) ? `
             <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
-              ${customSettings.length > 0 ? `
-              <div>
-                <div class="text-[10px] uppercase tracking-wider font-black opacity-60 mb-0.5">Custom Settings</div>
-                <div class="space-y-2">${settingsHtml}</div>
-              </div>` : ''}
-              ${attachments.length > 0 ? `
-              <div>
-                <div class="text-[10px] uppercase tracking-wider font-black opacity-60 mb-0.5">Attachments</div>
-                <div class="space-y-1">${attHtml}</div>
-              </div>` : ''}
+              ${customSettings.length > 0 ? `<div><div class="text-[10px] uppercase tracking-wider font-black opacity-60 mb-0.5">Custom Settings</div><div class="space-y-2">${settingsHtml}</div></div>` : ''}
+              ${attachments.length > 0 ? `<div><div class="text-[10px] uppercase tracking-wider font-black opacity-60 mb-0.5">Attachments</div><div class="space-y-1">${attHtml}</div></div>` : ''}
             </div>` : ''}
           </div>
         `;
       }).join('');
-
       document.getElementById('modalTotalEntriesText').textContent = `Total Tests: ${regionData.entriesCount}`;
     }
 
@@ -1799,9 +2222,34 @@
       document.getElementById('gameModal').classList.add('hidden');
     }
 
-    // ============================================================
-    //  DATA LOADING
-    // ============================================================
+    // ===== PANNELLO HOW & ABOUT =====
+    function openAboutPanel() {
+      const panel = document.getElementById('aboutPanel');
+      const overlay = document.getElementById('aboutOverlay');
+      if (state.console === 'gc') {
+        panel.classList.remove('panel-wii');
+        panel.classList.add('panel-gc');
+      } else {
+        panel.classList.remove('panel-gc');
+        panel.classList.add('panel-wii');
+      }
+      panel.classList.add('open');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAboutPanel() {
+      document.getElementById('aboutPanel').classList.remove('open');
+      document.getElementById('aboutOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('howAboutLink').addEventListener('click', function(e) {
+      e.preventDefault();
+      openAboutPanel();
+    });
+
+    // ===== DATA LOADING =====
     function updateStats() {
       document.getElementById('statTested').textContent = state.groupedGames.length;
       document.getElementById('statTotal').textContent = state.rawGames.length;
@@ -1825,14 +2273,12 @@
       document.getElementById('loaderContainer').classList.remove('hidden');
       document.getElementById('gamesGrid').innerHTML = '';
       document.getElementById('emptyState').classList.add('hidden');
-
       if (window.location.protocol === 'file:') {
         document.getElementById('loaderContainer').classList.add('hidden');
         document.getElementById('emptyStateText').innerHTML = `<strong class="text-rose-500">CORS Error:</strong> Load via local server (python3 -m http.server 8000)`;
         document.getElementById('emptyState').classList.remove('hidden');
         return;
       }
-
       try {
         const res = await fetch(URL);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -1851,14 +2297,11 @@
       }
     }
 
-    // ============================================================
-    //  CONSOLE SWITCH
-    // ============================================================
+    // ===== CONSOLE SWITCH =====
     function switchConsole(target) {
       state.console = target;
       const isGC = target === 'gc';
       const header = document.getElementById('appHeader');
-
       header.classList.remove('flip-horizontal');
       void header.offsetWidth;
       header.classList.add('flip-horizontal');
@@ -1931,13 +2374,10 @@
         document.getElementById('appBody').className = 'theme-wii font-sans antialiased transition-colors duration-500 min-h-screen';
         document.getElementById('modalCard').className = 'cyber-border max-w-5xl w-full max-h-[94vh] flex flex-col p-5 relative modal-anim bg-white/95';
       }
-
       loadConsoleData();
     }
 
-    // ============================================================
-    //  EVENTS & INIT
-    // ============================================================
+    // ===== EVENTI =====
     document.getElementById('closeModalBtn').addEventListener('click', closeModal);
     document.getElementById('gameModal').addEventListener('click', e => { if (e.target === document.getElementById('gameModal')) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
