@@ -1,4 +1,4 @@
-name: Process Test Report
+name: Rt:Core Test Report
 
 on:
   issues:
