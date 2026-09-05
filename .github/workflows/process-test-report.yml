@@ -1,4 +1,4 @@
-name:  [TEST REPORT] Process Compatibility Test Report
+name: Process Compatibility Test Report
 
 on:
   issues:
