@@ -1,98 +1,39 @@
-# ---------- Target JSON ----------
-json_path = "data/games_data.json"
-system = "GC" if platform.lower() == "gamecube" else "Wii"
+name: Process Test Report
 
-# Carica il JSON mantenendo la struttura
-if os.path.exists(json_path):
-    try:
-        with open(json_path, "r", encoding="utf-8") as f:
-            db = json.load(f)
-        print(f"📂 Loaded database from {json_path}")
-    except json.JSONDecodeError as e:
-        print(f"❌ JSON decode error: {e}")
-        print("   Creating new database...")
-        db = {"version": 1, "last_update": "", "games": []}
-else:
-    print(f"📂 {json_path} not found, creating new file")
-    os.makedirs(os.path.dirname(json_path), exist_ok=True)
-    db = {"version": 1, "last_update": "", "games": []}
+on:
+  issues:
+    types: [opened, edited]
 
-# Costruisci il nuovo entry (test report)
-new_entry = {
-    "game_info": {
-        "game_id": game_id,
-        "system": system,
-        "game": game_title,
-        "region": region
-    },
-    "test_review": {
-        "rating": rating,
-        "fps": fps_str,
-        "fps_min": fps_min,
-        "fps_max": fps_max,
-        "boot": boot,
-        "playable": "YES" if rating >= 1 else "NO"
-    },
-    "test_details": {
-        "rtcore_version": core_version,
-        "core_profile": core_profile,
-        "considerations": considerations + ("\n" + note_missing if note_missing else "")
-    },
-    "test_environment": {
-        "tester": tester,
-        "device": device,
-        "muos_version": muos_version
-    },
-    "cover_art": cover_art,
-    "custom_settings": custom_settings,
-    "attachments": attachments
-}
+permissions:
+  contents: write
+  issues: write
 
-# Cerca il gioco esistente per game_id
-existing_game = None
-for game in db["games"]:
-    if game["game_info"]["game_id"] == game_id:
-        existing_game = game
-        break
+jobs:
+  process-report:
+    runs-on: ubuntu-latest
+    if: contains(github.event.issue.labels.*.name, 'test-report')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-if existing_game:
-    # Aggiungi il nuovo entry all'array "entries"
-    existing_game["entries"].append(new_entry)
-    action = "updated"
-    print(f"🔄 Aggiunto nuovo test per {game_id} (ora {len(existing_game['entries'])} entry)")
-else:
-    # Crea un nuovo gioco con il primo entry
-    new_game = {
-        "game_info": {
-            "game_id": game_id,
-            "system": system,
-            "game": game_title,
-            "region": region
-        },
-        "entries": [new_entry]
-    }
-    db["games"].append(new_game)
-    action = "added"
-    print(f"➕ Aggiunto nuovo gioco {game_id} con il primo test")
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
-# Aggiorna la data dell'ultimo aggiornamento
-from datetime import datetime
-db["last_update"] = datetime.now().strftime("%Y-%m-%d")
+      - name: Run update script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python .github/scripts/update_db.py
 
-# Salva JSON
-try:
-    with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(db, f, indent=2, ensure_ascii=False)
-    print(f"✅ JSON salvato con successo ({len(db['games'])} giochi)")
-except Exception as e:
-    print(f"❌ Errore nel salvataggio JSON: {e}")
-    sys.exit(1)
-
-# Set environment variables for commit message (come prima)
-github_env = os.environ.get('GITHUB_ENV')
-if github_env:
-    with open(github_env, 'a', encoding='utf-8') as f:
-        f.write(f"ACTION={action}\n")
-        f.write(f"GAME_ID={game_id}\n")
-        f.write(f"GAME_TITLE={game_title}\n")
-        f.write(f"TARGET_ISSUE_NUM={issue_number}\n")
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/games_data.json
+          git commit -m "Update DB for ${{ env.GAME_TITLE }} (${{ env.GAME_ID }})" || echo "No changes to commit"
+          git push
