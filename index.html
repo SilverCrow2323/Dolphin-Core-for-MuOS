@@ -763,12 +763,51 @@
     body.theme-gc .rating-panel .count { background: rgba(139,92,246,0.08); border: 1px solid #2a1a4a; }
     body.theme-wii .rating-panel .count { background: rgba(255,255,255,0.5); border: 1px solid #b0c4d8; }
 
+    /* ===== MODAL TABS ===== */
+    .modal-tab {
+      padding: 6px 16px;
+      font-weight: 900;
+      font-size: 12px;
+      border: 2px solid;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+      cursor: pointer;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+    }
+    body.theme-gc .modal-tab {
+      border-color: #2a1a4a;
+      color: #94a3b8;
+    }
+    body.theme-gc .modal-tab.active {
+      background: rgba(139,92,246,0.15);
+      border-color: #8b5cf6;
+      color: #e2e8f0;
+      box-shadow: 0 0 20px rgba(139,92,246,0.1);
+    }
+    body.theme-wii .modal-tab {
+      border-color: #b0c4d8;
+      color: #64748b;
+    }
+    body.theme-wii .modal-tab.active {
+      background: rgba(0,163,224,0.08);
+      border-color: #00a3e0;
+      color: #0f172a;
+      box-shadow: 0 0 20px rgba(0,163,224,0.05);
+    }
+    .modal-tab img { width: 20px; height: 14px; object-fit: cover; border: 1px solid; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); }
+    body.theme-gc .modal-tab img { border-color: #2a1a4a; }
+    body.theme-wii .modal-tab img { border-color: #b0c4d8; }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 640px) {
       #gamesGrid.grid-view { grid-template-columns: repeat(2, 1fr); gap: 12px; }
       .rating-star-container { width: 60px; height: 60px; }
       .rating-star-container .star-number { font-size: 24px; }
       .modal-test-card { padding: 12px 16px; }
+      .modal-tab { padding: 4px 12px; font-size: 10px; }
     }
   </style>
 </head>
@@ -937,7 +976,6 @@
               <h3 id="modalTitle" class="text-xl font-black leading-tight truncate"></h3>
               <span id="modalRegionBadge" class="text-[9px] font-mono px-2 py-0.5 border-2 uppercase font-black shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">NTSC / USA</span>
               <span id="modalGameId" class="text-[9px] font-mono px-2 py-0.5 border-2 font-black shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">GAMEID</span>
-              <!-- DOLPHIN COMPAT MINI – affiancato al Game ID -->
               <span id="dolphinCompatMini" class="dolphin-compat-mini"></span>
             </div>
             <div class="grid grid-cols-2 gap-2 mt-2">
@@ -961,7 +999,13 @@
           </div>
         </div>
       </div>
-      <div class="flex-1 overflow-y-auto my-3 space-y-3 pr-1" id="modalEntriesContainer"></div>
+
+      <!-- TABS PER REGIONE -->
+      <div id="modalTabs" class="flex flex-wrap gap-2 mt-3 shrink-0"></div>
+
+      <!-- CONTENUTO REGIONE -->
+      <div id="modalRegionContent" class="flex-1 overflow-y-auto my-3 space-y-3 pr-1"></div>
+
       <div class="pt-2 border-t-2 flex justify-between items-center text-xs font-black shrink-0">
         <span id="modalTotalEntriesText">Total Tests: 0</span>
         <button onclick="closeModal()" class="px-4 py-1 border-2 font-black transition-colors" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">Close</button>
@@ -1003,15 +1047,17 @@
       viewMode: 'grid'
     };
 
+    // Variabili per la modale
+    let currentModalGroup = null;
+    let currentModalRegion = null;
+
     const URL = "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/games_data.json";
     const FLAG_MAP = { 'PAL': 'eu', 'NTSC': 'us', 'NTSC / USA': 'us', 'JPN': 'jp' };
 
     // ============================================================
     //  DOLPHIN OFFICIAL COMPATIBILITY – MAPPA STATICA
-    //  (da aggiornare con dati reali dalla wiki di Dolphin)
     // ============================================================
     const DOLPHIN_COMPAT = {
-      // GameCube
       'GM8P01': 4,   // Metroid Prime (GC) – 4★
       'GM4P01': 5,   // Mario Kart Double Dash – 5★
       'GALE01': 4,   // Super Smash Bros. Melee – 4★
@@ -1027,12 +1073,10 @@
       'GQWP69': 5,   // Harry Potter Quidditch – 5★
       'GVJE08': 4,   // Viewtiful Joe – 4★
       'GXXP01': 4,   // Pokemon XD – 4★
-      // Wii
       'SMNP01': 5,   // New Super Mario Bros Wii – 5★
       'RZDP01': 5,   // Zelda Twilight Princess – 5★
       'SCAE18': 3,   // Calling – 3★
       'RHMP99': 4,   // Harvest Moon Magical Melody – 4★
-      // Default (se non trovato)
       'default': 4
     };
 
@@ -1079,60 +1123,174 @@
     }
 
     // ============================================================
-    //  GROUPING
+    //  GROUPING (per titolo, non per titolo+regione)
     // ============================================================
     function groupGames(rawList) {
-      const groups = new Map();
+      const groupsByTitle = new Map();
 
       rawList.forEach(item => {
         const info = item.game_info || {};
-        const entries = item.entries || [];
         const title = (info.game || '').trim();
         const region = (info.region || 'NTSC / USA').trim();
+        const entries = item.entries || [];
         if (!title || entries.length === 0) return;
 
-        const key = `${title.toLowerCase()}___${region.toLowerCase()}`;
-        if (!groups.has(key)) {
-          groups.set(key, { game: title, region, entries: [] });
+        const key = title.toLowerCase();
+        if (!groupsByTitle.has(key)) {
+          groupsByTitle.set(key, { game: title, regions: new Map() });
         }
-        entries.forEach(e => groups.get(key).entries.push(e));
+        const group = groupsByTitle.get(key);
+        if (!group.regions.has(region)) {
+          group.regions.set(region, { entries: [] });
+        }
+        group.regions.get(region).entries.push(...entries);
       });
 
       const result = [];
-      groups.forEach(group => {
-        group.entries.sort((a, b) => (parseInt(a.issue || 0) - parseInt(b.issue || 0)) || 0);
 
-        let bestRating = 0;
-        let bestFpsMax = -1;
-        let bestFpsStr = "???";
-        let totalRating = 0;
-        let totalFpsMinSum = 0;
-        let totalFpsMaxSum = 0;
-        let validFpsCount = 0;
-        let bestBoot = "NO";
-        let bestPlayable = "NO";
-        let gameId = null;
-        let bestEntryIndex = 0;
+      for (const [_, group] of groupsByTitle) {
+        const regionsData = [];
+        const allEntries = [];
 
-        group.entries.forEach((e, idx) => {
+        // Prima passata: calcola per ogni regione
+        for (const [region, regionData] of group.regions) {
+          const entries = regionData.entries;
+          allEntries.push(...entries);
+
+          let bestRating = 0;
+          let bestFpsMax = -1;
+          let bestFpsStr = "???";
+          let bestBoot = "NO";
+          let bestPlayable = "NO";
+          let totalRating = 0;
+          let totalFpsMinSum = 0;
+          let totalFpsMaxSum = 0;
+          let validFpsCount = 0;
+          let gameId = null;
+          let bestEntryIndex = 0;
+
+          entries.forEach((e, idx) => {
+            const review = e.test_review || {};
+            const info = e.game_info || {};
+
+            const r = parseInt(review.rating, 10);
+            const rating = isNaN(r) ? 0 : r;
+            if (rating > bestRating) bestRating = rating;
+            totalRating += rating;
+
+            const bootVal = review.boot || (rating >= 1 ? "YES" : "NO");
+            if (bootVal === "YES") bestBoot = "YES";
+
+            let playVal = review.playable || (rating >= 3 ? "YES" : "NO");
+            if (rating === 3 && playVal === "YES") playVal = "YES WITH ISSUES";
+            if (playVal === "YES" || playVal === "YES WITH ISSUES") bestPlayable = playVal;
+
+            if (!gameId && info.game_id) gameId = info.game_id;
+
+            let fpsMin = parseInt(review.fps_min, 10);
+            let fpsMax = parseInt(review.fps_max, 10);
+            const fpsRaw = (review.fps || '???').trim();
+
+            if (isNaN(fpsMin) || isNaN(fpsMax)) {
+              const numbers = fpsRaw.match(/\d+/g);
+              if (numbers) {
+                const nums = numbers.map(Number);
+                if (nums.length >= 2) {
+                  fpsMin = nums[0];
+                  fpsMax = nums[1];
+                } else if (nums.length === 1) {
+                  fpsMin = nums[0];
+                  fpsMax = nums[0];
+                }
+              }
+            }
+            if (isNaN(fpsMin)) fpsMin = 0;
+            if (isNaN(fpsMax)) fpsMax = 0;
+
+            if (fpsMax > bestFpsMax) {
+              bestFpsMax = fpsMax;
+              if (fpsRaw && fpsRaw !== '???') {
+                bestFpsStr = fpsRaw;
+              } else if (fpsMin > 0 && fpsMax > 0) {
+                bestFpsStr = `${fpsMin} - ${fpsMax}`;
+              }
+            }
+
+            if (fpsMin > 0) {
+              totalFpsMinSum += fpsMin;
+              totalFpsMaxSum += fpsMax;
+              validFpsCount++;
+            }
+
+            const currentScore = (rating * 1000) + (fpsMax > 0 ? fpsMax : -1);
+            const bestScore = (bestRating * 1000) + (bestFpsMax > 0 ? bestFpsMax : -1);
+            if (currentScore > bestScore) {
+              bestEntryIndex = idx;
+            }
+          });
+
+          if (bestFpsStr === "???" && bestFpsMax > 0) {
+            bestFpsStr = `${bestFpsMax}`;
+          }
+          if (bestFpsStr === "???" && bestFpsMax <= 0) {
+            bestFpsStr = "???";
+          }
+
+          const avgRating = entries.length > 0 ? (totalRating / entries.length).toFixed(1) : "0.0";
+          let avgFps = "N/A";
+          if (validFpsCount > 0) {
+            const avgMin = Math.round(totalFpsMinSum / validFpsCount);
+            const avgMax = Math.round(totalFpsMaxSum / validFpsCount);
+            avgFps = `${avgMin} - ${avgMax}`;
+          }
+
+          if (!gameId) gameId = 'UNKNOWN';
+
+          regionsData.push({
+            region,
+            entries,
+            entriesCount: entries.length,
+            bestRating,
+            bestFpsMax,
+            bestFpsStr,
+            bestBoot,
+            bestPlayable,
+            avgRating: parseFloat(avgRating),
+            avgFps,
+            gameId,
+            bestEntryIndex
+          });
+        }
+
+        // Aggregato globale (best assoluto tra tutte le regioni)
+        let globalBestRating = 0;
+        let globalBestFpsMax = -1;
+        let globalBestFpsStr = "???";
+        let globalBestBoot = "NO";
+        let globalBestPlayable = "NO";
+        let globalTotalRating = 0;
+        let globalTotalFpsMinSum = 0;
+        let globalTotalFpsMaxSum = 0;
+        let globalValidFpsCount = 0;
+        let globalGameId = 'UNKNOWN';
+
+        allEntries.forEach((e) => {
           const review = e.test_review || {};
-          const details = e.test_details || {};
-          const env = e.test_environment || {};
           const info = e.game_info || {};
-
           const r = parseInt(review.rating, 10);
           const rating = isNaN(r) ? 0 : r;
-          if (rating > bestRating) bestRating = rating;
-          totalRating += rating;
+          globalTotalRating += rating;
 
           const bootVal = review.boot || (rating >= 1 ? "YES" : "NO");
-          if (bootVal === "YES") bestBoot = "YES";
+          if (bootVal === "YES") globalBestBoot = "YES";
 
           let playVal = review.playable || (rating >= 3 ? "YES" : "NO");
           if (rating === 3 && playVal === "YES") playVal = "YES WITH ISSUES";
-          if (playVal === "YES" || playVal === "YES WITH ISSUES") bestPlayable = playVal;
+          if (playVal === "YES" || playVal === "YES WITH ISSUES") globalBestPlayable = playVal;
 
-          if (!gameId && info.game_id) gameId = info.game_id;
+          if (!globalGameId || globalGameId === 'UNKNOWN') {
+            if (info.game_id) globalGameId = info.game_id;
+          }
 
           let fpsMin = parseInt(review.fps_min, 10);
           let fpsMax = parseInt(review.fps_max, 10);
@@ -1154,61 +1312,95 @@
           if (isNaN(fpsMin)) fpsMin = 0;
           if (isNaN(fpsMax)) fpsMax = 0;
 
-          if (fpsMax > bestFpsMax) {
-            bestFpsMax = fpsMax;
+          if (fpsMax > globalBestFpsMax) {
+            globalBestFpsMax = fpsMax;
             if (fpsRaw && fpsRaw !== '???') {
-              bestFpsStr = fpsRaw;
+              globalBestFpsStr = fpsRaw;
             } else if (fpsMin > 0 && fpsMax > 0) {
-              bestFpsStr = `${fpsMin} - ${fpsMax}`;
+              globalBestFpsStr = `${fpsMin} - ${fpsMax}`;
             }
           }
 
           if (fpsMin > 0) {
-            totalFpsMinSum += fpsMin;
-            totalFpsMaxSum += fpsMax;
-            validFpsCount++;
-          }
-
-          const currentScore = (rating * 1000) + (fpsMax > 0 ? fpsMax : -1);
-          const bestScore = (bestRating * 1000) + (bestFpsMax > 0 ? bestFpsMax : -1);
-          if (currentScore > bestScore) {
-            bestEntryIndex = idx;
+            globalTotalFpsMinSum += fpsMin;
+            globalTotalFpsMaxSum += fpsMax;
+            globalValidFpsCount++;
           }
         });
 
-        if (bestFpsStr === "???" && bestFpsMax > 0) {
-          bestFpsStr = `${bestFpsMax}`;
+        // Ricalcola best rating e fps in modo corretto (tenendo conto di rating e fps)
+        let bestRatingGlobal = 0;
+        let bestFpsMaxGlobal = -1;
+        let bestFpsStrGlobal = "???";
+        allEntries.forEach((e) => {
+          const review = e.test_review || {};
+          const r = parseInt(review.rating, 10);
+          const rating = isNaN(r) ? 0 : r;
+          let fpsMin = parseInt(review.fps_min, 10);
+          let fpsMax = parseInt(review.fps_max, 10);
+          const fpsRaw = (review.fps || '???').trim();
+          if (isNaN(fpsMin) || isNaN(fpsMax)) {
+            const numbers = fpsRaw.match(/\d+/g);
+            if (numbers) {
+              const nums = numbers.map(Number);
+              if (nums.length >= 2) {
+                fpsMin = nums[0];
+                fpsMax = nums[1];
+              } else if (nums.length === 1) {
+                fpsMin = nums[0];
+                fpsMax = nums[0];
+              }
+            }
+          }
+          if (isNaN(fpsMin)) fpsMin = 0;
+          if (isNaN(fpsMax)) fpsMax = 0;
+          if (rating > bestRatingGlobal || (rating === bestRatingGlobal && fpsMax > bestFpsMaxGlobal)) {
+            bestRatingGlobal = rating;
+            bestFpsMaxGlobal = fpsMax;
+            if (fpsRaw && fpsRaw !== '???') {
+              bestFpsStrGlobal = fpsRaw;
+            } else if (fpsMin > 0 && fpsMax > 0) {
+              bestFpsStrGlobal = `${fpsMin} - ${fpsMax}`;
+            }
+          }
+        });
+
+        if (bestFpsStrGlobal === "???" && bestFpsMaxGlobal > 0) {
+          bestFpsStrGlobal = `${bestFpsMaxGlobal}`;
         }
-        if (bestFpsStr === "???" && bestFpsMax <= 0) {
-          bestFpsStr = "???";
+        if (bestFpsStrGlobal === "???" && bestFpsMaxGlobal <= 0) {
+          bestFpsStrGlobal = "???";
         }
 
-        const avgRating = group.entries.length > 0 ? (totalRating / group.entries.length).toFixed(1) : "0.0";
-        let avgFps = "N/A";
-        if (validFpsCount > 0) {
-          const avgMin = Math.round(totalFpsMinSum / validFpsCount);
-          const avgMax = Math.round(totalFpsMaxSum / validFpsCount);
-          avgFps = `${avgMin} - ${avgMax}`;
+        const globalAvgRating = allEntries.length > 0 ? (globalTotalRating / allEntries.length).toFixed(1) : "0.0";
+        let globalAvgFps = "N/A";
+        if (globalValidFpsCount > 0) {
+          const avgMin = Math.round(globalTotalFpsMinSum / globalValidFpsCount);
+          const avgMax = Math.round(globalTotalFpsMaxSum / globalValidFpsCount);
+          globalAvgFps = `${avgMin} - ${avgMax}`;
         }
 
-        if (!gameId) gameId = 'UNKNOWN';
+        if (!globalGameId || globalGameId === 'UNKNOWN') {
+          // prova a prendere da una regione
+          if (regionsData.length > 0) globalGameId = regionsData[0].gameId;
+        }
 
         result.push({
           game: group.game,
-          region: group.region,
-          entries: group.entries,
-          entriesCount: group.entries.length,
-          bestRating: bestRating,
-          bestFpsStr: bestFpsStr,
-          bestFpsMax: bestFpsMax,
-          bestBoot: bestBoot,
-          bestPlayable: bestPlayable,
-          avgRating: parseFloat(avgRating),
-          avgFps: avgFps,
-          gameId: gameId,
-          bestEntryIndex: bestEntryIndex
+          allRegions: regionsData,
+          aggregated: {
+            bestRating: bestRatingGlobal,
+            bestFpsMax: bestFpsMaxGlobal,
+            bestFpsStr: bestFpsStrGlobal,
+            bestBoot: globalBestBoot,
+            bestPlayable: globalBestPlayable,
+            avgRating: parseFloat(globalAvgRating),
+            avgFps: globalAvgFps,
+            totalEntries: allEntries.length,
+            gameId: globalGameId
+          }
         });
-      });
+      }
 
       return result;
     }
@@ -1230,26 +1422,29 @@
 
       state.filtered = state.groupedGames.filter(item => {
         if (state.search && !item.game.toLowerCase().includes(state.search) &&
-            !item.entries.some(e => (e.test_details?.considerations || '').toLowerCase().includes(state.search))) return false;
+            !item.allRegions.some(r => r.entries.some(e => (e.test_details?.considerations || '').toLowerCase().includes(state.search)))) return false;
         if (state.selectedStars !== 'all') {
           const s = parseInt(state.selectedStars);
-          if (s === 1) { if (item.bestRating > 1) return false; }
-          else if (item.bestRating !== s) return false;
+          if (s === 1) { if (item.aggregated.bestRating > 1) return false; }
+          else if (item.aggregated.bestRating !== s) return false;
         }
         if (state.selectedRegion !== 'all') {
-          if (state.selectedRegion === 'NTSC' && !item.region.includes('NTSC')) return false;
-          if (state.selectedRegion !== 'NTSC' && item.region !== state.selectedRegion) return false;
+          const hasRegion = item.allRegions.some(r => {
+            if (state.selectedRegion === 'NTSC' && r.region.includes('NTSC')) return true;
+            return r.region === state.selectedRegion;
+          });
+          if (!hasRegion) return false;
         }
-        if (state.selectedBoot !== 'all' && item.bestBoot !== state.selectedBoot) return false;
+        if (state.selectedBoot !== 'all' && item.aggregated.bestBoot !== state.selectedBoot) return false;
         return true;
       });
 
       state.filtered.sort((a, b) => {
         let cmp = 0;
         if (state.sortKey === 'title') cmp = (a.game || '').localeCompare(b.game || '');
-        else if (state.sortKey === 'rating') cmp = (a.bestRating || 0) - (b.bestRating || 0);
-        else if (state.sortKey === 'fps') cmp = (a.bestFpsMax || 0) - (b.bestFpsMax || 0);
-        else if (state.sortKey === 'entries') cmp = (a.entriesCount || 0) - (b.entriesCount || 0);
+        else if (state.sortKey === 'rating') cmp = (a.aggregated.bestRating || 0) - (b.aggregated.bestRating || 0);
+        else if (state.sortKey === 'fps') cmp = (a.aggregated.bestFpsMax || 0) - (b.aggregated.bestFpsMax || 0);
+        else if (state.sortKey === 'entries') cmp = (a.aggregated.totalEntries || 0) - (b.aggregated.totalEntries || 0);
         return state.sortOrder === 'asc' ? cmp : -cmp;
       });
 
@@ -1279,16 +1474,18 @@
     function renderGridCards() {
       const isGC = state.console === 'gc';
       return state.filtered.map((item, idx) => {
-        const bestEntry = item.entries[item.bestEntryIndex] || {};
-        const coverUrl = bestEntry.cover_art || getCoverUrl(item.gameId, item.region);
+        const bestEntry = item.allRegions[0]?.entries[item.allRegions[0].bestEntryIndex] || {};
+        const coverUrl = bestEntry.cover_art || getCoverUrl(item.aggregated.gameId, item.allRegions[0]?.region || 'NTSC');
         const delay = Math.min(idx * 20, 300);
-        const regionColor = item.region.includes('NTSC') ? 'text-emerald-400' : (item.region === 'PAL' ? 'text-amber-400' : 'text-slate-400');
 
-        // Colori per i badge – ora con classi corrette
-        const bootColor = item.bestBoot === 'YES' ? 'yes' : 'no';
+        const regionFlags = item.allRegions.map(r => `
+          <img src="${getFlagUrl(r.region)}" class="w-4 h-3 object-cover rounded border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" title="${r.region}" />
+        `).join('');
+
+        const bootColor = item.aggregated.bestBoot === 'YES' ? 'yes' : 'no';
         let playableClass = 'no';
-        if (item.bestPlayable === 'YES') playableClass = 'yes';
-        else if (item.bestPlayable === 'YES WITH ISSUES') playableClass = 'issues';
+        if (item.aggregated.bestPlayable === 'YES') playableClass = 'yes';
+        else if (item.aggregated.bestPlayable === 'YES WITH ISSUES') playableClass = 'issues';
 
         return `
           <div class="card-anim game-card group relative cursor-pointer transition-all duration-300 hover:-translate-y-1" style="animation-delay: ${delay}ms" onclick="openModal(${idx})">
@@ -1297,28 +1494,26 @@
                 ${coverUrl ? `<img src="${coverUrl}" alt="${escapeHtml(item.game)}" class="cover-img w-full h-full object-cover" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` : ''}
                 <div class="cover-placeholder absolute inset-0 w-full h-full ${coverUrl ? 'hidden' : 'flex'} flex-col items-center justify-center text-4xl">
                   🎮
-                  <span class="text-[10px] mt-1 opacity-40 font-mono font-black">${item.gameId || '???'}</span>
+                  <span class="text-[10px] mt-1 opacity-40 font-mono font-black">${item.aggregated.gameId || '???'}</span>
                 </div>
-                ${coverUrl ? `<div class="absolute inset-0 w-full h-full flex flex-col items-center justify-center text-4xl opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black/30 backdrop-blur-sm"><span class="text-xs font-black text-white">${item.gameId || ''}</span></div>` : ''}
+                ${coverUrl ? `<div class="absolute inset-0 w-full h-full flex flex-col items-center justify-center text-4xl opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black/30 backdrop-blur-sm"><span class="text-xs font-black text-white">${item.aggregated.gameId || ''}</span></div>` : ''}
               </div>
               <div class="p-2.5 space-y-1.5 border-t-2">
                 <div class="flex items-start justify-between gap-1">
                   <h4 class="text-sm font-black truncate flex-1">${escapeHtml(item.game)}</h4>
                   <div class="flex items-center gap-1">
-                    ${renderStars(item.bestRating, 12)}
-                    <span class="text-[10px] font-mono font-black opacity-60">${item.bestRating}</span>
+                    ${renderStars(item.aggregated.bestRating, 12)}
+                    <span class="text-[10px] font-mono font-black opacity-60">${item.aggregated.bestRating}</span>
                   </div>
                 </div>
                 <div class="flex items-center justify-between text-[10px]">
-                  <span class="flex items-center gap-1 ${regionColor} font-black">
-                    <img src="${getFlagUrl(item.region)}" class="w-4 h-3 object-cover rounded border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" /> ${item.region}
-                  </span>
-                  <span class="font-mono font-black opacity-60">${item.entriesCount} test${item.entriesCount !== 1 ? 's' : ''}</span>
+                  <span class="flex items-center gap-1 font-black">${regionFlags}</span>
+                  <span class="font-mono font-black opacity-60">${item.aggregated.totalEntries} test${item.aggregated.totalEntries !== 1 ? 's' : ''}</span>
                 </div>
                 <div class="flex items-center gap-1.5 flex-wrap">
-                  <span class="fps-badge ${isGC ? 'gc' : 'wii'}">${item.bestFpsStr !== "???" ? item.bestFpsStr + ' FPS' : 'N/A'}</span>
-                  <span class="boot-badge ${bootColor}">${item.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
-                  <span class="playable-badge ${playableClass}">${item.bestPlayable === 'YES' ? 'Playable' : item.bestPlayable === 'YES WITH ISSUES' ? 'With Issues' : 'Unplayable'}</span>
+                  <span class="fps-badge ${isGC ? 'gc' : 'wii'}">${item.aggregated.bestFpsStr !== "???" ? item.aggregated.bestFpsStr + ' FPS' : 'N/A'}</span>
+                  <span class="boot-badge ${bootColor}">${item.aggregated.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
+                  <span class="playable-badge ${playableClass}">${item.aggregated.bestPlayable === 'YES' ? 'Playable' : item.aggregated.bestPlayable === 'YES WITH ISSUES' ? 'With Issues' : 'Unplayable'}</span>
                 </div>
               </div>
             </div>
@@ -1330,14 +1525,16 @@
     function renderListCards() {
       const isGC = state.console === 'gc';
       return state.filtered.map((item, idx) => {
-        const bestEntry = item.entries[item.bestEntryIndex] || {};
-        const coverUrl = bestEntry.cover_art || getCoverUrl(item.gameId, item.region);
-        const regionColor = item.region.includes('NTSC') ? 'text-emerald-500' : (item.region === 'PAL' ? 'text-amber-500' : 'text-slate-400');
+        const bestEntry = item.allRegions[0]?.entries[item.allRegions[0].bestEntryIndex] || {};
+        const coverUrl = bestEntry.cover_art || getCoverUrl(item.aggregated.gameId, item.allRegions[0]?.region || 'NTSC');
+        const regionFlags = item.allRegions.map(r => `
+          <img src="${getFlagUrl(r.region)}" class="w-4 h-3 object-cover rounded border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" title="${r.region}" />
+        `).join('');
 
-        const bootColor = item.bestBoot === 'YES' ? 'yes' : 'no';
+        const bootColor = item.aggregated.bestBoot === 'YES' ? 'yes' : 'no';
         let playableClass = 'no';
-        if (item.bestPlayable === 'YES') playableClass = 'yes';
-        else if (item.bestPlayable === 'YES WITH ISSUES') playableClass = 'issues';
+        if (item.aggregated.bestPlayable === 'YES') playableClass = 'yes';
+        else if (item.aggregated.bestPlayable === 'YES WITH ISSUES') playableClass = 'issues';
 
         return `
           <div class="card-anim list-card" style="animation-delay: ${Math.min(idx * 20, 300)}ms" onclick="openModal(${idx})">
@@ -1347,15 +1544,13 @@
             <div class="list-card-info">
               <div class="list-card-title">${escapeHtml(item.game)}</div>
               <div class="list-card-meta">
-                <span class="flex items-center gap-1 ${regionColor}">
-                  <img src="${getFlagUrl(item.region)}" class="w-4 h-3 object-cover rounded border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" /> ${item.region}
-                </span>
-                <span class="font-mono">${item.entriesCount} test${item.entriesCount !== 1 ? 's' : ''}</span>
-                <span class="fps-badge ${isGC ? 'gc' : 'wii'}">${item.bestFpsStr !== "???" ? item.bestFpsStr + ' FPS' : 'N/A'}</span>
-                <span class="boot-badge ${bootColor}">${item.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
-                <span class="playable-badge ${playableClass}">${item.bestPlayable === 'YES' ? 'Playable' : item.bestPlayable === 'YES WITH ISSUES' ? 'With Issues' : 'Unplayable'}</span>
+                <span class="flex items-center gap-1">${regionFlags}</span>
+                <span class="font-mono">${item.aggregated.totalEntries} test${item.aggregated.totalEntries !== 1 ? 's' : ''}</span>
+                <span class="fps-badge ${isGC ? 'gc' : 'wii'}">${item.aggregated.bestFpsStr !== "???" ? item.aggregated.bestFpsStr + ' FPS' : 'N/A'}</span>
+                <span class="boot-badge ${bootColor}">${item.aggregated.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
+                <span class="playable-badge ${playableClass}">${item.aggregated.bestPlayable === 'YES' ? 'Playable' : item.aggregated.bestPlayable === 'YES WITH ISSUES' ? 'With Issues' : 'Unplayable'}</span>
               </div>
-              <div class="list-card-stars mt-1">${renderStars(item.bestRating, 12)}</div>
+              <div class="list-card-stars mt-1">${renderStars(item.aggregated.bestRating, 12)}</div>
             </div>
           </div>
         `;
@@ -1366,30 +1561,43 @@
     //  MODAL
     // ============================================================
     function openModal(index) {
-      const item = state.filtered[index];
-      if (!item) return;
+      const group = state.filtered[index];
+      if (!group) return;
+
+      // Priorità: PAL > NTSC / USA > JPN
+      const priority = ['PAL', 'NTSC / USA', 'JPN'];
+      let selectedRegion = null;
+      for (const p of priority) {
+        const found = group.allRegions.find(rd => rd.region === p);
+        if (found) {
+          selectedRegion = p;
+          break;
+        }
+      }
+      if (!selectedRegion) selectedRegion = group.allRegions[0].region;
+
+      currentModalGroup = group;
+      currentModalRegion = selectedRegion;
+      renderModalWithRegion(group, selectedRegion);
+      document.getElementById('gameModal').classList.remove('hidden');
+    }
+
+    function renderModalWithRegion(group, region) {
+      const regionData = group.allRegions.find(rd => rd.region === region);
+      if (!regionData) return;
+
       const isGC = state.console === 'gc';
 
-      document.getElementById('modalTitle').textContent = item.game;
-      document.getElementById('modalFlag').src = getFlagUrl(item.region);
-      document.getElementById('modalRegionBadge').textContent = item.region;
-      document.getElementById('modalGameId').textContent = item.gameId || 'ID Unknown';
+      // Intestazione
+      document.getElementById('modalTitle').textContent = group.game;
+      document.getElementById('modalFlag').src = getFlagUrl(region);
+      document.getElementById('modalRegionBadge').textContent = region;
+      document.getElementById('modalGameId').textContent = regionData.gameId || 'ID Unknown';
 
-      // --- DOLPHIN COMPAT MINI ---
-      const gameId = item.gameId;
-      const compatRating = DOLPHIN_COMPAT[gameId] || DOLPHIN_COMPAT['default'] || 4;
-      const wikiLink = getDolphinWikiLink(gameId);
-      const compatContainer = document.getElementById('dolphinCompatMini');
-      let segHtml = '';
-      for (let i = 0; i < 5; i++) {
-        segHtml += `<span class="seg ${i < compatRating ? 'filled' : ''}"></span>`;
-      }
-      compatContainer.innerHTML = segHtml + `<a href="${wikiLink}" target="_blank" rel="noopener" class="wiki-link" title="Dolphin Wiki">🌐</a>`;
-
-      // --- COVER ---
+      // Cover
       const coverImg = document.getElementById('modalCoverImg');
-      const bestEntry = item.entries[item.bestEntryIndex] || {};
-      const coverUrl = bestEntry.cover_art || getCoverUrl(item.gameId, item.region);
+      const bestEntry = regionData.entries[regionData.bestEntryIndex] || {};
+      const coverUrl = bestEntry.cover_art || getCoverUrl(regionData.gameId, region);
       if (coverUrl) {
         coverImg.src = coverUrl;
         coverImg.onerror = () => { coverImg.style.display = 'none'; };
@@ -1398,19 +1606,45 @@
         coverImg.style.display = 'none';
       }
 
-      // --- BEST / AVG ---
-      document.getElementById('modalBestRatingVal').innerHTML = renderStars(item.bestRating, 16);
-      const bestFpsEl = document.getElementById('modalBestFpsVal');
-      bestFpsEl.textContent = item.bestFpsStr !== "???" ? `${item.bestFpsStr} FPS` : 'N/A';
+      // Dolphin compat
+      const compatRating = DOLPHIN_COMPAT[regionData.gameId] || DOLPHIN_COMPAT['default'] || 4;
+      const wikiLink = getDolphinWikiLink(regionData.gameId);
+      const compatContainer = document.getElementById('dolphinCompatMini');
+      let segHtml = '';
+      for (let i = 0; i < 5; i++) {
+        segHtml += `<span class="seg ${i < compatRating ? 'filled' : ''}"></span>`;
+      }
+      compatContainer.innerHTML = segHtml + `<a href="${wikiLink}" target="_blank" rel="noopener" class="wiki-link" title="Dolphin Wiki">🌐</a>`;
 
-      document.getElementById('modalAvgRatingVal').textContent = `${item.avgRating} / 5 ⭐`;
-      const avgFpsEl = document.getElementById('modalAvgFpsVal');
-      avgFpsEl.textContent = item.avgFps !== "N/A" ? `${item.avgFps} FPS` : 'N/A';
+      // BEST / AVG per questa regione
+      document.getElementById('modalBestRatingVal').innerHTML = renderStars(regionData.bestRating, 16);
+      document.getElementById('modalBestFpsVal').textContent = regionData.bestFpsStr !== "???" ? `${regionData.bestFpsStr} FPS` : 'N/A';
+      document.getElementById('modalAvgRatingVal').textContent = `${regionData.avgRating} / 5 ⭐`;
+      document.getElementById('modalAvgFpsVal').textContent = regionData.avgFps !== "N/A" ? `${regionData.avgFps} FPS` : 'N/A';
 
-      // --- ENTRIES ---
-      const container = document.getElementById('modalEntriesContainer');
-      container.innerHTML = item.entries.map((e, idx) => {
-        const isBest = (idx === item.bestEntryIndex);
+      // TABS
+      const tabsContainer = document.getElementById('modalTabs');
+      tabsContainer.innerHTML = group.allRegions.map(rd => {
+        const active = rd.region === region ? 'active' : '';
+        return `<button class="modal-tab ${active}" data-region="${rd.region}"><img src="${getFlagUrl(rd.region)}" /> ${rd.region}</button>`;
+      }).join('');
+
+      // Event listener sui tab (delegazione)
+      tabsContainer.querySelectorAll('.modal-tab').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const newRegion = this.dataset.region;
+          if (newRegion !== currentModalRegion) {
+            currentModalRegion = newRegion;
+            renderModalWithRegion(currentModalGroup, newRegion);
+          }
+        });
+      });
+
+      // CONTENUTO ENTRIES per questa regione
+      const container = document.getElementById('modalRegionContent');
+      container.innerHTML = regionData.entries.map((e, idx) => {
+        const isBest = (idx === regionData.bestEntryIndex);
         const num = idx + 1;
 
         const review = e.test_review || {};
@@ -1558,8 +1792,7 @@
         `;
       }).join('');
 
-      document.getElementById('modalTotalEntriesText').textContent = `Total Tests: ${item.entriesCount}`;
-      document.getElementById('gameModal').classList.remove('hidden');
+      document.getElementById('modalTotalEntriesText').textContent = `Total Tests: ${regionData.entriesCount}`;
     }
 
     function closeModal() {
@@ -1574,7 +1807,7 @@
       document.getElementById('statTotal').textContent = state.rawGames.length;
       const counts = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
       state.groupedGames.forEach(g => {
-        const r = g.bestRating;
+        const r = g.aggregated.bestRating;
         if (r >= 5) counts[5]++;
         else if (r >= 4) counts[4]++;
         else if (r >= 3) counts[3]++;
