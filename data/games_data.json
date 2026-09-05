@@ -8030,7 +8030,7 @@
         }
       ]
     },
-    {
+        {
       "game_info": {
         "game_id": "RHMP99",
         "system": "Wii",
@@ -8066,129 +8066,131 @@
           "cover_art": "",
           "custom_settings": [],
           "attachments": []
-        }]},
-       "entries": [
-  {
-    "game_info": {
-      "game_id": "GZVJDA",
-      "system": "GC",
-      "game": "Zoids vs. III",
-      "region": "NTSC-J"
+        }
+      ]
     },
-    "entries": [
-      {
-        "game_info": {
-          "game_id": "GZVJDA",
-          "system": "GC",
-          "game": "Zoids vs. III",
-          "region": "NTSC-J"
-        },
-        "test_review": {
-          "rating": 1,
-          "fps": "10-40",
-          "boot": "YES",
-          "playable": "NO",
-          "fps_min": 10,
-          "fps_max": 40
-        },
-        "test_details": {
-          "rtcore_version": "v10.5.3 (current)",
-          "core_profile": "Various / All profiles tested",
-          "considerations": "Profiles tested: Speedhack,Performance, Speedup1, Default\nSadly the game won't go past the first option selection window"
-        },
-        "test_environment": {
-          "tester": "sirpips",
-          "device": "RG-35XX H",
-          "muos_version": "2601.1 Funky Jacaranda (current)"
-        },
-        "cover_art": "https://retrogametalk.com/repo/wp-content/uploads/2021/03/61171_front.jpg",
-        "custom_settings": [
-          {
-            "set_type": "Hack",
-            "set_name": "English Patch by Traceytrace",
-            "set_url": "https://www.romhacking.net/translations/6799/"
-          }
-        ],
-        "attachments": []
-      }
-    ]
-  },
-  {
-    "game_info": {
-      "game_id": "GG4P08",
-      "system": "GC",
-      "game": "Gotcha Force",
-      "region": "PAL"
+    {
+      "game_info": {
+        "game_id": "GZVJDA",
+        "system": "GC",
+        "game": "Zoids vs. III",
+        "region": "NTSC-J"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GZVJDA",
+            "system": "GC",
+            "game": "Zoids vs. III",
+            "region": "NTSC-J"
+          },
+          "test_review": {
+            "rating": 1,
+            "fps": "10-40",
+            "boot": "YES",
+            "playable": "NO",
+            "fps_min": 10,
+            "fps_max": 40
+          },
+          "test_details": {
+            "rtcore_version": "v10.5.3 (current)",
+            "core_profile": "Various / All profiles tested",
+            "considerations": "Profiles tested: Speedhack,Performance, Speedup1, Default\nSadly the game won't go past the first option selection window"
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG-35XX H",
+            "muos_version": "2601.1 Funky Jacaranda (current)"
+          },
+          "cover_art": "https://retrogametalk.com/repo/wp-content/uploads/2021/03/61171_front.jpg",
+          "custom_settings": [
+            {
+              "set_type": "Hack",
+              "set_name": "English Patch by Traceytrace",
+              "set_url": "https://www.romhacking.net/translations/6799/"
+            }
+          ],
+          "attachments": []
+        }
+      ]
     },
-    "entries": [
-      {
-        "game_info": {
-          "game_id": "GG4P08",
-          "system": "GC",
-          "game": "Gotcha Force",
-          "region": "PAL"
-        },
-        "test_review": {
-          "rating": 5,
-          "fps": "42-50",
-          "boot": "YES",
-          "playable": "YES",
-          "fps_min": 42,
-          "fps_max": 50
-        },
-        "test_details": {
-          "rtcore_version": "v10.5.3 (current)",
-          "core_profile": "Performance",
-          "considerations": "Perfect , only during the cutscenes there may be some minor lagging.\nEverything else is awesome."
-        },
-        "test_environment": {
-          "tester": "sirpips",
-          "device": "RG-35XX H",
-          "muos_version": "2601.1 Funky Jacaranda (current)"
-        },
-        "cover_art": "",
-        "custom_settings": [],
-        "attachments": []
-      }
-    ]
-  },
-  {
-    "game_info": {
-      "game_id": "GM8P01",
-      "system": "GC",
-      "game": "Metroid Prime",
-      "region": "PAL"
+    {
+      "game_info": {
+        "game_id": "GG4P08",
+        "system": "GC",
+        "game": "Gotcha Force",
+        "region": "PAL"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GG4P08",
+            "system": "GC",
+            "game": "Gotcha Force",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 5,
+            "fps": "42-50",
+            "boot": "YES",
+            "playable": "YES",
+            "fps_min": 42,
+            "fps_max": 50
+          },
+          "test_details": {
+            "rtcore_version": "v10.5.3 (current)",
+            "core_profile": "Performance",
+            "considerations": "Perfect , only during the cutscenes there may be some minor lagging.\nEverything else is awesome."
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG-35XX H",
+            "muos_version": "2601.1 Funky Jacaranda (current)"
+          },
+          "cover_art": "",
+          "custom_settings": [],
+          "attachments": []
+        }
+      ]
     },
-    "entries": [
-      {
-        "game_info": {
-          "game_id": "GM8P01",
-          "system": "GC",
-          "game": "Metroid Prime",
-          "region": "PAL"
-        },
-        "test_review": {
-          "rating": 2,
-          "fps": "9-15",
-          "boot": "YES",
-          "playable": "NO",
-          "fps_min": 9,
-          "fps_max": 15
-        },
-        "test_details": {
-          "rtcore_version": "v10.5-124",
-          "core_profile": "Performance",
-          "considerations": "The game boots but runs at its worst. Also used sppedhacks and other performance settings but the result is basically the same."
-        },
-        "test_environment": {
-          "tester": "sirpips",
-          "device": "RG35XX H",
-          "muos_version": "2601.1 Funky Jacaranda (current)"
-        },
-        "cover_art": "",
-        "custom_settings": [],
-        "attachments": []
-      }
-    ]
-  }
-]
+    {
+      "game_info": {
+        "game_id": "GM8P01",
+        "system": "GC",
+        "game": "Metroid Prime",
+        "region": "PAL"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GM8P01",
+            "system": "GC",
+            "game": "Metroid Prime",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 2,
+            "fps": "9-15",
+            "boot": "YES",
+            "playable": "NO",
+            "fps_min": 9,
+            "fps_max": 15
+          },
+          "test_details": {
+            "rtcore_version": "v10.5-124",
+            "core_profile": "Performance",
+            "considerations": "The game boots but runs at its worst. Also used sppedhacks and other performance settings but the result is basically the same."
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda (current)"
+          },
+          "cover_art": "",
+          "custom_settings": [],
+          "attachments": []
+        }
+      ]
+    }
+  ]
+}
