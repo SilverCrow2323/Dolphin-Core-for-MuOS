@@ -8148,7 +8148,23 @@
             "muos_version": "2601.1 Funky Jacaranda (current)"
           },
           "cover_art": "",
-          "custom_settings": [],
+          "custom_settings": [
+             {
+              "set_type": "Hack",
+              "set_name": "Community Edition v1.3 ",
+              "set_note": "A new spin on the game with balance changes!
+
+Made by CrystalPixel and Brutalmoon
+
+-Rebalanced cast; costs and attacks changed across the board, without changing too much of the game's design
+2 Player Story Mode; Plug in a second controller to play as the ally commander!
+Getup resets combos, improving the flow of the game especially in Story Mode
+Rare Borgs can be obtained in Play #1, and can now also appear at the start of missions
+Borg Switching mechanic; swap Borgs using D-Pad
+Data Crystals no longer have lettering system so you don't have to save every time you hunt for rares
+Galactic Emperor is obtainable and G Black can be legally rewarded through Story Mode*
+            }
+          ],
           "attachments": []
         }
       ]
