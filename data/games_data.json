@@ -8038,6 +8038,14 @@
         "region": "PAL"
       },
       "entries": [
+            {
+      "game_info": {
+        "game_id": "RHMP99",
+        "system": "Wii",
+        "game": "Harvest Moon Magical Melody",
+        "region": "PAL"
+      },
+      "entries": [
         {
           "game_info": {
             "game_id": "RHMP99",
@@ -8148,11 +8156,7 @@
             "muos_version": "2601.1 Funky Jacaranda (current)"
           },
           "cover_art": "",
-          "custom_settings": [
-             {
-              "set_type": "Hack",
-              "set_name": "Community Edition v1.3 ",}
-          ],
+          "custom_settings": [],
           "attachments": []
         }
       ]
