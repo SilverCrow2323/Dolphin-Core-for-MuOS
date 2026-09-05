@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_update": "2026-09-03",
+  "last_update": "2026-09-05",
   "games": [
     {
       "game_info": {
@@ -1909,7 +1909,7 @@
           "test_environment": {
             "tester": "sirpips",
             "device": "RG35XX H",
-            "muos_version": "2601.1 Funky Jacaranda (current)"
+            "muos_version": "2601.1 Funky Jacaranda"
           },
           "cover_art": "",
           "custom_settings": [],
@@ -3537,7 +3537,7 @@
           "test_environment": {
             "tester": "sirpips",
             "device": "RG35XX H",
-            "muos_version": "2601.1 Funky Jacaranda (current)"
+            "muos_version": "2601.1 Funky Jacaranda"
           },
           "cover_art": "",
           "custom_settings": [],
@@ -7905,7 +7905,7 @@
           "test_environment": {
             "tester": "sirpips",
             "device": "RG 35XX H",
-            "muos_version": "2601.1 Funky Jacaranda (current)"
+            "muos_version": "2601.1 Funky Jacaranda"
           },
           "cover_art": "",
           "custom_settings": [],
@@ -8030,7 +8030,7 @@
         }
       ]
     },
-        {
+    {
       "game_info": {
         "game_id": "RHMP99",
         "system": "Wii",
@@ -8093,14 +8093,14 @@
             "fps_max": 40
           },
           "test_details": {
-            "rtcore_version": "v10.5.3 (current)",
+            "rtcore_version": "v10.5.3",
             "core_profile": "Various / All profiles tested",
             "considerations": "Profiles tested: Speedhack,Performance, Speedup1, Default\nSadly the game won't go past the first option selection window"
           },
           "test_environment": {
             "tester": "sirpips",
             "device": "RG-35XX H",
-            "muos_version": "2601.1 Funky Jacaranda (current)"
+            "muos_version": "2601.1 Funky Jacaranda"
           },
           "cover_art": "https://retrogametalk.com/repo/wp-content/uploads/2021/03/61171_front.jpg",
           "custom_settings": [
@@ -8138,14 +8138,14 @@
             "fps_max": 50
           },
           "test_details": {
-            "rtcore_version": "v10.5.3 (current)",
+            "rtcore_version": "v10.5.3",
             "core_profile": "Performance",
             "considerations": "Perfect , only during the cutscenes there may be some minor lagging.\nEverything else is awesome."
           },
           "test_environment": {
             "tester": "sirpips",
             "device": "RG-35XX H",
-            "muos_version": "2601.1 Funky Jacaranda (current)"
+            "muos_version": "2601.1 Funky Jacaranda"
           },
           "cover_art": "",
           "custom_settings": [],
@@ -8184,10 +8184,102 @@
           "test_environment": {
             "tester": "sirpips",
             "device": "RG35XX H",
-            "muos_version": "2601.1 Funky Jacaranda (current)"
+            "muos_version": "2601.1 Funky Jacaranda"
           },
           "cover_art": "",
           "custom_settings": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "game_info": {
+        "game_id": "GRVEA4",
+        "system": "GC",
+        "game": "Rave Master",
+        "region": "NTSC"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GRVEA4",
+            "system": "GC",
+            "game": "Rave Master",
+            "region": "NTSC"
+          },
+          "test_review": {
+            "rating": 0,
+            "fps": "0-0",
+            "boot": "NO",
+            "playable": "NO",
+            "fps_min": 0,
+            "fps_max": 0
+          },
+          "test_details": {
+            "rtcore_version": "v10.5.3",
+            "core_profile": "Default",
+            "considerations": "Not booting"
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "https://retrogametalk.com/repo/wp-content/uploads/2023/01/66108_front.jpg",
+          "custom_settings": [
+            {
+              "set_type": "Hack",
+              "set_name": "USA Undub",
+              "set_note": "intro video was swapped but not subbed in English. Battle voices restored."
+            }
+          ],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "game_info": {
+        "game_id": "GZ3E70",
+        "system": "GC",
+        "game": "Dragon Ball Z Budokai 2",
+        "region": "NTSC"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GZ3E70",
+            "system": "GC",
+            "game": "Dragon Ball Z Budokai 2",
+            "region": "NTSC"
+          },
+          "test_review": {
+            "rating": 3,
+            "fps": "15-50",
+            "boot": "YES",
+            "playable": "YES WITH ISSUES",
+            "fps_min": 15,
+            "fps_max": 50
+          },
+          "test_details": {
+            "rtcore_version": "v11.0.0 (current)",
+            "core_profile": "Ultra",
+            "considerations": "The game actually runs much more smoothly than its predecessor Budokai. The fights still suffer from frame rate drops, which are noticeable, but I managed to complete several battles without major issues. However, heavy lag persists during cutscenes, and the experimental Ultra profile significantly sacrifices graphical quality for smoother gameplay. I will run further tests with more stable profiles as soon as possible."
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "https://retrogametalk.com/repo/wp-content/uploads/2016/04/143049-dragon-ball-z-budokai-2-gamecube-front-cover.jpg",
+          "custom_settings": [
+            {
+              "set_type": "Hack",
+              "set_name": "USA Undub",
+              "set_filename": "Dragon Ball Z - Budokai 2 Undub 0.99.zip",
+              "set_url": "https://archive.org/download/dragon-ball-z-budokai-2-gamecube-undub/Dragon%20Ball%20Z%20-%20Budokai%202%20Undub%200.99.zip",
+              "set_note": "Undub Patch Released By TechnoSyndrome. Patch Version 0.99. Hack Release Date 26 March 2023. For more info: https://www.romhacking.net/hacks/7671/"
+            }
+          ],
           "attachments": []
         }
       ]
