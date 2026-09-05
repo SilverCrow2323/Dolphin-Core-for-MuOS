@@ -1,0 +1,42 @@
+name:  [TEST REPORT] Process Compatibility Test Report
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  process-report:
+    runs-on: ubuntu-latest
+    # Run only if the issue has the 'test-report' label
+    if: contains(github.event.issue.labels, 'test-report')
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Parse Issue Body
+        uses: stefanbuck/github-issue-parser@v3
+        id: issue-parser
+        with:
+          template_path: .github/ISSUE_TEMPLATE/test-report.yml # Adjust if your template filename is different
+
+      - name: Save Parsed Data to JSON
+        run: |
+          echo '${{ steps.issue-parser.outputs.jsonString }}' > issue.json
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run Database Update Script
+        env:
+          ISSUE_DATA_PATH: issue.json
+        run: |
+          python .github/scripts/update_database.py
+
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(db): add test report for issue #${{ github.event.issue.number }}"
+          file_pattern: data/games_data.json
