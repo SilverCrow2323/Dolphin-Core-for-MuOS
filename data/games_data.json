@@ -3523,16 +3523,16 @@
           },
           "test_review": {
             "rating": 2,
-            "fps": "9 - 15",
-            "fps_min": 9,
-            "fps_max": 15,
+            "fps": "10 - 20",
+            "fps_min": 10,
+            "fps_max": 20,
             "boot": "YES",
             "playable": "NO"
           },
           "test_details": {
-            "rtcore_version": "v10.5-124",
-            "core_profile": "Performance",
-            "considerations": "The game boots but runs at its worst. Also used speedhacks and other performance settings but the result is basically the same."
+            "rtcore_version": "v10.5.3",
+            "core_profile": "Speedup 2",
+            "considerations": "With the new RT: Profiles, specifically the experimental Speedup 2, the game gained some extra FPS but the overall experience is still bad."
           },
           "test_environment": {
             "tester": "sirpips",
