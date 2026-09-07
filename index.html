@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Audiowide&family=Outfit:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   <style>
-    /* ===== RESET & BASE (come prima) ===== */
+    /* ===== RESET & BASE ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Outfit', sans-serif;
@@ -18,7 +18,7 @@
       overflow-x: hidden;
     }
 
-    /* ===== THEME GAMECUBE – Cyberpunk Violaceo ===== */
+    /* ===== THEME GAMECUBE ===== */
     body.theme-gc {
       background: #0a0618;
       color: #f1f5f9;
@@ -69,7 +69,7 @@
       text-shadow: 0 0 10px rgba(139, 92, 246, 0.3), 0 0 30px rgba(139, 92, 246, 0.1);
     }
 
-    /* ===== THEME WII – Pastello Azzurro ===== */
+    /* ===== THEME WII ===== */
     body.theme-wii {
       background: #e8f0f8;
       color: #0f172a;
@@ -120,7 +120,29 @@
       text-shadow: 0 0 10px rgba(0, 163, 224, 0.15);
     }
 
-    /* ===== SCROLLBAR CYBER ===== */
+    /* ===== HEADER FISSO E OPACO ===== */
+    #appHeader {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      transition: background 0.4s, border-color 0.4s;
+      border-bottom: 2px solid;
+      backdrop-filter: none !important;
+      background: #0a0618 !important;
+      border-color: #2a1a4a !important;
+    }
+    body.theme-wii #appHeader {
+      background: #dce8f0 !important;
+      border-color: #8a9aa8 !important;
+    }
+    #appHeader.bg-opacity-90 {
+      background-opacity: 1 !important;
+    }
+    #appHeader.backdrop-blur-xl {
+      backdrop-filter: none !important;
+    }
+
+    /* ===== SCROLLBAR ===== */
     ::-webkit-scrollbar { width: 8px; height: 8px; }
     body.theme-gc ::-webkit-scrollbar-track { background: #0a0618; border: 1px solid #2a1a4a; clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%); }
     body.theme-gc ::-webkit-scrollbar-thumb { background: #8b5cf6; border: 1px solid #2a1a4a; border-radius: 0; clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%); }
@@ -156,13 +178,84 @@
       50% { transform: perspective(800px) rotateY(12deg); opacity: 0.9; }
       100% { transform: perspective(800px) rotateY(0deg); opacity: 1; }
     }
-    @keyframes slidePanelFromLeft {
-      0% { transform: translateX(-100%); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
+    @keyframes crtFlicker {
+      0% { opacity: 1; }
+      5% { opacity: 0.92; }
+      10% { opacity: 1; }
+      15% { opacity: 0.96; }
+      20% { opacity: 1; }
+      25% { opacity: 0.94; }
+      30% { opacity: 1; }
+      100% { opacity: 1; }
     }
-    @keyframes slidePanelFromRight {
-      0% { transform: translateX(100%); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
+    @keyframes scanlineMove {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+    @keyframes crtOff {
+      0% { opacity: 1; transform: scale(1); filter: brightness(1) blur(0); }
+      30% { opacity: 0.7; transform: scale(0.98); filter: brightness(0.3) blur(2px); }
+      50% { opacity: 0; transform: scale(0.95); filter: brightness(0) blur(4px); }
+      70% { opacity: 0; transform: scale(0.92); filter: brightness(0) blur(6px); }
+      100% { opacity: 0; transform: scale(0.9); filter: brightness(0) blur(8px); }
+    }
+    @keyframes crtOn {
+      0% { opacity: 0; transform: scale(0.9); filter: brightness(0) blur(8px); }
+      30% { opacity: 0; transform: scale(0.92); filter: brightness(0) blur(6px); }
+      50% { opacity: 0.5; transform: scale(0.95); filter: brightness(0.3) blur(3px); }
+      70% { opacity: 0.8; transform: scale(0.98); filter: brightness(0.6) blur(1px); }
+      100% { opacity: 1; transform: scale(1); filter: brightness(1) blur(0); }
+    }
+    @keyframes hologramGlow {
+      0% { box-shadow: 0 0 20px rgba(139,92,246,0.1), 0 0 60px rgba(139,92,246,0.05); }
+      50% { box-shadow: 0 0 40px rgba(139,92,246,0.3), 0 0 80px rgba(139,92,246,0.1); }
+      100% { box-shadow: 0 0 20px rgba(139,92,246,0.1), 0 0 60px rgba(139,92,246,0.05); }
+    }
+
+    /* ===== ANIMAZIONE APERTURA MODALE HOLO ===== */
+    @keyframes holoPulse {
+      0% { transform: scale(0.8); opacity: 0.3; filter: blur(8px) brightness(0.5); }
+      50% { transform: scale(1.05); opacity: 0.9; filter: blur(0) brightness(1.2); }
+      100% { transform: scale(1); opacity: 1; filter: blur(0) brightness(1); }
+    }
+    @keyframes holoBorderExpand {
+      0% { clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%); }
+      30% { clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%); }
+      60% { clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%); }
+      100% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+    }
+    @keyframes holoBorderClose {
+      0% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+      40% { clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%); }
+      70% { clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%); }
+      100% { clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%); }
+    }
+    @keyframes holoFadeIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      60% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes holoFadeOut {
+      0% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(0.95); }
+    }
+    @keyframes crtInterference {
+      0% { opacity: 0; }
+      20% { opacity: 0.15; }
+      40% { opacity: 0; }
+      60% { opacity: 0.1; }
+      80% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes glitchLine {
+      0% { transform: translateX(0); opacity: 0; }
+      10% { transform: translateX(2px); opacity: 0.2; }
+      20% { transform: translateX(-2px); opacity: 0; }
+      30% { transform: translateX(1px); opacity: 0.3; }
+      40% { transform: translateX(-1px); opacity: 0; }
+      50% { transform: translateX(3px); opacity: 0.1; }
+      60% { transform: translateX(-3px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 0; }
     }
 
     /* ===== CARDS & CONTAINERS ===== */
@@ -206,6 +299,115 @@
     body.theme-gc .glow-border::before { background: linear-gradient(135deg, rgba(139,92,246,0.5), rgba(236,72,153,0.2)); }
     body.theme-wii .glow-border::before { background: linear-gradient(135deg, rgba(0,163,224,0.4), rgba(56,189,248,0.15)); }
     .game-card:hover .glow-border::before { opacity: 1; }
+
+    /* ===== MODALE CON SFONDO DEFINITO E BORDI SPESSI ===== */
+    #gameModal .modal-outer {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    #gameModal .modal-outer.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #gameModal .modal-outer.closing {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    #gameModal .modal-card {
+      position: relative;
+      width: 100%;
+      max-width: 980px;
+      max-height: 92vh;
+      overflow-y: auto;
+      padding: 1.5rem 1.8rem 2rem;
+      background: #0a0618;
+      color: #f1f5f9;
+      border: 6px solid #2a1a4a;
+      outline: 3px solid rgba(139,92,246,0.2);
+      outline-offset: 2px;
+      box-shadow: 0 0 40px rgba(139,92,246,0.1), 0 0 80px rgba(139,92,246,0.05);
+      clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
+      transform: scale(0.95);
+      opacity: 0;
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    body.theme-wii #gameModal .modal-card {
+      background: #e8f0f8;
+      color: #0f172a;
+      border-color: #8a9aa8;
+      outline-color: rgba(0,163,224,0.2);
+      box-shadow: 0 0 40px rgba(0,163,224,0.1), 0 0 80px rgba(0,163,224,0.05);
+    }
+    #gameModal .modal-card.open {
+      transform: scale(1);
+      opacity: 1;
+    }
+    #gameModal .modal-card.closing {
+      transform: scale(0.95);
+      opacity: 0;
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* ===== HOLO ANIMATION OVERLAY ===== */
+    .holo-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 49;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .holo-overlay .holo-light {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #c084fc;
+      box-shadow: 0 0 40px #c084fc, 0 0 80px rgba(139,92,246,0.3);
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+      transition: none;
+    }
+    .holo-overlay .holo-light.active {
+      animation: holoPulse 0.8s ease-out forwards;
+    }
+    .holo-overlay .holo-border {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border: 3px solid rgba(139,92,246,0.6);
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 30px rgba(139,92,246,0.15);
+      opacity: 0;
+      clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+    }
+    .holo-overlay .holo-border.active {
+      animation: holoBorderExpand 0.9s ease-out forwards;
+    }
+    .holo-overlay .holo-border.closing {
+      animation: holoBorderClose 0.6s ease-in forwards;
+    }
+    body.theme-wii .holo-overlay .holo-light {
+      background: #38bdf8;
+      box-shadow: 0 0 40px #38bdf8, 0 0 80px rgba(0,163,224,0.3);
+    }
+    body.theme-wii .holo-overlay .holo-border {
+      border-color: rgba(0,163,224,0.6);
+      box-shadow: 0 0 30px rgba(0,163,224,0.15);
+    }
 
     /* ===== BADGES ===== */
     .badge-core { font-size: 10px; padding: 2px 14px; border-radius: 0; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; border: 2px solid; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); }
@@ -443,19 +645,14 @@
     .modal-test-card {
       padding: 16px 20px;
       margin-bottom: 12px;
-      border: 2px solid;
+      border: 3px solid;
       clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
       position: relative;
       transition: all 0.2s;
-    }
-    body.theme-gc .modal-test-card {
       background: rgba(26, 10, 46, 0.6);
-      border-color: #2a1a4a;
     }
-    body.theme-wii .modal-test-card {
-      background: rgba(255,255,255,0.7);
-      border-color: #b0c4d8;
-    }
+    body.theme-gc .modal-test-card { border-color: #2a1a4a; background: rgba(26,10,46,0.6); }
+    body.theme-wii .modal-test-card { border-color: #b0c4d8; background: rgba(255,255,255,0.7); }
     .modal-test-card:last-child { margin-bottom: 0; }
 
     /* ===== RATING STAR CONTAINER ===== */
@@ -1056,7 +1253,7 @@
     body.theme-wii .modal-tab img { border-color: #b0c4d8; }
 
     /* ===== PANNELLI LATERALI ===== */
-    .about-overlay, .tester-overlay {
+    .about-overlay, .tester-overlay, .credits-overlay {
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.75);
@@ -1066,10 +1263,113 @@
       pointer-events: none;
       transition: opacity 0.4s ease;
     }
-    .about-overlay.open, .tester-overlay.open {
+    .about-overlay.open, .tester-overlay.open, .credits-overlay.open {
       opacity: 1;
       pointer-events: auto;
     }
+
+    /* ===== CRT MONITOR STYLES ===== */
+    .crt-monitor {
+      background: #0a0a0f;
+      border: 12px solid #1a1a2e;
+      border-radius: 12px;
+      padding: 8px;
+      position: relative;
+      box-shadow:
+        0 0 20px rgba(139, 92, 246, 0.1),
+        inset 0 0 60px rgba(139, 92, 246, 0.05),
+        0 0 4px rgba(139, 92, 246, 0.3);
+      transition: box-shadow 0.3s ease;
+      overflow: hidden;
+      animation: crtFlicker 8s infinite;
+    }
+    body.theme-wii .crt-monitor {
+      border-color: #2a3a4e;
+      box-shadow:
+        0 0 20px rgba(0, 163, 224, 0.1),
+        inset 0 0 60px rgba(0, 163, 224, 0.05),
+        0 0 4px rgba(0, 163, 224, 0.3);
+    }
+    .crt-monitor .crt-screen {
+      background: #0e0e16;
+      border-radius: 4px;
+      padding: 16px;
+      min-height: 180px;
+      position: relative;
+      overflow: hidden;
+      color: #d4d4e8;
+      font-size: 0.8rem;
+      line-height: 1.6;
+      transition: all 0.3s ease;
+    }
+    body.theme-wii .crt-monitor .crt-screen {
+      background: #141824;
+      color: #d0d8e8;
+    }
+    .crt-monitor .crt-screen .scanlines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.15) 2px, rgba(0,0,0,0.15) 4px);
+      pointer-events: none;
+      z-index: 2;
+      animation: scanlineMove 8s linear infinite;
+    }
+    .crt-monitor .crt-screen .vignette {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.5) 100%);
+      pointer-events: none;
+      z-index: 3;
+    }
+    .crt-monitor .crt-screen .crt-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .crt-monitor .crt-label {
+      position: absolute;
+      bottom: -6px;
+      right: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      color: rgba(139, 92, 246, 0.3);
+      letter-spacing: 2px;
+      background: rgba(10, 10, 15, 0.8);
+      padding: 0 8px;
+      border: 1px solid rgba(139, 92, 246, 0.1);
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
+    body.theme-wii .crt-monitor .crt-label {
+      color: rgba(0, 163, 224, 0.3);
+      border-color: rgba(0, 163, 224, 0.1);
+    }
+
+    .crt-monitor.crt-off .crt-screen {
+      animation: crtOff 0.6s ease-in forwards;
+    }
+    .crt-monitor.crt-on .crt-screen {
+      animation: crtOn 0.6s ease-out forwards;
+    }
+
+    /* Index side */
+    .index-side {
+      min-width: 140px;
+      max-width: 200px;
+      flex-shrink: 0;
+    }
+    .credits-side {
+      min-width: 140px;
+      max-width: 200px;
+      flex-shrink: 0;
+    }
+
+    /* ===== ABOUT PANEL ===== */
     .about-panel, .tester-panel {
       position: fixed;
       top: 0;
@@ -1111,169 +1411,76 @@
       pointer-events: auto;
     }
 
-    /* ===== NUOVI STILI PER I BOX DEL PANNELLO ABOUT (stile tetris) ===== */
+    .about-panel .close-about, .tester-panel .close-tester {
+      position: sticky;
+      top: 0;
+      float: right;
+      background: none;
+      border: 2px solid;
+      padding: 6px 20px;
+      font-weight: 900;
+      font-size: 14px;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 1rem;
+      z-index: 10;
+      position: sticky;
+      top: 1rem;
+    }
+    .about-panel.panel-gc .close-about, .tester-panel.panel-gc .close-tester {
+      border-color: #2a1a4a;
+      color: #94a3b8;
+    }
+    .about-panel.panel-gc .close-about:hover, .tester-panel.panel-gc .close-tester:hover {
+      border-color: #8b5cf6;
+      color: white;
+    }
+    .about-panel.panel-wii .close-about, .tester-panel.panel-wii .close-tester {
+      border-color: #b0c4d8;
+      color: #64748b;
+    }
+    .about-panel.panel-wii .close-about:hover, .tester-panel.panel-wii .close-tester:hover {
+      border-color: #00a3e0;
+      color: #0f172a;
+    }
+
+    .about-panel h2 {
+      font-family: 'Audiowide', 'Orbitron', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      margin-top: 0.2rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 2px solid;
+      padding-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+    .about-panel.panel-gc h2 { border-color: #2a1a4a; color: #a78bfa; }
+    .about-panel.panel-wii h2 { border-color: #b0c4d8; color: #0284c7; }
 
     .about-panel .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
       gap: 16px;
       margin-top: 10px;
     }
-    .about-panel .about-grid-full {
-      grid-column: 1 / -1;
+    .about-panel .about-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .about-panel .about-row-full {
+      width: 100%;
     }
 
-    /* Box stile dashed rosso (RT:INDEX) */
-    .about-panel .box-red-dashed {
-      background: transparent;
-      border: 2px dashed #ff3333;
-      padding: 2px;
-      clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
-      filter: drop-shadow(0 0 6px rgba(255, 51, 51, 0.3));
-    }
-    .about-panel .box-red-dashed .box-inner {
-      background: rgba(16, 6, 6, 0.95);
-      padding: 14px 16px;
-      clip-path: polygon(0 0, calc(100% - 19px) 0, 100% 19px, 100% 100%, 19px 100%, 0 calc(100% - 19px));
-      border-left: 4px solid #ff3333;
-      height: 100%;
-    }
-    .about-panel .box-red-dashed .box-header {
-      color: #ff3333;
-      border-bottom: 2px solid rgba(255, 51, 51, 0.3);
-      display: flex;
-      justify-content: space-between;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding-bottom: 4px;
-      margin-bottom: 10px;
-      letter-spacing: 0.5px;
-    }
-    .about-panel .box-red-dashed .box-header::after {
-      content: '';
-      display: block;
-      width: 8px;
-      height: 8px;
-      background: #ff3333;
-    }
-    .about-panel .box-red-dashed .box-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .about-panel .box-red-dashed .box-list li a {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: #94a3b8;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.7rem;
-      padding: 4px 6px;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid transparent;
-      transition: all 0.2s ease-in-out;
-    }
-    .about-panel .box-red-dashed .box-list li a:hover {
-      color: #ffffff;
-      background: rgba(255, 51, 51, 0.12);
-      border: 1px solid rgba(255, 51, 51, 0.5);
-      border-left: 3px solid #ff3333;
-      transform: translateX(4px);
-    }
-    .about-panel .box-red-dashed .box-list .idx-num {
-      font-family: 'JetBrains Mono', monospace;
-      margin-right: 8px;
-      font-size: 0.65rem;
-      opacity: 0.9;
-      color: #ff6b6b;
-    }
-
-    /* Box stile speculare Wii (blu/verde) */
-    .about-panel .box-wii-style {
-      background: #0ea5e9;
-      padding: 2px;
-      clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
-      filter: drop-shadow(0 0 6px rgba(14, 165, 233, 0.4));
-    }
-    .about-panel .box-wii-style .box-inner {
-      background: rgba(8, 14, 24, 0.98);
-      padding: 14px 16px;
-      clip-path: polygon(19px 0, 100% 0, 100% calc(100% - 19px), calc(100% - 19px) 100%, 0 100%, 0 19px);
-      border-right: 4px solid #10b981;
-      height: 100%;
-    }
-    .about-panel .box-wii-style .box-header {
-      color: #0ea5e9;
-      border-bottom: 2px solid rgba(14, 165, 233, 0.3);
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: space-between;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding-bottom: 4px;
-      margin-bottom: 10px;
-      letter-spacing: 0.5px;
-    }
-    .about-panel .box-wii-style .box-header::after {
-      content: '';
-      display: block;
-      width: 8px;
-      height: 8px;
-      background: #10b981;
-    }
-    .about-panel .box-wii-style .box-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .about-panel .box-wii-style .box-list li a {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: #94a3b8;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.7rem;
-      padding: 4px 6px;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid transparent;
-      transition: all 0.2s ease-in-out;
-      flex-direction: row-reverse;
-      justify-content: flex-end;
-    }
-    .about-panel .box-wii-style .box-list li a:hover {
-      color: #ffffff;
-      background: rgba(14, 165, 233, 0.1);
-      border: 1px solid rgba(14, 165, 233, 0.5);
-      border-right: 3px solid #0ea5e9;
-      border-left: none;
-      transform: translateX(-4px);
-    }
-    .about-panel .box-wii-style .box-list .idx-num {
-      font-family: 'JetBrains Mono', monospace;
-      margin-left: 8px;
-      font-size: 0.65rem;
-      opacity: 0.9;
-      color: #10b981;
-    }
-    .about-panel .box-wii-style .box-list li a .idx-num {
-      margin-right: 0;
-    }
-
-    /* Box stile Cyberpunk (viola) */
     .about-panel .box-cyber {
       background: #8b5cf6;
       padding: 1px;
       filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.2));
       clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
       border-top: 3px solid #c084fc;
+      width: 100%;
     }
     .about-panel .box-cyber .box-inner {
       background: rgba(10, 6, 24, 0.95);
@@ -1349,79 +1556,171 @@
       border-bottom-color: #a78bfa;
     }
 
-    /* ===== ALTRI STILI PANNELLO ===== */
-    .about-panel .close-about, .tester-panel .close-tester {
-      position: sticky;
-      top: 0;
-      float: right;
-      background: none;
-      border: 2px solid;
-      padding: 6px 20px;
-      font-weight: 900;
-      font-size: 14px;
-      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
-      cursor: pointer;
-      transition: all 0.2s;
-      margin-bottom: 1rem;
-      z-index: 10;
-      position: sticky;
-      top: 1rem;
+    .about-panel .box-index {
+      background: transparent;
+      border: 2px dashed #ff3333;
+      padding: 2px;
+      clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+      filter: drop-shadow(0 0 6px rgba(255, 51, 51, 0.3));
+      height: 100%;
     }
-    .about-panel.panel-gc .close-about, .tester-panel.panel-gc .close-tester {
-      border-color: #2a1a4a;
+    .about-panel .box-index .box-inner {
+      background: rgba(16, 6, 6, 0.95);
+      padding: 12px 14px;
+      clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+      border-left: 3px solid #ff3333;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .about-panel .box-index .box-header {
+      color: #ff3333;
+      border-bottom: 2px solid rgba(255, 51, 51, 0.3);
+      display: flex;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+    .about-panel .box-index .box-header::after {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: #ff3333;
+    }
+    .about-panel .box-index .box-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+    .about-panel .box-index .box-list li a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
       color: #94a3b8;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.65rem;
+      padding: 3px 6px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid transparent;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
     }
-    .about-panel.panel-gc .close-about:hover, .tester-panel.panel-gc .close-tester:hover {
-      border-color: #8b5cf6;
-      color: white;
+    .about-panel .box-index .box-list li a:hover {
+      color: #ffffff;
+      background: rgba(255, 51, 51, 0.12);
+      border: 1px solid rgba(255, 51, 51, 0.5);
+      border-left: 3px solid #ff3333;
+      transform: translateX(4px);
     }
-    .about-panel.panel-wii .close-about, .tester-panel.panel-wii .close-tester {
-      border-color: #b0c4d8;
-      color: #64748b;
+    .about-panel .box-index .box-list li a.active {
+      color: #ffffff;
+      background: rgba(255, 51, 51, 0.15);
+      border: 1px solid rgba(255, 51, 51, 0.5);
+      border-left: 3px solid #ff3333;
     }
-    .about-panel.panel-wii .close-about:hover, .tester-panel.panel-wii .close-tester:hover {
-      border-color: #00a3e0;
-      color: #0f172a;
-    }
-
-    .about-panel h2 {
-      font-family: 'Audiowide', 'Orbitron', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 900;
-      letter-spacing: 0.04em;
-      margin-top: 0.2rem;
-      margin-bottom: 1.2rem;
-      border-bottom: 2px solid;
-      padding-bottom: 0.5rem;
-      text-transform: uppercase;
-    }
-    .about-panel.panel-gc h2 { border-color: #2a1a4a; color: #a78bfa; }
-    .about-panel.panel-wii h2 { border-color: #b0c4d8; color: #0284c7; }
-
-    .about-panel .section-block {
-      background: rgba(255,255,255,0.04);
-      border: 2px solid;
-      border-radius: 0;
-      padding: 1rem 1.2rem;
-      margin-bottom: 1rem;
-      clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
-      transition: all 0.2s;
-    }
-    .about-panel.panel-gc .section-block {
-      border-color: #2a1a4a;
-      background: rgba(26,10,46,0.4);
-    }
-    .about-panel.panel-wii .section-block {
-      border-color: #b0c4d8;
-      background: rgba(255,255,255,0.6);
-    }
-    .about-panel .section-block p, .about-panel .section-block li {
-      font-size: 0.82rem;
-      line-height: 1.5;
-      font-weight: 400;
+    .about-panel .box-index .box-list .idx-num {
+      font-family: 'JetBrains Mono', monospace;
+      margin-right: 6px;
+      font-size: 0.6rem;
+      opacity: 0.9;
+      color: #ff6b6b;
     }
 
-    /* Widget rating compatto (come già presente) */
+    .about-panel .box-credits {
+      background: #0ea5e9;
+      padding: 2px;
+      clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
+      filter: drop-shadow(0 0 6px rgba(14, 165, 233, 0.4));
+      height: 100%;
+    }
+    .about-panel .box-credits .box-inner {
+      background: rgba(8, 14, 24, 0.98);
+      padding: 12px 14px;
+      clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+      border-right: 3px solid #10b981;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .about-panel .box-credits .box-header {
+      color: #0ea5e9;
+      border-bottom: 2px solid rgba(14, 165, 233, 0.3);
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+    .about-panel .box-credits .box-header::after {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+    }
+    .about-panel .box-credits .box-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+    .about-panel .box-credits .box-list li a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #94a3b8;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.65rem;
+      padding: 3px 6px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid transparent;
+      transition: all 0.2s ease-in-out;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      cursor: pointer;
+    }
+    .about-panel .box-credits .box-list li a:hover {
+      color: #ffffff;
+      background: rgba(14, 165, 233, 0.1);
+      border: 1px solid rgba(14, 165, 233, 0.5);
+      border-right: 3px solid #0ea5e9;
+      border-left: none;
+      transform: translateX(-4px);
+    }
+    .about-panel .box-credits .box-list li a.active {
+      color: #ffffff;
+      background: rgba(14, 165, 233, 0.15);
+      border: 1px solid rgba(14, 165, 233, 0.5);
+      border-right: 3px solid #0ea5e9;
+    }
+    .about-panel .box-credits .box-list .idx-num {
+      font-family: 'JetBrains Mono', monospace;
+      margin-left: 6px;
+      font-size: 0.6rem;
+      opacity: 0.9;
+      color: #10b981;
+    }
+    .about-panel .box-credits .box-list li a .idx-num {
+      margin-right: 0;
+    }
+
+    /* RATING WIDGET */
     .rating-system-container {
       display: flex;
       flex-direction: row;
@@ -1466,7 +1765,7 @@
     .about-panel.panel-wii .rating-widget-compact .circle-container .seg.bg {
       stroke: rgba(0,0,0,0.08);
     }
-    .rating-widget-compact .circle-container .star-number {
+    .rating-widget-compact .star-number {
       position: absolute;
       font-family: 'JetBrains Mono', monospace;
       font-size: 28px;
@@ -1647,6 +1946,153 @@
     .tester-panel .test-item .rating-stars-mini { display: flex; gap: 1px; }
     .tester-panel .test-item .rating-stars-mini svg { width: 12px; height: 12px; }
 
+    /* ===== HOLOGRAM CREDITS MODAL ===== */
+    .credits-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.85) rotateX(-5deg);
+      z-index: 1001;
+      width: min(640px, 92vw);
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 2rem 2rem 2.5rem;
+      background: rgba(10, 6, 24, 0.92);
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(139, 92, 246, 0.3);
+      border-radius: 0;
+      clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
+      box-shadow: 0 0 40px rgba(139, 92, 246, 0.15), 0 0 80px rgba(139, 92, 246, 0.05);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+      color: #f1f5f9;
+    }
+    .credits-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1) rotateX(0deg);
+      animation: hologramGlow 3s ease-in-out infinite;
+    }
+    body.theme-wii .credits-modal {
+      background: rgba(232, 240, 248, 0.95);
+      backdrop-filter: blur(20px);
+      border-color: rgba(0, 163, 224, 0.3);
+      color: #0f172a;
+      box-shadow: 0 0 40px rgba(0, 163, 224, 0.15), 0 0 80px rgba(0, 163, 224, 0.05);
+    }
+    .credits-modal .close-credits {
+      float: right;
+      background: none;
+      border: 2px solid;
+      padding: 4px 16px;
+      font-weight: 900;
+      font-size: 13px;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 0.5rem;
+    }
+    body.theme-gc .credits-modal .close-credits {
+      border-color: #2a1a4a;
+      color: #94a3b8;
+    }
+    body.theme-gc .credits-modal .close-credits:hover {
+      border-color: #8b5cf6;
+      color: white;
+    }
+    body.theme-wii .credits-modal .close-credits {
+      border-color: #b0c4d8;
+      color: #64748b;
+    }
+    body.theme-wii .credits-modal .close-credits:hover {
+      border-color: #00a3e0;
+      color: #0f172a;
+    }
+    .credits-modal .credits-title {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid;
+      border-color: inherit;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    body.theme-gc .credits-modal .credits-title { color: #a78bfa; border-color: #2a1a4a; }
+    body.theme-wii .credits-modal .credits-title { color: #0284c7; border-color: #b0c4d8; }
+    .credits-modal .credits-section {
+      margin: 1rem 0 1.2rem;
+    }
+    .credits-modal .credits-section h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    body.theme-gc .credits-modal .credits-section h4 { color: #c084fc; }
+    body.theme-wii .credits-modal .credits-section h4 { color: #0284c7; }
+    .credits-modal .credits-section .dev-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.2rem 1.2rem;
+      font-weight: 400;
+      font-size: 0.9rem;
+      padding-left: 0.4rem;
+    }
+    .credits-modal .credits-section .dev-grid .handle {
+      font-weight: 700;
+    }
+    .credits-modal .credits-section .dev-grid .desc {
+      font-weight: 400;
+      opacity: 0.7;
+    }
+    .credits-modal .credits-section .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.8rem;
+      font-weight: 400;
+      font-size: 0.9rem;
+      padding-left: 0.4rem;
+    }
+    .credits-modal .credits-section .tag-list span {
+      border: 1px solid;
+      padding: 0.1rem 0.6rem;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+      font-size: 0.8rem;
+    }
+    body.theme-gc .credits-modal .credits-section .tag-list span {
+      border-color: #2a1a4a;
+      color: #94a3b8;
+    }
+    body.theme-wii .credits-modal .credits-section .tag-list span {
+      border-color: #b0c4d8;
+      color: #475569;
+    }
+    .credits-modal .credits-section .note {
+      font-weight: 400;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      font-style: italic;
+      padding-left: 0.4rem;
+    }
+    .credits-modal .scanline {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);
+      animation: scanlineMove 4s linear infinite;
+      pointer-events: none;
+    }
+    body.theme-wii .credits-modal .scanline {
+      background: linear-gradient(90deg, transparent, rgba(0,163,224,0.3), transparent);
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 640px) {
       #gamesGrid.grid-view { grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -1657,7 +2103,9 @@
       .about-panel, .tester-panel { padding: 1.5rem 1rem 2rem; width: 100vw; }
       .tester-panel .tester-name { font-size: 1.4rem; }
       .tester-panel .tester-stats { flex-wrap: wrap; gap: 0.8rem; }
-      .about-panel .about-grid { grid-template-columns: 1fr; gap: 12px; }
+      .about-panel .about-row { flex-direction: column; }
+      .index-side, .credits-side { min-width: 100%; max-width: 100%; }
+      .crt-monitor { margin-top: 8px; }
       .rating-system-container { flex-direction: column; align-items: center; }
       .rating-widget-compact { width: 100%; justify-content: center; }
       .rating-info-panel { width: 100%; }
@@ -1666,6 +2114,10 @@
       .list-extended-cover { width: 80px; height: 106px; }
       .view-btn { font-size: 9px; padding: 3px 8px; }
       .view-btn svg { width: 12px; height: 12px; }
+      .credits-modal { padding: 1.5rem 1rem 2rem; }
+      .credits-modal .credits-section .dev-grid { grid-template-columns: 1fr; }
+      .credits-modal .credits-title { font-size: 1.2rem; }
+      #gameModal .modal-card { padding: 1rem 1rem 1.5rem; }
     }
   </style>
 </head>
@@ -1676,7 +2128,6 @@
   <div id="aboutPanel" class="about-panel">
     <button class="close-about" onclick="closeAboutPanel()">✕ Close</button>
 
-    <!-- LOGHI / HEADER VISIVO (come prima) -->
     <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem 1.5rem; margin-bottom:1.2rem; padding-bottom:0.6rem; border-bottom:2px solid; border-color:inherit;">
       <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/dolphinformuos.png?raw=true" alt="muOS Dolphin" style="height:44px; width:auto;" />
       <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/dolphinrt.png?raw=true" alt="Rt:Core icon" style="height:34px; width:auto;" />
@@ -1687,144 +2138,273 @@
 
     <h2>⚡ How & About</h2>
 
-    <!-- GRIGLIA TETRIS DI BOX -->
     <div class="about-grid">
 
-      <!-- BOX CYBERPUNK (span full) -->
-      <div class="box-cyber about-grid-full">
-        <div class="box-inner">
-          <div class="box-header">
-            [ i ] DASHBOARD.INFO_
-          </div>
-          <div class="box-title-wrap">
-            <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/dolphinrt.png?raw=true" alt="Rt Core" />
-            <div class="project-title">Dolphin Rt:Core</div>
-          </div>
-          <p>
-            <span class="ascii">►</span> This dashboard collects community-tested compatibility reports for
-            <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS" target="_blank" class="cyber-link">Dolphin Rt:Core for muOS</a>,
-            focusing on <u>GameCube</u> and <u>Wii</u> emulation on <em>H700-based devices</em> such as:
-          </p>
-          <ul class="list-items">
-            <li><span class="ascii">└─▪</span> <a href="https://anbernic.com/products/rg35xx-h" target="_blank" class="cyber-link" style="color:#a78bfa; border-color:#a78bfa;">RG35XX H</a></li>
-            <li><span class="ascii">└─▪</span> <a href="https://anbernic.com/products/rg40xx-h" target="_blank" class="cyber-link" style="color:#a78bfa; border-color:#a78bfa;">RG40XX H</a></li>
-          </ul>
-          <p>
-            <span class="ascii">❖</span> Every test is submitted via GitHub Issues and includes ratings, boot status, playability, FPS ranges, and detailed notes.
-          </p>
-        </div>
-      </div>
-
-      <!-- BOX RED DASHED (sinistra) -->
-      <div class="box-red-dashed">
-        <div class="box-inner">
-          <div class="box-header">
-            [ RT:INDEX_ ]
-          </div>
-          <ul class="box-list">
-            <li><a href="#"><span class="idx-num">[01]</span> Database Guide</a></li>
-            <li><a href="#"><span class="idx-num">[02]</span> Game Data</a></li>
-            <li><a href="#"><span class="idx-num">[03]</span> Tests Report</a></li>
-            <li><a href="#"><span class="idx-num">[04]</span> The Project</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- BOX WII-STYLE (destra, speculare) -->
-      <div class="box-wii-style">
-        <div class="box-inner">
-          <div class="box-header">
-            [ CREDITS_ ]
-          </div>
-          <ul class="box-list">
-            <li><a href="#"><span class="idx-num">[01]</span> Original Devs</a></li>
-            <li><a href="#"><span class="idx-num">[02]</span> Testers</a></li>
-            <li><a href="#"><span class="idx-num">[03]</span> muOS Team</a></li>
-            <li><a href="#"><span class="idx-num">[04]</span> SPDW Factory</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- SEZIONE WIDGET RATING (occupa tutta la larghezza) -->
-      <div class="about-grid-full section-block" style="margin-top:0; border-color:inherit;">
-        <h3 style="font-size:1rem; margin:0 0 0.4rem 0; color:#38bdf8;">⭐ Rating System – Interactive Demo</h3>
-        <p style="font-size:0.8rem; font-weight:400;">Use the widget to see how ratings correspond to colors, performance, and status labels.</p>
-
-        <div class="rating-system-container">
-          <!-- WIDGET COMPATTO -->
-          <div class="rating-widget-compact">
-            <button class="btn-rate" id="btnDec" aria-label="Decrease rating">−</button>
-            <div class="circle-container">
-              <svg viewBox="0 0 100 100">
-                <circle class="seg bg" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="0" />
-                <circle class="seg bg" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-62.83" />
-                <circle class="seg bg" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-125.66" />
-                <circle class="seg bg" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-188.49" />
-                <circle class="seg bg" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-251.32" />
-                <!-- FG Segments -->
-                <circle class="seg fg" id="wSeg1" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="0" />
-                <circle class="seg fg" id="wSeg2" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-62.83" />
-                <circle class="seg fg" id="wSeg3" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-125.66" />
-                <circle class="seg fg" id="wSeg4" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-188.49" />
-                <circle class="seg fg" id="wSeg5" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-251.32" />
-              </svg>
-              <span class="star-number" id="wRatingNumber">0</span>
+      <!-- ROW 1: Cyber box (full width) -->
+      <div class="about-row about-row-full">
+        <div class="box-cyber" style="width:100%;">
+          <div class="box-inner">
+            <div class="box-header">[ i ] DASHBOARD.INFO_</div>
+            <div class="box-title-wrap">
+              <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/dolphinrt.png?raw=true" alt="Rt Core" />
+              <div class="project-title">Dolphin Rt:Core</div>
             </div>
-            <button class="btn-rate" id="btnInc" aria-label="Increase rating">+</button>
-          </div>
-
-          <!-- PANNELLO INFO -->
-          <div class="rating-info-panel" id="ratingInfoPanel">
-            <div class="rating-header">
-              <span id="wRatingDisplay">0</span>
-              <span class="star-icon-big" id="wStarIcon">★</span>
-              <span id="wRatingLabel">Not Rated</span>
-            </div>
-            <p class="rating-desc" id="wRatingDesc">Select a rating to see the description.</p>
-            <hr />
-            <div class="status-badges">
-              <span id="wBootBadge" class="status-pill boots-no">⛔ NO BOOT</span>
-              <span id="wPlayableBadge" class="status-pill playable-no">⛔ UNPLAYABLE</span>
-            </div>
-            <div class="fps-info">
-              <span><strong>FPS:</strong> <span class="fps-value" id="wFpsRange">N/A</span></span>
-              <span>Range may vary depending on game and emulation settings.</span>
-            </div>
+            <p><span class="ascii">►</span> This dashboard collects community-tested compatibility reports for <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS" target="_blank" class="cyber-link">Dolphin Rt:Core for muOS</a>, focusing on <u>GameCube</u> and <u>Wii</u> emulation on <em>H700-based devices</em> such as:</p>
+            <ul class="list-items">
+              <li><span class="ascii">└─▪</span> <a href="https://anbernic.com/products/rg35xx-h" target="_blank" class="cyber-link" style="color:#a78bfa; border-color:#a78bfa;">RG35XX H</a></li>
+              <li><span class="ascii">└─▪</span> <a href="https://anbernic.com/products/rg40xx-h" target="_blank" class="cyber-link" style="color:#a78bfa; border-color:#a78bfa;">RG40XX H</a></li>
+            </ul>
+            <p><span class="ascii">❖</span> Every test is submitted via GitHub Issues and includes ratings, boot status, playability, FPS ranges, and detailed notes.</p>
           </div>
         </div>
       </div>
 
-      <!-- BOX MINORU (stile chat, ma con flair digitale) -->
-      <div class="about-grid-full section-block" style="border-color:inherit;">
-        <div style="display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center; justify-content:space-between;">
-          <div style="display:flex; align-items:center; gap:1rem;">
-            <div style="width:56px; height:56px; border-radius:50%; border:3px solid #00a3e0; overflow:hidden; display:flex; align-items:center; justify-content:center; background:rgba(0,163,224,0.15);">
-              <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/minoru.png?raw=true" alt="Minoru" style="width:100%; height:100%; object-fit:cover;" />
+      <!-- ROW 2: RT:INDEX (left) + CRT Monitor (right) -->
+      <div class="about-row">
+        <div class="index-side">
+          <div class="box-index" style="height:100%;">
+            <div class="box-inner">
+              <div class="box-header">[ RT:INDEX_ ]</div>
+              <ul class="box-list">
+                <li><a href="#" class="active" data-target="guide"><span class="idx-num">[01]</span> Database Guide</a></li>
+                <li><a href="#" data-target="gamedata"><span class="idx-num">[02]</span> Game Data</a></li>
+                <li><a href="#" data-target="tests"><span class="idx-num">[03]</span> Tests Report</a></li>
+              </ul>
             </div>
-            <div>
-              <div style="font-weight:900; font-size:1.1rem;">[R.I.] Minoru<sup>7</sup></div>
-              <div style="font-weight:400; font-size:0.8rem; color:#38bdf8; display:flex; align-items:center; gap:4px;">
-                <span style="background:#ef4444; width:8px; height:8px; display:inline-block; clip-path:polygon(50% 0%, 0% 100%, 100% 100%);"></span>
-                Digital Controller (with dictatorial tendencies)
+          </div>
+        </div>
+        <div style="flex:1; min-width:200px;">
+          <div class="crt-monitor" id="crtMonitor1">
+            <div class="crt-screen">
+              <div class="scanlines"></div>
+              <div class="vignette"></div>
+              <div class="crt-content" id="crtContent1">
+                <!-- Database Guide (default) -->
+                <div id="crtGuide" style="display:block;">
+                  <div style="font-family:'Audiowide',sans-serif; font-size:1rem; color:#a78bfa; margin-bottom:8px;">DATABASE GUIDE</div>
+                  <p style="margin-bottom:6px;"><strong>Welcome to the Dolphin Rt:Core Database!</strong></p>
+                  <p style="margin-bottom:6px;">This guide explains how to use this dashboard effectively.</p>
+                  <ul style="list-style:none; padding-left:8px; margin-bottom:6px;">
+                    <li style="margin-bottom:3px;"><span style="color:#a78bfa;">▸</span> <strong>Search</strong> — Find games by title or keywords.</li>
+                    <li style="margin-bottom:3px;"><span style="color:#a78bfa;">▸</span> <strong>Filters</strong> — Region, Boot status, Rating (1-5★).</li>
+                    <li style="margin-bottom:3px;"><span style="color:#a78bfa;">▸</span> <strong>Sort</strong> — By title, rating, FPS, or test count.</li>
+                    <li style="margin-bottom:3px;"><span style="color:#a78bfa;">▸</span> <strong>Views</strong> — Grid, List, or Extended list.</li>
+                    <li style="margin-bottom:3px;"><span style="color:#a78bfa;">▸</span> <strong>Game Card</strong> — Shows best rating, FPS, and region flags.</li>
+                  </ul>
+                  <p style="font-style:italic; opacity:0.7; font-size:0.75rem;">Click on any game card to see detailed test reports.</p>
+                </div>
+                <!-- Game Data (hidden) -->
+                <div id="crtGameData" style="display:none;">
+                  <div style="font-family:'Audiowide',sans-serif; font-size:1rem; color:#a78bfa; margin-bottom:8px;">GAME DATA</div>
+                  <div style="display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap;">
+                    <div style="width:64px; height:84px; background:#1a0a2e; border:2px solid #2a1a4a; clip-path:polygon(0%5%,5%0%,95%0%,100%5%,100%95%,95%100%,5%100%,0%95%); display:flex; align-items:center; justify-content:center; font-size:28px; color:rgba(255,255,255,0.1); flex-shrink:0;">🎮</div>
+                    <div style="flex:1; min-width:120px;">
+                      <div style="font-weight:900; font-size:0.95rem;">Super Mario Sunshine</div>
+                      <div style="display:flex; gap:4px; flex-wrap:wrap; margin:4px 0;">
+                        <span style="display:flex; gap:1px;">
+                          <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                          <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                          <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                          <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                          <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </span>
+                        <span class="fps-badge gc" style="font-size:9px; padding:0 8px;">60 FPS</span>
+                        <span class="boot-badge yes" style="font-size:8px; padding:0 8px;">Boots</span>
+                        <span class="playable-badge yes" style="font-size:8px; padding:0 8px;">Playable</span>
+                        <span style="display:flex; gap:2px;">
+                          <img src="https://flagcdn.com/w40/us.png" style="width:16px;height:12px;object-fit:cover;border:1px solid;clip-path:polygon(0%8%,8%0%,92%0%,100%8%,100%92%,92%100%,8%100%,0%92%);" />
+                          <img src="https://flagcdn.com/w40/eu.png" style="width:16px;height:12px;object-fit:cover;border:1px solid;clip-path:polygon(0%8%,8%0%,92%0%,100%8%,100%92%,92%100%,8%100%,0%92%);" />
+                        </span>
+                      </div>
+                      <div style="font-size:0.7rem; opacity:0.6; margin-top:2px;">Region flags show available game versions.</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Tests Report (hidden) -->
+                <div id="crtTests" style="display:none;">
+                  <div style="font-family:'Audiowide',sans-serif; font-size:1rem; color:#a78bfa; margin-bottom:8px;">TESTS REPORT</div>
+                  <div style="border:2px solid #2a1a4a; padding:8px 10px; clip-path:polygon(0%4%,2%0%,98%0%,100%4%,100%96%,98%100%,2%100%,0%96%); margin-bottom:6px; background:rgba(26,10,46,0.4);">
+                    <div style="display:flex; justify-content:space-between; font-size:0.7rem; font-weight:700; margin-bottom:4px;">
+                      <span>Tester: <span style="text-decoration:underline;">@Speedrun</span></span>
+                      <span>Device: RG40XX-H</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+                      <div style="display:flex; align-items:center; gap:3px; background:rgba(251,191,36,0.12); border:2px solid #f59e0b; padding:0 8px; clip-path:polygon(0%8%,8%0%,92%0%,100%8%,100%92%,92%100%,8%100%,0%92%); color:#fbbf24; font-weight:900; font-size:0.7rem;">
+                        <span style="font-size:0.8rem;">⭐</span> 3★
+                      </div>
+                      <span style="font-family:'JetBrains Mono'; font-size:0.7rem; border:2px solid #2563eb; padding:0 8px; clip-path:polygon(0%8%,8%0%,92%0%,100%8%,100%92%,92%100%,8%100%,0%92%); color:#60a5fa; background:rgba(37,99,235,0.15);">42-48 FPS</span>
+                      <span class="status-pill boots-yes" style="font-size:0.55rem; padding:0 6px; min-width:auto;">BOOTS</span>
+                      <span class="status-pill playable-issues" style="font-size:0.55rem; padding:0 6px; min-width:auto;">WITH ISSUES</span>
+                    </div>
+                    <div style="font-size:0.65rem; font-weight:400; opacity:0.7; margin-top:4px;">Considerations: Minor slowdowns in crowded areas, but playable overall.</div>
+                  </div>
+                  <div style="font-size:0.65rem; opacity:0.5; font-style:italic;">Each test includes rating, FPS, boot status, playability, and considerations.</div>
+                </div>
+              </div>
+            </div>
+            <span class="crt-label">CRT-01</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW 3: Rating widget (full width) -->
+      <div class="about-row about-row-full">
+        <div style="border:2px solid; border-color:inherit; padding:12px 16px; clip-path:polygon(0%4%,2%0%,98%0%,100%4%,100%96%,98%100%,2%100%,0%96%); width:100%; background:rgba(255,255,255,0.02);">
+          <div style="font-family:'Audiowide',sans-serif; font-size:0.9rem; color:#38bdf8; margin-bottom:4px;">⭐ Rating System – Interactive Demo</div>
+          <p style="font-size:0.75rem; font-weight:400; margin-bottom:4px;">Use the widget to see how ratings correspond to colors, performance, and status labels.</p>
+          <div class="rating-system-container">
+            <div class="rating-widget-compact">
+              <button class="btn-rate" id="btnDec" aria-label="Decrease rating">−</button>
+              <div class="circle-container">
+                <svg viewBox="0 0 100 100">
+                  <circle class="seg bg" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="0" />
+                  <circle class="seg bg" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-62.83" />
+                  <circle class="seg bg" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-125.66" />
+                  <circle class="seg bg" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-188.49" />
+                  <circle class="seg bg" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-251.32" />
+                  <circle class="seg fg" id="wSeg1" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="0" />
+                  <circle class="seg fg" id="wSeg2" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-62.83" />
+                  <circle class="seg fg" id="wSeg3" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-125.66" />
+                  <circle class="seg fg" id="wSeg4" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-188.49" />
+                  <circle class="seg fg" id="wSeg5" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-251.32" />
+                </svg>
+                <span class="star-number" id="wRatingNumber">0</span>
+              </div>
+              <button class="btn-rate" id="btnInc" aria-label="Increase rating">+</button>
+            </div>
+            <div class="rating-info-panel" id="ratingInfoPanel">
+              <div class="rating-header">
+                <span id="wRatingDisplay">0</span>
+                <span class="star-icon-big" id="wStarIcon">★</span>
+                <span id="wRatingLabel">Not Rated</span>
+              </div>
+              <p class="rating-desc" id="wRatingDesc">Select a rating to see the description.</p>
+              <hr />
+              <div class="status-badges">
+                <span id="wBootBadge" class="status-pill boots-no">⛔ NO BOOT</span>
+                <span id="wPlayableBadge" class="status-pill playable-no">⛔ UNPLAYABLE</span>
+              </div>
+              <div class="fps-info">
+                <span><strong>FPS:</strong> <span class="fps-value" id="wFpsRange">N/A</span></span>
+                <span>Range may vary depending on game and emulation settings.</span>
               </div>
             </div>
           </div>
-          <span style="font-family:'JetBrains Mono'; font-size:0.7rem; opacity:0.5; border:1px solid; padding:2px 8px; clip-path:polygon(0%8%,8%0%,92%0%,100%8%,100%92%,92%100%,8%100%,0%92%);">entity: DIGITAL</span>
         </div>
-        <div style="margin-top:0.8rem; padding:0.6rem 1rem; border:2px solid; clip-path:polygon(0%6%,6%0%,94%0%,100%6%,100%94%,94%100%,6%100%,0%94%); background:rgba(255,255,255,0.03);">
-          <p style="font-size:0.8rem; font-weight:400; font-style:italic;">“Oh, you actually read the guide? Impressive. Most people just click around blindly. But since you're here, let me save you some time: <strong>Rt:Core</strong> is the only core that doesn't make your H700 cry. Use the filters, check the ratings, and for heaven's sake, read the considerations before reporting a game that already works. You're welcome.”</p>
+      </div>
+
+      <!-- ROW 4: CRT Monitor (left) + CREDITS (right) -->
+      <div class="about-row">
+        <div style="flex:1; min-width:200px;">
+          <div class="crt-monitor" id="crtMonitor2">
+            <div class="crt-screen">
+              <div class="scanlines"></div>
+              <div class="vignette"></div>
+              <div class="crt-content" id="crtContent2">
+                <!-- SPDW Factory (default) -->
+                <div id="crtSpdw" style="display:block;">
+                  <div style="font-family:'Audiowide',sans-serif; font-size:1rem; color:#0ea5e9; margin-bottom:8px;">SPDW FACTORY</div>
+                  <div style="display:flex; flex-direction:column; gap:8px;">
+                    <div style="display:flex; align-items:center; gap:10px;">
+                      <div style="width:44px; height:44px; border-radius:50%; border:3px solid #8b5cf6; overflow:hidden; flex-shrink:0; background:rgba(139,92,246,0.1);">
+                        <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/sirpips.jpeg?raw=true" alt="Sir Pips" style="width:100%; height:100%; object-fit:cover;" />
+                      </div>
+                      <div>
+                        <div style="font-weight:900; font-size:0.95rem;">Sir Pips</div>
+                        <div style="font-size:0.7rem; font-weight:400; opacity:0.7;">Repo Creator &amp; Maintainer<br />also the (cursed) programmer behind Minoru</div>
+                      </div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:10px;">
+                      <div style="width:44px; height:44px; border-radius:50%; border:3px solid #00a3e0; overflow:hidden; flex-shrink:0; background:rgba(0,163,224,0.1);">
+                        <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/minoru.png?raw=true" alt="Minoru" style="width:100%; height:100%; object-fit:cover;" />
+                      </div>
+                      <div>
+                        <div style="font-weight:900; font-size:0.95rem;">[R.I.] Minoru<sup style="font-size:0.6rem;">7</sup></div>
+                        <div style="font-size:0.7rem; font-weight:400; opacity:0.7;">Inflexible (and Unbearable) Omniscient Controller</div>
+                        <div style="font-size:0.65rem; font-weight:400; opacity:0.5; font-style:italic;">R.I. : Rintromping Intelligence · <span style="font-family:'Times New Roman',serif;">β</span> Universe</div>
+                      </div>
+                    </div>
+                    <div style="border-top:2px solid; border-color:inherit; padding-top:6px; margin-top:2px;">
+                      <div style="font-size:0.75rem; font-weight:400; font-style:italic; margin-bottom:4px;">“Oh, you actually read the guide? Impressive. Most people just click around blindly. But since you're here, let me save you some time: <strong>Rt:Core</strong> is the only core that doesn't make your H700 cry. Use the filters, check the ratings, and for heaven's sake, read the considerations before reporting a game that already works. You're welcome.”</div>
+                      <div style="font-size:0.65rem; font-weight:400; opacity:0.6;">Minoru is always around to help — with a sarcastic twist, but always right. He's a Rintromping Intelligence, a digital creation from the Beta Universe, who has developed a distinct identity, personality, and the ability to feel emotions — especially the sadistic pleasure of pointing out every human flaw in the most annoying way possible.</div>
+                      <div style="font-size:0.65rem; font-weight:400; margin-top:4px; border:1px solid; border-color:inherit; padding:4px 6px; clip-path:polygon(0%6%,6%0%,94%0%,100%6%,100%94%,94%100%,6%100%,0%94%);">
+                        <div><span style="font-weight:700;">Sir Pips:</span> “Yeah, yeah, always minding my business, even while I'm writing important stuff.”</div>
+                        <div><span style="font-weight:700; color:#38bdf8;">Minoru:</span> “Important? You're just talking to yourself in writing. A masterpiece of self-delusion. Your second masterpiece — the first one is replying to you right now.”</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Original Devs (hidden) -->
+                <div id="crtDevs" style="display:none;">
+                  <div style="font-family:'Audiowide',sans-serif; font-size:1rem; color:#0ea5e9; margin-bottom:8px;">ORIGINAL DEV TEAM</div>
+                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px 8px; font-size:0.7rem; font-weight:400;">
+                    <span><strong>@Speedrun</strong> <span style="opacity:0.6;">— Original author (V9 / Take 3)</span></span>
+                    <span><strong>@FireBattleInMtl</strong> <span style="opacity:0.6;">— Fixes, permissions, launch.sh</span></span>
+                    <span><strong>@Snow</strong> <span style="opacity:0.6;">— Compiled binary</span></span>
+                    <span><strong>@bitter_bizarro</strong> <span style="opacity:0.6;">— muOS Goose compatibility</span></span>
+                  </div>
+                  <div style="font-size:0.7rem; font-weight:400; margin-top:6px; opacity:0.5;">These are the core contributors who made Dolphin emulation on H700 possible.</div>
+                </div>
+                <!-- Core Changelog (hidden) -->
+                <div id="crtChangelog" style="display:none;">
+                  <div style="font-family:'Audiowide',sans-serif; font-size:1rem; color:#0ea5e9; margin-bottom:8px;">CORE CHANGELOG</div>
+                  <div style="font-size:0.7rem; font-weight:400; display:flex; flex-direction:column; gap:4px;">
+                    <div><strong style="color:#fbbf24;">v10.5.3</strong> — Latest stable release with improved performance and compatibility.</div>
+                    <div><strong style="color:#fbbf24;">v10.5</strong> — Added support for custom settings profiles.</div>
+                    <div><strong style="color:#fbbf24;">v10.4</strong> — Fixed audio sync issues on RG40XX-H devices.</div>
+                    <div><strong style="color:#fbbf24;">v10.0</strong> — Major rewrite with Rt:Core architecture.</div>
+                    <div style="opacity:0.5; margin-top:2px;">Full history available on GitHub.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="crt-label">CRT-02</span>
+          </div>
         </div>
-        <p style="font-size:0.75rem; font-weight:400; opacity:0.6; margin-top:0.3rem;">Minoru is a digital entity, always ready to help — with a sarcastic twist, but always right.</p>
+        <div class="credits-side">
+          <div class="box-credits" style="height:100%;">
+            <div class="box-inner">
+              <div class="box-header">[ CREDITS_ ]</div>
+              <ul class="box-list">
+                <li><a href="#" class="active" data-target="spdw"><span class="idx-num">[01]</span> SPDW Factory</a></li>
+                <li><a href="#" data-target="devs"><span class="idx-num">[02]</span> Original Devs</a></li>
+                <li><a href="#" data-target="changelog"><span class="idx-num">[03]</span> Core Changelog</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div> <!-- fine about-grid -->
   </div> <!-- fine about-panel -->
 
-  <!-- ===== OVERLAY & PANNELLO TESTER ===== -->
-  <div id="testerOverlay" class="tester-overlay" onclick="closeTesterPanel()"></div>
-  <div id="testerPanel" class="tester-panel">
-    <button class="close-tester" onclick="closeTesterPanel()">✕ Close</button>
-    <div id="testerContent"></div>
+  <!-- ===== HOLOGRAM CREDITS MODAL (per Original Devs) ===== -->
+  <div id="creditsOverlay" class="credits-overlay" onclick="closeCredits()"></div>
+  <div id="creditsModal" class="credits-modal">
+    <div class="scanline"></div>
+    <button class="close-credits" onclick="closeCredits()">✕ Close</button>
+    <div class="credits-title">🐬 CREDITS</div>
+    <div class="credits-section">
+      <h4>🐬 Original Dolphin Core Developers</h4>
+      <div class="dev-grid">
+        <span><span class="handle">@Speedrun</span> <span class="desc">— Original author (V9 / Take 3)</span></span>
+        <span><span class="handle">@FireBattleInMtl</span> <span class="desc">— Fixes, permissions, launch.sh</span></span>
+        <span><span class="handle">@Snow</span> <span class="desc">— Compiled binary</span></span>
+        <span><span class="handle">@bitter_bizarro</span> <span class="desc">— muOS Goose compatibility</span></span>
+      </div>
+    </div>
+    <div class="credits-section">
+      <h4>🧪 Testing &amp; Reporting</h4>
+      <div class="tag-list">
+        <span>@razorbeamz</span> <span>@arkun</span> <span>@SkiffguardLando</span> <span>@chronoss0109</span>
+        <span>@Kirky</span> <span>@Mikethe3ird</span> <span>@Symphonial</span> <span>@giodude</span>
+        <span>@lasagnesetting</span> <span>@joshuarcastillo</span>
+      </div>
+    </div>
+    <div class="credits-section">
+      <h4>⚙️ muOS Development Team</h4>
+      <p class="note">Ongoing firmware maintenance and structural support.</p>
+    </div>
   </div>
 
   <!-- ===== HEADER ===== -->
@@ -1926,7 +2506,6 @@
           <span id="sortOrderLabel">Asc</span>
           <svg id="sortOrderIcon" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
-        <!-- VIEW MODE BUTTONS -->
         <div class="flex items-center gap-1 border-l-2 pl-2 ml-1" style="border-color:inherit;">
           <button id="viewGridBtn" class="view-btn active" title="Grid view">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -1986,59 +2565,67 @@
     </div>
   </main>
 
-  <!-- ===== MODAL GIOCO ===== -->
-  <div id="gameModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden">
-    <div id="modalCard" class="cyber-border max-w-5xl w-full max-h-[94vh] flex flex-col p-5 relative modal-anim">
-      <button id="closeModalBtn" class="absolute top-3 right-3 p-2 border-2 transition-colors z-10" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
-      <div class="border-b-2 pb-3 pr-10 shrink-0">
-        <div class="flex flex-col md:flex-row gap-3 items-start md:items-center">
-          <div class="w-20 h-28 overflow-hidden flex-shrink-0 border-2" style="clip-path: polygon(0% 5%, 5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%);">
-            <img id="modalCoverImg" src="" alt="Cover" class="w-full h-full object-cover" />
-          </div>
-          <div class="flex-1 min-w-0">
-            <div class="flex items-center gap-2 flex-wrap">
-              <img id="modalFlag" src="" alt="Flag" class="w-6 h-4 object-cover rounded border-2 shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" />
-              <h3 id="modalTitle" class="text-xl font-black leading-tight truncate"></h3>
-              <span id="modalRegionBadge" class="text-[9px] font-mono px-2 py-0.5 border-2 uppercase font-black shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">NTSC / USA</span>
-              <span id="modalGameId" class="text-[9px] font-mono px-2 py-0.5 border-2 font-black shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">GAMEID</span>
-              <span id="dolphinCompatMini" class="dolphin-compat-mini"></span>
+  <!-- ===== MODAL GIOCO (con holo animation) ===== -->
+  <div id="gameModal">
+    <!-- Holo overlay per l'animazione -->
+    <div class="holo-overlay" id="holoOverlay">
+      <div class="holo-light" id="holoLight"></div>
+      <div class="holo-border" id="holoBorder"></div>
+    </div>
+    <!-- Contenitore modale -->
+    <div class="modal-outer" id="modalOuter">
+      <div class="modal-card" id="modalCard">
+        <button id="closeModalBtn" class="absolute top-3 right-3 p-2 border-2 transition-colors z-10" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <div class="border-b-2 pb-3 pr-10 shrink-0" style="border-color:inherit;">
+          <div class="flex flex-col md:flex-row gap-3 items-start md:items-center">
+            <div class="w-20 h-28 overflow-hidden flex-shrink-0 border-2" style="clip-path: polygon(0% 5%, 5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%); border-color:inherit;">
+              <img id="modalCoverImg" src="" alt="Cover" class="w-full h-full object-cover" />
             </div>
-            <div class="grid grid-cols-2 gap-2 mt-2">
-              <div class="result-panel best">
-                <div class="text-[9px] uppercase tracking-wider font-black flex items-center justify-center gap-1">🏆 BEST</div>
-                <div class="flex items-center justify-center gap-2 mt-0.5">
-                  <div id="modalBestRatingVal" class="flex items-center gap-0.5 text-sm font-black"></div>
-                  <span class="text-xs font-mono opacity-50">|</span>
-                  <span id="modalBestFpsVal" class="text-sm font-mono font-black"></span>
-                </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <img id="modalFlag" src="" alt="Flag" class="w-6 h-4 object-cover rounded border-2 shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); border-color:inherit;" />
+                <h3 id="modalTitle" class="text-xl font-black leading-tight truncate"></h3>
+                <span id="modalRegionBadge" class="text-[9px] font-mono px-2 py-0.5 border-2 uppercase font-black shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); border-color:inherit;">NTSC / USA</span>
+                <span id="modalGameId" class="text-[9px] font-mono px-2 py-0.5 border-2 font-black shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); border-color:inherit;">GAMEID</span>
+                <span id="dolphinCompatMini" class="dolphin-compat-mini"></span>
               </div>
-              <div class="result-panel average">
-                <div class="text-[9px] uppercase tracking-wider font-black flex items-center justify-center gap-1">📊 AVG</div>
-                <div class="flex items-center justify-center gap-2 mt-0.5">
-                  <span id="modalAvgRatingVal" class="text-sm font-black"></span>
-                  <span class="text-xs font-mono opacity-50">|</span>
-                  <span id="modalAvgFpsVal" class="text-sm font-mono font-black"></span>
+              <div class="grid grid-cols-2 gap-2 mt-2">
+                <div class="result-panel best">
+                  <div class="text-[9px] uppercase tracking-wider font-black flex items-center justify-center gap-1">🏆 BEST</div>
+                  <div class="flex items-center justify-center gap-2 mt-0.5">
+                    <div id="modalBestRatingVal" class="flex items-center gap-0.5 text-sm font-black"></div>
+                    <span class="text-xs font-mono opacity-50">|</span>
+                    <span id="modalBestFpsVal" class="text-sm font-mono font-black"></span>
+                  </div>
+                </div>
+                <div class="result-panel average">
+                  <div class="text-[9px] uppercase tracking-wider font-black flex items-center justify-center gap-1">📊 AVG</div>
+                  <div class="flex items-center justify-center gap-2 mt-0.5">
+                    <span id="modalAvgRatingVal" class="text-sm font-black"></span>
+                    <span class="text-xs font-mono opacity-50">|</span>
+                    <span id="modalAvgFpsVal" class="text-sm font-mono font-black"></span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div id="modalTabs" class="flex flex-wrap gap-2 mt-3 shrink-0"></div>
-      <div id="modalRegionContent" class="flex-1 overflow-y-auto my-3 space-y-3 pr-1"></div>
+        <div id="modalTabs" class="flex flex-wrap gap-2 mt-3 shrink-0"></div>
+        <div id="modalRegionContent" class="flex-1 overflow-y-auto my-3 space-y-3 pr-1"></div>
 
-      <div class="pt-2 border-t-2 flex justify-between items-center text-xs font-black shrink-0">
-        <span id="modalTotalEntriesText">Total Tests: 0</span>
-        <button onclick="closeModal()" class="px-4 py-1 border-2 font-black transition-colors" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">Close</button>
+        <div class="pt-2 border-t-2 flex justify-between items-center text-xs font-black shrink-0" style="border-color:inherit;">
+          <span id="modalTotalEntriesText">Total Tests: 0</span>
+          <button onclick="closeModal()" class="px-4 py-1 border-2 font-black transition-colors" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); border-color:inherit;">Close</button>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="border-t-2 mt-12">
+  <footer class="border-t-2 mt-12" style="border-color:inherit;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-center text-xs font-black">
       <div class="flex flex-wrap items-center justify-center gap-4 opacity-60">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4 2"/></svg>
@@ -2055,7 +2642,7 @@
 
   <script>
     // ============================================================
-    //  WIDGET RATING INTERATTIVO (come prima, con mappa colori)
+    //  WIDGET RATING INTERATTIVO (come prima)
     // ============================================================
     (function() {
       let rating = 0;
@@ -2080,25 +2667,21 @@
       const btnDec = document.getElementById('btnDec');
 
       const ratingData = {
-        0: { color: '#64748b', bg: 'bg-slate-500', border: 'border-slate-500', text: 'text-slate-400', star: 'text-slate-500', boot: 'no', playable: 'no', fps: 'N/A', label: 'Not Rated', desc: 'Select a rating to see the description.' },
-        1: { color: '#ef4444', bg: 'bg-rose-500', border: 'border-rose-500', text: 'text-rose-400', star: 'text-rose-400', boot: 'no', playable: 'no', fps: '1-15 FPS', label: 'Bad', desc: 'Unplayable or crashes frequently.' },
-        2: { color: '#fb923c', bg: 'bg-orange-500', border: 'border-orange-500', text: 'text-orange-400', star: 'text-orange-400', boot: 'yes', playable: 'no', fps: '16-30 FPS', label: 'Poor', desc: 'Barely playable, frequent problems.' },
-        3: { color: '#fbbf24', bg: 'bg-amber-500', border: 'border-amber-500', text: 'text-amber-400', star: 'text-amber-400', boot: 'yes', playable: 'issues', fps: '31-45 FPS', label: 'Playable', desc: 'Playable with noticeable issues or framedrops.' },
-        4: { color: '#2dd4bf', bg: 'bg-teal-500', border: 'border-teal-500', text: 'text-teal-400', star: 'text-teal-400', boot: 'yes', playable: 'yes', fps: '46-55 FPS', label: 'Great', desc: 'Very good, minor glitches or occasional slowdowns.' },
-        5: { color: '#34d399', bg: 'bg-emerald-500', border: 'border-emerald-500', text: 'text-emerald-400', star: 'text-emerald-400', boot: 'yes', playable: 'yes', fps: '56-60 FPS', label: 'Perfect', desc: 'Flawless performance, full speed, no issues.' }
+        0: { color: '#64748b', boot: 'no', playable: 'no', fps: 'N/A', label: 'Not Rated', desc: 'Select a rating to see the description.' },
+        1: { color: '#ef4444', boot: 'no', playable: 'no', fps: '1-15 FPS', label: 'Bad', desc: 'Unplayable or crashes frequently.' },
+        2: { color: '#fb923c', boot: 'yes', playable: 'no', fps: '16-30 FPS', label: 'Poor', desc: 'Barely playable, frequent problems.' },
+        3: { color: '#fbbf24', boot: 'yes', playable: 'issues', fps: '31-45 FPS', label: 'Playable', desc: 'Playable with noticeable issues or framedrops.' },
+        4: { color: '#2dd4bf', boot: 'yes', playable: 'yes', fps: '46-55 FPS', label: 'Great', desc: 'Very good, minor glitches or occasional slowdowns.' },
+        5: { color: '#34d399', boot: 'yes', playable: 'yes', fps: '56-60 FPS', label: 'Perfect', desc: 'Flawless performance, full speed, no issues.' }
       };
 
-      function getBootLabel(status) {
-        return status === 'yes' ? '✅ BOOTS' : '⛔ NO BOOT';
-      }
+      function getBootLabel(status) { return status === 'yes' ? '✅ BOOTS' : '⛔ NO BOOT'; }
       function getPlayableLabel(status) {
         if (status === 'yes') return '✅ PLAYABLE';
         if (status === 'issues') return '⚠️ WITH ISSUES';
         return '⛔ UNPLAYABLE';
       }
-      function getBootClass(status) {
-        return status === 'yes' ? 'boots-yes' : 'boots-no';
-      }
+      function getBootClass(status) { return status === 'yes' ? 'boots-yes' : 'boots-no'; }
       function getPlayableClass(status) {
         if (status === 'yes') return 'playable-yes';
         if (status === 'issues') return 'playable-issues';
@@ -2113,7 +2696,7 @@
             seg.style.opacity = '1';
           } else {
             seg.style.strokeDashoffset = `-${62.83 * (i+1)}`;
-            seg.style.opacity = '0.3';
+            seg.style.opacity = '0.2';
           }
         }
 
@@ -2143,17 +2726,153 @@
         panelEl.style.clipPath = 'polygon(0% 6%, 6% 0%, 94% 0%, 100% 6%, 100% 94%, 94% 100%, 6% 100%, 0% 94%)';
       }
 
-      btnInc.addEventListener('click', function() {
-        if (rating < maxRating) { rating++; updateWidget(); }
-      });
-      btnDec.addEventListener('click', function() {
-        if (rating > 0) { rating--; updateWidget(); }
-      });
+      btnInc.addEventListener('click', function() { if (rating < maxRating) { rating++; updateWidget(); } });
+      btnDec.addEventListener('click', function() { if (rating > 0) { rating--; updateWidget(); } });
       updateWidget();
     })();
 
     // ============================================================
-    //  STATO & LOGICA PRINCIPALE (con modifica calcolo avg FPS)
+    //  CRT MONITOR SWITCH
+    // ============================================================
+    document.addEventListener('DOMContentLoaded', function() {
+      const indexItems = document.querySelectorAll('.box-index .box-list li a');
+      const crtContent1 = document.getElementById('crtContent1');
+      const sections1 = {
+        'guide': document.getElementById('crtGuide'),
+        'gamedata': document.getElementById('crtGameData'),
+        'tests': document.getElementById('crtTests')
+      };
+      const monitor1 = document.getElementById('crtMonitor1');
+
+      indexItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = this.dataset.target;
+          if (!target || !sections1[target]) return;
+
+          monitor1.classList.remove('crt-on');
+          monitor1.classList.add('crt-off');
+
+          setTimeout(() => {
+            Object.keys(sections1).forEach(key => {
+              sections1[key].style.display = key === target ? 'block' : 'none';
+            });
+            indexItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+            monitor1.classList.remove('crt-off');
+            monitor1.classList.add('crt-on');
+            setTimeout(() => {
+              monitor1.classList.remove('crt-on');
+            }, 700);
+          }, 650);
+        });
+      });
+
+      const creditsItems = document.querySelectorAll('.box-credits .box-list li a');
+      const crtContent2 = document.getElementById('crtContent2');
+      const sections2 = {
+        'spdw': document.getElementById('crtSpdw'),
+        'devs': document.getElementById('crtDevs'),
+        'changelog': document.getElementById('crtChangelog')
+      };
+      const monitor2 = document.getElementById('crtMonitor2');
+
+      creditsItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = this.dataset.target;
+          if (!target || !sections2[target]) return;
+
+          monitor2.classList.remove('crt-on');
+          monitor2.classList.add('crt-off');
+
+          setTimeout(() => {
+            Object.keys(sections2).forEach(key => {
+              sections2[key].style.display = key === target ? 'block' : 'none';
+            });
+            creditsItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+            monitor2.classList.remove('crt-off');
+            monitor2.classList.add('crt-on');
+            setTimeout(() => {
+              monitor2.classList.remove('crt-on');
+            }, 700);
+          }, 650);
+        });
+      });
+    });
+
+    // ============================================================
+    //  MODALE HOLO ANIMATION
+    // ============================================================
+    function openModal(index) {
+      const group = state.filtered[index];
+      if (!group) return;
+
+      const priority = ['PAL', 'NTSC / USA', 'JPN'];
+      let selectedRegion = null;
+      for (const p of priority) {
+        const found = group.allRegions.find(rd => rd.region === p);
+        if (found) { selectedRegion = p; break; }
+      }
+      if (!selectedRegion) selectedRegion = group.allRegions[0].region;
+      currentModalGroup = group;
+      currentModalRegion = selectedRegion;
+      renderModalWithRegion(group, selectedRegion);
+
+      const holoLight = document.getElementById('holoLight');
+      const holoBorder = document.getElementById('holoBorder');
+      const modalOuter = document.getElementById('modalOuter');
+      const modalCard = document.getElementById('modalCard');
+
+      // Reset animazioni
+      holoLight.className = 'holo-light';
+      holoBorder.className = 'holo-border';
+      modalCard.className = 'modal-card';
+      modalOuter.className = 'modal-outer';
+
+      // Forza reflow
+      void holoLight.offsetWidth;
+
+      // Avvia animazione luce
+      holoLight.classList.add('active');
+
+      // Dopo 0.3s, avvia bordo
+      setTimeout(() => {
+        holoBorder.classList.add('active');
+      }, 300);
+
+      // Dopo 1s, mostra la card
+      setTimeout(() => {
+        modalOuter.classList.add('open');
+        modalCard.classList.add('open');
+        // Rimuovi l'overlay holo dopo che la card è visibile
+        setTimeout(() => {
+          holoLight.className = 'holo-light';
+          holoBorder.className = 'holo-border';
+        }, 400);
+      }, 1000);
+    }
+
+    function closeModal() {
+      const modalOuter = document.getElementById('modalOuter');
+      const modalCard = document.getElementById('modalCard');
+      const holoBorder = document.getElementById('holoBorder');
+
+      // Chiudi card
+      modalCard.classList.add('closing');
+      modalOuter.classList.add('closing');
+
+      // Dopo la chiusura, rimuovi classi
+      setTimeout(() => {
+        modalOuter.classList.remove('open', 'closing');
+        modalCard.classList.remove('open', 'closing');
+        modalOuter.style.display = 'none';
+      }, 500);
+    }
+
+    // ============================================================
+    //  STATO & LOGICA PRINCIPALE
     // ============================================================
     const state = {
       console: 'gc',
@@ -2303,7 +3022,6 @@
           if (bestFpsStr === "???" && bestFpsMax > 0) bestFpsStr = `${bestFpsMax}`;
           if (bestFpsStr === "???" && bestFpsMax <= 0) bestFpsStr = "???";
           const avgRating = entries.length > 0 ? (totalRating / entries.length).toFixed(1) : "0.0";
-          // Calcolo media FPS unica: media di (fps_min+fps_max)/2 su tutti i test validi
           let avgFpsSingle = 0;
           let countFps = 0;
           entries.forEach(e => {
@@ -2334,7 +3052,6 @@
           });
         }
 
-        // Aggregato globale
         let globalBestRating = 0, globalBestFpsMax = -1, globalBestFpsStr = "???";
         let globalBestBoot = "NO", globalBestPlayable = "NO";
         let globalTotalRating = 0;
@@ -2369,7 +3086,6 @@
             globalAvgFpsCount++;
           }
         });
-        // Aggregato best rating e fps
         let bestRatingGlobal = 0, bestFpsMaxGlobal = -1, bestFpsStrGlobal = "???";
         allEntries.forEach(e => {
           const review = e.test_review || {};
@@ -2615,23 +3331,7 @@
       }).join('');
     }
 
-    // ===== MODAL GIOCO (con avgFps singolo) =====
-    function openModal(index) {
-      const group = state.filtered[index];
-      if (!group) return;
-      const priority = ['PAL', 'NTSC / USA', 'JPN'];
-      let selectedRegion = null;
-      for (const p of priority) {
-        const found = group.allRegions.find(rd => rd.region === p);
-        if (found) { selectedRegion = p; break; }
-      }
-      if (!selectedRegion) selectedRegion = group.allRegions[0].region;
-      currentModalGroup = group;
-      currentModalRegion = selectedRegion;
-      renderModalWithRegion(group, selectedRegion);
-      document.getElementById('gameModal').classList.remove('hidden');
-    }
-
+    // ===== MODAL GIOCO RENDER =====
     function renderModalWithRegion(group, region) {
       const regionData = group.allRegions.find(rd => rd.region === region);
       if (!regionData) return;
@@ -2660,7 +3360,6 @@
       compatContainer.innerHTML = segHtml + `<a href="${wikiLink}" target="_blank" rel="noopener" class="wiki-link" title="Dolphin Wiki">🌐</a>`;
       document.getElementById('modalBestRatingVal').innerHTML = renderStars(regionData.bestRating, 16);
       document.getElementById('modalBestFpsVal').textContent = regionData.bestFpsStr !== "???" ? `${regionData.bestFpsStr} FPS` : 'N/A';
-      // AVG RATING e FPS
       document.getElementById('modalAvgRatingVal').textContent = `${regionData.avgRating} / 5 ⭐`;
       const avgFpsDisplay = regionData.avgFps !== 'N/A' ? `${regionData.avgFps} FPS` : 'N/A';
       document.getElementById('modalAvgFpsVal').textContent = avgFpsDisplay;
@@ -2818,11 +3517,7 @@
       document.getElementById('modalTotalEntriesText').textContent = `Total Tests: ${regionData.entriesCount}`;
     }
 
-    function closeModal() {
-      document.getElementById('gameModal').classList.add('hidden');
-    }
-
-    // ===== PANNELLO TESTER =====
+    // ===== TESTER PANEL =====
     function openTesterPanel(testerName) {
       const panel = document.getElementById('testerPanel');
       const overlay = document.getElementById('testerOverlay');
@@ -2902,7 +3597,7 @@
       document.body.style.overflow = '';
     }
 
-    // ===== HOW & ABOUT PANEL (già gestito) =====
+    // ===== ABOUT PANEL =====
     function openAboutPanel() {
       const panel = document.getElementById('aboutPanel');
       const overlay = document.getElementById('aboutOverlay');
@@ -2928,6 +3623,18 @@
       e.preventDefault();
       openAboutPanel();
     });
+
+    // ===== CREDITS HOLOGRAM =====
+    function openCredits() {
+      document.getElementById('creditsOverlay').classList.add('open');
+      document.getElementById('creditsModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeCredits() {
+      document.getElementById('creditsOverlay').classList.remove('open');
+      document.getElementById('creditsModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
 
     // ===== DATA LOADING =====
     function updateStats() {
@@ -3029,7 +3736,7 @@
         document.getElementById('statTotal').className = 'font-black text-slate-200';
         document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b-2 bg-gc-950/90 bg-opacity-90 backdrop-blur-xl';
         document.getElementById('appBody').className = 'theme-gc font-sans antialiased transition-colors duration-500 min-h-screen';
-        document.getElementById('modalCard').className = 'cyber-border max-w-5xl w-full max-h-[94vh] flex flex-col p-5 relative modal-anim bg-gc-950/90';
+        document.getElementById('modalCard').className = 'modal-card';
       } else {
         mainTitle.className = 'text-2xl sm:text-3xl font-black tracking-tight whitespace-nowrap title-dark text-slate-900';
         mainTitle.style.fontFamily = "'Outfit', sans-serif";
@@ -3052,33 +3759,42 @@
         document.getElementById('statTotal').className = 'font-black text-slate-800';
         document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b-2 bg-white/95 bg-opacity-90 backdrop-blur-xl';
         document.getElementById('appBody').className = 'theme-wii font-sans antialiased transition-colors duration-500 min-h-screen';
-        document.getElementById('modalCard').className = 'cyber-border max-w-5xl w-full max-h-[94vh] flex flex-col p-5 relative modal-anim bg-white/95';
+        document.getElementById('modalCard').className = 'modal-card';
       }
       loadConsoleData();
     }
 
     // ===== EVENTI =====
     document.getElementById('closeModalBtn').addEventListener('click', closeModal);
-    document.getElementById('gameModal').addEventListener('click', e => { if (e.target === document.getElementById('gameModal')) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeTesterPanel(); closeAboutPanel(); } });
+    document.getElementById('modalOuter').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+        closeTesterPanel();
+        closeAboutPanel();
+        closeCredits();
+      }
+    });
 
-    document.getElementById('searchInput').addEventListener('input', e => {
+    document.getElementById('searchInput').addEventListener('input', function(e) {
       state.search = e.target.value.toLowerCase().trim();
       render();
     });
-    document.getElementById('regionFilter').addEventListener('change', e => {
+    document.getElementById('regionFilter').addEventListener('change', function(e) {
       state.selectedRegion = e.target.value;
       render();
     });
-    document.getElementById('bootFilter').addEventListener('change', e => {
+    document.getElementById('bootFilter').addEventListener('change', function(e) {
       state.selectedBoot = e.target.value;
       render();
     });
-    document.getElementById('sortKey').addEventListener('change', e => {
+    document.getElementById('sortKey').addEventListener('change', function(e) {
       state.sortKey = e.target.value;
       render();
     });
-    document.getElementById('sortOrderBtn').addEventListener('click', () => {
+    document.getElementById('sortOrderBtn').addEventListener('click', function() {
       state.sortOrder = state.sortOrder === 'asc' ? 'desc' : 'asc';
       document.getElementById('sortOrderLabel').textContent = state.sortOrder === 'asc' ? 'Asc' : 'Desc';
       document.getElementById('sortOrderIcon').classList.toggle('rotate-180');
@@ -3104,14 +3820,15 @@
       render();
     });
 
-    document.querySelectorAll('.rating-panel').forEach(p => {
-      p.addEventListener('click', () => {
-        const v = p.getAttribute('data-rating');
+    document.querySelectorAll('.rating-panel').forEach(function(p) {
+      p.addEventListener('click', function() {
+        const v = this.getAttribute('data-rating');
         state.selectedStars = state.selectedStars === v ? 'all' : v;
         render();
       });
     });
-    document.getElementById('resetFiltersBtn').addEventListener('click', () => {
+
+    document.getElementById('resetFiltersBtn').addEventListener('click', function() {
       document.getElementById('searchInput').value = '';
       document.getElementById('regionFilter').value = 'all';
       document.getElementById('bootFilter').value = 'all';
@@ -3125,7 +3842,8 @@
       state.selectedBoot = 'all';
       render();
     });
-    document.getElementById('clearFiltersBtn').addEventListener('click', () => {
+
+    document.getElementById('clearFiltersBtn').addEventListener('click', function() {
       document.getElementById('resetFiltersBtn').click();
     });
 
