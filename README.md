@@ -50,7 +50,7 @@ The goal of **Dolphin Rt:Core** — now included as part of the **[V0iD Project]
 
 ## ⚙️ Key Features & Performance
 
-### 🎮 15+ Optimized Profiles
+### 🎮 Under Development: 15+ Optimized Profiles
 
 | Profile | Description | Best For |
 |---------|-------------|----------|
