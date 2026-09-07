@@ -120,28 +120,6 @@
       text-shadow: 0 0 10px rgba(0, 163, 224, 0.15);
     }
 
-    /* ===== HEADER FISSO E OPACO ===== */
-    #appHeader {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      transition: background 0.4s, border-color 0.4s;
-      border-bottom: 2px solid;
-      backdrop-filter: none !important;
-      background: #0a0618 !important;
-      border-color: #2a1a4a !important;
-    }
-    body.theme-wii #appHeader {
-      background: #dce8f0 !important;
-      border-color: #8a9aa8 !important;
-    }
-    #appHeader.bg-opacity-90 {
-      background-opacity: 1 !important;
-    }
-    #appHeader.backdrop-blur-xl {
-      backdrop-filter: none !important;
-    }
-
     /* ===== SCROLLBAR ===== */
     ::-webkit-scrollbar { width: 8px; height: 8px; }
     body.theme-gc ::-webkit-scrollbar-track { background: #0a0618; border: 1px solid #2a1a4a; clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%); }
@@ -211,51 +189,45 @@
       50% { box-shadow: 0 0 40px rgba(139,92,246,0.3), 0 0 80px rgba(139,92,246,0.1); }
       100% { box-shadow: 0 0 20px rgba(139,92,246,0.1), 0 0 60px rgba(139,92,246,0.05); }
     }
-
-    /* ===== ANIMAZIONE APERTURA MODALE HOLO ===== */
-    @keyframes holoPulse {
-      0% { transform: scale(0.8); opacity: 0.3; filter: blur(8px) brightness(0.5); }
-      50% { transform: scale(1.05); opacity: 0.9; filter: blur(0) brightness(1.2); }
-      100% { transform: scale(1); opacity: 1; filter: blur(0) brightness(1); }
+    @keyframes modalHoloIn {
+      0% { opacity: 0; transform: scale(0.3) rotateX(10deg); filter: blur(20px) brightness(0); clip-path: inset(50% 50% 50% 50%); }
+      20% { opacity: 0; transform: scale(0.4) rotateX(5deg); filter: blur(15px) brightness(0.1); clip-path: inset(45% 45% 45% 45%); }
+      40% { opacity: 0.1; transform: scale(0.6); filter: blur(10px) brightness(0.3); clip-path: inset(30% 30% 30% 30%); }
+      60% { opacity: 0.3; transform: scale(0.8); filter: blur(5px) brightness(0.6); clip-path: inset(15% 15% 15% 15%); }
+      80% { opacity: 0.7; transform: scale(0.95); filter: blur(2px) brightness(0.8); clip-path: inset(5% 5% 5% 5%); }
+      100% { opacity: 1; transform: scale(1); filter: blur(0) brightness(1); clip-path: inset(0% 0% 0% 0%); }
     }
-    @keyframes holoBorderExpand {
-      0% { clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%); }
-      30% { clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%); }
-      60% { clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%); }
-      100% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+    @keyframes modalHoloOut {
+      0% { opacity: 1; transform: scale(1); filter: blur(0) brightness(1); clip-path: inset(0% 0% 0% 0%); }
+      20% { opacity: 0.7; transform: scale(0.95); filter: blur(2px) brightness(0.8); clip-path: inset(5% 5% 5% 5%); }
+      40% { opacity: 0.3; transform: scale(0.8); filter: blur(5px) brightness(0.6); clip-path: inset(15% 15% 15% 15%); }
+      60% { opacity: 0.1; transform: scale(0.6); filter: blur(10px) brightness(0.3); clip-path: inset(30% 30% 30% 30%); }
+      80% { opacity: 0; transform: scale(0.4); filter: blur(15px) brightness(0.1); clip-path: inset(45% 45% 45% 45%); }
+      100% { opacity: 0; transform: scale(0.3); filter: blur(20px) brightness(0); clip-path: inset(50% 50% 50% 50%); }
     }
-    @keyframes holoBorderClose {
-      0% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
-      40% { clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%); }
-      70% { clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%); }
-      100% { clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%); }
+    @keyframes modalGlowPulse {
+      0%, 100% { box-shadow: 0 0 30px rgba(139,92,246,0.05), 0 0 60px rgba(139,92,246,0.02); }
+      50% { box-shadow: 0 0 50px rgba(139,92,246,0.15), 0 0 100px rgba(139,92,246,0.05); }
     }
-    @keyframes holoFadeIn {
-      0% { opacity: 0; transform: scale(0.95); }
-      60% { opacity: 0; transform: scale(0.95); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-    @keyframes holoFadeOut {
-      0% { opacity: 1; transform: scale(1); }
-      100% { opacity: 0; transform: scale(0.95); }
-    }
-    @keyframes crtInterference {
+    @keyframes modalInterference {
       0% { opacity: 0; }
-      20% { opacity: 0.15; }
-      40% { opacity: 0; }
-      60% { opacity: 0.1; }
-      80% { opacity: 0; }
+      10% { opacity: 0.8; }
+      12% { opacity: 0; }
+      15% { opacity: 0.6; }
+      17% { opacity: 0; }
+      20% { opacity: 0.9; }
+      22% { opacity: 0; }
+      30% { opacity: 1; }
       100% { opacity: 1; }
     }
-    @keyframes glitchLine {
-      0% { transform: translateX(0); opacity: 0; }
-      10% { transform: translateX(2px); opacity: 0.2; }
-      20% { transform: translateX(-2px); opacity: 0; }
-      30% { transform: translateX(1px); opacity: 0.3; }
-      40% { transform: translateX(-1px); opacity: 0; }
-      50% { transform: translateX(3px); opacity: 0.1; }
-      60% { transform: translateX(-3px); opacity: 0; }
-      100% { transform: translateX(0); opacity: 0; }
+    @keyframes modalInterference2 {
+      0% { opacity: 0; }
+      5% { opacity: 0.6; }
+      7% { opacity: 0; }
+      10% { opacity: 0.4; }
+      12% { opacity: 0; }
+      25% { opacity: 1; }
+      100% { opacity: 1; }
     }
 
     /* ===== CARDS & CONTAINERS ===== */
@@ -299,115 +271,6 @@
     body.theme-gc .glow-border::before { background: linear-gradient(135deg, rgba(139,92,246,0.5), rgba(236,72,153,0.2)); }
     body.theme-wii .glow-border::before { background: linear-gradient(135deg, rgba(0,163,224,0.4), rgba(56,189,248,0.15)); }
     .game-card:hover .glow-border::before { opacity: 1; }
-
-    /* ===== MODALE CON SFONDO DEFINITO E BORDI SPESSI ===== */
-    #gameModal .modal-outer {
-      position: fixed;
-      inset: 0;
-      z-index: 50;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      background: rgba(0,0,0,0.75);
-      backdrop-filter: blur(4px);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    #gameModal .modal-outer.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    #gameModal .modal-outer.closing {
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    #gameModal .modal-card {
-      position: relative;
-      width: 100%;
-      max-width: 980px;
-      max-height: 92vh;
-      overflow-y: auto;
-      padding: 1.5rem 1.8rem 2rem;
-      background: #0a0618;
-      color: #f1f5f9;
-      border: 6px solid #2a1a4a;
-      outline: 3px solid rgba(139,92,246,0.2);
-      outline-offset: 2px;
-      box-shadow: 0 0 40px rgba(139,92,246,0.1), 0 0 80px rgba(139,92,246,0.05);
-      clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
-      transform: scale(0.95);
-      opacity: 0;
-      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    body.theme-wii #gameModal .modal-card {
-      background: #e8f0f8;
-      color: #0f172a;
-      border-color: #8a9aa8;
-      outline-color: rgba(0,163,224,0.2);
-      box-shadow: 0 0 40px rgba(0,163,224,0.1), 0 0 80px rgba(0,163,224,0.05);
-    }
-    #gameModal .modal-card.open {
-      transform: scale(1);
-      opacity: 1;
-    }
-    #gameModal .modal-card.closing {
-      transform: scale(0.95);
-      opacity: 0;
-      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    /* ===== HOLO ANIMATION OVERLAY ===== */
-    .holo-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 49;
-      pointer-events: none;
-      overflow: hidden;
-    }
-    .holo-overlay .holo-light {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #c084fc;
-      box-shadow: 0 0 40px #c084fc, 0 0 80px rgba(139,92,246,0.3);
-      transform: translate(-50%, -50%) scale(0);
-      opacity: 0;
-      transition: none;
-    }
-    .holo-overlay .holo-light.active {
-      animation: holoPulse 0.8s ease-out forwards;
-    }
-    .holo-overlay .holo-border {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border: 3px solid rgba(139,92,246,0.6);
-      transform: translate(-50%, -50%);
-      box-shadow: 0 0 30px rgba(139,92,246,0.15);
-      opacity: 0;
-      clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
-    }
-    .holo-overlay .holo-border.active {
-      animation: holoBorderExpand 0.9s ease-out forwards;
-    }
-    .holo-overlay .holo-border.closing {
-      animation: holoBorderClose 0.6s ease-in forwards;
-    }
-    body.theme-wii .holo-overlay .holo-light {
-      background: #38bdf8;
-      box-shadow: 0 0 40px #38bdf8, 0 0 80px rgba(0,163,224,0.3);
-    }
-    body.theme-wii .holo-overlay .holo-border {
-      border-color: rgba(0,163,224,0.6);
-      box-shadow: 0 0 30px rgba(0,163,224,0.15);
-    }
 
     /* ===== BADGES ===== */
     .badge-core { font-size: 10px; padding: 2px 14px; border-radius: 0; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; border: 2px solid; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); }
@@ -641,7 +504,7 @@
       border-color: #94a3b8;
     }
 
-    /* ===== MODAL TEST CARD ===== */
+    /* ===== MODAL TEST CARD (con sfondo e bordi spessi) ===== */
     .modal-test-card {
       padding: 16px 20px;
       margin-bottom: 12px;
@@ -649,10 +512,17 @@
       clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
       position: relative;
       transition: all 0.2s;
-      background: rgba(26, 10, 46, 0.6);
+      background: rgba(26, 10, 46, 0.8);
+      border-color: #2a1a4a;
     }
-    body.theme-gc .modal-test-card { border-color: #2a1a4a; background: rgba(26,10,46,0.6); }
-    body.theme-wii .modal-test-card { border-color: #b0c4d8; background: rgba(255,255,255,0.7); }
+    body.theme-gc .modal-test-card {
+      background: rgba(26, 10, 46, 0.8);
+      border-color: #2a1a4a;
+    }
+    body.theme-wii .modal-test-card {
+      background: rgba(255, 255, 255, 0.85);
+      border-color: #b0c4d8;
+    }
     .modal-test-card:last-child { margin-bottom: 0; }
 
     /* ===== RATING STAR CONTAINER ===== */
@@ -1092,7 +962,7 @@
     .btn-primary.wii { background: #00a3e0 !important; color: white !important; border-color: #0284c7 !important; }
     .btn-primary.wii:hover { background: #0284c7 !important; border-color: #0369a1 !important; }
 
-    /* ===== RATING PANELS – COLORI PER VOTO ===== */
+    /* ===== RATING PANELS ===== */
     .rating-panel {
       padding: 12px 16px;
       border: 2px solid;
@@ -1268,7 +1138,79 @@
       pointer-events: auto;
     }
 
-    /* ===== CRT MONITOR STYLES ===== */
+    /* ===== MODALE GIOCO (con animazione holografica) ===== */
+    #gameModal {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(6px);
+    }
+    #gameModal.show {
+      display: flex;
+    }
+    #gameModal .modal-holo-card {
+      max-width: 72rem;
+      width: 100%;
+      max-height: 94vh;
+      display: flex;
+      flex-direction: column;
+      padding: 1.25rem;
+      position: relative;
+      background: rgba(10, 6, 24, 0.92);
+      border: 2px solid rgba(139, 92, 246, 0.3);
+      clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
+      box-shadow: 0 0 40px rgba(139, 92, 246, 0.1);
+      animation: modalHoloIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      overflow: hidden;
+    }
+    #gameModal .modal-holo-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(139,92,246,0.03) 3px, rgba(139,92,246,0.03) 4px);
+      pointer-events: none;
+      z-index: 0;
+      animation: modalInterference 0.3s ease-out forwards;
+    }
+    #gameModal .modal-holo-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at center, transparent 60%, rgba(139,92,246,0.05) 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    body.theme-wii #gameModal .modal-holo-card {
+      background: rgba(232, 240, 248, 0.95);
+      border-color: rgba(0, 163, 224, 0.3);
+      box-shadow: 0 0 40px rgba(0, 163, 224, 0.1);
+    }
+    body.theme-wii #gameModal .modal-holo-card::before {
+      background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,163,224,0.03) 3px, rgba(0,163,224,0.03) 4px);
+    }
+    body.theme-wii #gameModal .modal-holo-card::after {
+      background: radial-gradient(ellipse at center, transparent 60%, rgba(0,163,224,0.05) 100%);
+    }
+    #gameModal .modal-holo-card > * {
+      position: relative;
+      z-index: 1;
+    }
+    #gameModal.closing .modal-holo-card {
+      animation: modalHoloOut 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* ===== CRT MONITOR STYLES (con scroll interno) ===== */
     .crt-monitor {
       background: #0a0a0f;
       border: 12px solid #1a1a2e;
@@ -1282,6 +1224,9 @@
       transition: box-shadow 0.3s ease;
       overflow: hidden;
       animation: crtFlicker 8s infinite;
+      height: 320px;
+      display: flex;
+      flex-direction: column;
     }
     body.theme-wii .crt-monitor {
       border-color: #2a3a4e;
@@ -1294,17 +1239,30 @@
       background: #0e0e16;
       border-radius: 4px;
       padding: 16px;
-      min-height: 180px;
+      flex: 1;
       position: relative;
-      overflow: hidden;
+      overflow-y: auto;
       color: #d4d4e8;
       font-size: 0.8rem;
       line-height: 1.6;
       transition: all 0.3s ease;
     }
+    .crt-monitor .crt-screen::-webkit-scrollbar {
+      width: 4px;
+    }
+    .crt-monitor .crt-screen::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.05);
+    }
+    .crt-monitor .crt-screen::-webkit-scrollbar-thumb {
+      background: rgba(139,92,246,0.3);
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
     body.theme-wii .crt-monitor .crt-screen {
       background: #141824;
       color: #d0d8e8;
+    }
+    body.theme-wii .crt-monitor .crt-screen::-webkit-scrollbar-thumb {
+      background: rgba(0,163,224,0.3);
     }
     .crt-monitor .crt-screen .scanlines {
       position: absolute;
@@ -1474,6 +1432,7 @@
       width: 100%;
     }
 
+    /* Box stile cyberpunk per la row superiore */
     .about-panel .box-cyber {
       background: #8b5cf6;
       padding: 1px;
@@ -1556,6 +1515,7 @@
       border-bottom-color: #a78bfa;
     }
 
+    /* Box stile RT:INDEX e CREDITS */
     .about-panel .box-index {
       background: transparent;
       border: 2px dashed #ff3333;
@@ -1635,6 +1595,7 @@
       color: #ff6b6b;
     }
 
+    /* Box stile CREDITS (speculare) */
     .about-panel .box-credits {
       background: #0ea5e9;
       padding: 2px;
@@ -1720,7 +1681,7 @@
       margin-right: 0;
     }
 
-    /* RATING WIDGET */
+    /* RATING WIDGET con barra a segmenti */
     .rating-system-container {
       display: flex;
       flex-direction: row;
@@ -1757,7 +1718,7 @@
       fill: none;
       stroke-width: 7;
       stroke-linecap: round;
-      transition: stroke-dashoffset 0.3s ease;
+      transition: stroke-dashoffset 0.3s ease, stroke 0.3s ease;
     }
     .rating-widget-compact .circle-container .seg.bg {
       stroke: rgba(255,255,255,0.08);
@@ -1771,6 +1732,7 @@
       font-size: 28px;
       font-weight: 900;
       pointer-events: none;
+      transition: color 0.3s ease;
     }
     .rating-widget-compact .btn-rate {
       width: 36px;
@@ -1815,6 +1777,7 @@
     }
     .rating-info-panel .rating-header .star-icon-big {
       font-size: 1.6rem;
+      transition: color 0.3s ease;
     }
     .rating-info-panel .rating-desc {
       font-weight: 400;
@@ -1848,6 +1811,7 @@
     }
     .rating-info-panel .fps-info .fps-value {
       font-weight: 700;
+      transition: color 0.3s ease;
     }
 
     /* ===== TESTER PANEL ===== */
@@ -2093,6 +2057,23 @@
       background: linear-gradient(90deg, transparent, rgba(0,163,224,0.3), transparent);
     }
 
+    /* ===== HEADER (sfondo fisso) ===== */
+    header#appHeader {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 2px solid;
+      backdrop-filter: none !important;
+    }
+    body.theme-gc header#appHeader {
+      background: #0a0618;
+      border-color: #2a1a4a;
+    }
+    body.theme-wii header#appHeader {
+      background: #e8f0f8;
+      border-color: #b0c4d8;
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 640px) {
       #gamesGrid.grid-view { grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -2105,7 +2086,7 @@
       .tester-panel .tester-stats { flex-wrap: wrap; gap: 0.8rem; }
       .about-panel .about-row { flex-direction: column; }
       .index-side, .credits-side { min-width: 100%; max-width: 100%; }
-      .crt-monitor { margin-top: 8px; }
+      .crt-monitor { margin-top: 8px; height: 260px; }
       .rating-system-container { flex-direction: column; align-items: center; }
       .rating-widget-compact { width: 100%; justify-content: center; }
       .rating-info-panel { width: 100%; }
@@ -2117,7 +2098,7 @@
       .credits-modal { padding: 1.5rem 1rem 2rem; }
       .credits-modal .credits-section .dev-grid { grid-template-columns: 1fr; }
       .credits-modal .credits-title { font-size: 1.2rem; }
-      #gameModal .modal-card { padding: 1rem 1rem 1.5rem; }
+      #gameModal .modal-holo-card { max-height: 96vh; padding: 0.8rem; }
     }
   </style>
 </head>
@@ -2140,7 +2121,7 @@
 
     <div class="about-grid">
 
-      <!-- ROW 1: Cyber box (full width) -->
+      <!-- ROW 1: Cyber box -->
       <div class="about-row about-row-full">
         <div class="box-cyber" style="width:100%;">
           <div class="box-inner">
@@ -2159,7 +2140,7 @@
         </div>
       </div>
 
-      <!-- ROW 2: RT:INDEX (left) + CRT Monitor (right) -->
+      <!-- ROW 2: RT:INDEX + CRT Monitor -->
       <div class="about-row">
         <div class="index-side">
           <div class="box-index" style="height:100%;">
@@ -2179,7 +2160,6 @@
               <div class="scanlines"></div>
               <div class="vignette"></div>
               <div class="crt-content" id="crtContent1">
-                <!-- Database Guide (default) -->
                 <div id="crtGuide" style="display:block;">
                   <div style="font-family:'Audiowide',sans-serif; font-size:1rem; color:#a78bfa; margin-bottom:8px;">DATABASE GUIDE</div>
                   <p style="margin-bottom:6px;"><strong>Welcome to the Dolphin Rt:Core Database!</strong></p>
@@ -2193,7 +2173,6 @@
                   </ul>
                   <p style="font-style:italic; opacity:0.7; font-size:0.75rem;">Click on any game card to see detailed test reports.</p>
                 </div>
-                <!-- Game Data (hidden) -->
                 <div id="crtGameData" style="display:none;">
                   <div style="font-family:'Audiowide',sans-serif; font-size:1rem; color:#a78bfa; margin-bottom:8px;">GAME DATA</div>
                   <div style="display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap;">
@@ -2220,7 +2199,6 @@
                     </div>
                   </div>
                 </div>
-                <!-- Tests Report (hidden) -->
                 <div id="crtTests" style="display:none;">
                   <div style="font-family:'Audiowide',sans-serif; font-size:1rem; color:#a78bfa; margin-bottom:8px;">TESTS REPORT</div>
                   <div style="border:2px solid #2a1a4a; padding:8px 10px; clip-path:polygon(0%4%,2%0%,98%0%,100%4%,100%96%,98%100%,2%100%,0%96%); margin-bottom:6px; background:rgba(26,10,46,0.4);">
@@ -2247,7 +2225,7 @@
         </div>
       </div>
 
-      <!-- ROW 3: Rating widget (full width) -->
+      <!-- ROW 3: Rating widget -->
       <div class="about-row about-row-full">
         <div style="border:2px solid; border-color:inherit; padding:12px 16px; clip-path:polygon(0%4%,2%0%,98%0%,100%4%,100%96%,98%100%,2%100%,0%96%); width:100%; background:rgba(255,255,255,0.02);">
           <div style="font-family:'Audiowide',sans-serif; font-size:0.9rem; color:#38bdf8; margin-bottom:4px;">⭐ Rating System – Interactive Demo</div>
@@ -2293,7 +2271,7 @@
         </div>
       </div>
 
-      <!-- ROW 4: CRT Monitor (left) + CREDITS (right) -->
+      <!-- ROW 4: CRT Monitor + CREDITS -->
       <div class="about-row">
         <div style="flex:1; min-width:200px;">
           <div class="crt-monitor" id="crtMonitor2">
@@ -2301,7 +2279,6 @@
               <div class="scanlines"></div>
               <div class="vignette"></div>
               <div class="crt-content" id="crtContent2">
-                <!-- SPDW Factory (default) -->
                 <div id="crtSpdw" style="display:block;">
                   <div style="font-family:'Audiowide',sans-serif; font-size:1rem; color:#0ea5e9; margin-bottom:8px;">SPDW FACTORY</div>
                   <div style="display:flex; flex-direction:column; gap:8px;">
@@ -2334,7 +2311,6 @@
                     </div>
                   </div>
                 </div>
-                <!-- Original Devs (hidden) -->
                 <div id="crtDevs" style="display:none;">
                   <div style="font-family:'Audiowide',sans-serif; font-size:1rem; color:#0ea5e9; margin-bottom:8px;">ORIGINAL DEV TEAM</div>
                   <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px 8px; font-size:0.7rem; font-weight:400;">
@@ -2345,15 +2321,35 @@
                   </div>
                   <div style="font-size:0.7rem; font-weight:400; margin-top:6px; opacity:0.5;">These are the core contributors who made Dolphin emulation on H700 possible.</div>
                 </div>
-                <!-- Core Changelog (hidden) -->
                 <div id="crtChangelog" style="display:none;">
                   <div style="font-family:'Audiowide',sans-serif; font-size:1rem; color:#0ea5e9; margin-bottom:8px;">CORE CHANGELOG</div>
-                  <div style="font-size:0.7rem; font-weight:400; display:flex; flex-direction:column; gap:4px;">
-                    <div><strong style="color:#fbbf24;">v10.5.3</strong> — Latest stable release with improved performance and compatibility.</div>
-                    <div><strong style="color:#fbbf24;">v10.5</strong> — Added support for custom settings profiles.</div>
-                    <div><strong style="color:#fbbf24;">v10.4</strong> — Fixed audio sync issues on RG40XX-H devices.</div>
-                    <div><strong style="color:#fbbf24;">v10.0</strong> — Major rewrite with Rt:Core architecture.</div>
-                    <div style="opacity:0.5; margin-top:2px;">Full history available on GitHub.</div>
+                  <div style="font-size:0.7rem; font-weight:400; display:flex; flex-direction:column; gap:6px;">
+                    <div style="border-left:3px solid #fbbf24; padding-left:8px;">
+                      <strong style="color:#fbbf24;">v11 – Rt:Core (🚧 Dev)</strong>
+                      <div style="opacity:0.7;">"Rt:" prefix introduced. New frontend. Global Hotkey System (WIP). H700 optimizations.</div>
+                    </div>
+                    <div style="border-left:3px solid #60a5fa; padding-left:8px;">
+                      <strong style="color:#60a5fa;">v10.5.300 – SPDW Experimental</strong>
+                      <div style="opacity:0.7;">Latest stable: <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases/tag/v10.5.300_SPDW" target="_blank" style="color:#60a5fa; text-decoration:underline;">Dolphin_for_MuOS_v10.5.300_SPDW.muxupd</a></div>
+                      <div style="opacity:0.7;">Aggressive experimental performance tweaks. Fine-tuned H700 optimizations.</div>
+                    </div>
+                    <div style="border-left:3px solid #a78bfa; padding-left:8px;">
+                      <strong style="color:#a78bfa;">v10 – SPDW Custom Fork</strong>
+                      <div style="opacity:0.7;">First custom fork release (1 Aug 2026). SPDW Factory takeover.</div>
+                    </div>
+                    <div style="border-left:3px solid #34d399; padding-left:8px;">
+                      <strong style="color:#34d399;">v9 – Universal Unification</strong>
+                      <div style="opacity:0.7;">@Speedrun unified hasjoys/hasjoy/nojoys. @bitter_bizarro added Goose adapter.</div>
+                    </div>
+                    <div style="border-left:3px solid #f87171; padding-left:8px;">
+                      <strong style="color:#f87171;">v8 – Recompiled Binary</strong>
+                      <div style="opacity:0.7;">@Snow recompiled binary. Added single-joystick support and C-Stick emulation.</div>
+                    </div>
+                    <div style="border-left:3px solid #fb923c; padding-left:8px;">
+                      <strong style="color:#fb923c;">v7-v5 – Early Experiments</strong>
+                      <div style="opacity:0.7;">Hardware-specific splits, control remapping, launch.sh integration.</div>
+                    </div>
+                    <div style="font-size:0.65rem; opacity:0.4; margin-top:4px;">Full history on GitHub: <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS" target="_blank" style="color:#0ea5e9; text-decoration:underline;">repository</a></div>
                   </div>
                 </div>
               </div>
@@ -2375,10 +2371,17 @@
         </div>
       </div>
 
-    </div> <!-- fine about-grid -->
-  </div> <!-- fine about-panel -->
+    </div>
+  </div>
 
-  <!-- ===== HOLOGRAM CREDITS MODAL (per Original Devs) ===== -->
+  <!-- ===== OVERLAY & PANNELLO TESTER ===== -->
+  <div id="testerOverlay" class="tester-overlay" onclick="closeTesterPanel()"></div>
+  <div id="testerPanel" class="tester-panel">
+    <button class="close-tester" onclick="closeTesterPanel()">✕ Close</button>
+    <div id="testerContent"></div>
+  </div>
+
+  <!-- ===== HOLOGRAM CREDITS MODAL ===== -->
   <div id="creditsOverlay" class="credits-overlay" onclick="closeCredits()"></div>
   <div id="creditsModal" class="credits-modal">
     <div class="scanline"></div>
@@ -2408,7 +2411,7 @@
   </div>
 
   <!-- ===== HEADER ===== -->
-  <header id="appHeader" class="sticky top-0 z-40 transition-colors duration-500 border-b-2 bg-opacity-90 backdrop-blur-xl">
+  <header id="appHeader" class="sticky top-0 z-40 transition-colors duration-500 border-b-2">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
       <div class="flex flex-wrap items-center justify-between gap-3">
         <div class="flex items-center gap-3 text-xs font-black">
@@ -2440,7 +2443,7 @@
           <img id="consoleLogo" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="Logo" class="w-9 h-9 object-contain flex-shrink-0" />
           <div class="min-w-0">
             <h1 id="mainTitle" class="text-2xl sm:text-3xl font-black tracking-tight whitespace-nowrap" style="font-family: 'Audiowide', 'Orbitron', sans-serif;">
-              <a href="/" style="text-decoration:none; color:inherit;">
+              <a href="https://silvercrow2323.github.io/Dolphin-Core-for-MuOS/" style="text-decoration:none; color:inherit;">
                 Dolphin <span class="rt-electric" id="titleRt">Rt<span class="spark" style="width:4px;height:4px;top:-2px;left:8px;"></span><span class="spark" style="width:3px;height:3px;top:4px;left:18px;"></span><span class="spark" style="width:5px;height:5px;top:-6px;left:24px;"></span><span class="spark" style="width:3px;height:3px;top:2px;left:2px;"></span><span class="spark" style="width:4px;height:4px;top:-4px;left:14px;"></span></span>:Core <span class="muos-star">fo<span style="position:relative;">r<span class="star-sparkle"><svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg></span></span></span> <span id="muosText" class="text-gc-400" style="font-weight:400;">muOS</span>
               </a>
             </h1>
@@ -2565,67 +2568,62 @@
     </div>
   </main>
 
-  <!-- ===== MODAL GIOCO (con holo animation) ===== -->
-  <div id="gameModal">
-    <!-- Holo overlay per l'animazione -->
-    <div class="holo-overlay" id="holoOverlay">
-      <div class="holo-light" id="holoLight"></div>
-      <div class="holo-border" id="holoBorder"></div>
-    </div>
-    <!-- Contenitore modale -->
-    <div class="modal-outer" id="modalOuter">
-      <div class="modal-card" id="modalCard">
-        <button id="closeModalBtn" class="absolute top-3 right-3 p-2 border-2 transition-colors z-10" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-        <div class="border-b-2 pb-3 pr-10 shrink-0" style="border-color:inherit;">
-          <div class="flex flex-col md:flex-row gap-3 items-start md:items-center">
-            <div class="w-20 h-28 overflow-hidden flex-shrink-0 border-2" style="clip-path: polygon(0% 5%, 5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%); border-color:inherit;">
-              <img id="modalCoverImg" src="" alt="Cover" class="w-full h-full object-cover" />
+  <!-- ===== MODAL GIOCO ===== -->
+  <div id="gameModal" class="show" style="display:none;">
+    <div id="modalCard" class="modal-holo-card">
+      <div class="holo-scanline"></div>
+      <div class="holo-glow"></div>
+      <div class="holo-border-glow"></div>
+      <button id="closeModalBtn" class="absolute top-3 right-3 p-2 border-2 transition-colors z-10" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <div class="border-b-2 pb-3 pr-10 shrink-0">
+        <div class="flex flex-col md:flex-row gap-3 items-start md:items-center">
+          <div class="w-20 h-28 overflow-hidden flex-shrink-0 border-2" style="clip-path: polygon(0% 5%, 5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%);">
+            <img id="modalCoverImg" src="" alt="Cover" class="w-full h-full object-cover" />
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 flex-wrap">
+              <img id="modalFlag" src="" alt="Flag" class="w-6 h-4 object-cover rounded border-2 shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" />
+              <h3 id="modalTitle" class="text-xl font-black leading-tight truncate"></h3>
+              <span id="modalRegionBadge" class="text-[9px] font-mono px-2 py-0.5 border-2 uppercase font-black shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">NTSC / USA</span>
+              <span id="modalGameId" class="text-[9px] font-mono px-2 py-0.5 border-2 font-black shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">GAMEID</span>
+              <span id="dolphinCompatMini" class="dolphin-compat-mini"></span>
             </div>
-            <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-2 flex-wrap">
-                <img id="modalFlag" src="" alt="Flag" class="w-6 h-4 object-cover rounded border-2 shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); border-color:inherit;" />
-                <h3 id="modalTitle" class="text-xl font-black leading-tight truncate"></h3>
-                <span id="modalRegionBadge" class="text-[9px] font-mono px-2 py-0.5 border-2 uppercase font-black shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); border-color:inherit;">NTSC / USA</span>
-                <span id="modalGameId" class="text-[9px] font-mono px-2 py-0.5 border-2 font-black shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); border-color:inherit;">GAMEID</span>
-                <span id="dolphinCompatMini" class="dolphin-compat-mini"></span>
-              </div>
-              <div class="grid grid-cols-2 gap-2 mt-2">
-                <div class="result-panel best">
-                  <div class="text-[9px] uppercase tracking-wider font-black flex items-center justify-center gap-1">🏆 BEST</div>
-                  <div class="flex items-center justify-center gap-2 mt-0.5">
-                    <div id="modalBestRatingVal" class="flex items-center gap-0.5 text-sm font-black"></div>
-                    <span class="text-xs font-mono opacity-50">|</span>
-                    <span id="modalBestFpsVal" class="text-sm font-mono font-black"></span>
-                  </div>
+            <div class="grid grid-cols-2 gap-2 mt-2">
+              <div class="result-panel best">
+                <div class="text-[9px] uppercase tracking-wider font-black flex items-center justify-center gap-1">🏆 BEST</div>
+                <div class="flex items-center justify-center gap-2 mt-0.5">
+                  <div id="modalBestRatingVal" class="flex items-center gap-0.5 text-sm font-black"></div>
+                  <span class="text-xs font-mono opacity-50">|</span>
+                  <span id="modalBestFpsVal" class="text-sm font-mono font-black"></span>
                 </div>
-                <div class="result-panel average">
-                  <div class="text-[9px] uppercase tracking-wider font-black flex items-center justify-center gap-1">📊 AVG</div>
-                  <div class="flex items-center justify-center gap-2 mt-0.5">
-                    <span id="modalAvgRatingVal" class="text-sm font-black"></span>
-                    <span class="text-xs font-mono opacity-50">|</span>
-                    <span id="modalAvgFpsVal" class="text-sm font-mono font-black"></span>
-                  </div>
+              </div>
+              <div class="result-panel average">
+                <div class="text-[9px] uppercase tracking-wider font-black flex items-center justify-center gap-1">📊 AVG</div>
+                <div class="flex items-center justify-center gap-2 mt-0.5">
+                  <span id="modalAvgRatingVal" class="text-sm font-black"></span>
+                  <span class="text-xs font-mono opacity-50">|</span>
+                  <span id="modalAvgFpsVal" class="text-sm font-mono font-black"></span>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div id="modalTabs" class="flex flex-wrap gap-2 mt-3 shrink-0"></div>
-        <div id="modalRegionContent" class="flex-1 overflow-y-auto my-3 space-y-3 pr-1"></div>
+      <div id="modalTabs" class="flex flex-wrap gap-2 mt-3 shrink-0"></div>
+      <div id="modalRegionContent" class="flex-1 overflow-y-auto my-3 space-y-3 pr-1"></div>
 
-        <div class="pt-2 border-t-2 flex justify-between items-center text-xs font-black shrink-0" style="border-color:inherit;">
-          <span id="modalTotalEntriesText">Total Tests: 0</span>
-          <button onclick="closeModal()" class="px-4 py-1 border-2 font-black transition-colors" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); border-color:inherit;">Close</button>
-        </div>
+      <div class="pt-2 border-t-2 flex justify-between items-center text-xs font-black shrink-0">
+        <span id="modalTotalEntriesText">Total Tests: 0</span>
+        <button onclick="closeModal()" class="px-4 py-1 border-2 font-black transition-colors" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">Close</button>
       </div>
     </div>
   </div>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="border-t-2 mt-12" style="border-color:inherit;">
+  <footer class="border-t-2 mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-center text-xs font-black">
       <div class="flex flex-wrap items-center justify-center gap-4 opacity-60">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4 2"/></svg>
@@ -2642,7 +2640,7 @@
 
   <script>
     // ============================================================
-    //  WIDGET RATING INTERATTIVO (come prima)
+    //  WIDGET RATING INTERATTIVO (barra a segmenti, colore dinamico)
     // ============================================================
     (function() {
       let rating = 0;
@@ -2667,12 +2665,12 @@
       const btnDec = document.getElementById('btnDec');
 
       const ratingData = {
-        0: { color: '#64748b', boot: 'no', playable: 'no', fps: 'N/A', label: 'Not Rated', desc: 'Select a rating to see the description.' },
-        1: { color: '#ef4444', boot: 'no', playable: 'no', fps: '1-15 FPS', label: 'Bad', desc: 'Unplayable or crashes frequently.' },
-        2: { color: '#fb923c', boot: 'yes', playable: 'no', fps: '16-30 FPS', label: 'Poor', desc: 'Barely playable, frequent problems.' },
-        3: { color: '#fbbf24', boot: 'yes', playable: 'issues', fps: '31-45 FPS', label: 'Playable', desc: 'Playable with noticeable issues or framedrops.' },
-        4: { color: '#2dd4bf', boot: 'yes', playable: 'yes', fps: '46-55 FPS', label: 'Great', desc: 'Very good, minor glitches or occasional slowdowns.' },
-        5: { color: '#34d399', boot: 'yes', playable: 'yes', fps: '56-60 FPS', label: 'Perfect', desc: 'Flawless performance, full speed, no issues.' }
+        0: { color: '#64748b', stroke: '#64748b', boot: 'no', playable: 'no', fps: 'N/A', label: 'Not Rated', desc: 'Select a rating to see the description.' },
+        1: { color: '#ef4444', stroke: '#ef4444', boot: 'no', playable: 'no', fps: '1-15 FPS', label: 'Bad', desc: 'Unplayable or crashes frequently.' },
+        2: { color: '#fb923c', stroke: '#fb923c', boot: 'yes', playable: 'no', fps: '16-30 FPS', label: 'Poor', desc: 'Barely playable, frequent problems.' },
+        3: { color: '#fbbf24', stroke: '#fbbf24', boot: 'yes', playable: 'issues', fps: '31-45 FPS', label: 'Playable', desc: 'Playable with noticeable issues or framedrops.' },
+        4: { color: '#2dd4bf', stroke: '#2dd4bf', boot: 'yes', playable: 'yes', fps: '46-55 FPS', label: 'Great', desc: 'Very good, minor glitches or occasional slowdowns.' },
+        5: { color: '#34d399', stroke: '#34d399', boot: 'yes', playable: 'yes', fps: '56-60 FPS', label: 'Perfect', desc: 'Flawless performance, full speed, no issues.' }
       };
 
       function getBootLabel(status) { return status === 'yes' ? '✅ BOOTS' : '⛔ NO BOOT'; }
@@ -2689,22 +2687,25 @@
       }
 
       function updateWidget() {
+        const data = ratingData[rating];
+        // Aggiorna segmenti: i primi 'rating' sono pieni, gli altri vuoti
         for (let i = 0; i < 5; i++) {
           const seg = segs[i];
           if (i < rating) {
             seg.style.strokeDashoffset = '0';
             seg.style.opacity = '1';
+            seg.style.stroke = data.color;
           } else {
             seg.style.strokeDashoffset = `-${62.83 * (i+1)}`;
-            seg.style.opacity = '0.2';
+            seg.style.opacity = '0.15';
+            seg.style.stroke = data.color;
           }
         }
 
-        const data = ratingData[rating];
         numEl.textContent = rating;
+        numEl.style.color = data.color;
         displayEl.textContent = rating;
         displayEl.style.color = data.color;
-        numEl.style.color = data.color;
         starIconEl.style.color = data.color;
         labelEl.textContent = data.label;
         labelEl.style.color = data.color;
@@ -2732,11 +2733,11 @@
     })();
 
     // ============================================================
-    //  CRT MONITOR SWITCH
+    //  CRT MONITOR SWITCH (RT:INDEX + CREDITS)
     // ============================================================
     document.addEventListener('DOMContentLoaded', function() {
+      // RT:INDEX clicks
       const indexItems = document.querySelectorAll('.box-index .box-list li a');
-      const crtContent1 = document.getElementById('crtContent1');
       const sections1 = {
         'guide': document.getElementById('crtGuide'),
         'gamedata': document.getElementById('crtGameData'),
@@ -2768,8 +2769,8 @@
         });
       });
 
+      // CREDITS clicks
       const creditsItems = document.querySelectorAll('.box-credits .box-list li a');
-      const crtContent2 = document.getElementById('crtContent2');
       const sections2 = {
         'spdw': document.getElementById('crtSpdw'),
         'devs': document.getElementById('crtDevs'),
@@ -2803,75 +2804,6 @@
     });
 
     // ============================================================
-    //  MODALE HOLO ANIMATION
-    // ============================================================
-    function openModal(index) {
-      const group = state.filtered[index];
-      if (!group) return;
-
-      const priority = ['PAL', 'NTSC / USA', 'JPN'];
-      let selectedRegion = null;
-      for (const p of priority) {
-        const found = group.allRegions.find(rd => rd.region === p);
-        if (found) { selectedRegion = p; break; }
-      }
-      if (!selectedRegion) selectedRegion = group.allRegions[0].region;
-      currentModalGroup = group;
-      currentModalRegion = selectedRegion;
-      renderModalWithRegion(group, selectedRegion);
-
-      const holoLight = document.getElementById('holoLight');
-      const holoBorder = document.getElementById('holoBorder');
-      const modalOuter = document.getElementById('modalOuter');
-      const modalCard = document.getElementById('modalCard');
-
-      // Reset animazioni
-      holoLight.className = 'holo-light';
-      holoBorder.className = 'holo-border';
-      modalCard.className = 'modal-card';
-      modalOuter.className = 'modal-outer';
-
-      // Forza reflow
-      void holoLight.offsetWidth;
-
-      // Avvia animazione luce
-      holoLight.classList.add('active');
-
-      // Dopo 0.3s, avvia bordo
-      setTimeout(() => {
-        holoBorder.classList.add('active');
-      }, 300);
-
-      // Dopo 1s, mostra la card
-      setTimeout(() => {
-        modalOuter.classList.add('open');
-        modalCard.classList.add('open');
-        // Rimuovi l'overlay holo dopo che la card è visibile
-        setTimeout(() => {
-          holoLight.className = 'holo-light';
-          holoBorder.className = 'holo-border';
-        }, 400);
-      }, 1000);
-    }
-
-    function closeModal() {
-      const modalOuter = document.getElementById('modalOuter');
-      const modalCard = document.getElementById('modalCard');
-      const holoBorder = document.getElementById('holoBorder');
-
-      // Chiudi card
-      modalCard.classList.add('closing');
-      modalOuter.classList.add('closing');
-
-      // Dopo la chiusura, rimuovi classi
-      setTimeout(() => {
-        modalOuter.classList.remove('open', 'closing');
-        modalCard.classList.remove('open', 'closing');
-        modalOuter.style.display = 'none';
-      }, 500);
-    }
-
-    // ============================================================
     //  STATO & LOGICA PRINCIPALE
     // ============================================================
     const state = {
@@ -2890,6 +2822,7 @@
 
     let currentModalGroup = null;
     let currentModalRegion = null;
+    let modalIsClosing = false;
 
     const URL = "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/games_data.json";
     const FLAG_MAP = { 'PAL': 'eu', 'NTSC': 'us', 'NTSC / USA': 'us', 'JPN': 'jp' };
@@ -3331,7 +3264,34 @@
       }).join('');
     }
 
-    // ===== MODAL GIOCO RENDER =====
+    // ===== MODAL GIOCO (con fix per riapertura) =====
+    function openModal(index) {
+      if (modalIsClosing) return;
+      const group = state.filtered[index];
+      if (!group) return;
+      const priority = ['PAL', 'NTSC / USA', 'JPN'];
+      let selectedRegion = null;
+      for (const p of priority) {
+        const found = group.allRegions.find(rd => rd.region === p);
+        if (found) { selectedRegion = p; break; }
+      }
+      if (!selectedRegion) selectedRegion = group.allRegions[0].region;
+      currentModalGroup = group;
+      currentModalRegion = selectedRegion;
+      
+      // Reset modal state
+      const modal = document.getElementById('gameModal');
+      const card = document.getElementById('modalCard');
+      modal.style.display = 'flex';
+      card.style.animation = 'none';
+      // Force reflow
+      void card.offsetWidth;
+      card.style.animation = '';
+      modal.classList.remove('closing');
+      
+      renderModalWithRegion(group, selectedRegion);
+    }
+
     function renderModalWithRegion(group, region) {
       const regionData = group.allRegions.find(rd => rd.region === region);
       if (!regionData) return;
@@ -3515,6 +3475,22 @@
         `;
       }).join('');
       document.getElementById('modalTotalEntriesText').textContent = `Total Tests: ${regionData.entriesCount}`;
+    }
+
+    function closeModal() {
+      if (modalIsClosing) return;
+      modalIsClosing = true;
+      const modal = document.getElementById('gameModal');
+      const card = document.getElementById('modalCard');
+      modal.classList.add('closing');
+      
+      // Attendi la fine dell'animazione
+      setTimeout(() => {
+        modal.style.display = 'none';
+        modal.classList.remove('closing');
+        card.style.animation = 'none';
+        modalIsClosing = false;
+      }, 600);
     }
 
     // ===== TESTER PANEL =====
@@ -3734,9 +3710,9 @@
         document.getElementById('totalEntriesAccent').className = 'text-gc-400';
         document.getElementById('totalEntriesContainer').className = 'font-mono flex items-center gap-1 font-black text-slate-400';
         document.getElementById('statTotal').className = 'font-black text-slate-200';
-        document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b-2 bg-gc-950/90 bg-opacity-90 backdrop-blur-xl';
+        document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b-2 bg-gc-950/90';
         document.getElementById('appBody').className = 'theme-gc font-sans antialiased transition-colors duration-500 min-h-screen';
-        document.getElementById('modalCard').className = 'modal-card';
+        document.getElementById('modalCard').className = 'modal-holo-card';
       } else {
         mainTitle.className = 'text-2xl sm:text-3xl font-black tracking-tight whitespace-nowrap title-dark text-slate-900';
         mainTitle.style.fontFamily = "'Outfit', sans-serif";
@@ -3757,16 +3733,16 @@
         document.getElementById('totalEntriesAccent').className = 'text-wii-700';
         document.getElementById('totalEntriesContainer').className = 'font-mono flex items-center gap-1 font-black text-slate-700';
         document.getElementById('statTotal').className = 'font-black text-slate-800';
-        document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b-2 bg-white/95 bg-opacity-90 backdrop-blur-xl';
+        document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b-2 bg-white/95';
         document.getElementById('appBody').className = 'theme-wii font-sans antialiased transition-colors duration-500 min-h-screen';
-        document.getElementById('modalCard').className = 'modal-card';
+        document.getElementById('modalCard').className = 'modal-holo-card';
       }
       loadConsoleData();
     }
 
     // ===== EVENTI =====
     document.getElementById('closeModalBtn').addEventListener('click', closeModal);
-    document.getElementById('modalOuter').addEventListener('click', function(e) {
+    document.getElementById('gameModal').addEventListener('click', function(e) {
       if (e.target === this) closeModal();
     });
     document.addEventListener('keydown', function(e) {
@@ -3778,23 +3754,23 @@
       }
     });
 
-    document.getElementById('searchInput').addEventListener('input', function(e) {
+    document.getElementById('searchInput').addEventListener('input', e => {
       state.search = e.target.value.toLowerCase().trim();
       render();
     });
-    document.getElementById('regionFilter').addEventListener('change', function(e) {
+    document.getElementById('regionFilter').addEventListener('change', e => {
       state.selectedRegion = e.target.value;
       render();
     });
-    document.getElementById('bootFilter').addEventListener('change', function(e) {
+    document.getElementById('bootFilter').addEventListener('change', e => {
       state.selectedBoot = e.target.value;
       render();
     });
-    document.getElementById('sortKey').addEventListener('change', function(e) {
+    document.getElementById('sortKey').addEventListener('change', e => {
       state.sortKey = e.target.value;
       render();
     });
-    document.getElementById('sortOrderBtn').addEventListener('click', function() {
+    document.getElementById('sortOrderBtn').addEventListener('click', () => {
       state.sortOrder = state.sortOrder === 'asc' ? 'desc' : 'asc';
       document.getElementById('sortOrderLabel').textContent = state.sortOrder === 'asc' ? 'Asc' : 'Desc';
       document.getElementById('sortOrderIcon').classList.toggle('rotate-180');
@@ -3820,15 +3796,14 @@
       render();
     });
 
-    document.querySelectorAll('.rating-panel').forEach(function(p) {
-      p.addEventListener('click', function() {
-        const v = this.getAttribute('data-rating');
+    document.querySelectorAll('.rating-panel').forEach(p => {
+      p.addEventListener('click', () => {
+        const v = p.getAttribute('data-rating');
         state.selectedStars = state.selectedStars === v ? 'all' : v;
         render();
       });
     });
-
-    document.getElementById('resetFiltersBtn').addEventListener('click', function() {
+    document.getElementById('resetFiltersBtn').addEventListener('click', () => {
       document.getElementById('searchInput').value = '';
       document.getElementById('regionFilter').value = 'all';
       document.getElementById('bootFilter').value = 'all';
@@ -3842,8 +3817,7 @@
       state.selectedBoot = 'all';
       render();
     });
-
-    document.getElementById('clearFiltersBtn').addEventListener('click', function() {
+    document.getElementById('clearFiltersBtn').addEventListener('click', () => {
       document.getElementById('resetFiltersBtn').click();
     });
 
