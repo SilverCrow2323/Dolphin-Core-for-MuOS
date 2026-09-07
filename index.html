@@ -15,7 +15,28 @@
       font-weight: 700;
       transition: background 0.4s, color 0.4s;
       min-height: 100vh;
-      overflow-x: hidden;
+      overflow-y: scroll; /* scrollbar sempre visibile */
+    }
+    /* Scrollbar sempre visibile nei modali */
+    #reportModal .report-panel,
+    #gameModal .modal-holo-card {
+      overflow-y: scroll;
+      scrollbar-width: thin;
+    }
+    #reportModal .report-panel::-webkit-scrollbar,
+    #gameModal .modal-holo-card::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    body.theme-gc #reportModal .report-panel::-webkit-scrollbar-thumb,
+    body.theme-gc #gameModal .modal-holo-card::-webkit-scrollbar-thumb {
+      background: #8b5cf6;
+      border-radius: 4px;
+    }
+    body.theme-wii #reportModal .report-panel::-webkit-scrollbar-thumb,
+    body.theme-wii #gameModal .modal-holo-card::-webkit-scrollbar-thumb {
+      background: #00a3e0;
+      border-radius: 4px;
     }
 
     /* ===== THEME GAMECUBE ===== */
@@ -120,14 +141,14 @@
       text-shadow: 0 0 10px rgba(0, 163, 224, 0.15);
     }
 
-    /* ===== SCROLLBAR ===== */
+    /* ===== SCROLLBAR (sempre visibile) ===== */
     ::-webkit-scrollbar { width: 8px; height: 8px; }
     body.theme-gc ::-webkit-scrollbar-track { background: #0a0618; border: 1px solid #2a1a4a; clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%); }
     body.theme-gc ::-webkit-scrollbar-thumb { background: #8b5cf6; border: 1px solid #2a1a4a; border-radius: 0; clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%); }
     body.theme-wii ::-webkit-scrollbar-track { background: #e8f0f8; border: 1px solid #b0c4d8; clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%); }
     body.theme-wii ::-webkit-scrollbar-thumb { background: #00a3e0; border: 1px solid #b0c4d8; border-radius: 0; clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%); }
 
-    /* ===== KEYFRAMES ===== */
+    /* ===== KEYFRAMES (come prima) ===== */
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes slideIn { from { opacity: 0; transform: scale(0.95) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
     @keyframes spin { to { transform: rotate(360deg); } }
@@ -205,35 +226,108 @@
       80% { opacity: 0; transform: scale(0.4); filter: blur(15px) brightness(0.1); clip-path: inset(45% 45% 45% 45%); }
       100% { opacity: 0; transform: scale(0.3); filter: blur(20px) brightness(0); clip-path: inset(50% 50% 50% 50%); }
     }
-    @keyframes modalGlowPulse {
-      0%, 100% { box-shadow: 0 0 30px rgba(139,92,246,0.05), 0 0 60px rgba(139,92,246,0.02); }
-      50% { box-shadow: 0 0 50px rgba(139,92,246,0.15), 0 0 100px rgba(139,92,246,0.05); }
+
+    /* ===== NUOVO TOGGLE SWITCH (console) ===== */
+    .console-toggle {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255,255,255,0.06);
+      border-radius: 9999px;
+      padding: 4px;
+      position: relative;
+      height: 42px;
+      border: 2px solid rgba(255,255,255,0.08);
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+      transition: border-color 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      user-select: none;
+      flex-shrink: 0;
+      min-width: 180px;
     }
-    @keyframes modalInterference {
-      0% { opacity: 0; }
-      10% { opacity: 0.8; }
-      12% { opacity: 0; }
-      15% { opacity: 0.6; }
-      17% { opacity: 0; }
-      20% { opacity: 0.9; }
-      22% { opacity: 0; }
-      30% { opacity: 1; }
-      100% { opacity: 1; }
+    body.theme-wii .console-toggle {
+      background: rgba(0,0,0,0.04);
+      border-color: rgba(0,0,0,0.08);
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
     }
-    @keyframes modalInterference2 {
-      0% { opacity: 0; }
-      5% { opacity: 0.6; }
-      7% { opacity: 0; }
-      10% { opacity: 0.4; }
-      12% { opacity: 0; }
-      25% { opacity: 1; }
-      100% { opacity: 1; }
+    .console-toggle .toggle-track {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8px;
+      border-radius: 9999px;
+      overflow: hidden;
+      background: transparent;
+      transition: background 0.3s;
+    }
+    /* Lo slider che si sposta */
+    .console-toggle .toggle-slider {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: calc(50% - 4px);
+      height: calc(100% - 4px);
+      border-radius: 9999px;
+      background: #8b5cf6;
+      box-shadow: 0 0 12px rgba(139,92,246,0.4);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s, box-shadow 0.3s;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .console-toggle .toggle-slider.wii-slider {
+      transform: translateX(100%);
+      background: #00a3e0;
+      box-shadow: 0 0 12px rgba(0,163,224,0.4);
+    }
+    .console-toggle .toggle-option {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.4);
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 0 4px;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: 'Outfit', sans-serif;
+    }
+    .console-toggle .toggle-option img {
+      width: 20px;
+      height: 20px;
+      filter: brightness(0.4) invert(1);
+      transition: filter 0.3s;
+    }
+    .console-toggle .toggle-option.active {
+      color: #ffffff;
+    }
+    .console-toggle .toggle-option.active img {
+      filter: brightness(1) invert(0);
+    }
+    body.theme-wii .console-toggle .toggle-option {
+      color: rgba(0,0,0,0.3);
+    }
+    body.theme-wii .console-toggle .toggle-option.active {
+      color: #0f172a;
+    }
+    body.theme-wii .console-toggle .toggle-option img {
+      filter: brightness(0.6) invert(0);
+    }
+    body.theme-wii .console-toggle .toggle-option.active img {
+      filter: brightness(1) invert(0);
     }
 
-    /* ===== CARDS & CONTAINERS ===== */
+    /* ===== CARDS & CONTAINERS (invariato) ===== */
     .card-anim { animation: fadeIn 0.25s ease-out forwards; opacity: 0; }
     .modal-anim { animation: slideIn 0.2s ease-out forwards; }
-
     .cover-placeholder {
       background: #1a0a2e;
       display: flex;
@@ -272,7 +366,7 @@
     body.theme-wii .glow-border::before { background: linear-gradient(135deg, rgba(0,163,224,0.4), rgba(56,189,248,0.15)); }
     .game-card:hover .glow-border::before { opacity: 1; }
 
-    /* ===== BADGES ===== */
+    /* ===== BADGES (invariato) ===== */
     .badge-core { font-size: 10px; padding: 2px 14px; border-radius: 0; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; border: 2px solid; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); }
     body.theme-gc .badge-core.gc { background: rgba(139,92,246,0.2); color: #a78bfa; border-color: #6d28d9; }
     body.theme-gc .badge-core.wii { background: rgba(0,163,224,0.1); color: #7dd3fc; border-color: #0369a1; }
@@ -598,34 +692,6 @@
     body.theme-gc .dolphin-compat-mini .wiki-link:hover { background: rgba(139,92,246,0.1); }
     body.theme-wii .dolphin-compat-mini .wiki-link { color: #0284c7; border-color: #b0c4d8; }
     body.theme-wii .dolphin-compat-mini .wiki-link:hover { background: rgba(0,163,224,0.05); }
-
-    /* ===== SWITCH TAB ===== */
-    .switch-tab-active-gc {
-      background: #8b5cf6 !important;
-      color: white !important;
-      border: 2px solid #6d28d9 !important;
-      box-shadow: 0 0 30px rgba(139,92,246,0.2) !important;
-      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%) !important;
-    }
-    .switch-tab-active-wii {
-      background: #00a3e0 !important;
-      color: white !important;
-      border: 2px solid #0284c7 !important;
-      box-shadow: 0 0 30px rgba(0,163,224,0.15) !important;
-      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%) !important;
-    }
-    .switch-tab-inactive-gc {
-      color: #94a3b8 !important;
-      background: transparent !important;
-      border: 2px solid transparent !important;
-    }
-    .switch-tab-inactive-gc:hover { color: white !important; border-color: #6d28d9 !important; }
-    .switch-tab-inactive-wii {
-      color: #64748b !important;
-      background: transparent !important;
-      border: 2px solid transparent !important;
-    }
-    .switch-tab-inactive-wii:hover { color: #0f172a !important; border-color: #b0c4d8 !important; }
 
     /* ===== VIEW MODE BUTTONS ===== */
     .view-btn {
@@ -1289,7 +1355,6 @@
       position: relative;
       z-index: 1;
     }
-
     .crt-monitor .crt-label {
       position: absolute;
       bottom: -6px;
@@ -1307,7 +1372,6 @@
       color: rgba(0, 163, 224, 0.3);
       border-color: rgba(0, 163, 224, 0.1);
     }
-
     .crt-monitor.crt-off .crt-screen {
       animation: crtOff 0.6s ease-in forwards;
     }
@@ -1315,17 +1379,8 @@
       animation: crtOn 0.6s ease-out forwards;
     }
 
-    /* Index side */
-    .index-side {
-      min-width: 140px;
-      max-width: 200px;
-      flex-shrink: 0;
-    }
-    .credits-side {
-      min-width: 140px;
-      max-width: 200px;
-      flex-shrink: 0;
-    }
+    .index-side { min-width: 140px; max-width: 200px; flex-shrink: 0; }
+    .credits-side { min-width: 140px; max-width: 200px; flex-shrink: 0; }
 
     /* ===== ABOUT PANEL ===== */
     .about-panel, .tester-panel {
@@ -1368,7 +1423,6 @@
       opacity: 1;
       pointer-events: auto;
     }
-
     .about-panel .close-about, .tester-panel .close-tester {
       position: sticky;
       top: 0;
@@ -1428,9 +1482,7 @@
       gap: 16px;
       flex-wrap: wrap;
     }
-    .about-panel .about-row-full {
-      width: 100%;
-    }
+    .about-panel .about-row-full { width: 100%; }
 
     /* Box stile cyberpunk per la row superiore */
     .about-panel .box-cyber {
@@ -1515,7 +1567,6 @@
       border-bottom-color: #a78bfa;
     }
 
-    /* Box stile RT:INDEX e CREDITS */
     .about-panel .box-index {
       background: transparent;
       border: 2px dashed #ff3333;
@@ -1595,7 +1646,6 @@
       color: #ff6b6b;
     }
 
-    /* Box stile CREDITS (speculare) */
     .about-panel .box-credits {
       background: #0ea5e9;
       padding: 2px;
@@ -2074,6 +2124,121 @@
       border-color: #b0c4d8;
     }
 
+    /* ===== REPORT MODAL ===== */
+    #reportModal {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(6px);
+    }
+    #reportModal.show {
+      display: flex;
+    }
+    #reportModal .report-panel {
+      max-width: 720px;
+      width: 100%;
+      max-height: 94vh;
+      overflow-y: auto;
+      padding: 1.8rem 2rem 2.2rem;
+      background: rgba(10, 6, 24, 0.95);
+      border: 2px solid rgba(139, 92, 246, 0.3);
+      clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
+      box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
+      color: #f1f5f9;
+    }
+    body.theme-wii #reportModal .report-panel {
+      background: rgba(232, 240, 248, 0.95);
+      border-color: rgba(0, 163, 224, 0.3);
+      color: #0f172a;
+      box-shadow: 0 0 40px rgba(0, 163, 224, 0.1);
+    }
+    #reportModal .report-panel h2 {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 1.6rem;
+      margin-bottom: 0.2rem;
+    }
+    body.theme-gc #reportModal .report-panel h2 { color: #a78bfa; }
+    body.theme-wii #reportModal .report-panel h2 { color: #0284c7; }
+    #reportModal .report-panel .sub {
+      font-size: 0.75rem;
+      opacity: 0.6;
+      margin-bottom: 1.2rem;
+    }
+    #reportModal .report-panel .field-group {
+      margin-bottom: 0.8rem;
+    }
+    #reportModal .report-panel .field-group label {
+      display: block;
+      font-weight: 800;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.02em;
+    }
+    #reportModal .report-panel .field-group input,
+    #reportModal .report-panel .field-group select,
+    #reportModal .report-panel .field-group textarea {
+      width: 100%;
+      padding: 6px 10px;
+      border: 2px solid;
+      background: rgba(255,255,255,0.04);
+      font-weight: 600;
+      font-size: 0.9rem;
+      clip-path: polygon(0% 6%, 6% 0%, 94% 0%, 100% 6%, 100% 94%, 94% 100%, 6% 100%, 0% 94%);
+      color: inherit;
+      transition: border 0.2s;
+    }
+    body.theme-gc #reportModal .report-panel .field-group input,
+    body.theme-gc #reportModal .report-panel .field-group select,
+    body.theme-gc #reportModal .report-panel .field-group textarea {
+      border-color: #2a1a4a;
+      background: rgba(10,6,24,0.5);
+    }
+    body.theme-wii #reportModal .report-panel .field-group input,
+    body.theme-wii #reportModal .report-panel .field-group select,
+    body.theme-wii #reportModal .report-panel .field-group textarea {
+      border-color: #b0c4d8;
+      background: rgba(255,255,255,0.6);
+    }
+    #reportModal .report-panel .field-group input:focus,
+    #reportModal .report-panel .field-group select:focus,
+    #reportModal .report-panel .field-group textarea:focus {
+      outline: none;
+      border-color: #8b5cf6;
+    }
+    body.theme-wii #reportModal .report-panel .field-group input:focus,
+    body.theme-wii #reportModal .report-panel .field-group select:focus,
+    body.theme-wii #reportModal .report-panel .field-group textarea:focus {
+      border-color: #00a3e0;
+    }
+    #reportModal .report-panel .row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+    #reportModal .report-panel .btn-find {
+      margin-top: 0.2rem;
+      padding: 4px 14px;
+      font-size: 0.8rem;
+    }
+    #reportModal .report-panel .actions {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: flex-end;
+      margin-top: 1.2rem;
+      border-top: 2px solid;
+      padding-top: 1rem;
+      border-color: inherit;
+    }
+    #reportModal .report-panel .actions button {
+      padding: 6px 24px;
+      font-weight: 900;
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 640px) {
       #gamesGrid.grid-view { grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -2099,6 +2264,11 @@
       .credits-modal .credits-section .dev-grid { grid-template-columns: 1fr; }
       .credits-modal .credits-title { font-size: 1.2rem; }
       #gameModal .modal-holo-card { max-height: 96vh; padding: 0.8rem; }
+      #reportModal .report-panel { padding: 1.2rem 1rem 1.5rem; }
+      #reportModal .report-panel .row-2 { grid-template-columns: 1fr; }
+      .console-toggle { min-width: 140px; height: 36px; }
+      .console-toggle .toggle-option { font-size: 11px; }
+      .console-toggle .toggle-option img { width: 16px; height: 16px; }
     }
   </style>
 </head>
@@ -2423,15 +2593,26 @@
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4 2"/></svg>
             Latest Release
           </a>
+          <a href="#" id="newReportLink" class="flex items-center gap-1 transition-colors hover:underline px-3 py-1 border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">
+            <span>📝</span> New Report
+          </a>
         </div>
-        <div class="inline-flex p-1 border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">
-          <button id="btnConsoleGC" onclick="switchConsole('gc')" class="flex items-center gap-2 px-4 py-1.5 text-xs font-black transition-all duration-300 switch-tab-active-gc">
-            <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="GC" class="w-4 h-4" /> GameCube
-          </button>
-          <button id="btnConsoleWii" onclick="switchConsole('wii')" class="flex items-center gap-2 px-4 py-1.5 text-xs font-black transition-all duration-300 switch-tab-inactive-wii">
-            <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg" alt="Wii" class="w-4 h-4" /> Nintendo Wii
-          </button>
+
+        <!-- NUOVO TOGGLE SWITCH CONSOLE -->
+        <div class="console-toggle" id="consoleToggle" role="button" tabindex="0" aria-label="Switch console">
+          <div class="toggle-track">
+            <div class="toggle-slider" id="toggleSlider"></div>
+            <span class="toggle-option active" data-console="gc" id="toggleGc">
+              <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="GC" />
+              GameCube
+            </span>
+            <span class="toggle-option" data-console="wii" id="toggleWii">
+              <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg" alt="Wii" />
+              Wii
+            </span>
+          </div>
         </div>
+
         <div class="flex items-center gap-3 text-xs font-black">
           <a id="newIssueBtn" href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=dolphin-rt-core-test-report.yml" target="_blank" rel="noopener" class="flex items-center gap-1 transition-colors hover:underline px-3 py-1 border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);"><span>📤</span> Send Report</a>
           <a href="#" id="howAboutLink" class="flex items-center gap-1 transition-colors hover:underline px-3 py-1 border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);"><span>ℹ️</span> How & About</a>
@@ -2622,6 +2803,117 @@
     </div>
   </div>
 
+  <!-- ===== MODAL REPORT ===== -->
+  <div id="reportModal" class="show" style="display:none;">
+    <div class="report-panel">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+        <h2>📝 New Test Report</h2>
+        <button onclick="closeReportModal()" class="border-2 px-3 py-1 text-sm" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">✕</button>
+      </div>
+      <p class="sub">Fill in the fields to open a pre-filled issue on GitHub.</p>
+
+      <div class="field-group">
+        <label for="reportGameTitle">🎮 Game Title *</label>
+        <input type="text" id="reportGameTitle" placeholder="es. Super Mario Sunshine" autocomplete="off" />
+        <div id="reportGameSuggestions" style="position:relative; width:100%;"></div>
+      </div>
+
+      <div class="field-group">
+        <label for="reportRegion">🌍 Region *</label>
+        <select id="reportRegion">
+          <option value="PAL">PAL</option>
+          <option value="NTSC">NTSC / USA</option>
+          <option value="JPN">JPN</option>
+        </select>
+      </div>
+
+      <div class="field-group" style="display:flex; gap:0.6rem; align-items:center; flex-wrap:wrap;">
+        <div style="flex:1; min-width:150px;">
+          <label for="reportGameId">🆔 Game ID</label>
+          <input type="text" id="reportGameId" placeholder="es. GMSP01" />
+        </div>
+        <button id="findGameIdBtn" class="btn-find border-2 px-4 py-1 mt-5" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">🔍 Find Game ID</button>
+      </div>
+
+      <div class="row-2">
+        <div class="field-group">
+          <label for="reportRating">⭐ Rating (1-5)</label>
+          <select id="reportRating">
+            <option value="1">1 ★</option>
+            <option value="2">2 ★</option>
+            <option value="3" selected>3 ★</option>
+            <option value="4">4 ★</option>
+            <option value="5">5 ★</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="reportFps">🎯 FPS (es. 15-25)</label>
+          <input type="text" id="reportFps" placeholder="15-25" />
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="field-group">
+          <label for="reportBoot">💿 Boot</label>
+          <select id="reportBoot">
+            <option value="YES">✅ Boots</option>
+            <option value="NO">❌ Won't Boot</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="reportPlayable">🎮 Playable</label>
+          <select id="reportPlayable">
+            <option value="YES">✅ Playable</option>
+            <option value="YES WITH ISSUES">⚠️ With Issues</option>
+            <option value="NO">❌ Unplayable</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label for="reportConsiderations">📝 Considerations</label>
+        <textarea id="reportConsiderations" rows="2" placeholder="Describe performance, glitches, settings used..."></textarea>
+      </div>
+
+      <div class="row-2">
+        <div class="field-group">
+          <label for="reportCoreVersion">⚙️ Rt:Core Version</label>
+          <input type="text" id="reportCoreVersion" placeholder="v10.5.3" />
+        </div>
+        <div class="field-group">
+          <label for="reportCoreProfile">📊 Core Profile</label>
+          <input type="text" id="reportCoreProfile" placeholder="Default / SpeedHack / Performance" />
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="field-group">
+          <label for="reportDevice">📱 Device</label>
+          <input type="text" id="reportDevice" placeholder="RG35XX H" />
+        </div>
+        <div class="field-group">
+          <label for="reportMuos">🧩 muOS Version</label>
+          <input type="text" id="reportMuos" placeholder="Funky Jacaranda" />
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label for="reportTester">👤 Tester (GitHub handle)</label>
+        <input type="text" id="reportTester" placeholder="@yourhandle" />
+      </div>
+
+      <div class="field-group">
+        <label for="reportCoverArt">🖼️ Cover Art URL (opzionale)</label>
+        <input type="text" id="reportCoverArt" placeholder="https://example.com/cover.png" />
+      </div>
+
+      <div class="actions">
+        <button onclick="closeReportModal()" class="border-2 px-5 py-1.5" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">Cancel</button>
+        <button id="submitReportBtn" class="btn-primary gc border-2 px-5 py-1.5" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">📤 Submit Report</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ===== FOOTER ===== -->
   <footer class="border-t-2 mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-center text-xs font-black">
@@ -2688,7 +2980,6 @@
 
       function updateWidget() {
         const data = ratingData[rating];
-        // Aggiorna segmenti: i primi 'rating' sono pieni, gli altri vuoti
         for (let i = 0; i < 5; i++) {
           const seg = segs[i];
           if (i < rating) {
@@ -2701,7 +2992,6 @@
             seg.style.stroke = data.color;
           }
         }
-
         numEl.textContent = rating;
         numEl.style.color = data.color;
         displayEl.textContent = rating;
@@ -2710,15 +3000,12 @@
         labelEl.textContent = data.label;
         labelEl.style.color = data.color;
         descEl.textContent = data.desc;
-
         bootBadgeEl.textContent = getBootLabel(data.boot);
         bootBadgeEl.className = `status-pill ${getBootClass(data.boot)}`;
         playableBadgeEl.textContent = getPlayableLabel(data.playable);
         playableBadgeEl.className = `status-pill ${getPlayableClass(data.playable)}`;
-
         fpsEl.textContent = data.fps;
         fpsEl.style.color = data.color;
-
         panelEl.style.borderColor = data.color;
         panelEl.style.borderWidth = '2px';
         panelEl.style.borderStyle = 'solid';
@@ -2736,7 +3023,6 @@
     //  CRT MONITOR SWITCH (RT:INDEX + CREDITS)
     // ============================================================
     document.addEventListener('DOMContentLoaded', function() {
-      // RT:INDEX clicks
       const indexItems = document.querySelectorAll('.box-index .box-list li a');
       const sections1 = {
         'guide': document.getElementById('crtGuide'),
@@ -2750,10 +3036,8 @@
           e.preventDefault();
           const target = this.dataset.target;
           if (!target || !sections1[target]) return;
-
           monitor1.classList.remove('crt-on');
           monitor1.classList.add('crt-off');
-
           setTimeout(() => {
             Object.keys(sections1).forEach(key => {
               sections1[key].style.display = key === target ? 'block' : 'none';
@@ -2769,7 +3053,6 @@
         });
       });
 
-      // CREDITS clicks
       const creditsItems = document.querySelectorAll('.box-credits .box-list li a');
       const sections2 = {
         'spdw': document.getElementById('crtSpdw'),
@@ -2783,10 +3066,8 @@
           e.preventDefault();
           const target = this.dataset.target;
           if (!target || !sections2[target]) return;
-
           monitor2.classList.remove('crt-on');
           monitor2.classList.add('crt-off');
-
           setTimeout(() => {
             Object.keys(sections2).forEach(key => {
               sections2[key].style.display = key === target ? 'block' : 'none';
@@ -3264,7 +3545,7 @@
       }).join('');
     }
 
-    // ===== MODAL GIOCO (con fix per riapertura) =====
+    // ===== MODAL GIOCO =====
     function openModal(index) {
       if (modalIsClosing) return;
       const group = state.filtered[index];
@@ -3279,12 +3560,10 @@
       currentModalGroup = group;
       currentModalRegion = selectedRegion;
       
-      // Reset modal state
       const modal = document.getElementById('gameModal');
       const card = document.getElementById('modalCard');
       modal.style.display = 'flex';
       card.style.animation = 'none';
-      // Force reflow
       void card.offsetWidth;
       card.style.animation = '';
       modal.classList.remove('closing');
@@ -3483,8 +3762,6 @@
       const modal = document.getElementById('gameModal');
       const card = document.getElementById('modalCard');
       modal.classList.add('closing');
-      
-      // Attendi la fine dell'animazione
       setTimeout(() => {
         modal.style.display = 'none';
         modal.classList.remove('closing');
@@ -3660,7 +3937,7 @@
       }
     }
 
-    // ===== CONSOLE SWITCH =====
+    // ===== CONSOLE SWITCH (gestito dal toggle) =====
     function switchConsole(target) {
       state.console = target;
       const isGC = target === 'gc';
@@ -3669,22 +3946,26 @@
       void header.offsetWidth;
       header.classList.add('flip-horizontal');
 
+      // Aggiorna toggle slider e classi attive
+      const slider = document.getElementById('toggleSlider');
+      const gcOpt = document.getElementById('toggleGc');
+      const wiiOpt = document.getElementById('toggleWii');
+      if (isGC) {
+        slider.classList.remove('wii-slider');
+        gcOpt.classList.add('active');
+        wiiOpt.classList.remove('active');
+      } else {
+        slider.classList.add('wii-slider');
+        wiiOpt.classList.add('active');
+        gcOpt.classList.remove('active');
+      }
+
       document.getElementById('consoleLogo').src = isGC
         ? 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg'
         : 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg';
 
       document.getElementById('consoleName').textContent = isGC ? 'GameCube' : 'Wii';
       document.getElementById('consoleName').className = isGC ? 'font-black text-gc-400' : 'font-black text-wii-500';
-
-      const btnGC = document.getElementById('btnConsoleGC');
-      const btnWii = document.getElementById('btnConsoleWii');
-      if (isGC) {
-        btnGC.className = 'flex items-center gap-2 px-4 py-1.5 text-xs font-black transition-all duration-300 switch-tab-active-gc';
-        btnWii.className = 'flex items-center gap-2 px-4 py-1.5 text-xs font-black transition-all duration-300 switch-tab-inactive-wii';
-      } else {
-        btnWii.className = 'flex items-center gap-2 px-4 py-1.5 text-xs font-black transition-all duration-300 switch-tab-active-wii';
-        btnGC.className = 'flex items-center gap-2 px-4 py-1.5 text-xs font-black transition-all duration-300 switch-tab-inactive-gc';
-      }
 
       const mainTitle = document.getElementById('mainTitle');
       const muosText = document.getElementById('muosText');
@@ -3713,6 +3994,11 @@
         document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b-2 bg-gc-950/90';
         document.getElementById('appBody').className = 'theme-gc font-sans antialiased transition-colors duration-500 min-h-screen';
         document.getElementById('modalCard').className = 'modal-holo-card';
+        // Stile pulsante submit report
+        const submitBtn = document.getElementById('submitReportBtn');
+        if (submitBtn) {
+          submitBtn.className = 'btn-primary gc border-2 px-5 py-1.5';
+        }
       } else {
         mainTitle.className = 'text-2xl sm:text-3xl font-black tracking-tight whitespace-nowrap title-dark text-slate-900';
         mainTitle.style.fontFamily = "'Outfit', sans-serif";
@@ -3736,11 +4022,180 @@
         document.getElementById('appHeader').className = 'sticky top-0 z-40 transition-colors duration-500 border-b-2 bg-white/95';
         document.getElementById('appBody').className = 'theme-wii font-sans antialiased transition-colors duration-500 min-h-screen';
         document.getElementById('modalCard').className = 'modal-holo-card';
+        const submitBtn = document.getElementById('submitReportBtn');
+        if (submitBtn) {
+          submitBtn.className = 'btn-primary wii border-2 px-5 py-1.5';
+        }
       }
       loadConsoleData();
     }
 
-    // ===== EVENTI =====
+    // ===== EVENTI TOGGLE CONSOLE =====
+    document.getElementById('consoleToggle').addEventListener('click', function(e) {
+      // Se il click è direttamente su una delle opzioni, usiamo il suo data-console
+      const option = e.target.closest('.toggle-option');
+      if (option) {
+        const console = option.dataset.console;
+        if (console && console !== state.console) {
+          switchConsole(console);
+        }
+        return;
+      }
+      // Altrimenti toggle: se GC passa a Wii, viceversa
+      const newConsole = state.console === 'gc' ? 'wii' : 'gc';
+      switchConsole(newConsole);
+    });
+
+    // ===== EVENTI MODAL REPORT =====
+    document.getElementById('newReportLink').addEventListener('click', function(e) {
+      e.preventDefault();
+      openReportModal();
+    });
+
+    function openReportModal() {
+      document.getElementById('reportModal').style.display = 'flex';
+      // Reset campi
+      document.getElementById('reportGameTitle').value = '';
+      document.getElementById('reportGameId').value = '';
+      document.getElementById('reportFps').value = '';
+      document.getElementById('reportConsiderations').value = '';
+      document.getElementById('reportCoreVersion').value = '';
+      document.getElementById('reportCoreProfile').value = '';
+      document.getElementById('reportDevice').value = '';
+      document.getElementById('reportMuos').value = '';
+      document.getElementById('reportTester').value = '';
+      document.getElementById('reportCoverArt').value = '';
+      document.getElementById('reportGameSuggestions').innerHTML = '';
+      // Imposta rating, boot, playable default
+      document.getElementById('reportRating').value = '3';
+      document.getElementById('reportBoot').value = 'YES';
+      document.getElementById('reportPlayable').value = 'YES';
+    }
+
+    function closeReportModal() {
+      document.getElementById('reportModal').style.display = 'none';
+    }
+
+    // ===== SUGGERIMENTI TITOLO =====
+    const reportTitleInput = document.getElementById('reportGameTitle');
+    const suggestionsContainer = document.getElementById('reportGameSuggestions');
+
+    reportTitleInput.addEventListener('input', function() {
+      const val = this.value.trim().toLowerCase();
+      if (val.length < 2) {
+        suggestionsContainer.innerHTML = '';
+        return;
+      }
+      const matches = state.rawGames
+        .map(g => g.game_info?.game || '')
+        .filter(t => t && t.toLowerCase().includes(val))
+        .slice(0, 8);
+      if (matches.length === 0) {
+        suggestionsContainer.innerHTML = '';
+        return;
+      }
+      suggestionsContainer.innerHTML = matches.map(title => `
+        <div class="search-dropdown-item" style="cursor:pointer; padding:4px 10px; border-bottom:1px solid rgba(255,255,255,0.1);">
+          ${escapeHtml(title)}
+        </div>
+      `).join('');
+      suggestionsContainer.querySelectorAll('.search-dropdown-item').forEach(el => {
+        el.addEventListener('click', function() {
+          reportTitleInput.value = this.textContent;
+          suggestionsContainer.innerHTML = '';
+        });
+      });
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!suggestionsContainer.contains(e.target) && e.target !== reportTitleInput) {
+        suggestionsContainer.innerHTML = '';
+      }
+    });
+
+    // ===== FIND GAME ID (case‑insensitive, output uppercase) =====
+    document.getElementById('findGameIdBtn').addEventListener('click', function() {
+      const title = document.getElementById('reportGameTitle').value.trim();
+      const region = document.getElementById('reportRegion').value;
+      const gameIdField = document.getElementById('reportGameId');
+
+      if (!title) {
+        alert('Inserisci il titolo del gioco.');
+        return;
+      }
+
+      const found = state.rawGames.find(g => {
+        const info = g.game_info || {};
+        return info.game && info.game.toLowerCase() === title.toLowerCase() &&
+               info.region && info.region === region;
+      });
+
+      if (found && found.game_info && found.game_info.game_id) {
+        gameIdField.value = found.game_info.game_id.toUpperCase();
+      } else {
+        alert('Nessun Game ID trovato per questo titolo e regione.');
+        gameIdField.value = '';
+      }
+    });
+
+    // ===== SUBMIT REPORT =====
+    document.getElementById('submitReportBtn').addEventListener('click', function() {
+      const title = document.getElementById('reportGameTitle').value.trim();
+      const region = document.getElementById('reportRegion').value;
+      const gameId = document.getElementById('reportGameId').value.trim();
+      const rating = document.getElementById('reportRating').value;
+      const fps = document.getElementById('reportFps').value.trim() || '???';
+      const boot = document.getElementById('reportBoot').value;
+      const playable = document.getElementById('reportPlayable').value;
+      const considerations = document.getElementById('reportConsiderations').value.trim();
+      const coreVersion = document.getElementById('reportCoreVersion').value.trim() || 'Unknown';
+      const coreProfile = document.getElementById('reportCoreProfile').value.trim() || 'Default';
+      const device = document.getElementById('reportDevice').value.trim() || 'Unknown Device';
+      const muosVer = document.getElementById('reportMuos').value.trim() || 'Unknown';
+      const tester = document.getElementById('reportTester').value.trim() || 'Anonymous';
+      const coverArt = document.getElementById('reportCoverArt').value.trim();
+
+      if (!title) {
+        alert('Inserisci il titolo del gioco.');
+        return;
+      }
+
+      // Costruisci il corpo della issue in formato YAML per il template
+      const issueBody = `### Game Info
+- **Game:** ${title}
+- **Region:** ${region}
+- **Game ID:** ${gameId || 'Unknown'}
+
+### Test Review
+- **Rating:** ${rating} ★
+- **FPS:** ${fps}
+- **Boot:** ${boot}
+- **Playable:** ${playable}
+
+### Test Details
+- **Rt:Core Version:** ${coreVersion}
+- **Core Profile:** ${coreProfile}
+- **Considerations:** ${considerations || 'N/A'}
+
+### Test Environment
+- **Tester:** ${tester}
+- **Device:** ${device}
+- **muOS Version:** ${muosVer}
+
+${coverArt ? `### Cover Art\n- **Cover Art URL:** ${coverArt}` : ''}
+
+---
+*Report generated via the Dolphin Rt:Core Dashboard.*`;
+
+      const issueTitle = `[${region}] ${title} - Test Report`;
+      const encodedTitle = encodeURIComponent(issueTitle);
+      const encodedBody = encodeURIComponent(issueBody);
+      const url = `https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=dolphin-rtcore-test-report.yml&title=${encodedTitle}&body=${encodedBody}`;
+      window.open(url, '_blank');
+      closeReportModal();
+    });
+
+    // ===== EVENTI CHIUSURA MODALI =====
     document.getElementById('closeModalBtn').addEventListener('click', closeModal);
     document.getElementById('gameModal').addEventListener('click', function(e) {
       if (e.target === this) closeModal();
@@ -3751,9 +4206,11 @@
         closeTesterPanel();
         closeAboutPanel();
         closeCredits();
+        closeReportModal();
       }
     });
 
+    // ===== FILTRI =====
     document.getElementById('searchInput').addEventListener('input', e => {
       state.search = e.target.value.toLowerCase().trim();
       render();
@@ -3821,6 +4278,7 @@
       document.getElementById('resetFiltersBtn').click();
     });
 
+    // Avvia con GameCube
     switchConsole('gc');
   </script>
 </body>
