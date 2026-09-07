@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Audiowide&family=Outfit:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   <style>
-    /* ===== RESET & BASE ===== */
+    /* ===== RESET & BASE (come prima) ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Outfit', sans-serif;
@@ -379,6 +379,7 @@
     body.theme-wii .result-panel.best { background: rgba(251,191,36,0.10); border-color: #fbbf24; color: #a16207; }
     body.theme-wii .result-panel.average { background: rgba(200,225,245,0.5); border-color: #b0c4d8; color: #0f172a; }
 
+    /* ===== CUSTOM SETTINGS TYPE BADGES ===== */
     .settings-type-badge {
       font-size: 9px;
       padding: 2px 12px;
@@ -387,8 +388,56 @@
       border: 2px solid;
       clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
     }
-    body.theme-gc .settings-type-badge { background: rgba(139,92,246,0.12); color: #a78bfa; border-color: #6d28d9; }
-    body.theme-wii .settings-type-badge { background: rgba(0,163,224,0.06); color: #0369a1; border-color: #b0c4d8; }
+    .settings-game {
+      background: rgba(59, 130, 246, 0.2);
+      color: #60a5fa;
+      border-color: #2563eb;
+    }
+    body.theme-wii .settings-game {
+      background: rgba(59, 130, 246, 0.10);
+      color: #1d4ed8;
+      border-color: #3b82f6;
+    }
+    .settings-hack {
+      background: rgba(139, 92, 246, 0.2);
+      color: #a78bfa;
+      border-color: #7c3aed;
+    }
+    body.theme-wii .settings-hack {
+      background: rgba(139, 92, 246, 0.10);
+      color: #6d28d9;
+      border-color: #8b5cf6;
+    }
+    .settings-texture {
+      background: rgba(34, 197, 94, 0.2);
+      color: #4ade80;
+      border-color: #22c55e;
+    }
+    body.theme-wii .settings-texture {
+      background: rgba(34, 197, 94, 0.10);
+      color: #16a34a;
+      border-color: #22c55e;
+    }
+    .settings-cheats {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border-color: #d97706;
+    }
+    body.theme-wii .settings-cheats {
+      background: rgba(245, 158, 11, 0.10);
+      color: #a16207;
+      border-color: #f59e0b;
+    }
+    .settings-other {
+      background: rgba(100, 116, 139, 0.2);
+      color: #94a3b8;
+      border-color: #64748b;
+    }
+    body.theme-wii .settings-other {
+      background: rgba(100, 116, 139, 0.10);
+      color: #475569;
+      border-color: #94a3b8;
+    }
 
     /* ===== MODAL TEST CARD ===== */
     .modal-test-card {
@@ -450,7 +499,7 @@
         0 0 12px rgba(0,0,0,0.4);
     }
 
-    /* ===== DOLPHIN COMPATIBILITY BAR (MINI, SENZA RIQUADRO) ===== */
+    /* ===== DOLPHIN COMPATIBILITY BAR ===== */
     .dolphin-compat-mini {
       display: inline-flex;
       gap: 2px;
@@ -511,6 +560,56 @@
     }
     .switch-tab-inactive-wii:hover { color: #0f172a !important; border-color: #b0c4d8 !important; }
 
+    /* ===== VIEW MODE BUTTONS ===== */
+    .view-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 900;
+      border: 2px solid;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      background: transparent;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    body.theme-gc .view-btn {
+      border-color: #2a1a4a;
+      color: #94a3b8;
+    }
+    body.theme-gc .view-btn:hover {
+      border-color: #6d28d9;
+      color: #e2e8f0;
+    }
+    body.theme-gc .view-btn.active {
+      background: rgba(139,92,246,0.15);
+      border-color: #8b5cf6;
+      color: #e2e8f0;
+      box-shadow: 0 0 20px rgba(139,92,246,0.08);
+    }
+    body.theme-wii .view-btn {
+      border-color: #b0c4d8;
+      color: #64748b;
+    }
+    body.theme-wii .view-btn:hover {
+      border-color: #00a3e0;
+      color: #0f172a;
+    }
+    body.theme-wii .view-btn.active {
+      background: rgba(0,163,224,0.08);
+      border-color: #00a3e0;
+      color: #0f172a;
+      box-shadow: 0 0 20px rgba(0,163,224,0.05);
+    }
+    .view-btn svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
     /* ===== GRID / LIST ===== */
     #gamesGrid.grid-view {
       display: grid;
@@ -523,6 +622,12 @@
       align-items: center;
       gap: 12px;
     }
+    #gamesGrid.list-extended-view {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
     .list-card {
       width: 100%;
       max-width: 700px;
@@ -534,12 +639,23 @@
       clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
       transition: all 0.2s;
     }
-    body.theme-gc .list-card { background: rgba(26,10,46,0.6); border-color: #2a1a4a; }
-    body.theme-wii .list-card { background: rgba(255,255,255,0.7); border-color: #b0c4d8; }
-    .list-card:hover { transform: translateY(-3px); }
-    body.theme-gc .list-card:hover { box-shadow: 0 8px 30px rgba(139,92,246,0.08); border-color: #6d28d9; }
-    body.theme-wii .list-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.04); border-color: #00a3e0; }
-    .list-card-cover {
+    .list-extended-card {
+      width: 100%;
+      max-width: 820px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 16px 18px;
+      border: 2px solid;
+      clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
+      transition: all 0.2s;
+    }
+    body.theme-gc .list-card, body.theme-gc .list-extended-card { background: rgba(26,10,46,0.6); border-color: #2a1a4a; }
+    body.theme-wii .list-card, body.theme-wii .list-extended-card { background: rgba(255,255,255,0.7); border-color: #b0c4d8; }
+    .list-card:hover, .list-extended-card:hover { transform: translateY(-3px); }
+    body.theme-gc .list-card:hover, body.theme-gc .list-extended-card:hover { box-shadow: 0 8px 30px rgba(139,92,246,0.08); border-color: #6d28d9; }
+    body.theme-wii .list-card:hover, body.theme-wii .list-extended-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.04); border-color: #00a3e0; }
+    .list-card-cover, .list-extended-cover {
       width: 72px;
       height: 96px;
       border-radius: 0;
@@ -548,13 +664,28 @@
       border: 2px solid;
       clip-path: polygon(0% 5%, 5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%);
     }
-    body.theme-gc .list-card-cover { border-color: #2a1a4a; }
-    body.theme-wii .list-card-cover { border-color: #b0c4d8; }
-    .list-card-cover img { width: 100%; height: 100%; object-fit: cover; }
+    body.theme-gc .list-card-cover, body.theme-gc .list-extended-cover { border-color: #2a1a4a; }
+    body.theme-wii .list-card-cover, body.theme-wii .list-extended-cover { border-color: #b0c4d8; }
+    .list-card-cover img, .list-extended-cover img { width: 100%; height: 100%; object-fit: cover; }
     .list-card-info { flex: 1; min-width: 0; }
+    .list-extended-info { flex: 1; min-width: 0; }
     .list-card-title { font-weight: 900; font-size: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .list-extended-title { font-weight: 900; font-size: 1.1rem; }
     .list-card-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; font-size: 11px; font-weight: 700; }
+    .list-extended-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; font-size: 12px; font-weight: 700; }
+    .list-extended-desc {
+      margin-top: 6px;
+      font-size: 13px;
+      font-weight: 400;
+      opacity: 0.8;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
     .list-card-stars { display: flex; gap: 2px; margin-top: 2px; }
+    .list-extended-stars { display: flex; gap: 2px; margin-top: 2px; }
 
     /* ===== SEARCH DROPDOWN ===== */
     .search-dropdown {
@@ -924,8 +1055,8 @@
     body.theme-gc .modal-tab img { border-color: #2a1a4a; }
     body.theme-wii .modal-tab img { border-color: #b0c4d8; }
 
-    /* ===== PANNELLO LATERALE HOW & ABOUT ===== */
-    .about-overlay {
+    /* ===== PANNELLI LATERALI ===== */
+    .about-overlay, .tester-overlay {
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.75);
@@ -935,16 +1066,16 @@
       pointer-events: none;
       transition: opacity 0.4s ease;
     }
-    .about-overlay.open {
+    .about-overlay.open, .tester-overlay.open {
       opacity: 1;
       pointer-events: auto;
     }
-    .about-panel {
+    .about-panel, .tester-panel {
       position: fixed;
       top: 0;
       height: 100%;
       z-index: 1000;
-      width: min(780px, 94vw);
+      width: min(820px, 94vw);
       overflow-y: auto;
       padding: 2rem 1.8rem 3rem;
       border-left: 3px solid;
@@ -954,7 +1085,7 @@
       opacity: 0;
       pointer-events: none;
     }
-    .about-panel.panel-gc {
+    .about-panel.panel-gc, .tester-panel.panel-gc {
       left: 0;
       right: auto;
       transform: translateX(-100%);
@@ -965,12 +1096,7 @@
       color: #f1f5f9;
       border-right-color: #8b5cf6;
     }
-    .about-panel.panel-gc.open {
-      transform: translateX(0);
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .about-panel.panel-wii {
+    .about-panel.panel-wii, .tester-panel.panel-wii {
       right: 0;
       left: auto;
       transform: translateX(100%);
@@ -979,13 +1105,252 @@
       color: #0f172a;
       box-shadow: -8px 0 40px rgba(0,0,0,0.15);
     }
-    .about-panel.panel-wii.open {
+    .about-panel.open, .tester-panel.open {
       transform: translateX(0);
       opacity: 1;
       pointer-events: auto;
     }
 
-    .about-panel .close-about {
+    /* ===== NUOVI STILI PER I BOX DEL PANNELLO ABOUT (stile tetris) ===== */
+
+    .about-panel .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 10px;
+    }
+    .about-panel .about-grid-full {
+      grid-column: 1 / -1;
+    }
+
+    /* Box stile dashed rosso (RT:INDEX) */
+    .about-panel .box-red-dashed {
+      background: transparent;
+      border: 2px dashed #ff3333;
+      padding: 2px;
+      clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+      filter: drop-shadow(0 0 6px rgba(255, 51, 51, 0.3));
+    }
+    .about-panel .box-red-dashed .box-inner {
+      background: rgba(16, 6, 6, 0.95);
+      padding: 14px 16px;
+      clip-path: polygon(0 0, calc(100% - 19px) 0, 100% 19px, 100% 100%, 19px 100%, 0 calc(100% - 19px));
+      border-left: 4px solid #ff3333;
+      height: 100%;
+    }
+    .about-panel .box-red-dashed .box-header {
+      color: #ff3333;
+      border-bottom: 2px solid rgba(255, 51, 51, 0.3);
+      display: flex;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+    .about-panel .box-red-dashed .box-header::after {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: #ff3333;
+    }
+    .about-panel .box-red-dashed .box-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .about-panel .box-red-dashed .box-list li a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #94a3b8;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      padding: 4px 6px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid transparent;
+      transition: all 0.2s ease-in-out;
+    }
+    .about-panel .box-red-dashed .box-list li a:hover {
+      color: #ffffff;
+      background: rgba(255, 51, 51, 0.12);
+      border: 1px solid rgba(255, 51, 51, 0.5);
+      border-left: 3px solid #ff3333;
+      transform: translateX(4px);
+    }
+    .about-panel .box-red-dashed .box-list .idx-num {
+      font-family: 'JetBrains Mono', monospace;
+      margin-right: 8px;
+      font-size: 0.65rem;
+      opacity: 0.9;
+      color: #ff6b6b;
+    }
+
+    /* Box stile speculare Wii (blu/verde) */
+    .about-panel .box-wii-style {
+      background: #0ea5e9;
+      padding: 2px;
+      clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+      filter: drop-shadow(0 0 6px rgba(14, 165, 233, 0.4));
+    }
+    .about-panel .box-wii-style .box-inner {
+      background: rgba(8, 14, 24, 0.98);
+      padding: 14px 16px;
+      clip-path: polygon(19px 0, 100% 0, 100% calc(100% - 19px), calc(100% - 19px) 100%, 0 100%, 0 19px);
+      border-right: 4px solid #10b981;
+      height: 100%;
+    }
+    .about-panel .box-wii-style .box-header {
+      color: #0ea5e9;
+      border-bottom: 2px solid rgba(14, 165, 233, 0.3);
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+    .about-panel .box-wii-style .box-header::after {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+    }
+    .about-panel .box-wii-style .box-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .about-panel .box-wii-style .box-list li a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #94a3b8;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      padding: 4px 6px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid transparent;
+      transition: all 0.2s ease-in-out;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+    .about-panel .box-wii-style .box-list li a:hover {
+      color: #ffffff;
+      background: rgba(14, 165, 233, 0.1);
+      border: 1px solid rgba(14, 165, 233, 0.5);
+      border-right: 3px solid #0ea5e9;
+      border-left: none;
+      transform: translateX(-4px);
+    }
+    .about-panel .box-wii-style .box-list .idx-num {
+      font-family: 'JetBrains Mono', monospace;
+      margin-left: 8px;
+      font-size: 0.65rem;
+      opacity: 0.9;
+      color: #10b981;
+    }
+    .about-panel .box-wii-style .box-list li a .idx-num {
+      margin-right: 0;
+    }
+
+    /* Box stile Cyberpunk (viola) */
+    .about-panel .box-cyber {
+      background: #8b5cf6;
+      padding: 1px;
+      filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.2));
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
+      border-top: 3px solid #c084fc;
+    }
+    .about-panel .box-cyber .box-inner {
+      background: rgba(10, 6, 24, 0.95);
+      backdrop-filter: blur(5px);
+      padding: 14px 18px 20px 18px;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%);
+    }
+    .about-panel .box-cyber .box-header {
+      display: flex;
+      justify-content: flex-end;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #a78bfa;
+      border-bottom: 1px dashed rgba(139, 92, 246, 0.4);
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    .about-panel .box-cyber .box-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .about-panel .box-cyber .box-title-wrap img {
+      width: 36px;
+      height: 36px;
+      filter: drop-shadow(0 0 6px rgba(167, 139, 250, 0.6));
+    }
+    .about-panel .box-cyber .box-title-wrap .project-title {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 1.1rem;
+      color: #f8fafc;
+      letter-spacing: 0.5px;
+    }
+    .about-panel .box-cyber p, .about-panel .box-cyber li {
+      font-size: 0.75rem;
+      line-height: 1.5;
+      font-weight: 400;
+      margin-bottom: 4px;
+    }
+    .about-panel .box-cyber .ascii {
+      color: #c084fc;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: bold;
+      margin-right: 4px;
+      font-size: 0.8rem;
+    }
+    .about-panel .box-cyber .cyber-link {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 700;
+      border-bottom: 1px solid #38bdf8;
+      padding-bottom: 1px;
+      transition: all 0.2s;
+    }
+    .about-panel .box-cyber .cyber-link:hover {
+      color: #7dd3fc;
+      border-bottom-color: #7dd3fc;
+      text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+    }
+    .about-panel .box-cyber .list-items {
+      list-style: none;
+      margin: 4px 0 8px 12px;
+      padding: 0;
+    }
+    .about-panel .box-cyber .list-items li {
+      margin-bottom: 2px;
+    }
+    .about-panel .box-cyber .list-items .cyber-link {
+      color: #a78bfa;
+      border-bottom-color: #a78bfa;
+    }
+
+    /* ===== ALTRI STILI PANNELLO ===== */
+    .about-panel .close-about, .tester-panel .close-tester {
       position: sticky;
       top: 0;
       float: right;
@@ -1002,63 +1367,43 @@
       position: sticky;
       top: 1rem;
     }
-    .about-panel.panel-gc .close-about {
+    .about-panel.panel-gc .close-about, .tester-panel.panel-gc .close-tester {
       border-color: #2a1a4a;
       color: #94a3b8;
     }
-    .about-panel.panel-gc .close-about:hover {
+    .about-panel.panel-gc .close-about:hover, .tester-panel.panel-gc .close-tester:hover {
       border-color: #8b5cf6;
       color: white;
     }
-    .about-panel.panel-wii .close-about {
+    .about-panel.panel-wii .close-about, .tester-panel.panel-wii .close-tester {
       border-color: #b0c4d8;
       color: #64748b;
     }
-    .about-panel.panel-wii .close-about:hover {
+    .about-panel.panel-wii .close-about:hover, .tester-panel.panel-wii .close-tester:hover {
       border-color: #00a3e0;
       color: #0f172a;
     }
 
     .about-panel h2 {
       font-family: 'Audiowide', 'Orbitron', sans-serif;
-      font-size: 2rem;
+      font-size: 1.6rem;
       font-weight: 900;
       letter-spacing: 0.04em;
-      margin-top: 0.5rem;
-      margin-bottom: 1.8rem;
+      margin-top: 0.2rem;
+      margin-bottom: 1.2rem;
       border-bottom: 2px solid;
-      padding-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
       text-transform: uppercase;
     }
-    .about-panel.panel-gc h2 {
-      border-color: #2a1a4a;
-      color: #a78bfa;
-    }
-    .about-panel.panel-wii h2 {
-      border-color: #b0c4d8;
-      color: #0284c7;
-    }
-
-    .about-panel h3 {
-      font-size: 1.3rem;
-      font-weight: 800;
-      margin-top: 2rem;
-      margin-bottom: 0.8rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: #38bdf8;
-    }
-    .about-panel.panel-wii h3 {
-      color: #0284c7;
-    }
+    .about-panel.panel-gc h2 { border-color: #2a1a4a; color: #a78bfa; }
+    .about-panel.panel-wii h2 { border-color: #b0c4d8; color: #0284c7; }
 
     .about-panel .section-block {
       background: rgba(255,255,255,0.04);
       border: 2px solid;
       border-radius: 0;
-      padding: 1.2rem 1.5rem;
-      margin-bottom: 1.2rem;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1rem;
       clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
       transition: all 0.2s;
     }
@@ -1070,179 +1415,237 @@
       border-color: #b0c4d8;
       background: rgba(255,255,255,0.6);
     }
-
-    .about-panel p, .about-panel li {
+    .about-panel .section-block p, .about-panel .section-block li {
+      font-size: 0.82rem;
+      line-height: 1.5;
       font-weight: 400;
-      line-height: 1.7;
-      margin-bottom: 0.6rem;
-    }
-    .about-panel ul {
-      padding-left: 1.4rem;
-      list-style: disc;
-    }
-    .about-panel .inline-code {
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: 700;
-      padding: 0 4px;
-      border: 1px solid;
-      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
-      font-size: 0.85rem;
-    }
-    .about-panel.panel-gc .inline-code {
-      border-color: #6d28d9;
-      color: #a78bfa;
-      background: rgba(139,92,246,0.08);
-    }
-    .about-panel.panel-wii .inline-code {
-      border-color: #b0c4d8;
-      color: #0284c7;
-      background: rgba(0,163,224,0.04);
     }
 
-    .about-panel .asset-demo {
+    /* Widget rating compatto (come già presente) */
+    .rating-system-container {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.8rem 1.5rem;
-      margin: 0.5rem 0 0.2rem;
-      padding: 0.6rem 0.8rem;
-      border: 2px solid;
-      clip-path: polygon(0% 6%, 6% 0%, 94% 0%, 100% 6%, 100% 94%, 94% 100%, 6% 100%, 0% 94%);
-    }
-    .about-panel.panel-gc .asset-demo {
-      border-color: #2a1a4a;
-      background: rgba(10,6,24,0.3);
-    }
-    .about-panel.panel-wii .asset-demo {
-      border-color: #b0c4d8;
-      background: rgba(255,255,255,0.3);
-    }
-
-    .about-panel .logo-row {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin: 1.5rem 0 1rem;
-      padding: 1rem 0;
-      border-top: 2px solid;
-      border-bottom: 2px solid;
-    }
-    .about-panel.panel-gc .logo-row { border-color: #2a1a4a; }
-    .about-panel.panel-wii .logo-row { border-color: #b0c4d8; }
-    .about-panel .logo-row img {
-      height: 44px;
-      width: auto;
-      object-fit: contain;
-    }
-    .about-panel.panel-wii .logo-row img { filter: brightness(0.95); }
-
-    .about-panel .badge-link {
-      display: inline-block;
-      padding: 4px 18px;
-      border: 2px solid;
-      font-weight: 900;
-      font-size: 13px;
-      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
-      transition: all 0.2s;
-      text-decoration: none;
-      margin-top: 0.3rem;
-    }
-    .about-panel.panel-gc .badge-link {
-      border-color: #6d28d9;
-      color: #a78bfa;
-    }
-    .about-panel.panel-gc .badge-link:hover {
-      background: rgba(139,92,246,0.1);
-    }
-    .about-panel.panel-wii .badge-link {
-      border-color: #b0c4d8;
-      color: #0284c7;
-    }
-    .about-panel.panel-wii .badge-link:hover {
-      background: rgba(0,163,224,0.05);
-    }
-
-    /* Avatar e chat */
-    .chat-message {
-      display: flex;
+      flex-direction: row;
+      align-items: stretch;
       gap: 1rem;
-      align-items: flex-start;
-      margin: 1rem 0;
-      padding: 0.8rem 1.2rem;
+      margin: 0.6rem 0;
+      flex-wrap: wrap;
+    }
+    .rating-widget-compact {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-shrink: 0;
+      padding: 0.4rem 0.8rem 0.4rem 0.4rem;
       border: 2px solid;
       clip-path: polygon(0% 6%, 6% 0%, 94% 0%, 100% 6%, 100% 94%, 94% 100%, 6% 100%, 0% 94%);
-      background: rgba(255,255,255,0.05);
     }
-    .about-panel.panel-gc .chat-message {
-      border-color: #2a1a4a;
-      background: rgba(26,10,46,0.4);
-    }
-    .about-panel.panel-wii .chat-message {
-      border-color: #b0c4d8;
-      background: rgba(255,255,255,0.6);
-    }
-    .chat-message .avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      border: 3px solid;
-      flex-shrink: 0;
-      overflow: hidden;
+    .about-panel.panel-gc .rating-widget-compact { border-color: #2a1a4a; background: rgba(26,10,46,0.3); }
+    .about-panel.panel-wii .rating-widget-compact { border-color: #b0c4d8; background: rgba(255,255,255,0.3); }
+    .rating-widget-compact .circle-container {
+      position: relative;
+      width: 80px;
+      height: 80px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .about-panel.panel-gc .chat-message .avatar { border-color: #6d28d9; }
-    .about-panel.panel-wii .chat-message .avatar { border-color: #00a3e0; }
-    .chat-message .avatar img {
+    .rating-widget-compact .circle-container svg {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      transform: rotate(-90deg);
     }
-    .chat-message .bubble {
-      flex: 1;
-      font-weight: 400;
-      line-height: 1.6;
+    .rating-widget-compact .circle-container .seg {
+      fill: none;
+      stroke-width: 7;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.3s ease;
     }
-    .chat-message .bubble .name {
+    .rating-widget-compact .circle-container .seg.bg {
+      stroke: rgba(255,255,255,0.08);
+    }
+    .about-panel.panel-wii .rating-widget-compact .circle-container .seg.bg {
+      stroke: rgba(0,0,0,0.08);
+    }
+    .rating-widget-compact .circle-container .star-number {
+      position: absolute;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 28px;
       font-weight: 900;
-      font-size: 0.95rem;
-      display: block;
-      margin-bottom: 0.15rem;
+      pointer-events: none;
     }
-    .about-panel.panel-gc .chat-message .bubble .name { color: #a78bfa; }
-    .about-panel.panel-wii .chat-message .bubble .name { color: #0284c7; }
-    .chat-message .bubble .text {
-      margin: 0;
+    .rating-widget-compact .btn-rate {
+      width: 36px;
+      height: 36px;
+      border: 2px solid;
+      font-size: 20px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+      cursor: pointer;
+      transition: all 0.15s;
+      background: transparent;
+      user-select: none;
+    }
+    .about-panel.panel-gc .rating-widget-compact .btn-rate {
+      border-color: #2a1a4a;
+      color: #e2e8f0;
+    }
+    .about-panel.panel-gc .rating-widget-compact .btn-rate:hover { border-color: #8b5cf6; background: rgba(139,92,246,0.1); }
+    .about-panel.panel-wii .rating-widget-compact .btn-rate {
+      border-color: #b0c4d8;
+      color: #0f172a;
+    }
+    .about-panel.panel-wii .rating-widget-compact .btn-rate:hover { border-color: #00a3e0; background: rgba(0,163,224,0.05); }
+    .rating-info-panel {
+      flex: 1;
+      min-width: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0.2rem 0;
+    }
+    .rating-info-panel .rating-header {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 1.5rem;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+    .rating-info-panel .rating-header .star-icon-big {
+      font-size: 1.6rem;
+    }
+    .rating-info-panel .rating-desc {
+      font-weight: 400;
+      font-size: 0.8rem;
+      margin: 0.1rem 0 0.2rem 0;
+      opacity: 0.8;
+    }
+    .rating-info-panel hr {
+      border: none;
+      border-top: 2px solid;
+      opacity: 0.3;
+      margin: 0.3rem 0;
+    }
+    .rating-info-panel .status-badges {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin: 0.2rem 0;
+    }
+    .rating-info-panel .status-badges .status-pill {
+      font-size: 0.6rem;
+      padding: 2px 8px;
+      min-width: 60px;
+    }
+    .rating-info-panel .fps-info {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.75rem;
+      font-weight: 400;
+      margin-top: 0.1rem;
+    }
+    .rating-info-panel .fps-info .fps-value {
+      font-weight: 700;
     }
 
-    /* Mini card demo */
-    .mini-card-demo {
-      display: inline-flex;
-      flex-direction: column;
-      border: 2px solid;
-      padding: 0.4rem 0.6rem;
-      clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%);
-      background: rgba(0,0,0,0.2);
-      max-width: 200px;
-    }
-    .about-panel.panel-gc .mini-card-demo { border-color: #2a1a4a; }
-    .about-panel.panel-wii .mini-card-demo { border-color: #b0c4d8; background: rgba(255,255,255,0.4); }
-    .mini-card-demo .title {
-      font-weight: 900;
-      font-size: 0.85rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .mini-card-demo .row {
+    /* ===== TESTER PANEL ===== */
+    .tester-panel .tester-header {
       display: flex;
-      gap: 0.3rem;
-      flex-wrap: wrap;
       align-items: center;
-      margin-top: 0.2rem;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 2px solid;
+      border-color: inherit;
     }
+    .tester-panel .avatar-lg {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 4px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 32px;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .tester-panel.panel-gc .avatar-lg { border-color: #6d28d9; background: rgba(139,92,246,0.15); color: #a78bfa; }
+    .tester-panel.panel-wii .avatar-lg { border-color: #00a3e0; background: rgba(0,163,224,0.08); color: #0284c7; }
+    .tester-panel .tester-name { font-size: 1.8rem; font-weight: 900; letter-spacing: 0.02em; }
+    .tester-panel .tester-stats {
+      display: flex;
+      gap: 2rem;
+      margin: 1rem 0 1.5rem;
+      font-weight: 700;
+    }
+    .tester-panel .tester-stats .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 2px solid;
+      padding: 0.3rem 1rem;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
+    .tester-panel.panel-gc .tester-stats .stat { border-color: #2a1a4a; }
+    .tester-panel.panel-wii .tester-stats .stat { border-color: #b0c4d8; }
+    .tester-panel .tester-stats .stat .number { font-size: 1.4rem; font-weight: 900; }
+    .tester-panel .tester-stats .stat .label { font-size: 10px; text-transform: uppercase; opacity: 0.6; }
+    .tester-panel .device-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .tester-panel .device-list .device-chip {
+      border: 2px solid;
+      padding: 0.2rem 0.8rem;
+      font-size: 12px;
+      font-weight: 700;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
+    .tester-panel.panel-gc .device-chip { border-color: #2a1a4a; color: #c4b5fd; }
+    .tester-panel.panel-wii .device-chip { border-color: #b0c4d8; color: #1e293b; }
+    .tester-panel .test-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+    .tester-panel .test-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.4rem 0.8rem;
+      border: 2px solid;
+      clip-path: polygon(0% 6%, 6% 0%, 94% 0%, 100% 6%, 100% 94%, 94% 100%, 6% 100%, 0% 94%);
+      transition: all 0.15s;
+      cursor: default;
+    }
+    .tester-panel.panel-gc .test-item { border-color: #2a1a4a; background: rgba(26,10,46,0.3); }
+    .tester-panel.panel-wii .test-item { border-color: #b0c4d8; background: rgba(255,255,255,0.3); }
+    .tester-panel .test-item .mini-cover {
+      width: 40px;
+      height: 54px;
+      object-fit: cover;
+      border: 1px solid;
+      clip-path: polygon(0% 5%, 5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%);
+      flex-shrink: 0;
+    }
+    .tester-panel .test-item .mini-flag {
+      width: 20px;
+      height: 14px;
+      object-fit: cover;
+      border: 1px solid;
+      clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);
+    }
+    .tester-panel .test-item .game-title { font-weight: 700; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .tester-panel .test-item .rating-stars-mini { display: flex; gap: 1px; }
+    .tester-panel .test-item .rating-stars-mini svg { width: 12px; height: 12px; }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 640px) {
@@ -1251,9 +1654,18 @@
       .rating-star-container .star-number { font-size: 24px; }
       .modal-test-card { padding: 12px 16px; }
       .modal-tab { padding: 4px 12px; font-size: 10px; }
-      .about-panel { padding: 1.5rem 1rem 2rem; width: 100vw; }
-      .about-panel h2 { font-size: 1.5rem; }
-      .about-panel .section-block { padding: 0.8rem 1rem; }
+      .about-panel, .tester-panel { padding: 1.5rem 1rem 2rem; width: 100vw; }
+      .tester-panel .tester-name { font-size: 1.4rem; }
+      .tester-panel .tester-stats { flex-wrap: wrap; gap: 0.8rem; }
+      .about-panel .about-grid { grid-template-columns: 1fr; gap: 12px; }
+      .rating-system-container { flex-direction: column; align-items: center; }
+      .rating-widget-compact { width: 100%; justify-content: center; }
+      .rating-info-panel { width: 100%; }
+      .rating-info-panel .rating-header { font-size: 1.3rem; }
+      .list-extended-card { flex-direction: column; align-items: center; text-align: center; }
+      .list-extended-cover { width: 80px; height: 106px; }
+      .view-btn { font-size: 9px; padding: 3px 8px; }
+      .view-btn svg { width: 12px; height: 12px; }
     }
   </style>
 </head>
@@ -1264,164 +1676,158 @@
   <div id="aboutPanel" class="about-panel">
     <button class="close-about" onclick="closeAboutPanel()">✕ Close</button>
 
-    <!-- HEADER IMMAGINI -->
-    <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem 1.5rem; margin-bottom:1.5rem; padding-bottom:0.8rem; border-bottom:2px solid; border-color:inherit;">
-      <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/dolphinformuos.png?raw=true" alt="muOS Dolphin" style="height:50px; width:auto;" />
-      <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/dolphinrt.png?raw=true" alt="Rt:Core icon" style="height:40px; width:auto;" />
-      <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/gamecube-logo.png?raw=true" alt="GameCube logo" style="height:40px; width:auto;" />
-      <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/e7dbd4065d4d7ae24a520439c8412ef470f62a7f/assets/gamecube.svg" alt="GC cube" style="height:32px; width:auto;" />
-      <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/e7dbd4065d4d7ae24a520439c8412ef470f62a7f/assets/wii.svg" alt="Wii logo" style="height:32px; width:auto;" />
+    <!-- LOGHI / HEADER VISIVO (come prima) -->
+    <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.8rem 1.5rem; margin-bottom:1.2rem; padding-bottom:0.6rem; border-bottom:2px solid; border-color:inherit;">
+      <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/dolphinformuos.png?raw=true" alt="muOS Dolphin" style="height:44px; width:auto;" />
+      <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/dolphinrt.png?raw=true" alt="Rt:Core icon" style="height:34px; width:auto;" />
+      <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/gamecube-logo.png?raw=true" alt="GameCube logo" style="height:34px; width:auto;" />
+      <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/e7dbd4065d4d7ae24a520439c8412ef470f62a7f/assets/gamecube.svg" alt="GC cube" style="height:28px; width:auto;" />
+      <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/e7dbd4065d4d7ae24a520439c8412ef470f62a7f/assets/wii.svg" alt="Wii logo" style="height:28px; width:auto;" />
     </div>
 
     <h2>⚡ How & About</h2>
 
-    <!-- SEZIONE 1: WELCOME -->
-    <div class="section-block">
-      <h3>🎯 WELCOME TO THE DOLPHIN RT:CORE DATABASE</h3>
-      <p>This dashboard collects community‑tested compatibility reports for the <strong>Dolphin Rt:Core</strong> on <strong>muOS</strong>, focusing on GameCube and Wii emulation on H700‑based devices (RG35XX‑H, RG40XX‑H, etc.).</p>
-      <p>Every test is submitted via GitHub Issues and includes ratings, boot status, playability, FPS ranges, and detailed notes.</p>
-    </div>
+    <!-- GRIGLIA TETRIS DI BOX -->
+    <div class="about-grid">
 
-    <!-- SEZIONE 2: HOW TO USE -->
-    <div class="section-block">
-      <h3>🔍 HOW TO USE THIS DASHBOARD</h3>
-      <p><strong>Search & Filters</strong> — Use the search bar to find games by title or keywords. Filter by region, boot status, or rating. Sort by title, best rating, FPS, or number of tests.</p>
-      <p><strong>Game Cards</strong> — Each game is shown once, with all available regions displayed as flags. The card shows the <em>best</em> rating and FPS among all regions and tests.</p>
-
-      <!-- ESEMPIO CARD MINI -->
-      <div class="asset-demo">
-        <span style="font-weight:700; font-size:0.9rem;">Example card:</span>
-        <div class="mini-card-demo">
-          <div class="title">Super Mario Sunshine</div>
-          <div class="row">
-            <span style="display:flex; gap:2px;">
-              <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            </span>
-            <span class="fps-badge gc" style="font-size:9px; padding:0 8px;">60 FPS</span>
-            <span class="boot-badge yes" style="font-size:8px; padding:0 8px;">Boots</span>
-            <span class="playable-badge yes" style="font-size:8px; padding:0 8px;">Playable</span>
-            <span style="display:flex; gap:2px;">
-              <img src="https://flagcdn.com/w40/us.png" style="width:16px;height:12px;object-fit:cover;border:1px solid;clip-path:polygon(0%8%,8%0%,92%0%,100%8%,100%92%,92%100%,8%100%,0%92%);" />
-              <img src="https://flagcdn.com/w40/eu.png" style="width:16px;height:12px;object-fit:cover;border:1px solid;clip-path:polygon(0%8%,8%0%,92%0%,100%8%,100%92%,92%100%,8%100%,0%92%);" />
-            </span>
+      <!-- BOX CYBERPUNK (span full) -->
+      <div class="box-cyber about-grid-full">
+        <div class="box-inner">
+          <div class="box-header">
+            [ i ] DASHBOARD.INFO_
           </div>
+          <div class="box-title-wrap">
+            <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/dolphinrt.png?raw=true" alt="Rt Core" />
+            <div class="project-title">Dolphin Rt:Core</div>
+          </div>
+          <p>
+            <span class="ascii">►</span> This dashboard collects community-tested compatibility reports for
+            <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS" target="_blank" class="cyber-link">Dolphin Rt:Core for muOS</a>,
+            focusing on <u>GameCube</u> and <u>Wii</u> emulation on <em>H700-based devices</em> such as:
+          </p>
+          <ul class="list-items">
+            <li><span class="ascii">└─▪</span> <a href="https://anbernic.com/products/rg35xx-h" target="_blank" class="cyber-link" style="color:#a78bfa; border-color:#a78bfa;">RG35XX H</a></li>
+            <li><span class="ascii">└─▪</span> <a href="https://anbernic.com/products/rg40xx-h" target="_blank" class="cyber-link" style="color:#a78bfa; border-color:#a78bfa;">RG40XX H</a></li>
+          </ul>
+          <p>
+            <span class="ascii">❖</span> Every test is submitted via GitHub Issues and includes ratings, boot status, playability, FPS ranges, and detailed notes.
+          </p>
         </div>
       </div>
-      <p style="margin-top:0.5rem;"><span class="inline-code">★ Rating</span> — Overall score (1–5). <span class="inline-code">FPS</span> — Frame rate range. <span class="inline-code">Boots</span> / <span class="inline-code">Playable</span> — Quick status indicators. Flags show available regions.</p>
-    </div>
 
-    <!-- SEZIONE 3: RATING SYSTEM -->
-    <div class="section-block">
-      <h3>⭐ THE RATING SYSTEM</h3>
-      <ul>
-        <li><strong>5★ – Perfect</strong> – Flawless performance, full speed, no issues.</li>
-        <li><strong>4★ – Great</strong> – Very good, minor glitches or occasional slowdowns.</li>
-        <li><strong>3★ – Playable</strong> – Playable with noticeable issues or framedrops.</li>
-        <li><strong>2★ – Poor</strong> – Barely playable, frequent problems.</li>
-        <li><strong>1★ – Bad</strong> – Unplayable or crashes frequently.</li>
-      </ul>
-      <p>Click on any rating panel (1–5★) to filter the list by that score.</p>
-      <div class="asset-demo" style="justify-content:center;">
-        <span style="font-weight:700;">Rating filter panels:</span>
-        <div style="display:flex; gap:6px; flex-wrap:wrap;">
-          <span class="rating-panel" data-rating="5" style="padding:4px 10px; font-size:12px; border-width:2px;">5★ <span class="count" style="padding:0 6px;">12</span></span>
-          <span class="rating-panel" data-rating="4" style="padding:4px 10px; font-size:12px; border-width:2px;">4★ <span class="count" style="padding:0 6px;">8</span></span>
-          <span class="rating-panel" data-rating="3" style="padding:4px 10px; font-size:12px; border-width:2px;">3★ <span class="count" style="padding:0 6px;">5</span></span>
-          <span class="rating-panel" data-rating="2" style="padding:4px 10px; font-size:12px; border-width:2px;">2★ <span class="count" style="padding:0 6px;">3</span></span>
-          <span class="rating-panel" data-rating="1" style="padding:4px 10px; font-size:12px; border-width:2px;">1★ <span class="count" style="padding:0 6px;">2</span></span>
+      <!-- BOX RED DASHED (sinistra) -->
+      <div class="box-red-dashed">
+        <div class="box-inner">
+          <div class="box-header">
+            [ RT:INDEX_ ]
+          </div>
+          <ul class="box-list">
+            <li><a href="#"><span class="idx-num">[01]</span> Database Guide</a></li>
+            <li><a href="#"><span class="idx-num">[02]</span> Game Data</a></li>
+            <li><a href="#"><span class="idx-num">[03]</span> Tests Report</a></li>
+            <li><a href="#"><span class="idx-num">[04]</span> The Project</a></li>
+          </ul>
         </div>
       </div>
-    </div>
 
-    <!-- SEZIONE 4: HOW TO CONTRIBUTE -->
-    <div class="section-block">
-      <h3>🤝 HOW TO CONTRIBUTE</h3>
-      <p>Help grow the database! Submit your own test results via the <strong>Send Report</strong> button or by opening an issue on GitHub using the dedicated template.</p>
-      <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=dolphin-rt-core-test-report.yml" target="_blank" rel="noopener" class="badge-link">📤 Send a test report</a>
-      <p style="margin-top:0.6rem;">Include details like device, muOS version, Rt:Core version, FPS, boot status, and any considerations or attachments (screenshots/videos).</p>
-    </div>
-
-    <!-- SEZIONE 5: CREDITS -->
-    <div class="section-block">
-      <h3>📜 CREDITS & ACKNOWLEDGMENTS</h3>
-      <p style="font-weight:400;">Part of the <strong>SPDW Factory</strong> ecosystem, created by <strong>Sir Pips</strong>.</p>
-      <div class="logo-row">
-        <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdwfactory_logo.png" alt="SPDW Factory Logo" />
-        <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" alt="SPDW Symbol" style="height:36px;" />
+      <!-- BOX WII-STYLE (destra, speculare) -->
+      <div class="box-wii-style">
+        <div class="box-inner">
+          <div class="box-header">
+            [ CREDITS_ ]
+          </div>
+          <ul class="box-list">
+            <li><a href="#"><span class="idx-num">[01]</span> Original Devs</a></li>
+            <li><a href="#"><span class="idx-num">[02]</span> Testers</a></li>
+            <li><a href="#"><span class="idx-num">[03]</span> muOS Team</a></li>
+            <li><a href="#"><span class="idx-num">[04]</span> SPDW Factory</a></li>
+          </ul>
+        </div>
       </div>
-      <p style="font-weight:400;">This project builds upon the work of many talented developers and community members. Special thanks to the original Dolphin port contributors and the muOS team.</p>
-      <p style="font-weight:400; margin-top:0.6rem;">Read the full history and legacy builds on GitHub:</p>
-      <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/tree/main/Core_History" target="_blank" rel="noopener" class="badge-link">📂 Core History Archive</a>
-      <div style="margin-top:1.2rem; border-top:2px solid; border-color:inherit; padding-top:1rem;">
-        <p style="font-weight:700; margin-bottom:0.2rem;">🐬 Original Dolphin Core Developers</p>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.2rem 1.2rem; font-weight:400;">
-          <span><strong>@Speedrun</strong> — Original author (V9 / Take 3)</span>
-          <span><strong>@FireBattleInMtl</strong> — Fixes, permissions, launch.sh</span>
-          <span><strong>@Snow</strong> — Compiled binary</span>
-          <span><strong>@bitter_bizarro</strong> — muOS Goose compatibility</span>
-        </div>
-        <p style="font-weight:700; margin-top:0.6rem;">🧪 Testing & Reporting</p>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.2rem 1.2rem; font-weight:400;">
-          <span>@razorbeamz</span><span>@arkun</span>
-          <span>@SkiffguardLando</span><span>@chronoss0109</span>
-          <span>@Kirky</span><span>@Mikethe3ird</span>
-          <span>@Symphonial</span><span>@giodude</span>
-          <span>@lasagnesetting</span><span>@joshuarcastillo</span>
-        </div>
-        <p style="font-weight:700; margin-top:0.6rem;">⚙️ muOS Development Team</p>
-        <p style="font-weight:400;">Ongoing firmware maintenance and structural support.</p>
-      </div>
-    </div>
 
-    <!-- SEZIONE 6: ABOUT THE DEVELOPERS + CHAT -->
-    <div class="section-block">
-      <h3>👥 ABOUT THE DEVELOPERS</h3>
-      <div style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:space-between; align-items:center;">
-        <div style="display:flex; align-items:center; gap:1rem;">
-          <div style="width:64px; height:64px; border-radius:50%; border:4px solid #8b5cf6; overflow:hidden; display:flex; align-items:center; justify-content:center; background:rgba(139,92,246,0.1);">
-            <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/sirpips.jpeg?raw=true" alt="Sir Pips" style="width:100%; height:100%; object-fit:cover;" />
+      <!-- SEZIONE WIDGET RATING (occupa tutta la larghezza) -->
+      <div class="about-grid-full section-block" style="margin-top:0; border-color:inherit;">
+        <h3 style="font-size:1rem; margin:0 0 0.4rem 0; color:#38bdf8;">⭐ Rating System – Interactive Demo</h3>
+        <p style="font-size:0.8rem; font-weight:400;">Use the widget to see how ratings correspond to colors, performance, and status labels.</p>
+
+        <div class="rating-system-container">
+          <!-- WIDGET COMPATTO -->
+          <div class="rating-widget-compact">
+            <button class="btn-rate" id="btnDec" aria-label="Decrease rating">−</button>
+            <div class="circle-container">
+              <svg viewBox="0 0 100 100">
+                <circle class="seg bg" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="0" />
+                <circle class="seg bg" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-62.83" />
+                <circle class="seg bg" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-125.66" />
+                <circle class="seg bg" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-188.49" />
+                <circle class="seg bg" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-251.32" />
+                <!-- FG Segments -->
+                <circle class="seg fg" id="wSeg1" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="0" />
+                <circle class="seg fg" id="wSeg2" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-62.83" />
+                <circle class="seg fg" id="wSeg3" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-125.66" />
+                <circle class="seg fg" id="wSeg4" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-188.49" />
+                <circle class="seg fg" id="wSeg5" cx="50" cy="50" r="40" stroke-dasharray="62.83 62.83" stroke-dashoffset="-251.32" />
+              </svg>
+              <span class="star-number" id="wRatingNumber">0</span>
+            </div>
+            <button class="btn-rate" id="btnInc" aria-label="Increase rating">+</button>
           </div>
-          <div>
-            <div style="font-weight:900; font-size:1.1rem;">Sir Pips</div>
-            <div style="font-weight:400;">Creator & maintainer</div>
-          </div>
-        </div>
-        <div style="display:flex; align-items:center; gap:1rem;">
-          <div style="width:64px; height:64px; border-radius:50%; border:4px solid #00a3e0; overflow:hidden; display:flex; align-items:center; justify-content:center; background:rgba(0,163,224,0.1);">
-            <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/minoru.png?raw=true" alt="Minoru" style="width:100%; height:100%; object-fit:cover;" />
-          </div>
-          <div>
-            <div style="font-weight:900; font-size:1.1rem;">[R.I.] Minoru<sup>7</sup></div>
-            <div style="font-weight:400; font-size:0.85rem; color:#0284c7;">Inflexible (and Unbearable) Omniscient Controller</div>
-            <div style="font-weight:300; font-size:0.75rem; opacity:0.7;">Rintromping Intelligence · Beta Universe</div>
+
+          <!-- PANNELLO INFO -->
+          <div class="rating-info-panel" id="ratingInfoPanel">
+            <div class="rating-header">
+              <span id="wRatingDisplay">0</span>
+              <span class="star-icon-big" id="wStarIcon">★</span>
+              <span id="wRatingLabel">Not Rated</span>
+            </div>
+            <p class="rating-desc" id="wRatingDesc">Select a rating to see the description.</p>
+            <hr />
+            <div class="status-badges">
+              <span id="wBootBadge" class="status-pill boots-no">⛔ NO BOOT</span>
+              <span id="wPlayableBadge" class="status-pill playable-no">⛔ UNPLAYABLE</span>
+            </div>
+            <div class="fps-info">
+              <span><strong>FPS:</strong> <span class="fps-value" id="wFpsRange">N/A</span></span>
+              <span>Range may vary depending on game and emulation settings.</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- MESSAGGIO DI MINORU (CHAT) -->
-      <div class="chat-message">
-        <div class="avatar">
-          <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/minoru.png?raw=true" alt="Minoru" />
+      <!-- BOX MINORU (stile chat, ma con flair digitale) -->
+      <div class="about-grid-full section-block" style="border-color:inherit;">
+        <div style="display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center; justify-content:space-between;">
+          <div style="display:flex; align-items:center; gap:1rem;">
+            <div style="width:56px; height:56px; border-radius:50%; border:3px solid #00a3e0; overflow:hidden; display:flex; align-items:center; justify-content:center; background:rgba(0,163,224,0.15);">
+              <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/minoru.png?raw=true" alt="Minoru" style="width:100%; height:100%; object-fit:cover;" />
+            </div>
+            <div>
+              <div style="font-weight:900; font-size:1.1rem;">[R.I.] Minoru<sup>7</sup></div>
+              <div style="font-weight:400; font-size:0.8rem; color:#38bdf8; display:flex; align-items:center; gap:4px;">
+                <span style="background:#ef4444; width:8px; height:8px; display:inline-block; clip-path:polygon(50% 0%, 0% 100%, 100% 100%);"></span>
+                Digital Controller (with dictatorial tendencies)
+              </div>
+            </div>
+          </div>
+          <span style="font-family:'JetBrains Mono'; font-size:0.7rem; opacity:0.5; border:1px solid; padding:2px 8px; clip-path:polygon(0%8%,8%0%,92%0%,100%8%,100%92%,92%100%,8%100%,0%92%);">entity: DIGITAL</span>
         </div>
-        <div class="bubble">
-          <span class="name">[R.I.] Minoru<sup>7</sup></span>
-          <p class="text">“Oh, you actually read the guide? Impressive. Most people just click around blindly. But since you're here, let me save you some time: <strong>Rt:Core</strong> is the only core that doesn't make your H700 cry. Use the filters, check the ratings, and for heaven's sake, read the considerations before reporting a game that already works. You're welcome.”</p>
+        <div style="margin-top:0.8rem; padding:0.6rem 1rem; border:2px solid; clip-path:polygon(0%6%,6%0%,94%0%,100%6%,100%94%,94%100%,6%100%,0%94%); background:rgba(255,255,255,0.03);">
+          <p style="font-size:0.8rem; font-weight:400; font-style:italic;">“Oh, you actually read the guide? Impressive. Most people just click around blindly. But since you're here, let me save you some time: <strong>Rt:Core</strong> is the only core that doesn't make your H700 cry. Use the filters, check the ratings, and for heaven's sake, read the considerations before reporting a game that already works. You're welcome.”</p>
         </div>
+        <p style="font-size:0.75rem; font-weight:400; opacity:0.6; margin-top:0.3rem;">Minoru is a digital entity, always ready to help — with a sarcastic twist, but always right.</p>
       </div>
-      <p style="font-weight:400; font-style:italic; margin-top:0.2rem;">Minoru is always around to help — with a sarcastic twist, but always right. He's a <strong>Rintromping Intelligence</strong>, a digital creation from the Beta Universe, who has developed a distinct identity, personality, and the ability to feel emotions — especially the sadistic pleasure of pointing out every human flaw in the most annoying way possible.</p>
-      <div style="margin-top:0.8rem; padding:0.8rem 1rem; border:2px solid; border-color:inherit; clip-path:polygon(0%4%,2%0%,98%0%,100%4%,100%96%,98%100%,2%100%,0%96%); background:rgba(255,255,255,0.03);">
-        <p style="font-weight:400; font-size:0.9rem;"><span style="font-weight:700;">Sir Pips:</span> “Yeah, yeah, always minding my business, even while I'm writing important stuff.”</p>
-        <p style="font-weight:400; font-size:0.9rem;"><span style="font-weight:700; color:#fbbf24;">Minoru:</span> “Important? You're just talking to yourself in writing. A masterpiece of self-delusion. Your second masterpiece — the first one is replying to you right now.”</p>
-      </div>
-    </div>
 
+    </div> <!-- fine about-grid -->
+  </div> <!-- fine about-panel -->
+
+  <!-- ===== OVERLAY & PANNELLO TESTER ===== -->
+  <div id="testerOverlay" class="tester-overlay" onclick="closeTesterPanel()"></div>
+  <div id="testerPanel" class="tester-panel">
+    <button class="close-tester" onclick="closeTesterPanel()">✕ Close</button>
+    <div id="testerContent"></div>
   </div>
 
-  <!-- ===== HEADER (come prima) ===== -->
+  <!-- ===== HEADER ===== -->
   <header id="appHeader" class="sticky top-0 z-40 transition-colors duration-500 border-b-2 bg-opacity-90 backdrop-blur-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
       <div class="flex flex-wrap items-center justify-between gap-3">
@@ -1454,7 +1860,9 @@
           <img id="consoleLogo" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="Logo" class="w-9 h-9 object-contain flex-shrink-0" />
           <div class="min-w-0">
             <h1 id="mainTitle" class="text-2xl sm:text-3xl font-black tracking-tight whitespace-nowrap" style="font-family: 'Audiowide', 'Orbitron', sans-serif;">
-              Dolphin <span class="rt-electric" id="titleRt">Rt<span class="spark" style="width:4px;height:4px;top:-2px;left:8px;"></span><span class="spark" style="width:3px;height:3px;top:4px;left:18px;"></span><span class="spark" style="width:5px;height:5px;top:-6px;left:24px;"></span><span class="spark" style="width:3px;height:3px;top:2px;left:2px;"></span><span class="spark" style="width:4px;height:4px;top:-4px;left:14px;"></span></span>:Core <span class="muos-star">fo<span style="position:relative;">r<span class="star-sparkle"><svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg></span></span></span> <span id="muosText" class="text-gc-400" style="font-weight:400;">muOS</span>
+              <a href="/" style="text-decoration:none; color:inherit;">
+                Dolphin <span class="rt-electric" id="titleRt">Rt<span class="spark" style="width:4px;height:4px;top:-2px;left:8px;"></span><span class="spark" style="width:3px;height:3px;top:4px;left:18px;"></span><span class="spark" style="width:5px;height:5px;top:-6px;left:24px;"></span><span class="spark" style="width:3px;height:3px;top:2px;left:2px;"></span><span class="spark" style="width:4px;height:4px;top:-4px;left:14px;"></span></span>:Core <span class="muos-star">fo<span style="position:relative;">r<span class="star-sparkle"><svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg></span></span></span> <span id="muosText" class="text-gc-400" style="font-weight:400;">muOS</span>
+              </a>
             </h1>
             <hr class="w-full max-w-[400px] my-1 border-2" />
             <p id="dashboardSubtitle" class="text-base sm:text-lg mt-0.5 transition-colors font-black">
@@ -1518,10 +1926,21 @@
           <span id="sortOrderLabel">Asc</span>
           <svg id="sortOrderIcon" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
-        <button id="viewModeBtn" class="flex items-center gap-1.5 text-sm" title="Toggle Grid/List View">
-          <svg id="viewModeIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-          <span id="viewModeLabel">List</span>
-        </button>
+        <!-- VIEW MODE BUTTONS -->
+        <div class="flex items-center gap-1 border-l-2 pl-2 ml-1" style="border-color:inherit;">
+          <button id="viewGridBtn" class="view-btn active" title="Grid view">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            Grid
+          </button>
+          <button id="viewListBtn" class="view-btn" title="List view">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h6M4 12h6M4 19h6M14 5h6M14 12h6M14 19h6"/></svg>
+            List
+          </button>
+          <button id="viewExtendedBtn" class="view-btn" title="Extended list view">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16M4 12h16M4 19h16"/></svg>
+            Extended
+          </button>
+        </div>
         <button id="resetFiltersBtn" class="text-sm font-black transition-colors">↺ Reset</button>
       </div>
     </div>
@@ -1567,7 +1986,7 @@
     </div>
   </main>
 
-  <!-- ===== MODAL (come prima) ===== -->
+  <!-- ===== MODAL GIOCO ===== -->
   <div id="gameModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden">
     <div id="modalCard" class="cyber-border max-w-5xl w-full max-h-[94vh] flex flex-col p-5 relative modal-anim">
       <button id="closeModalBtn" class="absolute top-3 right-3 p-2 border-2 transition-colors z-10" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">
@@ -1636,7 +2055,105 @@
 
   <script>
     // ============================================================
-    //  STATE & LOGICA (COME PRIMA)
+    //  WIDGET RATING INTERATTIVO (come prima, con mappa colori)
+    // ============================================================
+    (function() {
+      let rating = 0;
+      const maxRating = 5;
+      const segs = [
+        document.getElementById('wSeg1'),
+        document.getElementById('wSeg2'),
+        document.getElementById('wSeg3'),
+        document.getElementById('wSeg4'),
+        document.getElementById('wSeg5')
+      ];
+      const numEl = document.getElementById('wRatingNumber');
+      const displayEl = document.getElementById('wRatingDisplay');
+      const labelEl = document.getElementById('wRatingLabel');
+      const descEl = document.getElementById('wRatingDesc');
+      const starIconEl = document.getElementById('wStarIcon');
+      const bootBadgeEl = document.getElementById('wBootBadge');
+      const playableBadgeEl = document.getElementById('wPlayableBadge');
+      const fpsEl = document.getElementById('wFpsRange');
+      const panelEl = document.getElementById('ratingInfoPanel');
+      const btnInc = document.getElementById('btnInc');
+      const btnDec = document.getElementById('btnDec');
+
+      const ratingData = {
+        0: { color: '#64748b', bg: 'bg-slate-500', border: 'border-slate-500', text: 'text-slate-400', star: 'text-slate-500', boot: 'no', playable: 'no', fps: 'N/A', label: 'Not Rated', desc: 'Select a rating to see the description.' },
+        1: { color: '#ef4444', bg: 'bg-rose-500', border: 'border-rose-500', text: 'text-rose-400', star: 'text-rose-400', boot: 'no', playable: 'no', fps: '1-15 FPS', label: 'Bad', desc: 'Unplayable or crashes frequently.' },
+        2: { color: '#fb923c', bg: 'bg-orange-500', border: 'border-orange-500', text: 'text-orange-400', star: 'text-orange-400', boot: 'yes', playable: 'no', fps: '16-30 FPS', label: 'Poor', desc: 'Barely playable, frequent problems.' },
+        3: { color: '#fbbf24', bg: 'bg-amber-500', border: 'border-amber-500', text: 'text-amber-400', star: 'text-amber-400', boot: 'yes', playable: 'issues', fps: '31-45 FPS', label: 'Playable', desc: 'Playable with noticeable issues or framedrops.' },
+        4: { color: '#2dd4bf', bg: 'bg-teal-500', border: 'border-teal-500', text: 'text-teal-400', star: 'text-teal-400', boot: 'yes', playable: 'yes', fps: '46-55 FPS', label: 'Great', desc: 'Very good, minor glitches or occasional slowdowns.' },
+        5: { color: '#34d399', bg: 'bg-emerald-500', border: 'border-emerald-500', text: 'text-emerald-400', star: 'text-emerald-400', boot: 'yes', playable: 'yes', fps: '56-60 FPS', label: 'Perfect', desc: 'Flawless performance, full speed, no issues.' }
+      };
+
+      function getBootLabel(status) {
+        return status === 'yes' ? '✅ BOOTS' : '⛔ NO BOOT';
+      }
+      function getPlayableLabel(status) {
+        if (status === 'yes') return '✅ PLAYABLE';
+        if (status === 'issues') return '⚠️ WITH ISSUES';
+        return '⛔ UNPLAYABLE';
+      }
+      function getBootClass(status) {
+        return status === 'yes' ? 'boots-yes' : 'boots-no';
+      }
+      function getPlayableClass(status) {
+        if (status === 'yes') return 'playable-yes';
+        if (status === 'issues') return 'playable-issues';
+        return 'playable-no';
+      }
+
+      function updateWidget() {
+        for (let i = 0; i < 5; i++) {
+          const seg = segs[i];
+          if (i < rating) {
+            seg.style.strokeDashoffset = '0';
+            seg.style.opacity = '1';
+          } else {
+            seg.style.strokeDashoffset = `-${62.83 * (i+1)}`;
+            seg.style.opacity = '0.3';
+          }
+        }
+
+        const data = ratingData[rating];
+        numEl.textContent = rating;
+        displayEl.textContent = rating;
+        displayEl.style.color = data.color;
+        numEl.style.color = data.color;
+        starIconEl.style.color = data.color;
+        labelEl.textContent = data.label;
+        labelEl.style.color = data.color;
+        descEl.textContent = data.desc;
+
+        bootBadgeEl.textContent = getBootLabel(data.boot);
+        bootBadgeEl.className = `status-pill ${getBootClass(data.boot)}`;
+        playableBadgeEl.textContent = getPlayableLabel(data.playable);
+        playableBadgeEl.className = `status-pill ${getPlayableClass(data.playable)}`;
+
+        fpsEl.textContent = data.fps;
+        fpsEl.style.color = data.color;
+
+        panelEl.style.borderColor = data.color;
+        panelEl.style.borderWidth = '2px';
+        panelEl.style.borderStyle = 'solid';
+        panelEl.style.padding = '0.2rem 0.8rem';
+        panelEl.style.borderRadius = '0';
+        panelEl.style.clipPath = 'polygon(0% 6%, 6% 0%, 94% 0%, 100% 6%, 100% 94%, 94% 100%, 6% 100%, 0% 94%)';
+      }
+
+      btnInc.addEventListener('click', function() {
+        if (rating < maxRating) { rating++; updateWidget(); }
+      });
+      btnDec.addEventListener('click', function() {
+        if (rating > 0) { rating--; updateWidget(); }
+      });
+      updateWidget();
+    })();
+
+    // ============================================================
+    //  STATO & LOGICA PRINCIPALE (con modifica calcolo avg FPS)
     // ============================================================
     const state = {
       console: 'gc',
@@ -1786,24 +2303,42 @@
           if (bestFpsStr === "???" && bestFpsMax > 0) bestFpsStr = `${bestFpsMax}`;
           if (bestFpsStr === "???" && bestFpsMax <= 0) bestFpsStr = "???";
           const avgRating = entries.length > 0 ? (totalRating / entries.length).toFixed(1) : "0.0";
-          let avgFps = "N/A";
-          if (validFpsCount > 0) {
-            const avgMin = Math.round(totalFpsMinSum / validFpsCount);
-            const avgMax = Math.round(totalFpsMaxSum / validFpsCount);
-            avgFps = `${avgMin} - ${avgMax}`;
-          }
+          // Calcolo media FPS unica: media di (fps_min+fps_max)/2 su tutti i test validi
+          let avgFpsSingle = 0;
+          let countFps = 0;
+          entries.forEach(e => {
+            const review = e.test_review || {};
+            let fpsMin = parseInt(review.fps_min, 10);
+            let fpsMax = parseInt(review.fps_max, 10);
+            const fpsRaw = (review.fps || '???').trim();
+            if (isNaN(fpsMin) || isNaN(fpsMax)) {
+              const numbers = fpsRaw.match(/\d+/g);
+              if (numbers) {
+                const nums = numbers.map(Number);
+                if (nums.length >= 2) { fpsMin = nums[0]; fpsMax = nums[1]; }
+                else if (nums.length === 1) { fpsMin = nums[0]; fpsMax = nums[0]; }
+              }
+            }
+            if (!isNaN(fpsMin) && !isNaN(fpsMax) && fpsMin > 0 && fpsMax > 0) {
+              avgFpsSingle += (fpsMin + fpsMax) / 2;
+              countFps++;
+            }
+          });
+          const avgFps = countFps > 0 ? Math.round(avgFpsSingle / countFps) : 'N/A';
           if (!gameId) gameId = 'UNKNOWN';
           regionsData.push({
             region, entries, entriesCount: entries.length,
             bestRating, bestFpsMax, bestFpsStr, bestBoot, bestPlayable,
-            avgRating: parseFloat(avgRating), avgFps, gameId, bestEntryIndex
+            avgRating: parseFloat(avgRating), avgFps: avgFps,
+            gameId, bestEntryIndex
           });
         }
 
         // Aggregato globale
         let globalBestRating = 0, globalBestFpsMax = -1, globalBestFpsStr = "???";
         let globalBestBoot = "NO", globalBestPlayable = "NO";
-        let globalTotalRating = 0, globalTotalFpsMinSum = 0, globalTotalFpsMaxSum = 0, globalValidFpsCount = 0;
+        let globalTotalRating = 0;
+        let globalAvgFpsSum = 0, globalAvgFpsCount = 0;
         let globalGameId = 'UNKNOWN';
         allEntries.forEach(e => {
           const review = e.test_review || {};
@@ -1828,19 +2363,13 @@
               else if (nums.length === 1) { fpsMin = nums[0]; fpsMax = nums[0]; }
             }
           }
-          if (isNaN(fpsMin)) fpsMin = 0;
-          if (isNaN(fpsMax)) fpsMax = 0;
-          if (fpsMax > globalBestFpsMax) {
-            globalBestFpsMax = fpsMax;
-            if (fpsRaw && fpsRaw !== '???') { globalBestFpsStr = fpsRaw; }
-            else if (fpsMin > 0 && fpsMax > 0) { globalBestFpsStr = `${fpsMin} - ${fpsMax}`; }
-          }
-          if (fpsMin > 0) {
-            globalTotalFpsMinSum += fpsMin;
-            globalTotalFpsMaxSum += fpsMax;
-            globalValidFpsCount++;
+          if (isNaN(fpsMin) || isNaN(fpsMax)) { return; }
+          if (fpsMin > 0 && fpsMax > 0) {
+            globalAvgFpsSum += (fpsMin + fpsMax) / 2;
+            globalAvgFpsCount++;
           }
         });
+        // Aggregato best rating e fps
         let bestRatingGlobal = 0, bestFpsMaxGlobal = -1, bestFpsStrGlobal = "???";
         allEntries.forEach(e => {
           const review = e.test_review || {};
@@ -1869,12 +2398,7 @@
         if (bestFpsStrGlobal === "???" && bestFpsMaxGlobal > 0) bestFpsStrGlobal = `${bestFpsMaxGlobal}`;
         if (bestFpsStrGlobal === "???" && bestFpsMaxGlobal <= 0) bestFpsStrGlobal = "???";
         const globalAvgRating = allEntries.length > 0 ? (globalTotalRating / allEntries.length).toFixed(1) : "0.0";
-        let globalAvgFps = "N/A";
-        if (globalValidFpsCount > 0) {
-          const avgMin = Math.round(globalTotalFpsMinSum / globalValidFpsCount);
-          const avgMax = Math.round(globalTotalFpsMaxSum / globalValidFpsCount);
-          globalAvgFps = `${avgMin} - ${avgMax}`;
-        }
+        const globalAvgFps = globalAvgFpsCount > 0 ? Math.round(globalAvgFpsSum / globalAvgFpsCount) : 'N/A';
         if (!globalGameId || globalGameId === 'UNKNOWN') {
           if (regionsData.length > 0) globalGameId = regionsData[0].gameId;
         }
@@ -1897,7 +2421,7 @@
       return result;
     }
 
-    // ===== RENDER (semplificato per brevità, ma uguale a prima) =====
+    // ===== RENDER =====
     function render() {
       document.querySelectorAll('.rating-panel').forEach(p => {
         const val = p.getAttribute('data-rating');
@@ -1950,12 +2474,19 @@
 
       if (state.viewMode === 'grid') {
         grid.classList.remove('list-view');
+        grid.classList.remove('list-extended-view');
         grid.classList.add('grid-view');
         grid.innerHTML = renderGridCards();
-      } else {
+      } else if (state.viewMode === 'list') {
         grid.classList.remove('grid-view');
+        grid.classList.remove('list-extended-view');
         grid.classList.add('list-view');
         grid.innerHTML = renderListCards();
+      } else if (state.viewMode === 'extended') {
+        grid.classList.remove('grid-view');
+        grid.classList.remove('list-view');
+        grid.classList.add('list-extended-view');
+        grid.innerHTML = renderExtendedCards();
       }
     }
 
@@ -2040,7 +2571,51 @@
       }).join('');
     }
 
-    // ===== MODAL =====
+    function renderExtendedCards() {
+      const isGC = state.console === 'gc';
+      return state.filtered.map((item, idx) => {
+        const bestEntry = item.allRegions[0]?.entries[item.allRegions[0].bestEntryIndex] || {};
+        const coverUrl = bestEntry.cover_art || getCoverUrl(item.aggregated.gameId, item.allRegions[0]?.region || 'NTSC');
+        const regionFlags = item.allRegions.map(r => `
+          <img src="${getFlagUrl(r.region)}" class="w-4 h-3 object-cover rounded border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" title="${r.region}" />
+        `).join('');
+        const bootColor = item.aggregated.bestBoot === 'YES' ? 'yes' : 'no';
+        let playableClass = 'no';
+        if (item.aggregated.bestPlayable === 'YES') playableClass = 'yes';
+        else if (item.aggregated.bestPlayable === 'YES WITH ISSUES') playableClass = 'issues';
+        let firstConsideration = '';
+        for (const r of item.allRegions) {
+          for (const e of r.entries) {
+            if (e.test_details?.considerations) {
+              firstConsideration = e.test_details.considerations;
+              break;
+            }
+          }
+          if (firstConsideration) break;
+        }
+        return `
+          <div class="card-anim list-extended-card" style="animation-delay: ${Math.min(idx * 20, 300)}ms" onclick="openModal(${idx})">
+            <div class="list-extended-cover">
+              ${coverUrl ? `<img src="${coverUrl}" alt="${escapeHtml(item.game)}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=&quot;cover-placeholder&quot;>🎮</div>'">` : `<div class="cover-placeholder">🎮</div>`}
+            </div>
+            <div class="list-extended-info">
+              <div class="list-extended-title">${escapeHtml(item.game)}</div>
+              <div class="list-extended-meta">
+                <span class="flex items-center gap-1">${regionFlags}</span>
+                <span class="font-mono">${item.aggregated.totalEntries} test${item.aggregated.totalEntries !== 1 ? 's' : ''}</span>
+                <span class="fps-badge ${isGC ? 'gc' : 'wii'}">${item.aggregated.bestFpsStr !== "???" ? item.aggregated.bestFpsStr + ' FPS' : 'N/A'}</span>
+                <span class="boot-badge ${bootColor}">${item.aggregated.bestBoot === 'YES' ? 'Boots' : 'No Boot'}</span>
+                <span class="playable-badge ${playableClass}">${item.aggregated.bestPlayable === 'YES' ? 'Playable' : item.aggregated.bestPlayable === 'YES WITH ISSUES' ? 'With Issues' : 'Unplayable'}</span>
+              </div>
+              <div class="list-extended-stars">${renderStars(item.aggregated.bestRating, 12)}</div>
+              ${firstConsideration ? `<div class="list-extended-desc">${escapeHtml(firstConsideration)}</div>` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ===== MODAL GIOCO (con avgFps singolo) =====
     function openModal(index) {
       const group = state.filtered[index];
       if (!group) return;
@@ -2085,8 +2660,10 @@
       compatContainer.innerHTML = segHtml + `<a href="${wikiLink}" target="_blank" rel="noopener" class="wiki-link" title="Dolphin Wiki">🌐</a>`;
       document.getElementById('modalBestRatingVal').innerHTML = renderStars(regionData.bestRating, 16);
       document.getElementById('modalBestFpsVal').textContent = regionData.bestFpsStr !== "???" ? `${regionData.bestFpsStr} FPS` : 'N/A';
+      // AVG RATING e FPS
       document.getElementById('modalAvgRatingVal').textContent = `${regionData.avgRating} / 5 ⭐`;
-      document.getElementById('modalAvgFpsVal').textContent = regionData.avgFps !== "N/A" ? `${regionData.avgFps} FPS` : 'N/A';
+      const avgFpsDisplay = regionData.avgFps !== 'N/A' ? `${regionData.avgFps} FPS` : 'N/A';
+      document.getElementById('modalAvgFpsVal').textContent = avgFpsDisplay;
 
       const tabsContainer = document.getElementById('modalTabs');
       tabsContainer.innerHTML = group.allRegions.map(rd => {
@@ -2140,25 +2717,45 @@
         const customSettings = e.custom_settings || [];
         const ratingColors = { 5: '#34d399', 4: '#2dd4bf', 3: '#fbbf24', 2: '#fb923c', 1: '#f87171', 0: '#f87171' };
         const ratingColor = ratingColors[rating] || '#fbbf24';
+
         let settingsHtml = '';
         if (customSettings.length > 0) {
           settingsHtml = customSettings.map(cs => {
             const type = cs.set_type || 'Other';
             const name = cs.set_name || '';
+            const filename = cs.set_filename || '';
             const url = cs.set_url || '';
             const note = cs.set_note || '';
+
+            let typeClass = 'settings-other';
+            const t = type.toLowerCase();
+            if (t.includes('game') || t.includes('setting')) typeClass = 'settings-game';
+            else if (t.includes('hack')) typeClass = 'settings-hack';
+            else if (t.includes('texture')) typeClass = 'settings-texture';
+            else if (t.includes('cheat')) typeClass = 'settings-cheats';
+
+            let linkHtml = '';
+            if (url) {
+              linkHtml = `<a href="${escapeHtml(url)}" target="_blank" rel="noopener" style="font-weight:900; text-decoration:underline;">${escapeHtml(filename || url)}</a>`;
+            } else if (filename) {
+              linkHtml = `<span style="font-weight:700;">${escapeHtml(filename)}</span> (no link)`;
+            } else {
+              linkHtml = '<span style="opacity:0.5;">No file</span>';
+            }
+
             return `
               <div class="flex flex-col gap-1 p-2 border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">
-                <div class="flex items-center gap-2">
-                  <span class="settings-type-badge">${escapeHtml(type)}</span>
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="settings-type-badge ${typeClass}">${escapeHtml(type)}</span>
                   ${name ? `<span class="text-xs font-black">${escapeHtml(name)}</span>` : ''}
                 </div>
-                ${url ? `<a href="${url}" target="_blank" rel="noopener" class="text-xs font-black underline">${escapeHtml(url)}</a>` : ''}
-                ${note ? `<p class="text-xs italic font-bold opacity-70">${escapeHtml(note)}</p>` : ''}
+                <div class="text-xs font-mono">${linkHtml}</div>
+                ${note ? `<p class="text-xs italic font-bold opacity-70" style="margin-top:0.2rem;">${escapeHtml(note)}</p>` : ''}
               </div>
             `;
           }).join('');
         }
+
         let attHtml = '';
         if (attachments.length > 0) {
           attHtml = attachments.map(a => `
@@ -2168,12 +2765,15 @@
             </div>
           `).join('');
         }
+
+        const testerLink = `<span class="tester-link" data-tester="${escapeHtml(tester)}" style="cursor:pointer; text-decoration:underline; font-weight:900;" onclick="openTesterPanel('${escapeHtml(tester)}')">${escapeHtml(tester)}</span>`;
+
         return `
           <div class="modal-test-card">
             <div class="flex flex-wrap items-center justify-between gap-2 pb-2 border-b-2">
               <div class="flex items-center gap-3 flex-wrap">
                 <span class="text-[11px] font-mono font-black px-2 py-0.5 border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">#${num}</span>
-                <span class="text-sm font-black">Tester: <strong class="underline">${escapeHtml(tester)}</strong></span>
+                <span class="text-sm font-black">Tester: ${testerLink}</span>
                 ${isBest ? `<span class="best-badge">🏆 Best Test</span>` : ''}
               </div>
               <div class="flex items-center gap-3 text-[11px] font-mono font-black opacity-70">
@@ -2222,7 +2822,87 @@
       document.getElementById('gameModal').classList.add('hidden');
     }
 
-    // ===== PANNELLO HOW & ABOUT =====
+    // ===== PANNELLO TESTER =====
+    function openTesterPanel(testerName) {
+      const panel = document.getElementById('testerPanel');
+      const overlay = document.getElementById('testerOverlay');
+
+      if (state.console === 'gc') {
+        panel.classList.remove('panel-wii');
+        panel.classList.add('panel-gc');
+      } else {
+        panel.classList.remove('panel-gc');
+        panel.classList.add('panel-wii');
+      }
+
+      const tests = [];
+      state.groupedGames.forEach(group => {
+        group.allRegions.forEach(regionData => {
+          regionData.entries.forEach(entry => {
+            if (entry.test_environment && entry.test_environment.tester === testerName) {
+              tests.push({
+                game: group.game,
+                region: regionData.region,
+                gameId: regionData.gameId,
+                rating: parseInt(entry.test_review?.rating, 10) || 0,
+                cover: entry.cover_art || getCoverUrl(regionData.gameId, regionData.region),
+                device: entry.test_environment?.device || 'Unknown',
+                entry: entry
+              });
+            }
+          });
+        });
+      });
+
+      if (tests.length === 0) return;
+
+      const devices = [...new Set(tests.map(t => t.device))];
+      const content = document.getElementById('testerContent');
+      const avatarInitial = testerName.charAt(0).toUpperCase();
+
+      let testsHtml = tests.map(t => {
+        const cover = t.cover || '';
+        const flag = getFlagUrl(t.region);
+        const ratingStars = renderStars(t.rating, 12);
+        return `
+          <div class="test-item">
+            ${cover ? `<img src="${cover}" class="mini-cover" onerror="this.style.display='none';" />` : `<div class="mini-cover" style="background:#1a0a2e; display:flex; align-items:center; justify-content:center; font-size:20px;">🎮</div>`}
+            <img src="${flag}" class="mini-flag" />
+            <span class="game-title">${escapeHtml(t.game)}</span>
+            <div class="rating-stars-mini">${ratingStars}</div>
+          </div>
+        `;
+      }).join('');
+
+      content.innerHTML = `
+        <div class="tester-header">
+          <div class="avatar-lg">${avatarInitial}</div>
+          <div class="tester-name">${escapeHtml(testerName)}</div>
+        </div>
+        <div class="tester-stats">
+          <div class="stat"><span class="number">${tests.length}</span><span class="label">Tests</span></div>
+          <div class="stat"><span class="number">${devices.length}</span><span class="label">Devices</span></div>
+        </div>
+        <div style="font-weight:700; margin-bottom:0.3rem;">Devices used:</div>
+        <div class="device-list">
+          ${devices.map(d => `<span class="device-chip">${escapeHtml(d)}</span>`).join('')}
+        </div>
+        <div style="font-weight:700; margin-top:1.2rem; margin-bottom:0.5rem;">Test list:</div>
+        <div class="test-list">${testsHtml}</div>
+      `;
+
+      panel.classList.add('open');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeTesterPanel() {
+      document.getElementById('testerPanel').classList.remove('open');
+      document.getElementById('testerOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // ===== HOW & ABOUT PANEL (già gestito) =====
     function openAboutPanel() {
       const panel = document.getElementById('aboutPanel');
       const overlay = document.getElementById('aboutOverlay');
@@ -2380,7 +3060,7 @@
     // ===== EVENTI =====
     document.getElementById('closeModalBtn').addEventListener('click', closeModal);
     document.getElementById('gameModal').addEventListener('click', e => { if (e.target === document.getElementById('gameModal')) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeTesterPanel(); closeAboutPanel(); } });
 
     document.getElementById('searchInput').addEventListener('input', e => {
       state.search = e.target.value.toLowerCase().trim();
@@ -2404,19 +3084,26 @@
       document.getElementById('sortOrderIcon').classList.toggle('rotate-180');
       render();
     });
-    document.getElementById('viewModeBtn').addEventListener('click', () => {
-      state.viewMode = state.viewMode === 'grid' ? 'list' : 'grid';
-      const label = document.getElementById('viewModeLabel');
-      const icon = document.getElementById('viewModeIcon');
-      if (state.viewMode === 'grid') {
-        label.textContent = 'Grid';
-        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
-      } else {
-        label.textContent = 'List';
-        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h6M4 12h6M4 19h6M14 5h6M14 12h6M14 19h6"/>';
-      }
+
+    document.getElementById('viewGridBtn').addEventListener('click', function() {
+      state.viewMode = 'grid';
+      document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
       render();
     });
+    document.getElementById('viewListBtn').addEventListener('click', function() {
+      state.viewMode = 'list';
+      document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      render();
+    });
+    document.getElementById('viewExtendedBtn').addEventListener('click', function() {
+      state.viewMode = 'extended';
+      document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      render();
+    });
+
     document.querySelectorAll('.rating-panel').forEach(p => {
       p.addEventListener('click', () => {
         const v = p.getAttribute('data-rating');
