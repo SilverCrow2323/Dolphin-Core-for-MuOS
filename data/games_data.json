@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_update": "2026-09-05",
+  "last_update": "2026-09-07",
   "games": [
     {
       "game_info": {
@@ -501,13 +501,13 @@
           "test_environment": {
             "tester": "Luis Torrão",
             "device": "RG4xxxx",
-            "muos_version": "Funky Jacaranda"
+            "muos_version": ""
           },
           "cover_art": "",
           "custom_settings": [
             {
               "set_type": "Game Setting",
-              "set_name": "Config created by Luis Torrão (RG4xxxx, Dolphin Rt:Core v10.5)]",
+              "set_name": "[note by sirpips: Config created from test by Luis Torrão (RG4xxxx, Dolphin Rt:Core v10.5)]",
               "set_filename": "GLME01.ini",
               "set_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/refs/heads/main/opt/muos/share/emulator/dolphin/GameSettings/GLME01.ini",
               "set_note": "Settings:\n- Overclock = 0.60000000: slightly lowers virtual CPU clock to reduce load and improve stability on devices like RG35XX.\n- CPUCore = 4: uses the latest, fastest JIT core.\n- CPUThread = True: enables multi-threaded emulation (improves performance).\n- DSPHLE = True: uses HLE audio (faster, less accurate but sufficient).\n- SkipIPL = True: skips the console boot animation – faster startup.\n- InternalResolution = 66.666...%: internal resolution at 66% – balance between graphics and FPS.\n- NoMipmapping = True: disables mipmaps to reduce GPU load.\n- VISkip = True: skips some vertex information – helps performance in 3D games.\n- Backend = OpenSLES: changes audio backend from ALSA to OpenSLES for better muOS compatibility.\n- Additional tweaks: BBoxEnable, EFBAccessEnable off, EFBEmulateFormatChanges off, VertexRounding, FastDepthCalc, ShaderCache, VSync off, ForceTrueColor, SkipDuplicateXFBs, EFBScaledCopy, SafeTextureCacheColorSamples=128."
@@ -3523,16 +3523,16 @@
           },
           "test_review": {
             "rating": 2,
-            "fps": "10 - 20",
-            "fps_min": 10,
-            "fps_max": 20,
+            "fps": "9 - 15",
+            "fps_min": 9,
+            "fps_max": 15,
             "boot": "YES",
             "playable": "NO"
           },
           "test_details": {
-            "rtcore_version": "v10.5.3",
-            "core_profile": "Speedup 2",
-            "considerations": "With the new RT: Profiles, specifically the experimental Speedup 2, the game gained some extra FPS but the overall experience is still bad."
+            "rtcore_version": "v10.5-124",
+            "core_profile": "Performance",
+            "considerations": "The game boots but runs at its worst. Also used speedhacks and other performance settings but the result is basically the same."
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8278,6 +8278,52 @@
               "set_filename": "Dragon Ball Z - Budokai 2 Undub 0.99.zip",
               "set_url": "https://archive.org/download/dragon-ball-z-budokai-2-gamecube-undub/Dragon%20Ball%20Z%20-%20Budokai%202%20Undub%200.99.zip",
               "set_note": "Undub Patch Released By TechnoSyndrome. Patch Version 0.99. Hack Release Date 26 March 2023. For more info: https://www.romhacking.net/hacks/7671/"
+            }
+          ],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "game_info": {
+        "game_id": "G9SE8P",
+        "game": "Sonic Heroes",
+        "system": "GameCube",
+        "region": "PAL"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "G9SE8P",
+            "game": "Sonic Heroes",
+            "system": "GameCube",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 3,
+            "fps": "9-25",
+            "boot": "YES",
+            "playable": "YES WITH ISSUES",
+            "fps_min": 9,
+            "fps_max": 25
+          },
+          "test_details": {
+            "rtcore_version": "v10.5.3",
+            "core_profile": "Various / All profiles tested",
+            "considerations": "I was surprised how well i got it to run how ever i will note it dipped heavily when i selected tails which would be an issue if i tried to 100% the game"
+          },
+          "test_environment": {
+            "tester": "TekkraGMD",
+            "device": "RG35XXH",
+            "muos_version": "2601.0 Jacaranda"
+          },
+          "cover_art": "",
+          "custom_settings": [
+            {
+              "set_type": "Config",
+              "set_name": "Sonic Heroes Performance Tweaks",
+              "set_url": "https://raw.githubusercontent.com/Tekkra-Pi/dolphin4muosconfigs/refs/heads/main/sonic-heroes-gfx.ini",
+              "set_note": "[Core]\nOverclock = 0.00000000\nOverclockEnable = False\nCPUCore = 2\nCPUThread = True\nFastmem = True\nDSPHLE = True\nSkipIPL = True\nSyncOnSkipIdle = True\nEmulationSpeed = 1.00000000\nGFXBackend = OGL\nMMU = False\nAccurateNaNs = False\nFPRF = False\n\n[Video_Settings]\nInternalResolution = 1.00000000\nEnableGPUTextureDecoding = True\nDisableFog = True\nEFBToTextureEnable = True\nEFBScaledCopy = True\nNoMipmapping = True\nSkipDuplicateXFBs = True\nForceTrueColor = True\nFastDepthCalc = True\nSafeTextureCacheColorSamples = 128\nShaderCache = True\nWaitForShadersBeforeStarting = False\nVSync = False\n\n[Hacks]\nBBoxEnable = False\nEFBAccessEnable = False\nEFBEmulateFormatChanges = False\nVertexRounding = False\nVISkip = True\nDisableCopyFilter = True\nArbitraryMipmapDetection = True\n\n[Enhancements]\nPostProcessingShader =\n\n[DSP]\nBackend = OpenSLES\nEnableJIT = True\nVolume = 100\n\n[General]\nShowFPS = True\nShowVPS = False\nShowSpeedColors = False"
             }
           ],
           "attachments": []
