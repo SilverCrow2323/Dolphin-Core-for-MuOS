@@ -8329,6 +8329,159 @@
           "attachments": []
         }
       ]
+    },
+    {
+      "game_info": {
+        "game_id": "GL3JE8",
+        "system": "GC",
+        "game": "Lupin III: Umi ni Kieta Hihou",
+        "region": "NTSC-J"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GL3JE8",
+            "system": "GC",
+            "game": "Lupin III: Umi ni Kieta Hihou",
+            "region": "NTSC-J"
+          },
+          "test_review": {
+            "rating": 0,
+            "fps": "N/A",
+            "boot": "NO",
+            "playable": "NO",
+            "fps_min": 0,
+            "fps_max": 0
+          },
+          "test_details": {
+            "rtcore_version": "v11.0.0 (prerelease)",
+            "core_profile": "Various / All profiles tested",
+            "considerations": "Unfortunately, even with the Black Screen Fix profile, the game does not boot."
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "https://retrogametalk.com/repo/wp-content/uploads/2022/06/43979_front.jpg",
+          "custom_settings": [
+            {
+              "set_type": "Hack",
+              "set_name": "English Translation",
+              "set_filename": "Lupin.III.Umi.ni.Kieta.Hihou.Translation.v1.0.1.zip",
+              "set_url": "https://github.com/DOL-Translations/lupin-III/releases/download/r205/Lupin.III.Umi.ni.Kieta.Hihou.Translation.v1.0.1.zip",
+              "set_note": "GitHub Repo: https://github.com/DOL-Translations/lupin-III"
+            }
+          ],
+          "attachments": [
+            {
+              "media_type": "text",
+              "media_title": "GL3EE8.Gecko.Code.txt",
+              "media_url": "https://github.com/DOL-Translations/lupin-III/releases/download/r205/GL3EE8.Gecko.Code.txt"
+            },
+            {
+              "media_type": "image",
+              "media_title": "English Boxart",
+              "media_url": "https://github.com/DOL-Translations/lupin-III/releases/download/r205/boxart.zip"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "game_info": {
+        "game_id": "GD5JB2",
+        "system": "GC",
+        "game": "Dragon Drive: D-Masters Shot",
+        "region": "NTSC-J"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GD5JB2",
+            "system": "GC",
+            "game": "Dragon Drive: D-Masters Shot",
+            "region": "NTSC-J"
+          },
+          "test_review": {
+            "rating": 0,
+            "fps": "N/A",
+            "boot": "NO",
+            "playable": "NO",
+            "fps_min": 0,
+            "fps_max": 0
+          },
+          "test_details": {
+            "rtcore_version": "v11.0.0 (prerelease)",
+            "core_profile": "Black Screen Fix, Compatibility, Default",
+            "considerations": "Unfortunately, even with various profiles, the game fails to boot."
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "https://retrogametalk.com/repo/wp-content/uploads/2025/11/rgt_featured_1_1764354821395.jpg",
+          "custom_settings": [
+            {
+              "set_type": "Hack",
+              "set_name": "English Translation",
+              "set_note": "LFA Translations: Dragon Drive D-Master's Shot JP GC. Full gameplay and story translated, movies subbed with sound. Tested on real hardware. May contain bugs or translation inaccuracies. If crashes, try newer Dolphin version."
+            }
+          ],
+          "attachments": [
+            {
+              "media_type": "link",
+              "media_title": "LFA Team Discord 1",
+              "media_url": "https://discord.gg/yhwUFBjbVh"
+            },
+            {
+              "media_type": "link",
+              "media_title": "LFA Team Discord 2",
+              "media_url": "https://discord.gg/fyVTngUr3G"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "game_info": {
+        "game_id": "GTFPA4",
+        "system": "GC",
+        "game": "Teenage Mutant Ninja Turtles",
+        "region": "PAL"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GTFPA4",
+            "system": "GC",
+            "game": "Teenage Mutant Ninja Turtles",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 2,
+            "fps": "20-45",
+            "boot": "YES",
+            "playable": "NO",
+            "fps_min": 20,
+            "fps_max": 45
+          },
+          "test_details": {
+            "rtcore_version": "v11.0.0 (prerelease)",
+            "core_profile": "Speed Hack, Performance, Ultra",
+            "considerations": "UI graphics run smoothly at around 45 FPS, sometimes even higher. However, gameplay sessions and cutscenes lag heavily, making it currently unplayable."
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "",
+          "custom_settings": [],
+          "attachments": []
+        }
+      ]
     }
   ]
 }
