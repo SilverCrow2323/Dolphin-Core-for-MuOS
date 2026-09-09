@@ -1,0 +1,35 @@
+name: Update Games Data from Closed Issue
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+    # Esegue il workflow solo se la issue ha l'etichetta "test-report"
+    if: contains(github.event.issue.labels, 'test-report')
+    
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run update script
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python .github/scripts/update_games.py
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(database): add test report for issue #${{ github.event.issue.number }}"
+          branch: main
+          file_pattern: games_data.json
