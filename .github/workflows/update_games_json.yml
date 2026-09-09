@@ -7,8 +7,6 @@ on:
 jobs:
   update-json:
     runs-on: ubuntu-latest
-    # Il workflow si attiva se la issue ha l'etichetta GameCube O Wii
-    if: contains(github.event.issue.labels, 'GameCube') || contains(github.event.issue.labels, 'Wii')
     
     permissions:
       contents: write
