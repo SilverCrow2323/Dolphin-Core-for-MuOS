@@ -189,31 +189,6 @@ sudo cp -r "Nintendo Wii" /opt/muos/share/info/assign/
 
 ---
 
-## 🛠️ Tips & Tricks
-
-### For Best Performance
-- **Use PAL ROMs** — They run at 50 FPS instead of 60, giving a significant speed boost
-- **Start with `Troubleshooting`** — It's the most balanced profile for most games
-- **Try `Lite` for 2D games** — Games like *Paper Mario* or *Wario Ware* should run better
-- **Disable `wideScreenHack`** if you see visual glitches
-- **Create per-game configs** for problematic titles or to test your custom configuration (`GameSettings/{GAME_ID}.ini`)
-
-### Debugging a Game
-1. Use the `Debug` profile — It uses the interpreter (slower but more accurate)
-2. Enable `Logger` profile — Captures detailed logs
-3. Check logs at `/opt/muos/share/emulator/dolphin/GameDumps/`
-4. Check muOS logs via `LOG_INFO` in the launcher script
-
----
-
-## 📝 Upcoming
-
-> 💡 **Something is brewing behind the scenes...**
->
-> A new frontend experience is in development — built from the ground up for muOS, designed to bring a modern, intuitive interface to Dolphin on handhelds. Stay tuned!
-
----
-
 ## 🤝 Credits & Acknowledgments
 
 Part of the **SPDW Factory** ecosystem, created by **Sir Pips**.
@@ -226,7 +201,11 @@ Part of the **SPDW Factory** ecosystem, created by **Sir Pips**.
 
 <br>
 
-This project stands upon the shoulders of the talented developers and community pioneers who made GameCube emulation on H700 handhelds a reality — as initially explored and documented in the official [muOS Community Discussion for Dolphin V9](https://community.muos.dev/t/core-dolphin-for-muos-v9-take-3-by-speedrun/491):
+---
+
+
+> ℹ️ **IMPORTANT DISCLAIMER & COMMUNITY ACKNOWLEDGMENT**  
+> This repository is **not** an original core built from scratch. Full credit for porting and pioneering GameCube/Wii emulation on muOS goes to the **original community developers**. This project represents a **fine-tuning, optimization, and repository management effort** built directly upon their foundation.
 
 ### 🐬 Original Dolphin Core Developers
 
@@ -235,31 +214,8 @@ This project stands upon the shoulders of the talented developers and community 
 - **@Snow** ([@Snow](https://community.muos.dev/u/snow)) (SnowV8) — For providing the newly compiled Dolphin binary file
 - **@bitter_bizarro** ([@bitter_bizarro](https://community.muos.dev/u/bitter_bizarro)) — For adopting the core and making it compatible with muOS Goose!
 - **@razorbeamz**, **@arkun**, **@SkiffguardLando**, **@chronoss0109**, **@Kirky**, **@Mikethe3ird**, **@Symphonial**, **@giodude**, **@lasagnesetting**, **@joshuarcastillo** — For testing, reporting issues, and improving the core
-- **muOS Development Team** — For ongoing firmware maintenance and structural support
 
 > *Check out the [Core History Archive](Core_History/) to browse legacy builds (V7, V8, V9) and read up on their evolution.*
-
----
-
-### 📋 Game Compatibility Database Contributors
-
-The original game compatibility list, which served as the foundation for the Rt:Core database, was created and maintained by the community:
-- **@Sexy_Shrek**
-- **@SkullXavier**
-- **@S1eepy**
-- **@Danster21**
-- **@eleot**
-- **@Lucaspec72**
-- **@Mercquick**
-- **@Row**
-- **@Speedrun [+.[🐬].%]**
-- **@ᴡᴏᴋᴇᴜ𝒑ɪɴᴘᴀʀɪs**
-- **@sirpips** (data processing and database maintenance)
-- **@Luis Torrão** (per-game configuration testing)
-- **@TekkraGMD** (Wii testing)
-- **@Happy** (game testing)
-- **@DeadPlant** (legacy testing)
-- **@SEIRO** (legacy testing)
 
 ### 🌐 Community
 
@@ -271,19 +227,6 @@ The muOS community is vibrant and welcoming. You can find us here:
 
 A special thanks to **duncanyoyo** and other Discord members who helped with the transition to the new muOS core structure.
 
----
-
-
-> ℹ️ **IMPORTANT DISCLAIMER & COMMUNITY ACKNOWLEDGMENT**  
-> This repository is **not** an original core built from scratch. Full credit for porting and pioneering GameCube/Wii emulation on muOS goes to the **original community developers**. This project represents a **fine-tuning, optimization, and repository management effort** built directly upon their foundation.
-
-
-## 📜 License
-
-This project is open-source and licensed under the **MIT License**.
-
----
-
 ## 🔗 Links
 
 - [GitHub Repository](https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS)
@@ -294,6 +237,16 @@ This project is open-source and licensed under the **MIT License**.
 - [GameTDB](https://gametdb.com) — Cover art and game metadata
 
 ---
+
+## Credits and licenses
+
+- Original Dolphin core for muOS: @Speedrun
+- Upstream: Dolphin Emulator, GameTDB, muOS, PortMaster
+- License: GPL-3.0-or-later (see LICENSE)
+- Third-party licenses: see THIRD_PARTY_LICENSES.md
+- Notice: see NOTICE
+
+This project is not affiliated with Nintendo.
 
 <div align="center">
 
