@@ -8482,6 +8482,113 @@
           "attachments": []
         }
       ]
+    },
+    {
+      "game_info": {
+        "game_id": "G9RP7D",
+        "system": "GC",
+        "game": "Crash Tag Team Racing",
+        "region": "PAL"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "G9RP7D",
+            "system": "GC",
+            "game": "Crash Tag Team Racing",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 2,
+            "fps": "20-48",
+            "boot": "YES",
+            "playable": "NO",
+            "fps_min": 20,
+            "fps_max": 48
+          },
+          "test_details": {
+            "rtcore_version": "v10.5.3",
+            "core_profile": "Speed Hack. Default",
+            "considerations": "To be honest, the platforming sections are perfectly playable and even enjoyable, would rate 5*. However, in the central city hub and during races the lagging gets really heavy, dropping FPS down to 20-25"
+          },
+          "test_environment": {
+            "tester": "聖尾 勝斗",
+            "device": "Anbernic RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "",
+          "custom_settings": [
+            {
+              "set_type": "Texture",
+              "set_name": "Crash Tag Team Racing Texture Fixes.rar",
+              "set_filename": "Crash Tag Team Racing Texture Fixes.rar",
+              "set_url": "https://mega.nz/file/DsBAFa6Q#Nhe1xY8GBDLng7Ht4aP_jX_0GPJ4BSIaaZouc-a5Tdo",
+              "set_note": "Test with a somewhat expected result, but... for the sake of science this and more!! HD textures, pack under 100MB. Even with any ultra super saiyan god super saiyan profile, the game cannot avoid being witness to FPS that tend heavily below 10. Reporting it here for documentation, however I do not consider it appropriate to add a specific test for this experiment."
+            }
+          ],
+          "attachments": [
+            {
+              "media_type": "link",
+              "media_title": "Texture Pack source",
+              "media_url": "https://forums.dolphin-emu.org/Thread-crash-tag-team-racing-texture-fixes"
+            },
+            {
+              "media_type": "text",
+              "media_title": "G9RP7D_AR_Cheats.txt",
+              "media_url": "https://docs.google.com/document/d/1sfSoDWaI3AyZiY8wi6ZUeb9jGygx8rbj3qatvw5OVKE/edit?usp=sharing"
+            },
+            {
+              "media_type": "link",
+              "media_title": "CTTR XBOX CONTROLS INVERTED.zip",
+              "media_url": "https://forums.dolphin-emu.org/attachment.php?aid=16178"
+            },
+            {
+              "media_type": "link",
+              "media_title": "CTTR PS4 CONTROLS.zip",
+              "media_url": "https://forums.dolphin-emu.org/attachment.php?aid=16179"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "game_info": {
+        "game_id": "GBTP70",
+        "system": "GC",
+        "game": "Beyblade Super Tournament Battle",
+        "region": "PAL"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GBTP70",
+            "system": "GC",
+            "game": "Beyblade Super Tournament Battle",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 0,
+            "fps": "???",
+            "boot": "NO",
+            "playable": "NO",
+            "fps_min": 0,
+            "fps_max": 0
+          },
+          "test_details": {
+            "rtcore_version": "v10.5.3",
+            "core_profile": "Speed Hack",
+            "considerations": "Does not boot, exactly like its NTSC sibling."
+          },
+          "test_environment": {
+            "tester": "聖尾 勝斗",
+            "device": "Anbernic RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "",
+          "custom_settings": [],
+          "attachments": []
+        }
+      ]
     }
   ]
 }
