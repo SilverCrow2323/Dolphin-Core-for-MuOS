@@ -1,0 +1,16 @@
+# whiptail.gptk
+# Maps gamepad to keyboard for whiptail TUI navigation.
+
+a = return
+b = escape
+start = return
+back = escape
+guide = escape
+
+dpup = up
+dpdown = down
+dpleft = left
+dpright = right
+
+leftshoulder = pageup
+rightshoulder = pagedown
