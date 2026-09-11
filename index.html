@@ -956,7 +956,7 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
       </div>
       <div class="tetris-block tetris-block-purple">
         <div class="section-title"><i class="fa-solid fa-user-astronaut"></i> 5. Tester Info</div>
-        <div class="form-group col-100"><label class="form-label"><i class="fa-solid fa-user-tag"></i> Tester</label><input type="text" id="reportTester" class="input-box" style="border-color:#8b5cf6;" value="聖尾 勝斗" required /></div>
+        <div class="form-group col-100"><label class="form-label"><i class="fa-solid fa-user-tag"></i> Tester</label><input type="text" id="reportTester" class="input-box" style="border-color:#8b5cf6;" value="" required /></div>
         <div class="form-group col-100"><label class="form-label"><i class="fa-solid fa-mobile-screen"></i> Device</label><input type="text" id="reportDevice" class="input-box" style="border-color:#8b5cf6;" value="Anbernic RG35XX H" required /></div>
         <div class="form-group col-100"><label class="form-label"><i class="fa-solid fa-sd-card"></i> muOS Version</label><select id="reportMuos" class="input-box" style="border-color:#8b5cf6;" required><option value="" disabled selected>Select muOS version...</option><option>2601.1 Funky Jacaranda</option><option>2601.0 Jacaranda</option><option>2508.4 Loose Goose</option><option>2508.3 Golden Goose</option><option>2508.2 Silly Goose</option><option>2508.1 Canada Goose</option><option>2508.0 Goose</option><option>2502.0 Pixie</option></select></div>
       </div>
@@ -1591,8 +1591,7 @@ document.getElementById('newReportLink').addEventListener('click', function(e) {
 function openReportModal() {
   document.getElementById('reportModal').style.display = 'flex';
   const reset = (id, v = '') => { const el = document.getElementById(id); if (el) el.value = v; };
-  reset('reportPlatform'); reset('reportRegion'); reset('reportGameId'); reset('reportGameTitle'); reset('reportCoverArt'); reset('reportFpsMin'); reset('reportFpsMax'); reset('reportConsiderations'); reset('reportCoreVersion'); reset('reportCoreProfile'); reset('reportCoreVersionOther'); reset('reportCoreProfileOther'); reset('reportCustomSettingsName'); reset('reportCustomSettingsFilename'); reset('reportCustomSettingsUrl'); reset('reportCustomSettingsNote'); reset('reportCustomSettingsType', 'Config'); reset('reportAttachments'); reset('reportTester', '聖尾 勝斗'); reset('reportDevice', 'Anbernic RG35XX H'); reset('reportMuos');
-  document.getElementById('reportCoreVersionOther').style.display = 'none';
+  reset('reportPlatform'); reset('reportRegion'); reset('reportGameId'); reset('reportGameTitle'); reset('reportCoverArt'); reset('reportFpsMin'); reset('reportFpsMax'); reset('reportConsiderations'); reset('reportCoreVersion'); reset('reportCoreProfile'); reset('reportCoreVersionOther'); reset('reportCoreProfileOther'); reset('reportCustomSettingsName'); reset('reportCustomSettingsFilename'); reset('reportCustomSettingsUrl'); reset('reportCustomSettingsNote'); reset('reportCustomSettingsType', 'Config'); reset('reportAttachments'); reset('reportTester', '
   document.getElementById('reportCoreProfileOther').style.display = 'none';
   document.getElementById('reportCustomSettingsWrapper').style.display = 'none';
   document.getElementById('reportCustomSettingsEnabled').value = 'No';
