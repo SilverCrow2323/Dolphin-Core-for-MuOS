@@ -8512,7 +8512,7 @@
             "considerations": "To be honest, the platforming sections are perfectly playable and even enjoyable, would rate 5*. However, in the central city hub and during races the lagging gets really heavy, dropping FPS down to 20-25"
           },
           "test_environment": {
-            "tester": "聖尾 勝斗",
+            "tester": "sirpips",
             "device": "Anbernic RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -8580,7 +8580,7 @@
             "considerations": "Does not boot, exactly like its NTSC sibling."
           },
           "test_environment": {
-            "tester": "聖尾 勝斗",
+            "tester": "sirpips",
             "device": "Anbernic RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
