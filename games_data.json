@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "last_update": "2026-09-12",
+  "games": [
+    {
+      "game_info": {
+        "game_id": "GENERIC",
+        "system": "GC",
+        "game": "",
+        "region": ""
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GENERIC",
+            "system": "GC",
+            "game": "",
+            "region": ""
+          },
+          "test_review": {
+            "rating": 3,
+            "fps": "0",
+            "boot": "YES",
+            "playable": "YES WITH ISSUES",
+            "fps_min": 0,
+            "fps_max": 0
+          },
+          "test_details": {
+            "rtcore_version": "",
+            "core_profile": "",
+            "considerations": ""
+          },
+          "test_environment": {
+            "tester": "",
+            "device": "",
+            "muos_version": ""
+          },
+          "cover_art": "",
+          "custom_settings": [],
+          "attachments": []
+        }
+      ]
+    }
+  ]
+}
