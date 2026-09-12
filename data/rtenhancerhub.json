@@ -1,7 +1,53 @@
 {
-  "version": 1,
-  "last_update": "2026-09-02",
+  "version": 2,
+  "last_update": "2026-09-12",
   "items": [
+    {
+      "id": "res001_rintro-gamesettings",
+      "category": "rt_resources",
+      "system": "all",
+      "name": "Dolphin-emu GameSettings Pack",
+      "description": "A comprehensive collection of official Dolphin-emu per-game settings. Curated by sirpips, this pack provides a solid baseline for GameCube and Wii titles, ensuring optimal compatibility and performance on both original Dolphin and DolphinUI. Contains a GameSettings folder ready to be extracted.",
+      "author": "Dolphin Team, sirpips",
+      "version": "1.0",
+      "download_url": "https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/raw/main/data/rtenhancer/rintropacks/Dolphin-emu_GameSettingsPack.zip",
+      "icon_url": "",
+      "icon_file": "icon.png",
+      "size_mb": 0.8,
+      "install_path": "/opt/muos/share/emulator/dolphin/Sys",
+      "extract_into": "Sys",
+      "extract_contains": "GameSettings"
+    },
+    {
+      "id": "res002_rintro-graphicmods",
+      "category": "rt_resources",
+      "system": "all",
+      "name": "Dolphin-emu Graphic Mods Pack",
+      "description": "A curated collection of all official graphic mods from the Dolphin-emu team. This pack, prepared by sirpips, includes modifications for bloom, depth of field, HUD removal, and more. Contains a GraphicMods folder ready to be extracted into your DolphinUI's Load directory.",
+      "author": "Dolphin Team, sirpips",
+      "version": "1.0",
+      "download_url": "https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/raw/main/data/rtenhancer/rintropacks/Dolphin-emu_GraphicMods.zip",
+      "icon_url": "",
+      "icon_file": "icon.png",
+      "size_mb": 2.3,
+      "install_path": "/opt/muos/share/emulator/dolphin/Load",
+      "extract_into": "Load",
+      "extract_contains": "GraphicMods"
+    },
+    {
+      "id": "hbgc001_swiss-gc",
+      "category": "homebrew",
+      "system": "gc",
+      "name": "Swiss (GameCube)",
+      "description": "Swiss is the Swiss Army Knife of GameCube homebrew. It is an all-in-one utility that allows you to launch games and homebrew from a variety of devices (SD Gecko, SD2SP2, IDE-EXI, USB Gecko, network shares, and more). It can force 480p video output on games that don't natively support it, provides a virtual Broadband Adapter for LAN play, and is essential for any GameCube enthusiast [citation:1][citation:4][citation:7].",
+      "author": "emukidid, Extrems",
+      "version": "0.6r2073",
+      "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/swiss-gc.zip",
+      "icon_url": "",
+      "icon_file": "icon.png",
+      "size_mb": 1.2,
+      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbgc/swiss-gc"
+    }
     {
       "id": "hbgc001_swiss-gc",
       "category": "homebrew",
@@ -281,183 +327,6 @@
       "icon_file": "icon.png",
       "size_mb": 1.0,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/wsm-player"
-    },
-    {
-      "id": "rp001_gc_gmse01",
-      "category": "resource",
-      "system": "gc",
-      "name": "Super Mario Sunshine UHD (qashto)",
-      "description": "The definitive texture pack by qashto & razius that brings Super Mario Sunshine to modern graphical standards with high-resolution AI-upscaled textures. Includes enhanced water effects and a 4K option. Recommended for muOS devices with 1GB RAM, though the 4K version may require more resources.",
-      "author": "qashto",
-      "version": "2.1.1",
-      "source_url": "https://github.com/qashto/Super_Mario_Sunshine_UHD_Texture_Pack",
-      "icon_url": "",
-      "icon_file": "",
-      "size_mb": 1191,
-      "downloads": [
-        {
-          "label": "Full Pack (1080p)",
-          "description": "High-quality 1080p textures. Ideal balance between visual fidelity and performance on H700 devices.",
-          "url": "https://github.com/qashto/Super_Mario_Sunshine_UHD_Texture_Pack/releases/download/2.1.1/GMS_1080.zip",
-          "size_mb": 250,
-          "install_path": "/opt/muos/share/emulator/dolphin/Load/Textures/GMSE01/"
-        },
-        {
-          "label": "Full Pack (4K)",
-          "description": "Ultimate 4K textures. Maximum visual upgrade, but may impact performance on lower-end devices.",
-          "url": "https://github.com/qashto/Super_Mario_Sunshine_UHD_Texture_Pack/releases/download/2.1.1/GMS.zip",
-          "size_mb": 941,
-          "install_path": "/opt/muos/share/emulator/dolphin/Load/Textures/GMSE01/"
-        }
-      ],
-      "extra_content": [
-        {
-          "type": "settings",
-          "label": "Recommended GameSettings (GMSE01_resourcepack.ini)",
-          "description": "Pre-configured Dolphin settings tailored for this texture pack, including DDS BC7 support and stutter-free caching. Apply in Game Settings menu.",
-          "url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/rp/GMSE01_resourcepack.ini",
-          "install_path": "/opt/muos/share/emulator/dolphin/GameSettings/",
-          "filename": "GMSE01_resourcepack.ini"
-        }
-      ]
-    },
-    {
-      "id": "rp002_gc_gzle01",
-      "category": "resource",
-      "system": "gc",
-      "name": "Zelda Wind Waker HD (Hypatia)",
-      "description": "A famous high-definition texture pack for The Legend of Zelda: Wind Waker. It dramatically improves the game's visuals with crisp, high-resolution textures, making the cel-shaded world even more vibrant. Requires a recent Dolphin development build for best results.",
-      "author": "Hypatia",
-      "version": "v2.0001a",
-      "source_url": "https://gamebanana.com/mods/153174",
-      "icon_url": "",
-      "icon_file": "",
-      "size_mb": 480,
-      "downloads": [
-        {
-          "label": "Full Pack",
-          "description": "Complete HD texture pack, including all major textures upscaled to 1080p.",
-          "url": "https://gamebanana.com/mods/153174",
-          "size_mb": 480,
-          "install_path": "/opt/muos/share/emulator/dolphin/Load/Textures/GZLE01/"
-        }
-      ],
-      "extra_content": []
-    },
-    {
-      "id": "rp003_gc_glme01",
-      "category": "resource",
-      "system": "gc",
-      "name": "Luigi's Mansion 4K HD Texture Pack",
-      "description": "A stunning texture pack by Henriko Magnifico that recreates every texture in the game in high resolution. Available in multiple versions (720p, 1080p, 4K) to suit different hardware capabilities.",
-      "author": "Henriko Magnifico",
-      "version": "1.0.2",
-      "source_url": "https://forums.dolphin-emu.org/Thread-luigi-s-mansion-4k-texture-pack-1-0-2-2020-08-01",
-      "icon_url": "",
-      "icon_file": "",
-      "size_mb": 610,
-      "downloads": [
-        {
-          "label": "Full Pack (4K)",
-          "description": "The highest quality version of the pack. Requires more RAM and GPU resources.",
-          "url": "https://forums.dolphin-emu.org/Thread-luigi-s-mansion-4k-texture-pack-1-0-2-2020-08-01",
-          "size_mb": 610,
-          "install_path": "/opt/muos/share/emulator/dolphin/Load/Textures/GLME01/"
-        }
-      ],
-      "extra_content": []
-    },
-    {
-      "id": "rp004_gc_gm8e01",
-      "category": "resource",
-      "system": "gc",
-      "name": "Metroid Prime Full HD Texture Pack (Collige)",
-      "description": "A massive AI-enhanced texture pack for Metroid Prime, created by Collige. Uses multiple AI models (ESRGAN, waifu2x) to upscale every texture with incredible detail, making the game look phenomenal on modern displays.",
-      "author": "Collige",
-      "version": "1.0",
-      "source_url": "https://github.com/Collige/MetroidPrimeHD",
-      "icon_url": "",
-      "icon_file": "",
-      "size_mb": 1800,
-      "downloads": [
-        {
-          "label": "Full Pack",
-          "description": "Complete HD texture pack (1.8GB) with over 9000 improved textures.",
-          "url": "https://github.com/Collige/MetroidPrimeHD",
-          "size_mb": 1800,
-          "install_path": "/opt/muos/share/emulator/dolphin/Load/Textures/GM8E01/"
-        }
-      ],
-      "extra_content": []
-    },
-    {
-      "id": "rp005_gc_gale01",
-      "category": "resource",
-      "system": "gc",
-      "name": "Melee HD 3x AI Upscale",
-      "description": "A community project that upscales all character portraits, stages, and items of Super Smash Bros. Melee using AI models, giving the iconic game a fresh, sharper look while preserving its essence.",
-      "author": "Community",
-      "version": "3.0",
-      "source_url": "https://gamebanana.com/gamefiles/4897",
-      "icon_url": "",
-      "icon_file": "",
-      "size_mb": 250,
-      "downloads": [
-        {
-          "label": "Full Pack",
-          "description": "3x AI upscale textures that improve the clarity of all in-game visuals.",
-          "url": "https://gamebanana.com/gamefiles/4897",
-          "size_mb": 250,
-          "install_path": "/opt/muos/share/emulator/dolphin/Load/Textures/GALE01/"
-        }
-      ],
-      "extra_content": []
-    },
-    {
-      "id": "rp006_gc_g8me01",
-      "category": "resource",
-      "system": "gc",
-      "name": "Paper Mario TTYD HD Texture Pack",
-      "description": "HD texture pack for Paper Mario: The Thousand-Year Door. Significantly improves the visuals of the beloved RPG by sharpening textures and adding subtle details that make the paper world pop.",
-      "author": "Dolphin HD Projects",
-      "version": "v1.9",
-      "source_url": "https://forums.dolphin-emu.org/Thread-paper-mario-ttyd-hd-texture-pack-v1-9-april-1st-2020",
-      "icon_url": "",
-      "icon_file": "",
-      "size_mb": 400,
-      "downloads": [
-        {
-          "label": "Full Pack",
-          "description": "Complete HD texture pack for Paper Mario: The Thousand-Year Door.",
-          "url": "https://forums.dolphin-emu.org/Thread-paper-mario-ttyd-hd-texture-pack-v1-9-april-1st-2020",
-          "size_mb": 400,
-          "install_path": "/opt/muos/share/emulator/dolphin/Load/Textures/G8ME01/"
-        }
-      ],
-      "extra_content": []
-    },
-    {
-      "id": "rp007_wii_rspe01",
-      "category": "resource",
-      "system": "wii",
-      "name": "Wii Sports 4K HD Texture Pack",
-      "description": "Full 4K texture pack for Wii Sports by Henriko Magnifico. Recreates all original textures in stunning 4K, with over 300 recreated textures for all sports activities.",
-      "author": "Henriko Magnifico",
-      "version": "1.0.1b",
-      "source_url": "https://www.patreon.com/henrikomagnifico/posts/wii-sports-4k-hd-47497250",
-      "icon_url": "",
-      "icon_file": "",
-      "size_mb": 500,
-      "downloads": [
-        {
-          "label": "Full Pack (4K)",
-          "description": "4K texture pack for all Wii Sports minigames.",
-          "url": "https://www.patreon.com/henrikomagnifico/posts/wii-sports-4k-hd-47497250",
-          "size_mb": 500,
-          "install_path": "/opt/muos/share/emulator/dolphin/Load/Textures/RSPE01/"
-        }
-      ],
-      "extra_content": []
     }
   ]
 }
