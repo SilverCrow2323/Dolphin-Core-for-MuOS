@@ -1536,30 +1536,81 @@ function updateStats() {
 }
 
 async function loadConsoleData() {
-  document.getElementById('loaderContainer').classList.remove('hidden');
-  document.getElementById('gamesGrid').innerHTML = '';
-  document.getElementById('emptyState').classList.add('hidden');
+  const loaderEl = document.getElementById('loaderContainer');
+  const emptyStateEl = document.getElementById('emptyState');
+  const emptyTextEl = document.getElementById('emptyStateText');
+  const gridEl = document.getElementById('gamesGrid');
+
+  loaderEl.classList.remove('hidden');
+  gridEl.innerHTML = '';
+  emptyStateEl.classList.add('hidden');
+
   if (window.location.protocol === 'file:') {
-    document.getElementById('loaderContainer').classList.add('hidden');
-    document.getElementById('emptyStateText').innerHTML = `<strong class="text-rose-500">CORS Error:</strong> Load via local server (python3 -m http.server 8000)`;
-    document.getElementById('emptyState').classList.remove('hidden');
+    loaderEl.classList.add('hidden');
+    emptyTextEl.innerHTML = `<strong class="text-rose-500">CORS Error:</strong> Load via local server (python3 -m http.server 8000)`;
+    emptyStateEl.classList.remove('hidden');
     return;
   }
+
   try {
     const res = await fetch(URL);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+
     const data = await res.json();
-    state.rawGames = data.games || [];
+
+    if (!data || typeof data !== 'object')
+      throw new Error('Invalid JSON structure');
+
+    if (!Array.isArray(data.games))
+      throw new Error('Missing games array in data');
+
+    state.rawGames = data.games;
+
+    if (state.rawGames.length === 0)
+      throw new Error('Database is empty or contains no valid games');
+
     const system = state.console === 'gc' ? 'GC' : 'Wii';
-    const filtered = state.rawGames.filter(g => (g.game_info?.system || '') === system);
+
+    const filtered = state.rawGames.filter(g => {
+      try {
+        return (
+          g &&
+          g.game_info &&
+          (g.game_info.system || '') === system
+        );
+      } catch {
+        return false;
+      }
+    });
+
     state.groupedGames = groupGames(filtered);
-    document.getElementById('emptyStateText').textContent = 'No games found.';
-    updateStats();
-    render();
+
+    if (state.groupedGames.length === 0) {
+      emptyTextEl.textContent =
+        `No games found for ${system}. Check your connection or try again.`;
+      emptyStateEl.classList.remove('hidden');
+    } else {
+      emptyTextEl.textContent =
+        'No games found matching the current filters.';
+      updateStats();
+      render();
+    }
   } catch (err) {
-    document.getElementById('loaderContainer').classList.add('hidden');
-    document.getElementById('emptyStateText').innerHTML = `<strong class="text-rose-500">Error loading data:</strong> ${err.message}`;
-    document.getElementById('emptyState').classList.remove('hidden');
+    console.error('[LoadConsoleData Error]', err);
+
+    let errorMsg = err.message || 'Unknown error occurred';
+
+    if (errorMsg.includes('Failed to fetch')) {
+      errorMsg =
+        'Network error: Unable to reach database. Check your connection.';
+    }
+
+    emptyTextEl.innerHTML =
+      `<strong class="text-rose-500">⚠️ Error loading database:</strong> ${errorMsg}`;
+
+    emptyStateEl.classList.remove('hidden');
+  } finally {
+    loaderEl.classList.add('hidden');
   }
 }
 
@@ -1591,7 +1642,7 @@ document.getElementById('newReportLink').addEventListener('click', function(e) {
 function openReportModal() {
   document.getElementById('reportModal').style.display = 'flex';
   const reset = (id, v = '') => { const el = document.getElementById(id); if (el) el.value = v; };
-  reset('reportPlatform'); reset('reportRegion'); reset('reportGameId'); reset('reportGameTitle'); reset('reportCoverArt'); reset('reportFpsMin'); reset('reportFpsMax'); reset('reportConsiderations'); reset('reportCoreVersion'); reset('reportCoreProfile'); reset('reportCoreVersionOther'); reset('reportCoreProfileOther'); reset('reportCustomSettingsName'); reset('reportCustomSettingsFilename'); reset('reportCustomSettingsUrl'); reset('reportCustomSettingsNote'); reset('reportCustomSettingsType', 'Config'); reset('reportAttachments'); reset('reportTester', '
+  reset('reportPlatform'); reset('reportRegion'); reset('reportGameId'); reset('reportGameTitle'); reset('reportCoverArt'); reset('reportFpsMin'); reset('reportFpsMax'); reset('reportConsiderations'); reset('reportCoreVersion'); reset('reportCoreProfile'); reset('reportCoreVersionOther'); reset('reportCoreProfileOther'); reset('reportCustomSettingsName'); reset('reportCustomSettingsFilename'); reset('reportCustomSettingsUrl'); reset('reportCustomSettingsNote'); reset('reportCustomSettingsType', 'Config'); reset('reportAttachments'); reset('reportTester', 'Anonymous');
   document.getElementById('reportCoreProfileOther').style.display = 'none';
   document.getElementById('reportCustomSettingsWrapper').style.display = 'none';
   document.getElementById('reportCustomSettingsEnabled').value = 'No';
