@@ -7176,7 +7176,7 @@
       "game_info": {
         "game_id": "GKNEB2",
         "system": "GC",
-        "game": "Ultimate Muscle: Legends vs New Generation",
+        "game": "Ultimate Muscle: Legends vs. New Generation",
         "region": "NTSC"
       },
       "entries": [
@@ -7184,7 +7184,7 @@
           "game_info": {
             "game_id": "GKNEB2",
             "system": "GC",
-            "game": "Ultimate Muscle: Legends vs New Generation",
+            "game": "Ultimate Muscle: Legends vs. New Generation",
             "region": "NTSC"
           },
           "test_review": {
@@ -8287,16 +8287,16 @@
     {
       "game_info": {
         "game_id": "G9SE8P",
+        "system": "GC",
         "game": "Sonic Heroes",
-        "system": "GameCube",
         "region": "PAL"
       },
       "entries": [
         {
           "game_info": {
             "game_id": "G9SE8P",
+            "system": "GC",
             "game": "Sonic Heroes",
-            "system": "GameCube",
             "region": "PAL"
           },
           "test_review": {
@@ -8754,6 +8754,45 @@
             "muos_version": "2601.1 Funky Jacaranda"
           },
           "cover_art": "",
+          "custom_settings": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "game_info": {
+        "game_id": "GQSPAF",
+        "system": "GC",
+        "game": "Tales of Symphonia",
+        "region": "PAL"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GQSPAF",
+            "system": "GC",
+            "game": "Tales of Symphonia",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 2,
+            "fps": "14-50",
+            "boot": "YES",
+            "playable": "NO",
+            "fps_min": 14,
+            "fps_max": 50
+          },
+          "test_details": {
+            "rtcore_version": "v11.0.00 (prerelease)",
+            "core_profile": "Compatibility",
+            "considerations": "[Disc 1] Only with the Compatibility profile does the game manage to boot past the \"Licensed by Nintendo\" screen shortly after startup.\nUnfortunately, this doesn't resolve the low frame rate, which stays locked at around 30 FPS during gameplay. This causes lag that, while not extreme, is still quite annoying. Ultimately, a game like this is unplayable with an issue like this.[Disc 1] Only with the Compatibility profile the game can go past the \"Licensed by Nintendo\" screen shortly after the boot.\nHowever the average FPS during the gaming session is stable on 20-30 and way too laggy to be enjoyable."
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "https://retrogametalk.com/repo/wp-content/uploads/2021/06/17752_front.jpg",
           "custom_settings": [],
           "attachments": []
         }
