@@ -20,7 +20,7 @@
           "test_review": {
             "rating": 2,
             "fps": "10-12",
-            "boot": "YES",
+            "boot": "YES",naruto
             "playable": "NO",
             "fps_min": 10,
             "fps_max": 12
@@ -3939,7 +3939,7 @@
       "game_info": {
         "game_id": "GNUPDA",
         "system": "GC",
-        "game": "Naruto: Clash of Ninja",
+        "game": "Naruto: Clash of Ninja - European Version",
         "region": "PAL"
       },
       "entries": [
@@ -3947,7 +3947,7 @@
           "game_info": {
             "game_id": "GNUPDA",
             "system": "GC",
-            "game": "Naruto: Clash of Ninja",
+            "game": "Naruto: Clash of Ninja - European Version",
             "region": "PAL"
           },
           "test_review": {
