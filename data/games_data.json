@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_update": "2026-09-07",
+  "last_update": "2026-09-14",
   "games": [
     {
       "game_info": {
@@ -8587,6 +8587,58 @@
           "cover_art": "",
           "custom_settings": [],
           "attachments": []
+        }
+      ]
+    },
+    {
+      "game_info": {
+        "game_id": "GCNP7D",
+        "system": "GC",
+        "game": "Crash Nitro Kart",
+        "region": "PAL"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GCNP7D",
+            "system": "GC",
+            "game": "Crash Nitro Kart",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 5,
+            "fps": "30-50",
+            "boot": "YES",
+            "playable": "YES",
+            "fps_min": 30,
+            "fps_max": 50
+          },
+          "test_details": {
+            "rtcore_version": "v11.0.0 (prerelease)",
+            "core_profile": "Speed Hack",
+            "considerations": "Simply perfect, applying a light HD texture pack makes it look even better visually. No lag, no FPS drops, simply perfect."
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "",
+          "custom_settings": [
+            {
+              "set_type": "Texture",
+              "set_name": "Crash Nitro Kart HD Texture Fixes",
+              "set_filename": "CNK Texture Fixes.zip",
+              "set_url": "https://mega.nz/file/D8gChAYY#mvymsLDE-J-HCDIrVEIsXARE8VqyFpELFX3IF8cKMsQ"
+            }
+          ],
+          "attachments": [
+            {
+              "media_type": "link",
+              "media_title": "Texture Pack source",
+              "media_url": "https://forums.dolphin-emu.org/Thread-crash-nitro-kart-hd-texture-fixes"
+            }
+          ]
         }
       ]
     }
