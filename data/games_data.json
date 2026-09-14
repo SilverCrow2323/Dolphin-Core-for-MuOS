@@ -20,7 +20,7 @@
           "test_review": {
             "rating": 2,
             "fps": "10-12",
-            "boot": "YES",naruto
+            "boot": "YES",
             "playable": "NO",
             "fps_min": 10,
             "fps_max": 12
