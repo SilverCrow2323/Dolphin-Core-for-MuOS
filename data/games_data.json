@@ -8641,6 +8641,123 @@
           ]
         }
       ]
+    },
+    {
+      "game_info": {
+        "game_id": "GABEAF",
+        "system": "GC",
+        "game": "Zatch Bell - Mamodo Fury",
+        "region": "NTSC"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GABEAF",
+            "system": "GC",
+            "game": "Zatch Bell - Mamodo Fury",
+            "region": "NTSC"
+          },
+          "test_review": {
+            "rating": 2,
+            "fps": "10 -59",
+            "boot": "YES",
+            "playable": "NO",
+            "fps_min": 10,
+            "fps_max": 59
+          },
+          "test_details": {
+            "rtcore_version": "v11.0.00 (prerelease)",
+            "core_profile": "All of them",
+            "considerations": "Unplayable, battle sessions runs down to 10FPS.\t"
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "",
+          "custom_settings": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "game_info": {
+        "game_id": "GKNEB2",
+        "system": "GC",
+        "game": "Ultimate Muscle: Legends vs. New Generation",
+        "region": "NTSC"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GKNEB2",
+            "system": "GC",
+            "game": "Ultimate Muscle: Legends vs. New Generation",
+            "region": "NTSC"
+          },
+          "test_review": {
+            "rating": 0,
+            "fps": "",
+            "boot": "NO",
+            "playable": "NO",
+            "fps_min": 0,
+            "fps_max": 0
+          },
+          "test_details": {
+            "rtcore_version": "v11.0.00 (prerelease)",
+            "core_profile": "All of them",
+            "considerations": "Doesn't boot."
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "",
+          "custom_settings": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "game_info": {
+        "game_id": "GNUPDA",
+        "system": "GC",
+        "game": "Naruto: Clash of Ninja - European Version",
+        "region": "PAL"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GNUPDA",
+            "system": "GC",
+            "game": "Naruto: Clash of Ninja - European Version",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 2,
+            "fps": "10-45",
+            "boot": "YES",
+            "playable": "NO",
+            "fps_min": 10,
+            "fps_max": 45
+          },
+          "test_details": {
+            "rtcore_version": "v11.0.00 (prerelease)",
+            "core_profile": "All of them",
+            "considerations": "Can't run properly. Only with Black Screen Fix and Commpatibility profiles is able to go past the bootanim or the menu ui."
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "",
+          "custom_settings": [],
+          "attachments": []
+        }
+      ]
     }
   ]
 }
