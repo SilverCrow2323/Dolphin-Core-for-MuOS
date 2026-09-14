@@ -1,71 +1,75 @@
 #!/bin/sh
-# HELP: Profilo Performance | Profilo Performance - Bilanciato | Funzionalità: Profilo di emulazione daily driver | Descrizione: Bilanciamento tra velocità e accuratezza. Overclock moderato, SyncGPU disattivato, ottimizzazioni grafiche attive. | ON: Profilo attivo | OFF (Default): Non applicato | Risorse: Bilanciato | Downside: Nessuno rilevante | MINORU's Quick Lesson: È il profilo che dovresti usare nel 90% dei casi. Se non sai quale scegliere, scegli questo. | MINORU's Quick Lesson #001
+# HELP: Profile Performance - standard (factory restore)
 # ICON: storage
-#
-# ============================================================
-#  [Bash Arsenal | Rt:CORE Sector]
-# ============================================================
-#
-#  - Profilo : Performance
-#     Funzionalità: Profilo di emulazione daily driver | Descrizione: Bilanciamento tra velocità e accuratezza. Overclock moderato, SyncGPU disattivato, ottimizzazioni grafiche attive. | ON: Profilo attivo | OFF (Default): Non applicato | Risorse: Bilanciato | Downside: Nessuno rilevante | MINORU's Quick Lesson: È il profilo che dovresti usare nel 90% dei casi. Se non sai quale scegliere, scegli questo.
-#
 . /opt/muos/script/var/func.sh
+. "/opt/muos/share/task/Dolphin Rt:Core/04. Log & Reports/rt_log.sh"
 
 FRONTEND stop
+rt_log_init
 
-EMU="/opt/muos/share/emulator/dolphin"
-CFG="$EMU/Config"
-SRC="$EMU/rtdata/pocket_workshop/performance/standard"
+CFG="/opt/muos/share/emulator/dolphin/Config"
+PRESET="/opt/muos/share/emulator/dolphin/rtdata/profiles_preset"
+PROFILE="performance"
+LABEL="Performance standard"
 
+clear
 echo "==============================================="
 echo "  Dolphin Rt:Core v11.0.0 - Apply Profile"
 echo "==============================================="
 echo "  Profile  : Performance"
-echo "  Level    : standard"
-echo "  Scouter  : 0"
+echo "  Level    : standard (factory restore)"
 echo "==============================================="
 echo ""
-echo "  Values applied"
-echo "  -----------------------------------------"
-echo "   Dolphin.ini"
-echo "     Overclock          : 1.00"
-echo "     TimingVariance     : 40"
-echo "     EnableIdleSkipping : True"
-echo "     SyncGPU            : False"
-echo "   GFX.ini"
-echo "     InternalResolution : 1"
-echo "     DisableFog         : True"
-echo "     FastDepthResult    : True"
-echo "     EFBToTextureEnable : True"
-echo "     SkipEFBCopyToRam   : True"
-echo "     DeferEFBCopies     : True"
-echo ""
 
-if [ -f "$SRC/Dolphin.ini" ] && [ -f "$SRC/GFX.ini" ]; then
-    cp "$SRC/Dolphin.ini" "$CFG/Dolphin.ini"
-    cp "$SRC/GFX.ini"     "$CFG/GFX.ini"
-    echo "  [OK] Dolphin.ini and GFX.ini updated"
-else
-    echo "  [ERR] Source files missing in $SRC"
+if [ ! -d "$PRESET" ]; then
+    echo "  [ERR] Preset folder not found: $PRESET"
+    rt_log_event "ADJUSTER" "$LABEL" "FAILED - preset folder missing"
+    sleep 5
+    FRONTEND start task
+    exit 1
 fi
 
-echo ""
-echo "  Expected performance"
-echo "  -----------------------------------------"
-echo "   Balanced. Recommended starting point."
-echo ""
-  Performance tips
-  -----------------------------------------
-   - Daily driver, best balance speed/accuracy
-   - Start at standard, move up/down to taste
-   - MIN / -2 if you see audio/video desync
-   - +1 / +2 / MAX for smoother framerate
-echo ""
-echo "  Sync Filesystem"
-sync
+rt_snapshot
+rt_log_event "ADJUSTER" "$LABEL" "snapshot saved"
 
+find_preset() {
+    local base="$1"
+    for cand in "$PRESET/$base.$PROFILE" "$PRESET/$PROFILE/$base" "$PRESET/$base"; do
+        [ -f "$cand" ] && { echo "$cand"; return 0; }
+    done
+    return 1
+}
+
+RESTORED=0
+FAILED=0
+
+restore_one() {
+    local base="$1"
+    local src
+    src=$(find_preset "$base")
+    if [ -z "$src" ]; then
+        echo "  [SKIP] No preset found for $base"
+        rt_log_event "ADJUSTER" "$LABEL" "SKIP $base (no preset)"
+        FAILED=$((FAILED + 1))
+        return
+    fi
+    cp "$src" "$CFG/$base.$PROFILE"         && echo "  [OK]   $base.$PROFILE"         || FAILED=$((FAILED + 1))
+    cp "$src" "$CFG/$base"         && echo "  [OK]   $base"         || FAILED=$((FAILED + 1))
+    rt_log_event "ADJUSTER" "$LABEL" "$base <- $(basename "$src")"
+    RESTORED=$((RESTORED + 1))
+}
+
+restore_one "Dolphin.ini"
+restore_one "GFX.ini"
+
+echo ""
+echo "  Summary: $RESTORED/2 presets applied, $FAILED failures"
+echo ""
+rt_log_event "ADJUSTER" "$LABEL" "completed ($RESTORED/2 applied)"
+rt_write_state "$LABEL"
+
+sync
 echo "All Done!"
 sleep 5
-
 FRONTEND start task
 exit 0

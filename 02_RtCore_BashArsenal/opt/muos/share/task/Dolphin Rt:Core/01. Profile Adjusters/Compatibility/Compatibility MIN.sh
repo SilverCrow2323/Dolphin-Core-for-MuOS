@@ -1,71 +1,65 @@
 #!/bin/sh
-# HELP: Profilo Compatibility | Profilo Compatibility - Massima stabilità | Funzionalità: Profilo di emulazione per titoli problematici | Descrizione: Sacrifica velocità per accuratezza. Usa SyncGPU, Overclock alto, e disabilita le ottimizzazioni grafiche aggressive. | ON: Profilo attivo | OFF (Default): Non applicato | Risorse: Più pesante sulla CPU | Downside: FPS più bassi | MINORU's Quick Lesson: Usalo quando il gioco crasha, si blocca o fa glitch. Non usarlo per giocare a Mario Kart a 60 FPS. | MINORU's Quick Lesson #001
+# HELP: Profile Compatibility - MIN
 # ICON: storage
-#
-# ============================================================
-#  [Bash Arsenal | Rt:CORE Sector]
-# ============================================================
-#
-#  - Profilo : Compatibility
-#     Funzionalità: Profilo di emulazione per titoli problematici | Descrizione: Sacrifica velocità per accuratezza. Usa SyncGPU, Overclock alto, e disabilita le ottimizzazioni grafiche aggressive. | ON: Profilo attivo | OFF (Default): Non applicato | Risorse: Più pesante sulla CPU | Downside: FPS più bassi | MINORU's Quick Lesson: Usalo quando il gioco crasha, si blocca o fa glitch. Non usarlo per giocare a Mario Kart a 60 FPS.
-#
 . /opt/muos/script/var/func.sh
+. "/opt/muos/share/task/Dolphin Rt:Core/04. Log & Reports/rt_log.sh"
 
 FRONTEND stop
+rt_log_init
 
-EMU="/opt/muos/share/emulator/dolphin"
-CFG="$EMU/Config"
-SRC="$EMU/rtdata/pocket_workshop/compatibility/MIN"
+CFG="/opt/muos/share/emulator/dolphin/Config"
+PROFILE="compatibility"
+LABEL="Compatibility MIN"
 
+clear
 echo "==============================================="
 echo "  Dolphin Rt:Core v11.0.0 - Apply Profile"
 echo "==============================================="
 echo "  Profile  : Compatibility"
 echo "  Level    : MIN"
-echo "  Scouter  : -3"
 echo "==============================================="
 echo ""
-echo "  Values applied"
-echo "  -----------------------------------------"
-echo "   Dolphin.ini"
-echo "     Overclock          : 1.50"
-echo "     TimingVariance     : 20"
-echo "     EnableIdleSkipping : False"
-echo "     SyncGPU            : True"
-echo "   GFX.ini"
-echo "     InternalResolution : 3"
-echo "     DisableFog         : False"
-echo "     FastDepthResult    : False"
-echo "     EFBToTextureEnable : False"
-echo "     SkipEFBCopyToRam   : False"
-echo "     DeferEFBCopies     : False"
-echo ""
 
-if [ -f "$SRC/Dolphin.ini" ] && [ -f "$SRC/GFX.ini" ]; then
-    cp "$SRC/Dolphin.ini" "$CFG/Dolphin.ini"
-    cp "$SRC/GFX.ini"     "$CFG/GFX.ini"
-    echo "  [OK] Dolphin.ini and GFX.ini updated"
-else
-    echo "  [ERR] Source files missing in $SRC"
-fi
+rt_snapshot
+rt_log_event "ADJUSTER" "$LABEL" "snapshot saved"
+
+apply_ini() {
+    local file="$1" section="$2" key="$3" value="$4" ref="$5"
+    [ -f "$file" ] || return 1
+    local old
+    old=$(rt_get_ini "$file" "$key")
+    rt_set_ini "$file" "$section" "$key" "$value"
+    rt_log_change "ADJUSTER" "$LABEL" "$ref" "$key" "$old" "$value"
+}
+
+for F in "Dolphin.ini.$PROFILE" "Dolphin.ini"; do
+    FILE="$CFG/$F"
+    [ -f "$FILE" ] || { echo "  [SKIP] $F"; continue; }
+    apply_ini "$FILE" "Core" "Overclock"          "1.50"   "$F"
+    apply_ini "$FILE" "Core" "TimingVariance"     "20"   "$F"
+    apply_ini "$FILE" "Core" "EnableIdleSkipping" "False" "$F"
+    apply_ini "$FILE" "Core" "SyncGPU"            "True" "$F"
+    echo "  [OK]   $F"
+done
+
+for F in "GFX.ini.$PROFILE" "GFX.ini"; do
+    FILE="$CFG/$F"
+    [ -f "$FILE" ] || { echo "  [SKIP] $F"; continue; }
+    apply_ini "$FILE" "Settings" "InternalResolution" "3"   "$F"
+    apply_ini "$FILE" "Hacks"    "DisableFog"         "False"  "$F"
+    apply_ini "$FILE" "Hacks"    "FastDepthCalc"      "False"   "$F"
+    apply_ini "$FILE" "Hacks"    "EFBToTextureEnable" "False" "$F"
+    apply_ini "$FILE" "Hacks"    "SkipEFBCopyToRam"   "False" "$F"
+    apply_ini "$FILE" "Hacks"    "DeferEFBCopies"     "False"  "$F"
+    echo "  [OK]   $F"
+done
 
 echo ""
-echo "  Expected performance"
-echo "  -----------------------------------------"
-echo "   Lowest FPS in range - highest accuracy. Last resort."
-echo ""
-  Compatibility tips
-  -----------------------------------------
-   - Use when a game crashes, hangs, or glitches
-   - MIN / -2 for "broken" titles
-   - standard is the safe default
-   - Moving up frees FPS at cost of accuracy
-echo ""
-echo "  Sync Filesystem"
+rt_log_event "ADJUSTER" "$LABEL" "completed"
+rt_write_state "$LABEL"
+
 sync
-
 echo "All Done!"
 sleep 5
-
 FRONTEND start task
 exit 0

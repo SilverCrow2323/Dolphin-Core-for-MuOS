@@ -1,49 +1,53 @@
 #!/bin/sh
-# HELP: Toggle FPS | Mostra il contatore FPS a schermo | Funzionalità: FPS counter overlay | Descrizione: Visualizza in tempo reale i frame al secondo renderizzati. Utile per valutare le prestazioni e capire se il gioco gira a 60, 30 o meno. | ON: Il contatore appare nell'angolo dello schermo | OFF (Default): Overlay non attivo | Risorse: Impatto minimo, qualche frame di CPU | Downside: Nessuno rilevante | MINORU's Quick Lesson: Se non lo tieni su almeno una volta per gioco, non saprai mai se stai giocando a 12 FPS e incolpando la ROM sbagliata. | MINORU's Quick Lesson #001
+# HELP: Toggle FPS | State: OFF
 # ICON: theme
-#
-# ============================================================
-#  [Bash Arsenal | Rt:CORE Sector]
-# ============================================================
-#
-#  - Toggle : FPS
-#     Funzionalità: FPS counter overlay | Descrizione: Visualizza in tempo reale i frame al secondo renderizzati. Utile per valutare le prestazioni e capire se il gioco gira a 60, 30 o meno. | ON: Il contatore appare nell'angolo dello schermo | OFF (Default): Overlay non attivo | Risorse: Impatto minimo, qualche frame di CPU | Downside: Nessuno rilevante | MINORU's Quick Lesson: Se non lo tieni su almeno una volta per gioco, non saprai mai se stai giocando a 12 FPS e incolpando la ROM sbagliata.
-#
-#  - Stato  : OFF
-#
 . /opt/muos/script/var/func.sh
+. "/opt/muos/share/task/Dolphin Rt:Core/04. Log & Reports/rt_log.sh"
 
 FRONTEND stop
+rt_log_init
 
-EMU="/opt/muos/share/emulator/dolphin"
-CFG="$EMU/Config"
-SRC="$EMU/rtdata/pocket_workshop/settings/FPS/FPS OFF.ini"
+CFG="/opt/muos/share/emulator/dolphin/Config"
+FILES="Dolphin.ini Dolphin.ini.compatibility Dolphin.ini.performance Dolphin.ini.rintromping GFX.ini GFX.ini.compatibility GFX.ini.performance GFX.ini.rintromping"
+KEY="ShowFPS"
+VALUE="False"
+SECTION="Settings"
+LABEL="Toggle FPS OFF"
 
+clear
 echo "==============================================="
 echo "  Dolphin Rt:Core v11.0.0 - Toggle"
 echo "==============================================="
 echo "  Toggle : FPS"
 echo "  State  : OFF"
-echo "  Effect : Frames-per-second counter on screen"
 echo "==============================================="
 echo ""
 
-if [ -f "$SRC" ]; then
-    cp "$SRC" "$CFG/FPS.ini"
-    echo "  [OK] FPS.ini updated"
-    echo ""
-    echo "  Current state in Config:"
-    grep "^State *=" "$CFG/FPS.ini" | sed 's/^/    /'
-else
-    echo "  [ERR] Source file missing in $SRC"
-fi
+OLD=$(rt_get_ini "$CFG/GFX.ini" "$KEY")
+rt_snapshot
+
+CHANGED=0
+SKIPPED=0
+
+for F in $FILES; do
+    FILE="$CFG/$F"
+    [ -f "$FILE" ] || { SKIPPED=$((SKIPPED+1)); continue; }
+    rt_set_ini "$FILE" "$SECTION" "$KEY" "$VALUE"
+    echo "  [OK]   $F"
+    CHANGED=$((CHANGED+1))
+done
 
 echo ""
-echo "  Sync Filesystem"
-sync
+echo "  Files updated: $CHANGED"
+echo "  Files skipped: $SKIPPED"
+echo ""
 
+rt_log_change "TOGGLE" "$LABEL" "all INIs" "$KEY" "$OLD" "$VALUE"
+rt_log_event  "TOGGLE" "$LABEL" "updated $CHANGED files, skipped $SKIPPED"
+rt_write_state "$LABEL"
+
+sync
 echo "All Done!"
 sleep 5
-
 FRONTEND start task
 exit 0

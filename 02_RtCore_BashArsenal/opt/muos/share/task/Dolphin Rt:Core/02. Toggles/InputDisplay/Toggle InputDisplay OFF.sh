@@ -1,49 +1,53 @@
 #!/bin/sh
-# HELP: Toggle InputDisplay | Mostra l'input del controller a schermo | Funzionalità: Controller input overlay | Descrizione: Visualizza i tasti premuti e le direzioni dello stick in tempo reale. | ON: Input visibile | OFF (Default): Input non visibile | Risorse: Trascurabili | Downside: Nessuno | MINORU's Quick Lesson: Utile per verificare che il controller funzioni. O per fare screenshot divertenti. | MINORU's Quick Lesson #001
+# HELP: Toggle InputDisplay | State: OFF
 # ICON: theme
-#
-# ============================================================
-#  [Bash Arsenal | Rt:CORE Sector]
-# ============================================================
-#
-#  - Toggle : InputDisplay
-#     Funzionalità: Controller input overlay | Descrizione: Visualizza i tasti premuti e le direzioni dello stick in tempo reale. | ON: Input visibile | OFF (Default): Input non visibile | Risorse: Trascurabili | Downside: Nessuno | MINORU's Quick Lesson: Utile per verificare che il controller funzioni. O per fare screenshot divertenti.
-#
-#  - Stato  : OFF
-#
 . /opt/muos/script/var/func.sh
+. "/opt/muos/share/task/Dolphin Rt:Core/04. Log & Reports/rt_log.sh"
 
 FRONTEND stop
+rt_log_init
 
-EMU="/opt/muos/share/emulator/dolphin"
-CFG="$EMU/Config"
-SRC="$EMU/rtdata/pocket_workshop/settings/InputDisplay/InputDisplay OFF.ini"
+CFG="/opt/muos/share/emulator/dolphin/Config"
+FILES="Dolphin.ini Dolphin.ini.compatibility Dolphin.ini.performance Dolphin.ini.rintromping GFX.ini GFX.ini.compatibility GFX.ini.performance GFX.ini.rintromping"
+KEY="ShowInputDisplay"
+VALUE="False"
+SECTION="Movie"
+LABEL="Toggle InputDisplay OFF"
 
+clear
 echo "==============================================="
 echo "  Dolphin Rt:Core v11.0.0 - Toggle"
 echo "==============================================="
 echo "  Toggle : InputDisplay"
 echo "  State  : OFF"
-echo "  Effect : Controller input overlay"
 echo "==============================================="
 echo ""
 
-if [ -f "$SRC" ]; then
-    cp "$SRC" "$CFG/InputDisplay.ini"
-    echo "  [OK] InputDisplay.ini updated"
-    echo ""
-    echo "  Current state in Config:"
-    grep "^State *=" "$CFG/InputDisplay.ini" | sed 's/^/    /'
-else
-    echo "  [ERR] Source file missing in $SRC"
-fi
+OLD=$(rt_get_ini "$CFG/GFX.ini" "$KEY")
+rt_snapshot
+
+CHANGED=0
+SKIPPED=0
+
+for F in $FILES; do
+    FILE="$CFG/$F"
+    [ -f "$FILE" ] || { SKIPPED=$((SKIPPED+1)); continue; }
+    rt_set_ini "$FILE" "$SECTION" "$KEY" "$VALUE"
+    echo "  [OK]   $F"
+    CHANGED=$((CHANGED+1))
+done
 
 echo ""
-echo "  Sync Filesystem"
-sync
+echo "  Files updated: $CHANGED"
+echo "  Files skipped: $SKIPPED"
+echo ""
 
+rt_log_change "TOGGLE" "$LABEL" "all INIs" "$KEY" "$OLD" "$VALUE"
+rt_log_event  "TOGGLE" "$LABEL" "updated $CHANGED files, skipped $SKIPPED"
+rt_write_state "$LABEL"
+
+sync
 echo "All Done!"
 sleep 5
-
 FRONTEND start task
 exit 0

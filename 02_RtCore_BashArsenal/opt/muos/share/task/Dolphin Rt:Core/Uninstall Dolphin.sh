@@ -1,19 +1,14 @@
 #!/bin/sh
-# HELP: Uninstall Dolphin | Funzionalità: Rimuove l'intera installazione | Descrizione: Cancella /opt/muos/share/emulator/dolphin/ ricorsivamente. | Risorse: Nessuna | Downside: Perdi tutto | MINORU's Quick Lesson #001: Se lo lanci, Dolphin sparisce. Per sempre.
+# HELP: Uninstall Dolphin | Removes Dolphin, assignments, task folder, launcher and gptk. | Resources: None | Downside: You lose everything. | MINORU's Quick Lesson #001: If you run this, Dolphin disappears. Forever.
 # ICON: diagnostic
 #
 # ============================================================
 #  [Bash Arsenal | Rt:CORE Sector]
 # ============================================================
 #
-#  - Tool : Uninstall Dolphin
-#    Uninstall Dolphin | Funzionalità: Rimuove l'intera installazione | Descrizione: Cancella /opt/muos/share/emulator/dolphin/ ricorsivamente. | Risorse: Nessuna | Downside: Perdi tutto | MINORU's Quick Lesson #001: Se lo lanci, Dolphin sparisce. Per sempre.
-#
 . /opt/muos/script/var/func.sh
 
 FRONTEND stop
-
-TARGET="/opt/muos/share/emulator/dolphin"
 
 clear
 
@@ -21,90 +16,88 @@ echo "==============================================="
 echo "  Dolphin Rt:Core v11.0.0 'Bash Arsenal'"
 echo "  SPDW Factory Lab / sirpips"
 echo "==============================================="
-echo "  Eradicate The Dolpheen"
+echo "  Eradicate The Dolphin"
 echo "==============================================="
 echo ""
 echo "  WARNING - DESTRUCTIVE OPERATION"
 echo "  -------------------------------"
-echo "  The following folder will be DELETED:"
+echo "  Directories to delete:"
+echo "    /opt/muos/share/emulator/dolphin"
+echo "    /opt/muos/share/info/assign/Nintendo Gamecube"
+echo "    /opt/muos/share/info/assign/Nintendo GameCube"
+echo "    /opt/muos/share/info/assign/Nintendo Wii"
+echo "    /opt/muos/share/task/Dolphin Rt:Core"
+echo "    /opt/muos/share/task/Dolphin RtCore"
 echo ""
-echo "    $TARGET"
-echo ""
-echo "  This includes:"
-echo "    - dolphin binary"
-echo "    - Config/        (all profiles and toggles)"
-echo "    - rtdata/        (presets, logs, workshop, settings)"
-echo "    - GameSettings/  (per-game overrides)"
-echo "    - GC/  Wii/      (memory cards, NAND, saves)"
-echo "    - every other file and folder inside"
+echo "  Files to delete:"
+echo "    /opt/muos/script/launch/ext-dolphin.sh"
+echo "    /opt/muos/share/emulator/gptokeyb/ext-dolphin-gptk"
+echo "    /opt/muos/share/emulator/gptokeyb/ext-dolphin.gptk"
 echo ""
 echo "  This action CANNOT be undone."
 echo ""
-echo "==============================================="
-echo ""
-echo "  Type ERADICATE (uppercase) to confirm,"
-echo "  or press ENTER to abort:"
-echo ""
-printf "  > "
-read -r CONFIRM
-
+echo "  Auto-confirming ERADICATE..."
 echo ""
 
-if [ "$CONFIRM" != "ERADICATE" ]; then
-    echo "  [ABORT] Confirmation failed."
-    echo "  Nothing was removed."
-    echo ""
-    echo "  Closing in 5 seconds..."
-    sleep 5
-    FRONTEND start task
-    exit 0
-fi
+REMOVED_DIRS=0
+TOTAL_ENTRIES=0
+REMOVED_FILES=0
 
-if [ ! -d "$TARGET" ]; then
-    echo "  [INFO] Target folder does not exist:"
-    echo "         $TARGET"
-    echo "  Nothing to remove."
-    echo ""
-    echo "  Closing in 5 seconds..."
-    sleep 5
-    FRONTEND start task
-    exit 0
-fi
+remove_dir() {
+    d="$1"
+    if [ -d "$d" ]; then
+        count=$(find "$d" 2>/dev/null | wc -l)
+        rm -rf "$d"
+        if [ ! -d "$d" ]; then
+            echo "  [OK] Removed directory: $d ($count entries)"
+            REMOVED_DIRS=$((REMOVED_DIRS + 1))
+            TOTAL_ENTRIES=$((TOTAL_ENTRIES + count))
+        else
+            echo "  [ERR] Failed to remove directory: $d"
+        fi
+    else
+        echo "  [INFO] Directory not found: $d"
+    fi
+}
 
-echo "  Removing: $TARGET"
-echo ""
+remove_file() {
+    f="$1"
+    if [ -e "$f" ]; then
+        rm -f "$f"
+        if [ ! -e "$f" ]; then
+            echo "  [OK] Removed file: $f"
+            REMOVED_FILES=$((REMOVED_FILES + 1))
+        else
+            echo "  [ERR] Failed to remove file: $f"
+        fi
+    else
+        echo "  [INFO] File not found: $f"
+    fi
+}
 
-# Count items for the summary
-COUNT=$(find "$TARGET" 2>/dev/null | wc -l)
+remove_dir  "/opt/muos/share/emulator/dolphin"
+remove_dir  "/opt/muos/share/info/assign/Nintendo Gamecube"
+remove_dir  "/opt/muos/share/info/assign/Nintendo GameCube"
+remove_dir  "/opt/muos/share/info/assign/Nintendo Wii"
+remove_dir  "/opt/muos/share/task/Dolphin Rt:Core"
+remove_dir  "/opt/muos/share/task/Dolphin RtCore"
 
-rm -rf "$TARGET"
-
-if [ -d "$TARGET" ]; then
-    echo "  [ERR] Removal failed - folder still present."
-    echo ""
-    echo "  Check permissions or mount status."
-    echo ""
-    echo "  Closing in 5 seconds..."
-    sleep 5
-    FRONTEND start task
-    exit 1
-else
-    echo "  [OK]  Removed successfully."
-fi
+remove_file "/opt/muos/script/launch/ext-dolphin.sh"
+remove_file "/opt/muos/share/emulator/gptokeyb/ext-dolphin-gptk"
+remove_file "/opt/muos/share/emulator/gptokeyb/ext-dolphin.gptk"
 
 echo ""
 echo "==============================================="
 echo "  Summary"
 echo "-----------------------------------------------"
-echo "  Path    : $TARGET"
-echo "  Entries : $COUNT"
-echo "  Status  : REMOVED"
+echo "  Directories removed : $REMOVED_DIRS"
+echo "  Total entries       : $TOTAL_ENTRIES"
+echo "  Files removed       : $REMOVED_FILES"
+echo "  Status              : ERADICATED"
 echo "==============================================="
 echo ""
-
 echo "  Sync Filesystem"
 sync
-
 echo ""
 echo "All Done."
 echo ""
@@ -114,8 +107,6 @@ echo ""
 echo "==============================================="
 echo "  Closing in 5 seconds..."
 echo "==============================================="
-
 sleep 5
-
 FRONTEND start task
 exit 0

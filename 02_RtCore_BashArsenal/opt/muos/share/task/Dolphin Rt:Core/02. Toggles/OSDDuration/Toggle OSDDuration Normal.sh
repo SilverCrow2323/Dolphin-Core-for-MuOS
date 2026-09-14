@@ -1,44 +1,53 @@
 #!/bin/sh
-# HELP: Toggle OSDDuration | Durata dei messaggi OSD (Short/Normal/Long) | Funzionalità: OSD message duration | Descrizione: Controlla per quanto tempo i messaggi on-screen restano visibili. Short=1s, Normal=2.5s, Long=5s. | ON: Durata selezionata attiva | OFF (Default): Normal (2.5s) | Risorse: Nessuna | Downside: Nessuno | MINORU's Quick Lesson: Short se sei impaziente. Long se hai il riflesso lento. Normal se sei una persona normale. | MINORU's Quick Lesson #001
+# HELP: Toggle OSDDuration | State: Normal
 # ICON: theme
-#
-# ============================================================
-#  [Bash Arsenal | Rt:CORE Sector]
-# ============================================================
-#
-#  - Toggle : OSDDuration
-#     Funzionalità: OSD message duration | Descrizione: Controlla per quanto tempo i messaggi on-screen restano visibili. Short=1s, Normal=2.5s, Long=5s. | ON: Durata selezionata attiva | OFF (Default): Normal (2.5s) | Risorse: Nessuna | Downside: Nessuno | MINORU's Quick Lesson: Short se sei impaziente. Long se hai il riflesso lento. Normal se sei una persona normale.
-#
-#  - Stato  : Normal
-#
 . /opt/muos/script/var/func.sh
+. "/opt/muos/share/task/Dolphin Rt:Core/04. Log & Reports/rt_log.sh"
 
 FRONTEND stop
+rt_log_init
 
-EMU="/opt/muos/share/emulator/dolphin"
-CFG="$EMU/Config"
-SRC="$EMU/rtdata/pocket_workshop/settings/OSDDuration/OSDDuration Normal.ini"
+CFG="/opt/muos/share/emulator/dolphin/Config"
+FILES="Dolphin.ini Dolphin.ini.compatibility Dolphin.ini.performance Dolphin.ini.rintromping GFX.ini GFX.ini.compatibility GFX.ini.performance GFX.ini.rintromping"
+KEY="OSDDuration"
+VALUE="2500"
+SECTION="Interface"
+LABEL="Toggle OSDDuration Normal"
 
+clear
 echo "==============================================="
-echo "  Dolphin Rt:Core v11.0.0 - OSD Duration"
+echo "  Dolphin Rt:Core v11.0.0 - Toggle"
 echo "==============================================="
-echo "  State : Normal"
+echo "  Toggle : OSDDuration"
+echo "  State  : Normal"
 echo "==============================================="
 echo ""
 
-if [ -f "$SRC" ]; then
-    cp "$SRC" "$CFG/OSDDuration.ini"
-    echo "  [OK] OSDDuration.ini updated"
-else
-    echo "  [ERR] Source file missing in $SRC"
-fi
+OLD=$(rt_get_ini "$CFG/GFX.ini" "$KEY")
+rt_snapshot
+
+CHANGED=0
+SKIPPED=0
+
+for F in $FILES; do
+    FILE="$CFG/$F"
+    [ -f "$FILE" ] || { SKIPPED=$((SKIPPED+1)); continue; }
+    rt_set_ini "$FILE" "$SECTION" "$KEY" "$VALUE"
+    echo "  [OK]   $F"
+    CHANGED=$((CHANGED+1))
+done
 
 echo ""
-echo "  Sync Filesystem"
+echo "  Files updated: $CHANGED"
+echo "  Files skipped: $SKIPPED"
+echo ""
+
+rt_log_change "TOGGLE" "$LABEL" "all INIs" "$KEY" "$OLD" "$VALUE"
+rt_log_event  "TOGGLE" "$LABEL" "updated $CHANGED files, skipped $SKIPPED"
+rt_write_state "$LABEL"
+
 sync
-
 echo "All Done!"
 sleep 5
-
 FRONTEND start task
 exit 0
