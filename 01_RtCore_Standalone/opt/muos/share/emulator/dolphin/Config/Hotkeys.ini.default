@@ -1,0 +1,24 @@
+[Rt:Data]
+CoreVersion = 11.000
+RtProfile = Settings
+ConfigFile = Hotkeys
+State = ON
+
+[Hotkeys]
+Device = SDL/0/muOS-Keys
+
+# ----- Save / Load State -----
+SaveState = Shift+F1
+LoadState = F1
+
+SaveState2 = Shift+F2
+LoadState2 = F2
+
+SaveState3 = Shift+F3
+LoadState3 = F3
+
+# ----- STOP SESSION -----
+Reset = Shift+F5
+Toggle Pause = F10
+Exit = Shift+F12
+# Screenshot = F9

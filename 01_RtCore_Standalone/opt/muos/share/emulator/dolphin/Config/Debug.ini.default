@@ -1,0 +1,12 @@
+[Rt:Data]
+CoreVersion = 11.000
+RtProfile = Settings
+ConfigFile = Debug
+State = OFF
+
+[Debug]
+Enable = False
+ShowOnStart = False
+Verbose = False
+BreakOnExceptions = False
+ShowStackTraces = False

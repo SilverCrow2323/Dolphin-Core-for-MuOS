@@ -1,0 +1,19 @@
+[Core]
+CPUThread = True
+CPUCore = 1
+DSPHLE = True
+EnableIdleSkipping = False
+JITFollowBranch = True
+Fastmem = True
+MMU = False
+AccurateNaNs = False
+SyncGPU = True
+TimingVariance = 60
+FastDiscSpeed = True
+OverclockEnable = False
+Overclock = 1.0
+GFXBackend = OGL
+
+[DSP]
+Backend = ALSA
+DPL2Decoder = False
