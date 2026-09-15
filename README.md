@@ -17,7 +17,7 @@
 
 <br><br>
 
-*One emulator. Three flavors. Zero corporate bullshit.*
+*One emulator. Three flavors. Sbrobs.*
 
 </div>
 
@@ -144,57 +144,57 @@ Dolphin reads `GameSettings/<GAMEID>.ini` per game. If a title needs `Overclock 
 
 Every edition uses the same base layout under `/opt/muos/share/emulator/dolphin/`:
 
-\`\`\`text
-dolphin/
-├── Config/                     # all .ini configuration files
-│   ├── Dolphin.ini             # active emulation config
-│   ├── Dolphin.ini.compatibility
-│   ├── Dolphin.ini.performance
-│   ├── Dolphin.ini.sweetspot
-│   ├── GFX.ini                 # active graphics config
-│   ├── GFX.ini.compatibility
-│   ├── GFX.ini.performance
-│   ├── GFX.ini.sweetspot
-│   ├── GCPadNew.ini
-│   ├── WiimoteNew.ini
-│   ├── Hotkeys.ini
-│   └── Logger.ini
-├── GameSettings/               # per-game overrides (auto-loaded)
-│   └── <GAMEID>.ini
-├── GC/                         # GameCube memory cards and saves
-├── Wii/                        # Wii NAND and saves
-├── Load/
-│   └── GraphicMods/            # Graphics Mods (bloom/DOF/HUD removal)
-├── dolphin                     # emulator binary
-└── [rtdata/]                   # (only in Editions 02 and 03)
-\`\`\`
+## 🗂️ Folder Structure (installed)
 
-**Editions 02 and 03** add:
-
-\`\`\`text
-rtdata/
-├── logs/                       # session logs, reports, overview
-├── pocket_workshop/            # 21 profile presets (3 × 7 levels)
-├── graphic_mods/               # Graphics Mods sources
-├── profiles_preset/            # factory reset snapshots
-└── rt_keyinject.py, rt_joywatch.py
-\`\`\`
-
-And a new **Task Toolkit** entry under muOS:
-
-\`\`\`text
-Dolphin Rt:Core/
-├── Profiles/                   # apply tuned profiles
-├── Toggles/                    # 17 runtime toggles
-├── Graphic Mods/               # install/remove Graphics Mods
-└── View Status.sh, View Logs.sh, Restore Profiles.sh, Uninstall Dolphin.sh
-\`\`\`
+```text
+/opt/
+└── muos/
+    ├── script/
+    │   └── launch/
+    │       └── ext-dolphin.sh                 # 📜 main launch script
+    └── share/
+        ├── emulator/
+        │   └── dolphin/
+        │       ├── Config/                    # ⚙️ active INI files
+        │       │   ├── Dolphin.ini
+        │       │   ├── GFX.ini
+        │       │   ├── GCPadNew.ini
+        │       │   ├── WiimoteNew.ini
+        │       │   ├── Hotkeys.ini
+        │       │   └── ... (profile variants)
+        │       ├── GameSettings/              # 🎯 per-game overrides (optional)
+        │       ├── Load/
+        │       │   └── GraphicMods/           # 🎨 pre-installed graphic mods
+        │       ├── Sys/
+        │       └── Wii/
+        └── info/
+            └── assign/
+                ├── Nintendo Gamecube/         # 🧩 core assignment files
+                │   ├── dolphin - blackscreenfix - upright.ini
+                │   ├── dolphin - compatibility - upright.ini
+                │   ├── dolphin - performance - upright.ini
+                │   ├── dolphin - rintromping - upright.ini
+                │   ├── dolphin - speedhack - upright.ini
+                │   ├── dolphin - sweetspot - upright.ini
+                │   └── global.ini
+                └── Nintendo Wii/              # 🧩 core assignment files
+                    ├── dolphin - blackscreenfix - upright.ini
+                    ├── dolphin - compatibility - sideways.ini
+                    ├── dolphin - compatibility - upright.ini
+                    ├── dolphin - performance - sideways.ini
+                    ├── dolphin - performance - upright.ini
+                    ├── dolphin - rintromping - sideways.ini
+                    ├── dolphin - rintromping - upright.ini
+                    ├── dolphin - speedhack - upright.ini
+                    ├── dolphin - sweetspot - upright.ini
+                    └── global.ini
+```
 
 ---
 
 ## 🎮 The Three Flavors
 
-### 01 — Rt:Core 'Standalone' ✅
+### 01 — Rt:Core 'Comfort Zone' ✅
 
 > **The core, and nothing else.**
 
