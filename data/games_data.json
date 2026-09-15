@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_update": "2026-09-14",
+  "last_update": "2026-09-16",
   "games": [
     {
       "game_info": {
@@ -1573,6 +1573,48 @@
           "cover_art": "",
           "custom_settings": [],
           "attachments": []
+        },
+        {
+          "game_info": {
+            "game_id": "GCNP7D",
+            "system": "GC",
+            "game": "Crash Nitro Kart",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 5,
+            "fps": "30-50",
+            "boot": "YES",
+            "playable": "YES",
+            "fps_min": 30,
+            "fps_max": 50
+          },
+          "test_details": {
+            "rtcore_version": "v11.0.0 (prerelease)",
+            "core_profile": "Speed Hack",
+            "considerations": "Simply perfect, applying a light HD texture pack makes it look even better visually. No lag, no FPS drops, simply perfect."
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "",
+          "custom_settings": [
+            {
+              "set_type": "Texture",
+              "set_name": "Crash Nitro Kart HD Texture Fixes",
+              "set_filename": "CNK Texture Fixes.zip",
+              "set_url": "https://mega.nz/file/D8gChAYY#mvymsLDE-J-HCDIrVEIsXARE8VqyFpELFX3IF8cKMsQ"
+            }
+          ],
+          "attachments": [
+            {
+              "media_type": "link",
+              "media_title": "Texture Pack source",
+              "media_url": "https://forums.dolphin-emu.org/Thread-crash-nitro-kart-hd-texture-fixes"
+            }
+          ]
         }
       ]
     },
@@ -1807,6 +1849,64 @@
           "cover_art": "",
           "custom_settings": [],
           "attachments": []
+        },
+        {
+          "game_info": {
+            "game_id": "G9RP7D",
+            "system": "GC",
+            "game": "Crash Tag Team Racing",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 2,
+            "fps": "20-48",
+            "boot": "YES",
+            "playable": "NO",
+            "fps_min": 20,
+            "fps_max": 48
+          },
+          "test_details": {
+            "rtcore_version": "v10.5.3",
+            "core_profile": "Speed Hack. Default",
+            "considerations": "To be honest, the platforming sections are perfectly playable and even enjoyable, would rate 5*. However, in the central city hub and during races the lagging gets really heavy, dropping FPS down to 20-25"
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "Anbernic RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "",
+          "custom_settings": [
+            {
+              "set_type": "Texture",
+              "set_name": "Crash Tag Team Racing Texture Fixes.rar",
+              "set_filename": "Crash Tag Team Racing Texture Fixes.rar",
+              "set_url": "https://mega.nz/file/DsBAFa6Q#Nhe1xY8GBDLng7Ht4aP_jX_0GPJ4BSIaaZouc-a5Tdo",
+              "set_note": "Test with a somewhat expected result, but... for the sake of science this and more!! HD textures, pack under 100MB. Even with any ultra super saiyan god super saiyan profile, the game cannot avoid being witness to FPS that tend heavily below 10. Reporting it here for documentation, however I do not consider it appropriate to add a specific test for this experiment."
+            }
+          ],
+          "attachments": [
+            {
+              "media_type": "link",
+              "media_title": "Texture Pack source",
+              "media_url": "https://forums.dolphin-emu.org/Thread-crash-tag-team-racing-texture-fixes"
+            },
+            {
+              "media_type": "text",
+              "media_title": "G9RP7D_AR_Cheats.txt",
+              "media_url": "https://docs.google.com/document/d/1sfSoDWaI3AyZiY8wi6ZUeb9jGygx8rbj3qatvw5OVKE/edit?usp=sharing"
+            },
+            {
+              "media_type": "link",
+              "media_title": "CTTR XBOX CONTROLS INVERTED.zip",
+              "media_url": "https://forums.dolphin-emu.org/attachment.php?aid=16178"
+            },
+            {
+              "media_type": "link",
+              "media_title": "CTTR PS4 CONTROLS.zip",
+              "media_url": "https://forums.dolphin-emu.org/attachment.php?aid=16179"
+            }
+          ]
         }
       ]
     },
@@ -1914,6 +2014,35 @@
           "cover_art": "",
           "custom_settings": [],
           "attachments": []
+        },
+        {
+          "game_info": {
+            "game_id": "GD7PB2",
+            "system": "GC",
+            "game": "Dragon Ball Z Budokai",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 2,
+            "fps": "18-25",
+            "boot": "YES",
+            "playable": "NO",
+            "fps_min": 18,
+            "fps_max": 25
+          },
+          "test_details": {
+            "rtcore_version": "v9 Goose or prior",
+            "core_profile": "SpeedHack",
+            "considerations": "too slow to be anykind of enjoyable"
+          },
+          "test_environment": {
+            "tester": "SkullXavier",
+            "device": "Unknown Device",
+            "muos_version": ""
+          },
+          "cover_art": "",
+          "custom_settings": [],
+          "attachments": []
         }
       ]
     },
@@ -1944,45 +2073,6 @@
             "rtcore_version": "v9 Goose or prior",
             "core_profile": "SpeedHack",
             "considerations": "Runs almost perfectly"
-          },
-          "test_environment": {
-            "tester": "SkullXavier",
-            "device": "Unknown Device",
-            "muos_version": ""
-          },
-          "cover_art": "",
-          "custom_settings": [],
-          "attachments": []
-        }
-      ]
-    },
-    {
-      "game_info": {
-        "game_id": "GD7PB2",
-        "system": "GC",
-        "game": "Dragon Ball Z Budokai",
-        "region": "PAL"
-      },
-      "entries": [
-        {
-          "game_info": {
-            "game_id": "GD7PB2",
-            "system": "GC",
-            "game": "Dragon Ball Z Budokai",
-            "region": "PAL"
-          },
-          "test_review": {
-            "rating": 2,
-            "fps": "18-25",
-            "boot": "YES",
-            "playable": "NO",
-            "fps_min": 18,
-            "fps_max": 25
-          },
-          "test_details": {
-            "rtcore_version": "v9 Goose or prior",
-            "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -3006,17 +3096,7 @@
           "cover_art": "",
           "custom_settings": [],
           "attachments": []
-        }
-      ]
-    },
-    {
-      "game_info": {
-        "game_id": "GKYP01",
-        "system": "GC",
-        "game": "Kirby Air Ride",
-        "region": "PAL"
-      },
-      "entries": [
+        },
         {
           "game_info": {
             "game_id": "GKYP01",
@@ -3123,17 +3203,7 @@
           "cover_art": "",
           "custom_settings": [],
           "attachments": []
-        }
-      ]
-    },
-    {
-      "game_info": {
-        "game_id": "GKUE9G",
-        "system": "GC",
-        "game": "Scaler",
-        "region": "NTSC"
-      },
-      "entries": [
+        },
         {
           "game_info": {
             "game_id": "GKUE9G",
@@ -3533,6 +3603,35 @@
             "rtcore_version": "v10.5-124",
             "core_profile": "Performance",
             "considerations": "The game boots but runs at its worst. Also used speedhacks and other performance settings but the result is basically the same."
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "",
+          "custom_settings": [],
+          "attachments": []
+        },
+        {
+          "game_info": {
+            "game_id": "GM8P01",
+            "system": "GC",
+            "game": "Metroid Prime",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 2,
+            "fps": "9-15",
+            "boot": "YES",
+            "playable": "NO",
+            "fps_min": 9,
+            "fps_max": 15
+          },
+          "test_details": {
+            "rtcore_version": "v10.5-124",
+            "core_profile": "Performance",
+            "considerations": "The game boots but runs at its worst. Also used sppedhacks and other performance settings but the result is basically the same."
           },
           "test_environment": {
             "tester": "sirpips",
@@ -3967,6 +4066,35 @@
             "tester": "SkullXavier",
             "device": "Unknown Device",
             "muos_version": ""
+          },
+          "cover_art": "",
+          "custom_settings": [],
+          "attachments": []
+        },
+        {
+          "game_info": {
+            "game_id": "GNUPDA",
+            "system": "GC",
+            "game": "Naruto: Clash of Ninja - European Version",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 2,
+            "fps": "10-45",
+            "boot": "YES",
+            "playable": "NO",
+            "fps_min": 10,
+            "fps_max": 45
+          },
+          "test_details": {
+            "rtcore_version": "v11.0.00 (prerelease)",
+            "core_profile": "All of them",
+            "considerations": "Can't run properly. Only with Black Screen Fix and Commpatibility profiles is able to go past the bootanim or the menu ui."
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
           },
           "cover_art": "",
           "custom_settings": [],
@@ -7013,6 +7141,35 @@
           "cover_art": "",
           "custom_settings": [],
           "attachments": []
+        },
+        {
+          "game_info": {
+            "game_id": "GQSPAF",
+            "system": "GC",
+            "game": "Tales of Symphonia",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 2,
+            "fps": "14-50",
+            "boot": "YES",
+            "playable": "NO",
+            "fps_min": 14,
+            "fps_max": 50
+          },
+          "test_details": {
+            "rtcore_version": "v11.0.00 (prerelease)",
+            "core_profile": "Compatibility",
+            "considerations": "[Disc 1] Only with the Compatibility profile does the game manage to boot past the \"Licensed by Nintendo\" screen shortly after startup.\nUnfortunately, this doesn't resolve the low frame rate, which stays locked at around 30 FPS during gameplay. This causes lag that, while not extreme, is still quite annoying. Ultimately, a game like this is unplayable with an issue like this.[Disc 1] Only with the Compatibility profile the game can go past the \"Licensed by Nintendo\" screen shortly after the boot.\nHowever the average FPS during the gaming session is stable on 20-30 and way too laggy to be enjoyable."
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "https://retrogametalk.com/repo/wp-content/uploads/2021/06/17752_front.jpg",
+          "custom_settings": [],
+          "attachments": []
         }
       ]
     },
@@ -7204,6 +7361,35 @@
             "tester": "eleot",
             "device": "Unknown Device",
             "muos_version": ""
+          },
+          "cover_art": "",
+          "custom_settings": [],
+          "attachments": []
+        },
+        {
+          "game_info": {
+            "game_id": "GKNEB2",
+            "system": "GC",
+            "game": "Ultimate Muscle: Legends vs. New Generation",
+            "region": "NTSC"
+          },
+          "test_review": {
+            "rating": 0,
+            "fps": "",
+            "boot": "NO",
+            "playable": "NO",
+            "fps_min": 0,
+            "fps_max": 0
+          },
+          "test_details": {
+            "rtcore_version": "v11.0.00 (prerelease)",
+            "core_profile": "All of them",
+            "considerations": "Doesn't boot."
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
           },
           "cover_art": "",
           "custom_settings": [],
@@ -8155,45 +8341,6 @@
     },
     {
       "game_info": {
-        "game_id": "GM8P01",
-        "system": "GC",
-        "game": "Metroid Prime",
-        "region": "PAL"
-      },
-      "entries": [
-        {
-          "game_info": {
-            "game_id": "GM8P01",
-            "system": "GC",
-            "game": "Metroid Prime",
-            "region": "PAL"
-          },
-          "test_review": {
-            "rating": 2,
-            "fps": "9-15",
-            "boot": "YES",
-            "playable": "NO",
-            "fps_min": 9,
-            "fps_max": 15
-          },
-          "test_details": {
-            "rtcore_version": "v10.5-124",
-            "core_profile": "Performance",
-            "considerations": "The game boots but runs at its worst. Also used sppedhacks and other performance settings but the result is basically the same."
-          },
-          "test_environment": {
-            "tester": "sirpips",
-            "device": "RG35XX H",
-            "muos_version": "2601.1 Funky Jacaranda"
-          },
-          "cover_art": "",
-          "custom_settings": [],
-          "attachments": []
-        }
-      ]
-    },
-    {
-      "game_info": {
         "game_id": "GRVEA4",
         "system": "GC",
         "game": "Rave Master",
@@ -8485,74 +8632,6 @@
     },
     {
       "game_info": {
-        "game_id": "G9RP7D",
-        "system": "GC",
-        "game": "Crash Tag Team Racing",
-        "region": "PAL"
-      },
-      "entries": [
-        {
-          "game_info": {
-            "game_id": "G9RP7D",
-            "system": "GC",
-            "game": "Crash Tag Team Racing",
-            "region": "PAL"
-          },
-          "test_review": {
-            "rating": 2,
-            "fps": "20-48",
-            "boot": "YES",
-            "playable": "NO",
-            "fps_min": 20,
-            "fps_max": 48
-          },
-          "test_details": {
-            "rtcore_version": "v10.5.3",
-            "core_profile": "Speed Hack. Default",
-            "considerations": "To be honest, the platforming sections are perfectly playable and even enjoyable, would rate 5*. However, in the central city hub and during races the lagging gets really heavy, dropping FPS down to 20-25"
-          },
-          "test_environment": {
-            "tester": "sirpips",
-            "device": "Anbernic RG35XX H",
-            "muos_version": "2601.1 Funky Jacaranda"
-          },
-          "cover_art": "",
-          "custom_settings": [
-            {
-              "set_type": "Texture",
-              "set_name": "Crash Tag Team Racing Texture Fixes.rar",
-              "set_filename": "Crash Tag Team Racing Texture Fixes.rar",
-              "set_url": "https://mega.nz/file/DsBAFa6Q#Nhe1xY8GBDLng7Ht4aP_jX_0GPJ4BSIaaZouc-a5Tdo",
-              "set_note": "Test with a somewhat expected result, but... for the sake of science this and more!! HD textures, pack under 100MB. Even with any ultra super saiyan god super saiyan profile, the game cannot avoid being witness to FPS that tend heavily below 10. Reporting it here for documentation, however I do not consider it appropriate to add a specific test for this experiment."
-            }
-          ],
-          "attachments": [
-            {
-              "media_type": "link",
-              "media_title": "Texture Pack source",
-              "media_url": "https://forums.dolphin-emu.org/Thread-crash-tag-team-racing-texture-fixes"
-            },
-            {
-              "media_type": "text",
-              "media_title": "G9RP7D_AR_Cheats.txt",
-              "media_url": "https://docs.google.com/document/d/1sfSoDWaI3AyZiY8wi6ZUeb9jGygx8rbj3qatvw5OVKE/edit?usp=sharing"
-            },
-            {
-              "media_type": "link",
-              "media_title": "CTTR XBOX CONTROLS INVERTED.zip",
-              "media_url": "https://forums.dolphin-emu.org/attachment.php?aid=16178"
-            },
-            {
-              "media_type": "link",
-              "media_title": "CTTR PS4 CONTROLS.zip",
-              "media_url": "https://forums.dolphin-emu.org/attachment.php?aid=16179"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "game_info": {
         "game_id": "GBTP70",
         "system": "GC",
         "game": "Beyblade Super Tournament Battle",
@@ -8587,58 +8666,6 @@
           "cover_art": "",
           "custom_settings": [],
           "attachments": []
-        }
-      ]
-    },
-    {
-      "game_info": {
-        "game_id": "GCNP7D",
-        "system": "GC",
-        "game": "Crash Nitro Kart",
-        "region": "PAL"
-      },
-      "entries": [
-        {
-          "game_info": {
-            "game_id": "GCNP7D",
-            "system": "GC",
-            "game": "Crash Nitro Kart",
-            "region": "PAL"
-          },
-          "test_review": {
-            "rating": 5,
-            "fps": "30-50",
-            "boot": "YES",
-            "playable": "YES",
-            "fps_min": 30,
-            "fps_max": 50
-          },
-          "test_details": {
-            "rtcore_version": "v11.0.0 (prerelease)",
-            "core_profile": "Speed Hack",
-            "considerations": "Simply perfect, applying a light HD texture pack makes it look even better visually. No lag, no FPS drops, simply perfect."
-          },
-          "test_environment": {
-            "tester": "sirpips",
-            "device": "RG35XX H",
-            "muos_version": "2601.1 Funky Jacaranda"
-          },
-          "cover_art": "",
-          "custom_settings": [
-            {
-              "set_type": "Texture",
-              "set_name": "Crash Nitro Kart HD Texture Fixes",
-              "set_filename": "CNK Texture Fixes.zip",
-              "set_url": "https://mega.nz/file/D8gChAYY#mvymsLDE-J-HCDIrVEIsXARE8VqyFpELFX3IF8cKMsQ"
-            }
-          ],
-          "attachments": [
-            {
-              "media_type": "link",
-              "media_title": "Texture Pack source",
-              "media_url": "https://forums.dolphin-emu.org/Thread-crash-nitro-kart-hd-texture-fixes"
-            }
-          ]
         }
       ]
     },
@@ -8683,18 +8710,71 @@
     },
     {
       "game_info": {
-        "game_id": "GKNEB2",
-        "system": "GC",
-        "game": "Ultimate Muscle: Legends vs. New Generation",
+        "game_id": "RS4EXS",
+        "system": "Wii",
+        "game": "Castle of Shikigami III",
         "region": "NTSC"
       },
       "entries": [
         {
           "game_info": {
-            "game_id": "GKNEB2",
-            "system": "GC",
-            "game": "Ultimate Muscle: Legends vs. New Generation",
+            "game_id": "RS4EXS",
+            "system": "Wii",
+            "game": "Castle of Shikigami III",
             "region": "NTSC"
+          },
+          "test_review": {
+            "rating": 5,
+            "fps": "40-59",
+            "boot": "YES",
+            "playable": "YES",
+            "fps_min": 40,
+            "fps_max": 59
+          },
+          "test_details": {
+            "rtcore_version": "v11.0.00 (prerelease)",
+            "core_profile": "Speed Hacks",
+            "considerations": "Simply PERFECT"
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "",
+          "custom_settings": [
+            {
+              "set_type": "Hack",
+              "set_name": "USA Undub Patch",
+              "set_filename": "",
+              "set_url": "",
+              "set_note": ""
+            }
+          ],
+          "attachments": [
+            {
+              "media_type": "link",
+              "media_title": "Patch by swosho",
+              "media_url": "https://archive.org/details/castle_of_shikigami_iii_undub_patch"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "game_info": {
+        "game_id": "SEKE99",
+        "system": "Wii",
+        "game": "Ikenie no Yoru",
+        "region": "NTSC-J"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "SEKE99",
+            "system": "Wii",
+            "game": "Ikenie no Yoru",
+            "region": "NTSC-J"
           },
           "test_review": {
             "rating": 0,
@@ -8707,7 +8787,7 @@
           "test_details": {
             "rtcore_version": "v11.0.00 (prerelease)",
             "core_profile": "All of them",
-            "considerations": "Doesn't boot."
+            "considerations": ""
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8715,86 +8795,22 @@
             "muos_version": "2601.1 Funky Jacaranda"
           },
           "cover_art": "",
-          "custom_settings": [],
-          "attachments": []
-        }
-      ]
-    },
-    {
-      "game_info": {
-        "game_id": "GNUPDA",
-        "system": "GC",
-        "game": "Naruto: Clash of Ninja - European Version",
-        "region": "PAL"
-      },
-      "entries": [
-        {
-          "game_info": {
-            "game_id": "GNUPDA",
-            "system": "GC",
-            "game": "Naruto: Clash of Ninja - European Version",
-            "region": "PAL"
-          },
-          "test_review": {
-            "rating": 2,
-            "fps": "10-45",
-            "boot": "YES",
-            "playable": "NO",
-            "fps_min": 10,
-            "fps_max": 45
-          },
-          "test_details": {
-            "rtcore_version": "v11.0.00 (prerelease)",
-            "core_profile": "All of them",
-            "considerations": "Can't run properly. Only with Black Screen Fix and Commpatibility profiles is able to go past the bootanim or the menu ui."
-          },
-          "test_environment": {
-            "tester": "sirpips",
-            "device": "RG35XX H",
-            "muos_version": "2601.1 Funky Jacaranda"
-          },
-          "cover_art": "",
-          "custom_settings": [],
-          "attachments": []
-        }
-      ]
-    },
-    {
-      "game_info": {
-        "game_id": "GQSPAF",
-        "system": "GC",
-        "game": "Tales of Symphonia",
-        "region": "PAL"
-      },
-      "entries": [
-        {
-          "game_info": {
-            "game_id": "GQSPAF",
-            "system": "GC",
-            "game": "Tales of Symphonia",
-            "region": "PAL"
-          },
-          "test_review": {
-            "rating": 2,
-            "fps": "14-50",
-            "boot": "YES",
-            "playable": "NO",
-            "fps_min": 14,
-            "fps_max": 50
-          },
-          "test_details": {
-            "rtcore_version": "v11.0.00 (prerelease)",
-            "core_profile": "Compatibility",
-            "considerations": "[Disc 1] Only with the Compatibility profile does the game manage to boot past the \"Licensed by Nintendo\" screen shortly after startup.\nUnfortunately, this doesn't resolve the low frame rate, which stays locked at around 30 FPS during gameplay. This causes lag that, while not extreme, is still quite annoying. Ultimately, a game like this is unplayable with an issue like this.[Disc 1] Only with the Compatibility profile the game can go past the \"Licensed by Nintendo\" screen shortly after the boot.\nHowever the average FPS during the gaming session is stable on 20-30 and way too laggy to be enjoyable."
-          },
-          "test_environment": {
-            "tester": "sirpips",
-            "device": "RG35XX H",
-            "muos_version": "2601.1 Funky Jacaranda"
-          },
-          "cover_art": "https://retrogametalk.com/repo/wp-content/uploads/2021/06/17752_front.jpg",
-          "custom_settings": [],
-          "attachments": []
+          "custom_settings": [
+            {
+              "set_type": "Translation",
+              "set_name": "Full English Patch",
+              "set_filename": "",
+              "set_url": "",
+              "set_note": ""
+            }
+          ],
+          "attachments": [
+            {
+              "media_type": "link",
+              "media_title": "Patch source",
+              "media_url": "https://www.romhacking.net/translations/5575/"
+            }
+          ]
         }
       ]
     }
