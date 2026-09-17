@@ -1,6 +1,6 @@
 <div align="center">
 
-# <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Dolphin_Emulator_Logo_Refresh.svg/250px-Dolphin_Emulator_Logo_Refresh.svg.png" width="30" alt="Dolphin Logo"> Dolphin Rt:Core for muOS
+# <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Dolphin_Emulator_Logo_Refresh.svg/250px-Dolphin_Emulator_Logo_Refresh.svg.png" width="30" alt="Dolphin Logo"> Dolphin Rt\:Core for muOS
 
 **GameCube and Wii emulation on muOS handhelds, tuned for the Allwinner H700.**  
 *Made by people who got tired of "playable" meaning "seventeen frames per second".*
