@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "last_update": "2026-09-16",
+  "version": 5,
+  "last_update": "2026-09-17",
   "items": [
     {
       "id": "dolphin-all-res-gamesettings",
@@ -12,7 +12,7 @@
       "author": "Dolphin Team, sirpips",
       "version": "1.0",
       "download_url": "https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/raw/main/data/rtenhancer/rintropacks/DolphinRtC_DefaultGameSettingsPack.zip",
-      "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/icons/gamesettings.png",
+      "icon_url": "https://brandlogo.org/wp-content/uploads/2024/07/Dolphin-Emulator-Logo-300x300.png.webp",
       "size_mb": 0.8,
       "install_paths": {
         "frontend": "dolphin-emu/Sys",
@@ -32,7 +32,7 @@
       "author": "Dolphin Team, sirpips",
       "version": "1.0",
       "download_url": "https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/raw/main/data/rtenhancer/rintropacks/DolphinRtC_DefaultGraphicMods.zip",
-      "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/icons/graphicmods.png",
+      "icon_url": "https://brandlogo.org/wp-content/uploads/2024/07/Dolphin-Emulator-Logo-300x300.png.webp",
       "size_mb": 2.3,
       "install_paths": {
         "frontend": "dolphin-emu/Load",
@@ -52,7 +52,7 @@
       "author": "sirpips",
       "version": "1.0",
       "download_url": "https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/raw/main/data/rtenhancer/rintropacks/DolphinRtC_TexturePack_CrashNitroKart_PAL_GCNE7D.zip",
-      "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/icons/texture.png",
+      "icon_url": "https://static.wikia.nocookie.net/crashban/images/2/25/Crash-0.png/revision/latest?cb=20200115143310",
       "size_mb": 0.5,
       "install_paths": {
         "frontend": "dolphin-emu/Load/Textures/",
@@ -60,6 +60,91 @@
       },
       "extract_into": "Textures/GCNE7D",
       "tags": ["texture", "hd", "crash-nitro-kart", "h700"]
+    },
+    {
+      "id": "spdw-all-res-enhancement-gamesettings",
+      "category": "rt_resources",
+      "subcategory": "workshop",
+      "system": "all",
+      "name": "Workshop Enhancement GameSettings",
+      "description": "Curated collection of enhancement codes and per-game settings from the Enhancement-Codes project (Admentus64) plus Fortune Street / Boom Street / Itadaki Street Wii. Extracted directly into workshop/gamesettings/ with one folder per Game ID, ready to be applied from the DolphinUI Workshop.",
+      "author": "Admentus64, FortuneStreetModding, sirpips",
+      "version": "1.1",
+      "download_url": "https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/raw/refs/heads/main/data/rtenhancer/rintropacks/DolphinRtC_Workshop_EnhancementsGameSettings.zip",
+      "icon_url": "https://brandlogo.org/wp-content/uploads/2024/07/Dolphin-Emulator-Logo-300x300.png.webp",
+      "size_mb": 0.6,
+      "install_paths": {
+        "frontend": "workshop/gamesettings"
+      },
+      "extract_into": "workshop/gamesettings",
+      "extract_contains": "ST7E01",
+      "tags": ["enhancement", "gamesettings", "workshop", "codes"]
+    },
+    {
+      "id": "community-all-cheat-geckocodes",
+      "category": "rt_resources",
+      "subcategory": "cheats",
+      "system": "all",
+      "name": "Gecko Codes Complete Pack",
+      "description": "Complete dump of Gecko cheat codes from GeckoCodes.org, curated in 2020. Contains thousands of standalone .txt files for Wii, GameCube and Virtual Console titles. NOTE: Dolphin does not auto-load standalone .txt codes — they must be imported manually via Game Properties → Gecko Codes, or used with USB Loader GX / WiiFlow on real hardware.",
+      "author": "nikeymikey, Community, sirpips",
+      "version": "2020.08",
+      "download_url": "https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/raw/refs/heads/main/data/rtenhancer/rintropacks/DolphinRtC_GeckoCodesPack.zip",
+      "icon_url": "https://wiibrew.org/w/images/8/8d/Cheat.png",
+      "size_mb": 12.0,
+      "install_paths": {
+        "frontend": "codes"
+      },
+      "extract_into": "codes",
+      "tags": ["cheats", "gecko", "codes"]
+    },
+    {
+      "id": "community-wii-cheat-fortune-street",
+      "category": "rt_resources",
+      "subcategory": "cheats",
+      "system": "wii",
+      "name": "Fortune Street Gecko Codes",
+      "description": "Updated and corrected Gecko codes for Fortune Street (ST7E01). Includes fixes for various in-game issues and enhancements.",
+      "author": "FortuneStreetModding",
+      "version": "2024",
+      "download_url": "https://raw.githubusercontent.com/FortuneStreetModding/Gecko-Codes/main/ST7E01.ini",
+      "icon_url": "https://wiibrew.org/w/images/8/8d/Cheat.png",
+      "size_mb": 0.01,
+      "install_path": "codes",
+      "extract_into": "codes",
+      "tags": ["cheats", "gecko", "fortune-street", "wii"]
+    },
+    {
+      "id": "community-wii-cheat-boom-street",
+      "category": "rt_resources",
+      "subcategory": "cheats",
+      "system": "wii",
+      "name": "Boom Street Gecko Codes",
+      "description": "Updated and corrected Gecko codes for Boom Street (ST7P01). Includes fixes for various in-game issues and enhancements.",
+      "author": "FortuneStreetModding",
+      "version": "2024",
+      "download_url": "https://raw.githubusercontent.com/FortuneStreetModding/Gecko-Codes/main/ST7P01.ini",
+      "icon_url": "https://wiibrew.org/w/images/8/8d/Cheat.png",
+      "size_mb": 0.01,
+      "install_path": "codes",
+      "extract_into": "codes",
+      "tags": ["cheats", "gecko", "boom-street", "wii"]
+    },
+    {
+      "id": "community-wii-cheat-itadaki-street",
+      "category": "rt_resources",
+      "subcategory": "cheats",
+      "system": "wii",
+      "name": "Itadaki Street Wii Gecko Codes",
+      "description": "Updated and corrected Gecko codes for Itadaki Street Wii (ST7JGD). Includes fixes for various in-game issues and enhancements.",
+      "author": "FortuneStreetModding",
+      "version": "2024",
+      "download_url": "https://raw.githubusercontent.com/FortuneStreetModding/Gecko-Codes/main/ST7JGD.ini",
+      "icon_url": "https://wiibrew.org/w/images/8/8d/Cheat.png",
+      "size_mb": 0.01,
+      "install_path": "codes",
+      "extract_into": "codes",
+      "tags": ["cheats", "gecko", "itadaki-street", "wii"]
     },
     {
       "id": "spdw-muos-tool-void-desk",
@@ -119,22 +204,6 @@
       "tags": ["hbc", "wii", "loader", "essential"]
     },
     {
-      "id": "community-all-cheat-geckocodes",
-      "category": "rt_resources",
-      "subcategory": "cheats",
-      "system": "all",
-      "name": "Gecko Codes Complete Pack",
-      "description": "A complete dump of every Gecko cheat code from the now-defunct GeckoCodes.org, curated and updated in 2020 by the community. Contains thousands of codes for Wii, GameCube, and Virtual Console titles, ready to be used with USB Loader GX, WiiFlow, and other cheat-enabled loaders. Just drop the .txt files into your SD card's codes folder.",
-      "author": "nikeymikey, Community",
-      "version": "2020.08",
-      "download_url": "https://mega.nz/file/QWgn0Iha#urpue3iqLszK-bEHZd4eBVkr3BCQpakbXVoIu7VsUuY",
-      "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/icons/cheat.png",
-      "size_mb": 12.0,
-      "install_path": "dolphin-emu/Load/Cheats",
-      "extract_into": "Cheats",
-      "tags": ["cheats", "gecko", "codes", "hacks"]
-    },
-    {
       "id": "community-gc-hb-swiss",
       "category": "homebrew",
       "subcategory": "utilities",
@@ -144,7 +213,7 @@
       "author": "emukidid, Extrems",
       "version": "0.6r2073",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/swiss-gc.zip",
-      "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/icons/swiss.png",
+      "icon_url": "https://wiibrew.org/w/images/8/8d/Swiss.png",
       "size_mb": 1.2,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbgc/swiss-gc"
     },
@@ -158,7 +227,7 @@
       "author": "Various",
       "version": "Alpha",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/GC%20Linux%20alpha.zip",
-      "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/icons/linux.png",
+      "icon_url": "https://wiibrew.org/w/images/a/ad/Gc-linux_icon_fixed_arn.png",
       "size_mb": 5.0,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbgc/gc-linux-alpha"
     },
@@ -172,7 +241,7 @@
       "author": "AlexDP",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/BootMii%20CFG%20Editor.zip",
-      "icon_url": "https://wiibrew.org/w/images/2/2c/BootMii_HBC_Icon.png",
+      "icon_url": "https://wiibrew.org/w/images/1/12/BootMii_HBC_Icon.png",
       "size_mb": 0.5,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/bootmii-cfg-editor"
     },
@@ -186,7 +255,7 @@
       "author": "Unknown",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/Calibrator.zip",
-      "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/icons/calibrator.png",
+      "icon_url": "https://wohlsoft.ru/wiki/images/b/b5/Calibrator_icon_48.png",
       "size_mb": 0.2,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/calibrator"
     },
@@ -200,7 +269,7 @@
       "author": "Various",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/CFG%20USB%20Loader.zip",
-      "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/icons/cfgloader.png",
+      "icon_url": "https://wiibrew.org/w/images/0/0b/CFG_USB_Loader.png",
       "size_mb": 2.0,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/cfg-usb-loader"
     },
@@ -214,7 +283,7 @@
       "author": "Unknown",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/GC%20Memory%20Manager.zip",
-      "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/icons/gcmemory.png",
+      "icon_url": "https://wiibrew.org/w/images/8/8d/GCMM.png",
       "size_mb": 1.0,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/gc-memory-manager"
     },
@@ -228,7 +297,7 @@
       "author": "Various",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/homebrew_browser.zip",
-      "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/icons/hbb.png",
+      "icon_url": "https://wiibrew.org/w/images/1/1d/Homebrew_Browser.png",
       "size_mb": 1.5,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/homebrew-browser"
     },
@@ -242,7 +311,7 @@
       "author": "Unknown",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/loadMii.zip",
-      "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/icons/loadmii.png",
+      "icon_url": "https://wiibrew.org/w/images/7/7d/LoadMii.png",
       "size_mb": 0.8,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/loadmii"
     },
@@ -270,7 +339,7 @@
       "author": "Attila",
       "version": "3.0.2",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/Pimp%20My%20Wii.zip",
-      "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/icons/pimpmywii.png",
+      "icon_url": "https://wiibrew.org/w/images/8/8d/Pimp_My_Wii.png",
       "size_mb": 1.2,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/pimp-my-wii"
     },
@@ -284,7 +353,7 @@
       "author": "DacoTaco",
       "version": "0.10.0 RC3",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/PriiLoader.zip",
-      "icon_url": "https://wiibrew.org/w/images/1/1d/Priiloader.png",
+      "icon_url": "https://oscwii.org/library/app/priiloader/icon.png",
       "size_mb": 1.0,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/priiloader"
     },
@@ -298,7 +367,7 @@
       "author": "Unknown",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/Settings%20Editor%20GUI.zip",
-      "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/icons/settingseditor.png",
+      "icon_url": "https://wiibrew.org/w/images/2/2c/Settings_Editor_GUI.png",
       "size_mb": 0.6,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/settings-editor-gui"
     },
@@ -340,7 +409,7 @@
       "author": "Various",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/WiiBrowser.zip",
-      "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/icons/wiibrowser.png",
+      "icon_url": "https://wiibrew.org/w/images/1/1d/WiiBrowser.png",
       "size_mb": 1.0,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/wiibrowser"
     },
@@ -368,7 +437,7 @@
       "author": "WiiMC Team",
       "version": "3.0.0-2024",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/WiiMC.zip",
-      "icon_url": "https://wiibrew.org/w/images/4/4b/WiiMC_Custom_Icon-_Old_PC_Four-Color_Style.png",
+      "icon_url": "https://wiibrew.org/w/images/0/09/WiiMC_Custom_Icon-_Old_PC_Four-Color_Style.png",
       "size_mb": 2.0,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/wiimc"
     },
@@ -410,7 +479,7 @@
       "author": "Various",
       "version": "1.0",
       "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/WSM%20Player.zip",
-      "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/icons/wsmplayer.png",
+      "icon_url": "https://wiibrew.org/w/images/5/5d/WSM_Player.png",
       "size_mb": 1.0,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/wsm-player"
     },
@@ -424,7 +493,7 @@
       "author": "Open Shop Channel Team",
       "version": "1.0.1",
       "download_url": "https://github.com/OpenShopChannel/Storefront/releases/latest/download/osc.zip",
-      "icon_url": "https://raw.githubusercontent.com/OpenShopChannel/Storefront/master/icon.png",
+      "icon_url": "https://oscwii.org/library/app/open_shop_channel/icon.png",
       "size_mb": 2.0,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/open-shop-channel"
     },
@@ -480,7 +549,7 @@
       "author": "Team Twiizers",
       "version": "1.5",
       "download_url": "https://github.com/TeamTwiizers/BootMii/releases/download/1.5/BootMii.zip",
-      "icon_url": "https://wiibrew.org/w/images/2/2c/BootMii_HBC_Icon.png",
+      "icon_url": "https://wiibrew.org/w/images/1/12/BootMii_HBC_Icon.png",
       "size_mb": 0.3,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/bootmii"
     },
@@ -508,7 +577,7 @@
       "author": "Various",
       "version": "2.1.0",
       "download_url": "https://github.com/wiidev/SysCheck/releases/download/v2.1.0/SysCheck.zip",
-      "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/icons/syscheck.png",
+      "icon_url": "https://wiibrew.org/w/images/8/8d/SysCheck.png",
       "size_mb": 0.5,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/syscheck"
     }
