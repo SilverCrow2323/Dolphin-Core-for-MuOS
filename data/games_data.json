@@ -1570,7 +1570,7 @@
             "device": "Unknown Device",
             "muos_version": ""
           },
-          "cover_art": "",
+          "cover_art": "https://retrogametalk.com/repo/wp-content/uploads/2016/03/crashnitrokart_gcnbox.jpg",
           "custom_settings": [],
           "attachments": []
         },
@@ -1599,7 +1599,7 @@
             "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
-          "cover_art": "",
+          "cover_art": "https://retrogametalk.com/repo/wp-content/uploads/2016/03/crashnitrokart_gcnbox.jpg",
           "custom_settings": [
             {
               "set_type": "Texture",
