@@ -1,5 +1,4 @@
-<h1 align="center"><img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinformuos.png" alt="Rt:Core Branding" width="180" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Dolphin Rt:Core</h1>
-<h2 align="center">:couch_and_lamp: Flavour 1: <u>Comfort Zone</u> — v11.5.00</h2>
+<h1 align="center"><img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinformuos.png" alt="Rt:Core Branding" width="250" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Flavour 1: <u>Comfort Zone</u></h1>
 
 <p align="center">
   <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases/latest">
@@ -7,12 +6,6 @@
   </a>
   <img src="https://img.shields.io/badge/platform-muOS-4FA8C7?style=for-the-badge&logo=linux" alt="Platform">
   <img src="https://img.shields.io/badge/status-stable-4CC850?style=for-the-badge" alt="Status">
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdwfactory_logo.png" alt="SPDW Factory" width="180">
-  <br>
-  <b>SPDW Factory Lab</b> &bull; <code>sirpips aka SilverCrow2323</code>
 </p>
 
 ---
@@ -30,7 +23,7 @@
 
 ---
 
-## :book: Overview
+## <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/ticket.png" width="50" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Overview
 
 <div>
   <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/mechadolphin.png" alt="Rt:Core Branding" width="150" align="left" style="margin-right: 20px; margin-bottom: 15px;">
@@ -50,9 +43,9 @@ No extra menus. No manual scripts to execute. Everything flows through the **sta
 
 ---
 
-## :target: What's Included
+## <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/star.png" width="50" align="left" style="margin-right: 20px; margin-bottom: 15px;"> What's Included
 
-### :rocket: Seven Ready-to-Use Profiles
+### > Seven Ready-to-Use Profiles
 
 Every profile ships with **JITARM64 forced** (`CPUCore = 4`) and **async shader compilation** for maximum FPS and stutter-free gameplay.
 
@@ -70,7 +63,7 @@ Every profile ships with **JITARM64 forced** (`CPUCore = 4`) and **async shader 
 
 ---
 
-### :palette: Automatic Bloom Removal
+### > Automatic Bloom Removal
 
 The single biggest FPS gain on H700 hardware — **enabled by default** across all games.
 
@@ -79,7 +72,7 @@ The single biggest FPS gain on H700 hardware — **enabled by default** across a
 
 ---
 
-### <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/CNK.png" alt="Crash Nitro Kart icon" width="100" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Crash Nitro Kart — HD Texture Pack Included
+### <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/CNK.png" alt="Crash Nitro Kart icon" width="50" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Crash Nitro Kart — HD Texture Pack Included
 
 Comfort Zone includes a pre-packaged **HD Texture Pack** specifically optimized for *Crash Nitro Kart*.
 
@@ -96,7 +89,7 @@ Comfort Zone includes a pre-packaged **HD Texture Pack** specifically optimized 
 
 ---
 
-### <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/component.png" alt="Game Tweaks icon" width="100" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Curated Per-Game Tweaks
+### <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/orbcore.png" alt="Game Tweaks icon" width="50" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Curated Per-Game Tweaks
 
 Heavy 3D titles receive targeted **Depth-of-Field (DOF) removal** to maintain smooth framerates.
 
@@ -115,7 +108,7 @@ Heavy 3D titles receive targeted **Depth-of-Field (DOF) removal** to maintain sm
 
 ---
 
-### <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/powerup_machine.png" alt="Game Settings icon" width="100" align="left" style="margin-right: 20px; margin-bottom: 15px;"> GameSettings — Hand-Tuned Engine Overrides
+### <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/powerup_machine.png" alt="Game Settings icon" width="50" align="left" style="margin-right: 20px; margin-bottom: 15px;"> GameSettings — Hand-Tuned Engine Overrides
 
 Pre-configured `GameSettings` files targeting known engine bottlenecks:
 
@@ -132,7 +125,7 @@ Pre-configured `GameSettings` files targeting known engine bottlenecks:
 
 ---
 
-### :door: Native Exit Hotkey
+### > Native Exit Hotkey
 
 Press **START + SELECT** anytime to terminate Dolphin instantly and safely return to muOS.
 
@@ -146,7 +139,7 @@ Press **START + SELECT** anytime to terminate Dolphin instantly and safely retur
 
 Supports `ISO`, `GCM`, `RVZ`, and `WBFS`.
 
-### <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/trophy.png" width="100" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Recommended Format: **RVZ (Zstandard, Level 5)**
+### <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/trophy.png" width="50" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Recommended Format: **RVZ (Zstandard, Level 5)**
 
 | Parameter | Recommended Setting |
 | :--- | :--- |
@@ -160,12 +153,9 @@ Supports `ISO`, `GCM`, `RVZ`, and `WBFS`.
 
 ---
 
-## <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/engine.png" width="100" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Installation
+## <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/engine.png" width="50" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Installation
 
 <div>
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/muos_post.png" alt="muOS Installation Flow" width="280" align="right" style="margin-left: 20px; margin-bottom: 15px; border-radius: 8px;">
-
-### <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/mailletter.png" width="100" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Standard `.muxupd` Package Installation
 
 1. Download `Dolphin_RtCore_v11.5.00_ComfortZone.muxupd`.
 2. Copy the file to your SD card:
@@ -181,7 +171,7 @@ Supports `ISO`, `GCM`, `RVZ`, and `WBFS`.
 
 ---
 
-## <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/id.png" width="100" align="left" style="margin-right: 20px; margin-bottom: 15px;"> How to Use
+## <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/Question_sticker.png" width="50" align="left" style="margin-right: 20px; margin-bottom: 15px;"> How to Use
 
 1. Open **Content Explorer** in muOS.
 2. Navigate to your **GameCube** or **Wii** ROM directory.
@@ -192,11 +182,11 @@ Supports `ISO`, `GCM`, `RVZ`, and `WBFS`.
 
 ---
 
-## :shield: Compatibility Database
+## <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/id.png" width="50" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Compatibility Database
 
 Browse our community compatibility database with 200+ benchmarked games:
 
-:link: **[Official Compatibility List](https://silvercrow2323.github.io/Dolphin-Core-for-MuOS/)**
+<img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt_icon.png" width="40" align="left" style="margin-right: 20px; margin-bottom: 15px;">  **[Official Compatibility List](https://silvercrow2323.github.io/Dolphin-Core-for-MuOS/)**
 
 Each listing details:
 * :star: Star Playability Rating (1–5)
