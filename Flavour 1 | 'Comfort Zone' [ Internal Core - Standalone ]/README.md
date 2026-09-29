@@ -1,15 +1,6 @@
-<div align="center">
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphin_title.png" alt="Dolphin Rt:Core Banner" width="55%">
-</div>
 
-# 🐬 Dolphin Rt:Core v11.5.00
-### 🛋️ Flavour 1: **Comfort Zone**
+# <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt_icon.png" alt="Dolphin Rt Icon" width="4%">   <img align="left" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinformuos.png" alt="Dolphin for muOS" width="300" style="margin-right: 20px; margin-bottom: 10px; border-radius: 8px;"> Flavour 1: 'Comfort Zone'
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdwfactory_logo.png" alt="SPDW Factory" width="80px">
-  <br>
-  <small><strong>SPDW Factory Lab</strong> / <code>sirpips aka SilverCrow2323</code></small>
-</div>
 
 <br>
 
@@ -19,8 +10,7 @@
 ---
 
 <div>
-  <img align="left" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinformuos.png" alt="Dolphin for muOS" width="180" style="margin-right: 20px; margin-bottom: 10px; border-radius: 8px;">
-  
+ 
   ### ⚡ TL;DR — Dritto al punto
   ***Only straight gaming sessions, no setting nightmares.*** ✨
   
@@ -35,7 +25,7 @@
 ## 📖 Overview
 
 <div>
-  <img align="right" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/Dolphin_RtCore_Flavour1_ComfortZone_Boxart.jpeg" alt="Comfort Zone Boxart" width="220" style="margin-left: 20px; margin-bottom: 15px; border-radius:12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+  <img align="right" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/Dolphin_RtCore_Flavour1_ComfortZone_Boxart.jpeg" alt="Comfort Zone Boxart" width="300" style="margin-left: 20px; margin-bottom: 15px; border-radius:12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
   
   **Comfort Zone** fornisce un emulatore Dolphin **completamente configurato** per ***muOS***, integrato direttamente all'interno del **Content Explorer**.
   
@@ -139,7 +129,7 @@ Non sai quale profilo scegliere? Consulta questa tabella di riferimento rapido:
 
 ## 🎨 Graphics Mods — Modding integrato
 
-Dolphin Rt:Core include **60+ mod grafiche ufficiali**, più configurazioni mirate scritte da noi per i titoli più famosi (e pesanti). 
+Dolphin Rt:Core include **60+ mod grafiche ufficiali**, più configurazioni mirate scritte dal qui presente Sir Pips con il consueto supporto di [R.I] Minoru. 
 
 ```mermaid
 pie title Impatto Prestazionale Mod Grafiche
@@ -148,7 +138,7 @@ pie title Impatto Prestazionale Mod Grafiche
     "Native Res Bloom (Estetica)" : 10
     "Altro" : 5
 ```
-
+mettiamo che bloom removal di base è attivato per tutti i titoli
 ### Le Custom Mods pre-installate per i titoli "Heavy":
 Ogni cartella gioco (es. `Load/GraphicMods/<Game Title>/`) possiede queste varianti disattivate di default:
 * `Bloom Native Resolution`
@@ -204,6 +194,6 @@ Oltre 200 titoli testati con indicazioni su:
   <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" alt="SPDW Symbol" width="10%" style="margin-right: 15px;">
   <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt_icon.png" alt="Dolphin Rt Icon" width="10%">
   <br><br>
-  <em>Dolphin Rt:Core v11.5.00 — Flavour 1: Comfort Zone.</em><br>
+  <em>Dolphin Rt:Core for muOS — Flavour 1: Comfort Zone.</em><br>
   <strong><u>Still Sbrobbing. Always Rintromping.</u></strong> 🎮
 </div>
