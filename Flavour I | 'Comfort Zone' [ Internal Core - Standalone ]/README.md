@@ -1,4 +1,4 @@
-0<h1 align="center"><img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinformuos.png" alt="Rt:Core Branding" width="250" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Flavour 1: <u>Comfort Zone</u></h1>
+<h1 align="center"><img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/Dolphin_RtCore_Flavour1_ComfortZone_Boxart.jpeg?raw=true" alt="Rt:Core Branding" width="350" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Flavour I: <u>Comfort Zone</u></h1>
 
 <p align="center">
   <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases/latest">
@@ -8,25 +8,16 @@
   <img src="https://img.shields.io/badge/status-stable-4CC850?style=for-the-badge" alt="Status">
 </p>
 
----
-
-
 > ### :zap: **TL;DR — Straight to the point**
->
 > ***Only straight gaming sessions, zero setting nightmares.***
 > Plug in, assign, play. **Seven battle-tested profiles, automatic bloom removal, curated per-game tweaks, and HD texture pack for Crash Nitro Kart included.** Zero Python overhead, zero bloat. :video_game:
-
-
-</div>
-
 <br clear="all">
 
 ---
 
 ## <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/ticket.png" width="50" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Overview
 
-<div>
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/mechadolphin.png" alt="Rt:Core Branding" width="150" align="left" style="margin-right: 20px; margin-bottom: 15px;">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt_icon.png" alt="Rt:Core Branding" width="80" align="left" style="margin-right: 20px; margin-bottom: 15px;">
 
 **Comfort Zone** is the *streamlined* edition of Dolphin Rt:Core, built for the **RG35XX H / Allwinner H700** family of handhelds running **muOS**.
 
@@ -37,8 +28,6 @@ It provides a **fully configured** Dolphin emulator that integrates directly wit
 * :arrow_forward: **Play** — Dolphin boots with tuned settings, correct controllers, graphics mods, and textures.
 
 No extra menus. No manual scripts to execute. Everything flows through the **standard muOS launch framework**.
-</div>
-
 <br clear="all">
 
 ---
@@ -51,13 +40,13 @@ Every profile ships with **JITARM64 forced** (`CPUCore = 4`) and **async shader 
 
 | Profile | Description | Best For |
 | :--- | :--- | :--- |
-| 🚀 **performance** | Daily driver, balanced | **90%** of games |
-| 🔰 **compatibility** | Accuracy first | Problematic titles |
-| 🛸 **rintromping** | Maximum speed, aggressive hacks | Lightweight games |
-| ⚡ **speedhacks** | Extra performance flags | Heavy 3D titles |
-| 🖥️ **blackscreenfix** | GPU sync forced | Games that fail to boot |
-| 🎯 **sweetspot** | Custom-tuned balance | Personal favorite |
-| ⛩️ **default** | Baseline reference | Debugging / fallback |
+| 🚀 **Performance** | Daily driver, balanced | **90%** of games |
+| 🔰 **Compatibility** | Accuracy first | Problematic titles |
+| 🛸 **Rintromping** | Maximum speed, aggressive hacks | Lightweight games |
+| ⚡ **Speed Hacks** | Extra performance flags | Heavy 3D titles |
+| 🖥️ **Black Screen Fix** | GPU sync forced | Last resource for games that fail to boot |
+| 🎯 **Sweet Spot** | Custom-tuned balance | Personal favorite |
+| ⛩️ **Default** | Baseline reference | Debugging / fallback |
 
 > *Available for **GameCube** (upright) and **Wii** (upright + sideways).*
 
@@ -66,7 +55,6 @@ Every profile ships with **JITARM64 forced** (`CPUCore = 4`) and **async shader 
 ### 💡 Automatic Bloom Removal
 
 The single biggest FPS gain on H700 hardware — **enabled by default** across all games.
-
 * **What it does:** Strips out the heavy post-processing *bloom* blur effect. Bypassing bloom eliminates an entire GPU rendering pass per frame.
 * **Performance Impact:** **+2 to +5 FPS** on most 3D titles with lower heat generation.
 
@@ -80,12 +68,6 @@ Comfort Zone includes a pre-packaged **HD Texture Pack** specifically optimized 
 * **Footprint:** Only **5.7 MB** — negligible impact on RAM and performance.
 * **Status:** :white_check_mark: **Active out of the box** — zero setup required.
 * **Source:** [Dolphin Forums — Crash Nitro Kart HD Texture Fixes](https://forums.dolphin-emu.org/Thread-crash-nitro-kart-hd-texture-fixes)
-
-> [!TIP]
-> The texture pack includes automatic region matching for all GameCube ROMs (`GCN`, `GCNE7D`, `GCNP7D`).
-</div>
-
-<br clear="all">
 
 ---
 
@@ -108,9 +90,9 @@ Heavy 3D titles receive targeted **Depth-of-Field (DOF) removal** to maintain sm
 
 ---
 
-### <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/powerup_machine.png" alt="Game Settings icon" width="50" align="left" style="margin-right: 20px; margin-bottom: 15px;"> GameSettings — Hand-Tuned Engine Overrides
+### <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/powerup_machine.png" alt="Game Settings icon" width="50" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Empiric GameSettings — Hand-Tuned Engine Overrides
 
-Pre-configured `GameSettings` files targeting known engine bottlenecks:
+Some examples of pre-configured `GameSettings` files targeting known engine bottlenecks:
 
 | GameID | Title | Engine Fix Applied |
 | :--- | :--- | :--- |
@@ -126,9 +108,7 @@ Pre-configured `GameSettings` files targeting known engine bottlenecks:
 ---
 
 ### 🗝️ Native Exit Hotkey
-
 Press **START + SELECT** anytime to terminate Dolphin instantly and safely return to muOS.
-
 * No awkward menu combos.
 * No prompt dialogs.
 * No leftover background processes.
@@ -136,7 +116,6 @@ Press **START + SELECT** anytime to terminate Dolphin instantly and safely retur
 ---
 
 ## 📦 Supported ROM Formats
-
 Supports `ISO`, `GCM`, `RVZ`, and `WBFS`.
 
 ### <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/trophy.png" width="50" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Recommended Format: **RVZ (Zstandard, Level 5)**
@@ -148,44 +127,12 @@ Supports `ISO`, `GCM`, `RVZ`, and `WBFS`.
 | **Compression Level** | `5` |
 | **Block Size** | `128 KiB` |
 
-⚠️ WARNING
-> **Avoid LZMA compression** — while it produces slightly smaller files, it severely taxes the H700 CPU during gameplay reads.
-
----
-
-## <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/engine.png" width="50" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Installation
-
-<div>
-
-1. Download `Dolphin_RtCore_v11.5.00-I_ComfortZone.muxupd`.
-2. Copy the file to your SD card:
-   * SD1: `/mnt/mmc/ARCHIVE/`
-   * SD2: `/mnt/sdcard/ARCHIVE/`
-3. On your muOS handheld, go to **Applications → Archive Manager**.
-4. Select the `.muxupd` package to begin automatic installation.
-
-</div>
-
-<br clear="all">
-
----
-
-## <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/Question_sticker.png" width="50" align="left" style="margin-right: 20px; margin-bottom: 15px;" How to Use
-
-1. Open **Content Explorer** in muOS.
-2. Navigate to your **GameCube** or **Wii** ROM directory.
-3. Choose the title you want to try
-3. Press **X** → **Assign Core**.
-4. Choose **Nintendo GameCube** or **Nintendo Wii**.
-5. Select one of the **7 available profiles**.
-6. Launch your game!
+**⚠️ WARNING > Avoid LZMA compression** — while it produces slightly smaller files, it severely taxes the H700 CPU during gameplay reads.
 
 ---
 
 ## <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/id.png" width="50" align="left" style="margin-right: 20px; margin-bottom: 15px;"> Compatibility Database
-
 Browse the community Compatibility Database with 200+ benchmarked games:
-
 <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt_icon.png" width="40" align="left" style="margin-right: 20px; margin-bottom: 15px;">  **[Official Compatibility List](https://silvercrow2323.github.io/Dolphin-Core-for-MuOS/)**
 
 Each listing details:
@@ -193,21 +140,6 @@ Each listing details:
 * :bar_chart: Average FPS
 * :target: Recommended Profile
 * :wrench: Workarounds & Configuration Notes
-
----
-
-## 🗑️ Uninstallation
-
-To cleanly remove Dolphin Rt:Core:
-
-* **Method A (Terminal/RtSys):**
-  ```bash
-  bash /opt/muos/share/emulator/dolphin/RtSys/uninstall_dolphinrt.sh
-  ```
-* **Method B (muOS Task Toolkit):**
-  Navigate to **Applications → Task Toolkit → Dolphin RtCore → run 'Eradicate da Dolpheen'**.
-
-Both methods remove all associated binaries, launch wrappers, shortcuts, and core assignments cleanly.
 
 ---
 
