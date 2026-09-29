@@ -1,71 +1,60 @@
+<div align="center">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt_icon.png" alt="Dolphin Rt Icon" width="80" style="margin-bottom: 10px;">
+  <br>
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinformuos.png" alt="Dolphin for muOS" width="400">
+  
+  # Flavour 1: 'Comfort Zone'
+  
+  **Conceived in v11.0.00. Brutally perfected in v11.5.00.**
 
-# <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt_icon.png" alt="Dolphin Rt Icon" width="4%">   <img align="left" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinformuos.png" alt="Dolphin for muOS" width="300" style="margin-right: 20px; margin-bottom: 10px; border-radius: 8px;"> Flavour 1: 'Comfort Zone'
-
-
-<br>
-
-> [!IMPORTANT]
-> ### 📥 [SCARICA L'ULTIMA RELEASE (.muxupd)](https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases/latest) 📥
+  [![Download Latest Release](https://img.shields.io/badge/Download-v11.5.00_(.muxupd)-6c3fbf?style=for-the-badge&logo=github)](https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases/latest)
+  [![muOS Compatible](https://img.shields.io/badge/OS-muOS-2ea043?style=for-the-badge)](#)
+  [![Status](https://img.shields.io/badge/Status-Stable-blue?style=for-the-badge)](#)
+</div>
 
 ---
 
 <div>
- 
-  ### ⚡ TL;DR — Dritto al punto
-  ***Only straight gaming sessions, no setting nightmares.*** ✨
+  <img align="right" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/Dolphin_RtCore_Flavour1_ComfortZone_Boxart.jpeg" alt="Comfort Zone Boxart" width="260" style="margin-left: 25px; margin-bottom: 15px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+
+  ### ⚡ TL;DR — Straight to the Point
+  ***Only straight gaming sessions. No setting nightmares.*** ✨
+
+  **Comfort Zone** is the streamlined, definitive edition of Dolphin Rt:Core. If you hate tweaking menus and just want to play, this is your release. 
   
-  **Comfort Zone** is the *streamlined* edition of Dolphin Rt:Core. 
-  Abbiamo incluso 7 profili preimpostati per le massime prestazioni, un'intera libreria di **Graphics Mods** già preconfigurata per i titoli più pesanti, e una gestione nativa: premi **START + SELECT** (hotkey di sistema muOS) e l'emulatore si chiuderà all'istante in modo pulito.
-  
+  We have engineered **7 preset profiles** tuned for maximum performance and native hardware management. Forget complex hotkeys or external scripts: everything runs through your device's standard launch flow. When you are done playing, simply press **START + SELECT** (the native muOS hotkey), and the emulator shuts down instantly and cleanly.
+
   <br clear="all">
 </div>
 
 ---
 
-## 📖 Overview
+## 🆕 The v11.5.00 Standard
 
-<div>
-  <img align="right" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/Dolphin_RtCore_Flavour1_ComfortZone_Boxart.jpeg" alt="Comfort Zone Boxart" width="300" style="margin-left: 20px; margin-bottom: 15px; border-radius:12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-  
-  **Comfort Zone** fornisce un emulatore Dolphin **completamente configurato** per ***muOS***, integrato direttamente all'interno del **Content Explorer**.
-  
-  🗂️ Assegna semplicemente un core alla tua cartella delle ROM **GameCube** o **Wii** (o ai singoli giochi), scegli il titolo e... gioca! 
-  
-  * ❌ Nessun tool aggiuntivo richiesto.
-  * ❌ Nessun menù complesso da navigare.
-  * ❌ Nessuno script esterno da avviare.
-  
-  Tutto funziona attraverso il *normale flusso di avvio* del tuo dispositivo.
-  <br clear="all">
-</div>
+We didn't just update Dolphin; we rebuilt the integration specifically for muOS hardware. Here is why v11.5.00 is the definitive way to play:
 
----
-
-## 🆕 What's New in v11.5.00
-
-| Change | Icon | Description |
+| Feature | Icon | Technical Impact |
 | :--- | :---: | :--- |
-| **JITARM64 forzato** | ⚙️ | `CPUCore = 4` in tutti i profili — fino a **3-5× più veloce** |
-| **Shader asincroni** | 🎬 | `ShaderCompilationMode = 3` per eliminare lo *stuttering* da compilazione |
-| **Libreria Mod Grafiche** | 🎨 | Tutte le mod grafiche ufficiali Dolphin preinstallate |
-| **GameSettings dedicati**| 🎯 | Overrides mirati per i giochi più pesanti o problematici |
-| **Niente più Python** | 🔥 | Controller nativo SDL: latenza minima, zero overhead |
-| **Low-noise logging** | 📝 | `Verbosity=1` e nessuna scrittura su file: protegge la tua SD |
-| **Chiusura pulita** | 🐛 | Handler SIGTERM perfetto tramite START+SELECT |
+| **Forced JITARM64** | ⚙️ | `CPUCore = 4` locked across all profiles. Expect up to **3-5× faster** raw emulation. |
+| **Async Shaders** | 🎬 | `ShaderCompilationMode = 3` absolutely eliminates texture compilation stuttering. |
+| **Targeted GameSettings**| 🎯 | Silent, pre-configured overrides for the most demanding titles (no action required). |
+| **Python Exiled** | 🔥 | The Python watcher is dead. Pure native SDL pad implementation means **minimum latency, zero overhead**. |
+| **Low-Noise Logging** | 📝 | `Verbosity=1` with zero file writing. Your SD card lifespan is preserved. |
+| **Clean Shutdown** | 🐛 | A flawless SIGTERM handler triggered natively via START+SELECT. |
 
 ---
 
-## 🚀 Flusso di Installazione e Utilizzo
+## 🚀 Workflow & Installation
 
-Per rendere l'idea di quanto sia semplice il processo, ecco lo schema visivo del funzionamento interno dal download al gameplay:
+We designed the pipeline to be frictionless. From download to gameplay, the system handles the heavy lifting.
 
 ```mermaid
 graph LR
-    A((Download .muxupd)) --> B[Cartella ARCHIVE su SD]
+    A((Download .muxupd)) --> B[ARCHIVE Folder on SD]
     B --> C{Archive Manager}
-    C -->|Auto-installa| D[File di Sistema & Profili]
+    C -->|Auto-installs| D[System & Profiles]
     D --> E((Content Explorer))
-    E --> F[Scegli ROM]
+    E --> F[Select ROM / Folder]
     F --> G{Assign Core}
     G -->|e.g. Performance| H([🔥 PLAY!])
     
@@ -73,115 +62,102 @@ graph LR
     style H fill:#2ea043,stroke:#fff,stroke-width:4px,color:#fff
     style G fill:#f39c12,stroke:#fff,color:#fff
 ```
-*Schema 1 — Da zero al gameplay in pochi passaggi.*
+*Chart 1 — Zero to gameplay in seconds.*
 
-### Step per l'installazione manuale:
-1. Scarica il file `Dolphin_RtCore_v11.5.00_ComfortZone.muxupd`.
-2. Copialo nella cartella **ARCHIVE** (`/opt/mmc/ARCHIVE/` su SD1 o `/sdcard/ARCHIVE/` su SD2).
-3. Apri le **Applications** e lancia l'**Archive Manager** 📦.
-4. Seleziona il file e attendi la fine: mod, file, settings e core si installeranno da soli.
+### Installation Steps:
+1. **Download** the `Dolphin_RtCore_v11.5.00_ComfortZone.muxupd` package from the [Releases](https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases/latest) page.
+2. **Move it** to the `ARCHIVE` folder (`/opt/mmc/ARCHIVE/` on SD1 or `/sdcard/ARCHIVE/` on SD2).
+3. Open **Applications** on your device and launch the **Archive Manager** 📦.
+4. Select the file. The system will automatically inject all system files, settings, and cores.
 
 > [!TIP]
-> **Come assegnare i core?** Apri il Content Explorer, vai sulla tua cartella GameCube/Wii, premi **X**, seleziona **Assign Core** e scegli la cartella Nintendo. Appariranno 7 profili pronti all'uso!
+> **Assigning Cores is easy:** Open the Content Explorer, hover over your GameCube/Wii folder (or a single game), press **X**, select **Assign Core**, and choose the Nintendo folder. The 7 ready-to-use profiles will be waiting for you.
 
 ---
 
-## ⚙️ Profili — La tua cassetta degli attrezzi
+## ⚙️ The Toolkit: 7 Preset Profiles
 
-Non sai quale profilo scegliere? Consulta questa tabella di riferimento rapido:
+Pick your poison. Every profile is available in both **Upright** ⬆️ and **Sideways** ↔️ variants (where applicable).
 
-| Profilo | Scopo Principale | Consigliato per... |
+| Profile | Main Purpose | Best Used For... |
 | --- | --- | --- |
-| 🚀 **performance** | Il *daily driver*. Bilanciato e veloce. | 🔵 Il 90% del gaming quotidiano |
-| 🛡️ **compatibility** | Precisione massima, ma più lento. | 🟠 Titoli con difetti grafici evidenti |
-| 💨 **rintromping** | Velocità pura, settaggi aggressivi. | 🟢 Titoli leggeri o per spremere frame |
-| ⚡ **speedhacks** | Hack di velocità aggiuntivi. | 🟡 Quando ti serve un piccolo boost extra |
-| 🖥️ **blackscreenfix** | Risolve il problema dello schermo nero. | 🔴 Giochi che non si avviano (black screen) |
-| 🎯 **sweetspot** | Profilo vuoto per le tue personalizzazioni. | ⭐ Il tuo tuning personale |
-| 🏠 **default** | Vanilla Dolphin, nessun tuning. | 🔧 Debug o punto di ripristino |
-
-*(Nota: Ogni profilo è disponibile nelle varianti **Upright** ⬆️ e **Sideways** ↔️ dove applicabile).*
+| 🚀 **performance** | The Daily Driver. Fast, balanced, reliable. | 🔵 **90%** of your everyday gaming. |
+| 🛡️ **compatibility** | Accuracy-first rendering. Slightly heavier. | 🟠 Titles showing obvious visual glitches. |
+| 💨 **rintromping** | Pure speed. Aggressive, unsafe settings. | 🟢 Squeezing frames out of heavy games. |
+| ⚡ **speedhacks** | The Performance profile + extra engine hacks. | 🟡 When you just need that tiny boost. |
+| 🖥️ **blackscreenfix** | Specific boot fixes applied. | 🔴 Games that refuse to start (black screen). |
+| 🎯 **sweetspot** | The blank canvas. | ⭐ Your personal, custom tuning playground. |
+| 🏠 **default** | Vanilla Dolphin. Zero SPDW tuning. | 🔧 Debugging or restoring baseline performance. |
 
 ---
 
-## 📦 Formati supportati e Raccomandazioni
+## 📦 The Royal Format: RVZ
 
 <div>
-  <img align="left" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/mechadolphin.png" alt="Mecha Dolphin" width="160" style="margin-right: 25px; margin-top: 10px;">
+  <img align="left" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/mechadolphin.png" alt="Mecha Dolphin" width="160" style="margin-right: 25px; margin-top: 5px;">
   
-  I formati nativi supportati sono: `ISO` · `GCM` · `RVZ` · `WBFS`.
-  <br><br>
+  While `ISO`, `GCM`, and `WBFS` are natively supported, **RVZ** is the absolute king for muOS handheld devices. It strikes the perfect mathematical balance between storage savings and runtime fluidity.
   
-  ### 🏆 Il formato Reale: **RVZ**
-  
-  L'***RVZ*** è la scelta assoluta per i dispositivi portatili con muOS. Garantisce il bilanciamento perfetto tra risparmio di spazio e fluidità.
-  
-  * **Algoritmo ideale:** *Zstandard (zstd)*. Viene decompresso dalla CPU quasi istantaneamente, azzerando gli scatti (*stuttering*) durante il caricamento delle texture.
-  * **Da evitare:** `LZMA`. Più compresso, ma asfissia la CPU.
-  * **Livello consigliato:** `5` (sweet spot tra spazio e tempo di conversione).
+  * **The God-Tier Algorithm:** *Zstandard (zstd)*. The CPU decompresses it almost instantaneously, entirely bypassing the micro-stutters caused by heavy texture loading.
+  * **Avoid at all costs:** `LZMA`. It shrinks files aggressively but chokes mobile CPUs to death.
+  * **The Sweet Spot:** Level `5`. Pushing compression higher yields diminishing returns and wastes hours of conversion time.
   <br clear="all">
 </div>
 
 > [!WARNING]
-> Il formato RVZ non aumenta gli FPS massimi di per sé, ma **elimina la latenza di lettura** del disco rispetto a file ISO molto frammentati. Usalo sempre!
+> RVZ does *not* magically increase your peak FPS. However, it **eliminates disk read latency** compared to fragmented ISOs. If you want a smooth experience, convert your library to RVZ.
 
 ---
 
-## 🎨 Graphics Mods — Modding integrato
+## 🎨 Graphics Mods: Global Optimization
 
-Dolphin Rt:Core include **60+ mod grafiche ufficiali**, più configurazioni mirate scritte dal qui presente Sir Pips con il consueto supporto di [R.I] Minoru. 
+For **Flavour 1 (Comfort Zone)**, the objective is "plug-and-play stability." We are keeping things lean to maximize your framerates without requiring you to manually toggle settings.
 
 ```mermaid
-pie title Impatto Prestazionale Mod Grafiche
-    "Bloom Removal (↑ FPS)" : 45
-    "DOF Removal (↑ FPS)" : 40
-    "Native Res Bloom (Estetica)" : 10
-    "Altro" : 5
+pie title Handheld GPU Workload Reduction
+    "Bloom Removal Gain (FPS Boost)" : 65
+    "Standard Rendering Load" : 35
 ```
-mettiamo che bloom removal di base è attivato per tutti i titoli
-### Le Custom Mods pre-installate per i titoli "Heavy":
-Ogni cartella gioco (es. `Load/GraphicMods/<Game Title>/`) possiede queste varianti disattivate di default:
-* `Bloom Native Resolution`
-* `DOF Removal` *(Altamente consigliato per recuperare prestazioni)*
-* `DOF Native Resolution`
-* `HUD Removal`
 
-**Titoli coperti da mod dedicate:** *Crash (Nitro Kart, Tag Team, Wrath of Cortex), DBZ Budokai (1 & 2), Super Mario Sunshine, Scaler, Metroid Prime, Smash Bros Melee, Mario Smash Football.*
+### Active by Default:
+* 🌍 **Global Bloom Removal:** We have forced this active across *all* games. Removing Bloom frees up massive GPU resources, immediately maximizing your FPS and keeping device thermals significantly lower.
 
 > [!NOTE]
-> **Come attivarle/disattivarle?** Le mod sono controllate dalla presenza di un file `.disabled`. Cancellalo tramite il file manager di muOS (o via terminale/SSH con `rm <percorso>/.disabled`) per attivare la mod!
+> **Looking for the full Mod Arsenal?**
+> Targeted HUD removals, advanced Depth of Field (DOF) adjustments, and Native Resolution tweaks are too volatile for a "Comfort Zone" release. The complete, unlocked modding suite will be fully deployed in the upcoming alternative release: ***Flavour 2***.
 
 ---
 
-## 🛡️ Database di Compatibilità
+## 🛡️ Compatibility Database
 
-Non sai quali settaggi usare per un gioco specifico? La community ti aiuta:
+Stop guessing. The community has already done the benchmark testing for you.
 
-### 🔗 **[Esplora la Compatibility List](https://silvercrow2323.github.io/Dolphin-Core-for-MuOS/)**
+### 🔗 **[Explore the Official Compatibility List](https://silvercrow2323.github.io/Dolphin-Core-for-MuOS/)**
 
-Oltre 200 titoli testati con indicazioni su:
-- ⭐ Rating di giocabilità
-- 📊 Framerate medio atteso
-- 🎯 Il profilo *Assign Core* raccomandato
-- 🔧 Soluzioni a problemi noti
+Consult our database of over 200+ tested titles to find:
+* ⭐ 1-5 Star Playability Ratings.
+* 📊 Expected average framerates.
+* 🎯 The exact *Assign Core* profile you should use.
+* 🔧 Required workarounds for known engine issues.
 
 ---
 
 ## 🙏 Credits
 
 <div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/sirpips.jpeg" alt="sirpips" width="100px" style="border-radius:50%; margin-bottom: 5px;"><br>
-        <strong>sirpips</strong><br><small>(SilverCrow2323)</small>
+  <table style="border-collapse: collapse; border: none;">
+    <tr style="border: none;">
+      <td align="center" style="border: none; padding-right: 30px;">
+        <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/sirpips.jpeg" alt="Sir Pips" width="110px" style="border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 8px;"><br>
+        <strong>Sir Pips</strong><br>
+        <span style="color: #6c3fbf;">(SilverCrow2323)</span>
       </td>
-      <td valign="middle">
-        <ul>
-          <li>🏭 <strong>SPDW Factory Lab:</strong> Integrazione muOS, packaging, configurazioni e Mod.</li>
-          <li>🐬 <strong>Dolphin Emulator:</strong> Il software di emulazione core.</li>
-          <li>🎛️ <strong>Team muOS:</strong> Per lo straordinario OS e framework.</li>
-          <li>🎨 <strong>Dolphin Community:</strong> Per le librerie grafiche ufficiali.</li>
+      <td valign="middle" style="border: none;">
+        <ul style="list-style-type: none; padding-left: 0;">
+          <li style="margin-bottom: 10px;">🏭 <strong>SPDW Factory Lab / Sir Pips:</strong> Conception, muOS integration, aggressive packaging, and custom configurations.</li>
+          <li style="margin-bottom: 10px;">🤖 <strong>[R.I] Minoru:</strong> Crucial technical assistance and low-level code support.</li>
+          <li style="margin-bottom: 10px;">🐬 <strong>Dolphin Emulator Team:</strong> The incredible core emulation engine.</li>
+          <li>🎛️ <strong>muOS Team:</strong> For providing the ultimate OS and launch framework.</li>
         </ul>
       </td>
     </tr>
@@ -191,9 +167,9 @@ Oltre 200 titoli testati con indicazioni su:
 <br>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" alt="SPDW Symbol" width="10%" style="margin-right: 15px;">
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt_icon.png" alt="Dolphin Rt Icon" width="10%">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" alt="SPDW Symbol" width="40" style="margin-right: 15px; vertical-align: middle;">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt_icon.png" alt="Dolphin Rt Icon" width="40" style="vertical-align: middle;">
   <br><br>
-  <em>Dolphin Rt:Core for muOS — Flavour 1: Comfort Zone.</em><br>
+  <em>Dolphin Rt:Core for muOS — Flavour 1: Comfort Zone</em><br>
   <strong><u>Still Sbrobbing. Always Rintromping.</u></strong> 🎮
 </div>
