@@ -7725,10 +7725,10 @@
             "region": "PAL"
           },
           "test_review": {
-            "rating": 4,
+            "rating": 3,
             "fps": "10-45",
             "boot": "YES",
-            "playable": "YES",
+            "playable": "YES WITH ISSUES",
             "fps_min": 10,
             "fps_max": 45
           },
