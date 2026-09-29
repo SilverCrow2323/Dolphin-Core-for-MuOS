@@ -72,7 +72,7 @@ These are the settings our profiles settle on. Every edition ships with them; th
 
 | Key | Base | Why |
 |---|---|---|
-| `CPUCore` | `1` | JIT64 recompiler. The only sane choice. |
+| `CPUCore` | `` | JITARM64 recompiler. The only sane choice. |
 | `CPUThread` | `True` | Runs the CPU emulation on a separate thread. Free FPS. |
 | `EnableIdleSkipping` | `True` | Skips idle loops. Big win on games that spin. |
 | `SyncGPU` | `False` *(perf)* / `True` *(compat)* | Off = faster, on = accurate. Profiles decide. |
@@ -88,7 +88,7 @@ These are the settings our profiles settle on. Every edition ships with them; th
 |---|---|---|
 | `Backend` | `Vulkan` | Faster than OpenGL on Mali. Always. |
 | `InternalResolution` | `1` (native) | Never above. The H700 cannot afford more. |
-| `ShaderCompilationMode` | `1` (Sync) | Async causes stutter on weak CPUs. Sync is safer. |
+| `ShaderCompilationMode` | `3` (Async) | Sync causes stutter on weak CPUs. Async is safer. |
 | `DisableFog` | `True` *(perf)* / `False` *(compat)* | Free FPS, loses atmosphere. Profiles decide. |
 | `FastDepthResult` | `True` | Faster depth buffer. |
 | `EFBToTextureEnable` | `True` | Renders EFB to texture, not RAM. Saves VRAM. |
