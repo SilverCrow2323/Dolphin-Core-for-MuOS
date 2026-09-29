@@ -32,7 +32,7 @@
 
 It provides a **fully configured** Dolphin emulator that integrates directly with the muOS **Content Explorer**:
 
-* :card_index_folders: **Assign a core** to your GameCube or Wii ROM folder.
+* 🔹 **Assign a core** to your GameCube or Wii ROM folder.
 * :video_game: **Pick a profile** directly from the Content Explorer menu.
 * :arrow_forward: **Play** — Dolphin boots with tuned settings, correct controllers, graphics mods, and textures.
 
