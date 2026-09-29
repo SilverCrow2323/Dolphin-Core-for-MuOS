@@ -21,20 +21,25 @@
 
 ---
 
+<div>
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinformuos.png" alt="Dolphin for muOS" width="300" align="right" style="margin-left: 20px; margin-bottom: 15px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+
 > ### :zap: **TL;DR — Straight to the point**
 >
 > ***Only straight gaming sessions, zero setting nightmares.***
 > Plug in, assign, play. **Seven battle-tested profiles, automatic bloom removal, curated per-game tweaks, and HD texture pack for Crash Nitro Kart included.** Zero Python overhead, zero bloat. :video_game:
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinformuos.png" alt="Dolphin for muOS" width="85%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-  <br>
   <i>Fig. 1 — Dolphin Rt:Core running seamlessly inside the muOS ecosystem.</i>
-</p>
+</div>
+
+<br clear="all">
 
 ---
 
 ## :book: Overview
+
+<div>
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/rtcore.png" alt="Rt:Core Branding" width="220" align="left" style="margin-right: 20px; margin-bottom: 15px;">
 
 **Comfort Zone** is the *streamlined* edition of Dolphin Rt:Core, built for the **RG35XX H / Allwinner H700** family of handhelds running **muOS**.
 
@@ -45,10 +50,9 @@ It provides a **fully configured** Dolphin emulator that integrates directly wit
 * :arrow_forward: **Play** — Dolphin boots with tuned settings, correct controllers, graphics mods, and textures.
 
 No extra menus. No manual scripts to execute. Everything flows through the **standard muOS launch framework**.
+</div>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/rtcore.png" alt="Rt:Core Branding" width="450">
-</p>
+<br clear="all">
 
 ---
 
@@ -83,9 +87,8 @@ The single biggest FPS gain on H700 hardware — **enabled by default** across a
 
 ### :racing_car: Crash Nitro Kart — HD Texture Pack Included
 
-<p align="right">
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/cnk.png" alt="Crash Nitro Kart Icon" width="110" align="right" style="margin-left: 15px; margin-bottom: 10px; border-radius: 8px;">
-</p>
+<div>
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/cnk.png" alt="Crash Nitro Kart Icon" width="130" align="right" style="margin-left: 20px; margin-bottom: 15px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
 
 Comfort Zone includes a pre-packaged **HD Texture Pack** specifically optimized for *Crash Nitro Kart*.
 
@@ -96,6 +99,7 @@ Comfort Zone includes a pre-packaged **HD Texture Pack** specifically optimized 
 
 > [!TIP]
 > The texture pack includes automatic region matching for all GameCube ROMs (`GCN`, `GCNE7D`, `GCNP7D`).
+</div>
 
 <br clear="all">
 
@@ -167,6 +171,9 @@ Supports `ISO`, `GCM`, `RVZ`, and `WBFS`.
 
 ## :rocket: Installation
 
+<div>
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/muos_post.png" alt="muOS Installation Flow" width="280" align="right" style="margin-left: 20px; margin-bottom: 15px; border-radius: 8px;">
+
 ### :inbox_tray: Standard `.muxupd` Package Installation
 
 1. Download `Dolphin_RtCore_v11.5.00_ComfortZone.muxupd`.
@@ -176,11 +183,10 @@ Supports `ISO`, `GCM`, `RVZ`, and `WBFS`.
 3. On your muOS handheld, go to **Applications :arrow_right: Archive Manager**.
 4. Select the `.muxupd` package to begin automatic installation.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/muos_post.png" alt="muOS Installation Flow" width="75%" style="border-radius: 8px;">
-  <br>
-  <i>Fig. 2 — Installation via muOS Archive Manager.</i>
-</p>
+<i>Fig. 2 — Installation via muOS Archive Manager.</i>
+</div>
+
+<br clear="all">
 
 ---
 
