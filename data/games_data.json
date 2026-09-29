@@ -8818,7 +8818,7 @@
       "game_info": {
         "game_id": "GOWP69",
         "system": "GC",
-        "game": "Need for Speed: Most Wanted",
+        "game": "Need for Speed - Most Wanted",
         "region": "PAL"
       },
       "entries": [
@@ -8826,7 +8826,7 @@
           "game_info": {
             "game_id": "GOWP69",
             "system": "GC",
-            "game": "Need for Speed: Most Wanted",
+            "game": "Need for Speed - Most Wanted",
             "region": "PAL"
           },
           "test_review": {
@@ -8858,7 +8858,7 @@
         "game_id": "RDBPAF",
         "system": "Wii",
         "game": "Dragon Ball Z: Budokai Tenkaichi 2",
-        "region": "NTSC-U"
+        "region": "NTSC"
       },
       "entries": [
         {
@@ -8886,7 +8886,7 @@
             "device": "RG35XX H",
             "muos_version": "Funky Jacaranda"
           },
-          "cover_art": "",
+          "cover_art": "https://art.gametdb.com/wii/cover/US/RDBE70.png?1634775241",
           "custom_settings": [],
           "attachments": []
         }
