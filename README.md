@@ -72,7 +72,7 @@ These are the settings our profiles settle on. Every edition ships with them; th
 
 | Key | Base | Why |
 |---|---|---|
-| `CPUCore` | `` | JITARM64 recompiler. The only sane choice. |
+| `CPUCore` | `4` | JITARM64 recompiler. The only sane choice. |
 | `CPUThread` | `True` | Runs the CPU emulation on a separate thread. Free FPS. |
 | `EnableIdleSkipping` | `True` | Skips idle loops. Big win on games that spin. |
 | `SyncGPU` | `False` *(perf)* / `True` *(compat)* | Off = faster, on = accurate. Profiles decide. |
