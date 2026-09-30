@@ -1,9 +1,8 @@
 <div align="center">
-  <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/Dolphin_RtCore_Flavour1_ComfortZone_Boxart.jpeg?raw=true" alt="Comfort Zone Boxart" width="340" align="left" style="margin-right: 22px; margin-bottom: 18px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.35);">
+  <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/Dolphin_RtCore_Flavour1_ComfortZone_Boxart.jpeg?raw=true" alt=" alt="Rt:Core Bash Arsenal Branding" width="380" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); margin-bottom: 15px;">
   
-  <h1>🐬 Dolphin Rt:Core</h1>
-  <h1>🛋️ Flavour I: <b><u>Comfort Zone</u></b></h1>
-
+  <h1>🐬 Flavour I: <u>Comfort Zone</u></h1>
+  <h3><i>Dolphin Rt:Core set and ready for muOS</i></h3>
   <p>
     <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases/latest">
       <img src="https://img.shields.io/badge/Dolphin%20Rt:Core-v11.5.00-8C59F2?style=for-the-badge&logo=github" alt="Version">
@@ -77,13 +76,13 @@ graph TD
 
 | Profile Name | Engine Philosophy | Primary Target Use Case |
 | :--- | :--- | :--- |
-| 🚀 **`performance`** | **<u>Balanced Daily Driver</u>** — *moderate engine hacks* | **90%** of your everyday GameCube/Wii library |
-| 🛡️ **`compatibility`** | **<u>Accuracy First</u>** — *minimal hacks, strict logic* | Games experiencing visual artifacts or physics bugs |
-| 💨 **`rintromping`** | **<u>Maximum Speed</u>** — *aggressive CPU underclocking* | Lightweight titles or games needing maximum frame output |
-| ⚡ **`speedhacks`** | **<u>Hacked Rendering</u>** — *unsafe EFB/XFB bypasses* | Heavy 3D titles suffering from heavy GPU slowdown |
-| 🖥️ **`blackscreenfix`** | **<u>GPU Synchronization</u>** — *forced sync flags* | Problematic titles that freeze on boot or show a black screen |
-| 🎯 **`sweetspot`** | **<u>Custom Neutral</u>** — *balanced baseline* | Hand-tuned middle ground for user experimentation |
-| ⛩️ **`default`** | **<u>Vanilla Reference</u>** — *unmodified Dolphin defaults* | Benchmark reference and fall-back diagnostic testing |
+| 🚀 **`Performance`** | **<u>Balanced Daily Driver</u>** — *moderate engine hacks* | **90%** of your everyday GameCube/Wii library |
+| 🛡️ **`Compatibility`** | **<u>Accuracy First</u>** — *minimal hacks, strict logic* | Games experiencing visual artifacts or physics bugs |
+| 💨 **`Rintromping`** | **<u>Maximum Speed</u>** — *aggressive CPU underclocking* | Lightweight titles or games needing maximum frame output |
+| ⚡ **`Speed Hacks`** | **<u>Hacked Rendering</u>** — *unsafe EFB/XFB bypasses* | Heavy 3D titles suffering from heavy GPU slowdown |
+| 🖥️ **`Black Screen Fix`** | **<u>GPU Synchronization</u>** — *forced sync flags* | Problematic titles that freeze on boot or show a black screen |
+| 🎯 **`Sweet Spot`** | **<u>Custom Neutral</u>** — *balanced baseline* | Hand-tuned middle ground for user experimentation |
+| ⛩️ **`Default`** | **<u>Vanilla Reference</u>** — *unmodified Dolphin defaults* | Benchmark reference and fall-back diagnostic testing |
 
 > All 7 profiles are available for **GameCube** (*upright*) and **Wii** (*upright* and *sideways* gamepad orientation).
 
