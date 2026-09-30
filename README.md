@@ -181,7 +181,7 @@ graph TD
 ### 🎨 <u>Flavour III: Frontendone — The Full Frontend Experience</u>
 
 <div align="center">
-  <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/Dolphin_RtCore_Flavour3_Frontendone_Boxart.jpeg?raw=true" alt="Frontendone Boxart" width="380" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); margin-bottom: 15px;">
+  <img src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/Dolphin_RtCore_Flavour3_FrontendONE_Boxart.jpeg?raw=true" alt="Frontendone Boxart" width="380" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); margin-bottom: 15px;">
   
   <h3>🎨 Flavour III: Frontendone</h3>
   <p><b><i>The full frontend. A console within a console.</i></b></p>
@@ -292,7 +292,7 @@ SafeTextureCacheColorSamples = 512
 ### 🎨 Frontendone Standalone Architecture (Flavour III)
 
 ```text
-/opt/muos/storage/application/DolphinRtUI/
+/run/muos/storage/application/DolphinRtUI/
 ├── frontend/
 │   ├── assets/          # Fonts, visual sprites, audio assets
 │   ├── conf/            # gptokeyb2 input mapping configs
@@ -301,6 +301,7 @@ SafeTextureCacheColorSamples = 512
 │   ├── screens/         # LÖVE view interfaces (Library, Profiles, Manual)
 │   ├── scripts/         # Engine launch hooks & ROM scanner automation
 │   └── workshop/        # Custom profile templates & cheat code databases
+├── glyph/               # Application icon
 ├── lib/                 # LÖVE 2D runtime, LuaJIT binaries, gptokeyb2
 ├── mux_launch.sh        # Application entry launcher
 └── test_launch.sh       # Terminal debugging suite
