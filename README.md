@@ -1,5 +1,10 @@
 <div align="center">
-  <h1><img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt_icon.png" width="50" alt="SPDW Symbol" style="vertical-align: middle;">Dolphin Rt:Core for muOS</h1>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Dolphin_Emulator_Logo_Refresh.svg/250px-Dolphin_Emulator_Logo_Refresh.svg.png" width="70" alt="Dolphin Logo" style="vertical-align: middle; margin-right: 15px;">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" width="70" alt="SPDW Symbol" style="vertical-align: middle;">
+  
+  <br><br>
+  
+  <h1>🐬 Dolphin Rt:Core for muOS</h1>
   <h3><b><i>The Triptych — One Emulator. Three Flavours. Sbrobs.</i></b></h3>
   <p><b>Surgically tuned GameCube &amp; Wii emulation for the Allwinner H700 chipset under muOS.</b></p>
 
@@ -22,6 +27,8 @@
 > Running GameCube and Wii titles on an **Allwinner H700** is not a "plug-and-play" scenario. It is a surgical engineering task. It means negotiating with a strict $1\text{ GB}$ RAM budget, shaving off shader steps, stripping post-processing bloom, disabling depth-of-field passes, and coaxing stable $50\text{--}60\text{ FPS}$ output from titles that had no theoretical business booting on this hardware.
 >
 > This repository represents **the argument, won.** Three distinct flavours, one core philosophy: **squeeze every drop of performance out of the Mecha-Dolphin.**
+>
+> 🏛️ *Curious about how this port began? Read the complete **[Digital Fossil Record & Core History Archive (HISTORY_README.md)](HISTORY_README.md)**.*
 
 ---
 
@@ -143,7 +150,7 @@ graph TD
 * 🌸 **Global Bloom Removal:** Post-processing bloom blur is stripped engine-wide, granting an instant **$+2 \text{ to } +5 \text{ FPS}$** boost across heavy 3D titles.
 * 🏎️ **Crash Nitro Kart HD Texture Pack:** Includes a compact $5.7\text{ MB}$ replacement pack fixing the notorious C4 texture tiling artifacts on UI elements and HUD icons.
 * 🎯 **Targeted DOF Removal:** 10 heavy titles (including *Super Mario Sunshine*, *Metroid Prime*, and *Crash Bandicoot*) automatically disable depth-of-field blur.
-* ⚙️️ **12 Hand-Tuned GameSettings Overrides:** Hardcoded per-game underclocks and EFB/XFB fixes pre-configured for instant stability.
+* ⚙ **12 Hand-Tuned GameSettings Overrides:** Hardcoded per-game underclocks and EFB/XFB fixes pre-configured for instant stability.
 * 🚪 **Native Shutdown Hotkey:** Pressing <kbd>START</kbd> + <kbd>SELECT</kbd> sends a clean native `SIGTERM` directly to Dolphin, ensuring safe memory card saves.
 
 📖 **[Read the complete Flavour I: Comfort Zone Documentation →](README.md)**
@@ -292,7 +299,7 @@ SafeTextureCacheColorSamples = 512
 ### 🎨 Frontendone Standalone Architecture (Flavour III)
 
 ```text
-/run/muos/storage/application/DolphinRtUI/
+/opt/muos/storage/application/DolphinRtUI/
 ├── frontend/
 │   ├── assets/          # Fonts, visual sprites, audio assets
 │   ├── conf/            # gptokeyb2 input mapping configs
@@ -301,7 +308,6 @@ SafeTextureCacheColorSamples = 512
 │   ├── screens/         # LÖVE view interfaces (Library, Profiles, Manual)
 │   ├── scripts/         # Engine launch hooks & ROM scanner automation
 │   └── workshop/        # Custom profile templates & cheat code databases
-├── glyph/               # Application icon
 ├── lib/                 # LÖVE 2D runtime, LuaJIT binaries, gptokeyb2
 ├── mux_launch.sh        # Application entry launcher
 └── test_launch.sh       # Terminal debugging suite
@@ -319,7 +325,7 @@ To submit benchmark metrics for new titles, open a report using the **[Community
 
 ---
 
-## 🙏 <u>Credits & Community Acknowledgments</u>
+## 🙏 <u>Credits, History & Community Acknowledgments</u>
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/sirpips.jpeg" alt="sirpips" width="110" style="border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); margin-bottom: 8px;">
@@ -332,23 +338,29 @@ To submit benchmark metrics for new titles, open a report using the **[Community
 <br>
 
 > [!NOTE]
-> **Community Acknowledgment & Disclaimer:**  
-> This project represents a fine-tuning, architectural optimization, and system integration effort built on top of upstream core developments. Full credit for pioneering initial Dolphin core compilation and porting efforts on muOS belongs to the original community developers.
+> **Project Heritage & The Ethos of *Chou Henka* (超変化):**  
+> Running GameCube and Wii emulation on the Allwinner H700 is widely considered unadvisable due to low-power Cortex-A53 silicon constraints. The Dolphin port on muOS was originally **born, nurtured, maintained, and iteratively improved by early community pioneers** who laid the foundational code, launcher hooks, and core binaries.
+> 
+> The project was subsequently adopted by **SPDW Factory (sirpips aka SilverCrow2323)** with a singular drive: to achieve ***Chou Henka* (超変化)** — a radical evolution pushing the emulator and target hardware to their absolute absolute limits, extracting performant 3D gameplay from devices never originally meant to run these systems.
+> 
+> 🏛️ **For the complete historical timeline, original forum post preserves, and legacy package archives, visit the [Core History Archive (HISTORY_README.md)](HISTORY_README.md).**
 
-### 🐬 Core Development & Porting History
+### 🐬 Core Development & Pioneer Lineage
 
-| Contributor / Developer | Key Architectural Contribution |
+| Contributor / Developer | Community Role & Historical Contribution |
 | :--- | :--- |
-| **@Speedrun** ([Speedrun [+.[🐬].%]](https://community.muos.dev/u/speedrun)) | Original author of the initial Dolphin core port for muOS (V9 / Take 3 baseline). |
-| **@FireBattleInMtl** ([@FireBattleInMtl](https://community.muos.dev/u/firebattleinmtl)) | Port maintenance, execution permission hardening, and `launch.sh` ecosystem integration. |
-| **@Snow** (SnowV8) | Compilation and optimization of standalone Dolphin binary releases. |
-| **@bitter_bizarro** | Core adoption and system compatibility updates for muOS Goose release standards. |
+| **@Speedrun** ([Speedrun [+.[🐬].%]](https://community.muos.dev/u/speedrun)) | **Lead Core Pioneer:** Author of the original standalone Dolphin port on muOS, developer of initial JIT tweaks, and creator of the V9 universal core architecture. |
+| **@FireBattleInMtl** ([@FireBattleInMtl](https://community.muos.dev/u/firebattleinmtl)) | **Shell Automation Developer:** Built the auto-injecting `launch.sh` pipeline and resolved early Linux execution permissions. |
+| **@Snow** (SnowV8) | **Systems Compiler:** Compiled Dolphin ARM64 binaries directly from source, stabilizing early frame times. |
+| **@bitter_bizarro** | **System Maintainer:** Updated assignment structures and scripts for muOS Goose firmware compliance. |
+| **@Magnaderra** | **Community Historian:** Documented and preserved early release threads and compatibility lists on MustardOS forums. |
 | **Testing & Verification Team** | **@razorbeamz**, **@arkun**, **@SkiffguardLando**, **@chronoss0109**, **@Kirky**, **@Mikethe3ird**, **@Symphonial**, **@giodude**, **@lasagnesetting**, **@joshuarcastillo** |
 
 ---
 
 ## 🔗 <u>Links & Project Resources</u>
 
+* 🏛️ **[Dolphin Core History & Archive Record](HISTORY_README.md)** *(Original Forum Threads & Legacy Builds)*
 * 🌐 **[GitHub Repository](https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS)**
 * 📦 **[Latest Releases](https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases/latest)**
 * 📊 **[Compatibility Database](https://silvercrow2323.github.io/Dolphin-Core-for-MuOS/)**
