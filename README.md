@@ -1,10 +1,5 @@
 <div align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Dolphin_Emulator_Logo_Refresh.svg/250px-Dolphin_Emulator_Logo_Refresh.svg.png" width="70" alt="Dolphin Logo" style="vertical-align: middle; margin-right: 15px;">
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" width="70" alt="SPDW Symbol" style="vertical-align: middle;">
-  
-  <br><br>
-  
-  <h1>🐬 Dolphin Rt:Core for muOS</h1>
+ <h1><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Dolphin_Emulator_Logo_Refresh.svg/250px-Dolphin_Emulator_Logo_Refresh.svg.png" width="40" alt="Dolphin Logo" style="vertical-align: middle; margin-right: 15px;"> Dolphin Rt:Core for muOS <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" width="30" alt="SPDW Symbol" style="vertical-align: middle;"></h1>
   <h3><b><i>The Triptych — One Emulator. Three Flavours. Sbrobs.</i></b></h3>
   <p><b>Surgically tuned GameCube &amp; Wii emulation for the Allwinner H700 chipset under muOS.</b></p>
 
@@ -112,7 +107,7 @@ Every edition of Dolphin Rt:Core shares a calibrated internal configuration laye
 
 ---
 
-## 🔱 <u>The Triptych — Architecture Overview</u>
+## 🔱 <u>The 'TRIPTYCH' — Architecture Overview</u>
 
 Dolphin Rt:Core is delivered across **three independent, specialized flavours**. Choose the exact operational model that fits your preferred workflow:
 
@@ -295,25 +290,6 @@ SafeTextureCacheColorSamples = 512
                 ├── Nintendo Gamecube/
                 └── Nintendo Wii/
 ```
-
-### 🎨 Frontendone Standalone Architecture (Flavour III)
-
-```text
-/opt/muos/storage/application/DolphinRtUI/
-├── frontend/
-│   ├── assets/          # Fonts, visual sprites, audio assets
-│   ├── conf/            # gptokeyb2 input mapping configs
-│   ├── data/            # settings.json, games_database.json, cached artwork
-│   ├── dolphin-emu/     # Bundled standalone Dolphin binary build
-│   ├── screens/         # LÖVE view interfaces (Library, Profiles, Manual)
-│   ├── scripts/         # Engine launch hooks & ROM scanner automation
-│   └── workshop/        # Custom profile templates & cheat code databases
-├── lib/                 # LÖVE 2D runtime, LuaJIT binaries, gptokeyb2
-├── mux_launch.sh        # Application entry launcher
-└── test_launch.sh       # Terminal debugging suite
-```
-
----
 
 ## 📊 <u>Compatibility Reference Database</u>
 
