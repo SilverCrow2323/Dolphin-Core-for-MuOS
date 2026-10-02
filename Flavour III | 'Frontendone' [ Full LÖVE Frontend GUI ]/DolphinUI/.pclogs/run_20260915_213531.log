@@ -1,0 +1,93 @@
+═══════════════════════════════════════════════════════════
+  DolphinUI — dev run
+═══════════════════════════════════════════════════════════
+  Date        : 2026-09-15 21:35:31
+  Host        : mx-sirpips
+  User        : sirpips
+  PWD         : /home/sirpips/opt/RG35XX H/dolphin rtcore/DolphinUI
+  LÖVE        : LOVE 11.5 (Mysterious Mysteries)
+  LÖVE path   : /usr/bin/love
+  Log file    : /home/sirpips/opt/RG35XX H/dolphin rtcore/DolphinUI/.pclogs/run_20260915_213531.log
+═══════════════════════════════════════════════════════════
+
+── Environment ─────────────────────────────────────────
+DISPLAY      = :0.0
+WAYLAND      = <unset>
+XDG_SESSION  = x11
+LANG         = it_IT.UTF-8
+TERM         = dumb
+
+── Frontend contents (top-level) ───────────────────────
+  assets
+  assets.lua
+  backup_manager.lua
+  boot_downloader.lua
+  button_icons.lua
+  check_syntax.sh
+  chips.lua
+  cleanup.sh
+  conf.lua
+  covers.lua
+  data
+  dolphin-emu
+  external.lua
+  features.lua
+  guide_parser.lua
+  hb
+  hotkey_editor.lua
+  import_manager.lua
+  ini_parser.lua
+  input_map.lua
+  json.lua
+  key_bindings.lua
+  launcher.lua
+  main.lua
+  modal.lua
+  notify.lua
+  profile_manager.lua
+  profile_merger.lua
+  profile_validator.lua
+  report_generator.lua
+  report_store.lua
+  screens
+  scripts
+  settings_store.lua
+  sfx.lua
+  snapshot_manager.lua
+  state.lua
+  switch.lua
+  system_info.lua
+  task_runner.lua
+  theme_gc.lua
+  theme_wii.lua
+  ui
+  workshop
+
+── Runtime data ────────────────────────────────────────
+  data/        : present
+    /home/sirpips/opt/RG35XX H/dolphin rtcore/DolphinUI/frontend/data/rtenhancerhub.lua
+    /home/sirpips/opt/RG35XX H/dolphin rtcore/DolphinUI/frontend/data/_roms_cache.json
+    /home/sirpips/opt/RG35XX H/dolphin rtcore/DolphinUI/frontend/data/wiitdb.txt
+    /home/sirpips/opt/RG35XX H/dolphin rtcore/DolphinUI/frontend/data/frontendone.json
+    /home/sirpips/opt/RG35XX H/dolphin rtcore/DolphinUI/frontend/data/livemenu_config.json
+    /home/sirpips/opt/RG35XX H/dolphin rtcore/DolphinUI/frontend/data/games_data.json
+    /home/sirpips/opt/RG35XX H/dolphin rtcore/DolphinUI/frontend/data/rtenhancerhub.json
+
+── Launch ──────────────────────────────────────────────
+  cd /home/sirpips/opt/RG35XX H/dolphin rtcore/DolphinUI/frontend && love .
+
+── Output ──────────────────────────────────────────────
+[main] boot v0.4.0  theme=gc
+[state] games_data.json decode failed: nil
+[state] enhancer_hub: 32 items (Lua module)
+[main] scan done: 2 roms, 15 homebrew, 0 games_data, 32 enhancer
+[BootDownloader] scheduled background refresh
+[main] data refresh completed, reloading in-memory indexes
+[state] games_data.json decode failed: nil
+[state] enhancer_hub: 32 items (Lua module)
+
+── End ─────────────────────────────────────────────────
+  Finished    : 2026-09-15 21:36:03
+  Duration    : 32s
+  Exit code   : 0 (clean)
+═══════════════════════════════════════════════════════════

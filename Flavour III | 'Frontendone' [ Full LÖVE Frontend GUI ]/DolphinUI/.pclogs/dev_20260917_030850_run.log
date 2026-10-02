@@ -1,0 +1,45 @@
+================================================================
+  DolphinUI — dev.sh
+================================================================
+  Command :      run
+  Date    :      2026-09-17 03:08:50
+  Host    :      Linux 6.12.101+deb13-amd64 x86_64
+  Shell   :      bash 5.2.37(1)-release
+  Root    :      /home/sirpips/opt/RG35XX H/dolphin rtcore/Dolphin RtCore v11.0.00/03_RtCore_Frontendone/DolphinUI
+  Log     :      /home/sirpips/opt/RG35XX H/dolphin rtcore/Dolphin RtCore v11.0.00/03_RtCore_Frontendone/DolphinUI/.pclogs/dev_20260917_030850_run.log
+================================================================
+
+── Environment ────────────────────────────────────────────────
+  love:          LOVE 11.5 (Mysterious Mysteries)
+  luajit:        LuaJIT 2.1.1737090214 -- Copyright (C) 2005-2025 Mike Pall. https://luajit.org/
+  luac:          Lua 5.4.7  Copyright (C) 1994-2024 Lua.org, PUC-Rio
+
+── Running LÖVE ───────────────────────────────────────────────
+[main] boot v0.4.7  theme=gc
+[main] joystick #1: 'Twin USB JoysticK'  isGamepad=true
+[main] joystick #2: 'Twin USB JoysticK'  isGamepad=true
+[state] games_data.json not found or invalid
+[state] enhancer hub: 26 items
+[main] scan: starting async ROM scan
+[main] joystick #1: 'Twin USB JoysticK'  isGamepad=true
+[main] joystick #2: 'Twin USB JoysticK'  isGamepad=true
+[main] joystick #1: 'Twin USB JoysticK'  isGamepad=true
+[main] joystick #2: 'Twin USB JoysticK'  isGamepad=true
+[main] async scan done: 9 roms
+[BootDownloader] scheduled refresh (games=true enhancer=true wiitdb=true)
+[main] data refresh completed, reloading in-memory indexes
+[state] games_data: 214 titles
+[state] enhancer hub: 35 items
+[main] shutdown
+
+── Summary ────────────────────────────────────────────────────
+  Exit code :    0
+  Duration  :    4401s
+  Log saved :    /home/sirpips/opt/RG35XX H/dolphin rtcore/Dolphin RtCore v11.0.00/03_RtCore_Frontendone/DolphinUI/.pclogs/dev_20260917_030850_run.log
+================================================================
+
+================================================================
+  END OF LOG
+  Exit code :    0
+  Time      :    2026-09-17 04:22:11
+================================================================

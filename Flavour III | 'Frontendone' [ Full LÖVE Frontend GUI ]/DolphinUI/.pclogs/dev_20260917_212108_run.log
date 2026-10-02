@@ -1,0 +1,56 @@
+================================================================
+  DolphinUI — dev.sh
+================================================================
+  Command :      run
+  Date    :      2026-09-17 21:21:08
+  Host    :      Linux 6.12.101+deb13-amd64 x86_64
+  Shell   :      bash 5.2.37(1)-release
+  Root    :      /home/sirpips/opt/RG35XX H/dolphin rtcore/Dolphin RtCore v11.0.00/03_RtCore_Frontendone/DolphinUI
+  Log     :      /home/sirpips/opt/RG35XX H/dolphin rtcore/Dolphin RtCore v11.0.00/03_RtCore_Frontendone/DolphinUI/.pclogs/dev_20260917_212108_run.log
+================================================================
+
+── Environment ────────────────────────────────────────────────
+  love:          LOVE 11.5 (Mysterious Mysteries)
+  luajit:        LuaJIT 2.1.1737090214 -- Copyright (C) 2005-2025 Mike Pall. https://luajit.org/
+  luac:          Lua 5.4.7  Copyright (C) 1994-2024 Lua.org, PUC-Rio
+
+── Running LÖVE ───────────────────────────────────────────────
+Error: main.lua:195: module 'screens.minoru_room' not found:
+	no field package.preload['screens.minoru_room']
+	no 'screens/minoru_room' in LOVE game directories.
+	no file 'screens/minoru_room' in LOVE paths.
+	no file './screens/minoru_room.lua'
+	no file '/usr/share/luajit-2.1/screens/minoru_room.lua'
+	no file '/usr/local/share/lua/5.1/screens/minoru_room.lua'
+	no file '/usr/local/share/lua/5.1/screens/minoru_room/init.lua'
+	no file '/usr/share/lua/5.1/screens/minoru_room.lua'
+	no file '/usr/share/lua/5.1/screens/minoru_room/init.lua'
+	no file './screens/minoru_room.so'
+	no file '/usr/local/lib/lua/5.1/screens/minoru_room.so'
+	no file '/usr/lib/x86_64-linux-gnu/lua/5.1/screens/minoru_room.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+	no file './screens.so'
+	no file '/usr/local/lib/lua/5.1/screens.so'
+	no file '/usr/lib/x86_64-linux-gnu/lua/5.1/screens.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+stack traceback:
+	[love "boot.lua"]:352: in function <[love "boot.lua"]:348>
+	[C]: in function 'require'
+	main.lua:195: in main chunk
+	[C]: in function 'require'
+	[love "boot.lua"]:323: in function <[love "boot.lua"]:126>
+	[C]: in function 'xpcall'
+	[love "boot.lua"]:362: in function <[love "boot.lua"]:355>
+	[C]: in function 'xpcall'
+
+── Summary ────────────────────────────────────────────────────
+  Exit code :    1
+  Duration  :    883s
+  Log saved :    /home/sirpips/opt/RG35XX H/dolphin rtcore/Dolphin RtCore v11.0.00/03_RtCore_Frontendone/DolphinUI/.pclogs/dev_20260917_212108_run.log
+================================================================
+
+================================================================
+  END OF LOG
+  Exit code :    1
+  Time      :    2026-09-17 21:35:51
+================================================================

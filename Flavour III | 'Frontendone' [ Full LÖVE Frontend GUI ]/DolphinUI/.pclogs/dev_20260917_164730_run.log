@@ -1,0 +1,83 @@
+================================================================
+  DolphinUI — dev.sh
+================================================================
+  Command :      run
+  Date    :      2026-09-17 16:47:30
+  Host    :      Linux 6.12.101+deb13-amd64 x86_64
+  Shell   :      bash 5.2.37(1)-release
+  Root    :      /home/sirpips/opt/RG35XX H/dolphin rtcore/Dolphin RtCore v11.0.00/03_RtCore_Frontendone/DolphinUI
+  Log     :      /home/sirpips/opt/RG35XX H/dolphin rtcore/Dolphin RtCore v11.0.00/03_RtCore_Frontendone/DolphinUI/.pclogs/dev_20260917_164730_run.log
+================================================================
+
+── Environment ────────────────────────────────────────────────
+  love:          LOVE 11.5 (Mysterious Mysteries)
+  luajit:        LuaJIT 2.1.1737090214 -- Copyright (C) 2005-2025 Mike Pall. https://luajit.org/
+  luac:          Lua 5.4.7  Copyright (C) 1994-2024 Lua.org, PUC-Rio
+
+── Running LÖVE ───────────────────────────────────────────────
+[main] boot v0.5.2  theme=gc
+[crash_handler] prior crash surfaced: data/logs/crash_20260917_164639.log
+── SFX diagnostic ──
+  menu_move                    OK
+  menu_select                  OK
+  menu_back                    OK
+  menu_flip                    OK
+  menu_pagescroll              OK
+  menu_toggleoption            OK
+  ethostore_move               OK
+  notif_general                OK
+  livemenu_open                OK
+  gamecube_startup             OK
+  wii_startup                  OK
+  gba_startup                  OK
+  dead_space_ui_sound_1        OK
+  dead_space_menu_sound        OK
+  dead_space_locator           OK
+  error                        OK
+  newupdate                    OK
+  hb_bootsound                 OK
+[sfx] cannot load assets/sfx/re_menu_2.ogg (Could not open file assets/sfx/re_menu_2.ogg. Does not exist.)
+[sfx] cannot load assets/sfx/re_menu_2.wav (Could not open file assets/sfx/re_menu_2.wav. Does not exist.)
+[sfx] cannot load assets/sfx/re_menu_2.mp3 (Could not open file assets/sfx/re_menu_2.mp3. Does not exist.)
+  re_menu_2 -> menu_move       OK
+── end ──
+[main] joystick #1: 'Twin USB JoysticK'  isGamepad=true
+[main] joystick #2: 'Twin USB JoysticK'  isGamepad=true
+[state] games_data: 214 titles
+[state] enhancer hub: 39 items
+[main] scan: starting async ROM scan
+[main] joystick #1: 'Twin USB JoysticK'  isGamepad=true
+[main] joystick #2: 'Twin USB JoysticK'  isGamepad=true
+[main] joystick #1: 'Twin USB JoysticK'  isGamepad=true
+[main] joystick #2: 'Twin USB JoysticK'  isGamepad=true
+[main] async scan done: 9 roms (deduped)
+[BootDownloader] scheduled refresh (games=true enhancer=true wiitdb=true)
+[BootDownloader] games_data.json refreshed
+[BootDownloader] rtenhancerhub.json refreshed
+[BootDownloader] wiitdb.txt refreshed
+[main] data refresh completed, reloading in-memory indexes
+[state] games_data: 214 titles
+[state] enhancer hub: 39 items
+CRASH: main.lua:268: attempt to index local 'target' (a boolean value)
+stack traceback:
+	[love "boot.lua"]:352: in function '__index'
+	main.lua:268: in function 'call_enter'
+	main.lua:321: in function 'c'
+	ui/transition.lua:31: in function 'update'
+	main.lua:910: in function 'update'
+	[love "callbacks.lua"]:162: in function <[love "callbacks.lua"]:144>
+	[C]: in function 'xpcall'
+	[love "boot.lua"]:377: in function <[love "boot.lua"]:344>
+CRASH log written to data/logs/crash_20260917_164744.log
+
+── Summary ────────────────────────────────────────────────────
+  Exit code :    1
+  Duration  :    14s
+  Log saved :    /home/sirpips/opt/RG35XX H/dolphin rtcore/Dolphin RtCore v11.0.00/03_RtCore_Frontendone/DolphinUI/.pclogs/dev_20260917_164730_run.log
+================================================================
+
+================================================================
+  END OF LOG
+  Exit code :    1
+  Time      :    2026-09-17 16:47:44
+================================================================

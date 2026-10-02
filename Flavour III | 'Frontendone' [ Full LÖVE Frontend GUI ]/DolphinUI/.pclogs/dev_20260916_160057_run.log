@@ -1,0 +1,39 @@
+================================================================
+  DolphinUI — dev.sh
+================================================================
+  Command :      run
+  Date    :      2026-09-16 16:00:57
+  Host    :      Linux 6.12.101+deb13-amd64 x86_64
+  Shell   :      bash 5.2.37(1)-release
+  Root    :      /home/sirpips/opt/RG35XX H/dolphin rtcore/DolphinUI
+  Log     :      /home/sirpips/opt/RG35XX H/dolphin rtcore/DolphinUI/.pclogs/dev_20260916_160057_run.log
+================================================================
+
+── Environment ────────────────────────────────────────────────
+  love:          LOVE 11.5 (Mysterious Mysteries)
+  luajit:        LuaJIT 2.1.1737090214 -- Copyright (C) 2005-2025 Mike Pall. https://luajit.org/
+  luac:          Lua 5.4.7  Copyright (C) 1994-2024 Lua.org, PUC-Rio
+
+── Running LÖVE ───────────────────────────────────────────────
+Error: Syntax error: main.lua:280: 'do' expected near 'then'
+
+stack traceback:
+	[love "boot.lua"]:352: in function <[love "boot.lua"]:348>
+	[C]: at 0x556fe7cff690
+	[C]: in function 'require'
+	[love "boot.lua"]:323: in function <[love "boot.lua"]:126>
+	[C]: in function 'xpcall'
+	[love "boot.lua"]:362: in function <[love "boot.lua"]:355>
+	[C]: in function 'xpcall'
+
+── Summary ────────────────────────────────────────────────────
+  Exit code :    1
+  Duration  :    2s
+  Log saved :    /home/sirpips/opt/RG35XX H/dolphin rtcore/DolphinUI/.pclogs/dev_20260916_160057_run.log
+================================================================
+
+================================================================
+  END OF LOG
+  Exit code :    1
+  Time      :    2026-09-16 16:00:59
+================================================================

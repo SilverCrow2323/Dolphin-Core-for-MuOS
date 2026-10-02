@@ -1,0 +1,69 @@
+================================================================
+  DolphinUI — dev.sh
+================================================================
+  Command :      run
+  Date    :      2026-10-02 00:44:24
+  Host    :      Linux 6.18.54-x64v2-xanmod1 x86_64
+  Shell   :      bash 5.2.37(1)-release
+  Root    :      /home/sirpips/opt/RG35XX H/dolphin rtcore/Dolphin RtCore v11.5.00 'Triptych'/03_RtCore_Frontendone/DolphinUI
+  Log     :      /home/sirpips/opt/RG35XX H/dolphin rtcore/Dolphin RtCore v11.5.00 'Triptych'/03_RtCore_Frontendone/DolphinUI/.pclogs/dev_20261002_004424_run.log
+================================================================
+
+── Environment ────────────────────────────────────────────────
+  love:          LOVE 11.5 (Mysterious Mysteries)
+  luajit:        LuaJIT 2.1.1737090214 -- Copyright (C) 2005-2025 Mike Pall. https://luajit.org/
+  luac:          Lua 5.3.6  Copyright (C) 1994-2020 Lua.org, PUC-Rio
+
+── Running LÖVE ───────────────────────────────────────────────
+[main] boot v0.5.3  theme=gc
+── SFX diagnostic ──
+  menu_move                    OK
+  menu_select                  OK
+  menu_back                    OK
+  menu_flip                    OK
+  menu_pagescroll              OK
+  menu_toggleoption            OK
+  ethostore_move               OK
+  notif_general                OK
+  livemenu_open                OK
+  gamecube_startup             OK
+  wii_startup                  OK
+  gba_startup                  OK
+  dead_space_ui_sound_1        OK
+  dead_space_menu_sound        OK
+  dead_space_locator           OK
+  error                        OK
+  newupdate                    OK
+  hb_bootsound                 OK
+  re_menu_2                    OK
+── end ──
+[main] joystick #1: 'Twin USB JoysticK'  isGamepad=true
+[main] joystick #2: 'Twin USB JoysticK'  isGamepad=true
+[state] games_data: 214 titles
+[state] enhancer hub: 39 items
+[main] scan: starting async ROM scan
+[main] joystick #1: 'Twin USB JoysticK'  isGamepad=true
+[main] joystick #2: 'Twin USB JoysticK'  isGamepad=true
+[main] joystick #1: 'Twin USB JoysticK'  isGamepad=true
+[main] joystick #2: 'Twin USB JoysticK'  isGamepad=true
+[main] async scan done: 0 roms  (wiitdb: 0 matched, 0 fallback)
+[BootDownloader] scheduled refresh (games=true enhancer=true wiitdb=true)
+[BootDownloader] games_data.json refreshed
+[BootDownloader] rtenhancerhub.json refreshed
+[BootDownloader] wiitdb.txt refreshed
+[main] data refresh completed, reloading in-memory indexes
+[state] games_data: 216 titles
+[state] enhancer hub: 39 items
+[main] shutdown
+
+── Summary ────────────────────────────────────────────────────
+  Exit code :    0
+  Duration  :    27s
+  Log saved :    /home/sirpips/opt/RG35XX H/dolphin rtcore/Dolphin RtCore v11.5.00 'Triptych'/03_RtCore_Frontendone/DolphinUI/.pclogs/dev_20261002_004424_run.log
+================================================================
+
+================================================================
+  END OF LOG
+  Exit code :    0
+  Time      :    2026-10-02 00:44:51
+================================================================

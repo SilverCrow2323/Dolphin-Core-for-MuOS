@@ -1,0 +1,23 @@
+================================================================
+  DolphinUI — dev.sh
+================================================================
+  Command :      run
+  Date    :      2026-09-17 21:22:01
+  Host    :      Linux 6.12.101+deb13-amd64 x86_64
+  Shell   :      bash 5.2.37(1)-release
+  Root    :      /home/sirpips/opt/RG35XX H/dolphin rtcore/Dolphin RtCore v11.0.00/03_RtCore_Frontendone/DolphinUI
+  Log     :      /home/sirpips/opt/RG35XX H/dolphin rtcore/Dolphin RtCore v11.0.00/03_RtCore_Frontendone/DolphinUI/.pclogs/dev_20260917_212201_run.log
+================================================================
+
+── Environment ────────────────────────────────────────────────
+  love:          LOVE 11.5 (Mysterious Mysteries)
+  luajit:        LuaJIT 2.1.1737090214 -- Copyright (C) 2005-2025 Mike Pall. https://luajit.org/
+  luac:          Lua 5.4.7  Copyright (C) 1994-2024 Lua.org, PUC-Rio
+
+── Running LÖVE ───────────────────────────────────────────────
+
+================================================================
+  END OF LOG
+  Exit code :    141
+  Time      :    2026-09-17 21:22:44
+================================================================
