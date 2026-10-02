@@ -224,6 +224,8 @@ body.theme-gc .dolphin-compat-mini .wiki-link { color: #a78bfa; border-color: #6
 body.theme-gc .dolphin-compat-mini .wiki-link:hover { background: rgba(139,92,246,0.2); color: #e9d5ff; }
 body.theme-wii .dolphin-compat-mini .wiki-link { color: #0284c7; border-color: #0284c7; background: rgba(0,163,224,0.08); }
 body.theme-wii .dolphin-compat-mini .wiki-link:hover { background: rgba(0,163,224,0.2); color: #075985; }
+.dolphin-compat-mini .compat-loading { display: inline-flex; gap: 3px; align-items: center; }
+.dolphin-compat-mini .compat-loading-label { font-size: 11px; font-weight: 900; font-family: 'JetBrains Mono', monospace; margin-left: 4px; opacity: 0.5; letter-spacing: 1px; }
 
 .view-btn { display: inline-flex; align-items: center; gap: 4px; padding: 5px 12px; font-size: 11px; font-weight: 900; border: 2px solid; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); cursor: pointer; background: transparent; text-transform: uppercase; }
 body.theme-gc .view-btn { border-color: #2a1a4a; color: #94a3b8; }
@@ -769,8 +771,9 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
 <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-5">
   <div id="filterPanel" class="cyber-border p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500">
     <div class="relative w-full md:w-72 shrink-0">
-      <input type="text" id="searchInput" placeholder="Search game title..." class="w-full pl-9 pr-4 py-2 text-sm" aria-label="Search game title" />
-      <svg class="w-4 h-4 absolute left-2.5 top-2.5 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <input type="text" id="searchInput" placeholder="Search title or Game ID..." class="w-full pl-9 pr-8 py-2 text-sm" aria-label="Search game title or Game ID" />
+      <svg class="w-4 h-4 absolute left-2.5 top-2.5 opacity-50 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <button id="clearSearchBtn" type="button" aria-label="Clear search" style="display:none; position:absolute; right:6px; top:50%; transform:translateY(-50%); padding:2px 8px; background:transparent; border:none; clip-path:none; color:inherit; opacity:0.55; font-weight:900; cursor:pointer;">✕</button>
     </div>
     <div class="flex flex-wrap items-center justify-center gap-2">
       <select id="regionFilter" aria-label="Filter by region"><option value="all">🌍 All Regions</option><option value="NTSC">🇺🇸 NTSC / USA</option><option value="PAL">🇪🇺 PAL</option><option value="JPN">🇯🇵 JPN</option></select>
@@ -782,6 +785,7 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
         <button id="viewListBtn" class="view-btn" title="List view" aria-label="List view"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h6M4 12h6M4 19h6M14 5h6M14 12h6M14 19h6"/></svg> List</button>
         <button id="viewExtendedBtn" class="view-btn" title="Extended list view" aria-label="Extended view"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16M4 12h16M4 19h16"/></svg> Extended</button>
       </div>
+      <span id="filterCount" class="text-xs font-black opacity-70 px-2 font-mono" aria-live="polite">0 / 0</span>
       <button id="exportBtn" class="flex items-center gap-1.5 text-sm" title="Export filtered list as JSON" aria-label="Export filtered list as JSON">📥 Export</button>
       <button id="resetFiltersBtn" class="text-sm font-black transition-colors">↺ Reset</button>
     </div>
@@ -1069,7 +1073,15 @@ function render() {
     else { p.classList.remove('cyber-border'); p.classList.toggle('opacity-60', state.selectedStars !== 'all'); }
   });
   state.filtered = state.groupedGames.filter(item => {
-    if (state.search && !item.game.toLowerCase().includes(state.search) && !item.allRegions.some(r => r.entries.some(e => (e.test_details?.considerations || '').toLowerCase().includes(state.search)))) return false;
+    if (state.search) {
+      const q = state.search;
+      const matches =
+        item.game.toLowerCase().includes(q) ||
+        (item.aggregated.gameId || '').toLowerCase().includes(q) ||
+        item.allRegions.some(r => (r.gameId || '').toLowerCase().includes(q)) ||
+        item.allRegions.some(r => r.entries.some(e => (e.test_details?.considerations || '').toLowerCase().includes(q)));
+      if (!matches) return false;
+    }
     if (state.selectedStars !== 'all') { const s = parseInt(state.selectedStars); if (s === 1) { if (item.aggregated.bestRating > 1) return false; } else if (item.aggregated.bestRating !== s) return false; }
     if (state.selectedRegion !== 'all') { const hasRegion = item.allRegions.some(r => { if (state.selectedRegion === 'NTSC' && r.region.includes('NTSC')) return true; return r.region === state.selectedRegion; }); if (!hasRegion) return false; }
     if (state.selectedBoot !== 'all' && item.aggregated.bestBoot !== state.selectedBoot) return false;
@@ -1083,6 +1095,9 @@ function render() {
     else if (state.sortKey === 'entries') cmp = (a.aggregated.totalEntries || 0) - (b.aggregated.totalEntries || 0);
     return state.sortOrder === 'asc' ? cmp : -cmp;
   });
+  updateUrlState();
+  const filterCountEl = document.getElementById('filterCount');
+  if (filterCountEl) filterCountEl.textContent = `${state.filtered.length} / ${state.groupedGames.length}`;
   document.getElementById('loaderContainer').classList.add('hidden');
   const grid = document.getElementById('gamesGrid'); const empty = document.getElementById('emptyState');
   if (state.filtered.length === 0) { grid.innerHTML = ''; empty.classList.remove('hidden'); return; }
@@ -1208,18 +1223,76 @@ function renderExtendedCards() {
   }).join('');
 }
 
+/* ===== Dolphin Wiki rating: live fetch + localStorage cache ===== */
+const DOLPHIN_RATING_MEM = new Map();
+const DOLPHIN_RATING_TTL = 7 * 24 * 60 * 60 * 1000;
+
+async function fetchDolphinWikiRating(gameId) {
+  if (!gameId || gameId === 'UNKNOWN') return null;
+  if (DOLPHIN_RATING_MEM.has(gameId)) return DOLPHIN_RATING_MEM.get(gameId);
+  const cacheKey = `dolphin-wiki-rating-v2-${gameId}`;
+  try {
+    const raw = localStorage.getItem(cacheKey);
+    if (raw) {
+      const p = JSON.parse(raw);
+      if (p && Date.now() - p.ts < DOLPHIN_RATING_TTL) {
+        DOLPHIN_RATING_MEM.set(gameId, p.value);
+        return p.value;
+      }
+    }
+  } catch (e) {}
+  try {
+    const apiUrl = `https://wiki.dolphin-emu.org/api.php?action=parse&page=${encodeURIComponent(gameId)}&prop=wikitext&format=json&origin=*`;
+    const ctl = new AbortController();
+    const t = setTimeout(() => ctl.abort(), 6000);
+    const res = await fetch(apiUrl, { signal: ctl.signal });
+    clearTimeout(t);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    const wt = (data && data.parse && data.parse.wikitext && data.parse.wikitext['*']) || '';
+    let rating = null;
+    let m = wt.match(/\{\{\s*Ratings?\s*\|/i);
+    if (m) {
+      const near = wt.slice(m.index, m.index + 250);
+      const n = near.match(/\|\s*([1-5])\b/);
+      if (n) rating = parseInt(n[1], 10);
+    }
+    if (rating === null) { m = wt.match(/\|\s*rating\s*=\s*([1-5])\b/i); if (m) rating = parseInt(m[1], 10); }
+    if (rating === null) { m = wt.match(/Quality\s*\|\s*([1-5])\b/i); if (m) rating = parseInt(m[1], 10); }
+    if (rating === null) { m = wt.match(/([1-5])\s*\/\s*5\b/); if (m) rating = parseInt(m[1], 10); }
+    DOLPHIN_RATING_MEM.set(gameId, rating);
+    try { localStorage.setItem(cacheKey, JSON.stringify({ value: rating, ts: Date.now() })); } catch (e) {}
+    return rating;
+  } catch (e) {
+    DOLPHIN_RATING_MEM.set(gameId, null);
+    return null;
+  }
+}
+
 function renderCompatSegments(gameId) {
-  const rating = DOLPHIN_COMPAT[gameId];
-  const hasRating = typeof rating === 'number';
-  const filled = hasRating ? rating : 0;
+  if (!gameId || gameId === 'UNKNOWN') {
+    return `<span class="compat-unknown">no Game ID</span>`;
+  }
   const wikiLink = getDolphinWikiLink(gameId);
-  let segHtml = '';
-  for (let i = 0; i < 5; i++) segHtml += `<span class="seg ${i < filled ? 'filled' : ''}"></span>`;
-  let labelHtml = '';
-  if (hasRating) labelHtml = `<span class="compat-label" title="Dolphin Emulator Wiki rating: ${filled}/5">${filled}/5</span>`;
-  else labelHtml = `<span class="compat-unknown" title="No official compatibility rating available for this Game ID">?</span>`;
+  const placeholder = `<span class="compat-loading" data-gameid="${escapeHtml(gameId)}"><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="compat-loading-label">…</span></span>`;
   const linkHtml = wikiLink ? `<a href="${wikiLink}" target="_blank" rel="noopener noreferrer" class="wiki-link" title="Open Dolphin Wiki page for ${escapeHtml(gameId)}">🌐 Wiki</a>` : '';
-  return segHtml + labelHtml + linkHtml;
+  return placeholder + linkHtml;
+}
+
+async function hydrateCompatRating(containerEl, gameId) {
+  const rating = await fetchDolphinWikiRating(gameId);
+  if (!containerEl || !containerEl.isConnected) return;
+  const loading = containerEl.querySelector('.compat-loading');
+  if (!loading) return;
+  let html = '';
+  if (typeof rating === 'number') {
+    for (let i = 0; i < 5; i++) html += `<span class="seg ${i < rating ? 'filled' : ''}"></span>`;
+    html += `<span class="compat-label" title="Dolphin Emulator Wiki rating: ${rating}/5">${rating}/5</span>`;
+  } else {
+    for (let i = 0; i < 5; i++) html += `<span class="seg"></span>`;
+    html += `<span class="compat-unknown" title="No rating available on Dolphin Wiki for this Game ID">not rated</span>`;
+  }
+  loading.outerHTML = html;
 }
 
 function openModal(index) {
@@ -1248,7 +1321,9 @@ function renderModalWithRegion(group, region) {
   const bestEntry = regionData.entries[0] || {};
   const coverUrl = bestEntry.cover_art || getCoverUrl(regionData.gameId, region);
   if (coverUrl) { coverImg.src = coverUrl; coverImg.style.display = 'block'; } else { coverImg.style.display = 'none'; }
-  document.getElementById('dolphinCompatMini').innerHTML = renderCompatSegments(regionData.gameId);
+  const compatEl = document.getElementById('dolphinCompatMini');
+  compatEl.innerHTML = renderCompatSegments(regionData.gameId);
+  if (regionData.gameId && regionData.gameId !== 'UNKNOWN') hydrateCompatRating(compatEl, regionData.gameId);
   document.getElementById('modalBestRatingVal').innerHTML = renderStars(regionData.bestRating, 16);
   document.getElementById('modalBestFpsVal').textContent = formatFpsLabel(regionData.bestFpsStr);
   const avgR = regionData.avgRating || 0;
@@ -1478,6 +1553,33 @@ function loadGuideSection(target) {
 document.querySelectorAll('#rtIndexList button').forEach(btn => { btn.addEventListener('click', function() { document.querySelectorAll('#rtIndexList button').forEach(b => b.classList.remove('active')); this.classList.add('active'); loadGuideSection(this.dataset.target); }); });
 loadGuideSection('h1');
 
+/* ===== URL state (share/bookmark filtered views) ===== */
+function updateUrlState() {
+  const p = new URLSearchParams();
+  if (state.console === 'wii') p.set('c', 'wii');
+  if (state.search) p.set('q', state.search);
+  if (state.selectedRegion !== 'all') p.set('r', state.selectedRegion);
+  if (state.selectedBoot !== 'all') p.set('b', state.selectedBoot);
+  if (state.selectedStars !== 'all') p.set('s', state.selectedStars);
+  if (state.sortKey !== 'title') p.set('sk', state.sortKey);
+  if (state.sortOrder !== 'asc') p.set('so', state.sortOrder);
+  if (state.viewMode !== 'grid') p.set('v', state.viewMode);
+  const qs = p.toString();
+  const newUrl = qs ? `?${qs}` : window.location.pathname;
+  history.replaceState(null, '', newUrl);
+}
+
+function loadUrlState() {
+  const p = new URLSearchParams(window.location.search);
+  if (p.get('q')) { state.search = p.get('q').toLowerCase(); const si = document.getElementById('searchInput'); if (si) { si.value = p.get('q'); document.getElementById('clearSearchBtn').style.display = 'block'; } }
+  if (p.get('r')) { state.selectedRegion = p.get('r'); const el = document.getElementById('regionFilter'); if (el) el.value = p.get('r'); }
+  if (p.get('b')) { state.selectedBoot = p.get('b'); const el = document.getElementById('bootFilter'); if (el) el.value = p.get('b'); }
+  if (p.get('s')) state.selectedStars = p.get('s');
+  if (p.get('sk')) { state.sortKey = p.get('sk'); const el = document.getElementById('sortKey'); if (el) el.value = p.get('sk'); }
+  if (p.get('so')) { state.sortOrder = p.get('so'); const lbl = document.getElementById('sortOrderLabel'); if (lbl) lbl.textContent = p.get('so') === 'asc' ? 'Asc' : 'Desc'; if (p.get('so') === 'desc') document.getElementById('sortOrderIcon').classList.add('rotate-180'); }
+  if (p.get('v')) { state.viewMode = p.get('v'); document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active')); const btn = p.get('v') === 'list' ? 'viewListBtn' : p.get('v') === 'extended' ? 'viewExtendedBtn' : 'viewGridBtn'; document.getElementById(btn)?.classList.add('active'); }
+}
+
 function updateStats() {
   document.getElementById('statTested').textContent = state.groupedGames.length;
   document.getElementById('statTotal').textContent = state.rawGames.length;
@@ -1672,7 +1774,20 @@ document.getElementById('gameModal').addEventListener('click', function(e) { if 
 document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeModal(); closeTesterPanel(); closeAboutPanel(); closeReportModal(); } });
 
 let searchTimeout = null;
-document.getElementById('searchInput').addEventListener('input', e => { clearTimeout(searchTimeout); searchTimeout = setTimeout(() => { state.search = e.target.value.toLowerCase().trim(); render(); }, 150); });
+const _searchInput = document.getElementById('searchInput');
+const _clearSearchBtn = document.getElementById('clearSearchBtn');
+_searchInput.addEventListener('input', e => {
+  _clearSearchBtn.style.display = e.target.value ? 'block' : 'none';
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => { state.search = e.target.value.toLowerCase().trim(); render(); }, 150);
+});
+_clearSearchBtn.addEventListener('click', () => {
+  _searchInput.value = '';
+  _clearSearchBtn.style.display = 'none';
+  state.search = '';
+  render();
+  _searchInput.focus();
+});
 document.getElementById('regionFilter').addEventListener('change', e => { state.selectedRegion = e.target.value; render(); });
 document.getElementById('bootFilter').addEventListener('change', e => { state.selectedBoot = e.target.value; render(); });
 document.getElementById('sortKey').addEventListener('change', e => { state.sortKey = e.target.value; render(); });
@@ -1684,7 +1799,9 @@ document.querySelectorAll('.rating-panel').forEach(p => { p.addEventListener('cl
 document.getElementById('resetFiltersBtn').addEventListener('click', () => {
   document.getElementById('searchInput').value = ''; document.getElementById('regionFilter').value = 'all'; document.getElementById('bootFilter').value = 'all'; document.getElementById('sortKey').value = 'title';
   state.sortOrder = 'asc'; document.getElementById('sortOrderLabel').textContent = 'Asc'; document.getElementById('sortOrderIcon').classList.remove('rotate-180');
-  state.search = ''; state.selectedStars = 'all'; state.selectedRegion = 'all'; state.selectedBoot = 'all'; render();
+  state.search = ''; state.selectedStars = 'all'; state.selectedRegion = 'all'; state.selectedBoot = 'all';
+  const _cb = document.getElementById('clearSearchBtn'); if (_cb) _cb.style.display = 'none';
+  render();
 });
 document.getElementById('clearFiltersBtn').addEventListener('click', () => { document.getElementById('resetFiltersBtn').click(); });
 
@@ -1699,7 +1816,8 @@ document.getElementById('exportBtn').addEventListener('click', () => {
 });
 
 window.addEventListener('load', () => { syncHeaderHeights(); });
-switchConsole('gc');
+loadUrlState();
+switchConsole(new URLSearchParams(window.location.search).get('c') === 'wii' ? 'wii' : 'gc');
 syncHeaderHeights();
 setTimeout(syncHeaderHeights, 300);
 </script>
