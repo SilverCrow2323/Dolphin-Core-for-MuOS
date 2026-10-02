@@ -28,24 +28,14 @@ html::-webkit-scrollbar-thumb:hover {
 }
 html { scrollbar-color: var(--sb-thumb-1, #8b5cf6) var(--sb-track, #0a0618); scrollbar-width: auto; }
 
-/* Inner scrollbars (unchanged theme behavior) */
+/* Inner scrollbars */
 ::-webkit-scrollbar { width: 14px; height: 14px; }
 ::-webkit-scrollbar-button { display: none; }
 body.theme-gc ::-webkit-scrollbar-track { background: #0a0618; border-left: 1px solid #2a1a4a; }
-body.theme-gc ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg,#8b5cf6,#ec4899);
-  border: 3px solid #0a0618;
-  border-radius: 8px;
-  min-height: 40px;
-}
+body.theme-gc ::-webkit-scrollbar-thumb { background: linear-gradient(180deg,#8b5cf6,#ec4899); border: 3px solid #0a0618; border-radius: 8px; min-height: 40px; }
 body.theme-gc ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg,#a78bfa,#f472b6); }
 body.theme-wii ::-webkit-scrollbar-track { background: #d0dce8; border-left: 1px solid #94a3b8; }
-body.theme-wii ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg,#00a3e0,#38bdf8);
-  border: 3px solid #d0dce8;
-  border-radius: 8px;
-  min-height: 40px;
-}
+body.theme-wii ::-webkit-scrollbar-thumb { background: linear-gradient(180deg,#00a3e0,#38bdf8); border: 3px solid #d0dce8; border-radius: 8px; min-height: 40px; }
 body.theme-wii ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg,#0284c7,#0ea5e9); }
 body.theme-gc { scrollbar-color: #8b5cf6 #0a0618; scrollbar-width: auto; }
 body.theme-wii { scrollbar-color: #00a3e0 #d0dce8; scrollbar-width: auto; }
@@ -77,10 +67,7 @@ body.theme-wii .list-card-2col { border-radius: 16px !important; background: rgb
   color: #c4b5fd;
   -webkit-text-stroke: 2.5px #000;
   paint-order: stroke fill;
-  text-shadow:
-    0 0 8px rgba(167,139,250,0.9),
-    0 0 18px rgba(139,92,246,0.7),
-    0 0 32px rgba(124,58,237,0.5);
+  text-shadow: 0 0 8px rgba(167,139,250,0.9), 0 0 18px rgba(139,92,246,0.7), 0 0 32px rgba(124,58,237,0.5);
   animation: rtPulse 5s ease-in-out infinite;
 }
 @keyframes rtPulse {
@@ -121,29 +108,14 @@ body.theme-wii .list-card-2col { border-radius: 16px !important; background: rgb
 .star-glint svg path { fill: #fde68a; }
 .star-glint svg path.core { fill: #fbbf24; }
 
-/* ===== HEADERS: FULL (drawer) + COMPACT ===== */
+/* ===== HEADERS ===== */
 :root { --full-header-h: 140px; --compact-header-h: 56px; }
 
-#appHeader {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 50;
-  transform: translateY(0);
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), background 0.4s;
-  will-change: transform;
-}
+#appHeader { position: fixed; top: 0; left: 0; right: 0; z-index: 50; transform: translateY(0); transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), background 0.4s; will-change: transform; }
 body.theme-gc #appHeader { background: rgba(10,6,24,0.98); backdrop-filter: blur(10px); }
 body.theme-wii #appHeader { background: rgba(232,240,248,0.98); backdrop-filter: blur(10px); }
 
-#compactHeader {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 45;
-  transform: translateY(-100%);
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.35);
-}
+#compactHeader { position: fixed; top: 0; left: 0; right: 0; z-index: 45; transform: translateY(-100%); transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); will-change: transform; box-shadow: 0 6px 24px rgba(0,0,0,0.35); }
 body.theme-gc #compactHeader { background: rgba(10,6,24,0.97); backdrop-filter: blur(14px); border-bottom: 2px solid #2a1a4a; }
 body.theme-wii #compactHeader { background: rgba(232,240,248,0.97); backdrop-filter: blur(14px); border-bottom: 2px solid rgba(15,23,42,0.15); }
 
@@ -154,37 +126,13 @@ body.scrolled.header-peek #compactHeader { transform: translateY(-100%); }
 
 #headerSpacer { height: 140px; transition: height 0.2s; }
 
-.compact-brand {
-  font-family: 'Audiowide', 'Orbitron', sans-serif;
-  font-weight: 900;
-  font-size: 15px;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-}
+.compact-brand { font-family: 'Audiowide', 'Orbitron', sans-serif; font-weight: 900; font-size: 15px; letter-spacing: 0.03em; white-space: nowrap; }
 body.theme-gc .compact-brand { color: #c4b5fd; text-shadow: 0 0 10px rgba(139,92,246,0.55); }
 body.theme-wii .compact-brand { color: #0284c7; text-shadow: 0 0 8px rgba(0,163,224,0.35); }
-
-.compact-subtitle {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
+.compact-subtitle { font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; }
 body.theme-gc .compact-subtitle { color: #94a3b8; }
 body.theme-wii .compact-subtitle { color: #475569; }
-
-.compact-version-panel {
-  display: inline-flex; align-items: center; gap: 7px;
-  padding: 5px 11px;
-  border: 2px solid;
-  clip-path: polygon(0% 12%, 6% 0%, 94% 0%, 100% 12%, 100% 88%, 94% 100%, 6% 100%, 0% 88%);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  font-weight: 800;
-  white-space: nowrap;
-}
+.compact-version-panel { display: inline-flex; align-items: center; gap: 7px; padding: 5px 11px; border: 2px solid; clip-path: polygon(0% 12%, 6% 0%, 94% 0%, 100% 12%, 100% 88%, 94% 100%, 6% 100%, 0% 88%); font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 800; white-space: nowrap; }
 body.theme-gc .compact-version-panel { border-color: #2a1a4a; background: rgba(139,92,246,0.10); color: #c4b5fd; }
 body.theme-wii .compact-version-panel { border-color: rgba(15,23,42,0.2); background: rgba(0,163,224,0.08); color: #0284c7; }
 .compact-version-panel img { width: 16px; height: 16px; object-fit: contain; flex-shrink: 0; }
@@ -192,20 +140,15 @@ body.theme-wii .compact-version-panel { border-color: rgba(15,23,42,0.2); backgr
 body.theme-gc .compact-version-panel b { color: #f1f5f9; }
 body.theme-wii .compact-version-panel b { color: #0f172a; }
 
-@media (max-width: 1100px) {
-  .compact-subtitle { display: none; }
-}
-@media (max-width: 900px) {
-  .compact-version-panel span.ver-label { display: none; }
-}
-@media (max-width: 700px) {
-  .compact-brand { font-size: 13px; }
-  .compact-brand .brand-long { display: none; }
-}
+@media (max-width: 1100px) { .compact-subtitle { display: none; } }
+@media (max-width: 900px) { .compact-version-panel span.ver-label { display: none; } }
+@media (max-width: 700px) { .compact-brand { font-size: 13px; } .compact-brand .brand-long { display: none; } }
 
 /* ===== TOGGLE ===== */
 .console-toggle { display: inline-flex; align-items: center; background: rgba(255,255,255,0.06); border-radius: 9999px; padding: 4px; position: relative; height: 42px; border: 2px solid rgba(255,255,255,0.08); box-shadow: inset 0 2px 4px rgba(0,0,0,0.4); cursor: pointer; user-select: none; flex-shrink: 0; min-width: 200px; }
 body.theme-wii .console-toggle { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.15); }
+.console-toggle:focus-visible { outline: 2px solid #8b5cf6; outline-offset: 3px; }
+body.theme-wii .console-toggle:focus-visible { outline-color: #00a3e0; }
 .console-toggle .toggle-track { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 8px; border-radius: 9999px; overflow: hidden; }
 .console-toggle .toggle-slider { position: absolute; top: 2px; left: 2px; width: calc(50% - 4px); height: calc(100% - 4px); border-radius: 9999px; background: #8b5cf6; box-shadow: 0 0 12px rgba(139,92,246,0.4); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s; pointer-events: none; z-index: 1; }
 .console-toggle .toggle-slider.wii-slider { transform: translateX(100%); background: #00a3e0; box-shadow: 0 0 12px rgba(0,163,224,0.4); }
@@ -216,7 +159,6 @@ body.theme-wii .console-toggle { background: rgba(0,0,0,0.04); border-color: rgb
 body.theme-wii .console-toggle .toggle-option { color: rgba(0,0,0,0.3); }
 body.theme-wii .console-toggle .toggle-option.active { color: #0f172a; }
 body.theme-wii .console-toggle .toggle-option img { filter: brightness(0.6) invert(0); }
-
 #compactHeader .console-toggle { height: 38px; min-width: 190px; }
 
 /* ===== CARDS ===== */
@@ -229,7 +171,6 @@ body.theme-wii .cover-placeholder { background: #d0dce8; color: rgba(0,0,0,0.06)
 .fps-badge { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 800; padding: 2px 12px; border-radius: 0; border: 2px solid; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); }
 body.theme-gc .fps-badge.gc { background: rgba(37, 99, 235, 0.25); color: #60a5fa; border-color: #2563eb; }
 body.theme-wii .fps-badge.gc { background: rgba(139,92,246,0.10); color: #6d28d9; border-color: #8b5cf6; }
-
 .boot-badge, .playable-badge { font-size: 9px; font-weight: 900; padding: 2px 12px; border-radius: 0; border: 2px solid; text-transform: uppercase; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); }
 body.theme-gc .boot-badge.yes { background: rgba(60,255,120,0.15); color: #4ade80; border-color: #22c55e; }
 body.theme-gc .boot-badge.no { background: rgba(255,60,60,0.15); color: #f87171; border-color: #ef4444; }
@@ -301,6 +242,8 @@ body.theme-wii .modal-test-card { background: rgba(255, 255, 255, 0.9); border-c
 .modal-test-card .env-info { font-size: 13px !important; }
 .modal-test-card .tester-name-line { font-size: 15px !important; }
 .modal-test-card .test-num { font-size: 13px !important; padding: 3px 10px !important; }
+.tester-link { cursor: pointer; text-decoration: underline; font-weight: 900; }
+.tester-link:hover { opacity: 0.8; }
 
 .rating-star-container { position: relative; width: 76px; height: 76px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
 .rating-star-container svg { width: 100%; height: 100%; }
@@ -313,6 +256,7 @@ body.theme-gc .dolphin-compat-mini .seg { border-color: #2a1a4a; background: rgb
 body.theme-gc .dolphin-compat-mini .seg.filled { background: linear-gradient(90deg, #8b5cf6, #ec4899); border-color: #6d28d9; }
 body.theme-wii .dolphin-compat-mini .seg { border-color: #94a3b8; background: rgba(0,0,0,0.05); }
 body.theme-wii .dolphin-compat-mini .seg.filled { background: linear-gradient(90deg, #00a3e0, #38bdf8); border-color: #0284c7; }
+.dolphin-compat-mini .compat-unknown { font-size: 10px; font-weight: 800; font-family: 'JetBrains Mono', monospace; opacity: 0.55; margin-left: 4px; }
 .dolphin-compat-mini .wiki-link { font-size: 12px; font-weight: 900; text-decoration: none; margin-left: 4px; padding: 1px 6px; border: 1px solid; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); }
 body.theme-gc .dolphin-compat-mini .wiki-link { color: #a78bfa; border-color: #6d28d9; }
 body.theme-wii .dolphin-compat-mini .wiki-link { color: #0284c7; border-color: #94a3b8; }
@@ -325,12 +269,7 @@ body.theme-wii .view-btn.active { background: rgba(0,163,224,0.12); border-color
 .view-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
 
 #filterPanel { transition: box-shadow 0.3s, top 0.3s; }
-body.scrolled #filterPanel {
-  position: sticky;
-  top: var(--compact-header-h);
-  z-index: 30;
-  margin-top: 0;
-}
+body.scrolled #filterPanel { position: sticky; top: var(--compact-header-h); z-index: 30; margin-top: 0; }
 body.theme-gc.scrolled #filterPanel { box-shadow: 0 6px 24px rgba(0,0,0,0.45), 0 0 0 1px rgba(139,92,246,0.25); }
 body.theme-wii.scrolled #filterPanel { box-shadow: 0 6px 24px rgba(15,23,42,0.12), 0 0 0 1px rgba(0,163,224,0.2); }
 
@@ -351,7 +290,7 @@ body.theme-wii .list-card-2col { background: rgba(255,255,255,0.9); border-color
 body.theme-gc .list-card-2col .meta-item { border-color: #4a2a6a; color: #c4b5fd; background: rgba(0,0,0,0.3); }
 body.theme-wii .list-card-2col .meta-item { border-color: #94a3b8; color: #0f172a; background: rgba(255,255,255,0.6); }
 
-.list-extended-card { width: 100%; max-width: 820px; display: flex; align-items: flex-start; gap: 18px; padding: 16px 18px; border: 2px solid; clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%); }
+.list-extended-card { width: 100%; max-width: 820px; display: flex; align-items: flex-start; gap: 18px; padding: 16px 18px; border: 2px solid; clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%); cursor: pointer; }
 body.theme-gc .list-extended-card { background: rgba(26,10,46,0.6); border-color: #2a1a4a; }
 body.theme-wii .list-extended-card { background: rgba(255,255,255,0.85); border-color: rgba(15,23,42,0.15); }
 .list-extended-cover { width: 72px; height: 96px; overflow: hidden; flex-shrink: 0; border: 2px solid; clip-path: polygon(0% 5%, 5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%); }
@@ -374,6 +313,8 @@ button { font-weight: 900; border: 2px solid; border-radius: 0; padding: 8px 18p
 body.theme-gc button { border-color: #2a1a4a; color: #e2e8f0; }
 body.theme-wii button { border-color: #94a3b8; color: #0f172a; }
 button:active { transform: translate(2px, 2px); }
+button:focus-visible { outline: 2px solid #8b5cf6; outline-offset: 2px; }
+body.theme-wii button:focus-visible { outline-color: #00a3e0; }
 
 .btn-primary.gc { background: #8b5cf6 !important; color: white !important; border-color: #6d28d9 !important; }
 .btn-primary.wii { background: #00a3e0 !important; color: white !important; border-color: #0284c7 !important; }
@@ -447,6 +388,13 @@ body.theme-gc #reportModal .report-panel h2 { color: #a78bfa; }
 body.theme-wii #reportModal .report-panel h2 { color: #0284c7; }
 #reportModal .report-panel .sub { font-size: 0.75rem; opacity: 0.6; margin-bottom: 1.2rem; }
 
+/* Report error banner + field error */
+.report-error-banner { background: rgba(239,68,68,0.12); border: 2px solid #ef4444; color: #fca5a5; padding: 10px 14px; margin-bottom: 12px; font-size: 0.85rem; font-weight: 700; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); animation: fadeIn 0.25s ease-out; }
+body.theme-wii .report-error-banner { background: rgba(239,68,68,0.08); color: #b91c1c; }
+.report-error-banner ul { list-style: none; padding-left: 0; margin-top: 4px; }
+.report-error-banner li::before { content: "▸ "; font-weight: 900; }
+.tetris-block .input-error { border-color: #ef4444 !important; box-shadow: 0 0 0 2px rgba(239,68,68,0.25) !important; }
+
 .tetris-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 12px; width: 100%; }
 .tetris-block { padding: 14px 16px; position: relative; }
 .tetris-block-cyan    { grid-column: span 7; }
@@ -477,7 +425,7 @@ body.theme-wii #reportModal .report-panel h2 { color: #0284c7; }
 .tetris-block .form-label i { font-size: 0.7rem; }
 .tetris-block .status-hint { margin-left: auto; color: #64748b; font-size: 0.55rem; }
 
-.tetris-block .input-box { width: 100%; background: rgba(0, 0, 0, 0.55); border: 1px solid #334155; color: #f1f5f9; padding: 6px 10px; font-weight: 600; font-size: 0.8rem; clip-path: polygon(0% 15%, 2% 0%, 98% 0%, 100% 15%, 100% 85%, 98% 100%, 2% 100%, 0% 85%); min-height: 30px; outline: none; }
+.tetris-block .input-box { width: 100%; background: rgba(0, 0, 0, 0.55); border: 1px solid #334155; color: #f1f5f9; padding: 6px 10px; font-weight: 600; font-size: 0.8rem; clip-path: polygon(0% 15%, 2% 0%, 98% 0%, 100% 15%, 100% 85%, 98% 100%, 2% 100%, 0% 85%); min-height: 30px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
 .tetris-block textarea.input-box { clip-path: polygon(0% 5%, 1% 0%, 99% 0%, 100% 5%, 100% 95%, 99% 100%, 1% 100%, 0% 95%); resize: vertical; min-height: 46px; padding: 6px 10px; }
 .tetris-block select.input-box { appearance: none; background-image: linear-gradient(45deg, transparent 50%, #64748b 50%), linear-gradient(135deg, #64748b 50%, transparent 50%); background-position: calc(100% - 12px) calc(1em - 1px), calc(100% - 7px) calc(1em - 1px); background-size: 5px 5px; background-repeat: no-repeat; padding-right: 24px; }
 .tetris-block select.input-box option { background: #05030a; color: #f1f5f9; }
@@ -664,31 +612,44 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
   #compactHeader .console-toggle { min-width: 150px; height: 34px; }
   .compact-brand { font-size: 12px; }
 }
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .guide-crt, .guide-crt .scanlines, .rt-electric, .rt-electric::after,
+  .star-glint, .rt-electric .anime-arc, .rt-core .anime-arc { animation: none !important; }
+  .rt-electric::after { opacity: 0.7; }
+}
 </style>
 </head>
 <body id="appBody" class="theme-gc font-sans antialiased transition-colors duration-500 min-h-screen">
 
-<!-- ===== COMPACT HEADER (visible on scroll) ===== -->
+<!-- ===== COMPACT HEADER ===== -->
 <header id="compactHeader">
   <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2">
     <div class="flex items-center justify-between gap-3">
       <div class="flex items-center gap-2 flex-shrink-0 min-w-0">
-        <img id="compactConsoleIcon" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="Console" class="w-7 h-7 object-contain flex-shrink-0" />
+        <img id="compactConsoleIcon" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="" class="w-7 h-7 object-contain flex-shrink-0" />
         <span class="compact-brand">Dolphin <span style="color:#c4b5fd;">Rt</span>:Core<span class="brand-long"> for muOS</span></span>
       </div>
       <div class="flex items-center gap-3 flex-shrink-0">
         <div class="console-toggle" role="button" tabindex="0" aria-label="Console toggle">
           <div class="toggle-track">
             <div class="toggle-slider"></div>
-            <span class="toggle-option active" data-console="gc"><img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="GC" /> GameCube</span>
-            <span class="toggle-option" data-console="wii"><img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg" alt="Wii" /> Wii</span>
+            <span class="toggle-option active" data-console="gc"><img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="" /> GameCube</span>
+            <span class="toggle-option" data-console="wii"><img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg" alt="" /> Wii</span>
           </div>
         </div>
         <span class="compact-subtitle">Compatibility Database</span>
       </div>
       <div class="flex items-center gap-2 flex-shrink-0">
         <div class="compact-version-panel">
-          <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt_icon.png" alt="Rt:Core" onerror="this.style.display='none'" />
+          <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt_icon.png" alt="" onerror="this.style.display='none'" />
           <span><span class="ver-label">Rt:Core version: </span><b>v11.5.00 'Triptych'</b></span>
         </div>
       </div>
@@ -696,7 +657,7 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
   </div>
 </header>
 
-<!-- ===== FULL HEADER (drawer) ===== -->
+<!-- ===== FULL HEADER ===== -->
 <header id="appHeader" class="border-b-2 transition-colors duration-500">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
     <div class="flex flex-wrap items-center justify-between gap-3">
@@ -708,8 +669,8 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
       <div class="console-toggle" role="button" tabindex="0" aria-label="Console toggle">
         <div class="toggle-track">
           <div class="toggle-slider"></div>
-          <span class="toggle-option active" data-console="gc"><img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="GC" /> GameCube</span>
-          <span class="toggle-option" data-console="wii"><img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg" alt="Wii" /> Wii</span>
+          <span class="toggle-option active" data-console="gc"><img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="" /> GameCube</span>
+          <span class="toggle-option" data-console="wii"><img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg" alt="" /> Wii</span>
         </div>
       </div>
       <div class="flex items-center gap-3 text-xs font-black">
@@ -719,7 +680,7 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
     </div>
     <div class="flex items-center justify-between mt-3 gap-4">
       <div class="flex items-center gap-3 flex-1 min-w-0">
-        <img id="consoleLogo" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="Logo" class="w-9 h-9 object-contain flex-shrink-0" />
+        <img id="consoleLogo" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg" alt="" class="w-9 h-9 object-contain flex-shrink-0" />
         <div class="min-w-0">
           <h1 id="mainTitle" class="text-2xl sm:text-3xl font-black tracking-tight whitespace-nowrap" style="font-family: 'Audiowide', 'Orbitron', sans-serif;">
             <a href="https://silvercrow2323.github.io/Dolphin-Core-for-MuOS/" style="text-decoration:none; color:inherit;">
@@ -744,7 +705,7 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
       </div>
       <div id="spdwPanel" class="cyber-border p-2.5 px-4 flex-shrink-0 transition-all duration-500 space-y-1.5 min-w-[160px]">
         <div class="flex items-center justify-between gap-2 pb-1 border-b-2">
-          <span id="spdwBrand" class="flex items-center gap-1 font-black tracking-wider text-[10px] uppercase"><img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" alt="SPDW" class="w-3 h-3" /> SPDW</span>
+          <span id="spdwBrand" class="flex items-center gap-1 font-black tracking-wider text-[10px] uppercase"><img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" alt="" class="w-3 h-3" /> SPDW</span>
           <span id="coreBadge" class="text-[10px] font-mono px-2 py-0.5 border-2 font-black flex items-center gap-1" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">
             <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt_icon.png" alt="" class="w-3 h-3 object-contain flex-shrink-0" onerror="this.style.display='none'" />
             <span>Rt:Core version: <b>v11.5.00 'Triptych'</b></span>
@@ -759,13 +720,12 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
   </div>
 </header>
 
-<!-- ===== SPACER (reserves space for the fixed header) ===== -->
 <div id="headerSpacer"></div>
 
 <!-- ===== HOW & ABOUT ===== -->
 <div id="aboutOverlay" class="about-overlay" onclick="closeAboutPanel()"></div>
-<div id="aboutPanel" class="about-panel">
-  <button class="close-about" onclick="closeAboutPanel()">✕ Close</button>
+<div id="aboutPanel" class="about-panel" role="dialog" aria-modal="true" aria-label="How and About">
+  <button class="close-about" onclick="closeAboutPanel()" aria-label="Close">✕ Close</button>
   <div class="ha-header-assets">
     <img class="ha-title-img" src="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/blob/main/assets/dolphin_rtcore_title.png?raw=true" alt="Dolphin Rt:Core" />
     <img class="ha-icon-img" src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt_icon.png?raw=true" alt="Rt:Core icon" />
@@ -809,8 +769,8 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
       <div class="section-title"><i class="fa-solid fa-chart-simple"></i> Compatibility</div>
       <div class="info-box">
         <p>Inside every game modal, next to the title / region / game ID, there's a <strong>5-notch bar</strong> + <strong>link icon</strong>:</p>
-        <div class="compat-demo"><span class="segs"><span class="seg filled"></span><span class="seg filled"></span><span class="seg filled"></span><span class="seg filled"></span><span class="seg"></span></span><a class="wiki-link" href="https://wiki.dolphin-emu.org/" target="_blank">🌐</a></div>
-        <p style="margin-top:6px;">The link opens the <strong>Dolphin Emulator Wiki</strong> page (by Game ID). The notches show the <strong>official Dolphin compatibility rating</strong>.</p>
+        <div class="compat-demo"><span class="segs"><span class="seg filled"></span><span class="seg filled"></span><span class="seg filled"></span><span class="seg filled"></span><span class="seg"></span></span><a class="wiki-link" href="https://wiki.dolphin-emu.org/" target="_blank" rel="noopener">🌐</a></div>
+        <p style="margin-top:6px;">The link opens the <strong>Dolphin Emulator Wiki</strong> page (by Game ID). The notches show the <strong>official Dolphin compatibility rating</strong>. If the game ID isn't mapped yet, notches appear empty with an "unknown" label.</p>
       </div>
     </div>
     <div class="tetris-block tetris-block-blue ha-block-5">
@@ -820,15 +780,15 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
         <ul>
           <li><a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS">GitHub Repository</a></li>
           <li><a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases/">Latest Release</a></li>
-          <li><a href="https://silvercrow2323.github.io/Dolphin-Core-for-MuOS/" target="_blank">Compatibility DB</a></li>
+          <li><a href="https://silvercrow2323.github.io/Dolphin-Core-for-MuOS/" target="_blank" rel="noopener">Compatibility DB</a></li>
         </ul>
       </div>
       <div class="info-box">
         <h4><i class="fa-solid fa-book"></i> Refs</h4>
         <ul>
-          <li><a href="https://wiki.dolphin-emu.org/" target="_blank">Dolphin Wiki</a></li>
-          <li><a href="https://dolphin-emu.org" target="_blank">Dolphin Emulator</a></li>
-          <li><a href="https://gametdb.com" target="_blank">GameTDB</a></li>
+          <li><a href="https://wiki.dolphin-emu.org/" target="_blank" rel="noopener">Dolphin Wiki</a></li>
+          <li><a href="https://dolphin-emu.org" target="_blank" rel="noopener">Dolphin Emulator</a></li>
+          <li><a href="https://gametdb.com" target="_blank" rel="noopener">GameTDB</a></li>
         </ul>
       </div>
     </div>
@@ -879,8 +839,8 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
 
 <!-- ===== TESTER PANEL ===== -->
 <div id="testerOverlay" class="tester-overlay" onclick="closeTesterPanel()"></div>
-<div id="testerPanel" class="tester-panel">
-  <button class="close-tester" onclick="closeTesterPanel()">✕ Close</button>
+<div id="testerPanel" class="tester-panel" role="dialog" aria-modal="true" aria-label="Tester details">
+  <button class="close-tester" onclick="closeTesterPanel()" aria-label="Close">✕ Close</button>
   <div id="testerContent"></div>
 </div>
 
@@ -901,16 +861,17 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
         <button id="viewListBtn" class="view-btn" title="List view" aria-label="List view"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h6M4 12h6M4 19h6M14 5h6M14 12h6M14 19h6"/></svg> List</button>
         <button id="viewExtendedBtn" class="view-btn" title="Extended list view" aria-label="Extended view"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16M4 12h16M4 19h16"/></svg> Extended</button>
       </div>
+      <button id="exportBtn" class="flex items-center gap-1.5 text-sm" title="Export filtered list as JSON" aria-label="Export filtered list as JSON">📥 Export</button>
       <button id="resetFiltersBtn" class="text-sm font-black transition-colors">↺ Reset</button>
     </div>
   </div>
 
   <div id="ratingPanels" class="grid grid-cols-5 gap-2 max-w-4xl mx-auto w-full">
-    <button data-rating="5" class="rating-panel"><div class="space-y-0.5"><div class="flex items-center gap-1 font-black text-sm"><span>5★</span><span class="text-[10px] uppercase tracking-wider hidden sm:inline">Perfect</span></div></div><span id="count-5" class="count font-mono font-black text-sm px-3 py-0.5">0</span></button>
-    <button data-rating="4" class="rating-panel"><div class="space-y-0.5"><div class="flex items-center gap-1 font-black text-sm"><span>4★</span><span class="text-[10px] uppercase tracking-wider hidden sm:inline">Great</span></div></div><span id="count-4" class="count font-mono font-black text-sm px-3 py-0.5">0</span></button>
-    <button data-rating="3" class="rating-panel"><div class="space-y-0.5"><div class="flex items-center gap-1 font-black text-sm"><span>3★</span><span class="text-[10px] uppercase tracking-wider hidden sm:inline">Playable</span></div></div><span id="count-3" class="count font-mono font-black text-sm px-3 py-0.5">0</span></button>
-    <button data-rating="2" class="rating-panel"><div class="space-y-0.5"><div class="flex items-center gap-1 font-black text-sm"><span>2★</span><span class="text-[10px] uppercase tracking-wider hidden sm:inline">Poor</span></div></div><span id="count-2" class="count font-mono font-black text-sm px-3 py-0.5">0</span></button>
-    <button data-rating="1" class="rating-panel"><div class="space-y-0.5"><div class="flex items-center gap-1 font-black text-sm"><span>1-0★</span><span class="text-[10px] uppercase tracking-wider hidden sm:inline">Bad</span></div></div><span id="count-1" class="count font-mono font-black text-sm px-3 py-0.5">0</span></button>
+    <button data-rating="5" class="rating-panel" aria-label="Filter by 5 stars"><div class="space-y-0.5"><div class="flex items-center gap-1 font-black text-sm"><span>5★</span><span class="text-[10px] uppercase tracking-wider hidden sm:inline">Perfect</span></div></div><span id="count-5" class="count font-mono font-black text-sm px-3 py-0.5">0</span></button>
+    <button data-rating="4" class="rating-panel" aria-label="Filter by 4 stars"><div class="space-y-0.5"><div class="flex items-center gap-1 font-black text-sm"><span>4★</span><span class="text-[10px] uppercase tracking-wider hidden sm:inline">Great</span></div></div><span id="count-4" class="count font-mono font-black text-sm px-3 py-0.5">0</span></button>
+    <button data-rating="3" class="rating-panel" aria-label="Filter by 3 stars"><div class="space-y-0.5"><div class="flex items-center gap-1 font-black text-sm"><span>3★</span><span class="text-[10px] uppercase tracking-wider hidden sm:inline">Playable</span></div></div><span id="count-3" class="count font-mono font-black text-sm px-3 py-0.5">0</span></button>
+    <button data-rating="2" class="rating-panel" aria-label="Filter by 2 stars"><div class="space-y-0.5"><div class="flex items-center gap-1 font-black text-sm"><span>2★</span><span class="text-[10px] uppercase tracking-wider hidden sm:inline">Poor</span></div></div><span id="count-2" class="count font-mono font-black text-sm px-3 py-0.5">0</span></button>
+    <button data-rating="1" class="rating-panel" aria-label="Filter by 1 or 0 stars"><div class="space-y-0.5"><div class="flex items-center gap-1 font-black text-sm"><span>1-0★</span><span class="text-[10px] uppercase tracking-wider hidden sm:inline">Bad</span></div></div><span id="count-1" class="count font-mono font-black text-sm px-3 py-0.5">0</span></button>
   </div>
 
   <div id="gamesGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 max-w-7xl mx-auto w-full grid-view"></div>
@@ -924,17 +885,17 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
 </main>
 
 <!-- GAME MODAL -->
-<div id="gameModal" class="show" style="display:none;">
+<div id="gameModal" class="show" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div id="modalCard" class="modal-holo-card">
     <button id="closeModalBtn" class="absolute top-3 right-3 p-2 border-2 transition-colors z-10" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" aria-label="Close modal">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
     <div class="border-b-2 pb-3 pr-10 shrink-0">
       <div class="flex flex-col md:flex-row gap-3 items-start md:items-center">
-        <div class="w-20 h-28 overflow-hidden flex-shrink-0 border-2" style="clip-path: polygon(0% 5%, 5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%);"><img id="modalCoverImg" src="" alt="Cover" class="w-full h-full object-cover" /></div>
+        <div class="w-20 h-28 overflow-hidden flex-shrink-0 border-2" style="clip-path: polygon(0% 5%, 5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%);"><img id="modalCoverImg" src="" alt="" class="w-full h-full object-cover" /></div>
         <div class="flex-1 min-w-0">
           <div class="flex items-center gap-2 flex-wrap">
-            <img id="modalFlag" src="" alt="Flag" class="w-7 h-5 object-cover border-2 shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" />
+            <img id="modalFlag" src="" alt="" class="w-7 h-5 object-cover border-2 shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" />
             <h3 id="modalTitle" class="text-xl font-black leading-tight truncate"></h3>
             <span id="modalRegionBadge" class="text-[11px] font-mono px-3 py-1 border-2 uppercase font-black shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">NTSC / USA</span>
             <span id="modalGameId" class="text-[11px] font-mono px-3 py-1 border-2 font-black shrink-0" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);">GAMEID</span>
@@ -963,61 +924,62 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
 </div>
 
 <!-- REPORT MODAL -->
-<div id="reportModal" class="show" style="display:none;">
+<div id="reportModal" class="show" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="reportTitle">
   <div class="report-panel">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
-      <h2>📝 Send Compatibility Report</h2>
+      <h2 id="reportTitle">📝 Send Compatibility Report</h2>
       <button onclick="closeReportModal()" class="border-2 px-3 py-1 text-sm" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" aria-label="Close report">✕</button>
     </div>
     <p class="sub">Fill in the fields below to submit a new test report to the compatibility database.</p>
+    <div id="reportErrorBanner" class="report-error-banner" style="display:none;" role="alert"></div>
     <div class="tetris-grid">
       <div class="tetris-block tetris-block-cyan">
         <div class="section-title"><i class="fa-solid fa-gamepad"></i> 1. Game Data</div>
         <div class="grid-row">
-          <div class="form-group col-40"><label class="form-label"><i class="fa-solid fa-cube"></i> Platform</label><select id="reportPlatform" class="input-box" style="border-color:#06b6d4;" required><option value="" disabled selected>Select...</option><option value="GameCube">GameCube</option><option value="Wii">Wii</option></select></div>
-          <div class="form-group col-30"><label class="form-label"><i class="fa-solid fa-earth-americas"></i> Region</label><select id="reportRegion" class="input-box" style="border-color:#06b6d4;" required><option value="" disabled selected>Select...</option><option value="NTSC">NTSC</option><option value="PAL">PAL</option><option value="NTSC-J">NTSC-J</option></select></div>
-          <div class="form-group col-30"><label class="form-label"><i class="fa-solid fa-barcode"></i> Game ID</label><input type="text" id="reportGameId" class="input-box" style="border-color:#06b6d4;" placeholder="GMSE01" /></div>
+          <div class="form-group col-40"><label class="form-label" for="reportPlatform"><i class="fa-solid fa-cube"></i> Platform</label><select id="reportPlatform" class="input-box" style="border-color:#06b6d4;" required><option value="" disabled selected>Select...</option><option value="GameCube">GameCube</option><option value="Wii">Wii</option></select></div>
+          <div class="form-group col-30"><label class="form-label" for="reportRegion"><i class="fa-solid fa-earth-americas"></i> Region</label><select id="reportRegion" class="input-box" style="border-color:#06b6d4;" required><option value="" disabled selected>Select...</option><option value="NTSC">NTSC</option><option value="PAL">PAL</option><option value="NTSC-J">NTSC-J</option></select></div>
+          <div class="form-group col-30"><label class="form-label" for="reportGameId"><i class="fa-solid fa-barcode"></i> Game ID</label><input type="text" id="reportGameId" class="input-box" style="border-color:#06b6d4;" placeholder="GMSE01" /></div>
         </div>
-        <div class="form-group col-100" style="position:relative;"><label class="form-label"><i class="fa-solid fa-tag"></i> Title</label><input type="text" id="reportGameTitle" class="input-box" style="border-color:#06b6d4;" placeholder="Start typing..." autocomplete="off" required /><div id="reportGameSuggestions" class="suggestions-box"></div></div>
-        <div class="form-group col-100"><label class="form-label"><i class="fa-solid fa-image"></i> Cover URL</label><input type="text" id="reportCoverArt" class="input-box" style="border-color:#06b6d4;" placeholder="https://..." /></div>
+        <div class="form-group col-100" style="position:relative;"><label class="form-label" for="reportGameTitle"><i class="fa-solid fa-tag"></i> Title</label><input type="text" id="reportGameTitle" class="input-box" style="border-color:#06b6d4;" placeholder="Start typing..." autocomplete="off" required /><div id="reportGameSuggestions" class="suggestions-box"></div></div>
+        <div class="form-group col-100"><label class="form-label" for="reportCoverArt"><i class="fa-solid fa-image"></i> Cover URL</label><input type="text" id="reportCoverArt" class="input-box" style="border-color:#06b6d4;" placeholder="https://..." /></div>
       </div>
       <div class="tetris-block tetris-block-magenta">
         <div class="section-title"><i class="fa-solid fa-chart-radar"></i> 2. Core Setup</div>
-        <div class="form-group col-100"><label class="form-label"><i class="fa-solid fa-microchip"></i> Rt:Core Version</label><select id="reportCoreVersion" class="input-box" style="border-color:#ec4899;" onchange="toggleReportOther('reportCoreVersion','reportCoreVersionOther')" required><option value="" disabled selected>Select version...</option><option>v11.5.00 'Triptych'</option><option>v10.5.3</option><option>v10.5-124</option><option>v10.0.0 'SPDW'</option><option>v9 Goose</option><option>v8</option><option>v7</option><option>v6 or prior</option><option>Other...</option></select><input type="text" id="reportCoreVersionOther" class="input-box" style="border-color:#ec4899; display:none; margin-top:6px;" placeholder="Version name & source URL..." /></div>
-        <div class="form-group col-100"><label class="form-label"><i class="fa-solid fa-sliders"></i> Core Profile</label><select id="reportCoreProfile" class="input-box" style="border-color:#ec4899;" onchange="toggleReportOther('reportCoreProfile','reportCoreProfileOther')" required><option value="" disabled selected>Select profile...</option><option>Default</option><option>Performance</option><option>Compatibility</option><option>Sweet Spot</option><option>Speed Hack</option><option>Black Screen Fix</option><option>Ultra</option><option>Ultra Extreme</option><option>Other...</option></select><input type="text" id="reportCoreProfileOther" class="input-box" style="border-color:#ec4899; display:none; margin-top:6px;" placeholder="Specify profile..." /></div>
-        <div class="form-group col-100"><label class="form-label"><i class="fa-solid fa-gauge-high"></i> FPS Range</label><div class="fps-group"><input type="text" id="reportFpsMin" class="input-box" style="border-color:#ec4899;" placeholder="Min" required /><span>/</span><input type="text" id="reportFpsMax" class="input-box" style="border-color:#ec4899;" placeholder="Max" required /></div></div>
+        <div class="form-group col-100"><label class="form-label" for="reportCoreVersion"><i class="fa-solid fa-microchip"></i> Rt:Core Version</label><select id="reportCoreVersion" class="input-box" style="border-color:#ec4899;" onchange="toggleReportOther('reportCoreVersion','reportCoreVersionOther')" required><option value="" disabled selected>Select version...</option><option>v11.5.00 'Triptych'</option><option>v10.5.3</option><option>v10.5-124</option><option>v10.0.0 'SPDW'</option><option>v9 Goose</option><option>v8</option><option>v7</option><option>v6 or prior</option><option>Other...</option></select><input type="text" id="reportCoreVersionOther" class="input-box" style="border-color:#ec4899; display:none; margin-top:6px;" placeholder="Version name & source URL..." /></div>
+        <div class="form-group col-100"><label class="form-label" for="reportCoreProfile"><i class="fa-solid fa-sliders"></i> Core Profile</label><select id="reportCoreProfile" class="input-box" style="border-color:#ec4899;" onchange="toggleReportOther('reportCoreProfile','reportCoreProfileOther')" required><option value="" disabled selected>Select profile...</option><option>Default</option><option>Performance</option><option>Compatibility</option><option>Sweet Spot</option><option>Speed Hack</option><option>Black Screen Fix</option><option>Ultra</option><option>Ultra Extreme</option><option>Other...</option></select><input type="text" id="reportCoreProfileOther" class="input-box" style="border-color:#ec4899; display:none; margin-top:6px;" placeholder="Specify profile..." /></div>
+        <div class="form-group col-100"><label class="form-label" for="reportFpsMin"><i class="fa-solid fa-gauge-high"></i> FPS Range</label><div class="fps-group"><input type="text" id="reportFpsMin" class="input-box" style="border-color:#ec4899;" placeholder="Min" required /><span>/</span><input type="text" id="reportFpsMax" class="input-box" style="border-color:#ec4899;" placeholder="Max" required /></div></div>
       </div>
       <div class="tetris-block tetris-block-yellow">
         <div class="section-title"><i class="fa-solid fa-star-half-stroke"></i> 3. Playability & Results</div>
         <div class="grid-row">
           <div class="form-group col-50">
             <label class="form-label"><i class="fa-solid fa-ranking-star"></i> Rating <span class="status-hint">[0 → 5]</span></label>
-            <div class="rating-container" style="border-color:#f59e0b;">
-              <div class="rating-widget" id="rpRatingWidget"><div class="rate-btn" onclick="setReportRating(0)">0</div><div class="rate-btn" onclick="setReportRating(1)">1</div><div class="rate-btn" onclick="setReportRating(2)">2</div><div class="rate-btn" onclick="setReportRating(3)">3</div><div class="rate-btn" onclick="setReportRating(4)">4</div><div class="rate-btn" onclick="setReportRating(5)">5</div></div>
+            <div class="rating-container" id="rpRatingContainer" style="border-color:#f59e0b;">
+              <div class="rating-widget" id="rpRatingWidget"><div class="rate-btn" role="button" tabindex="0" data-rate="0">0</div><div class="rate-btn" role="button" tabindex="0" data-rate="1">1</div><div class="rate-btn" role="button" tabindex="0" data-rate="2">2</div><div class="rate-btn" role="button" tabindex="0" data-rate="3">3</div><div class="rate-btn" role="button" tabindex="0" data-rate="4">4</div><div class="rate-btn" role="button" tabindex="0" data-rate="5">5</div></div>
               <div class="status-badges"><div id="rpBadgeBoot" class="badge">BOOT: TBD</div><div id="rpBadgePlay" class="badge">PLAY: TBD</div></div>
             </div>
             <input type="hidden" id="reportRating" required>
           </div>
-          <div class="form-group col-50"><label class="form-label"><i class="fa-solid fa-pen-to-square"></i> Considerations</label><textarea id="reportConsiderations" class="input-box" style="border-color:#f59e0b;" rows="2" placeholder="Describe bugs, audio, glitches..."></textarea></div>
+          <div class="form-group col-50"><label class="form-label" for="reportConsiderations"><i class="fa-solid fa-pen-to-square"></i> Considerations</label><textarea id="reportConsiderations" class="input-box" style="border-color:#f59e0b;" rows="2" placeholder="Describe bugs, audio, glitches..."></textarea></div>
         </div>
       </div>
       <div class="tetris-block tetris-block-green">
         <div class="section-title"><i class="fa-solid fa-folder-tree"></i> 4. Add-ons & Files</div>
-        <div class="form-group col-100"><label class="form-label"><i class="fa-solid fa-wrench"></i> Custom Settings?</label><select id="reportCustomSettingsEnabled" class="input-box" style="border-color:#10b981;" onchange="toggleReportCustomSettings()"><option value="No" selected>No</option><option value="Yes">Yes, add mods / configs</option></select></div>
+        <div class="form-group col-100"><label class="form-label" for="reportCustomSettingsEnabled"><i class="fa-solid fa-wrench"></i> Custom Settings?</label><select id="reportCustomSettingsEnabled" class="input-box" style="border-color:#10b981;" onchange="toggleReportCustomSettings()"><option value="No" selected>No</option><option value="Yes">Yes, add mods / configs</option></select></div>
         <div id="reportCustomSettingsWrapper" style="display:none;" class="grid-row">
-          <div class="form-group col-30"><label class="form-label">Type</label><select id="reportCustomSettingsType" class="input-box" style="border-color:#059669;"><option>Config</option><option>Texture</option><option>Hack</option><option>Cheats</option><option>Others</option></select></div>
-          <div class="form-group col-70"><label class="form-label">Set Title</label><input type="text" id="reportCustomSettingsName" class="input-box" style="border-color:#059669;" placeholder="e.g., Performance Preset" /></div>
-          <div class="form-group col-50"><label class="form-label">Set File Name</label><input type="text" id="reportCustomSettingsFilename" class="input-box" style="border-color:#059669;" placeholder="e.g., GLME01.ini" /></div>
-          <div class="form-group col-50"><label class="form-label">Set URL</label><input type="text" id="reportCustomSettingsUrl" class="input-box" style="border-color:#059669;" placeholder="https://raw.githubusercontent.com/..." /></div>
-          <div class="form-group col-100"><label class="form-label">Set Notes</label><textarea id="reportCustomSettingsNote" class="input-box" style="border-color:#059669;" rows="2" placeholder="Complementary info..."></textarea></div>
+          <div class="form-group col-30"><label class="form-label" for="reportCustomSettingsType">Type</label><select id="reportCustomSettingsType" class="input-box" style="border-color:#059669;"><option>Config</option><option>Texture</option><option>Hack</option><option>Cheats</option><option>Others</option></select></div>
+          <div class="form-group col-70"><label class="form-label" for="reportCustomSettingsName">Set Title</label><input type="text" id="reportCustomSettingsName" class="input-box" style="border-color:#059669;" placeholder="e.g., Performance Preset" /></div>
+          <div class="form-group col-50"><label class="form-label" for="reportCustomSettingsFilename">Set File Name</label><input type="text" id="reportCustomSettingsFilename" class="input-box" style="border-color:#059669;" placeholder="e.g., GLME01.ini" /></div>
+          <div class="form-group col-50"><label class="form-label" for="reportCustomSettingsUrl">Set URL</label><input type="text" id="reportCustomSettingsUrl" class="input-box" style="border-color:#059669;" placeholder="https://raw.githubusercontent.com/..." /></div>
+          <div class="form-group col-100"><label class="form-label" for="reportCustomSettingsNote">Set Notes</label><textarea id="reportCustomSettingsNote" class="input-box" style="border-color:#059669;" rows="2" placeholder="Complementary info..."></textarea></div>
         </div>
-        <div class="form-group col-100" style="margin-top:8px;"><label class="form-label"><i class="fa-solid fa-paperclip"></i> Attachments <span class="status-hint">[Title : URL — one per line]</span></label><textarea id="reportAttachments" class="input-box" style="border-color:#10b981;" rows="2" placeholder="Gameplay video : https://youtu.be/...&#10;Screenshot : https://i.imgur.com/..."></textarea></div>
+        <div class="form-group col-100" style="margin-top:8px;"><label class="form-label" for="reportAttachments"><i class="fa-solid fa-paperclip"></i> Attachments <span class="status-hint">[Title : URL — one per line]</span></label><textarea id="reportAttachments" class="input-box" style="border-color:#10b981;" rows="2" placeholder="Gameplay video : https://youtu.be/...&#10;Screenshot : https://i.imgur.com/..."></textarea></div>
       </div>
       <div class="tetris-block tetris-block-purple">
         <div class="section-title"><i class="fa-solid fa-user-astronaut"></i> 5. Tester Info</div>
-        <div class="form-group col-100"><label class="form-label"><i class="fa-solid fa-user-tag"></i> Tester</label><input type="text" id="reportTester" class="input-box" style="border-color:#8b5cf6;" value="" required /></div>
-        <div class="form-group col-100"><label class="form-label"><i class="fa-solid fa-mobile-screen"></i> Device</label><input type="text" id="reportDevice" class="input-box" style="border-color:#8b5cf6;" value="Anbernic RG35XX H" required /></div>
-        <div class="form-group col-100"><label class="form-label"><i class="fa-solid fa-sd-card"></i> muOS Version</label><select id="reportMuos" class="input-box" style="border-color:#8b5cf6;" required><option value="" disabled selected>Select muOS version...</option><option>2601.1 Funky Jacaranda</option><option>2601.0 Jacaranda</option><option>2508.4 Loose Goose</option><option>2508.3 Golden Goose</option><option>2508.2 Silly Goose</option><option>2508.1 Canada Goose</option><option>2508.0 Goose</option><option>2502.0 Pixie</option></select></div>
+        <div class="form-group col-100"><label class="form-label" for="reportTester"><i class="fa-solid fa-user-tag"></i> Tester</label><input type="text" id="reportTester" class="input-box" style="border-color:#8b5cf6;" value="" required /></div>
+        <div class="form-group col-100"><label class="form-label" for="reportDevice"><i class="fa-solid fa-mobile-screen"></i> Device</label><input type="text" id="reportDevice" class="input-box" style="border-color:#8b5cf6;" value="Anbernic RG35XX H" required /></div>
+        <div class="form-group col-100"><label class="form-label" for="reportMuos"><i class="fa-solid fa-sd-card"></i> muOS Version</label><select id="reportMuos" class="input-box" style="border-color:#8b5cf6;" required><option value="" disabled selected>Select muOS version...</option><option>2601.1 Funky Jacaranda</option><option>2601.0 Jacaranda</option><option>2508.4 Loose Goose</option><option>2508.3 Golden Goose</option><option>2508.2 Silly Goose</option><option>2508.1 Canada Goose</option><option>2508.0 Goose</option><option>2502.0 Pixie</option></select></div>
       </div>
       <div class="tetris-block tetris-block-submit">
         <button type="button" class="submit-btn" onclick="submitReport()"><i class="fa-solid fa-bolt" style="margin-right:8px;"></i> Upload Data to Nexus</button>
@@ -1034,15 +996,22 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
 </footer>
 
 <script>
-/* STATE */
+/* ============ STATE ============ */
 const state = { console:'gc', rawGames:[], groupedGames:[], filtered:[], sortKey:'title', sortOrder:'asc', search:'', selectedStars:'all', selectedRegion:'all', selectedBoot:'all', viewMode:'grid' };
 let currentModalGroup = null, currentModalRegion = null, modalIsClosing = false;
 let fullHeaderHeight = 140, compactHeaderHeight = 56;
+
 const URL = "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/games_data.json";
 const FLAG_MAP = { 'PAL':'eu', 'NTSC':'us', 'NTSC / USA':'us', 'JPN':'jp', 'NTSC-J':'jp', 'NTSC / JPN':'jp' };
-const DOLPHIN_COMPAT = { 'GM8P01':4,'GM4P01':5,'GALE01':4,'GMSP01':5,'GZLP01':5,'GALP01':4,'G4BP08':4,'GCTP51':5,'GD7PB2':4,'GKYP01':5,'GLME01':5,'GGVX78':5,'GQWP69':5,'GVJE08':4,'GXXP01':4,'SMNP01':5,'RZDP01':5,'SCAE18':3,'RHMP99':4,'default':4 };
 
-/* === HEADER: scroll + drawer peek === */
+/* Dolphin wiki compat ratings — only for known IDs, no fake default */
+const DOLPHIN_COMPAT = {
+  'GM8P01':4,'GM4P01':5,'GALE01':4,'GMSP01':5,'GZLP01':5,'GALP01':4,
+  'G4BP08':4,'GCTP51':5,'GD7PB2':4,'GKYP01':5,'GLME01':5,'GGVX78':5,
+  'GQWP69':5,'GVJE08':4,'GXXP01':4,'SMNP01':5,'RZDP01':5,'SCAE18':3,'RHMP99':4
+};
+
+/* ============ HEADER ============ */
 function syncHeaderHeights() {
   const fullH = document.getElementById('appHeader').offsetHeight;
   const compH = document.getElementById('compactHeader').offsetHeight;
@@ -1059,21 +1028,22 @@ function handleScroll() {
   if (!scrolled) document.body.classList.remove('header-peek');
 }
 
-function handleMouseMove(e) {
+function maybePeek(y) {
   if (!document.body.classList.contains('scrolled')) return;
   const peeking = document.body.classList.contains('header-peek');
-  if (!peeking && e.clientY < 60) {
-    document.body.classList.add('header-peek');
-  } else if (peeking && e.clientY > fullHeaderHeight + 24) {
-    document.body.classList.remove('header-peek');
-  }
+  if (!peeking && y < 60) document.body.classList.add('header-peek');
+  else if (peeking && y > fullHeaderHeight + 24) document.body.classList.remove('header-peek');
 }
+
+function handleMouseMove(e) { maybePeek(e.clientY); }
+function handleTouchStart(e) { if (e.touches && e.touches[0]) maybePeek(e.touches[0].clientY); }
 
 window.addEventListener('scroll', handleScroll, { passive: true });
 window.addEventListener('mousemove', handleMouseMove, { passive: true });
+window.addEventListener('touchstart', handleTouchStart, { passive: true });
 window.addEventListener('resize', syncHeaderHeights);
 
-/* === HELPERS === */
+/* ============ HELPERS ============ */
 function getScoreColor(rating) {
   const colors = ['#8b0000','#ef4444','#f97316','#eab308','#84cc16','#16a34a'];
   const idx = Math.min(5, Math.max(0, Math.round(rating)));
@@ -1091,13 +1061,23 @@ function capitalizeSentences(text) {
   if (!text) return '';
   return String(text).replace(/(^|[.!?]\s+)([a-zàèéìòùáéíóú])/g, (m, p1, p2) => p1 + p2.toUpperCase());
 }
-function getDolphinWikiLink(gameId) { if (!gameId) return 'https://wiki.dolphin-emu.org/'; return `https://wiki.dolphin-emu.org/index.php?title=${gameId}`; }
+function getDolphinWikiLink(gameId) {
+  if (!gameId || gameId === 'UNKNOWN') return null;
+  return `https://wiki.dolphin-emu.org/index.php?title=${gameId}`;
+}
 function getFlagUrl(region) { const code = FLAG_MAP[region] || 'un'; return `https://flagcdn.com/w40/${code}.png`; }
 function getRegionCode(regionName) { const map = { 'NTSC / USA':'US','PAL':'EN','NTSC / JPN':'JP','NTSC-J':'JP','NTSC':'US','JPN':'JP','EU':'EN','US':'US' }; return map[regionName] || 'US'; }
-function getCoverUrl(gameId, regionName) { if (!gameId) return null; return `https://art.gametdb.com/wii/cover/${getRegionCode(regionName)}/${gameId}.png`; }
-function escapeHtml(str) { if (!str) return ''; return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;"); }
-
-/* FPS label formatter: "5 - 5 FPS" → "FPS 5"; "30 - 60" → "30 - 60 FPS" */
+function getCoverUrl(gameId, regionName) { if (!gameId || gameId === 'UNKNOWN') return null; return `https://art.gametdb.com/wii/cover/${getRegionCode(regionName)}/${gameId}.png`; }
+function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;")
+    .replace(/`/g,"&#96;");
+}
 function formatFpsLabel(fpsStr) {
   if (!fpsStr || fpsStr === '???' || fpsStr === 'N/A') return 'N/A';
   const nums = String(fpsStr).match(/\d+/g);
@@ -1105,6 +1085,11 @@ function formatFpsLabel(fpsStr) {
     return `FPS ${nums[0]}`;
   }
   return `${fpsStr} FPS`;
+}
+function openSafeUrl(url) {
+  const a = document.createElement('a');
+  a.href = url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+  document.body.appendChild(a); a.click(); a.remove();
 }
 
 function renderStars(rating, size = 16) {
@@ -1119,7 +1104,6 @@ function renderStars(rating, size = 16) {
   html += '</div>';
   return html;
 }
-
 function renderScoreBadge(rating) {
   const color = getScoreColor(rating);
   return `<div class="card-score-badge" style="color:${color};">
@@ -1127,13 +1111,12 @@ function renderScoreBadge(rating) {
     <span class="score-num">${rating}</span>
   </div>`;
 }
-
 function renderTestBadgeInline(count) {
   const label = count === 1 ? 'TEST' : 'TESTS';
   return `<span class="test-inline-badge"><span class="tc-circle">${count}</span><span class="tc-label">${label}</span></span>`;
 }
 
-/* GROUPING */
+/* ============ GROUPING ============ */
 function groupGames(rawList) {
   const groupsByTitle = new Map();
   rawList.forEach(item => {
@@ -1150,7 +1133,7 @@ function groupGames(rawList) {
   });
 
   const result = [];
-  for (const [_, group] of groupsByTitle) {
+  for (const [, group] of groupsByTitle) {
     const regionsData = [];
     const allEntries = [];
     for (const [region, regionData] of group.regions) {
@@ -1175,10 +1158,17 @@ function groupGames(rawList) {
         if (!gameId && info.game_id) gameId = info.game_id;
         let fpsMin = parseInt(review.fps_min, 10), fpsMax = parseInt(review.fps_max, 10);
         const fpsRaw = (review.fps || '???').trim();
-        if (isNaN(fpsMin) || isNaN(fpsMax)) { const numbers = fpsRaw.match(/\d+/g); if (numbers) { const nums = numbers.map(Number); if (nums.length >= 2) { fpsMin = nums[0]; fpsMax = nums[1]; } else if (nums.length === 1) { fpsMin = nums[0]; fpsMax = nums[0]; } } }
+        if (isNaN(fpsMin) || isNaN(fpsMax)) {
+          const numbers = fpsRaw.match(/\d+/g);
+          if (numbers) {
+            const nums = numbers.map(Number);
+            if (nums.length >= 2) { fpsMin = nums[0]; fpsMax = nums[1]; }
+            else if (nums.length === 1) { fpsMin = nums[0]; fpsMax = nums[0]; }
+          }
+        }
         if (isNaN(fpsMin)) fpsMin = 0;
         if (isNaN(fpsMax)) fpsMax = 0;
-        // Only update best *bundle* (rating + fps + boot + playable) together
+        // Best bundle: rating + fps + boot + playable from the SAME test
         if (rating > bestRating || (rating === bestRating && fpsMax > bestFpsMax)) {
           bestRating = rating;
           bestFpsMax = fpsMax;
@@ -1197,7 +1187,14 @@ function groupGames(rawList) {
         const review = e.test_review || {};
         let fpsMin = parseInt(review.fps_min, 10), fpsMax = parseInt(review.fps_max, 10);
         const fpsRaw = (review.fps || '???').trim();
-        if (isNaN(fpsMin) || isNaN(fpsMax)) { const numbers = fpsRaw.match(/\d+/g); if (numbers) { const nums = numbers.map(Number); if (nums.length >= 2) { fpsMin = nums[0]; fpsMax = nums[1]; } else if (nums.length === 1) { fpsMin = nums[0]; fpsMax = nums[0]; } } }
+        if (isNaN(fpsMin) || isNaN(fpsMax)) {
+          const numbers = fpsRaw.match(/\d+/g);
+          if (numbers) {
+            const nums = numbers.map(Number);
+            if (nums.length >= 2) { fpsMin = nums[0]; fpsMax = nums[1]; }
+            else if (nums.length === 1) { fpsMin = nums[0]; fpsMax = nums[0]; }
+          }
+        }
         if (!isNaN(fpsMin) && !isNaN(fpsMax) && fpsMin > 0 && fpsMax > 0) { avgFpsSingle += (fpsMin + fpsMax) / 2; countFps++; }
       });
       const avgFps = countFps > 0 ? Math.round(avgFpsSingle / countFps) : 'N/A';
@@ -1215,7 +1212,14 @@ function groupGames(rawList) {
       if (!globalGameId || globalGameId === 'UNKNOWN') { if (info.game_id) globalGameId = info.game_id; }
       let fpsMin = parseInt(review.fps_min, 10), fpsMax = parseInt(review.fps_max, 10);
       const fpsRaw = (review.fps || '???').trim();
-      if (isNaN(fpsMin) || isNaN(fpsMax)) { const numbers = fpsRaw.match(/\d+/g); if (numbers) { const nums = numbers.map(Number); if (nums.length >= 2) { fpsMin = nums[0]; fpsMax = nums[1]; } else if (nums.length === 1) { fpsMin = nums[0]; fpsMax = nums[0]; } } }
+      if (isNaN(fpsMin) || isNaN(fpsMax)) {
+        const numbers = fpsRaw.match(/\d+/g);
+        if (numbers) {
+          const nums = numbers.map(Number);
+          if (nums.length >= 2) { fpsMin = nums[0]; fpsMax = nums[1]; }
+          else if (nums.length === 1) { fpsMin = nums[0]; fpsMax = nums[0]; }
+        }
+      }
       if (!isNaN(fpsMin) && !isNaN(fpsMax) && fpsMin > 0 && fpsMax > 0) { globalAvgFpsSum += (fpsMin + fpsMax) / 2; globalAvgFpsCount++; }
       const rv = isNaN(r) ? 0 : r;
       let fMax = fpsMax || 0;
@@ -1238,7 +1242,7 @@ function groupGames(rawList) {
   return result;
 }
 
-/* RENDER */
+/* ============ RENDER ============ */
 function render() {
   document.querySelectorAll('.rating-panel').forEach(p => {
     const val = p.getAttribute('data-rating');
@@ -1254,7 +1258,7 @@ function render() {
   });
   state.filtered.sort((a, b) => {
     let cmp = 0;
-    if (state.sortKey === 'title') cmp = (a.game || '').localeCompare(b.game || '');
+    if (state.sortKey === 'title') cmp = (a.game || '').localeCompare(b.game || '', undefined, { numeric: true, sensitivity: 'base' });
     else if (state.sortKey === 'rating') cmp = (a.aggregated.bestRating || 0) - (b.aggregated.bestRating || 0);
     else if (state.sortKey === 'fps') cmp = (a.aggregated.bestFpsMax || 0) - (b.aggregated.bestFpsMax || 0);
     else if (state.sortKey === 'entries') cmp = (a.aggregated.totalEntries || 0) - (b.aggregated.totalEntries || 0);
@@ -1276,7 +1280,7 @@ function renderGridCards() {
     const bestEntry = item.allRegions[0]?.entries[0] || {};
     const coverUrl = bestEntry.cover_art || getCoverUrl(item.aggregated.gameId, item.allRegions[0]?.region || 'NTSC');
     const delay = Math.min(idx * 20, 300);
-    const regionFlags = item.allRegions.map(r => `<img src="${getFlagUrl(r.region)}" class="w-5 h-4 object-cover border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" title="${r.region}" />`).join('');
+    const regionFlags = item.allRegions.map(r => `<img src="${getFlagUrl(r.region)}" class="w-5 h-4 object-cover border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" alt="${escapeHtml(r.region)}" title="${escapeHtml(r.region)}" />`).join('');
     const bootColor = item.aggregated.bestBoot === 'YES' ? 'yes' : 'no';
     let playableClass = 'no';
     if (item.aggregated.bestPlayable === 'YES') playableClass = 'yes';
@@ -1286,7 +1290,7 @@ function renderGridCards() {
         <div class="glow-border cyber-border">
           <div class="relative aspect-[3/4] w-full overflow-hidden">
             ${coverUrl ? `<img src="${coverUrl}" alt="${escapeHtml(item.game)}" class="cover-img w-full h-full object-cover" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` : ''}
-            <div class="cover-placeholder absolute inset-0 w-full h-full ${coverUrl ? 'hidden' : 'flex'} flex-col items-center justify-center text-4xl">🎮<span class="text-[10px] mt-1 opacity-40 font-mono font-black">${item.aggregated.gameId || '???'}</span></div>
+            <div class="cover-placeholder absolute inset-0 w-full h-full ${coverUrl ? 'hidden' : 'flex'} flex-col items-center justify-center text-4xl">🎮<span class="text-[10px] mt-1 opacity-40 font-mono font-black">${escapeHtml(item.aggregated.gameId || '???')}</span></div>
           </div>
           <div class="p-2.5 space-y-1.5 border-t-2">
             <div class="flex items-start justify-between gap-2">
@@ -1315,7 +1319,7 @@ function renderListCards() {
   return state.filtered.map((item, idx) => {
     const bestEntry = item.allRegions[0]?.entries[0] || {};
     const coverUrl = bestEntry.cover_art || getCoverUrl(item.aggregated.gameId, item.allRegions[0]?.region || 'NTSC');
-    const regionFlags = item.allRegions.map(r => `<img src="${getFlagUrl(r.region)}" title="${r.region}" />`).join('');
+    const regionFlags = item.allRegions.map(r => `<img src="${getFlagUrl(r.region)}" alt="${escapeHtml(r.region)}" title="${escapeHtml(r.region)}" />`).join('');
     const bootColor = item.aggregated.bestBoot === 'YES' ? 'yes' : 'no';
     let playableClass = 'no';
     if (item.aggregated.bestPlayable === 'YES') playableClass = 'yes';
@@ -1354,7 +1358,7 @@ function renderExtendedCards() {
     let bestEntry = bestRegion?.entries[0] || {};
     let bestOverall = item.aggregated;
     const coverUrl = bestEntry.cover_art || getCoverUrl(bestOverall.gameId, bestRegion?.region || 'NTSC');
-    const regionFlags = item.allRegions.map(r => `<img src="${getFlagUrl(r.region)}" class="w-5 h-4 object-cover border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" title="${r.region}" />`).join('');
+    const regionFlags = item.allRegions.map(r => `<img src="${getFlagUrl(r.region)}" class="w-5 h-4 object-cover border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" alt="${escapeHtml(r.region)}" title="${escapeHtml(r.region)}" />`).join('');
     const bootColor = bestOverall.bestBoot === 'YES' ? 'yes' : 'no';
     let playableClass = 'no';
     if (bestOverall.bestPlayable === 'YES') playableClass = 'yes';
@@ -1388,7 +1392,23 @@ function renderExtendedCards() {
   }).join('');
 }
 
-/* MODAL */
+/* ============ COMPAT SEGMENTS (honest) ============ */
+function renderCompatSegments(gameId) {
+  const rating = DOLPHIN_COMPAT[gameId];
+  const hasRating = typeof rating === 'number';
+  const filled = hasRating ? rating : 0;
+  let segHtml = '';
+  for (let i = 0; i < 5; i++) segHtml += `<span class="seg ${i < filled ? 'filled' : ''}"></span>`;
+  const wikiLink = getDolphinWikiLink(gameId);
+  let linkHtml = '';
+  if (wikiLink) {
+    linkHtml = `<a href="${wikiLink}" target="_blank" rel="noopener noreferrer" class="wiki-link" title="Open Dolphin Wiki page for ${escapeHtml(gameId)}">🌐</a>`;
+  }
+  const unknownHtml = hasRating ? '' : `<span class="compat-unknown" title="No official compatibility rating available for this Game ID">unknown</span>`;
+  return segHtml + linkHtml + unknownHtml;
+}
+
+/* ============ MODAL ============ */
 function openModal(index) {
   if (modalIsClosing) return;
   const group = state.filtered[index];
@@ -1402,6 +1422,7 @@ function openModal(index) {
   modal.style.display = 'flex'; card.style.animation = 'none'; void card.offsetWidth; card.style.animation = '';
   modal.classList.remove('closing'); renderModalWithRegion(group, selectedRegion);
   document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('closeModalBtn')?.focus(), 80);
 }
 
 function renderModalWithRegion(group, region) {
@@ -1416,12 +1437,7 @@ function renderModalWithRegion(group, region) {
   const bestEntry = regionData.entries[0] || {};
   const coverUrl = bestEntry.cover_art || getCoverUrl(regionData.gameId, region);
   if (coverUrl) { coverImg.src = coverUrl; coverImg.style.display = 'block'; } else { coverImg.style.display = 'none'; }
-  const compatRating = DOLPHIN_COMPAT[regionData.gameId] || DOLPHIN_COMPAT['default'] || 4;
-  const wikiLink = getDolphinWikiLink(regionData.gameId);
-  const compatContainer = document.getElementById('dolphinCompatMini');
-  let segHtml = '';
-  for (let i = 0; i < 5; i++) segHtml += `<span class="seg ${i < compatRating ? 'filled' : ''}"></span>`;
-  compatContainer.innerHTML = segHtml + `<a href="${wikiLink}" target="_blank" rel="noopener" class="wiki-link" title="Dolphin Wiki">🌐</a>`;
+  document.getElementById('dolphinCompatMini').innerHTML = renderCompatSegments(regionData.gameId);
   document.getElementById('modalBestRatingVal').innerHTML = renderStars(regionData.bestRating, 16);
   document.getElementById('modalBestFpsVal').textContent = formatFpsLabel(regionData.bestFpsStr);
   const avgR = regionData.avgRating || 0;
@@ -1434,8 +1450,17 @@ function renderModalWithRegion(group, region) {
   } else document.getElementById('modalAvgFpsVal').textContent = 'N/A';
 
   const tabsContainer = document.getElementById('modalTabs');
-  tabsContainer.innerHTML = group.allRegions.map(rd => { const active = rd.region === region ? 'active' : ''; return `<button class="modal-tab ${active}" data-region="${rd.region}"><img src="${getFlagUrl(rd.region)}" /> ${rd.region}</button>`; }).join('');
-  tabsContainer.querySelectorAll('.modal-tab').forEach(btn => { btn.addEventListener('click', function(e) { e.stopPropagation(); const newRegion = this.dataset.region; if (newRegion !== currentModalRegion) { currentModalRegion = newRegion; renderModalWithRegion(currentModalGroup, newRegion); } }); });
+  tabsContainer.innerHTML = group.allRegions.map(rd => {
+    const active = rd.region === region ? 'active' : '';
+    return `<button class="modal-tab ${active}" data-region="${escapeHtml(rd.region)}"><img src="${getFlagUrl(rd.region)}" alt="" /> ${escapeHtml(rd.region)}</button>`;
+  }).join('');
+  tabsContainer.querySelectorAll('.modal-tab').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const newRegion = this.dataset.region;
+      if (newRegion !== currentModalRegion) { currentModalRegion = newRegion; renderModalWithRegion(currentModalGroup, newRegion); }
+    });
+  });
 
   const container = document.getElementById('modalRegionContent');
   container.innerHTML = regionData.entries.map((e, idx) => {
@@ -1450,7 +1475,11 @@ function renderModalWithRegion(group, region) {
     if (rating === 3 && playable === "YES") playable = "YES WITH ISSUES";
     const fpsRaw = (review.fps || '???').trim();
     let fpsMin = parseInt(review.fps_min, 10), fpsMax = parseInt(review.fps_max, 10);
-    if (isNaN(fpsMin) || isNaN(fpsMax)) { const nums = fpsRaw.match(/\d+/g); if (nums) { const n = nums.map(Number); fpsMin = n[0] || 0; fpsMax = n[1] || n[0] || 0; } else { fpsMin = 0; fpsMax = 0; } }
+    if (isNaN(fpsMin) || isNaN(fpsMax)) {
+      const nums = fpsRaw.match(/\d+/g);
+      if (nums) { const n = nums.map(Number); fpsMin = n[0] || 0; fpsMax = n[1] || n[0] || 0; }
+      else { fpsMin = 0; fpsMax = 0; }
+    }
     let fpsRange;
     if (fpsMin > 0 && fpsMax > 0) {
       fpsRange = (fpsMin === fpsMax) ? `FPS ${fpsMin}` : `${fpsMin} - ${fpsMax}`;
@@ -1482,15 +1511,18 @@ function renderModalWithRegion(group, region) {
         else if (t.includes('texture')) typeClass = 'settings-texture';
         else if (t.includes('cheat')) typeClass = 'settings-cheats';
         let linkHtml = '';
-        if (url) linkHtml = `<a href="${escapeHtml(url)}" target="_blank" rel="noopener" style="font-weight:900; text-decoration:underline;">${escapeHtml(filename || url)}</a>`;
+        if (url) linkHtml = `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" style="font-weight:900; text-decoration:underline;">${escapeHtml(filename || url)}</a>`;
         else if (filename) linkHtml = `<span style="font-weight:700;">${escapeHtml(filename)}</span> (no link)`;
         else linkHtml = '<span style="opacity:0.5;">No file</span>';
         return `<div class="flex flex-col gap-1 p-2 border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);"><div class="flex items-center gap-2 flex-wrap"><span class="settings-type-badge ${typeClass}">${escapeHtml(type)}</span>${name ? `<span class="text-xs font-black">${escapeHtml(name)}</span>` : ''}</div><div class="text-xs font-mono">${linkHtml}</div>${note ? `<p class="text-xs italic font-bold opacity-70" style="margin-top:0.2rem;">${escapeHtml(note)}</p>` : ''}</div>`;
       }).join('');
     }
     let attHtml = '';
-    if (attachments.length > 0) { attHtml = attachments.map(a => `<div class="attachment-item">${a.media_type === 'video' ? '🎬' : '🖼️'}<a href="${a.media_url}" target="_blank" rel="noopener" class="truncate">${escapeHtml(a.media_title || a.media_url)}</a></div>`).join(''); }
-    const testerLink = `<span style="cursor:pointer; text-decoration:underline; font-weight:900;" onclick="event.stopPropagation(); openTesterPanel('${escapeHtml(tester)}')">${escapeHtml(tester)}</span>`;
+    if (attachments.length > 0) {
+      attHtml = attachments.map(a => `<div class="attachment-item">${a.media_type === 'video' ? '🎬' : '🖼️'}<a href="${escapeHtml(a.media_url)}" target="_blank" rel="noopener noreferrer" class="truncate">${escapeHtml(a.media_title || a.media_url)}</a></div>`).join('');
+    }
+    // XSS-safe tester link (data attribute, no inline onclick)
+    const testerLink = `<span class="tester-link" data-tester="${escapeHtml(tester)}">${escapeHtml(tester)}</span>`;
     return `
       <div class="modal-test-card">
         <div class="flex flex-wrap items-center justify-between gap-2 pb-2 border-b-2">
@@ -1517,22 +1549,44 @@ function renderModalWithRegion(group, region) {
       </div>
     `;
   }).join('');
+
+  // Attach safe tester listeners
+  container.querySelectorAll('.tester-link').forEach(el => {
+    el.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      const name = el.dataset.tester;
+      if (name) openTesterPanel(name);
+    });
+  });
+
   document.getElementById('modalTotalEntriesText').textContent = `Total Tests: ${regionData.entriesCount}`;
 }
+
 function closeModal() {
   if (modalIsClosing) return;
   modalIsClosing = true;
   const modal = document.getElementById('gameModal'), card = document.getElementById('modalCard');
   modal.classList.add('closing');
-  setTimeout(() => { 
+  setTimeout(() => {
     modal.style.display = 'none'; modal.classList.remove('closing'); card.style.animation = 'none'; modalIsClosing = false;
-    // Restore body scroll only if no other overlays are open
-    const testerOpen = document.getElementById('testerPanel').classList.contains('open');
-    const aboutOpen = document.getElementById('aboutPanel').classList.contains('open');
-    if (!testerOpen && !aboutOpen) document.body.style.overflow = '';
+    releaseBodyScroll();
   }, 500);
 }
 
+/* ============ BODY SCROLL LOCK HELPER ============ */
+function anyOverlayOpen() {
+  return (
+    document.getElementById('testerPanel').classList.contains('open') ||
+    document.getElementById('aboutPanel').classList.contains('open') ||
+    document.getElementById('gameModal').style.display === 'flex' ||
+    document.getElementById('reportModal').style.display === 'flex'
+  );
+}
+function releaseBodyScroll() {
+  if (!anyOverlayOpen()) document.body.style.overflow = '';
+}
+
+/* ============ TESTER PANEL ============ */
 function openTesterPanel(testerName) {
   const panel = document.getElementById('testerPanel'), overlay = document.getElementById('testerOverlay');
   if (state.console === 'gc') { panel.classList.remove('panel-wii'); panel.classList.add('panel-gc'); } else { panel.classList.remove('panel-gc'); panel.classList.add('panel-wii'); }
@@ -1550,43 +1604,46 @@ function openTesterPanel(testerName) {
   const devices = [...new Set(tests.map(t => t.device))];
   const content = document.getElementById('testerContent');
   const avatarInitial = testerName.charAt(0).toUpperCase();
-  let testsHtml = tests.map(t => { const cover = t.cover || ''; const flag = getFlagUrl(t.region); const ratingStars = renderStars(t.rating, 12); return `<div class="test-item">${cover ? `<img src="${cover}" class="mini-cover" onerror="this.style.display='none';" />` : `<div class="mini-cover" style="background:#1a0a2e; display:flex; align-items:center; justify-content:center; font-size:20px;">🎮</div>`}<img src="${flag}" class="mini-flag" /><span class="game-title">${escapeHtml(t.game)}</span><div class="rating-stars-mini">${ratingStars}</div></div>`; }).join('');
-  content.innerHTML = `<div class="tester-header"><div class="avatar-lg">${avatarInitial}</div><div class="tester-name">${escapeHtml(testerName)}</div></div><div class="tester-stats"><div class="stat"><span class="number">${tests.length}</span><span class="label">Tests</span></div><div class="stat"><span class="number">${devices.length}</span><span class="label">Devices</span></div></div><div style="font-weight:700; margin-bottom:0.3rem;">Devices used:</div><div class="device-list">${devices.map(d => `<span class="device-chip">${escapeHtml(d)}</span>`).join('')}</div><div style="font-weight:700; margin-top:1.2rem; margin-bottom:0.5rem;">Test list:</div><div class="test-list">${testsHtml}</div>`;
+  let testsHtml = tests.map(t => {
+    const cover = t.cover || '';
+    const flag = getFlagUrl(t.region);
+    const ratingStars = renderStars(t.rating, 12);
+    return `<div class="test-item">${cover ? `<img src="${cover}" class="mini-cover" onerror="this.style.display='none';" alt="" />` : `<div class="mini-cover" style="background:#1a0a2e; display:flex; align-items:center; justify-content:center; font-size:20px;">🎮</div>`}<img src="${flag}" class="mini-flag" alt="" /><span class="game-title">${escapeHtml(t.game)}</span><div class="rating-stars-mini">${ratingStars}</div></div>`;
+  }).join('');
+  content.innerHTML = `<div class="tester-header"><div class="avatar-lg">${escapeHtml(avatarInitial)}</div><div class="tester-name">${escapeHtml(testerName)}</div></div><div class="tester-stats"><div class="stat"><span class="number">${tests.length}</span><span class="label">Tests</span></div><div class="stat"><span class="number">${devices.length}</span><span class="label">Devices</span></div></div><div style="font-weight:700; margin-bottom:0.3rem;">Devices used:</div><div class="device-list">${devices.map(d => `<span class="device-chip">${escapeHtml(d)}</span>`).join('')}</div><div style="font-weight:700; margin-top:1.2rem; margin-bottom:0.5rem;">Test list:</div><div class="test-list">${testsHtml}</div>`;
   panel.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden';
 }
-function closeTesterPanel() { 
-  document.getElementById('testerPanel').classList.remove('open'); 
-  document.getElementById('testerOverlay').classList.remove('open'); 
-  const aboutOpen = document.getElementById('aboutPanel').classList.contains('open');
-  const modalOpen = document.getElementById('gameModal').style.display === 'flex';
-  if (!aboutOpen && !modalOpen) document.body.style.overflow = ''; 
+function closeTesterPanel() {
+  document.getElementById('testerPanel').classList.remove('open');
+  document.getElementById('testerOverlay').classList.remove('open');
+  releaseBodyScroll();
 }
 
+/* ============ ABOUT PANEL ============ */
 function openAboutPanel() {
   const panel = document.getElementById('aboutPanel'), overlay = document.getElementById('aboutOverlay');
   if (state.console === 'gc') { panel.classList.remove('panel-wii'); panel.classList.add('panel-gc'); } else { panel.classList.remove('panel-gc'); panel.classList.add('panel-wii'); }
   panel.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden';
 }
-function closeAboutPanel() { 
-  document.getElementById('aboutPanel').classList.remove('open'); 
-  document.getElementById('aboutOverlay').classList.remove('open'); 
-  const testerOpen = document.getElementById('testerPanel').classList.contains('open');
-  const modalOpen = document.getElementById('gameModal').style.display === 'flex';
-  if (!testerOpen && !modalOpen) document.body.style.overflow = ''; 
+function closeAboutPanel() {
+  document.getElementById('aboutPanel').classList.remove('open');
+  document.getElementById('aboutOverlay').classList.remove('open');
+  releaseBodyScroll();
 }
 document.getElementById('howAboutLink').addEventListener('click', function(e) { e.preventDefault(); openAboutPanel(); });
 
+/* ============ GUIDE ============ */
 const GUIDE_CONTENT = {
   h1: `<h3>Header & Console Toggle</h3>
     <p>At the very top of the page you'll find the header with buttons and the central toggle.</p>
     <div style="display:flex; flex-wrap:wrap; gap:6px; margin:6px 0;">
       <span class="demo-btn">📁 Repository</span><span class="demo-btn">📦 Latest Release</span><span class="demo-btn">📝 New Report</span><span class="demo-btn">📤 Send Report</span><span class="demo-btn">ℹ️ How & About</span>
     </div>
-    <p><strong>GameCube</strong> vs <strong>Wii</strong> toggles the entire theme and dataset. When you scroll, a compact header appears; move your mouse to the top of the screen to expand the full header again.</p>`,
+    <p><strong>GameCube</strong> vs <strong>Wii</strong> toggles the entire theme and dataset. When you scroll, a compact header appears; on desktop, move the mouse to the top; on mobile, touch the top edge.</p>`,
   h2: `<h3>Filter Panel</h3>
-    <p>Search, Region, Boot, Sort, Views, Reset. When scrolled, the filter panel sticks below the compact header for quick access.</p>
+    <p>Search, Region, Boot, Sort, Views, Export, Reset. When scrolled, the filter panel sticks below the compact header for quick access.</p>
     <div style="display:flex; flex-wrap:wrap; gap:6px; margin:6px 0;">
-      <span class="demo-btn">🔍 Search...</span><span class="demo-btn">🌍 All Regions</span><span class="demo-btn">💿 Boot: All</span><span class="demo-btn">📝 Sort: Title</span><span class="demo-btn">▦ Grid</span><span class="demo-btn">☰ List</span><span class="demo-btn">📋 Extended</span><span class="demo-btn">↺ Reset</span>
+      <span class="demo-btn">🔍 Search...</span><span class="demo-btn">🌍 All Regions</span><span class="demo-btn">💿 Boot: All</span><span class="demo-btn">📝 Sort: Title</span><span class="demo-btn">▦ Grid</span><span class="demo-btn">☰ List</span><span class="demo-btn">📋 Extended</span><span class="demo-btn">📥 Export</span><span class="demo-btn">↺ Reset</span>
     </div>`,
   h3: `<h3>Rating Panels</h3>
     <p>Five clickable buckets by best rating. Colors are unified red → green.</p>
@@ -1598,7 +1655,7 @@ const GUIDE_CONTENT = {
       <div class="rating-panel" data-rating="1" style="padding:6px 8px; text-align:center; font-size:10px;">1-0★<br><span style="font-family:monospace;">30</span></div>
     </div>`,
   h4: `<h3>Game Cards</h3>
-    <p>Each game card shows the title, a colored score badge on a star, the badges row (FPS/Boot/Playable/Tests circle), region flags and the star row.</p>
+    <p>Each game card shows the title, a colored score badge on a star, the badges row (FPS/Boot/Playable/Tests circle), region flags and the star row. Boot / Playable badges come from the <strong>same test</strong> that produced the best rating.</p>
     <div style="display:flex; gap:14px; align-items:flex-start; margin:10px 0; flex-wrap:wrap;">
       <div class="mini-game-card"><div class="cover">🎮</div><div class="info"><div class="title">Super Mario Sunshine</div><div class="badges"><span class="fps-badge gc" style="font-size:8px; padding:1px 6px;">60 FPS</span><span class="boot-badge yes" style="font-size:7px; padding:1px 6px;">Boots</span><span class="playable-badge yes" style="font-size:7px; padding:1px 6px;">Playable</span></div></div></div>
       <div style="flex:1; min-width:160px;">
@@ -1619,7 +1676,7 @@ const GUIDE_CONTENT = {
     </ul>`,
   h6: `<h3>Send Report</h3>
     <p>5 Tetris blocks: Game Data → Core Setup → Playability → Add-ons → Tester Info.</p>
-    <p>On submit, a pre-filled GitHub Issue opens with the JSON payload.</p>`
+    <p>On submit, a pre-filled GitHub Issue opens with the JSON payload. Missing fields get highlighted — no annoying alerts.</p>`
 };
 
 function loadGuideSection(target) {
@@ -1643,16 +1700,38 @@ document.querySelectorAll('#rtIndexList button').forEach(btn => {
 });
 loadGuideSection('h1');
 
+/* ============ STATS ============ */
 function updateStats() {
   document.getElementById('statTested').textContent = state.groupedGames.length;
   document.getElementById('statTotal').textContent = state.rawGames.length;
   const counts = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
-  state.groupedGames.forEach(g => { const r = g.aggregated.bestRating; if (r >= 5) counts[5]++; else if (r >= 4) counts[4]++; else if (r >= 3) counts[3]++; else if (r >= 2) counts[2]++; else if (r >= 1) counts[1]++; });
+  state.groupedGames.forEach(g => {
+    const r = g.aggregated.bestRating;
+    if (r >= 5) counts[5]++;
+    else if (r >= 4) counts[4]++;
+    else if (r >= 3) counts[3]++;
+    else if (r >= 2) counts[2]++;
+    else if (r >= 1) counts[1]++;
+  });
   document.getElementById('count-5').textContent = counts[5];
   document.getElementById('count-4').textContent = counts[4];
   document.getElementById('count-3').textContent = counts[3];
   document.getElementById('count-2').textContent = counts[2];
   document.getElementById('count-1').textContent = counts[1];
+}
+
+/* ============ DATA LOAD (with retry + cache-bust) ============ */
+async function fetchWithRetry(url, retries = 2) {
+  let lastErr = null;
+  for (let i = 0; i <= retries; i++) {
+    try {
+      const res = await fetch(url + '?t=' + Date.now(), { cache: 'no-store' });
+      if (res.ok) return res;
+      lastErr = new Error(`HTTP ${res.status}`);
+    } catch (e) { lastErr = e; }
+    if (i < retries) await new Promise(r => setTimeout(r, 1000 * (i + 1)));
+  }
+  throw lastErr || new Error('Fetch failed');
 }
 
 async function loadConsoleData() {
@@ -1666,9 +1745,7 @@ async function loadConsoleData() {
     return;
   }
   try {
-    // Cache-busting: force fresh JSON on every console switch / reload
-    const res = await fetch(URL + '?t=' + Date.now(), { cache: 'no-store' });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const res = await fetchWithRetry(URL, 2);
     const data = await res.json();
     state.rawGames = data.games || [];
     const system = state.console === 'gc' ? 'GC' : 'Wii';
@@ -1679,11 +1756,12 @@ async function loadConsoleData() {
     render();
   } catch (err) {
     document.getElementById('loaderContainer').classList.add('hidden');
-    document.getElementById('emptyStateText').innerHTML = `<strong class="text-rose-500">Error loading data:</strong> ${err.message}`;
+    document.getElementById('emptyStateText').innerHTML = `<strong class="text-rose-500">Error loading data:</strong> ${escapeHtml(err.message)}`;
     document.getElementById('emptyState').classList.remove('hidden');
   }
 }
 
+/* ============ THEME SCROLLBAR VARS ============ */
 function applyThemeScrollbarVars(isGC) {
   const root = document.documentElement.style;
   if (isGC) {
@@ -1703,6 +1781,7 @@ function applyThemeScrollbarVars(isGC) {
   }
 }
 
+/* ============ CONSOLE SWITCH ============ */
 function switchConsole(target) {
   state.console = target;
   const isGC = target === 'gc';
@@ -1717,12 +1796,17 @@ function switchConsole(target) {
     if (!slider || !gcOpt || !wiiOpt) return;
     if (isGC) { slider.classList.remove('wii-slider'); gcOpt.classList.add('active'); wiiOpt.classList.remove('active'); }
     else { slider.classList.add('wii-slider'); wiiOpt.classList.add('active'); gcOpt.classList.remove('active'); }
+    toggle.setAttribute('aria-pressed', String(!isGC));
   });
-  const iconUrl = isGC ? 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg' : 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg';
+  const iconUrl = isGC
+    ? 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg'
+    : 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg';
   document.getElementById('consoleLogo').src = iconUrl;
   document.getElementById('compactConsoleIcon').src = iconUrl;
   document.getElementById('consoleName').textContent = isGC ? 'GameCube' : 'Wii';
-  document.getElementById('appBody').className = isGC ? 'theme-gc font-sans antialiased transition-colors duration-500 min-h-screen' : 'theme-wii font-sans antialiased transition-colors duration-500 min-h-screen';
+  document.getElementById('appBody').className = isGC
+    ? 'theme-gc font-sans antialiased transition-colors duration-500 min-h-screen'
+    : 'theme-wii font-sans antialiased transition-colors duration-500 min-h-screen';
   applyThemeScrollbarVars(isGC);
   loadConsoleData();
   setTimeout(syncHeaderHeights, 100);
@@ -1734,26 +1818,61 @@ document.querySelectorAll('.console-toggle').forEach(toggle => {
     if (option) { const c = option.dataset.console; if (c && c !== state.console) switchConsole(c); return; }
     switchConsole(state.console === 'gc' ? 'wii' : 'gc');
   });
+  toggle.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      e.preventDefault();
+      switchConsole(state.console === 'gc' ? 'wii' : 'gc');
+    }
+  });
 });
 
+/* ============ REPORT FORM ============ */
 document.getElementById('newReportLink').addEventListener('click', function(e) { e.preventDefault(); openReportModal(); });
+
 function openReportModal() {
   document.getElementById('reportModal').style.display = 'flex';
   const reset = (id, v = '') => { const el = document.getElementById(id); if (el) el.value = v; };
-  reset('reportPlatform'); reset('reportRegion'); reset('reportGameId'); reset('reportGameTitle'); reset('reportCoverArt'); reset('reportFpsMin'); reset('reportFpsMax'); reset('reportConsiderations'); reset('reportCoreVersion'); reset('reportCoreProfile'); reset('reportCoreVersionOther'); reset('reportCoreProfileOther'); reset('reportCustomSettingsName'); reset('reportCustomSettingsFilename'); reset('reportCustomSettingsUrl'); reset('reportCustomSettingsNote'); reset('reportCustomSettingsType', 'Config'); reset('reportAttachments'); reset('reportTester', 'Anonymous');
+  reset('reportPlatform'); reset('reportRegion'); reset('reportGameId'); reset('reportGameTitle'); reset('reportCoverArt');
+  reset('reportFpsMin'); reset('reportFpsMax'); reset('reportConsiderations');
+  reset('reportCoreVersion'); reset('reportCoreProfile'); reset('reportCoreVersionOther'); reset('reportCoreProfileOther');
+  reset('reportCustomSettingsName'); reset('reportCustomSettingsFilename'); reset('reportCustomSettingsUrl'); reset('reportCustomSettingsNote');
+  reset('reportCustomSettingsType', 'Config'); reset('reportAttachments'); reset('reportTester', 'Anonymous');
   document.getElementById('reportCoreProfileOther').style.display = 'none';
   document.getElementById('reportCustomSettingsWrapper').style.display = 'none';
   document.getElementById('reportCustomSettingsEnabled').value = 'No';
   const sug = document.getElementById('reportGameSuggestions'); sug.innerHTML = ''; sug.style.display = 'none';
+  clearReportErrors();
   setReportRating(-1);
   document.body.style.overflow = 'hidden';
+  document.querySelector('#reportModal .input-box')?.focus();
 }
-function closeReportModal() { 
-  document.getElementById('reportModal').style.display = 'none'; 
-  const testerOpen = document.getElementById('testerPanel').classList.contains('open');
-  const aboutOpen = document.getElementById('aboutPanel').classList.contains('open');
-  const modalOpen = document.getElementById('gameModal').style.display === 'flex';
-  if (!testerOpen && !aboutOpen && !modalOpen) document.body.style.overflow = '';
+
+function closeReportModal() {
+  document.getElementById('reportModal').style.display = 'none';
+  releaseBodyScroll();
+}
+
+/* Report errors */
+function clearReportErrors() {
+  document.getElementById('reportErrorBanner').style.display = 'none';
+  document.getElementById('reportErrorBanner').innerHTML = '';
+  document.querySelectorAll('#reportModal .input-error').forEach(el => el.classList.remove('input-error'));
+}
+function showReportErrors(errors) {
+  const banner = document.getElementById('reportErrorBanner');
+  banner.innerHTML = `<div>⚠️ Please fix the following before submitting:</div><ul>${errors.map(e => `<li>${escapeHtml(e.msg)}</li>`).join('')}</ul>`;
+  banner.style.display = 'block';
+  errors.forEach(err => {
+    const el = document.getElementById(err.id);
+    if (el) el.classList.add('input-error');
+  });
+  // Scroll to first error
+  const firstId = errors[0]?.id;
+  const firstEl = firstId ? document.getElementById(firstId) : null;
+  if (firstEl) {
+    firstEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => firstEl.focus?.(), 300);
+  }
 }
 
 function setReportRating(val) {
@@ -1761,7 +1880,11 @@ function setReportRating(val) {
   document.querySelectorAll('#rpRatingWidget .rate-btn').forEach(b => { b.style.background = '#0f172a'; b.style.color = '#94a3b8'; b.style.borderColor = '#334155'; });
   const hidden = document.getElementById('reportRating');
   const colors = ['#8b0000','#ef4444','#f97316','#eab308','#84cc16','#16a34a'];
-  if (rating >= 0) { const btns = document.querySelectorAll('#rpRatingWidget .rate-btn'); if (btns[rating]) { btns[rating].style.background = colors[rating]; btns[rating].style.color = '#fff'; btns[rating].style.borderColor = '#000'; } hidden.value = rating; } else hidden.value = '';
+  if (rating >= 0) {
+    const btns = document.querySelectorAll('#rpRatingWidget .rate-btn');
+    if (btns[rating]) { btns[rating].style.background = colors[rating]; btns[rating].style.color = '#fff'; btns[rating].style.borderColor = '#000'; }
+    hidden.value = rating;
+  } else hidden.value = '';
   const bBoot = document.getElementById('rpBadgeBoot'), bPlay = document.getElementById('rpBadgePlay');
   bBoot.style.background = '#1e293b'; bBoot.style.color = '#94a3b8'; bPlay.style.background = '#1e293b'; bPlay.style.color = '#94a3b8';
   if (rating === 0) { bBoot.style.background = '#7f1d1d'; bBoot.style.color = '#fca5a5'; bBoot.textContent = 'BOOT: NO'; bPlay.style.background = '#7f1d1d'; bPlay.style.color = '#fca5a5'; bPlay.textContent = 'PLAY: UNPLAYABLE'; }
@@ -1770,9 +1893,26 @@ function setReportRating(val) {
   else if (rating >= 4) { bBoot.style.background = '#14532d'; bBoot.style.color = '#86efac'; bBoot.textContent = 'BOOT: YES'; bPlay.style.background = '#14532d'; bPlay.style.color = '#86efac'; bPlay.textContent = 'PLAY: PLAYABLE'; }
   else { bBoot.textContent = 'BOOT: TBD'; bPlay.textContent = 'PLAY: TBD'; }
 }
-function toggleReportOther(selectId, inputId) { const sel = document.getElementById(selectId), inp = document.getElementById(inputId); if (sel.value === 'Other...') inp.style.display = 'block'; else { inp.style.display = 'none'; inp.value = ''; } }
-function toggleReportCustomSettings() { const enabled = document.getElementById('reportCustomSettingsEnabled').value === 'Yes'; document.getElementById('reportCustomSettingsWrapper').style.display = enabled ? 'flex' : 'none'; }
 
+// Keyboard + click for rating buttons
+document.querySelectorAll('#rpRatingWidget .rate-btn').forEach(btn => {
+  btn.addEventListener('click', () => setReportRating(btn.dataset.rate));
+  btn.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setReportRating(btn.dataset.rate); }
+  });
+});
+
+function toggleReportOther(selectId, inputId) {
+  const sel = document.getElementById(selectId), inp = document.getElementById(inputId);
+  if (sel.value === 'Other...') inp.style.display = 'block';
+  else { inp.style.display = 'none'; inp.value = ''; }
+}
+function toggleReportCustomSettings() {
+  const enabled = document.getElementById('reportCustomSettingsEnabled').value === 'Yes';
+  document.getElementById('reportCustomSettingsWrapper').style.display = enabled ? 'flex' : 'none';
+}
+
+/* Autocomplete */
 (function () {
   const titleInput = document.getElementById('reportGameTitle'), box = document.getElementById('reportGameSuggestions');
   if (!titleInput || !box) return;
@@ -1780,52 +1920,120 @@ function toggleReportCustomSettings() { const enabled = document.getElementById(
     const val = this.value.trim().toLowerCase();
     if (val.length < 2) { box.style.display = 'none'; return; }
     const seen = new Set();
-    const matches = (state.rawGames || []).map(g => g.game_info?.game || '').filter(t => { if (!t) return false; const k = t.toLowerCase(); if (seen.has(k)) return false; seen.add(k); return k.includes(val); }).slice(0, 8);
+    const matches = (state.rawGames || []).map(g => g.game_info?.game || '').filter(t => {
+      if (!t) return false;
+      const k = t.toLowerCase();
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return k.includes(val);
+    }).slice(0, 8);
     if (matches.length === 0) { box.style.display = 'none'; return; }
     box.innerHTML = matches.map(t => `<div class="suggestion-item">${escapeHtml(t)}</div>`).join('');
     box.style.display = 'block';
-    box.querySelectorAll('.suggestion-item').forEach(el => { el.addEventListener('mousedown', function (e) { e.preventDefault(); titleInput.value = this.textContent; box.style.display = 'none'; }); });
+    box.querySelectorAll('.suggestion-item').forEach(el => {
+      el.addEventListener('mousedown', function (e) { e.preventDefault(); titleInput.value = this.textContent; box.style.display = 'none'; });
+    });
   });
   document.addEventListener('click', function (e) { if (!box.contains(e.target) && e.target !== titleInput) box.style.display = 'none'; });
 })();
 
 function submitReport() {
-  const platform = document.getElementById('reportPlatform').value, region = document.getElementById('reportRegion').value, title = document.getElementById('reportGameTitle').value.trim(), gameId = document.getElementById('reportGameId').value.trim(), rating = document.getElementById('reportRating').value;
-  const fpsMinRaw = document.getElementById('reportFpsMin').value.trim(), fpsMaxRaw = document.getElementById('reportFpsMax').value.trim(), considerations = capitalizeSentences(document.getElementById('reportConsiderations').value.trim());
-  const coreVersion = document.getElementById('reportCoreVersion').value, coreVersionOther = document.getElementById('reportCoreVersionOther').value.trim(), coreProfile = document.getElementById('reportCoreProfile').value, coreProfileOther = document.getElementById('reportCoreProfileOther').value.trim();
-  const csEnabled = document.getElementById('reportCustomSettingsEnabled').value === 'Yes', csType = document.getElementById('reportCustomSettingsType').value, csName = document.getElementById('reportCustomSettingsName').value.trim(), csFilename = document.getElementById('reportCustomSettingsFilename').value.trim(), csUrl = document.getElementById('reportCustomSettingsUrl').value.trim(), csNote = capitalizeSentences(document.getElementById('reportCustomSettingsNote').value.trim());
-  const attachmentsRaw = document.getElementById('reportAttachments').value.trim(), tester = document.getElementById('reportTester').value.trim() || 'Anonymous', device = document.getElementById('reportDevice').value.trim() || 'Unknown Device', muosVer = document.getElementById('reportMuos').value, coverArt = document.getElementById('reportCoverArt').value.trim();
-  if (!platform) { alert('Please select a platform.'); return; }
-  if (!region) { alert('Please select a region.'); return; }
-  if (!title) { alert('Please enter the game title.'); return; }
-  if (rating === '') { alert('Please select a rating (0–5).'); return; }
-  if (!coreVersion) { alert('Please select a Rt:Core version.'); return; }
-  if (!coreProfile) { alert('Please select a Core Profile.'); return; }
-  if (!muosVer) { alert('Please select a muOS version.'); return; }
+  clearReportErrors();
+  const platform = document.getElementById('reportPlatform').value;
+  const region = document.getElementById('reportRegion').value;
+  const title = document.getElementById('reportGameTitle').value.trim();
+  const gameId = document.getElementById('reportGameId').value.trim();
+  const rating = document.getElementById('reportRating').value;
+  const fpsMinRaw = document.getElementById('reportFpsMin').value.trim();
+  const fpsMaxRaw = document.getElementById('reportFpsMax').value.trim();
+  const considerations = capitalizeSentences(document.getElementById('reportConsiderations').value.trim());
+  const coreVersion = document.getElementById('reportCoreVersion').value;
+  const coreVersionOther = document.getElementById('reportCoreVersionOther').value.trim();
+  const coreProfile = document.getElementById('reportCoreProfile').value;
+  const coreProfileOther = document.getElementById('reportCoreProfileOther').value.trim();
+  const csEnabled = document.getElementById('reportCustomSettingsEnabled').value === 'Yes';
+  const csType = document.getElementById('reportCustomSettingsType').value;
+  const csName = document.getElementById('reportCustomSettingsName').value.trim();
+  const csFilename = document.getElementById('reportCustomSettingsFilename').value.trim();
+  const csUrl = document.getElementById('reportCustomSettingsUrl').value.trim();
+  const csNote = capitalizeSentences(document.getElementById('reportCustomSettingsNote').value.trim());
+  const attachmentsRaw = document.getElementById('reportAttachments').value.trim();
+  const tester = document.getElementById('reportTester').value.trim() || 'Anonymous';
+  const device = document.getElementById('reportDevice').value.trim() || 'Unknown Device';
+  const muosVer = document.getElementById('reportMuos').value;
+  const coverArt = document.getElementById('reportCoverArt').value.trim();
+
+  const errors = [];
+  if (!platform) errors.push({ id: 'reportPlatform', msg: 'Select a platform (GameCube / Wii).' });
+  if (!region) errors.push({ id: 'reportRegion', msg: 'Select a region (NTSC / PAL / NTSC-J).' });
+  if (!title) errors.push({ id: 'reportGameTitle', msg: 'Enter the game title.' });
+  if (rating === '') errors.push({ id: 'rpRatingContainer', msg: 'Select a rating (0–5).' });
+  if (!coreVersion) errors.push({ id: 'reportCoreVersion', msg: 'Select the Rt:Core version.' });
+  if (!coreProfile) errors.push({ id: 'reportCoreProfile', msg: 'Select a core profile.' });
+  if (!muosVer) errors.push({ id: 'reportMuos', msg: 'Select the muOS version.' });
+  if (!fpsMinRaw || !fpsMaxRaw) errors.push({ id: 'reportFpsMin', msg: 'Enter a valid FPS range (min and max).' });
+
+  if (errors.length > 0) { showReportErrors(errors); return; }
+
   const finalCoreVersion = coreVersion === 'Other...' ? (coreVersionOther || 'Unknown') : coreVersion;
   const finalCoreProfile = coreProfile === 'Other...' ? (coreProfileOther || 'Unknown') : coreProfile;
   const r = parseInt(rating);
   const boot = r === 0 ? 'NO' : 'YES';
   const playable = (r === 0 || r === 1 || r === 2) ? 'NO' : (r === 3 ? 'YES WITH ISSUES' : 'YES');
-  const fpsMin = parseInt(fpsMinRaw) || 0, fpsMax = parseInt(fpsMaxRaw) || 0;
-  const fpsStr = (fpsMinRaw && fpsMaxRaw) ? `${fpsMinRaw}-${fpsMaxRaw}` : '???';
+  const fpsMin = parseInt(fpsMinRaw) || 0;
+  const fpsMax = parseInt(fpsMaxRaw) || 0;
+  const fpsStr = `${fpsMinRaw}-${fpsMaxRaw}`;
+
   const attachments = [];
-  if (attachmentsRaw) { attachmentsRaw.split('\n').forEach(line => { const trimmed = line.trim(); if (!trimmed) return; const idx = trimmed.indexOf(':'); let mediaTitle = '', mediaUrl = ''; if (idx > 0) { mediaTitle = trimmed.substring(0, idx).trim(); mediaUrl = trimmed.substring(idx + 1).trim(); } else mediaUrl = trimmed; if (!/^https?:\/\//i.test(mediaUrl)) return; let mediaType = 'link'; if (/\.(jpg|jpeg|png|gif|webp)$/i.test(mediaUrl)) mediaType = 'image'; else if (/\.(mp4|webm|mov)$/i.test(mediaUrl) || /youtube|youtu\.be/i.test(mediaUrl)) mediaType = 'video'; attachments.push({ media_type: mediaType, media_title: mediaTitle || mediaUrl, media_url: mediaUrl }); }); }
+  if (attachmentsRaw) {
+    attachmentsRaw.split('\n').forEach(line => {
+      const trimmed = line.trim();
+      if (!trimmed) return;
+      const idx = trimmed.indexOf(':');
+      let mediaTitle = '', mediaUrl = '';
+      if (idx > 0) { mediaTitle = trimmed.substring(0, idx).trim(); mediaUrl = trimmed.substring(idx + 1).trim(); }
+      else mediaUrl = trimmed;
+      if (!/^https?:\/\//i.test(mediaUrl)) return;
+      let mediaType = 'link';
+      if (/\.(jpg|jpeg|png|gif|webp)$/i.test(mediaUrl)) mediaType = 'image';
+      else if (/\.(mp4|webm|mov)$/i.test(mediaUrl) || /youtube|youtu\.be/i.test(mediaUrl)) mediaType = 'video';
+      attachments.push({ media_type: mediaType, media_title: mediaTitle || mediaUrl, media_url: mediaUrl });
+    });
+  }
+
   const customSettings = [];
-  if (csEnabled) { const cs = { set_type: csType, set_title: csName, set_note: csNote }; if (csFilename) cs.set_filename = csFilename; if (csUrl) cs.set_url = csUrl; customSettings.push(cs); }
-  const payload = { game_info: { game_id: gameId || 'UNKNOWN', system: platform === 'GameCube' ? 'GC' : 'Wii', game: title, region: region }, test_review: { rating: r, fps: fpsStr, boot: boot, playable: playable, fps_min: fpsMin, fps_max: fpsMax }, test_details: { rtcore_version: finalCoreVersion, core_profile: finalCoreProfile, considerations: considerations }, test_environment: { tester: tester, device: device, muos_version: muosVer }, cover_art: coverArt, custom_settings: customSettings, attachments: attachments };
+  if (csEnabled) {
+    const cs = { set_type: csType, set_title: csName, set_note: csNote };
+    if (csFilename) cs.set_filename = csFilename;
+    if (csUrl) cs.set_url = csUrl;
+    customSettings.push(cs);
+  }
+
+  const payload = {
+    game_info: { game_id: gameId || 'UNKNOWN', system: platform === 'GameCube' ? 'GC' : 'Wii', game: title, region: region },
+    test_review: { rating: r, fps: fpsStr, boot: boot, playable: playable, fps_min: fpsMin, fps_max: fpsMax },
+    test_details: { rtcore_version: finalCoreVersion, core_profile: finalCoreProfile, considerations: considerations },
+    test_environment: { tester: tester, device: device, muos_version: muosVer },
+    cover_art: coverArt,
+    custom_settings: customSettings,
+    attachments: attachments
+  };
+
   const issueTitle = `[${region}] ${title} - Test Report`;
   const issueBody = '```json\n' + JSON.stringify(payload, null, 2) + '\n```';
   const url = `https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=dolphin-rtcore-test-report.yml&title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}`;
-  window.open(url, '_blank');
+  openSafeUrl(url);
   closeReportModal();
 }
 
+/* ============ MODAL CLOSE LISTENERS ============ */
 document.getElementById('closeModalBtn').addEventListener('click', closeModal);
 document.getElementById('gameModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeModal(); closeTesterPanel(); closeAboutPanel(); closeReportModal(); } });
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') { closeModal(); closeTesterPanel(); closeAboutPanel(); closeReportModal(); }
+});
 
-/* Debounced search */
+/* ============ FILTERS ============ */
 let searchTimeout = null;
 document.getElementById('searchInput').addEventListener('input', e => {
   clearTimeout(searchTimeout);
@@ -1834,19 +2042,58 @@ document.getElementById('searchInput').addEventListener('input', e => {
 document.getElementById('regionFilter').addEventListener('change', e => { state.selectedRegion = e.target.value; render(); });
 document.getElementById('bootFilter').addEventListener('change', e => { state.selectedBoot = e.target.value; render(); });
 document.getElementById('sortKey').addEventListener('change', e => { state.sortKey = e.target.value; render(); });
-document.getElementById('sortOrderBtn').addEventListener('click', () => { state.sortOrder = state.sortOrder === 'asc' ? 'desc' : 'asc'; document.getElementById('sortOrderLabel').textContent = state.sortOrder === 'asc' ? 'Asc' : 'Desc'; document.getElementById('sortOrderIcon').classList.toggle('rotate-180'); render(); });
+document.getElementById('sortOrderBtn').addEventListener('click', () => {
+  state.sortOrder = state.sortOrder === 'asc' ? 'desc' : 'asc';
+  document.getElementById('sortOrderLabel').textContent = state.sortOrder === 'asc' ? 'Asc' : 'Desc';
+  document.getElementById('sortOrderIcon').classList.toggle('rotate-180');
+  render();
+});
 document.getElementById('viewGridBtn').addEventListener('click', function() { state.viewMode = 'grid'; document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active')); this.classList.add('active'); render(); });
 document.getElementById('viewListBtn').addEventListener('click', function() { state.viewMode = 'list'; document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active')); this.classList.add('active'); render(); });
 document.getElementById('viewExtendedBtn').addEventListener('click', function() { state.viewMode = 'extended'; document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active')); this.classList.add('active'); render(); });
-document.querySelectorAll('.rating-panel').forEach(p => { p.addEventListener('click', () => { const v = p.getAttribute('data-rating'); state.selectedStars = state.selectedStars === v ? 'all' : v; render(); }); });
+
+document.querySelectorAll('.rating-panel').forEach(p => {
+  p.addEventListener('click', () => { const v = p.getAttribute('data-rating'); state.selectedStars = state.selectedStars === v ? 'all' : v; render(); });
+});
+
 document.getElementById('resetFiltersBtn').addEventListener('click', () => {
-  document.getElementById('searchInput').value = ''; document.getElementById('regionFilter').value = 'all'; document.getElementById('bootFilter').value = 'all'; document.getElementById('sortKey').value = 'title';
-  state.sortOrder = 'asc'; document.getElementById('sortOrderLabel').textContent = 'Asc'; document.getElementById('sortOrderIcon').classList.remove('rotate-180');
-  state.search = ''; state.selectedStars = 'all'; state.selectedRegion = 'all'; state.selectedBoot = 'all'; render();
+  document.getElementById('searchInput').value = '';
+  document.getElementById('regionFilter').value = 'all';
+  document.getElementById('bootFilter').value = 'all';
+  document.getElementById('sortKey').value = 'title';
+  state.sortOrder = 'asc';
+  document.getElementById('sortOrderLabel').textContent = 'Asc';
+  document.getElementById('sortOrderIcon').classList.remove('rotate-180');
+  state.search = ''; state.selectedStars = 'all'; state.selectedRegion = 'all'; state.selectedBoot = 'all';
+  render();
 });
 document.getElementById('clearFiltersBtn').addEventListener('click', () => { document.getElementById('resetFiltersBtn').click(); });
 
-/* INIT */
+/* ============ EXPORT ============ */
+document.getElementById('exportBtn').addEventListener('click', () => {
+  if (state.filtered.length === 0) { return; }
+  const data = state.filtered.map(item => ({
+    game: item.game,
+    gameId: item.aggregated.gameId,
+    bestRating: item.aggregated.bestRating,
+    bestFps: item.aggregated.bestFpsStr,
+    bestBoot: item.aggregated.bestBoot,
+    bestPlayable: item.aggregated.bestPlayable,
+    avgRating: item.aggregated.avgRating,
+    avgFps: item.aggregated.avgFps,
+    totalEntries: item.aggregated.totalEntries,
+    regions: item.allRegions.map(r => r.region)
+  }));
+  const blob = new Blob([JSON.stringify({ console: state.console, exported: new Date().toISOString(), count: data.length, games: data }, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `dolphin-rtcore-${state.console}-${Date.now()}.json`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+
+/* ============ INIT ============ */
 window.addEventListener('load', () => { syncHeaderHeights(); });
 switchConsole('gc');
 syncHeaderHeights();
