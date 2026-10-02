@@ -226,6 +226,8 @@ body.theme-wii .dolphin-compat-mini .wiki-link { color: #0284c7; border-color: #
 body.theme-wii .dolphin-compat-mini .wiki-link:hover { background: rgba(0,163,224,0.2); color: #075985; }
 .dolphin-compat-mini .compat-loading { display: inline-flex; gap: 3px; align-items: center; }
 .dolphin-compat-mini .compat-loading-label { font-size: 11px; font-weight: 900; font-family: 'JetBrains Mono', monospace; margin-left: 4px; opacity: 0.5; letter-spacing: 1px; }
+.dolphin-compat-mini .compat-loading { display: inline-flex; gap: 3px; align-items: center; }
+.dolphin-compat-mini .compat-loading-label { font-size: 11px; font-weight: 900; font-family: 'JetBrains Mono', monospace; margin-left: 4px; opacity: 0.5; letter-spacing: 1px; }
 
 .view-btn { display: inline-flex; align-items: center; gap: 4px; padding: 5px 12px; font-size: 11px; font-weight: 900; border: 2px solid; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); cursor: pointer; background: transparent; text-transform: uppercase; }
 body.theme-gc .view-btn { border-color: #2a1a4a; color: #94a3b8; }
@@ -785,6 +787,8 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
         <button id="viewListBtn" class="view-btn" title="List view" aria-label="List view"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h6M4 12h6M4 19h6M14 5h6M14 12h6M14 19h6"/></svg> List</button>
         <button id="viewExtendedBtn" class="view-btn" title="Extended list view" aria-label="Extended view"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16M4 12h16M4 19h16"/></svg> Extended</button>
       </div>
+      
+      
       <span id="filterCount" class="text-xs font-black opacity-70 px-2 font-mono" aria-live="polite">0 / 0</span>
       <button id="exportBtn" class="flex items-center gap-1.5 text-sm" title="Export filtered list as JSON" aria-label="Export filtered list as JSON">📥 Export</button>
       <button id="resetFiltersBtn" class="text-sm font-black transition-colors">↺ Reset</button>
