@@ -13,22 +13,13 @@
 html { overflow-y: scroll; overflow-x: hidden; }
 body { overflow-x: hidden; font-family: 'Outfit', sans-serif; font-weight: 700; transition: background 0.4s, color 0.4s; min-height: 100vh; }
 
-/* ===== VISIBLE SCROLLBAR (page) ===== */
 html::-webkit-scrollbar { width: 14px; height: 14px; }
 html::-webkit-scrollbar-button { display: none; }
 html::-webkit-scrollbar-track { background: var(--sb-track, #0a0618); border-left: 1px solid var(--sb-track-border, #2a1a4a); }
-html::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--sb-thumb-1, #8b5cf6), var(--sb-thumb-2, #ec4899));
-  border: 3px solid var(--sb-track, #0a0618);
-  border-radius: 8px;
-  min-height: 40px;
-}
-html::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--sb-thumb-1h, #a78bfa), var(--sb-thumb-2h, #f472b6));
-}
+html::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--sb-thumb-1, #8b5cf6), var(--sb-thumb-2, #ec4899)); border: 3px solid var(--sb-track, #0a0618); border-radius: 8px; min-height: 40px; }
+html::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--sb-thumb-1h, #a78bfa), var(--sb-thumb-2h, #f472b6)); }
 html { scrollbar-color: var(--sb-thumb-1, #8b5cf6) var(--sb-track, #0a0618); scrollbar-width: auto; }
 
-/* Inner scrollbars */
 ::-webkit-scrollbar { width: 14px; height: 14px; }
 ::-webkit-scrollbar-button { display: none; }
 body.theme-gc ::-webkit-scrollbar-track { background: #0a0618; border-left: 1px solid #2a1a4a; }
@@ -60,29 +51,10 @@ body.theme-wii .list-card-2col { border-radius: 16px !important; background: rgb
 @keyframes modalHoloIn { 0% { opacity: 0; transform: scale(0.3) rotateX(10deg); filter: blur(20px) brightness(0); } 100% { opacity: 1; transform: scale(1); filter: blur(0) brightness(1); } }
 @keyframes modalHoloOut { 0% { opacity: 1; transform: scale(1); filter: blur(0) brightness(1); } 100% { opacity: 0; transform: scale(0.3); filter: blur(20px) brightness(0); } }
 
-/* ===== RT NEON ===== */
-.rt-electric {
-  font-family: 'Audiowide', 'Orbitron', sans-serif;
-  display: inline-block; position: relative; letter-spacing: 0.05em;
-  color: #c4b5fd;
-  -webkit-text-stroke: 2.5px #000;
-  paint-order: stroke fill;
-  text-shadow: 0 0 8px rgba(167,139,250,0.9), 0 0 18px rgba(139,92,246,0.7), 0 0 32px rgba(124,58,237,0.5);
-  animation: rtPulse 5s ease-in-out infinite;
-}
-@keyframes rtPulse {
-  0%, 100% { text-shadow: 0 0 8px rgba(167,139,250,0.85), 0 0 18px rgba(139,92,246,0.65), 0 0 30px rgba(124,58,237,0.45); filter: brightness(1); }
-  48% { text-shadow: 0 0 12px rgba(196,181,253,1), 0 0 24px rgba(139,92,246,0.9), 0 0 45px rgba(124,58,237,0.65); filter: brightness(1.12); }
-  49.5% { text-shadow: 0 0 4px rgba(167,139,250,0.5), 0 0 10px rgba(139,92,246,0.4); filter: brightness(0.88); }
-  51% { text-shadow: 0 0 12px rgba(196,181,253,1), 0 0 24px rgba(139,92,246,0.9), 0 0 45px rgba(124,58,237,0.65); filter: brightness(1.05); }
-}
-.rt-electric::after {
-  content: ''; position: absolute; inset: -8px -14px; border-radius: 10px; pointer-events: none;
-  background: radial-gradient(ellipse at center, rgba(139,92,246,0.35) 0%, rgba(139,92,246,0.12) 40%, transparent 72%);
-  filter: blur(7px); animation: rtAura 4.5s ease-in-out infinite;
-}
+.rt-electric { font-family: 'Audiowide', 'Orbitron', sans-serif; display: inline-block; position: relative; letter-spacing: 0.05em; color: #c4b5fd; -webkit-text-stroke: 2.5px #000; paint-order: stroke fill; text-shadow: 0 0 8px rgba(167,139,250,0.9), 0 0 18px rgba(139,92,246,0.7), 0 0 32px rgba(124,58,237,0.5); animation: rtPulse 5s ease-in-out infinite; }
+@keyframes rtPulse { 0%, 100% { text-shadow: 0 0 8px rgba(167,139,250,0.85), 0 0 18px rgba(139,92,246,0.65), 0 0 30px rgba(124,58,237,0.45); filter: brightness(1); } 48% { text-shadow: 0 0 12px rgba(196,181,253,1), 0 0 24px rgba(139,92,246,0.9), 0 0 45px rgba(124,58,237,0.65); filter: brightness(1.12); } 49.5% { text-shadow: 0 0 4px rgba(167,139,250,0.5), 0 0 10px rgba(139,92,246,0.4); filter: brightness(0.88); } 51% { text-shadow: 0 0 12px rgba(196,181,253,1), 0 0 24px rgba(139,92,246,0.9), 0 0 45px rgba(124,58,237,0.65); filter: brightness(1.05); } }
+.rt-electric::after { content: ''; position: absolute; inset: -8px -14px; border-radius: 10px; pointer-events: none; background: radial-gradient(ellipse at center, rgba(139,92,246,0.35) 0%, rgba(139,92,246,0.12) 40%, transparent 72%); filter: blur(7px); animation: rtAura 4.5s ease-in-out infinite; }
 @keyframes rtAura { 0%,100% { opacity: 0.6; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1.06); } }
-
 .rt-electric .anime-arc { position: absolute; height: 1.5px; pointer-events: none; opacity: 0; background: linear-gradient(90deg, transparent 0%, #ffffff 15%, #c4b5fd 45%, #ffffff 70%, transparent 100%); filter: drop-shadow(0 0 3px #8b5cf6) drop-shadow(0 0 6px #7c3aed); transform-origin: left center; z-index: 3; }
 .rt-electric .anime-arc.arc-l1 { width: 46px; top: 15%; left: -44px; transform: rotate(-22deg); animation: animeArcL 11s ease-in-out infinite; }
 .rt-electric .anime-arc.arc-l2 { width: 60px; top: 55%; left: -58px; transform: rotate(14deg); animation: animeArcL 13s ease-in-out infinite 2.4s; }
@@ -93,7 +65,6 @@ body.theme-wii .list-card-2col { border-radius: 16px !important; background: rgb
 @keyframes animeArcL { 0%, 76% { opacity: 0; transform: rotate(-22deg) scaleX(0); } 77% { opacity: 1; transform: rotate(-22deg) scaleX(1.15); } 79% { opacity: 0.35; transform: rotate(-22deg) scaleX(0.85); } 81% { opacity: 1; transform: rotate(-22deg) scaleX(1.05); } 83% { opacity: 0; transform: rotate(-22deg) scaleX(0); } 100% { opacity: 0; transform: rotate(-22deg) scaleX(0); } }
 @keyframes animeArcR { 0%, 78% { opacity: 0; transform: rotate(160deg) scaleX(0); } 79% { opacity: 1; transform: rotate(160deg) scaleX(1.2); } 81% { opacity: 0.4; transform: rotate(160deg) scaleX(0.9); } 83% { opacity: 1; transform: rotate(160deg) scaleX(1.1); } 85% { opacity: 0; transform: rotate(160deg) scaleX(0); } 100% { opacity: 0; transform: rotate(160deg) scaleX(0); } }
 @keyframes animeArcT { 0%, 82% { opacity: 0; transform: rotate(-60deg) scaleX(0); } 83% { opacity: 0.9; transform: rotate(-60deg) scaleX(1.3); } 85% { opacity: 0.3; transform: rotate(-60deg) scaleX(0.7); } 87% { opacity: 0; transform: rotate(-60deg) scaleX(0); } 100% { opacity: 0; transform: rotate(-60deg) scaleX(0); } }
-
 .rt-core { position: relative; display: inline-block; }
 .rt-core .anime-arc { position: absolute; height: 1.2px; pointer-events: none; opacity: 0; background: linear-gradient(90deg, transparent 0%, #ffffff 20%, #c4b5fd 55%, transparent 100%); filter: drop-shadow(0 0 3px #8b5cf6) drop-shadow(0 0 5px #7c3aed); transform-origin: left center; }
 .rt-core .anime-arc.arc-c1 { width: 32px; top: 25%; left: -30px; transform: rotate(12deg); animation: animeArcCoreA 15s ease-in-out infinite 3s; }
@@ -108,24 +79,18 @@ body.theme-wii .list-card-2col { border-radius: 16px !important; background: rgb
 .star-glint svg path { fill: #fde68a; }
 .star-glint svg path.core { fill: #fbbf24; }
 
-/* ===== HEADERS ===== */
 :root { --full-header-h: 140px; --compact-header-h: 56px; }
-
 #appHeader { position: fixed; top: 0; left: 0; right: 0; z-index: 50; transform: translateY(0); transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), background 0.4s; will-change: transform; }
 body.theme-gc #appHeader { background: rgba(10,6,24,0.98); backdrop-filter: blur(10px); }
 body.theme-wii #appHeader { background: rgba(232,240,248,0.98); backdrop-filter: blur(10px); }
-
 #compactHeader { position: fixed; top: 0; left: 0; right: 0; z-index: 45; transform: translateY(-100%); transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); will-change: transform; box-shadow: 0 6px 24px rgba(0,0,0,0.35); }
 body.theme-gc #compactHeader { background: rgba(10,6,24,0.97); backdrop-filter: blur(14px); border-bottom: 2px solid #2a1a4a; }
 body.theme-wii #compactHeader { background: rgba(232,240,248,0.97); backdrop-filter: blur(14px); border-bottom: 2px solid rgba(15,23,42,0.15); }
-
 body.scrolled #appHeader { transform: translateY(-100%); pointer-events: none; }
 body.scrolled #compactHeader { transform: translateY(0); }
 body.scrolled.header-peek #appHeader { transform: translateY(0); pointer-events: auto; }
 body.scrolled.header-peek #compactHeader { transform: translateY(-100%); }
-
 #headerSpacer { height: 140px; transition: height 0.2s; }
-
 .compact-brand { font-family: 'Audiowide', 'Orbitron', sans-serif; font-weight: 900; font-size: 15px; letter-spacing: 0.03em; white-space: nowrap; }
 body.theme-gc .compact-brand { color: #c4b5fd; text-shadow: 0 0 10px rgba(139,92,246,0.55); }
 body.theme-wii .compact-brand { color: #0284c7; text-shadow: 0 0 8px rgba(0,163,224,0.35); }
@@ -139,12 +104,10 @@ body.theme-wii .compact-version-panel { border-color: rgba(15,23,42,0.2); backgr
 .compact-version-panel b { font-weight: 900; }
 body.theme-gc .compact-version-panel b { color: #f1f5f9; }
 body.theme-wii .compact-version-panel b { color: #0f172a; }
-
 @media (max-width: 1100px) { .compact-subtitle { display: none; } }
 @media (max-width: 900px) { .compact-version-panel span.ver-label { display: none; } }
 @media (max-width: 700px) { .compact-brand { font-size: 13px; } .compact-brand .brand-long { display: none; } }
 
-/* ===== TOGGLE ===== */
 .console-toggle { display: inline-flex; align-items: center; background: rgba(255,255,255,0.06); border-radius: 9999px; padding: 4px; position: relative; height: 42px; border: 2px solid rgba(255,255,255,0.08); box-shadow: inset 0 2px 4px rgba(0,0,0,0.4); cursor: pointer; user-select: none; flex-shrink: 0; min-width: 200px; }
 body.theme-wii .console-toggle { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.15); }
 .console-toggle:focus-visible { outline: 2px solid #8b5cf6; outline-offset: 3px; }
@@ -161,7 +124,6 @@ body.theme-wii .console-toggle .toggle-option.active { color: #0f172a; }
 body.theme-wii .console-toggle .toggle-option img { filter: brightness(0.6) invert(0); }
 #compactHeader .console-toggle { height: 38px; min-width: 190px; }
 
-/* ===== CARDS ===== */
 .card-anim { animation: fadeIn 0.25s ease-out forwards; opacity: 0; }
 .cover-placeholder { background: #1a0a2e; display: flex; align-items: center; justify-content: center; font-size: 40px; color: rgba(255,255,255,0.1); clip-path: polygon(0% 5%, 5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%); }
 body.theme-wii .cover-placeholder { background: #d0dce8; color: rgba(0,0,0,0.06); }
@@ -201,41 +163,33 @@ body.theme-wii .status-pill.playable-issues { background: rgba(251,191,36,0.08);
 
 .rating-stars { display: flex; gap: 2px; }
 .rating-stars svg { width: 16px; height: 16px; }
-
 .fps-range-box { border: 2px solid; padding: 6px 18px; text-align: center; font-family: 'JetBrains Mono', monospace; font-weight: 900; font-size: 15px; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); }
 body.theme-gc .fps-range-box { background: rgba(37, 99, 235, 0.20); color: #93c5fd; border-color: #2563eb; }
 body.theme-wii .fps-range-box { background: rgba(37, 99, 235, 0.12); color: #1e40af; border-color: #2563eb; }
-
 .core-profile-box { border: 2px solid; padding: 6px 16px; font-size: 12px; font-weight: 800; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); }
 body.theme-gc .core-profile-box { background: rgba(139,92,246,0.06); color: #c4b5fd; border-color: #6d28d9; }
 body.theme-wii .core-profile-box { background: rgba(0,163,224,0.04); color: #1e293b; border-color: #b0c4d8; }
-
 .considerations-box { padding: 8px 16px; font-size: 13px; font-style: italic; border: 2px solid; border-left-width: 4px; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); }
 body.theme-gc .considerations-box { background: rgba(139,92,246,0.06); color: #c4b5fd; border-color: #6d28d9; border-left-color: #8b5cf6; }
 body.theme-wii .considerations-box { background: rgba(0,163,224,0.04); color: #1e293b; border-color: #b0c4d8; border-left-color: #00a3e0; }
-
 .attachment-item { padding: 4px 14px; display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; border: 2px solid; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); }
 body.theme-gc .attachment-item { background: rgba(139,92,246,0.06); border-color: #6d28d9; color: #c4b5fd; }
 body.theme-wii .attachment-item { background: rgba(0,163,224,0.04); border-color: #b0c4d8; color: #1e293b; }
 .attachment-item a { text-decoration: none; font-weight: 900; }
 body.theme-gc .attachment-item a { color: #a78bfa; }
 body.theme-wii .attachment-item a { color: #0284c7; }
-
 .result-panel { padding: 10px 18px; text-align: center; border: 2px solid; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); }
 body.theme-gc .result-panel.best { background: rgba(251,191,36,0.12); border-color: #f59e0b; color: #fbbf24; }
 body.theme-gc .result-panel.average { background: rgba(148,163,184,0.06); border-color: #475569; color: #94a3b8; }
 body.theme-wii .result-panel.best { background: rgba(251,191,36,0.10); border-color: #fbbf24; color: #a16207; }
 body.theme-wii .result-panel.average { background: rgba(200,225,245,0.5); border-color: #b0c4d8; color: #0f172a; }
-
 .avg-color-value { font-weight: 900; font-family: 'JetBrains Mono', monospace; }
-
 .settings-type-badge { font-size: 9px; padding: 2px 12px; border-radius: 0; font-weight: 900; border: 2px solid; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); }
 .settings-game { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border-color: #2563eb; }
 .settings-hack { background: rgba(139, 92, 246, 0.2); color: #a78bfa; border-color: #7c3aed; }
 .settings-texture { background: rgba(34, 197, 94, 0.2); color: #4ade80; border-color: #22c55e; }
 .settings-cheats { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border-color: #d97706; }
 .settings-other { background: rgba(100, 116, 139, 0.2); color: #94a3b8; border-color: #64748b; }
-
 .modal-test-card { padding: 18px 22px; margin-bottom: 12px; border: 3px solid; clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%); position: relative; background: rgba(26, 10, 46, 0.8); border-color: #2a1a4a; }
 body.theme-wii .modal-test-card { background: rgba(255, 255, 255, 0.9); border-color: rgba(15,23,42,0.2); }
 .modal-test-card:last-child { margin-bottom: 0; }
@@ -244,22 +198,32 @@ body.theme-wii .modal-test-card { background: rgba(255, 255, 255, 0.9); border-c
 .modal-test-card .test-num { font-size: 13px !important; padding: 3px 10px !important; }
 .tester-link { cursor: pointer; text-decoration: underline; font-weight: 900; }
 .tester-link:hover { opacity: 0.8; }
-
 .rating-star-container { position: relative; width: 76px; height: 76px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
 .rating-star-container svg { width: 100%; height: 100%; }
 .rating-star-container .star-number { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'JetBrains Mono', monospace; font-size: 30px; font-weight: 900; line-height: 1; pointer-events: none; text-shadow: -2px -2px 0 #1a0a2e, 2px -2px 0 #1a0a2e, -2px 2px 0 #1a0a2e, 2px 2px 0 #1a0a2e, 0 0 12px rgba(0,0,0,0.6); }
 body.theme-wii .rating-star-container .star-number { text-shadow: -2px -2px 0 #e8f0f8, 2px -2px 0 #e8f0f8, -2px 2px 0 #e8f0f8, 2px 2px 0 #e8f0f8, 0 0 12px rgba(0,0,0,0.4); }
 
-.dolphin-compat-mini { display: inline-flex; gap: 2px; align-items: center; margin-left: 4px; }
-.dolphin-compat-mini .seg { width: 12px; height: 12px; border: 1px solid; clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%); }
-body.theme-gc .dolphin-compat-mini .seg { border-color: #2a1a4a; background: rgba(255,255,255,0.04); }
-body.theme-gc .dolphin-compat-mini .seg.filled { background: linear-gradient(90deg, #8b5cf6, #ec4899); border-color: #6d28d9; }
-body.theme-wii .dolphin-compat-mini .seg { border-color: #94a3b8; background: rgba(0,0,0,0.05); }
-body.theme-wii .dolphin-compat-mini .seg.filled { background: linear-gradient(90deg, #00a3e0, #38bdf8); border-color: #0284c7; }
-.dolphin-compat-mini .compat-unknown { font-size: 10px; font-weight: 800; font-family: 'JetBrains Mono', monospace; opacity: 0.55; margin-left: 4px; }
-.dolphin-compat-mini .wiki-link { font-size: 12px; font-weight: 900; text-decoration: none; margin-left: 4px; padding: 1px 6px; border: 1px solid; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); }
-body.theme-gc .dolphin-compat-mini .wiki-link { color: #a78bfa; border-color: #6d28d9; }
-body.theme-wii .dolphin-compat-mini .wiki-link { color: #0284c7; border-color: #94a3b8; }
+/* ===== DOLPHIN COMPAT MINI (fixed visibility) ===== */
+.dolphin-compat-mini { display: inline-flex; gap: 3px; align-items: center; margin-left: 6px; padding: 3px 8px; border-radius: 4px; }
+body.theme-gc .dolphin-compat-mini { background: rgba(139,92,246,0.06); border: 1px solid rgba(139,92,246,0.25); }
+body.theme-wii .dolphin-compat-mini { background: rgba(0,163,224,0.05); border: 1px solid rgba(0,163,224,0.25); }
+.dolphin-compat-mini .seg { width: 14px; height: 14px; border: 1.5px solid; clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%); transition: transform 0.2s ease; }
+body.theme-gc .dolphin-compat-mini .seg { border-color: #6d28d9; background: rgba(139,92,246,0.10); }
+body.theme-gc .dolphin-compat-mini .seg.filled { background: linear-gradient(90deg, #8b5cf6, #ec4899); border-color: #a78bfa; box-shadow: 0 0 6px rgba(139,92,246,0.6); }
+body.theme-wii .dolphin-compat-mini .seg { border-color: #0284c7; background: rgba(0,163,224,0.10); }
+body.theme-wii .dolphin-compat-mini .seg.filled { background: linear-gradient(90deg, #00a3e0, #38bdf8); border-color: #38bdf8; box-shadow: 0 0 6px rgba(0,163,224,0.6); }
+.dolphin-compat-mini .compat-label { font-size: 11px; font-weight: 900; font-family: 'JetBrains Mono', monospace; margin-left: 4px; padding: 1px 7px; border: 1.5px solid; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); }
+body.theme-gc .dolphin-compat-mini .compat-label { color: #fbbf24; border-color: #f59e0b; background: rgba(251,191,36,0.12); }
+body.theme-wii .dolphin-compat-mini .compat-label { color: #a16207; border-color: #fbbf24; background: rgba(251,191,36,0.12); }
+.dolphin-compat-mini .compat-unknown { font-size: 10px; font-weight: 900; font-family: 'JetBrains Mono', monospace; margin-left: 4px; padding: 1px 7px; border: 1.5px dashed; opacity: 0.75; }
+body.theme-gc .dolphin-compat-mini .compat-unknown { color: #94a3b8; border-color: #64748b; }
+body.theme-wii .dolphin-compat-mini .compat-unknown { color: #64748b; border-color: #94a3b8; }
+.dolphin-compat-mini .wiki-link { font-size: 11px; font-weight: 900; font-family: 'JetBrains Mono', monospace; text-decoration: none; margin-left: 4px; padding: 1px 8px; border: 1.5px solid; display: inline-flex; align-items: center; gap: 3px; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); transition: all 0.2s; }
+.dolphin-compat-mini .wiki-link:hover { transform: translateY(-1px); }
+body.theme-gc .dolphin-compat-mini .wiki-link { color: #a78bfa; border-color: #6d28d9; background: rgba(139,92,246,0.08); }
+body.theme-gc .dolphin-compat-mini .wiki-link:hover { background: rgba(139,92,246,0.2); color: #e9d5ff; }
+body.theme-wii .dolphin-compat-mini .wiki-link { color: #0284c7; border-color: #0284c7; background: rgba(0,163,224,0.08); }
+body.theme-wii .dolphin-compat-mini .wiki-link:hover { background: rgba(0,163,224,0.2); color: #075985; }
 
 .view-btn { display: inline-flex; align-items: center; gap: 4px; padding: 5px 12px; font-size: 11px; font-weight: 900; border: 2px solid; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); cursor: pointer; background: transparent; text-transform: uppercase; }
 body.theme-gc .view-btn { border-color: #2a1a4a; color: #94a3b8; }
@@ -304,18 +268,15 @@ body.theme-wii .list-extended-card { background: rgba(255,255,255,0.85); border-
 
 .loader { border: 4px solid rgba(255,255,255,0.05); border-top: 4px solid #8b5cf6; border-radius: 0; width: 48px; height: 48px; animation: spin 0.8s linear infinite; clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%); }
 body.theme-wii .loader { border-top-color: #00a3e0; }
-
 select, input { font-weight: 700; border: 2px solid; border-radius: 0; padding: 8px 16px; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); background: transparent; }
 body.theme-gc select, body.theme-gc input { background: rgba(10,6,24,0.6); border-color: #2a1a4a; color: #e2e8f0; }
 body.theme-wii select, body.theme-wii input { background: rgba(255,255,255,0.6); border-color: #94a3b8; color: #0f172a; }
-
 button { font-weight: 900; border: 2px solid; border-radius: 0; padding: 8px 18px; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); cursor: pointer; background: transparent; }
 body.theme-gc button { border-color: #2a1a4a; color: #e2e8f0; }
 body.theme-wii button { border-color: #94a3b8; color: #0f172a; }
 button:active { transform: translate(2px, 2px); }
 button:focus-visible { outline: 2px solid #8b5cf6; outline-offset: 2px; }
 body.theme-wii button:focus-visible { outline-color: #00a3e0; }
-
 .btn-primary.gc { background: #8b5cf6 !important; color: white !important; border-color: #6d28d9 !important; }
 .btn-primary.wii { background: #00a3e0 !important; color: white !important; border-color: #0284c7 !important; }
 
@@ -340,7 +301,6 @@ body.theme-wii .modal-tab.active { background: rgba(0,163,224,0.12); border-colo
 
 .about-overlay, .tester-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); z-index: 999; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
 .about-overlay.open, .tester-overlay.open { opacity: 1; pointer-events: auto; }
-
 #gameModal { position: fixed; inset: 0; z-index: 60; display: none; align-items: center; justify-content: center; padding: 1rem; background: rgba(0,0,0,0.8); backdrop-filter: blur(6px); }
 #gameModal.show { display: flex; }
 #gameModal .modal-holo-card { max-width: 72rem; width: 100%; max-height: 94vh; display: flex; flex-direction: column; padding: 1.25rem; position: relative; background: rgba(10, 6, 24, 0.95); border: 2px solid rgba(139, 92, 246, 0.35); clip-path: polygon(0% 4%, 2% 0%, 98% 0%, 100% 4%, 100% 96%, 98% 100%, 2% 100%, 0% 96%); animation: modalHoloIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; overflow: hidden; }
@@ -355,7 +315,6 @@ body.theme-wii #gameModal .modal-holo-card { background: rgba(240, 248, 255, 0.9
 .about-panel .close-about, .tester-panel .close-tester { float: right; background: none; border: 2px solid; padding: 6px 20px; font-weight: 900; font-size: 14px; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); cursor: pointer; margin-bottom: 1rem; position: sticky; top: 1rem; z-index: 10; }
 .about-panel.panel-gc .close-about { border-color: #2a1a4a; color: #94a3b8; }
 .about-panel.panel-wii .close-about { border-color: #94a3b8; color: #64748b; }
-
 .about-panel h2 { font-family: 'Audiowide', 'Orbitron', sans-serif; font-size: 1.6rem; font-weight: 900; margin-top: 0.2rem; margin-bottom: 1.2rem; border-bottom: 2px solid; padding-bottom: 0.5rem; text-transform: uppercase; }
 .about-panel.panel-gc h2 { border-color: #2a1a4a; color: #a78bfa; }
 .about-panel.panel-wii h2 { border-color: #94a3b8; color: #0284c7; }
@@ -387,8 +346,6 @@ body.theme-wii #reportModal .report-panel { background: rgba(240, 248, 255, 0.98
 body.theme-gc #reportModal .report-panel h2 { color: #a78bfa; }
 body.theme-wii #reportModal .report-panel h2 { color: #0284c7; }
 #reportModal .report-panel .sub { font-size: 0.75rem; opacity: 0.6; margin-bottom: 1.2rem; }
-
-/* Report error banner + field error */
 .report-error-banner { background: rgba(239,68,68,0.12); border: 2px solid #ef4444; color: #fca5a5; padding: 10px 14px; margin-bottom: 12px; font-size: 0.85rem; font-weight: 700; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); animation: fadeIn 0.25s ease-out; }
 body.theme-wii .report-error-banner { background: rgba(239,68,68,0.08); color: #b91c1c; }
 .report-error-banner ul { list-style: none; padding-left: 0; margin-top: 4px; }
@@ -406,7 +363,6 @@ body.theme-wii .report-error-banner { background: rgba(239,68,68,0.08); color: #
 .tetris-block-orange  { grid-column: span 6; }
 .tetris-block-submit  { grid-column: span 12; }
 @media (max-width: 800px) { [class^="tetris-block-"] { grid-column: span 12 !important; } }
-
 .tetris-block .section-title { font-family: 'Audiowide', sans-serif; font-size: 0.92rem; margin-bottom: 12px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
 .tetris-block-cyan    .section-title { color: #06b6d4; }
 .tetris-block-magenta .section-title { color: #ec4899; }
@@ -415,7 +371,6 @@ body.theme-wii .report-error-banner { background: rgba(239,68,68,0.08); color: #
 .tetris-block-purple  .section-title { color: #8b5cf6; }
 .tetris-block-blue    .section-title { color: #3b82f6; }
 .tetris-block-orange  .section-title { color: #f97316; }
-
 .tetris-block .form-label { display: flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; color: #cbd5e1; margin-bottom: 4px; padding-left: 6px; border-left: 2px solid currentColor; }
 .tetris-block-cyan    .form-label { color: #67e8f9; border-color: #06b6d4; }
 .tetris-block-magenta .form-label { color: #f9a8d4; border-color: #ec4899; }
@@ -424,12 +379,10 @@ body.theme-wii .report-error-banner { background: rgba(239,68,68,0.08); color: #
 .tetris-block-purple  .form-label { color: #c4b5fd; border-color: #8b5cf6; }
 .tetris-block .form-label i { font-size: 0.7rem; }
 .tetris-block .status-hint { margin-left: auto; color: #64748b; font-size: 0.55rem; }
-
 .tetris-block .input-box { width: 100%; background: rgba(0, 0, 0, 0.55); border: 1px solid #334155; color: #f1f5f9; padding: 6px 10px; font-weight: 600; font-size: 0.8rem; clip-path: polygon(0% 15%, 2% 0%, 98% 0%, 100% 15%, 100% 85%, 98% 100%, 2% 100%, 0% 85%); min-height: 30px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
 .tetris-block textarea.input-box { clip-path: polygon(0% 5%, 1% 0%, 99% 0%, 100% 5%, 100% 95%, 99% 100%, 1% 100%, 0% 95%); resize: vertical; min-height: 46px; padding: 6px 10px; }
 .tetris-block select.input-box { appearance: none; background-image: linear-gradient(45deg, transparent 50%, #64748b 50%), linear-gradient(135deg, #64748b 50%, transparent 50%); background-position: calc(100% - 12px) calc(1em - 1px), calc(100% - 7px) calc(1em - 1px); background-size: 5px 5px; background-repeat: no-repeat; padding-right: 24px; }
 .tetris-block select.input-box option { background: #05030a; color: #f1f5f9; }
-
 .tetris-block .grid-row { display: flex; gap: 10px; flex-wrap: wrap; }
 .tetris-block .col-20  { flex: 1 1 calc(20% - 10px); }
 .tetris-block .col-30  { flex: 1 1 calc(30% - 10px); }
@@ -439,24 +392,19 @@ body.theme-wii .report-error-banner { background: rgba(239,68,68,0.08); color: #
 .tetris-block .col-70  { flex: 1 1 calc(70% - 10px); }
 .tetris-block .col-100 { flex: 1 1 100%; }
 .tetris-block .form-group { margin-bottom: 10px; position: relative; }
-
 .tetris-block .fps-group { display: flex; align-items: center; gap: 6px; }
 .tetris-block .fps-group input { text-align: center; }
 .tetris-block .fps-group span { font-family: 'JetBrains Mono'; font-size: 0.7rem; color: #64748b; }
-
 .tetris-block .rating-container { display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,0.35); padding: 6px 10px; border: 1px solid #334155; gap: 10px; flex-wrap: wrap; clip-path: polygon(0% 20%, 2% 0%, 98% 0%, 100% 20%, 100% 80%, 98% 100%, 2% 100%, 0% 80%); }
 .tetris-block .rating-widget { display: flex; gap: 5px; }
 .tetris-block .rate-btn { width: 30px; height: 30px; background: #0f172a; border: 1px solid #334155; color: #94a3b8; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%); }
 .tetris-block .status-badges { display: flex; gap: 6px; flex-wrap: wrap; }
 .tetris-block .badge { padding: 3px 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 800; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%); display: flex; align-items: center; gap: 4px; background: #1e293b; color: #94a3b8; white-space: nowrap; }
-
 .tetris-block .submit-btn { width: 100%; background: #1e1b4b; border: 2px solid #8b5cf6; color: #c4b5fd; padding: 12px; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.25em; cursor: pointer; clip-path: polygon(0% 10%, 2% 0%, 98% 0%, 100% 10%, 100% 90%, 98% 100%, 2% 100%, 0% 90%); }
 .tetris-block .submit-btn:hover { background: #8b5cf6; color: #fff; }
-
 .tetris-block .suggestions-box { position: absolute; top: calc(100% + 4px); left: 0; right: 0; background: #0b0718; border: 1px solid #06b6d4; max-height: 230px; overflow-y: auto; z-index: 50; display: none; }
 .tetris-block .suggestion-item { padding: 7px 12px; font-size: 0.78rem; color: #cbd5e1; cursor: pointer; border-bottom: 1px solid rgba(51, 65, 85, 0.4); }
 .tetris-block .suggestion-item:hover, .tetris-block .suggestion-item.active { background: rgba(6, 182, 212, 0.15); color: #22d3ee; }
-
 .tetris-block .info-box { background: rgba(0,0,0,0.35); border: 1px solid #334155; padding: 12px 14px; margin-bottom: 10px; clip-path: polygon(0 0, 100% 0, 100% 90%, 96% 100%, 0 100%); }
 .tetris-block .info-box:last-child { margin-bottom: 0; }
 .tetris-block .info-box h4 { font-family: 'Audiowide', sans-serif; font-size: 0.85rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
@@ -471,7 +419,6 @@ body.theme-wii .report-error-banner { background: rgba(239,68,68,0.08); color: #
 .tetris-block-purple  .info-box h4 { color: #a78bfa; }
 .tetris-block-blue    .info-box h4 { color: #60a5fa; }
 .tetris-block-orange  .info-box h4 { color: #fb923c; }
-
 .tetris-block .rating-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; margin-top: 6px; }
 .tetris-block .rating-table th, .tetris-block .rating-table td { padding: 6px 8px; text-align: left; border-bottom: 1px solid rgba(51, 65, 85, 0.4); }
 .tetris-block .rating-table th { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; text-transform: uppercase; color: #94a3b8; }
@@ -482,13 +429,11 @@ body.theme-wii .report-error-banner { background: rgba(239,68,68,0.08); color: #
 .tetris-block .rating-table tr.r3 td:first-child { color: #eab308; }
 .tetris-block .rating-table tr.r4 td:first-child { color: #84cc16; }
 .tetris-block .rating-table tr.r5 td:first-child { color: #16a34a; }
-
 .tetris-block .compat-demo { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; background: rgba(0,0,0,0.4); border: 1px solid #334155; margin-top: 6px; }
 .tetris-block .compat-demo .segs { display: inline-flex; gap: 3px; }
 .tetris-block .compat-demo .seg { width: 12px; height: 12px; border: 1px solid #2a1a4a; background: rgba(255,255,255,0.04); }
 .tetris-block .compat-demo .seg.filled { background: linear-gradient(90deg, #8b5cf6, #ec4899); border-color: #6d28d9; }
 .tetris-block .compat-demo .wiki-link { font-size: 0.75rem; font-weight: 900; text-decoration: none; padding: 1px 6px; border: 1px solid #6d28d9; color: #a78bfa; }
-
 body.theme-gc .tetris-block-cyan { background: rgba(6, 182, 212, 0.08); border-top: 3px solid #06b6d4; border-left: 1px solid #06b6d4; clip-path: polygon(0 0, 100% 0, 100% 90%, 95% 100%, 0 100%); }
 body.theme-gc .tetris-block-magenta { background: rgba(236, 72, 153, 0.08); border-bottom: 3px solid #ec4899; border-right: 1px solid #ec4899; clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%, 0 15%); }
 body.theme-gc .tetris-block-yellow { background: rgba(245, 158, 11, 0.08); border-left: 3px solid #f59e0b; border-bottom: 1px solid #f59e0b; clip-path: polygon(0 0, 98% 0, 100% 20%, 100% 100%, 0 100%); }
@@ -496,10 +441,7 @@ body.theme-gc .tetris-block-green { background: rgba(16, 185, 129, 0.08); border
 body.theme-gc .tetris-block-purple { background: rgba(139, 92, 246, 0.08); border-left: 3px solid #8b5cf6; border-top: 1px solid #8b5cf6; clip-path: polygon(0 0, 100% 0, 100% 90%, 95% 100%, 0 100%); }
 body.theme-gc .tetris-block-blue { background: rgba(59, 130, 246, 0.08); border-right: 3px solid #3b82f6; border-top: 1px solid #3b82f6; clip-path: polygon(0 0, 100% 0, 100% 100%, 5% 100%, 0 90%); }
 body.theme-gc .tetris-block-orange { background: rgba(249, 115, 22, 0.08); border-left: 3px solid #f97316; border-top: 1px solid #f97316; clip-path: polygon(0 0, 100% 0, 100% 90%, 95% 100%, 0 100%); }
-
-body.theme-wii .tetris-block-cyan, body.theme-wii .tetris-block-magenta, body.theme-wii .tetris-block-yellow, body.theme-wii .tetris-block-green, body.theme-wii .tetris-block-purple, body.theme-wii .tetris-block-blue, body.theme-wii .tetris-block-orange {
-  clip-path: none !important; border-radius: 18px !important; border: 2.5px solid rgba(15,23,42,0.18) !important; background: rgba(255,255,255,0.95) !important; box-shadow: 0 4px 20px rgba(15,23,42,0.08) !important;
-}
+body.theme-wii .tetris-block-cyan, body.theme-wii .tetris-block-magenta, body.theme-wii .tetris-block-yellow, body.theme-wii .tetris-block-green, body.theme-wii .tetris-block-purple, body.theme-wii .tetris-block-blue, body.theme-wii .tetris-block-orange { clip-path: none !important; border-radius: 18px !important; border: 2.5px solid rgba(15,23,42,0.18) !important; background: rgba(255,255,255,0.95) !important; box-shadow: 0 4px 20px rgba(15,23,42,0.08) !important; }
 body.theme-wii .tetris-block-cyan    { border-left: 5px solid #0284c7 !important; }
 body.theme-wii .tetris-block-magenta { border-left: 5px solid #db2777 !important; }
 body.theme-wii .tetris-block-yellow  { border-left: 5px solid #d97706 !important; }
@@ -507,7 +449,6 @@ body.theme-wii .tetris-block-green   { border-left: 5px solid #059669 !important
 body.theme-wii .tetris-block-purple  { border-left: 5px solid #7c3aed !important; }
 body.theme-wii .tetris-block-blue    { border-left: 5px solid #2563eb !important; }
 body.theme-wii .tetris-block-orange  { border-left: 5px solid #ea580c !important; }
-
 body.theme-wii .tetris-block .input-box { clip-path: none !important; border-radius: 10px !important; background: rgba(255,255,255,0.95) !important; border: 2px solid #94a3b8 !important; color: #0f172a !important; }
 body.theme-wii .tetris-block .form-label { color: #0369a1; border-color: #0284c7; }
 body.theme-wii .tetris-block .info-box { clip-path: none !important; border-radius: 12px !important; background: rgba(255,255,255,0.7) !important; border: 1.5px solid rgba(15,23,42,0.12) !important; }
@@ -515,30 +456,24 @@ body.theme-wii .tetris-block .info-box p, body.theme-wii .tetris-block .info-box
 body.theme-wii .tetris-block .rating-container { clip-path: none !important; border-radius: 12px !important; background: rgba(255,255,255,0.7) !important; border: 2px solid #94a3b8 !important; }
 body.theme-wii .tetris-block .rate-btn { clip-path: none !important; border-radius: 8px !important; background: #f1f5f9 !important; border: 2px solid #94a3b8 !important; color: #475569 !important; }
 body.theme-wii .tetris-block .submit-btn { clip-path: none !important; border-radius: 14px !important; background: linear-gradient(135deg, #00a3e0, #0284c7) !important; border: none !important; color: #fff !important; }
-
 body.theme-wii #filterPanel, body.theme-wii #spdwPanel, body.theme-wii .rating-panel, body.theme-wii #emptyState { clip-path: none !important; border-radius: 18px !important; box-shadow: 0 6px 24px rgba(15,23,42,0.1) !important; border: 2.5px solid rgba(15,23,42,0.15) !important; background: rgba(255,255,255,0.9) !important; }
 
-/* ===== GAME CARD ===== */
 .card-score-badge { position: relative; width: 42px; height: 42px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
 .card-score-badge .star-bg { position: absolute; inset: 0; width: 100%; height: 100%; transition: filter 0.3s ease; }
 .card-score-badge .star-bg polygon { fill: currentColor; stroke: #000; stroke-width: 4; stroke-linejoin: round; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6)); }
 .card-score-badge .score-num { position: relative; font-family: 'JetBrains Mono', monospace; font-weight: 900; font-size: 20px; line-height: 1; color: #fff; -webkit-text-stroke: 3.5px #000; paint-order: stroke fill; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 10px rgba(0,0,0,0.9); z-index: 2; letter-spacing: -0.05em; }
-
 .test-inline-badge { display: inline-flex; align-items: center; gap: 4px; font-family: 'JetBrains Mono', monospace; height: 22px; }
 .test-inline-badge .tc-circle { width: 20px; height: 20px; border: 2px solid currentColor; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; background: transparent; flex-shrink: 0; }
 .test-inline-badge .tc-label { font-size: 9px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.9; }
-
 .card-stars-row { display: flex; justify-content: flex-end; align-items: center; gap: 3px; padding-top: 2px; }
 .card-stars-row .rating-stars svg { width: 15px; height: 15px; }
 
-/* ===== GUIDE ===== */
 .ha-header-assets { display: flex; flex-wrap: wrap; align-items: center; gap: 1.2rem 2rem; margin-bottom: 1.4rem; padding-bottom: 0.9rem; border-bottom: 2px solid; border-color: inherit; }
 .ha-title-img { height: 130px; width: auto; filter: drop-shadow(0 0 12px rgba(139,92,246,0.5)); }
 body.theme-wii .ha-title-img { filter: drop-shadow(0 0 12px rgba(0,163,224,0.35)); }
 .ha-icon-img { height: 54px; width: auto; filter: drop-shadow(0 0 6px rgba(139,92,246,0.4)); }
 body.theme-wii .ha-icon-img { filter: drop-shadow(0 0 6px rgba(0,163,224,0.3)); }
 .ha-console-ico { height: 40px; width: auto; opacity: 0.85; }
-
 .rt-index-box { padding: 12px 12px 14px; display: flex; flex-direction: column; border: 2px dashed #ff3333; clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px)); filter: drop-shadow(0 0 8px rgba(255,51,51,0.25)); }
 body.theme-wii .rt-index-box { clip-path: none !important; border-radius: 12px !important; border: 2px dashed #dc2626 !important; background: rgba(255,255,255,0.8) !important; filter: none !important; }
 .rt-index-box .rt-index-head { display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 800; color: #ff3333; padding-bottom: 5px; margin-bottom: 8px; border-bottom: 2px solid rgba(255,51,51,0.35); letter-spacing: 0.08em; }
@@ -551,7 +486,6 @@ body.theme-wii .rt-index-box { clip-path: none !important; border-radius: 12px !
 .rt-index-list button.active { color: #fff; background: rgba(255,51,51,0.18); border-color: rgba(255,51,51,0.6); border-left: 3px solid #ff3333; }
 body.theme-wii .rt-index-list button { color: #475569; }
 body.theme-wii .rt-index-list button.active { color: #991b1b; background: rgba(220,38,38,0.12); border-left: 3px solid #dc2626; }
-
 .guide-crt { background: #0a0a0f; border: 12px solid #1a1a2e; border-radius: 12px; padding: 8px; position: relative; box-shadow: 0 0 20px rgba(139, 92, 246, 0.1), inset 0 0 60px rgba(139, 92, 246, 0.05); overflow: hidden; animation: crtFlicker 8s infinite; min-height: 380px; display: flex; flex-direction: column; }
 body.theme-wii .guide-crt { border-color: #2a3a4e; }
 .guide-crt .crt-screen { background: #0e0e16; border-radius: 4px; padding: 22px 26px; flex: 1; position: relative; overflow-y: auto; color: #d4d4e8; font-size: 0.85rem; line-height: 1.65; }
@@ -562,7 +496,6 @@ body.theme-wii .guide-crt .crt-screen { background: #141824; color: #d0d8e8; }
 .guide-crt .crt-label { position: absolute; bottom: -6px; right: 12px; font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; color: rgba(139, 92, 246, 0.4); letter-spacing: 2px; background: rgba(10,10,15,0.8); padding: 0 8px; border: 1px solid rgba(139, 92, 246, 0.15); }
 .guide-crt.crt-off .crt-screen { animation: crtOff 0.6s ease-in forwards; }
 .guide-crt.crt-on .crt-screen { animation: crtOn 0.6s ease-out forwards; }
-
 .guide-step-content h3 { font-family: 'Audiowide', sans-serif; font-size: 1.05rem; color: #a78bfa; margin-bottom: 10px; }
 body.theme-wii .guide-step-content h3 { color: #0284c7; }
 .guide-step-content p { font-size: 0.82rem; line-height: 1.65; margin-bottom: 8px; color: #cbd5e1; }
@@ -573,11 +506,9 @@ body.theme-wii .guide-step-content ul li { color: #334155; }
 .guide-step-content ul li::before { content: "▸ "; color: #8b5cf6; font-weight: 900; }
 .guide-step-content strong { color: #f1f5f9; }
 body.theme-wii .guide-step-content strong { color: #0f172a; }
-
 .demo-btn { display: inline-flex; align-items: center; gap: 5px; padding: 5px 12px; font-size: 11px; font-weight: 900; border: 2px solid; cursor: default; user-select: none; margin: 2px; clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%); pointer-events: none; }
 body.theme-gc .demo-btn { border-color: #2a1a4a; color: #94a3b8; background: rgba(10,6,24,0.6); }
 body.theme-wii .demo-btn { border-color: #94a3b8; color: #475569; background: rgba(255,255,255,0.7); border-radius: 8px; clip-path: none; }
-
 .mini-game-card { width: 150px; flex-shrink: 0; border: 2px solid; border-radius: 10px; overflow: hidden; background: rgba(26,10,46,0.7); }
 body.theme-wii .mini-game-card { background: rgba(255,255,255,0.9); border-color: #94a3b8; }
 .mini-game-card .cover { height: 105px; background: #1a0a2e; display: flex; align-items: center; justify-content: center; font-size: 30px; color: rgba(255,255,255,0.1); }
@@ -585,7 +516,6 @@ body.theme-wii .mini-game-card { background: rgba(255,255,255,0.9); border-color
 body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
 .mini-game-card .info .title { font-size: 0.72rem; font-weight: 900; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mini-game-card .info .badges { display: flex; gap: 3px; margin-top: 4px; flex-wrap: wrap; }
-
 .ha-block-1 { grid-column: span 7; }
 .ha-block-2 { grid-column: span 5; }
 .ha-block-3 { grid-column: span 12; }
@@ -596,7 +526,6 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
 .ha-block-8 { grid-column: span 3; }
 .ha-block-9 { grid-column: span 3; }
 @media (max-width: 900px) { .ha-block-1, .ha-block-2, .ha-block-3, .ha-block-4, .ha-block-5, .ha-block-6, .ha-block-7, .ha-block-8, .ha-block-9 { grid-column: span 12; } }
-
 @media (max-width: 640px) {
   #gamesGrid.list-view-2col { grid-template-columns: 1fr; }
   #gamesGrid.grid-view { grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -612,24 +541,15 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
   #compactHeader .console-toggle { min-width: 150px; height: 34px; }
   .compact-brand { font-size: 12px; }
 }
-
-/* ===== REDUCED MOTION ===== */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-  .guide-crt, .guide-crt .scanlines, .rt-electric, .rt-electric::after,
-  .star-glint, .rt-electric .anime-arc, .rt-core .anime-arc { animation: none !important; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  .guide-crt, .guide-crt .scanlines, .rt-electric, .rt-electric::after, .star-glint, .rt-electric .anime-arc, .rt-core .anime-arc { animation: none !important; }
   .rt-electric::after { opacity: 0.7; }
 }
 </style>
 </head>
 <body id="appBody" class="theme-gc font-sans antialiased transition-colors duration-500 min-h-screen">
 
-<!-- ===== COMPACT HEADER ===== -->
 <header id="compactHeader">
   <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2">
     <div class="flex items-center justify-between gap-3">
@@ -657,7 +577,6 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
   </div>
 </header>
 
-<!-- ===== FULL HEADER ===== -->
 <header id="appHeader" class="border-b-2 transition-colors duration-500">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
     <div class="flex flex-wrap items-center justify-between gap-3">
@@ -722,7 +641,6 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
 
 <div id="headerSpacer"></div>
 
-<!-- ===== HOW & ABOUT ===== -->
 <div id="aboutOverlay" class="about-overlay" onclick="closeAboutPanel()"></div>
 <div id="aboutPanel" class="about-panel" role="dialog" aria-modal="true" aria-label="How and About">
   <button class="close-about" onclick="closeAboutPanel()" aria-label="Close">✕ Close</button>
@@ -737,8 +655,10 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
     <div class="tetris-block tetris-block-cyan ha-block-1">
       <div class="section-title"><i class="fa-solid fa-circle-info"></i> What is this?</div>
       <div class="info-box">
-        <p>This dashboard is a <strong>community-driven compatibility database</strong> for <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS" target="_blank">Dolphin Rt:Core for muOS</a>. It collects real test reports from users running <strong>GameCube</strong> and <strong>Wii</strong> games on <em>H700-based devices</em>: <strong>RG35XX H</strong>, <strong>RG40XX H</strong>, <strong>RG CubeXX</strong>.</p>
-        <p>Every report includes rating (0–5★), boot status, playability, FPS range, Rt:Core version, core profile, and detailed notes.</p>
+        <p>This dashboard is a <strong>community-driven compatibility database</strong> for <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS" target="_blank">Dolphin Rt:Core for muOS</a> — a custom fork of the Dolphin emulator specifically tuned to run GameCube and Wii titles on low-powered H700-based handhelds.</p>
+        <p>Every entry you see here comes from <strong>real users</strong> who took the time to boot a game, play it for a while, and report back honestly. No marketing, no curated "works great" lists. Just raw test data: which games boot, which crash on startup, which one is 90% playable with audio stutters and which one runs like a dream at 60 FPS.</p>
+        <p>Tested devices so far include the <strong>Anbernic RG35XX H</strong>, <strong>RG40XX H</strong>, and <strong>RG CubeXX</strong> — all sharing the Allwinner H700 chipset with 1 GB of RAM, which is a very tight budget for GameCube/Wii emulation. Expect most games to run between 15 and 40 FPS with occasional slowdowns.</p>
+        <p>Each report includes the community rating (0–5★), boot status, playability verdict, measured FPS range, the Rt:Core version and core profile used, plus detailed notes about specific bugs, audio glitches, graphical corruption, or performance tricks that helped.</p>
       </div>
     </div>
     <div class="tetris-block tetris-block-magenta ha-block-2">
@@ -768,9 +688,10 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
     <div class="tetris-block tetris-block-green ha-block-4">
       <div class="section-title"><i class="fa-solid fa-chart-simple"></i> Compatibility</div>
       <div class="info-box">
-        <p>Inside every game modal, next to the title / region / game ID, there's a <strong>5-notch bar</strong> + <strong>link icon</strong>:</p>
+        <p>Inside every game modal, next to the title / region / Game ID, there's a small panel showing the <strong>official Dolphin Emulator Wiki compatibility rating</strong> — five notches plus a link to the wiki page for that specific Game ID.</p>
         <div class="compat-demo"><span class="segs"><span class="seg filled"></span><span class="seg filled"></span><span class="seg filled"></span><span class="seg filled"></span><span class="seg"></span></span><a class="wiki-link" href="https://wiki.dolphin-emu.org/" target="_blank" rel="noopener">🌐</a></div>
-        <p style="margin-top:6px;">The link opens the <strong>Dolphin Emulator Wiki</strong> page (by Game ID). The notches show the <strong>official Dolphin compatibility rating</strong>. If the game ID isn't mapped yet, notches appear empty with an "unknown" label.</p>
+        <p style="margin-top:6px;">The notches fill from 1 to 5 based on the wiki's global rating (not specific to H700 hardware). If the Game ID isn't mapped in our local list yet, the notches appear empty with a discreet <strong>?</strong> label — but the wiki link still takes you to the correct page whenever the ID is valid.</p>
+        <p>Use this rating as a <em>reference point</em>: a game rated 5★ on PC may still run poorly on H700, and vice versa. Always check the community rating (colored stars) first.</p>
       </div>
     </div>
     <div class="tetris-block tetris-block-blue ha-block-5">
@@ -778,29 +699,30 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
       <div class="info-box" style="margin-bottom:6px;">
         <h4><i class="fa-solid fa-dolphin"></i> Project</h4>
         <ul>
-          <li><a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS">GitHub Repository</a></li>
-          <li><a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases/">Latest Release</a></li>
-          <li><a href="https://silvercrow2323.github.io/Dolphin-Core-for-MuOS/" target="_blank" rel="noopener">Compatibility DB</a></li>
+          <li><a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS">GitHub Repository</a> — source, build scripts, assets</li>
+          <li><a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases/">Latest Release</a> — download the current core</li>
+          <li><a href="https://silvercrow2323.github.io/Dolphin-Core-for-MuOS/" target="_blank" rel="noopener">Compatibility DB</a> — this page</li>
         </ul>
       </div>
       <div class="info-box">
         <h4><i class="fa-solid fa-book"></i> Refs</h4>
         <ul>
-          <li><a href="https://wiki.dolphin-emu.org/" target="_blank" rel="noopener">Dolphin Wiki</a></li>
-          <li><a href="https://dolphin-emu.org" target="_blank" rel="noopener">Dolphin Emulator</a></li>
-          <li><a href="https://gametdb.com" target="_blank" rel="noopener">GameTDB</a></li>
+          <li><a href="https://wiki.dolphin-emu.org/" target="_blank" rel="noopener">Dolphin Wiki</a> — official compatibility ratings</li>
+          <li><a href="https://dolphin-emu.org" target="_blank" rel="noopener">Dolphin Emulator</a> — upstream project</li>
+          <li><a href="https://gametdb.com" target="_blank" rel="noopener">GameTDB</a> — cover art & Game ID database</li>
         </ul>
       </div>
     </div>
     <div class="tetris-block tetris-block-purple ha-block-6">
       <div class="section-title"><i class="fa-solid fa-award"></i> Credits</div>
       <div class="info-box">
+        <p>This project would not exist without the help of:</p>
         <ul>
-          <li><strong>@Speedrun</strong> — V9 / Take 3</li>
-          <li><strong>@FireBattleInMtl</strong> — launch.sh</li>
-          <li><strong>@Snow</strong> — Binary</li>
-          <li><strong>@bitter_bizarro</strong> — Goose compat</li>
-          <li><strong>@Tekkra-Pi</strong> — Wii testing</li>
+          <li><strong>@Speedrun</strong> — V9 / Take 3 builds</li>
+          <li><strong>@FireBattleInMtl</strong> — launch.sh integration</li>
+          <li><strong>@Snow</strong> — binary packaging</li>
+          <li><strong>@bitter_bizarro</strong> — Goose compat work</li>
+          <li><strong>@Tekkra-Pi</strong> — extensive Wii testing</li>
         </ul>
       </div>
     </div>
@@ -809,42 +731,41 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
       <table class="rating-table">
         <thead><tr><th>Rating</th><th>Boot</th><th>Description</th></tr></thead>
         <tbody>
-          <tr class="r0"><td>0★</td><td>❌ NO BOOT</td><td>Immediate crash on launch.</td></tr>
-          <tr class="r1"><td>1★</td><td>⚠️ BOOT</td><td>Crashes within seconds, or heavily corrupted.</td></tr>
-          <tr class="r2"><td>2★</td><td>⚠️ BOOT</td><td>Major issues widespread. Not playable yet.</td></tr>
-          <tr class="r3"><td>3★</td><td>✅ BOOT</td><td>Runs, but several issues affect the experience.</td></tr>
-          <tr class="r4"><td>4★</td><td>✅ BOOT</td><td>Playable with some noticeable issues.</td></tr>
-          <tr class="r5"><td>5★</td><td>✅ BOOT</td><td>Practically perfect.</td></tr>
+          <tr class="r0"><td>0★</td><td>❌ NO BOOT</td><td>Immediate crash on launch. Doesn't get to title screen.</td></tr>
+          <tr class="r1"><td>1★</td><td>⚠️ BOOT</td><td>Boots but crashes within seconds, or is so corrupted it's unusable.</td></tr>
+          <tr class="r2"><td>2★</td><td>⚠️ BOOT</td><td>Boots and runs, but major issues (broken audio, missing textures, 5 FPS). Not playable yet.</td></tr>
+          <tr class="r3"><td>3★</td><td>✅ BOOT</td><td>Playable start to finish, but with several noticeable issues (slowdowns, glitches, audio pops).</td></tr>
+          <tr class="r4"><td>4★</td><td>✅ BOOT</td><td>Solidly playable. Only minor issues that don't ruin the experience.</td></tr>
+          <tr class="r5"><td>5★</td><td>✅ BOOT</td><td>Practically perfect. Full speed most of the time, no visible glitches.</td></tr>
         </tbody>
       </table>
+      <p style="margin-top:8px;font-size:0.72rem;opacity:0.75;">Ratings are subjective — two testers can give 3★ and 4★ for the same game. The <strong>best rating</strong> wins on the card, but you can always open the modal to see every individual report.</p>
     </div>
     <div class="tetris-block tetris-block-cyan ha-block-8" style="background: rgba(236,72,153,0.08); border-left: 3px solid #ec4899; border-right: 3px solid #06b6d4;">
       <div class="section-title" style="color:#f472b6;"><i class="fa-solid fa-people-group"></i> Community</div>
       <div class="info-box">
         <ul>
-          <li>All Discord testers & reporters</li>
-          <li>muOS community for feedback</li>
-          <li>SPDW Factory team</li>
+          <li>Every Discord tester who reported a game</li>
+          <li>muOS community for continuous feedback</li>
+          <li>SPDW Factory team for the infrastructure</li>
         </ul>
       </div>
     </div>
     <div class="tetris-block tetris-block-yellow ha-block-9" style="background: rgba(139,92,246,0.08); border-left: 3px solid #8b5cf6; border-right: 3px solid #f59e0b;">
       <div class="section-title" style="color:#a78bfa;"><i class="fa-solid fa-heart"></i> Thanks</div>
       <div class="info-box">
-        <p style="font-size:0.72rem;">To everyone who spent hours testing games on H700 hardware so the rest of us know what works. 🎮</p>
+        <p style="font-size:0.72rem;">To everyone who spent hours testing games on H700 hardware so the rest of us know what works and what doesn't. Every single report makes this database more useful. 🎮</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ===== TESTER PANEL ===== -->
 <div id="testerOverlay" class="tester-overlay" onclick="closeTesterPanel()"></div>
 <div id="testerPanel" class="tester-panel" role="dialog" aria-modal="true" aria-label="Tester details">
   <button class="close-tester" onclick="closeTesterPanel()" aria-label="Close">✕ Close</button>
   <div id="testerContent"></div>
 </div>
 
-<!-- MAIN -->
 <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-5">
   <div id="filterPanel" class="cyber-border p-4 flex flex-col md:flex-row gap-3 justify-center items-center transition-colors duration-500">
     <div class="relative w-full md:w-72 shrink-0">
@@ -884,7 +805,6 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
   </div>
 </main>
 
-<!-- GAME MODAL -->
 <div id="gameModal" class="show" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div id="modalCard" class="modal-holo-card">
     <button id="closeModalBtn" class="absolute top-3 right-3 p-2 border-2 transition-colors z-10" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" aria-label="Close modal">
@@ -923,7 +843,6 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
   </div>
 </div>
 
-<!-- REPORT MODAL -->
 <div id="reportModal" class="show" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="reportTitle">
   <div class="report-panel">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
@@ -996,127 +915,63 @@ body.theme-wii .mini-game-card .info { border-top-color: #94a3b8; }
 </footer>
 
 <script>
-/* ============ STATE ============ */
 const state = { console:'gc', rawGames:[], groupedGames:[], filtered:[], sortKey:'title', sortOrder:'asc', search:'', selectedStars:'all', selectedRegion:'all', selectedBoot:'all', viewMode:'grid' };
 let currentModalGroup = null, currentModalRegion = null, modalIsClosing = false;
 let fullHeaderHeight = 140, compactHeaderHeight = 56;
-
 const URL = "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/games_data.json";
 const FLAG_MAP = { 'PAL':'eu', 'NTSC':'us', 'NTSC / USA':'us', 'JPN':'jp', 'NTSC-J':'jp', 'NTSC / JPN':'jp' };
+const DOLPHIN_COMPAT = { 'GM8P01':4,'GM4P01':5,'GALE01':4,'GMSP01':5,'GZLP01':5,'GALP01':4,'G4BP08':4,'GCTP51':5,'GD7PB2':4,'GKYP01':5,'GLME01':5,'GGVX78':5,'GQWP69':5,'GVJE08':4,'GXXP01':4,'SMNP01':5,'RZDP01':5,'SCAE18':3,'RHMP99':4 };
 
-/* Dolphin wiki compat ratings — only for known IDs, no fake default */
-const DOLPHIN_COMPAT = {
-  'GM8P01':4,'GM4P01':5,'GALE01':4,'GMSP01':5,'GZLP01':5,'GALP01':4,
-  'G4BP08':4,'GCTP51':5,'GD7PB2':4,'GKYP01':5,'GLME01':5,'GGVX78':5,
-  'GQWP69':5,'GVJE08':4,'GXXP01':4,'SMNP01':5,'RZDP01':5,'SCAE18':3,'RHMP99':4
-};
-
-/* ============ HEADER ============ */
 function syncHeaderHeights() {
   const fullH = document.getElementById('appHeader').offsetHeight;
   const compH = document.getElementById('compactHeader').offsetHeight;
-  fullHeaderHeight = fullH;
-  compactHeaderHeight = compH;
+  fullHeaderHeight = fullH; compactHeaderHeight = compH;
   document.getElementById('headerSpacer').style.height = fullH + 'px';
   document.documentElement.style.setProperty('--full-header-h', fullH + 'px');
   document.documentElement.style.setProperty('--compact-header-h', compH + 'px');
 }
-
 function handleScroll() {
   const scrolled = window.scrollY > 140;
   document.body.classList.toggle('scrolled', scrolled);
   if (!scrolled) document.body.classList.remove('header-peek');
 }
-
 function maybePeek(y) {
   if (!document.body.classList.contains('scrolled')) return;
   const peeking = document.body.classList.contains('header-peek');
   if (!peeking && y < 60) document.body.classList.add('header-peek');
   else if (peeking && y > fullHeaderHeight + 24) document.body.classList.remove('header-peek');
 }
-
 function handleMouseMove(e) { maybePeek(e.clientY); }
 function handleTouchStart(e) { if (e.touches && e.touches[0]) maybePeek(e.touches[0].clientY); }
-
 window.addEventListener('scroll', handleScroll, { passive: true });
 window.addEventListener('mousemove', handleMouseMove, { passive: true });
 window.addEventListener('touchstart', handleTouchStart, { passive: true });
 window.addEventListener('resize', syncHeaderHeights);
 
-/* ============ HELPERS ============ */
-function getScoreColor(rating) {
-  const colors = ['#8b0000','#ef4444','#f97316','#eab308','#84cc16','#16a34a'];
-  const idx = Math.min(5, Math.max(0, Math.round(rating)));
-  return colors[idx];
-}
-function getFpsColor(fps) {
-  if (fps >= 45) return '#16a34a';
-  if (fps >= 35) return '#84cc16';
-  if (fps >= 25) return '#eab308';
-  if (fps >= 18) return '#f97316';
-  if (fps >= 10) return '#ef4444';
-  return '#8b0000';
-}
-function capitalizeSentences(text) {
-  if (!text) return '';
-  return String(text).replace(/(^|[.!?]\s+)([a-zàèéìòùáéíóú])/g, (m, p1, p2) => p1 + p2.toUpperCase());
-}
-function getDolphinWikiLink(gameId) {
-  if (!gameId || gameId === 'UNKNOWN') return null;
-  return `https://wiki.dolphin-emu.org/index.php?title=${gameId}`;
-}
+function getScoreColor(rating) { const colors = ['#8b0000','#ef4444','#f97316','#eab308','#84cc16','#16a34a']; const idx = Math.min(5, Math.max(0, Math.round(rating))); return colors[idx]; }
+function getFpsColor(fps) { if (fps >= 45) return '#16a34a'; if (fps >= 35) return '#84cc16'; if (fps >= 25) return '#eab308'; if (fps >= 18) return '#f97316'; if (fps >= 10) return '#ef4444'; return '#8b0000'; }
+function capitalizeSentences(text) { if (!text) return ''; return String(text).replace(/(^|[.!?]\s+)([a-zàèéìòùáéíóú])/g, (m, p1, p2) => p1 + p2.toUpperCase()); }
+function getDolphinWikiLink(gameId) { if (!gameId || gameId === 'UNKNOWN') return null; return `https://wiki.dolphin-emu.org/index.php?title=${gameId}`; }
 function getFlagUrl(region) { const code = FLAG_MAP[region] || 'un'; return `https://flagcdn.com/w40/${code}.png`; }
 function getRegionCode(regionName) { const map = { 'NTSC / USA':'US','PAL':'EN','NTSC / JPN':'JP','NTSC-J':'JP','NTSC':'US','JPN':'JP','EU':'EN','US':'US' }; return map[regionName] || 'US'; }
 function getCoverUrl(gameId, regionName) { if (!gameId || gameId === 'UNKNOWN') return null; return `https://art.gametdb.com/wii/cover/${getRegionCode(regionName)}/${gameId}.png`; }
-function escapeHtml(str) {
-  if (str === null || str === undefined) return '';
-  return String(str)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;")
-    .replace(/`/g,"&#96;");
-}
-function formatFpsLabel(fpsStr) {
-  if (!fpsStr || fpsStr === '???' || fpsStr === 'N/A') return 'N/A';
-  const nums = String(fpsStr).match(/\d+/g);
-  if (nums && nums.length >= 2 && nums[0] === nums[1]) {
-    return `FPS ${nums[0]}`;
-  }
-  return `${fpsStr} FPS`;
-}
-function openSafeUrl(url) {
-  const a = document.createElement('a');
-  a.href = url; a.target = '_blank'; a.rel = 'noopener noreferrer';
-  document.body.appendChild(a); a.click(); a.remove();
-}
+function escapeHtml(str) { if (str === null || str === undefined) return ''; return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;").replace(/`/g,"&#96;"); }
+function formatFpsLabel(fpsStr) { if (!fpsStr || fpsStr === '???' || fpsStr === 'N/A') return 'N/A'; const nums = String(fpsStr).match(/\d+/g); if (nums && nums.length >= 2 && nums[0] === nums[1]) return `FPS ${nums[0]}`; return `${fpsStr} FPS`; }
+function openSafeUrl(url) { const a = document.createElement('a'); a.href = url; a.target = '_blank'; a.rel = 'noopener noreferrer'; document.body.appendChild(a); a.click(); a.remove(); }
 
 function renderStars(rating, size = 16) {
   const full = Math.min(5, Math.max(0, rating));
   const color = getScoreColor(rating);
   let html = `<div class="rating-stars">`;
-  for (let i = 1; i <= 5; i++) {
-    const isFilled = i <= full;
-    const c = isFilled ? color : 'rgba(100,116,139,0.35)';
-    html += `<svg style="fill:${c}; color:${c}; width:${size}px; height:${size}px;" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>`;
-  }
-  html += '</div>';
-  return html;
+  for (let i = 1; i <= 5; i++) { const isFilled = i <= full; const c = isFilled ? color : 'rgba(100,116,139,0.35)'; html += `<svg style="fill:${c}; color:${c}; width:${size}px; height:${size}px;" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.951-.69H2.578c-.969 0-1.371-1.24-.588-1.81l2.8-2.034a1 1 0 00.364-1.118L4.085 6.21a1 1 0 00.951-.69h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>`; }
+  html += '</div>'; return html;
 }
 function renderScoreBadge(rating) {
   const color = getScoreColor(rating);
-  return `<div class="card-score-badge" style="color:${color};">
-    <svg class="star-bg" viewBox="0 0 120 120"><polygon points="60,10 76,46 115,46 84,68 94,105 60,86 26,105 36,68 5,46 44,46"/></svg>
-    <span class="score-num">${rating}</span>
-  </div>`;
+  return `<div class="card-score-badge" style="color:${color};"><svg class="star-bg" viewBox="0 0 120 120"><polygon points="60,10 76,46 115,46 84,68 94,105 60,86 26,105 36,68 5,46 44,46"/></svg><span class="score-num">${rating}</span></div>`;
 }
-function renderTestBadgeInline(count) {
-  const label = count === 1 ? 'TEST' : 'TESTS';
-  return `<span class="test-inline-badge"><span class="tc-circle">${count}</span><span class="tc-label">${label}</span></span>`;
-}
+function renderTestBadgeInline(count) { const label = count === 1 ? 'TEST' : 'TESTS'; return `<span class="test-inline-badge"><span class="tc-circle">${count}</span><span class="tc-label">${label}</span></span>`; }
 
-/* ============ GROUPING ============ */
 function groupGames(rawList) {
   const groupsByTitle = new Map();
   rawList.forEach(item => {
@@ -1131,47 +986,30 @@ function groupGames(rawList) {
     if (!group.regions.has(region)) group.regions.set(region, { entries: [] });
     group.regions.get(region).entries.push(...entries);
   });
-
   const result = [];
   for (const [, group] of groupsByTitle) {
-    const regionsData = [];
-    const allEntries = [];
+    const regionsData = []; const allEntries = [];
     for (const [region, regionData] of group.regions) {
       let entries = regionData.entries;
       entries.sort((a, b) => {
-        const ra = parseInt(a.test_review?.rating, 10) || 0;
-        const rb = parseInt(b.test_review?.rating, 10) || 0;
+        const ra = parseInt(a.test_review?.rating, 10) || 0; const rb = parseInt(b.test_review?.rating, 10) || 0;
         if (rb !== ra) return rb - ra;
-        const fa = parseInt(a.test_review?.fps_max, 10) || 0;
-        const fb = parseInt(b.test_review?.fps_max, 10) || 0;
+        const fa = parseInt(a.test_review?.fps_max, 10) || 0; const fb = parseInt(b.test_review?.fps_max, 10) || 0;
         return fb - fa;
       });
       allEntries.push(...entries);
-      let bestRating = 0, bestFpsMax = -1, bestFpsStr = "???", bestBoot = "NO", bestPlayable = "NO";
-      let totalRating = 0, gameId = null;
+      let bestRating = 0, bestFpsMax = -1, bestFpsStr = "???", bestBoot = "NO", bestPlayable = "NO", totalRating = 0, gameId = null;
       entries.forEach((e) => {
-        const review = e.test_review || {};
-        const info = e.game_info || {};
-        const r = parseInt(review.rating, 10);
-        const rating = isNaN(r) ? 0 : r;
+        const review = e.test_review || {}; const info = e.game_info || {};
+        const r = parseInt(review.rating, 10); const rating = isNaN(r) ? 0 : r;
         totalRating += rating;
         if (!gameId && info.game_id) gameId = info.game_id;
         let fpsMin = parseInt(review.fps_min, 10), fpsMax = parseInt(review.fps_max, 10);
         const fpsRaw = (review.fps || '???').trim();
-        if (isNaN(fpsMin) || isNaN(fpsMax)) {
-          const numbers = fpsRaw.match(/\d+/g);
-          if (numbers) {
-            const nums = numbers.map(Number);
-            if (nums.length >= 2) { fpsMin = nums[0]; fpsMax = nums[1]; }
-            else if (nums.length === 1) { fpsMin = nums[0]; fpsMax = nums[0]; }
-          }
-        }
-        if (isNaN(fpsMin)) fpsMin = 0;
-        if (isNaN(fpsMax)) fpsMax = 0;
-        // Best bundle: rating + fps + boot + playable from the SAME test
+        if (isNaN(fpsMin) || isNaN(fpsMax)) { const numbers = fpsRaw.match(/\d+/g); if (numbers) { const nums = numbers.map(Number); if (nums.length >= 2) { fpsMin = nums[0]; fpsMax = nums[1]; } else if (nums.length === 1) { fpsMin = nums[0]; fpsMax = nums[0]; } } }
+        if (isNaN(fpsMin)) fpsMin = 0; if (isNaN(fpsMax)) fpsMax = 0;
         if (rating > bestRating || (rating === bestRating && fpsMax > bestFpsMax)) {
-          bestRating = rating;
-          bestFpsMax = fpsMax;
+          bestRating = rating; bestFpsMax = fpsMax;
           if (fpsRaw && fpsRaw !== '???') bestFpsStr = fpsRaw;
           else if (fpsMin > 0 && fpsMax > 0) bestFpsStr = `${fpsMin} - ${fpsMax}`;
           bestBoot = review.boot || (rating >= 1 ? "YES" : "NO");
@@ -1187,42 +1025,24 @@ function groupGames(rawList) {
         const review = e.test_review || {};
         let fpsMin = parseInt(review.fps_min, 10), fpsMax = parseInt(review.fps_max, 10);
         const fpsRaw = (review.fps || '???').trim();
-        if (isNaN(fpsMin) || isNaN(fpsMax)) {
-          const numbers = fpsRaw.match(/\d+/g);
-          if (numbers) {
-            const nums = numbers.map(Number);
-            if (nums.length >= 2) { fpsMin = nums[0]; fpsMax = nums[1]; }
-            else if (nums.length === 1) { fpsMin = nums[0]; fpsMax = nums[0]; }
-          }
-        }
+        if (isNaN(fpsMin) || isNaN(fpsMax)) { const numbers = fpsRaw.match(/\d+/g); if (numbers) { const nums = numbers.map(Number); if (nums.length >= 2) { fpsMin = nums[0]; fpsMax = nums[1]; } else if (nums.length === 1) { fpsMin = nums[0]; fpsMax = nums[0]; } } }
         if (!isNaN(fpsMin) && !isNaN(fpsMax) && fpsMin > 0 && fpsMax > 0) { avgFpsSingle += (fpsMin + fpsMax) / 2; countFps++; }
       });
       const avgFps = countFps > 0 ? Math.round(avgFpsSingle / countFps) : 'N/A';
       if (!gameId) gameId = 'UNKNOWN';
       regionsData.push({ region, entries, entriesCount: entries.length, bestRating, bestFpsMax, bestFpsStr, bestBoot, bestPlayable, avgRating: parseFloat(avgRating), avgFps, gameId, bestEntryIndex: 0 });
     }
-    let globalBestRating = 0, globalBestFpsMax = -1, globalBestFpsStr = "???", globalBestBoot = "NO", globalBestPlayable = "NO";
-    let globalTotalRating = 0, globalAvgFpsSum = 0, globalAvgFpsCount = 0, globalGameId = 'UNKNOWN';
+    let globalBestRating = 0, globalBestFpsMax = -1, globalBestFpsStr = "???", globalBestBoot = "NO", globalBestPlayable = "NO", globalTotalRating = 0, globalAvgFpsSum = 0, globalAvgFpsCount = 0, globalGameId = 'UNKNOWN';
     allEntries.forEach(e => {
-      const review = e.test_review || {};
-      const info = e.game_info || {};
-      const r = parseInt(review.rating, 10);
-      const rating = isNaN(r) ? 0 : r;
+      const review = e.test_review || {}; const info = e.game_info || {};
+      const r = parseInt(review.rating, 10); const rating = isNaN(r) ? 0 : r;
       globalTotalRating += rating;
       if (!globalGameId || globalGameId === 'UNKNOWN') { if (info.game_id) globalGameId = info.game_id; }
       let fpsMin = parseInt(review.fps_min, 10), fpsMax = parseInt(review.fps_max, 10);
       const fpsRaw = (review.fps || '???').trim();
-      if (isNaN(fpsMin) || isNaN(fpsMax)) {
-        const numbers = fpsRaw.match(/\d+/g);
-        if (numbers) {
-          const nums = numbers.map(Number);
-          if (nums.length >= 2) { fpsMin = nums[0]; fpsMax = nums[1]; }
-          else if (nums.length === 1) { fpsMin = nums[0]; fpsMax = nums[0]; }
-        }
-      }
+      if (isNaN(fpsMin) || isNaN(fpsMax)) { const numbers = fpsRaw.match(/\d+/g); if (numbers) { const nums = numbers.map(Number); if (nums.length >= 2) { fpsMin = nums[0]; fpsMax = nums[1]; } else if (nums.length === 1) { fpsMin = nums[0]; fpsMax = nums[0]; } } }
       if (!isNaN(fpsMin) && !isNaN(fpsMax) && fpsMin > 0 && fpsMax > 0) { globalAvgFpsSum += (fpsMin + fpsMax) / 2; globalAvgFpsCount++; }
-      const rv = isNaN(r) ? 0 : r;
-      let fMax = fpsMax || 0;
+      const rv = isNaN(r) ? 0 : r; let fMax = fpsMax || 0;
       if (rv > globalBestRating || (rv === globalBestRating && fMax > globalBestFpsMax)) {
         globalBestRating = rv; globalBestFpsMax = fMax;
         if (fpsRaw && fpsRaw !== '???') globalBestFpsStr = fpsRaw;
@@ -1242,7 +1062,6 @@ function groupGames(rawList) {
   return result;
 }
 
-/* ============ RENDER ============ */
 function render() {
   document.querySelectorAll('.rating-panel').forEach(p => {
     const val = p.getAttribute('data-rating');
@@ -1265,8 +1084,7 @@ function render() {
     return state.sortOrder === 'asc' ? cmp : -cmp;
   });
   document.getElementById('loaderContainer').classList.add('hidden');
-  const grid = document.getElementById('gamesGrid');
-  const empty = document.getElementById('emptyState');
+  const grid = document.getElementById('gamesGrid'); const empty = document.getElementById('emptyState');
   if (state.filtered.length === 0) { grid.innerHTML = ''; empty.classList.remove('hidden'); return; }
   empty.classList.add('hidden');
   if (state.viewMode === 'grid') { grid.classList.remove('list-view-2col', 'list-extended-view'); grid.classList.add('grid-view'); grid.innerHTML = renderGridCards(); }
@@ -1354,9 +1172,7 @@ function renderListCards() {
 function renderExtendedCards() {
   const isGC = state.console === 'gc';
   return state.filtered.map((item, idx) => {
-    let bestRegion = item.allRegions[0];
-    let bestEntry = bestRegion?.entries[0] || {};
-    let bestOverall = item.aggregated;
+    let bestRegion = item.allRegions[0]; let bestEntry = bestRegion?.entries[0] || {}; let bestOverall = item.aggregated;
     const coverUrl = bestEntry.cover_art || getCoverUrl(bestOverall.gameId, bestRegion?.region || 'NTSC');
     const regionFlags = item.allRegions.map(r => `<img src="${getFlagUrl(r.region)}" class="w-5 h-4 object-cover border-2" style="clip-path: polygon(0% 8%, 8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%);" alt="${escapeHtml(r.region)}" title="${escapeHtml(r.region)}" />`).join('');
     const bootColor = bestOverall.bestBoot === 'YES' ? 'yes' : 'no';
@@ -1392,27 +1208,23 @@ function renderExtendedCards() {
   }).join('');
 }
 
-/* ============ COMPAT SEGMENTS (honest) ============ */
 function renderCompatSegments(gameId) {
   const rating = DOLPHIN_COMPAT[gameId];
   const hasRating = typeof rating === 'number';
   const filled = hasRating ? rating : 0;
+  const wikiLink = getDolphinWikiLink(gameId);
   let segHtml = '';
   for (let i = 0; i < 5; i++) segHtml += `<span class="seg ${i < filled ? 'filled' : ''}"></span>`;
-  const wikiLink = getDolphinWikiLink(gameId);
-  let linkHtml = '';
-  if (wikiLink) {
-    linkHtml = `<a href="${wikiLink}" target="_blank" rel="noopener noreferrer" class="wiki-link" title="Open Dolphin Wiki page for ${escapeHtml(gameId)}">🌐</a>`;
-  }
-  const unknownHtml = hasRating ? '' : `<span class="compat-unknown" title="No official compatibility rating available for this Game ID">unknown</span>`;
-  return segHtml + linkHtml + unknownHtml;
+  let labelHtml = '';
+  if (hasRating) labelHtml = `<span class="compat-label" title="Dolphin Emulator Wiki rating: ${filled}/5">${filled}/5</span>`;
+  else labelHtml = `<span class="compat-unknown" title="No official compatibility rating available for this Game ID">?</span>`;
+  const linkHtml = wikiLink ? `<a href="${wikiLink}" target="_blank" rel="noopener noreferrer" class="wiki-link" title="Open Dolphin Wiki page for ${escapeHtml(gameId)}">🌐 Wiki</a>` : '';
+  return segHtml + labelHtml + linkHtml;
 }
 
-/* ============ MODAL ============ */
 function openModal(index) {
   if (modalIsClosing) return;
-  const group = state.filtered[index];
-  if (!group) return;
+  const group = state.filtered[index]; if (!group) return;
   const priority = ['PAL', 'NTSC / USA', 'JPN'];
   let selectedRegion = null;
   for (const p of priority) { const found = group.allRegions.find(rd => rd.region === p); if (found) { selectedRegion = p; break; } }
@@ -1426,8 +1238,7 @@ function openModal(index) {
 }
 
 function renderModalWithRegion(group, region) {
-  const regionData = group.allRegions.find(rd => rd.region === region);
-  if (!regionData) return;
+  const regionData = group.allRegions.find(rd => rd.region === region); if (!regionData) return;
   const isGC = state.console === 'gc';
   document.getElementById('modalTitle').textContent = group.game;
   document.getElementById('modalFlag').src = getFlagUrl(region);
@@ -1444,48 +1255,25 @@ function renderModalWithRegion(group, region) {
   const avgRColor = getScoreColor(avgR);
   document.getElementById('modalAvgRatingVal').innerHTML = `<span class="avg-color-value" style="color:${avgRColor};">${avgR.toFixed(1)}</span> <span style="color:${avgRColor};">★</span>`;
   if (regionData.avgFps !== 'N/A' && regionData.avgFps !== undefined) {
-    const avgFpsNum = regionData.avgFps;
-    const fpsColor = getFpsColor(avgFpsNum);
+    const avgFpsNum = regionData.avgFps; const fpsColor = getFpsColor(avgFpsNum);
     document.getElementById('modalAvgFpsVal').innerHTML = `<span class="avg-color-value" style="color:${fpsColor};">${avgFpsNum}</span> <span style="color:${fpsColor}; font-size:11px;">FPS</span>`;
   } else document.getElementById('modalAvgFpsVal').textContent = 'N/A';
-
   const tabsContainer = document.getElementById('modalTabs');
-  tabsContainer.innerHTML = group.allRegions.map(rd => {
-    const active = rd.region === region ? 'active' : '';
-    return `<button class="modal-tab ${active}" data-region="${escapeHtml(rd.region)}"><img src="${getFlagUrl(rd.region)}" alt="" /> ${escapeHtml(rd.region)}</button>`;
-  }).join('');
-  tabsContainer.querySelectorAll('.modal-tab').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const newRegion = this.dataset.region;
-      if (newRegion !== currentModalRegion) { currentModalRegion = newRegion; renderModalWithRegion(currentModalGroup, newRegion); }
-    });
-  });
-
+  tabsContainer.innerHTML = group.allRegions.map(rd => { const active = rd.region === region ? 'active' : ''; return `<button class="modal-tab ${active}" data-region="${escapeHtml(rd.region)}"><img src="${getFlagUrl(rd.region)}" alt="" /> ${escapeHtml(rd.region)}</button>`; }).join('');
+  tabsContainer.querySelectorAll('.modal-tab').forEach(btn => { btn.addEventListener('click', function(e) { e.stopPropagation(); const newRegion = this.dataset.region; if (newRegion !== currentModalRegion) { currentModalRegion = newRegion; renderModalWithRegion(currentModalGroup, newRegion); } }); });
   const container = document.getElementById('modalRegionContent');
   container.innerHTML = regionData.entries.map((e, idx) => {
-    const isBest = (idx === 0);
-    const num = idx + 1;
-    const review = e.test_review || {};
-    const details = e.test_details || {};
-    const env = e.test_environment || {};
+    const isBest = (idx === 0); const num = idx + 1;
+    const review = e.test_review || {}; const details = e.test_details || {}; const env = e.test_environment || {};
     const rating = parseInt(review.rating, 10) || 0;
     const boot = review.boot || (rating >= 1 ? "YES" : "NO");
     let playable = review.playable || (rating >= 3 ? "YES" : "NO");
     if (rating === 3 && playable === "YES") playable = "YES WITH ISSUES";
     const fpsRaw = (review.fps || '???').trim();
     let fpsMin = parseInt(review.fps_min, 10), fpsMax = parseInt(review.fps_max, 10);
-    if (isNaN(fpsMin) || isNaN(fpsMax)) {
-      const nums = fpsRaw.match(/\d+/g);
-      if (nums) { const n = nums.map(Number); fpsMin = n[0] || 0; fpsMax = n[1] || n[0] || 0; }
-      else { fpsMin = 0; fpsMax = 0; }
-    }
+    if (isNaN(fpsMin) || isNaN(fpsMax)) { const nums = fpsRaw.match(/\d+/g); if (nums) { const n = nums.map(Number); fpsMin = n[0] || 0; fpsMax = n[1] || n[0] || 0; } else { fpsMin = 0; fpsMax = 0; } }
     let fpsRange;
-    if (fpsMin > 0 && fpsMax > 0) {
-      fpsRange = (fpsMin === fpsMax) ? `FPS ${fpsMin}` : `${fpsMin} - ${fpsMax}`;
-    } else {
-      fpsRange = (fpsRaw !== '???' ? fpsRaw : 'N/A');
-    }
+    if (fpsMin > 0 && fpsMax > 0) { fpsRange = (fpsMin === fpsMax) ? `FPS ${fpsMin}` : `${fpsMin} - ${fpsMax}`; } else { fpsRange = (fpsRaw !== '???' ? fpsRaw : 'N/A'); }
     const coreVersion = details.rtcore_version || 'Default';
     const coreUsed = details.core_profile || 'Default';
     const device = env.device || 'Unknown Device';
@@ -1495,14 +1283,11 @@ function renderModalWithRegion(group, region) {
     const attachments = e.attachments || [];
     const customSettings = e.custom_settings || [];
     const ratingColor = getScoreColor(rating);
-
     let settingsHtml = '';
     if (customSettings.length > 0) {
       settingsHtml = customSettings.map(cs => {
-        const type = cs.set_type || 'Other';
-        const name = cs.set_name || cs.set_title || '';
-        const filename = cs.set_filename || '';
-        const url = cs.set_url || '';
+        const type = cs.set_type || 'Other'; const name = cs.set_name || cs.set_title || '';
+        const filename = cs.set_filename || ''; const url = cs.set_url || '';
         const note = capitalizeSentences(cs.set_note || '');
         let typeClass = 'settings-other';
         const t = type.toLowerCase();
@@ -1518,10 +1303,7 @@ function renderModalWithRegion(group, region) {
       }).join('');
     }
     let attHtml = '';
-    if (attachments.length > 0) {
-      attHtml = attachments.map(a => `<div class="attachment-item">${a.media_type === 'video' ? '🎬' : '🖼️'}<a href="${escapeHtml(a.media_url)}" target="_blank" rel="noopener noreferrer" class="truncate">${escapeHtml(a.media_title || a.media_url)}</a></div>`).join('');
-    }
-    // XSS-safe tester link (data attribute, no inline onclick)
+    if (attachments.length > 0) { attHtml = attachments.map(a => `<div class="attachment-item">${a.media_type === 'video' ? '🎬' : '🖼️'}<a href="${escapeHtml(a.media_url)}" target="_blank" rel="noopener noreferrer" class="truncate">${escapeHtml(a.media_title || a.media_url)}</a></div>`).join(''); }
     const testerLink = `<span class="tester-link" data-tester="${escapeHtml(tester)}">${escapeHtml(tester)}</span>`;
     return `
       <div class="modal-test-card">
@@ -1549,16 +1331,7 @@ function renderModalWithRegion(group, region) {
       </div>
     `;
   }).join('');
-
-  // Attach safe tester listeners
-  container.querySelectorAll('.tester-link').forEach(el => {
-    el.addEventListener('click', (ev) => {
-      ev.stopPropagation();
-      const name = el.dataset.tester;
-      if (name) openTesterPanel(name);
-    });
-  });
-
+  container.querySelectorAll('.tester-link').forEach(el => { el.addEventListener('click', (ev) => { ev.stopPropagation(); const name = el.dataset.tester; if (name) openTesterPanel(name); }); });
   document.getElementById('modalTotalEntriesText').textContent = `Total Tests: ${regionData.entriesCount}`;
 }
 
@@ -1567,116 +1340,127 @@ function closeModal() {
   modalIsClosing = true;
   const modal = document.getElementById('gameModal'), card = document.getElementById('modalCard');
   modal.classList.add('closing');
-  setTimeout(() => {
-    modal.style.display = 'none'; modal.classList.remove('closing'); card.style.animation = 'none'; modalIsClosing = false;
-    releaseBodyScroll();
-  }, 500);
+  setTimeout(() => { modal.style.display = 'none'; modal.classList.remove('closing'); card.style.animation = 'none'; modalIsClosing = false; releaseBodyScroll(); }, 500);
 }
 
-/* ============ BODY SCROLL LOCK HELPER ============ */
 function anyOverlayOpen() {
-  return (
-    document.getElementById('testerPanel').classList.contains('open') ||
-    document.getElementById('aboutPanel').classList.contains('open') ||
-    document.getElementById('gameModal').style.display === 'flex' ||
-    document.getElementById('reportModal').style.display === 'flex'
-  );
+  return (document.getElementById('testerPanel').classList.contains('open') || document.getElementById('aboutPanel').classList.contains('open') || document.getElementById('gameModal').style.display === 'flex' || document.getElementById('reportModal').style.display === 'flex');
 }
-function releaseBodyScroll() {
-  if (!anyOverlayOpen()) document.body.style.overflow = '';
-}
+function releaseBodyScroll() { if (!anyOverlayOpen()) document.body.style.overflow = ''; }
 
-/* ============ TESTER PANEL ============ */
 function openTesterPanel(testerName) {
   const panel = document.getElementById('testerPanel'), overlay = document.getElementById('testerOverlay');
   if (state.console === 'gc') { panel.classList.remove('panel-wii'); panel.classList.add('panel-gc'); } else { panel.classList.remove('panel-gc'); panel.classList.add('panel-wii'); }
   const tests = [];
-  state.groupedGames.forEach(group => {
-    group.allRegions.forEach(regionData => {
-      regionData.entries.forEach(entry => {
-        if (entry.test_environment && entry.test_environment.tester === testerName) {
-          tests.push({ game: group.game, region: regionData.region, gameId: regionData.gameId, rating: parseInt(entry.test_review?.rating, 10) || 0, cover: entry.cover_art || getCoverUrl(regionData.gameId, regionData.region), device: entry.test_environment?.device || 'Unknown' });
-        }
-      });
-    });
-  });
+  state.groupedGames.forEach(group => { group.allRegions.forEach(regionData => { regionData.entries.forEach(entry => { if (entry.test_environment && entry.test_environment.tester === testerName) { tests.push({ game: group.game, region: regionData.region, gameId: regionData.gameId, rating: parseInt(entry.test_review?.rating, 10) || 0, cover: entry.cover_art || getCoverUrl(regionData.gameId, regionData.region), device: entry.test_environment?.device || 'Unknown' }); } }); }); });
   if (tests.length === 0) return;
   const devices = [...new Set(tests.map(t => t.device))];
   const content = document.getElementById('testerContent');
   const avatarInitial = testerName.charAt(0).toUpperCase();
-  let testsHtml = tests.map(t => {
-    const cover = t.cover || '';
-    const flag = getFlagUrl(t.region);
-    const ratingStars = renderStars(t.rating, 12);
-    return `<div class="test-item">${cover ? `<img src="${cover}" class="mini-cover" onerror="this.style.display='none';" alt="" />` : `<div class="mini-cover" style="background:#1a0a2e; display:flex; align-items:center; justify-content:center; font-size:20px;">🎮</div>`}<img src="${flag}" class="mini-flag" alt="" /><span class="game-title">${escapeHtml(t.game)}</span><div class="rating-stars-mini">${ratingStars}</div></div>`;
-  }).join('');
+  let testsHtml = tests.map(t => { const cover = t.cover || ''; const flag = getFlagUrl(t.region); const ratingStars = renderStars(t.rating, 12); return `<div class="test-item">${cover ? `<img src="${cover}" class="mini-cover" onerror="this.style.display='none';" alt="" />` : `<div class="mini-cover" style="background:#1a0a2e; display:flex; align-items:center; justify-content:center; font-size:20px;">🎮</div>`}<img src="${flag}" class="mini-flag" alt="" /><span class="game-title">${escapeHtml(t.game)}</span><div class="rating-stars-mini">${ratingStars}</div></div>`; }).join('');
   content.innerHTML = `<div class="tester-header"><div class="avatar-lg">${escapeHtml(avatarInitial)}</div><div class="tester-name">${escapeHtml(testerName)}</div></div><div class="tester-stats"><div class="stat"><span class="number">${tests.length}</span><span class="label">Tests</span></div><div class="stat"><span class="number">${devices.length}</span><span class="label">Devices</span></div></div><div style="font-weight:700; margin-bottom:0.3rem;">Devices used:</div><div class="device-list">${devices.map(d => `<span class="device-chip">${escapeHtml(d)}</span>`).join('')}</div><div style="font-weight:700; margin-top:1.2rem; margin-bottom:0.5rem;">Test list:</div><div class="test-list">${testsHtml}</div>`;
   panel.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden';
 }
-function closeTesterPanel() {
-  document.getElementById('testerPanel').classList.remove('open');
-  document.getElementById('testerOverlay').classList.remove('open');
-  releaseBodyScroll();
-}
+function closeTesterPanel() { document.getElementById('testerPanel').classList.remove('open'); document.getElementById('testerOverlay').classList.remove('open'); releaseBodyScroll(); }
 
-/* ============ ABOUT PANEL ============ */
 function openAboutPanel() {
   const panel = document.getElementById('aboutPanel'), overlay = document.getElementById('aboutOverlay');
   if (state.console === 'gc') { panel.classList.remove('panel-wii'); panel.classList.add('panel-gc'); } else { panel.classList.remove('panel-gc'); panel.classList.add('panel-wii'); }
   panel.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden';
 }
-function closeAboutPanel() {
-  document.getElementById('aboutPanel').classList.remove('open');
-  document.getElementById('aboutOverlay').classList.remove('open');
-  releaseBodyScroll();
-}
+function closeAboutPanel() { document.getElementById('aboutPanel').classList.remove('open'); document.getElementById('aboutOverlay').classList.remove('open'); releaseBodyScroll(); }
 document.getElementById('howAboutLink').addEventListener('click', function(e) { e.preventDefault(); openAboutPanel(); });
 
-/* ============ GUIDE ============ */
 const GUIDE_CONTENT = {
   h1: `<h3>Header & Console Toggle</h3>
-    <p>At the very top of the page you'll find the header with buttons and the central toggle.</p>
+    <p>At the very top of the page you'll find the primary navigation bar. It groups all the quick actions you'll need while browsing the database: <strong>Repository</strong> opens the GitHub source, <strong>Latest Release</strong> takes you to the download page, <strong>New Report</strong> opens the submission form, <strong>Send Report</strong> jumps straight to the GitHub issue template, and <strong>How &amp; About</strong> opens the panel you're reading right now.</p>
+    <p>In the center sits the <strong>console toggle</strong>. Clicking <strong>GameCube</strong> or <strong>Wii</strong> instantly switches three things at once:</p>
+    <ul>
+      <li>The entire color theme — violet/cyberpunk tones for GameCube, blue/aqua for Wii.</li>
+      <li>The dataset being displayed — only games for the selected platform appear in the grid.</li>
+      <li>Every visual asset: console icons, scrollbar colors, badge styles, and even the animated glow around the title.</li>
+    </ul>
+    <p>When you scroll down, a <strong>compact header</strong> slides in from the top. It keeps the toggle, the version badge, and the live counters (Games / Tests) always visible. On desktop, simply move the mouse near the top edge to reveal the full header again; on mobile, touch the very top of the screen. After a moment without interaction, the compact header returns automatically.</p>
     <div style="display:flex; flex-wrap:wrap; gap:6px; margin:6px 0;">
       <span class="demo-btn">📁 Repository</span><span class="demo-btn">📦 Latest Release</span><span class="demo-btn">📝 New Report</span><span class="demo-btn">📤 Send Report</span><span class="demo-btn">ℹ️ How & About</span>
     </div>
-    <p><strong>GameCube</strong> vs <strong>Wii</strong> toggles the entire theme and dataset. When you scroll, a compact header appears; on desktop, move the mouse to the top; on mobile, touch the top edge.</p>`,
+    <p><strong>Keyboard shortcuts:</strong> the toggle is reachable via <em>Tab</em>. Press <em>Enter</em>, <em>Space</em>, or the <em>arrow keys</em> to flip between GameCube and Wii without ever leaving your keyboard.</p>`,
+
   h2: `<h3>Filter Panel</h3>
-    <p>Search, Region, Boot, Sort, Views, Export, Reset. When scrolled, the filter panel sticks below the compact header for quick access.</p>
+    <p>The filter panel is your main tool for slicing the database. It's always visible under the header and, once you scroll past the title area, it <strong>sticks to the top</strong> so you never have to scroll back up to change filters.</p>
+    <p>From left to right you'll find:</p>
+    <ul>
+      <li><strong>Search bar</strong> — matches game titles in real time (with a small debounce so it doesn't stutter while typing). It also searches inside the "Considerations" notes, so you can look for keywords like "audio", "crash", "cutscene".</li>
+      <li><strong>Region filter</strong> — show only NTSC / PAL / JPN entries.</li>
+      <li><strong>Boot filter</strong> — hide games that don't boot, or the opposite.</li>
+      <li><strong>Sort key</strong> — order by title, best rating, best FPS, or number of tests.</li>
+      <li><strong>Asc / Desc toggle</strong> — flip the direction of the current sort.</li>
+      <li><strong>View buttons</strong> — Grid, List, Extended (see "Game Cards" below).</li>
+      <li><strong>Export</strong> — download the currently filtered list as JSON, useful for external analysis.</li>
+      <li><strong>Reset</strong> — clears everything back to the initial state.</li>
+    </ul>
     <div style="display:flex; flex-wrap:wrap; gap:6px; margin:6px 0;">
       <span class="demo-btn">🔍 Search...</span><span class="demo-btn">🌍 All Regions</span><span class="demo-btn">💿 Boot: All</span><span class="demo-btn">📝 Sort: Title</span><span class="demo-btn">▦ Grid</span><span class="demo-btn">☰ List</span><span class="demo-btn">📋 Extended</span><span class="demo-btn">📥 Export</span><span class="demo-btn">↺ Reset</span>
-    </div>`,
+    </div>
+    <p>All filters combine with AND logic: the grid shows only games that satisfy <em>every</em> active filter at the same time. The counters above the grid (Games / Tests) always reflect the full dataset, not the filtered view.</p>`,
+
   h3: `<h3>Rating Panels</h3>
-    <p>Five clickable buckets by best rating. Colors are unified red → green.</p>
+    <p>Below the filter panel sit five clickable buckets, one for each rating level. Click any of them to show only games whose <strong>best recorded rating</strong> matches that value. Click again to deselect.</p>
+    <p>The colors are unified across the whole site: dark red for 0★ → bright green for 5★. This makes it easy to scan a grid of cards and immediately spot the good ones.</p>
     <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:4px; margin:8px 0;">
       <div class="rating-panel" data-rating="5" style="padding:6px 8px; text-align:center; font-size:10px;">5★<br><span style="font-family:monospace;">12</span></div>
       <div class="rating-panel" data-rating="4" style="padding:6px 8px; text-align:center; font-size:10px;">4★<br><span style="font-family:monospace;">8</span></div>
       <div class="rating-panel" data-rating="3" style="padding:6px 8px; text-align:center; font-size:10px;">3★<br><span style="font-family:monospace;">15</span></div>
       <div class="rating-panel" data-rating="2" style="padding:6px 8px; text-align:center; font-size:10px;">2★<br><span style="font-family:monospace;">22</span></div>
       <div class="rating-panel" data-rating="1" style="padding:6px 8px; text-align:center; font-size:10px;">1-0★<br><span style="font-family:monospace;">30</span></div>
-    </div>`,
+    </div>
+    <p><strong>Note:</strong> the "1-0★" bucket merges both 1-star and 0-star entries. A 0-star game doesn't boot at all; a 1-star game boots but crashes. Both are essentially "don't bother" territory.</p>
+    <p>The counter inside each bucket (the small monospace number) tells you how many <em>unique games</em> fall into that rating — not how many individual test reports exist. Use the "Most Tested" sort option to see which entries have the most community feedback.</p>`,
+
   h4: `<h3>Game Cards</h3>
-    <p>Each game card shows the title, a colored score badge on a star, the badges row (FPS/Boot/Playable/Tests circle), region flags and the star row. Boot / Playable badges come from the <strong>same test</strong> that produced the best rating.</p>
+    <p>Each card is a self-contained summary of a game's community status. The layout is designed to give you the four most important pieces of info at a glance:</p>
+    <ul>
+      <li><strong>Cover art</strong> — pulled from GameTDB using the Game ID and region code.</li>
+      <li><strong>Score badge</strong> — a big number on a colored star, showing the <em>best</em> rating any tester has given the game.</li>
+      <li><strong>Badges row</strong> — FPS range, Boot status, Playability verdict, and a test counter.</li>
+      <li><strong>Region flags</strong> — all regions that have at least one test on file.</li>
+    </ul>
+    <p>Important: the <strong>Boot</strong> and <strong>Playable</strong> badges come from the <em>same test</em> that produced the best rating. This means the numbers you see on the card always refer to one coherent report, not a Frankenstein aggregation of the best values from different testers.</p>
     <div style="display:flex; gap:14px; align-items:flex-start; margin:10px 0; flex-wrap:wrap;">
       <div class="mini-game-card"><div class="cover">🎮</div><div class="info"><div class="title">Super Mario Sunshine</div><div class="badges"><span class="fps-badge gc" style="font-size:8px; padding:1px 6px;">60 FPS</span><span class="boot-badge yes" style="font-size:7px; padding:1px 6px;">Boots</span><span class="playable-badge yes" style="font-size:7px; padding:1px 6px;">Playable</span></div></div></div>
       <div style="flex:1; min-width:160px;">
         <p style="font-size:0.78rem; line-height:1.65;">
           <strong>Score badge</strong> — big number on star, thick black border.<br>
           <strong>Stars row</strong> — 5 small stars, colored red→green.<br>
-          <strong>Test badge</strong> — small circle + TEST/TESTS next to Playable.
+          <strong>Test badge</strong> — small circle + TEST/TESTS next to Playable.<br>
+          <strong>FPS label</strong> — if min and max are the same, it shows "FPS 30" instead of "30 - 30".
         </p>
       </div>
-    </div>`,
+    </div>
+    <p>Three view modes are available from the filter panel: <strong>Grid</strong> (default, cover-focused), <strong>List</strong> (2 columns, compact info cards), and <strong>Extended</strong> (one big card per row with a snippet of the considerations and the core profile used). Pick whichever fits the way you're browsing.</p>`,
+
   h5: `<h3>Game Modal</h3>
-    <p>Tests sorted <strong>best → worst</strong> (rating desc, then FPS max desc). Best test marked with 🏆.</p>
+    <p>Clicking any card opens a modal that shows everything the database knows about that game. Tests are sorted <strong>best → worst</strong> (rating descending, then FPS max descending), with the top one marked by a 🏆 <em>Best Test</em> badge.</p>
+    <p>The header of the modal contains:</p>
     <ul>
-      <li>📋 Region tabs (PAL / NTSC / JPN)</li>
-      <li>🏆 BEST / 📊 AVG panels</li>
-      <li>⚙️ Rt:Core + profile, 🎯 blue FPS box</li>
-      <li>📝 Considerations, 🔧 Custom Settings, 📎 Attachments</li>
-    </ul>`,
+      <li>📋 <strong>Region tabs</strong> — PAL, NTSC / USA, JPN. Each region can have completely different results.</li>
+      <li>🏆 <strong>Best panel</strong> — the highest rating + FPS pair recorded.</li>
+      <li>📊 <strong>AVG panel</strong> — average rating and average FPS across every test in that region.</li>
+      <li>🌐 <strong>Dolphin Wiki compat bar</strong> — 5 notches filled based on the official emulator wiki rating, plus a direct link to the wiki page for that Game ID.</li>
+    </ul>
+    <p>Each test card shows the tester name (clickable — opens their personal panel with all their tests), the device and muOS version used, a colored star with the numeric rating inside, Boot / Playable status pills, the measured FPS range, and the Rt:Core version + profile combination. Below that, any free-form considerations, custom settings files, and attachments (videos / screenshots).</p>`,
+
   h6: `<h3>Send Report</h3>
-    <p>5 Tetris blocks: Game Data → Core Setup → Playability → Add-ons → Tester Info.</p>
-    <p>On submit, a pre-filled GitHub Issue opens with the JSON payload. Missing fields get highlighted — no annoying alerts.</p>`
+    <p>The submission form is split into five Tetris-style blocks, each color-coded for quick visual reference:</p>
+    <ul>
+      <li><strong>1. Game Data</strong> — platform, region, Game ID, title (with autocomplete from the existing database), and optional cover URL.</li>
+      <li><strong>2. Core Setup</strong> — Rt:Core version, core profile, and the measured FPS range (min / max).</li>
+      <li><strong>3. Playability &amp; Results</strong> — the 0–5 rating widget, plus free-form considerations about bugs, audio, glitches.</li>
+      <li><strong>4. Add-ons &amp; Files</strong> — optional custom configs, texture packs, hacks, cheats, and attachments.</li>
+      <li><strong>5. Tester Info</strong> — your name / handle, device, and muOS version.</li>
+    </ul>
+    <p>When you hit <strong>Upload Data to Nexus</strong>, the form validates all required fields. Instead of annoying pop-up alerts, missing fields get highlighted in red and a banner appears at the top listing everything that needs attention — click any item to scroll to that field automatically.</p>
+    <p>Once validation passes, a pre-filled <strong>GitHub Issue</strong> opens in a new tab with the JSON payload already embedded. Just review it, add any extra context in the comment box if needed, and submit. The maintainers will merge it into the database.</p>`
 };
 
 function loadGuideSection(target) {
@@ -1691,44 +1475,22 @@ function loadGuideSection(target) {
     setTimeout(() => { crt.classList.remove('crt-on'); }, 700);
   }, 600);
 }
-document.querySelectorAll('#rtIndexList button').forEach(btn => {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('#rtIndexList button').forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
-    loadGuideSection(this.dataset.target);
-  });
-});
+document.querySelectorAll('#rtIndexList button').forEach(btn => { btn.addEventListener('click', function() { document.querySelectorAll('#rtIndexList button').forEach(b => b.classList.remove('active')); this.classList.add('active'); loadGuideSection(this.dataset.target); }); });
 loadGuideSection('h1');
 
-/* ============ STATS ============ */
 function updateStats() {
   document.getElementById('statTested').textContent = state.groupedGames.length;
   document.getElementById('statTotal').textContent = state.rawGames.length;
   const counts = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
-  state.groupedGames.forEach(g => {
-    const r = g.aggregated.bestRating;
-    if (r >= 5) counts[5]++;
-    else if (r >= 4) counts[4]++;
-    else if (r >= 3) counts[3]++;
-    else if (r >= 2) counts[2]++;
-    else if (r >= 1) counts[1]++;
-  });
-  document.getElementById('count-5').textContent = counts[5];
-  document.getElementById('count-4').textContent = counts[4];
-  document.getElementById('count-3').textContent = counts[3];
-  document.getElementById('count-2').textContent = counts[2];
-  document.getElementById('count-1').textContent = counts[1];
+  state.groupedGames.forEach(g => { const r = g.aggregated.bestRating; if (r >= 5) counts[5]++; else if (r >= 4) counts[4]++; else if (r >= 3) counts[3]++; else if (r >= 2) counts[2]++; else if (r >= 1) counts[1]++; });
+  document.getElementById('count-5').textContent = counts[5]; document.getElementById('count-4').textContent = counts[4]; document.getElementById('count-3').textContent = counts[3]; document.getElementById('count-2').textContent = counts[2]; document.getElementById('count-1').textContent = counts[1];
 }
 
-/* ============ DATA LOAD (with retry + cache-bust) ============ */
 async function fetchWithRetry(url, retries = 2) {
   let lastErr = null;
   for (let i = 0; i <= retries; i++) {
-    try {
-      const res = await fetch(url + '?t=' + Date.now(), { cache: 'no-store' });
-      if (res.ok) return res;
-      lastErr = new Error(`HTTP ${res.status}`);
-    } catch (e) { lastErr = e; }
+    try { const res = await fetch(url + '?t=' + Date.now(), { cache: 'no-store' }); if (res.ok) return res; lastErr = new Error(`HTTP ${res.status}`); }
+    catch (e) { lastErr = e; }
     if (i < retries) await new Promise(r => setTimeout(r, 1000 * (i + 1)));
   }
   throw lastErr || new Error('Fetch failed');
@@ -1752,8 +1514,7 @@ async function loadConsoleData() {
     const filtered = state.rawGames.filter(g => (g.game_info?.system || '') === system);
     state.groupedGames = groupGames(filtered);
     document.getElementById('emptyStateText').textContent = 'No games found.';
-    updateStats();
-    render();
+    updateStats(); render();
   } catch (err) {
     document.getElementById('loaderContainer').classList.add('hidden');
     document.getElementById('emptyStateText').innerHTML = `<strong class="text-rose-500">Error loading data:</strong> ${escapeHtml(err.message)}`;
@@ -1761,118 +1522,56 @@ async function loadConsoleData() {
   }
 }
 
-/* ============ THEME SCROLLBAR VARS ============ */
 function applyThemeScrollbarVars(isGC) {
   const root = document.documentElement.style;
-  if (isGC) {
-    root.setProperty('--sb-track', '#0a0618');
-    root.setProperty('--sb-track-border', '#2a1a4a');
-    root.setProperty('--sb-thumb-1', '#8b5cf6');
-    root.setProperty('--sb-thumb-2', '#ec4899');
-    root.setProperty('--sb-thumb-1h', '#a78bfa');
-    root.setProperty('--sb-thumb-2h', '#f472b6');
-  } else {
-    root.setProperty('--sb-track', '#d0dce8');
-    root.setProperty('--sb-track-border', '#94a3b8');
-    root.setProperty('--sb-thumb-1', '#00a3e0');
-    root.setProperty('--sb-thumb-2', '#38bdf8');
-    root.setProperty('--sb-thumb-1h', '#0284c7');
-    root.setProperty('--sb-thumb-2h', '#0ea5e9');
-  }
+  if (isGC) { root.setProperty('--sb-track', '#0a0618'); root.setProperty('--sb-track-border', '#2a1a4a'); root.setProperty('--sb-thumb-1', '#8b5cf6'); root.setProperty('--sb-thumb-2', '#ec4899'); root.setProperty('--sb-thumb-1h', '#a78bfa'); root.setProperty('--sb-thumb-2h', '#f472b6'); }
+  else { root.setProperty('--sb-track', '#d0dce8'); root.setProperty('--sb-track-border', '#94a3b8'); root.setProperty('--sb-thumb-1', '#00a3e0'); root.setProperty('--sb-thumb-2', '#38bdf8'); root.setProperty('--sb-thumb-1h', '#0284c7'); root.setProperty('--sb-thumb-2h', '#0ea5e9'); }
 }
 
-/* ============ CONSOLE SWITCH ============ */
 function switchConsole(target) {
-  state.console = target;
-  const isGC = target === 'gc';
-  const header = document.getElementById('appHeader');
-  header.classList.remove('flip-horizontal');
-  void header.offsetWidth;
-  header.classList.add('flip-horizontal');
+  state.console = target; const isGC = target === 'gc';
+  const header = document.getElementById('appHeader'); header.classList.remove('flip-horizontal'); void header.offsetWidth; header.classList.add('flip-horizontal');
   document.querySelectorAll('.console-toggle').forEach(toggle => {
-    const slider = toggle.querySelector('.toggle-slider');
-    const gcOpt = toggle.querySelector('.toggle-option[data-console="gc"]');
-    const wiiOpt = toggle.querySelector('.toggle-option[data-console="wii"]');
+    const slider = toggle.querySelector('.toggle-slider'); const gcOpt = toggle.querySelector('.toggle-option[data-console="gc"]'); const wiiOpt = toggle.querySelector('.toggle-option[data-console="wii"]');
     if (!slider || !gcOpt || !wiiOpt) return;
     if (isGC) { slider.classList.remove('wii-slider'); gcOpt.classList.add('active'); wiiOpt.classList.remove('active'); }
     else { slider.classList.add('wii-slider'); wiiOpt.classList.add('active'); gcOpt.classList.remove('active'); }
     toggle.setAttribute('aria-pressed', String(!isGC));
   });
-  const iconUrl = isGC
-    ? 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg'
-    : 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg';
-  document.getElementById('consoleLogo').src = iconUrl;
-  document.getElementById('compactConsoleIcon').src = iconUrl;
+  const iconUrl = isGC ? 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/gamecube.svg' : 'https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/wii.svg';
+  document.getElementById('consoleLogo').src = iconUrl; document.getElementById('compactConsoleIcon').src = iconUrl;
   document.getElementById('consoleName').textContent = isGC ? 'GameCube' : 'Wii';
-  document.getElementById('appBody').className = isGC
-    ? 'theme-gc font-sans antialiased transition-colors duration-500 min-h-screen'
-    : 'theme-wii font-sans antialiased transition-colors duration-500 min-h-screen';
-  applyThemeScrollbarVars(isGC);
-  loadConsoleData();
-  setTimeout(syncHeaderHeights, 100);
+  document.getElementById('appBody').className = isGC ? 'theme-gc font-sans antialiased transition-colors duration-500 min-h-screen' : 'theme-wii font-sans antialiased transition-colors duration-500 min-h-screen';
+  applyThemeScrollbarVars(isGC); loadConsoleData(); setTimeout(syncHeaderHeights, 100);
 }
-
 document.querySelectorAll('.console-toggle').forEach(toggle => {
-  toggle.addEventListener('click', function(e) {
-    const option = e.target.closest('.toggle-option');
-    if (option) { const c = option.dataset.console; if (c && c !== state.console) switchConsole(c); return; }
-    switchConsole(state.console === 'gc' ? 'wii' : 'gc');
-  });
-  toggle.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-      e.preventDefault();
-      switchConsole(state.console === 'gc' ? 'wii' : 'gc');
-    }
-  });
+  toggle.addEventListener('click', function(e) { const option = e.target.closest('.toggle-option'); if (option) { const c = option.dataset.console; if (c && c !== state.console) switchConsole(c); return; } switchConsole(state.console === 'gc' ? 'wii' : 'gc'); });
+  toggle.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowLeft' || e.key === 'ArrowRight') { e.preventDefault(); switchConsole(state.console === 'gc' ? 'wii' : 'gc'); } });
 });
 
-/* ============ REPORT FORM ============ */
 document.getElementById('newReportLink').addEventListener('click', function(e) { e.preventDefault(); openReportModal(); });
-
 function openReportModal() {
   document.getElementById('reportModal').style.display = 'flex';
   const reset = (id, v = '') => { const el = document.getElementById(id); if (el) el.value = v; };
-  reset('reportPlatform'); reset('reportRegion'); reset('reportGameId'); reset('reportGameTitle'); reset('reportCoverArt');
-  reset('reportFpsMin'); reset('reportFpsMax'); reset('reportConsiderations');
-  reset('reportCoreVersion'); reset('reportCoreProfile'); reset('reportCoreVersionOther'); reset('reportCoreProfileOther');
-  reset('reportCustomSettingsName'); reset('reportCustomSettingsFilename'); reset('reportCustomSettingsUrl'); reset('reportCustomSettingsNote');
-  reset('reportCustomSettingsType', 'Config'); reset('reportAttachments'); reset('reportTester', 'Anonymous');
+  reset('reportPlatform'); reset('reportRegion'); reset('reportGameId'); reset('reportGameTitle'); reset('reportCoverArt'); reset('reportFpsMin'); reset('reportFpsMax'); reset('reportConsiderations'); reset('reportCoreVersion'); reset('reportCoreProfile'); reset('reportCoreVersionOther'); reset('reportCoreProfileOther'); reset('reportCustomSettingsName'); reset('reportCustomSettingsFilename'); reset('reportCustomSettingsUrl'); reset('reportCustomSettingsNote'); reset('reportCustomSettingsType', 'Config'); reset('reportAttachments'); reset('reportTester', 'Anonymous');
   document.getElementById('reportCoreProfileOther').style.display = 'none';
   document.getElementById('reportCustomSettingsWrapper').style.display = 'none';
   document.getElementById('reportCustomSettingsEnabled').value = 'No';
   const sug = document.getElementById('reportGameSuggestions'); sug.innerHTML = ''; sug.style.display = 'none';
-  clearReportErrors();
-  setReportRating(-1);
+  clearReportErrors(); setReportRating(-1);
   document.body.style.overflow = 'hidden';
   document.querySelector('#reportModal .input-box')?.focus();
 }
+function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; releaseBodyScroll(); }
 
-function closeReportModal() {
-  document.getElementById('reportModal').style.display = 'none';
-  releaseBodyScroll();
-}
-
-/* Report errors */
-function clearReportErrors() {
-  document.getElementById('reportErrorBanner').style.display = 'none';
-  document.getElementById('reportErrorBanner').innerHTML = '';
-  document.querySelectorAll('#reportModal .input-error').forEach(el => el.classList.remove('input-error'));
-}
+function clearReportErrors() { document.getElementById('reportErrorBanner').style.display = 'none'; document.getElementById('reportErrorBanner').innerHTML = ''; document.querySelectorAll('#reportModal .input-error').forEach(el => el.classList.remove('input-error')); }
 function showReportErrors(errors) {
   const banner = document.getElementById('reportErrorBanner');
   banner.innerHTML = `<div>⚠️ Please fix the following before submitting:</div><ul>${errors.map(e => `<li>${escapeHtml(e.msg)}</li>`).join('')}</ul>`;
   banner.style.display = 'block';
-  errors.forEach(err => {
-    const el = document.getElementById(err.id);
-    if (el) el.classList.add('input-error');
-  });
-  // Scroll to first error
-  const firstId = errors[0]?.id;
-  const firstEl = firstId ? document.getElementById(firstId) : null;
-  if (firstEl) {
-    firstEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setTimeout(() => firstEl.focus?.(), 300);
-  }
+  errors.forEach(err => { const el = document.getElementById(err.id); if (el) el.classList.add('input-error'); });
+  const firstId = errors[0]?.id; const firstEl = firstId ? document.getElementById(firstId) : null;
+  if (firstEl) { firstEl.scrollIntoView({ behavior: 'smooth', block: 'center' }); setTimeout(() => firstEl.focus?.(), 300); }
 }
 
 function setReportRating(val) {
@@ -1880,11 +1579,7 @@ function setReportRating(val) {
   document.querySelectorAll('#rpRatingWidget .rate-btn').forEach(b => { b.style.background = '#0f172a'; b.style.color = '#94a3b8'; b.style.borderColor = '#334155'; });
   const hidden = document.getElementById('reportRating');
   const colors = ['#8b0000','#ef4444','#f97316','#eab308','#84cc16','#16a34a'];
-  if (rating >= 0) {
-    const btns = document.querySelectorAll('#rpRatingWidget .rate-btn');
-    if (btns[rating]) { btns[rating].style.background = colors[rating]; btns[rating].style.color = '#fff'; btns[rating].style.borderColor = '#000'; }
-    hidden.value = rating;
-  } else hidden.value = '';
+  if (rating >= 0) { const btns = document.querySelectorAll('#rpRatingWidget .rate-btn'); if (btns[rating]) { btns[rating].style.background = colors[rating]; btns[rating].style.color = '#fff'; btns[rating].style.borderColor = '#000'; } hidden.value = rating; } else hidden.value = '';
   const bBoot = document.getElementById('rpBadgeBoot'), bPlay = document.getElementById('rpBadgePlay');
   bBoot.style.background = '#1e293b'; bBoot.style.color = '#94a3b8'; bPlay.style.background = '#1e293b'; bPlay.style.color = '#94a3b8';
   if (rating === 0) { bBoot.style.background = '#7f1d1d'; bBoot.style.color = '#fca5a5'; bBoot.textContent = 'BOOT: NO'; bPlay.style.background = '#7f1d1d'; bPlay.style.color = '#fca5a5'; bPlay.textContent = 'PLAY: UNPLAYABLE'; }
@@ -1893,26 +1588,14 @@ function setReportRating(val) {
   else if (rating >= 4) { bBoot.style.background = '#14532d'; bBoot.style.color = '#86efac'; bBoot.textContent = 'BOOT: YES'; bPlay.style.background = '#14532d'; bPlay.style.color = '#86efac'; bPlay.textContent = 'PLAY: PLAYABLE'; }
   else { bBoot.textContent = 'BOOT: TBD'; bPlay.textContent = 'PLAY: TBD'; }
 }
-
-// Keyboard + click for rating buttons
 document.querySelectorAll('#rpRatingWidget .rate-btn').forEach(btn => {
   btn.addEventListener('click', () => setReportRating(btn.dataset.rate));
-  btn.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setReportRating(btn.dataset.rate); }
-  });
+  btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setReportRating(btn.dataset.rate); } });
 });
 
-function toggleReportOther(selectId, inputId) {
-  const sel = document.getElementById(selectId), inp = document.getElementById(inputId);
-  if (sel.value === 'Other...') inp.style.display = 'block';
-  else { inp.style.display = 'none'; inp.value = ''; }
-}
-function toggleReportCustomSettings() {
-  const enabled = document.getElementById('reportCustomSettingsEnabled').value === 'Yes';
-  document.getElementById('reportCustomSettingsWrapper').style.display = enabled ? 'flex' : 'none';
-}
+function toggleReportOther(selectId, inputId) { const sel = document.getElementById(selectId), inp = document.getElementById(inputId); if (sel.value === 'Other...') inp.style.display = 'block'; else { inp.style.display = 'none'; inp.value = ''; } }
+function toggleReportCustomSettings() { const enabled = document.getElementById('reportCustomSettingsEnabled').value === 'Yes'; document.getElementById('reportCustomSettingsWrapper').style.display = enabled ? 'flex' : 'none'; }
 
-/* Autocomplete */
 (function () {
   const titleInput = document.getElementById('reportGameTitle'), box = document.getElementById('reportGameSuggestions');
   if (!titleInput || !box) return;
@@ -1920,19 +1603,11 @@ function toggleReportCustomSettings() {
     const val = this.value.trim().toLowerCase();
     if (val.length < 2) { box.style.display = 'none'; return; }
     const seen = new Set();
-    const matches = (state.rawGames || []).map(g => g.game_info?.game || '').filter(t => {
-      if (!t) return false;
-      const k = t.toLowerCase();
-      if (seen.has(k)) return false;
-      seen.add(k);
-      return k.includes(val);
-    }).slice(0, 8);
+    const matches = (state.rawGames || []).map(g => g.game_info?.game || '').filter(t => { if (!t) return false; const k = t.toLowerCase(); if (seen.has(k)) return false; seen.add(k); return k.includes(val); }).slice(0, 8);
     if (matches.length === 0) { box.style.display = 'none'; return; }
     box.innerHTML = matches.map(t => `<div class="suggestion-item">${escapeHtml(t)}</div>`).join('');
     box.style.display = 'block';
-    box.querySelectorAll('.suggestion-item').forEach(el => {
-      el.addEventListener('mousedown', function (e) { e.preventDefault(); titleInput.value = this.textContent; box.style.display = 'none'; });
-    });
+    box.querySelectorAll('.suggestion-item').forEach(el => { el.addEventListener('mousedown', function (e) { e.preventDefault(); titleInput.value = this.textContent; box.style.display = 'none'; }); });
   });
   document.addEventListener('click', function (e) { if (!box.contains(e.target) && e.target !== titleInput) box.style.display = 'none'; });
 })();
@@ -1972,7 +1647,6 @@ function submitReport() {
   if (!coreProfile) errors.push({ id: 'reportCoreProfile', msg: 'Select a core profile.' });
   if (!muosVer) errors.push({ id: 'reportMuos', msg: 'Select the muOS version.' });
   if (!fpsMinRaw || !fpsMaxRaw) errors.push({ id: 'reportFpsMin', msg: 'Enter a valid FPS range (min and max).' });
-
   if (errors.length > 0) { showReportErrors(errors); return; }
 
   const finalCoreVersion = coreVersion === 'Other...' ? (coreVersionOther || 'Unknown') : coreVersion;
@@ -1980,120 +1654,50 @@ function submitReport() {
   const r = parseInt(rating);
   const boot = r === 0 ? 'NO' : 'YES';
   const playable = (r === 0 || r === 1 || r === 2) ? 'NO' : (r === 3 ? 'YES WITH ISSUES' : 'YES');
-  const fpsMin = parseInt(fpsMinRaw) || 0;
-  const fpsMax = parseInt(fpsMaxRaw) || 0;
+  const fpsMin = parseInt(fpsMinRaw) || 0; const fpsMax = parseInt(fpsMaxRaw) || 0;
   const fpsStr = `${fpsMinRaw}-${fpsMaxRaw}`;
-
   const attachments = [];
-  if (attachmentsRaw) {
-    attachmentsRaw.split('\n').forEach(line => {
-      const trimmed = line.trim();
-      if (!trimmed) return;
-      const idx = trimmed.indexOf(':');
-      let mediaTitle = '', mediaUrl = '';
-      if (idx > 0) { mediaTitle = trimmed.substring(0, idx).trim(); mediaUrl = trimmed.substring(idx + 1).trim(); }
-      else mediaUrl = trimmed;
-      if (!/^https?:\/\//i.test(mediaUrl)) return;
-      let mediaType = 'link';
-      if (/\.(jpg|jpeg|png|gif|webp)$/i.test(mediaUrl)) mediaType = 'image';
-      else if (/\.(mp4|webm|mov)$/i.test(mediaUrl) || /youtube|youtu\.be/i.test(mediaUrl)) mediaType = 'video';
-      attachments.push({ media_type: mediaType, media_title: mediaTitle || mediaUrl, media_url: mediaUrl });
-    });
-  }
-
+  if (attachmentsRaw) { attachmentsRaw.split('\n').forEach(line => { const trimmed = line.trim(); if (!trimmed) return; const idx = trimmed.indexOf(':'); let mediaTitle = '', mediaUrl = ''; if (idx > 0) { mediaTitle = trimmed.substring(0, idx).trim(); mediaUrl = trimmed.substring(idx + 1).trim(); } else mediaUrl = trimmed; if (!/^https?:\/\//i.test(mediaUrl)) return; let mediaType = 'link'; if (/\.(jpg|jpeg|png|gif|webp)$/i.test(mediaUrl)) mediaType = 'image'; else if (/\.(mp4|webm|mov)$/i.test(mediaUrl) || /youtube|youtu\.be/i.test(mediaUrl)) mediaType = 'video'; attachments.push({ media_type: mediaType, media_title: mediaTitle || mediaUrl, media_url: mediaUrl }); }); }
   const customSettings = [];
-  if (csEnabled) {
-    const cs = { set_type: csType, set_title: csName, set_note: csNote };
-    if (csFilename) cs.set_filename = csFilename;
-    if (csUrl) cs.set_url = csUrl;
-    customSettings.push(cs);
-  }
-
-  const payload = {
-    game_info: { game_id: gameId || 'UNKNOWN', system: platform === 'GameCube' ? 'GC' : 'Wii', game: title, region: region },
-    test_review: { rating: r, fps: fpsStr, boot: boot, playable: playable, fps_min: fpsMin, fps_max: fpsMax },
-    test_details: { rtcore_version: finalCoreVersion, core_profile: finalCoreProfile, considerations: considerations },
-    test_environment: { tester: tester, device: device, muos_version: muosVer },
-    cover_art: coverArt,
-    custom_settings: customSettings,
-    attachments: attachments
-  };
-
+  if (csEnabled) { const cs = { set_type: csType, set_title: csName, set_note: csNote }; if (csFilename) cs.set_filename = csFilename; if (csUrl) cs.set_url = csUrl; customSettings.push(cs); }
+  const payload = { game_info: { game_id: gameId || 'UNKNOWN', system: platform === 'GameCube' ? 'GC' : 'Wii', game: title, region: region }, test_review: { rating: r, fps: fpsStr, boot: boot, playable: playable, fps_min: fpsMin, fps_max: fpsMax }, test_details: { rtcore_version: finalCoreVersion, core_profile: finalCoreProfile, considerations: considerations }, test_environment: { tester: tester, device: device, muos_version: muosVer }, cover_art: coverArt, custom_settings: customSettings, attachments: attachments };
   const issueTitle = `[${region}] ${title} - Test Report`;
   const issueBody = '```json\n' + JSON.stringify(payload, null, 2) + '\n```';
   const url = `https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new?template=dolphin-rtcore-test-report.yml&title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}`;
-  openSafeUrl(url);
-  closeReportModal();
+  openSafeUrl(url); closeReportModal();
 }
 
-/* ============ MODAL CLOSE LISTENERS ============ */
 document.getElementById('closeModalBtn').addEventListener('click', closeModal);
 document.getElementById('gameModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') { closeModal(); closeTesterPanel(); closeAboutPanel(); closeReportModal(); }
-});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeModal(); closeTesterPanel(); closeAboutPanel(); closeReportModal(); } });
 
-/* ============ FILTERS ============ */
 let searchTimeout = null;
-document.getElementById('searchInput').addEventListener('input', e => {
-  clearTimeout(searchTimeout);
-  searchTimeout = setTimeout(() => { state.search = e.target.value.toLowerCase().trim(); render(); }, 150);
-});
+document.getElementById('searchInput').addEventListener('input', e => { clearTimeout(searchTimeout); searchTimeout = setTimeout(() => { state.search = e.target.value.toLowerCase().trim(); render(); }, 150); });
 document.getElementById('regionFilter').addEventListener('change', e => { state.selectedRegion = e.target.value; render(); });
 document.getElementById('bootFilter').addEventListener('change', e => { state.selectedBoot = e.target.value; render(); });
 document.getElementById('sortKey').addEventListener('change', e => { state.sortKey = e.target.value; render(); });
-document.getElementById('sortOrderBtn').addEventListener('click', () => {
-  state.sortOrder = state.sortOrder === 'asc' ? 'desc' : 'asc';
-  document.getElementById('sortOrderLabel').textContent = state.sortOrder === 'asc' ? 'Asc' : 'Desc';
-  document.getElementById('sortOrderIcon').classList.toggle('rotate-180');
-  render();
-});
+document.getElementById('sortOrderBtn').addEventListener('click', () => { state.sortOrder = state.sortOrder === 'asc' ? 'desc' : 'asc'; document.getElementById('sortOrderLabel').textContent = state.sortOrder === 'asc' ? 'Asc' : 'Desc'; document.getElementById('sortOrderIcon').classList.toggle('rotate-180'); render(); });
 document.getElementById('viewGridBtn').addEventListener('click', function() { state.viewMode = 'grid'; document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active')); this.classList.add('active'); render(); });
 document.getElementById('viewListBtn').addEventListener('click', function() { state.viewMode = 'list'; document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active')); this.classList.add('active'); render(); });
 document.getElementById('viewExtendedBtn').addEventListener('click', function() { state.viewMode = 'extended'; document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active')); this.classList.add('active'); render(); });
-
-document.querySelectorAll('.rating-panel').forEach(p => {
-  p.addEventListener('click', () => { const v = p.getAttribute('data-rating'); state.selectedStars = state.selectedStars === v ? 'all' : v; render(); });
-});
-
+document.querySelectorAll('.rating-panel').forEach(p => { p.addEventListener('click', () => { const v = p.getAttribute('data-rating'); state.selectedStars = state.selectedStars === v ? 'all' : v; render(); }); });
 document.getElementById('resetFiltersBtn').addEventListener('click', () => {
-  document.getElementById('searchInput').value = '';
-  document.getElementById('regionFilter').value = 'all';
-  document.getElementById('bootFilter').value = 'all';
-  document.getElementById('sortKey').value = 'title';
-  state.sortOrder = 'asc';
-  document.getElementById('sortOrderLabel').textContent = 'Asc';
-  document.getElementById('sortOrderIcon').classList.remove('rotate-180');
-  state.search = ''; state.selectedStars = 'all'; state.selectedRegion = 'all'; state.selectedBoot = 'all';
-  render();
+  document.getElementById('searchInput').value = ''; document.getElementById('regionFilter').value = 'all'; document.getElementById('bootFilter').value = 'all'; document.getElementById('sortKey').value = 'title';
+  state.sortOrder = 'asc'; document.getElementById('sortOrderLabel').textContent = 'Asc'; document.getElementById('sortOrderIcon').classList.remove('rotate-180');
+  state.search = ''; state.selectedStars = 'all'; state.selectedRegion = 'all'; state.selectedBoot = 'all'; render();
 });
 document.getElementById('clearFiltersBtn').addEventListener('click', () => { document.getElementById('resetFiltersBtn').click(); });
 
-/* ============ EXPORT ============ */
 document.getElementById('exportBtn').addEventListener('click', () => {
   if (state.filtered.length === 0) { return; }
-  const data = state.filtered.map(item => ({
-    game: item.game,
-    gameId: item.aggregated.gameId,
-    bestRating: item.aggregated.bestRating,
-    bestFps: item.aggregated.bestFpsStr,
-    bestBoot: item.aggregated.bestBoot,
-    bestPlayable: item.aggregated.bestPlayable,
-    avgRating: item.aggregated.avgRating,
-    avgFps: item.aggregated.avgFps,
-    totalEntries: item.aggregated.totalEntries,
-    regions: item.allRegions.map(r => r.region)
-  }));
+  const data = state.filtered.map(item => ({ game: item.game, gameId: item.aggregated.gameId, bestRating: item.aggregated.bestRating, bestFps: item.aggregated.bestFpsStr, bestBoot: item.aggregated.bestBoot, bestPlayable: item.aggregated.bestPlayable, avgRating: item.aggregated.avgRating, avgFps: item.aggregated.avgFps, totalEntries: item.aggregated.totalEntries, regions: item.allRegions.map(r => r.region) }));
   const blob = new Blob([JSON.stringify({ console: state.console, exported: new Date().toISOString(), count: data.length, games: data }, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `dolphin-rtcore-${state.console}-${Date.now()}.json`;
+  const a = document.createElement('a'); a.href = url; a.download = `dolphin-rtcore-${state.console}-${Date.now()}.json`;
   document.body.appendChild(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 });
 
-/* ============ INIT ============ */
 window.addEventListener('load', () => { syncHeaderHeights(); });
 switchConsole('gc');
 syncHeaderHeights();
