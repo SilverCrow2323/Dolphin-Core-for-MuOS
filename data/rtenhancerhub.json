@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "last_update": "2026-09-17",
+  "last_update": "2026-10-03",
   "items": [
     {
       "id": "dolphin-all-res-gamesettings",
@@ -11,7 +11,7 @@
       "description": "Complete collection of official Dolphin per-game settings for GameCube and Wii. Extracted into Sys/ to provide a baseline for maximum compatibility across titles.",
       "author": "Dolphin Team, sirpips",
       "version": "1.0",
-      "download_url": "https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/raw/main/data/rtenhancer/rintropacks/DolphinRtC_DefaultGameSettingsPack.zip",
+      "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/rintropacks/DolphinRtC_DefaultGameSettingsPack.zip",
       "icon_url": "https://brandlogo.org/wp-content/uploads/2024/07/Dolphin-Emulator-Logo-300x300.png.webp",
       "size_mb": 0.8,
       "install_paths": {
@@ -20,7 +20,11 @@
       },
       "extract_into": "Sys",
       "extract_contains": "GameSettings",
-      "tags": ["dolphin", "gamesettings", "baseline"]
+      "tags": [
+        "dolphin",
+        "gamesettings",
+        "baseline"
+      ]
     },
     {
       "id": "dolphin-all-res-graphicmods",
@@ -31,7 +35,7 @@
       "description": "Curated collection of all official Dolphin graphic mods. Includes bloom, depth of field, HUD removal and more. Extracted into Load/ for use with any supported title.",
       "author": "Dolphin Team, sirpips",
       "version": "1.0",
-      "download_url": "https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/raw/main/data/rtenhancer/rintropacks/DolphinRtC_DefaultGraphicMods.zip",
+      "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/rintropacks/DolphinRtC_DefaultGraphicMods.zip",
       "icon_url": "https://brandlogo.org/wp-content/uploads/2024/07/Dolphin-Emulator-Logo-300x300.png.webp",
       "size_mb": 2.3,
       "install_paths": {
@@ -40,7 +44,11 @@
       },
       "extract_into": "Load",
       "extract_contains": "GraphicMods",
-      "tags": ["dolphin", "graphicmods", "enhancement"]
+      "tags": [
+        "dolphin",
+        "graphicmods",
+        "enhancement"
+      ]
     },
     {
       "id": "spdw-gc-texture-cnk-hd",
@@ -51,7 +59,7 @@
       "description": "Lightweight HD texture pack for Crash Nitro Kart (PAL, GCNE7D). Optimized for H700 devices, delivering maximum visual fidelity without performance loss. Extracted into Load/Textures/GCNE7D/.",
       "author": "sirpips",
       "version": "1.0",
-      "download_url": "https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/raw/main/data/rtenhancer/rintropacks/DolphinRtC_TexturePack_CrashNitroKart_PAL_GCNE7D.zip",
+      "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/rintropacks/DolphinRtC_TexturePack_CrashNitroKart_PAL_GCNE7D.zip",
       "icon_url": "https://static.wikia.nocookie.net/crashban/images/2/25/Crash-0.png/revision/latest?cb=20200115143310",
       "size_mb": 0.5,
       "install_paths": {
@@ -59,26 +67,12 @@
         "external": "/opt/muos/share/emulator/dolphin/Load/Textures/"
       },
       "extract_into": "Textures/GCNE7D",
-      "tags": ["texture", "hd", "crash-nitro-kart", "h700"]
-    },
-    {
-      "id": "spdw-all-res-enhancement-gamesettings",
-      "category": "rt_resources",
-      "subcategory": "workshop",
-      "system": "all",
-      "name": "Workshop Enhancement GameSettings",
-      "description": "Curated collection of enhancement codes and per-game settings from the Enhancement-Codes project (Admentus64) plus Fortune Street / Boom Street / Itadaki Street Wii. Extracted directly into workshop/gamesettings/ with one folder per Game ID, ready to be applied from the DolphinUI Workshop.",
-      "author": "Admentus64, FortuneStreetModding, sirpips",
-      "version": "1.1",
-      "download_url": "https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/raw/refs/heads/main/data/rtenhancer/rintropacks/DolphinRtC_Workshop_EnhancementsGameSettings.zip",
-      "icon_url": "https://brandlogo.org/wp-content/uploads/2024/07/Dolphin-Emulator-Logo-300x300.png.webp",
-      "size_mb": 0.6,
-      "install_paths": {
-        "frontend": "workshop/gamesettings"
-      },
-      "extract_into": "workshop/gamesettings",
-      "extract_contains": "ST7E01",
-      "tags": ["enhancement", "gamesettings", "workshop", "codes"]
+      "tags": [
+        "texture",
+        "hd",
+        "crash-nitro-kart",
+        "h700"
+      ]
     },
     {
       "id": "community-all-cheat-geckocodes",
@@ -86,17 +80,21 @@
       "subcategory": "cheats",
       "system": "all",
       "name": "Gecko Codes Complete Pack",
-      "description": "Complete dump of Gecko cheat codes from GeckoCodes.org, curated in 2020. Contains thousands of standalone .txt files for Wii, GameCube and Virtual Console titles. NOTE: Dolphin does not auto-load standalone .txt codes — they must be imported manually via Game Properties → Gecko Codes, or used with USB Loader GX / WiiFlow on real hardware.",
+      "description": "Complete dump of Gecko cheat codes from GeckoCodes.org, curated in 2020. Contains thousands of standalone .txt files for Wii, GameCube and Virtual Console titles. NOTE: Dolphin does not auto-load standalone .txt codes - they must be imported manually via Game Properties -> Gecko Codes, or used with USB Loader GX / WiiFlow on real hardware.",
       "author": "nikeymikey, Community, sirpips",
       "version": "2020.08",
-      "download_url": "https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/raw/refs/heads/main/data/rtenhancer/rintropacks/DolphinRtC_GeckoCodesPack.zip",
+      "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/rintropacks/DolphinRtC_ExternalCore_GeckoCodesPack.zip",
       "icon_url": "https://wiibrew.org/w/images/8/8d/Cheat.png",
       "size_mb": 12.0,
       "install_paths": {
         "frontend": "codes"
       },
       "extract_into": "codes",
-      "tags": ["cheats", "gecko", "codes"]
+      "tags": [
+        "cheats",
+        "gecko",
+        "codes"
+      ]
     },
     {
       "id": "community-wii-cheat-fortune-street",
@@ -112,7 +110,12 @@
       "size_mb": 0.01,
       "install_path": "codes",
       "extract_into": "codes",
-      "tags": ["cheats", "gecko", "fortune-street", "wii"]
+      "tags": [
+        "cheats",
+        "gecko",
+        "fortune-street",
+        "wii"
+      ]
     },
     {
       "id": "community-wii-cheat-boom-street",
@@ -128,7 +131,12 @@
       "size_mb": 0.01,
       "install_path": "codes",
       "extract_into": "codes",
-      "tags": ["cheats", "gecko", "boom-street", "wii"]
+      "tags": [
+        "cheats",
+        "gecko",
+        "boom-street",
+        "wii"
+      ]
     },
     {
       "id": "community-wii-cheat-itadaki-street",
@@ -144,7 +152,12 @@
       "size_mb": 0.01,
       "install_path": "codes",
       "extract_into": "codes",
-      "tags": ["cheats", "gecko", "itadaki-street", "wii"]
+      "tags": [
+        "cheats",
+        "gecko",
+        "itadaki-street",
+        "wii"
+      ]
     },
     {
       "id": "spdw-muos-tool-void-desk",
@@ -158,7 +171,13 @@
       "download_url": "https://github.com/SilverCrow2323/muOS-Void-Desk/releases/download/v10.2.0/VoidDesk_v10.2.0.muxapp",
       "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/muOS-Void-Desk/main/glyph/voiddesk.png",
       "size_mb": 5.0,
-      "tags": ["muos", "desktop", "chroot", "xfce", "productivity"]
+      "tags": [
+        "muos",
+        "desktop",
+        "chroot",
+        "xfce",
+        "productivity"
+      ]
     },
     {
       "id": "spdw-muos-tool-bgm-normalizer",
@@ -172,7 +191,13 @@
       "download_url": "https://github.com/SilverCrow2323/muOS-BGM-Normalizer/releases/download/v8.6/BGM_Normalizer_muOS_v8.6.muxapp",
       "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/muOS-BGM-Normalizer/main/glyph/icon.png",
       "size_mb": 0.5,
-      "tags": ["muos", "audio", "normalizer", "bgm", "oggs"]
+      "tags": [
+        "muos",
+        "audio",
+        "normalizer",
+        "bgm",
+        "oggs"
+      ]
     },
     {
       "id": "spdw-muos-tool-rt-tailscale",
@@ -186,22 +211,13 @@
       "download_url": "https://github.com/SilverCrow2323/muOS-Rt-Tailscale/releases/download/v3.0.6/RtTailscalev3.0.6.muxapp",
       "icon_url": "https://raw.githubusercontent.com/SilverCrow2323/muOS-Rt-Tailscale/main/glyph/icon.png",
       "size_mb": 0.3,
-      "tags": ["muos", "network", "vpn", "tailscale", "taildrop"]
-    },
-    {
-      "id": "osc-wii-hb-homebrew-channel",
-      "category": "homebrew",
-      "subcategory": "utilities",
-      "system": "wii",
-      "name": "Homebrew Channel",
-      "description": "The essential platform for running homebrew applications on the Wii. Provides a user-friendly graphical interface to launch and manage apps from SD or USB. Once installed, it becomes the central hub for all your homebrew needs.",
-      "author": "fail0verflow, FIX94",
-      "version": "1.1.4-1",
-      "download_url": "https://github.com/OpenShopChannel/HomebrewChannel/releases/latest/download/hbc.zip",
-      "icon_url": "https://wiibrew.org/w/images/1/1d/Homebrew_channel_logo.png",
-      "size_mb": 2.5,
-      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/homebrew-channel",
-      "tags": ["hbc", "wii", "loader", "essential"]
+      "tags": [
+        "muos",
+        "network",
+        "vpn",
+        "tailscale",
+        "taildrop"
+      ]
     },
     {
       "id": "community-gc-hb-swiss",
@@ -260,20 +276,6 @@
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/calibrator"
     },
     {
-      "id": "community-wii-hb-cfg-usb-loader",
-      "category": "homebrew",
-      "subcategory": "loaders",
-      "system": "wii",
-      "name": "CFG USB Loader",
-      "description": "A popular USB loader for launching Wii games from external drives. It supports multiple formats (ISO, WBFS) and offers per-game settings, a clean interface, and good performance.",
-      "author": "Various",
-      "version": "1.0",
-      "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/CFG%20USB%20Loader.zip",
-      "icon_url": "https://wiibrew.org/w/images/0/0b/CFG_USB_Loader.png",
-      "size_mb": 2.0,
-      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/cfg-usb-loader"
-    },
-    {
       "id": "community-wii-hb-gc-memory-manager",
       "category": "homebrew",
       "subcategory": "utilities",
@@ -286,20 +288,6 @@
       "icon_url": "https://wiibrew.org/w/images/8/8d/GCMM.png",
       "size_mb": 1.0,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/gc-memory-manager"
-    },
-    {
-      "id": "community-wii-hb-homebrew-browser",
-      "category": "homebrew",
-      "subcategory": "utilities",
-      "system": "wii",
-      "name": "Homebrew Browser",
-      "description": "A community-driven application that allows you to browse and download homebrew apps directly from an online repository. The Open Shop Channel is a modern revival of this concept, providing a centralized place to discover new software.",
-      "author": "Various",
-      "version": "1.0",
-      "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/homebrew_browser.zip",
-      "icon_url": "https://wiibrew.org/w/images/1/1d/Homebrew_Browser.png",
-      "size_mb": 1.5,
-      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/homebrew-browser"
     },
     {
       "id": "community-wii-hb-loadmii",
@@ -414,34 +402,6 @@
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/wiibrowser"
     },
     {
-      "id": "community-wii-hb-wiiflow",
-      "category": "homebrew",
-      "subcategory": "loaders",
-      "system": "wii",
-      "name": "WiiFlow",
-      "description": "A stylish and highly customizable USB loader. It features animated banners, game covers, and a sleek interface, and supports many themes and plugins to enhance the experience.",
-      "author": "Fledge",
-      "version": "4.3",
-      "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/WiiFlow.zip",
-      "icon_url": "https://oscwii.org/library/app/wiiflow/icon.png",
-      "size_mb": 5.0,
-      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/wiiflow"
-    },
-    {
-      "id": "community-wii-hb-wiimc",
-      "category": "homebrew",
-      "subcategory": "media",
-      "system": "wii",
-      "name": "WiiMC",
-      "description": "A comprehensive media center for the Wii. It can play video and audio files from SD/USB, stream internet content, and display images. Notably, WiiMC can restore DVD playback, which Nintendo disabled to avoid licensing fees.",
-      "author": "WiiMC Team",
-      "version": "3.0.0-2024",
-      "download_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/rtenhancer/wiihb/WiiMC.zip",
-      "icon_url": "https://wiibrew.org/w/images/0/09/WiiMC_Custom_Icon-_Old_PC_Four-Color_Style.png",
-      "size_mb": 2.0,
-      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/wiimc"
-    },
-    {
       "id": "community-wii-hb-wiitweet",
       "category": "homebrew",
       "subcategory": "media",
@@ -482,104 +442,6 @@
       "icon_url": "https://wiibrew.org/w/images/5/5d/WSM_Player.png",
       "size_mb": 1.0,
       "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/wsm-player"
-    },
-    {
-      "id": "osc-wii-hb-open-shop-channel",
-      "category": "homebrew",
-      "subcategory": "utilities",
-      "system": "wii",
-      "name": "Open Shop Channel",
-      "description": "The modern successor to the Homebrew Browser. A community-driven storefront that lets you browse, download, and install homebrew apps directly on your Wii. Still actively maintained and the recommended way to discover new homebrew.",
-      "author": "Open Shop Channel Team",
-      "version": "1.0.1",
-      "download_url": "https://github.com/OpenShopChannel/Storefront/releases/latest/download/osc.zip",
-      "icon_url": "https://oscwii.org/library/app/open_shop_channel/icon.png",
-      "size_mb": 2.0,
-      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/open-shop-channel"
-    },
-    {
-      "id": "community-wii-hb-riivolution",
-      "category": "homebrew",
-      "subcategory": "utilities",
-      "system": "wii",
-      "name": "Riivolution",
-      "description": "An on-the-fly disk patcher for the Wii. It allows you to play game mods, use texture packs, and apply patches to original game discs without modifying the ISO. Essential for playing mods like Project M or Newer Super Mario Bros. Wii.",
-      "author": "AerialX",
-      "version": "1.07",
-      "download_url": "https://github.com/AerialX/riivolution/releases/download/v1.07/riivolution.zip",
-      "icon_url": "https://hacksguidewiki.sfo3.digitaloceanspaces.com/hacksguidewiki/Riivolution-icon.png",
-      "size_mb": 2.1,
-      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/riivolution"
-    },
-    {
-      "id": "community-wii-hb-savegame-manager-gx",
-      "category": "homebrew",
-      "subcategory": "utilities",
-      "system": "wii",
-      "name": "SaveGame Manager GX",
-      "description": "The ultimate save manager for the Wii. Backs up and restores game saves and Mii data to/from SD or USB, including protected saves that the stock System Menu refuses to copy. A must-have for anyone who values their progress.",
-      "author": "dj_skual, Tantric",
-      "version": "r127",
-      "download_url": "https://github.com/djskual/SaveGame-Manager-GX/releases/download/r127/SaveGameManagerGX.zip",
-      "icon_url": "https://hacksguidewiki.sfo3.digitaloceanspaces.com/hacksguidewiki/SaveGameManagerGX-icon.png",
-      "size_mb": 3.0,
-      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/savegame-manager-gx"
-    },
-    {
-      "id": "community-wii-hb-cleanrip",
-      "category": "homebrew",
-      "subcategory": "utilities",
-      "system": "wii",
-      "name": "CleanRip",
-      "description": "Create 1:1 bit-perfect backups of GameCube and Wii game discs directly from your console. Uses IOS58 for USB 2.0 transfer speeds and supports both single-layer and dual-layer discs. The gold standard for game preservation.",
-      "author": "emukidid, share",
-      "version": "2.1.2",
-      "download_url": "https://github.com/emukidid/CleanRip/releases/download/v2.1.2/CleanRip.zip",
-      "icon_url": "https://hacksguidewiki.sfo3.digitaloceanspaces.com/hacksguidewiki/Cleanrip-icon.png",
-      "size_mb": 0.6,
-      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/cleanrip"
-    },
-    {
-      "id": "community-wii-hb-bootmii",
-      "category": "homebrew",
-      "subcategory": "utilities",
-      "system": "wii",
-      "name": "BootMii",
-      "description": "The most important piece of Wii homebrew. A bootloader that can run before the System Menu, providing brick protection and the ability to create a full NAND backup. Install it as boot2 if possible for maximum safety.",
-      "author": "Team Twiizers",
-      "version": "1.5",
-      "download_url": "https://github.com/TeamTwiizers/BootMii/releases/download/1.5/BootMii.zip",
-      "icon_url": "https://wiibrew.org/w/images/1/12/BootMii_HBC_Icon.png",
-      "size_mb": 0.3,
-      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/bootmii"
-    },
-    {
-      "id": "community-wii-hb-d2x-cios",
-      "category": "homebrew",
-      "subcategory": "utilities",
-      "system": "wii",
-      "name": "d2x cIOS Installer",
-      "description": "The official installer for the d2x custom IOS (cIOS). Required by many USB loaders (like USB Loader GX and WiiFlow) to function. Without a proper cIOS, you can't play backup games from USB or SD.",
-      "author": "davebaol",
-      "version": "v10",
-      "download_url": "https://github.com/wiidev/d2x-cios/releases/download/v10/d2x-cios-installer.zip",
-      "icon_url": "https://oscwii.org/library/app/d2x-cios-installer/icon.png",
-      "size_mb": 0.7,
-      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/d2x-cios"
-    },
-    {
-      "id": "community-wii-hb-syscheck",
-      "category": "homebrew",
-      "subcategory": "utilities",
-      "system": "wii",
-      "name": "SysCheck",
-      "description": "A diagnostic tool that analyzes your Wii's IOS and cIOS configuration. It generates a detailed report of everything installed, which is invaluable for troubleshooting and for getting help from the community.",
-      "author": "Various",
-      "version": "2.1.0",
-      "download_url": "https://github.com/wiidev/SysCheck/releases/download/v2.1.0/SysCheck.zip",
-      "icon_url": "https://wiibrew.org/w/images/8/8d/SysCheck.png",
-      "size_mb": 0.5,
-      "install_path": "/opt/muos/share/emulator/dolphin/frontend/data/rtenhancer/hbwii/syscheck"
     }
   ]
 }
