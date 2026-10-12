@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "last_update": "2026-10-12",
+  "games": [
+    {
+      "game_info": {
+        "game_id": "GOWP69",
+        "system": "GC",
+        "game": "Need for Speed Most Wanted",
+        "region": "PAL"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GOWP69",
+            "system": "GC",
+            "game": "Need for Speed Most Wanted",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 4,
+            "fps": "7-12",
+            "boot": "YES",
+            "playable": "YES",
+            "fps_min": 7,
+            "fps_max": 12
+          },
+          "test_details": {
+            "rtcore_version": "v10.5.3 (current)",
+            "core_profile": "Performance",
+            "considerations": "Need for Speed: Most Wanted – game-specific Performance profile\nFor Need for Speed: Most Wanted (GameCube PAL / Game ID GOWP69), the existing Rt:Core Performance profile works well with one important game-specific adjustment and a Potato Patched Rom:\n[Core]\nOverclock = 0.20\n\nThe regular Performance GFX.ini can be used unchanged. Its existing performance-oriented graphics/EFB/XFB settings already work well for this title.\nSuggested implementation:\n1. Detect Need for Speed: Most Wanted by Game ID GOWP69.\n2. Start from the normal Rt:Core Performance profile.\n3. Override only the CPU emulation overclock value to 0.20.\n4. Keep the regular Performance GFX.ini.\n5. Do not modify the global Performance profile for other games.\nOn the H700 / RG34XX SP this setting was tested to perform significantly better for Need for Speed: Most Wanted than the default Performance CPU clock."
+          },
+          "test_environment": {
+            "tester": "Lazz",
+            "device": "RG34XX SP",
+            "muos_version": "2508.3 Golden Goose"
+          },
+          "cover_art": "",
+          "custom_settings": [
+            {
+              "set_type": "Config",
+              "set_name": "Overclock = 0.20",
+              "set_filename": "GOWP69.ini",
+              "set_url": "",
+              "set_note": "Overclock = 0.20"
+            }
+          ],
+          "attachments": [
+            {
+              "media_type": "video",
+              "media_title": "Attachment from test report",
+              "media_url": "https://www.youtube.com/watch?v=W1QWSm5hnmI"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
