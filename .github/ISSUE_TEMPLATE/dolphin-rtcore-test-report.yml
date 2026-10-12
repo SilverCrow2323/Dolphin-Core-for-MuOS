@@ -283,8 +283,12 @@ body:
     attributes:
       label: "Dolphin Rt:Core Version *"
       options:
-        - "v10.5.3 (current)"
-        - "v10.5-124"
+        - "v11.5.00-III FrontendONE"
+        - "v11.5.00-II Bash Arsenal"
+        - "v11.5.00-I Comfort Zone"
+        - "v11.0.00-dev"
+        - "v10.5.3"
+        - "v10.5.124"
         - "v10.0.0 SPDW"
         - "v9 Goose"
         - "v8"
