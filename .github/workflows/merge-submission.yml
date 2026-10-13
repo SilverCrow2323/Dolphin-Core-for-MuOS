@@ -1,0 +1,170 @@
+name: Merge community submissions
+
+on:
+  issues:
+    types: [opened, labeled, edited]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  merge:
+    if: |
+      (contains(github.event.issue.labels.*.name, 'gamesetting') ||
+       contains(github.event.issue.labels.*.name, 'test-report')) &&
+      github.event.issue.state == 'open'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Extract + merge
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_LABELS: ${{ join(github.event.issue.labels.*.name, ',') }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          python - <<'PY'
+          import os, re, json, pathlib, sys
+          body = os.environ.get('ISSUE_BODY', '')
+          labels = os.environ.get('ISSUE_LABELS', '')
+          issue_num = os.environ.get('ISSUE_NUMBER', '0')
+
+          # Extract all fenced code blocks
+          blocks = re.findall(r'```(?:json|ini)\s*\n(.*?)\n```', body, re.DOTALL)
+          if not blocks:
+              print("::error::No code blocks found in issue body")
+              sys.exit(1)
+
+          is_test = 'test-report' in labels
+          is_setting = 'gamesetting' in labels
+
+          # ---------- TEST REPORT ----------
+          if is_test:
+              json_block = next((b for b in blocks if b.strip().startswith('{')), None)
+              if not json_block:
+                  print("::error::No JSON payload in test report")
+                  sys.exit(1)
+              payload = json.loads(json_block)
+              path = pathlib.Path('data/games_data.json')
+              data = json.loads(path.read_text()) if path.exists() else {'version': 1, 'last_update': '', 'games': []}
+              games = data.get('games', [])
+              gid = payload.get('game_info', {}).get('game_id', 'UNKNOWN')
+              # find existing game entry
+              target = None
+              for g in games:
+                  if g.get('game_info', {}).get('game_id') == gid:
+                      target = g; break
+              entry = {k: payload[k] for k in ('game_info','test_review','test_details','test_environment') if k in payload}
+              if target:
+                  target.setdefault('entries', []).append(entry)
+              else:
+                  games.append({'game_info': payload.get('game_info', {}), 'entries': [entry]})
+              data['games'] = games
+              data['last_update'] = __import__('datetime').date.today().isoformat()
+              path.write_text(json.dumps(data, indent=2, ensure_ascii=False))
+              print(f"Merged test report for {gid}")
+
+              # Optional: if a custom .ini was included, add to gamesettings too
+              ini_block = next((b for b in blocks if b.strip().startswith('[')), None)
+              if ini_block:
+                  payload['_ini'] = ini_block
+
+          # ---------- GAMESETTING ----------
+          if is_setting or (is_test and 'ini_block' in dir() and ini_block):
+              # For a pure gamesetting issue, we need to parse metadata from body
+              # The body uses a Markdown structure; we can extract sections
+              # Fallback: look for a JSON payload too
+              json_block = next((b for b in blocks if b.strip().startswith('{')), None)
+              ini_block = next((b for b in blocks if b.strip().startswith('[')), None)
+              if not json_block and not ini_block:
+                  print("::error::No gamesetting content found")
+                  sys.exit(1)
+
+              path = pathlib.Path('data/gamesettings.json')
+              data = json.loads(path.read_text()) if path.exists() else {'version': 2, 'last_update': '', 'settings': []}
+              settings = data.get('settings', [])
+
+              # Build minimal entry from ini_block + parsed metadata from body
+              def md(label):
+                  m = re.search(rf'\*\*{label}:\*\*\s*(.+)', body)
+                  return m.group(1).strip() if m else ''
+
+              game_line = md('Game') or ''
+              gid_match = re.search(r'`([A-Z0-9]+)`', game_line)
+              gid = gid_match.group(1) if gid_match else 'UNKNOWN'
+              gtitle = re.sub(r'\s*\(`[^`]+`\)\s*', '', game_line).strip() or 'Unknown'
+              author = md('Author') or 'Anonymous'
+              version = md('Target Rt:Core') or 'Any'
+              title_m = re.search(r'^\[GameSetting\]\s*(.+?)\s*—\s*(.+)$', github_issue_title if 'github_issue_title' in dir() else '', re.M)
+              # Fallback to first line of body
+              title = md('Title') or 'Community Config'
+
+              # Find or create game group
+              group = next((s for s in settings if s.get('game', '').lower() == gtitle.lower()), None)
+              cfg = {
+                  'id': f"{gid.lower()}-{author.lower().replace(' ','-')}-{int(__import__('time').time())}",
+                  'filename': f"{gid}_rtmuos.ini",
+                  'universal_filename': f"{gid[:3]}_rtmuos.ini",
+                  'title': title,
+                  'author': author,
+                  'description': '',
+                  'tags': [],
+                  'raw_content': ini_block or '',
+                  'content_url': ''
+              }
+              if group:
+                  group.setdefault('configs', []).append(cfg)
+                  gids = group.setdefault('game_ids', [])
+                  if not any(x.get('id') == gid for x in gids):
+                      gids.append({'id': gid, 'region': 'NTSC'})
+              else:
+                  settings.append({
+                      'game': gtitle,
+                      'game_ids': [{'id': gid, 'region': 'NTSC'}],
+                      'system': 'GC',
+                      'configs': [cfg]
+                  })
+              data['settings'] = settings
+              data['last_update'] = __import__('datetime').date.today().isoformat()
+              path.write_text(json.dumps(data, indent=2, ensure_ascii=False))
+              print(f"Merged gamesetting for {gid}")
+          PY
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/games_data.json data/gamesettings.json || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto-merge from issue #${{ github.event.issue.number }}"
+            git push
+          else
+            echo "Nothing to commit"
+          fi
+
+      - name: Comment & close issue
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: '✅ **Auto-merged!** Your submission is now live in the database. Thanks for contributing!'
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed'
+            });
