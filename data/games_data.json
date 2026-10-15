@@ -4213,7 +4213,7 @@
             "device": "Unknown Device",
             "muos_version": ""
           },
-          "cover_art": "",
+          "cover_art": "https://art.gametdb.com/wii/cover/EN/GOWP69.png?1330261887",
           "custom_settings": [],
           "attachments": []
         }
@@ -8847,7 +8847,7 @@
             "device": "RG-34XX SP",
             "muos_version": "Jacaranda"
           },
-          "cover_art": "",
+          "cover_art": "https://art.gametdb.com/wii/cover/EN/GOWP69.png?1330261887",
           "custom_settings": [],
           "attachments": []
         },
@@ -8876,7 +8876,7 @@
             "device": "RG34XX SP",
             "muos_version": "2508.3 Golden Goose"
           },
-          "cover_art": "",
+          "cover_art": "https://art.gametdb.com/wii/cover/EN/GOWP69.png?1330261887",
           "custom_settings": [
             {
               "set_type": "Config",
