@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_update": "2026-09-29",
+  "last_update": "2026-10-16",
   "games": [
     {
       "game_info": {
@@ -978,7 +978,7 @@
           "test_details": {
             "rtcore_version": "v9 Goose or prior",
             "core_profile": "All of them (tested multiple)",
-            "considerations": ""
+            "considerations": "[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -1592,7 +1592,7 @@
           "test_details": {
             "rtcore_version": "v11.0.0 (prerelease)",
             "core_profile": "Speed Hack",
-            "considerations": "Simply perfect, applying a light HD texture pack makes it look even better visually. No lag, no FPS drops, simply perfect."
+            "considerations": "Simply perfect, applying a light HD texture pack makes it look even better visually. No lag, no FPS drops, simply perfect.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -1868,7 +1868,7 @@
           "test_details": {
             "rtcore_version": "v10.5.3",
             "core_profile": "Speed Hack. Default",
-            "considerations": "To be honest, the platforming sections are perfectly playable and even enjoyable, would rate 5*. However, in the central city hub and during races the lagging gets really heavy, dropping FPS down to 20-25"
+            "considerations": "To be honest, the platforming sections are perfectly playable and even enjoyable, would rate 5*. However, in the central city hub and during races the lagging gets really heavy, dropping FPS down to 20-25\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -1936,7 +1936,7 @@
           "test_details": {
             "rtcore_version": "v10.5.3",
             "core_profile": "SpeedHack",
-            "considerations": "Playable but has noticeable frame drops during combat. With further optimizations and tweaking, performance could improve significantly."
+            "considerations": "Playable but has noticeable frame drops during combat. With further optimizations and tweaking, performance could improve significantly.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -1975,7 +1975,7 @@
           "test_details": {
             "rtcore_version": "v10.6 (pre release)",
             "core_profile": "Default",
-            "considerations": "Gameplay suffers from slowdowns during combat, but the visuals are excellent. The Standard core profile provides the best performance. The Performance core sacrifices too much graphical quality."
+            "considerations": "Gameplay suffers from slowdowns during combat, but the visuals are excellent. The Standard core profile provides the best performance. The Performance core sacrifices too much graphical quality.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -2004,7 +2004,7 @@
           "test_details": {
             "rtcore_version": "v11.0.0 'Frontendone' (prerelease)",
             "core_profile": "Speedup 2",
-            "considerations": "Combat is noticeably smoother and faster, but still not at a point where gameplay is enjoyable and worthy of the name. However, the progress is clearly visible, even if the trade-off has been the graphical quality of the game, still enjoyable but compared to the perfect visuals you get with the Default profile... it's a real shame. But we do not give up, still Sbrobbing, still Rintromping."
+            "considerations": "Combat is noticeably smoother and faster, but still not at a point where gameplay is enjoyable and worthy of the name. However, the progress is clearly visible, even if the trade-off has been the graphical quality of the game, still enjoyable but compared to the perfect visuals you get with the Default profile... it's a real shame. But we do not give up, still Sbrobbing, still Rintromping.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -2228,7 +2228,7 @@
           "test_details": {
             "rtcore_version": "v10.6 (pre release)",
             "core_profile": "Speedup 1",
-            "considerations": "Almost perfect. Some lag during intense scenes, but overall very playable. Further in-depth testing is needed to confirm full stability."
+            "considerations": "Almost perfect. Some lag during intense scenes, but overall very playable. Further in-depth testing is needed to confirm full stability.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -3222,7 +3222,7 @@
           "test_details": {
             "rtcore_version": "v10.5.3",
             "core_profile": "SpeedHack",
-            "considerations": "Runs smoothly at 40 FPS. Gets a bit laggy in large / crowded spaces.\nVideo sequences are perfect.\nPlayable, with issues"
+            "considerations": "Runs smoothly at 40 FPS. Gets a bit laggy in large / crowded spaces.\nVideo sequences are perfect.\nPlayable, with issues\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -3602,7 +3602,7 @@
           "test_details": {
             "rtcore_version": "v10.5-124",
             "core_profile": "Performance",
-            "considerations": "The game boots but runs at its worst. Also used speedhacks and other performance settings but the result is basically the same."
+            "considerations": "The game boots but runs at its worst. Also used speedhacks and other performance settings but the result is basically the same.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -3631,7 +3631,7 @@
           "test_details": {
             "rtcore_version": "v10.5-124",
             "core_profile": "Performance",
-            "considerations": "The game boots but runs at its worst. Also used sppedhacks and other performance settings but the result is basically the same."
+            "considerations": "The game boots but runs at its worst. Also used sppedhacks and other performance settings but the result is basically the same.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -3709,7 +3709,7 @@
           "test_details": {
             "rtcore_version": "v10.5.3",
             "core_profile": "All of them (tested multiple)",
-            "considerations": "Perfectly playable, some minor lagging in video scenes."
+            "considerations": "Perfectly playable, some minor lagging in video scenes.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -4089,7 +4089,7 @@
           "test_details": {
             "rtcore_version": "v11.0.00 (prerelease)",
             "core_profile": "All of them",
-            "considerations": "Can't run properly. Only with Black Screen Fix and Commpatibility profiles is able to go past the bootanim or the menu ui."
+            "considerations": "Can't run properly. Only with Black Screen Fix and Commpatibility profiles is able to go past the bootanim or the menu ui.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -7160,7 +7160,7 @@
           "test_details": {
             "rtcore_version": "v11.0.00 (prerelease)",
             "core_profile": "Compatibility",
-            "considerations": "[Disc 1] Only with the Compatibility profile does the game manage to boot past the \"Licensed by Nintendo\" screen shortly after startup.\nUnfortunately, this doesn't resolve the low frame rate, which stays locked at around 30 FPS during gameplay. This causes lag that, while not extreme, is still quite annoying. Ultimately, a game like this is unplayable with an issue like this.[Disc 1] Only with the Compatibility profile the game can go past the \"Licensed by Nintendo\" screen shortly after the boot.\nHowever the average FPS during the gaming session is stable on 20-30 and way too laggy to be enjoyable."
+            "considerations": "[Disc 1] Only with the Compatibility profile does the game manage to boot past the \"Licensed by Nintendo\" screen shortly after startup.\nUnfortunately, this doesn't resolve the low frame rate, which stays locked at around 30 FPS during gameplay. This causes lag that, while not extreme, is still quite annoying. Ultimately, a game like this is unplayable with an issue like this.[Disc 1] Only with the Compatibility profile the game can go past the \"Licensed by Nintendo\" screen shortly after the boot.\nHowever the average FPS during the gaming session is stable on 20-30 and way too laggy to be enjoyable.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -7384,7 +7384,7 @@
           "test_details": {
             "rtcore_version": "v11.0.00 (prerelease)",
             "core_profile": "All of them",
-            "considerations": "Doesn't boot."
+            "considerations": "Doesn't boot.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8086,7 +8086,7 @@
           "test_details": {
             "rtcore_version": "v10.5.3",
             "core_profile": "default",
-            "considerations": "Still running in slowmotion, the graphics look good but like this is absolutely not playable"
+            "considerations": "Still running in slowmotion, the graphics look good but like this is absolutely not playable\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8125,7 +8125,7 @@
           "test_details": {
             "rtcore_version": "v10.5.300",
             "core_profile": "Default",
-            "considerations": "Boots but is heavily lagging all the time"
+            "considerations": "Boots but is heavily lagging all the time\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8281,7 +8281,7 @@
           "test_details": {
             "rtcore_version": "v10.5.3",
             "core_profile": "Various / All profiles tested",
-            "considerations": "Profiles tested: Speedhack,Performance, Speedup1, Default\nSadly the game won't go past the first option selection window"
+            "considerations": "Profiles tested: Speedhack,Performance, Speedup1, Default\nSadly the game won't go past the first option selection window\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8326,7 +8326,7 @@
           "test_details": {
             "rtcore_version": "v10.5.3",
             "core_profile": "Performance",
-            "considerations": "Perfect , only during the cutscenes there may be some minor lagging.\nEverything else is awesome."
+            "considerations": "Perfect , only during the cutscenes there may be some minor lagging.\nEverything else is awesome.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8365,7 +8365,7 @@
           "test_details": {
             "rtcore_version": "v10.5.3",
             "core_profile": "Default",
-            "considerations": "Not booting"
+            "considerations": "Not booting\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8410,7 +8410,7 @@
           "test_details": {
             "rtcore_version": "v11.0.0 (current)",
             "core_profile": "Ultra",
-            "considerations": "The game actually runs much more smoothly than its predecessor Budokai. The fights still suffer from frame rate drops, which are noticeable, but I managed to complete several battles without major issues. However, heavy lag persists during cutscenes, and the experimental Ultra profile significantly sacrifices graphical quality for smoother gameplay. I will run further tests with more stable profiles as soon as possible."
+            "considerations": "The game actually runs much more smoothly than its predecessor Budokai. The fights still suffer from frame rate drops, which are noticeable, but I managed to complete several battles without major issues. However, heavy lag persists during cutscenes, and the experimental Ultra profile significantly sacrifices graphical quality for smoother gameplay. I will run further tests with more stable profiles as soon as possible.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8503,7 +8503,7 @@
           "test_details": {
             "rtcore_version": "v11.0.0 (prerelease)",
             "core_profile": "Various / All profiles tested",
-            "considerations": "Unfortunately, even with the Black Screen Fix profile, the game does not boot."
+            "considerations": "Unfortunately, even with the Black Screen Fix profile, the game does not boot.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8561,7 +8561,7 @@
           "test_details": {
             "rtcore_version": "v11.0.0 (prerelease)",
             "core_profile": "Black Screen Fix, Compatibility, Default",
-            "considerations": "Unfortunately, even with various profiles, the game fails to boot."
+            "considerations": "Unfortunately, even with various profiles, the game fails to boot.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8617,7 +8617,7 @@
           "test_details": {
             "rtcore_version": "v11.0.0-dev",
             "core_profile": "Speed Hack, Performance, Ultra",
-            "considerations": "UI graphics run smoothly at around 45 FPS, sometimes even higher. However, gameplay sessions and cutscenes lag heavily, making it currently unplayable."
+            "considerations": "UI graphics run smoothly at around 45 FPS, sometimes even higher. However, gameplay sessions and cutscenes lag heavily, making it currently unplayable.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8656,7 +8656,7 @@
           "test_details": {
             "rtcore_version": "v10.5.3",
             "core_profile": "Speed Hack",
-            "considerations": "Does not boot, exactly like its NTSC sibling."
+            "considerations": "Does not boot, exactly like its NTSC sibling.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8695,7 +8695,7 @@
           "test_details": {
             "rtcore_version": "v11.0.00-dev",
             "core_profile": "All of them",
-            "considerations": "Unplayable, battle sessions runs down to 10FPS.\t"
+            "considerations": "Unplayable, battle sessions runs down to 10FPS.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8734,7 +8734,7 @@
           "test_details": {
             "rtcore_version": "v11.0.00-dev",
             "core_profile": "Speed Hacks",
-            "considerations": "Simply PERFECT"
+            "considerations": "Simply PERFECT\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8787,7 +8787,7 @@
           "test_details": {
             "rtcore_version": "v11.0.00 (prerelease)",
             "core_profile": "All of them",
-            "considerations": ""
+            "considerations": "[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8927,7 +8927,7 @@
           "test_details": {
             "rtcore_version": "v11.5.00 'Comfort Zone' (prerelease)",
             "core_profile": "All of them",
-            "considerations": "Boots and runs without crashing. Unfortunately it's impossible to play with it, too heavy stuttering. \nBetter in the UIs"
+            "considerations": "Boots and runs without crashing. Unfortunately it's impossible to play with it, too heavy stuttering. \nBetter in the UIs\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8966,7 +8966,7 @@
           "test_details": {
             "rtcore_version": "",
             "core_profile": "All of them",
-            "considerations": "Profiles tested: Speedhack,Performance, Speedup1, Default\nSadly the game won't go past the first option selection window"
+            "considerations": "Profiles tested: Speedhack,Performance, Speedup1, Default\nSadly the game won't go past the first option selection window\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8974,6 +8974,84 @@
             "muos_version": "2601.1 Funky Jacaranda"
           },
           "cover_art": "",
+          "custom_settings": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "game_info": {
+        "game_id": "GREP08",
+        "system": "GC",
+        "game": "Mega Man Network Transmission",
+        "region": "PAL"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GREP08",
+            "system": "GC",
+            "game": "Mega Man Network Transmission",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 0,
+            "fps": "???",
+            "boot": "NO",
+            "playable": "NO",
+            "fps_min": 0,
+            "fps_max": 0
+          },
+          "test_details": {
+            "rtcore_version": "v11.5.00-III FrontendONE",
+            "core_profile": "Various / All profiles tested",
+            "considerations": "Only Black Screen, tried every Rt:Profile\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "Anbernic RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "https://art.gametdb.com/wii/cover/EN/GREP08.png?1331477838",
+          "custom_settings": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "game_info": {
+        "game_id": "GLZP7D",
+        "system": "GC",
+        "game": "Geist",
+        "region": "PAL"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "GLZP7D",
+            "system": "GC",
+            "game": "Geist",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 0,
+            "fps": "???",
+            "boot": "NO",
+            "playable": "NO",
+            "fps_min": 0,
+            "fps_max": 0
+          },
+          "test_details": {
+            "rtcore_version": "v11.5.00-III FrontendONE",
+            "core_profile": "Various / All profiles tested",
+            "considerations": "Only Black Screen, tried every Rt:Profile\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "Anbernic RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "https://art.gametdb.com/wii/cover/EN/GLZP7D.png",
           "custom_settings": [],
           "attachments": []
         }
