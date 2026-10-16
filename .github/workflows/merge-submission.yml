@@ -10,10 +10,12 @@ permissions:
 
 jobs:
   merge:
-    if: |
-      (contains(github.event.issue.labels.*.name, 'gamesetting') ||
-       contains(github.event.issue.labels.*.name, 'test-report')) &&
-      github.event.issue.state == 'open'
+    if: >
+      github.event.issue.state == 'open' &&
+      (
+        contains(join(github.event.issue.labels.*.name, ','), 'gamesetting') ||
+        contains(join(github.event.issue.labels.*.name, ','), 'test-report')
+      )
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -33,12 +35,13 @@ jobs:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
           python - <<'PY'
-          import os, re, json, pathlib, sys
-          body = os.environ.get('ISSUE_BODY', '')
-          labels = os.environ.get('ISSUE_LABELS', '')
+          import os, re, json, pathlib, sys, time, datetime
+
+          body = os.environ.get('ISSUE_BODY', '') or ''
+          labels = os.environ.get('ISSUE_LABELS', '') or ''
           issue_num = os.environ.get('ISSUE_NUMBER', '0')
 
-          # Extract all fenced code blocks
+          # Extract all fenced code blocks (json or ini)
           blocks = re.findall(r'```(?:json|ini)\s*\n(.*?)\n```', body, re.DOTALL)
           if not blocks:
               print("::error::No code blocks found in issue body")
@@ -46,6 +49,12 @@ jobs:
 
           is_test = 'test-report' in labels
           is_setting = 'gamesetting' in labels
+
+          # helper to ensure data dir exists before writing files
+          def ensure_parent(path):
+              p = pathlib.Path(path)
+              if not p.parent.exists():
+                  p.parent.mkdir(parents=True, exist_ok=True)
 
           # ---------- TEST REPORT ----------
           if is_test:
@@ -55,7 +64,8 @@ jobs:
                   sys.exit(1)
               payload = json.loads(json_block)
               path = pathlib.Path('data/games_data.json')
-              data = json.loads(path.read_text()) if path.exists() else {'version': 1, 'last_update': '', 'games': []}
+              ensure_parent(path)
+              data = json.loads(path.read_text()) if path.exists() and path.read_text().strip() else {'version': 1, 'last_update': '', 'games': []}
               games = data.get('games', [])
               gid = payload.get('game_info', {}).get('game_id', 'UNKNOWN')
               # find existing game entry
@@ -69,7 +79,7 @@ jobs:
               else:
                   games.append({'game_info': payload.get('game_info', {}), 'entries': [entry]})
               data['games'] = games
-              data['last_update'] = __import__('datetime').date.today().isoformat()
+              data['last_update'] = datetime.date.today().isoformat()
               path.write_text(json.dumps(data, indent=2, ensure_ascii=False))
               print(f"Merged test report for {gid}")
 
@@ -79,10 +89,7 @@ jobs:
                   payload['_ini'] = ini_block
 
           # ---------- GAMESETTING ----------
-          if is_setting or (is_test and 'ini_block' in dir() and ini_block):
-              # For a pure gamesetting issue, we need to parse metadata from body
-              # The body uses a Markdown structure; we can extract sections
-              # Fallback: look for a JSON payload too
+          if is_setting or (is_test and 'ini_block' in locals() and ini_block):
               json_block = next((b for b in blocks if b.strip().startswith('{')), None)
               ini_block = next((b for b in blocks if b.strip().startswith('[')), None)
               if not json_block and not ini_block:
@@ -90,7 +97,8 @@ jobs:
                   sys.exit(1)
 
               path = pathlib.Path('data/gamesettings.json')
-              data = json.loads(path.read_text()) if path.exists() else {'version': 2, 'last_update': '', 'settings': []}
+              ensure_parent(path)
+              data = json.loads(path.read_text()) if path.exists() and path.read_text().strip() else {'version': 2, 'last_update': '', 'settings': []}
               settings = data.get('settings', [])
 
               # Build minimal entry from ini_block + parsed metadata from body
@@ -104,14 +112,12 @@ jobs:
               gtitle = re.sub(r'\s*\(`[^`]+`\)\s*', '', game_line).strip() or 'Unknown'
               author = md('Author') or 'Anonymous'
               version = md('Target Rt:Core') or 'Any'
-              title_m = re.search(r'^\[GameSetting\]\s*(.+?)\s*—\s*(.+)$', github_issue_title if 'github_issue_title' in dir() else '', re.M)
-              # Fallback to first line of body
               title = md('Title') or 'Community Config'
 
               # Find or create game group
               group = next((s for s in settings if s.get('game', '').lower() == gtitle.lower()), None)
               cfg = {
-                  'id': f"{gid.lower()}-{author.lower().replace(' ','-')}-{int(__import__('time').time())}",
+                  'id': f"{gid.lower()}-{author.lower().replace(' ','-')}-{int(time.time())}",
                   'filename': f"{gid}_rtmuos.ini",
                   'universal_filename': f"{gid[:3]}_rtmuos.ini",
                   'title': title,
@@ -134,7 +140,7 @@ jobs:
                       'configs': [cfg]
                   })
               data['settings'] = settings
-              data['last_update'] = __import__('datetime').date.today().isoformat()
+              data['last_update'] = datetime.date.today().isoformat()
               path.write_text(json.dumps(data, indent=2, ensure_ascii=False))
               print(f"Merged gamesetting for {gid}")
           PY
