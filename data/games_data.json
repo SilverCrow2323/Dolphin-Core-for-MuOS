@@ -2121,6 +2121,35 @@
           "cover_art": "",
           "custom_settings": [],
           "attachments": []
+        },
+        {
+          "game_info": {
+            "game_id": "GDDP41",
+            "system": "GC",
+            "game": "Donald Duck Quack Attack",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 4,
+            "fps": "22-30",
+            "boot": "YES",
+            "playable": "YES",
+            "fps_min": 22,
+            "fps_max": 30
+          },
+          "test_details": {
+            "rtcore_version": "v11.5.00-II 'Bash Arsenal'",
+            "core_profile": "Various / All profiles tested",
+            "considerations": "Slight stutter in animation fluidity, otherwise runs well.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "Anbernic RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "",
+          "custom_settings": [],
+          "attachments": []
         }
       ]
     },
@@ -2156,6 +2185,35 @@
             "tester": "Sexy_Shrek",
             "device": "Unknown Device",
             "muos_version": ""
+          },
+          "cover_art": "",
+          "custom_settings": [],
+          "attachments": []
+        },
+        {
+          "game_info": {
+            "game_id": "GKDP01",
+            "system": "GC",
+            "game": "Doshin the Giant",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 0,
+            "fps": "???",
+            "boot": "NO",
+            "playable": "NO",
+            "fps_min": 0,
+            "fps_max": 0
+          },
+          "test_details": {
+            "rtcore_version": "v11.5.00-II 'Bash Arsenal'",
+            "core_profile": "Various / All profiles tested",
+            "considerations": "Doesn't boot, black screen. Tried every Rt:Profile.\nROM is NKit format."
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "Anbernic RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
           },
           "cover_art": "",
           "custom_settings": [],
@@ -4836,6 +4894,35 @@
             "tester": "Danster21",
             "device": "Unknown Device",
             "muos_version": ""
+          },
+          "cover_art": "",
+          "custom_settings": [],
+          "attachments": []
+        },
+        {
+          "game_info": {
+            "game_id": "GRHP41",
+            "system": "GC",
+            "game": "Rayman 3 - Hoodlum Havoc",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 1,
+            "fps": "???",
+            "boot": "CRASH",
+            "playable": "NO",
+            "fps_min": 0,
+            "fps_max": 0
+          },
+          "test_details": {
+            "rtcore_version": "v11.5.00-II 'Bash Arsenal'",
+            "core_profile": "Various / All profiles tested",
+            "considerations": "Boots and shows initial logos, language selection screen appears, but after selecting language only black screen. Tried every Rt:Profile.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "Anbernic RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
           },
           "cover_art": "",
           "custom_settings": [],
@@ -8867,7 +8954,7 @@
             "fps_max": 12
           },
           "test_details": {
-            "rtcore_version": "v11.5.00",
+            "rtcore_version": "v11.5.00-II 'Bash Arsenal'",
             "core_profile": "Performance",
             "considerations": "Need for Speed: Most Wanted – game-specific Performance profile\nFor Need for Speed: Most Wanted (GameCube PAL / Game ID GOWP69), the existing Rt:Core Performance profile works well with one important game-specific adjustment and a Potato Patched Rom:\n[Core]\nOverclock = 0.20\n\nThe regular Performance GFX.ini can be used unchanged. Its existing performance-oriented graphics/EFB/XFB settings already work well for this title.\nSuggested implementation:\n\nDetect Need for Speed: Most Wanted by Game ID GOWP69.\nStart from the normal Rt:Core Performance profile.\nOverride only the CPU emulation overclock value to 0.20.\nKeep the regular Performance GFX.ini.\nDo not modify the global Performance profile for other games.\nOn the H700 / RG34XX SP this setting was tested to perform significantly better for Need for Speed: Most Wanted than the default Performance CPU clock.\nPotato Edition / prepared RVZ *\nFor additional performance improvements, I also created Need for Speed Most Wanted Potato Edition, a small Windows patcher that prepares a clean PAL GOWP69 GameCube image and creates a verified RVZ optimized for this use case.\nThe patcher applies several game-side rendering reductions, including reduced scenery geometry/LOD paths, disabled car shadows and reflections, disabled sky rendering and other visual reductions, as well as forcing the reduced 2-player asset/geometry path in single-player.\nRepository and patcher:\n[GITHUB-LINK]\nThis is optional—the proposed Dolphin profile should still work with the original game—but the Potato Edition RVZ is intended specifically for low-power H700 handhelds and provides additional performance headroom."
           },
@@ -9052,6 +9139,45 @@
             "muos_version": "2601.1 Funky Jacaranda"
           },
           "cover_art": "https://art.gametdb.com/wii/cover/EN/GLZP7D.png",
+          "custom_settings": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "game_info": {
+        "game_id": "RMUP8P",
+        "system": "Wii",
+        "game": "Muramasa: The Demon Blade",
+        "region": "PAL"
+      },
+      "entries": [
+        {
+          "game_info": {
+            "game_id": "RMUP8P",
+            "system": "Wii",
+            "game": "Muramasa: The Demon Blade",
+            "region": "PAL"
+          },
+          "test_review": {
+            "rating": 2,
+            "fps": "8-15",
+            "boot": "YES",
+            "playable": "NO",
+            "fps_min": 8,
+            "fps_max": 15
+          },
+          "test_details": {
+            "rtcore_version": "v11.5.00-II 'Bash Arsenal'",
+            "core_profile": "Various / All profiles tested",
+            "considerations": "Game boots and runs without crashes or major bugs, but the lagging is far too heavy to appreciate the gameplay. Especially for a title like Muramasa, where the beauty of its sophisticated and unique aesthetic is heavily compromised by such gameplay, it's almost painful to \"play\".\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+          },
+          "test_environment": {
+            "tester": "sirpips",
+            "device": "Anbernic RG35XX H",
+            "muos_version": "2601.1 Funky Jacaranda"
+          },
+          "cover_art": "https://art.gametdb.com/wii/cover/EN/RMUP8P.png",
           "custom_settings": [],
           "attachments": []
         }
