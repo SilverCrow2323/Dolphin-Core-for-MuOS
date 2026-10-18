@@ -503,7 +503,7 @@
             "device": "RG4xxxx",
             "muos_version": ""
           },
-          "cover_art": "",
+          "cover_art": "https://art.gametdb.com/wii/cover/US/GLME01.png",
           "custom_settings": [
             {
               "set_type": "Game Setting",
@@ -3326,7 +3326,7 @@
             "device": "Unknown Device",
             "muos_version": ""
           },
-          "cover_art": "",
+          "cover_art": "https://art.gametdb.com/wii/cover/US/GLME01.png",
           "custom_settings": [],
           "attachments": []
         }
@@ -8750,7 +8750,7 @@
             "device": "Anbernic RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
-          "cover_art": "",
+          "cover_art": "https://art.gametdb.com/wii/cover/EN/GBTP70.png?1317735940",
           "custom_settings": [],
           "attachments": []
         }
@@ -9107,7 +9107,7 @@
     },
     {
       "game_info": {
-        "game_id": "GLZP7D",
+        "game_id": "GEDP01",
         "system": "GC",
         "game": "Geist",
         "region": "PAL"
@@ -9115,7 +9115,7 @@
       "entries": [
         {
           "game_info": {
-            "game_id": "GLZP7D",
+            "game_id": "GEDP01",
             "system": "GC",
             "game": "Geist",
             "region": "PAL"
