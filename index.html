@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Dolphin Rt:Core · Compatibility Database</title>
 <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" />
+<link rel="manifest" href="./manifest.json" />
+<meta name="theme-color" content="#7c3aed" />
 <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:wght@400;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
@@ -118,7 +120,7 @@ select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%
 .btn-sm{padding:8px 14px;font-size:14px;}
 .btn-lg{padding:13px 24px;font-size:16px;}
 
-.rating-pills{max-width:1280px;margin:0 auto;padding:0 22px;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+.rating-pills{max-width:1280px;margin:0 auto;padding:0 22px;display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
 .rating-pill{position:relative;padding:18px 20px;border:2px solid var(--pill-color);border-radius:14px;cursor:pointer;display:flex;flex-direction:column;gap:7px;overflow:hidden;transition:all .2s;background:color-mix(in srgb,var(--pill-color) 10%,var(--surface));}
 .rating-pill::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,color-mix(in srgb,var(--pill-color) 30%,transparent),transparent 70%);pointer-events:none;opacity:.5;}
 .rating-pill:hover{transform:translateY(-2px);background:color-mix(in srgb,var(--pill-color) 18%,var(--surface));box-shadow:0 8px 20px color-mix(in srgb,var(--pill-color) 30%,transparent);}
@@ -131,6 +133,7 @@ select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%
 .rating-pill[data-r="3"]{--pill-color:#eab308;}
 .rating-pill[data-r="2"]{--pill-color:#f97316;}
 .rating-pill[data-r="1"]{--pill-color:#ef4444;}
+.rating-pill[data-r="0"]{--pill-color:#64748b;}
 @media (max-width:800px){.rating-pills{grid-template-columns:repeat(2,1fr);}}
 
 .main-wrap{max-width:1280px;margin:0 auto;padding:22px 44px 44px;}
@@ -166,8 +169,9 @@ body.theme-wii{ --wm-opacity:.12; }
 .cover.placeholder-wii::before{opacity:.30;}
 
 .gid-stack{position:absolute;top:12px;left:12px;max-width:calc(100% - 24px - var(--fav-sz) - 8px);display:flex;flex-direction:column;align-items:flex-start;gap:4px;z-index:12;}
-.gid-chip{padding:3px 10px;background:rgba(8,8,15,.85);backdrop-filter:blur(6px);border:1px solid rgba(160,192,208,.4);border-radius:5px;font-family:'JetBrains Mono',monospace;font-size:var(--gid-fs);font-weight:900;color:#a0c0d0;letter-spacing:.05em;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;}
+.gid-chip{cursor:pointer;transition:all .15s;padding:3px 10px;background:rgba(8,8,15,.85);backdrop-filter:blur(6px);border:1px solid rgba(160,192,208,.4);border-radius:5px;font-family:'JetBrains Mono',monospace;font-size:var(--gid-fs);font-weight:900;color:#a0c0d0;letter-spacing:.05em;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;}
 body.theme-wii .gid-chip{background:rgba(255,255,255,.88);border-color:rgba(2,132,199,.5);color:#0369a1;}
+.gid-chip:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
 
 .fav-btn{position:absolute;top:12px;right:12px;width:var(--fav-sz);height:var(--fav-sz);border-radius:50%;background:rgba(8,8,15,.92);backdrop-filter:blur(8px);border:3px solid rgba(255,255,255,.32);display:flex;align-items:center;justify-content:center;color:#cbd5e1;font-size:calc(var(--fav-sz) * .4);cursor:pointer;z-index:13;transition:all .2s;box-shadow:0 0 0 2px rgba(0,0,0,.9),0 4px 10px rgba(0,0,0,.6);}
 .fav-btn:hover{color:#ec4899;border-color:#ec4899;transform:scale(1.08);}
@@ -391,6 +395,7 @@ body.theme-wii .ring-star .num{color:#0a1a2c;}
 .ss-result{display:flex;align-items:center;gap:14px;padding:13px 16px;cursor:pointer;border-bottom:1px solid var(--border);transition:background .1s;}
 .ss-result:hover,.ss-result.active{background:color-mix(in srgb,var(--accent) 14%,var(--surface));}
 .ss-result .ss-flag{width:28px;height:19px;object-fit:cover;border-radius:3px;border:1px solid var(--border-2);flex-shrink:0;}
+.ss-result .ss-cover-mini{width:32px;height:42px;object-fit:cover;border-radius:4px;border:1px solid var(--border-2);flex-shrink:0;background:var(--surface-2);}
 .ss-result .ss-body{flex:1;min-width:0;}
 .ss-result .ss-t{font-weight:800;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .ss-result .ss-r{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-muted);margin-top:3px;font-weight:700;}
@@ -492,6 +497,8 @@ body.theme-wii .form-group label{flex-direction:row-reverse;justify-content:flex
 </head>
 <body class="theme-gc">
 
+<noscript><style>body > *:not(noscript){display:none !important;}</style><div style="position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;background:#08080f;color:#f1f5f9;text-align:center;font-family:sans-serif;"><div style="max-width:520px;"><h1 style="font-size:32px;margin:0 0 14px;font-family:Audiowide,sans-serif;color:#a855f7;">JavaScript richiesto</h1><p style="font-size:16px;line-height:1.6;color:#a8b3c2;margin:0;">Questa pagina necessita JavaScript per caricare il database di compatibilit\u00e0. Abilita JavaScript nel browser e ricarica.</p></div></div></noscript>
+
 <div id="toast" class="toast"></div>
 
 <header id="header">
@@ -538,7 +545,7 @@ body.theme-wii .form-group label{flex-direction:row-reverse;justify-content:flex
     <div class="search-wrap"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="searchInput" placeholder="Search game title or Game ID…" autocomplete="off"><button class="clear" id="clearSearch">✕</button></div>
     <select id="regionFilter" style="max-width:170px;"><option value="all">🌍 Region</option><option value="PAL">🇪🇺 PAL</option><option value="NTSC">🇺🇸 NTSC</option><option value="JPN">🇯🇵 JPN</option></select>
     <select id="bootFilter" style="max-width:170px;"><option value="all">💿 Boot</option><option value="YES">✅ Boots</option><option value="CRASH">⚠️ Crash</option><option value="NO">❌ No boot</option></select>
-    <select id="sortSelect" style="max-width:190px;"><option value="rating-desc">⭐ Best first</option><option value="rating-asc">⭐ Worst first</option><option value="title-asc">📝 A → Z</option><option value="title-desc">📝 Z → A</option><option value="tests-desc">🧪 Most tested</option></select>
+    <select id="sortSelect" style="max-width:190px;"><option value="rating-desc">⭐ Best first</option><option value="recent">🆕 Recent</option><option value="rating-asc">⭐ Worst first</option><option value="title-asc">📝 A → Z</option><option value="title-desc">📝 Z → A</option><option value="tests-desc">🧪 Most tested</option></select>
     <div class="seg"><button id="vGrid" class="active" title="Grid"><i class="fa-solid fa-border-all"></i></button></div>
     <button class="btn btn-sm" id="favFilter" title="Favorites"><i class="fa-solid fa-heart"></i></button>
     <button class="btn btn-sm" id="resetBtn" title="Reset"><i class="fa-solid fa-rotate-left"></i></button>
@@ -551,6 +558,7 @@ body.theme-wii .form-group label{flex-direction:row-reverse;justify-content:flex
   <button class="rating-pill" data-r="3"><div class="rp-stars">★★★</div><div class="rp-name">Playable</div><div class="rp-count" id="c3">0</div></button>
   <button class="rating-pill" data-r="2"><div class="rp-stars">★★</div><div class="rp-name">Poor</div><div class="rp-count" id="c2">0</div></button>
   <button class="rating-pill" data-r="1"><div class="rp-stars">★</div><div class="rp-name">Broken</div><div class="rp-count" id="c1">0</div></button>
+  <button class="rating-pill" data-r="0"><div class="rp-stars">✕</div><div class="rp-name">No Boot</div><div class="rp-count" id="c0">0</div></button>
 </div>
 
 <main class="main-wrap">
@@ -749,6 +757,8 @@ body.theme-wii .form-group label{flex-direction:row-reverse;justify-content:flex
 'use strict';
 const URL_GAMES="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/games_data.json";
 const URL_SETTINGS="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/data/gamesettings.json";
+const URL_GAMES_FALLBACK="https://cdn.jsdelivr.net/gh/SilverCrow2323/Dolphin-Core-for-MuOS@main/data/games_data.json";
+const URL_SETTINGS_FALLBACK="https://cdn.jsdelivr.net/gh/SilverCrow2323/Dolphin-Core-for-MuOS@main/data/gamesettings.json";
 const GITHUB_ISSUE="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/issues/new";
 const FAV_KEY="dolphin-rtcore-favs-v2";
 const FLAGS={'PAL':'eu','NTSC':'us','NTSC / USA':'us','JPN':'jp','NTSC-J':'jp','NTSC / JPN':'jp'};
@@ -770,6 +780,20 @@ let _gamesCache=null;
 
 function escapeHtml(s){if(s==null)return '';return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function capitalize(t){if(!t)return '';return String(t).replace(/(^|[.!?]\s+)([a-zàèéìòùáéíóú])/g,(m,p1,p2)=>p1+p2.toUpperCase());}
+function highlightMatch(text,query){
+  const esc=escapeHtml(text);
+  if(!query||!query.trim())return esc;
+  const words=query.trim().split(/\s+/).filter(w=>w.length>=2);
+  let result=esc;
+  for(const w of words){
+    const safe=w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+    try{
+      const re=new RegExp('('+safe+')','gi');
+      result=result.replace(re,'<mark style="background:color-mix(in srgb,var(--accent) 45%,transparent);color:inherit;padding:0 2px;border-radius:3px;font-weight:900;">$1</mark>');
+    }catch(e){}
+  }
+  return result;
+}
 function ratingColor(r){return RATING_COLORS[Math.min(5,Math.max(0,Math.round(r)))];}
 function flagUrl(r){return 'https://flagcdn.com/w40/'+(FLAGS[r]||'un')+'.png';}
 function coverUrl(id,region){if(!id||id==='UNKNOWN')return null;const rc=REGION_COVER[region]||'US';return 'https://art.gametdb.com/wii/cover/'+rc+'/'+id+'.png';}
@@ -859,14 +883,16 @@ function aggregateEntries(entries){
 function applyFilters(){
   state.filtered=state.groupedGames.filter(item=>{
     if(state.search){const q=state.search;const ok=item.game.toLowerCase().includes(q)||(item.agg.gameId||'').toLowerCase().includes(q)||item.allRegions.some(r=>(r.gameId||'').toLowerCase().includes(q))||item.allRegions.some(r=>r.entries.some(e=>(e.test_details?.considerations||'').toLowerCase().includes(q)));if(!ok)return false;}
-    if(state.stars!=='all'){const s=parseInt(state.stars);if(s===1){if(item.agg.bestRating>1)return false;}else if(item.agg.bestRating!==s)return false;}
+    if(state.stars!=='all'){const s=parseInt(state.stars);if(s===0){if(item.agg.bestRating!==0)return false;}else if(s===1){if(item.agg.bestRating>1)return false;}else if(item.agg.bestRating!==s)return false;}
     if(state.region!=='all'){const has=item.allRegions.some(r=>state.region==='NTSC'?r.region.includes('NTSC'):r.region===state.region);if(!has)return false;}
     if(state.boot!=='all'&&item.agg.bestBoot!==state.boot)return false;
     if(state.favOnly&&!isFav(favKey(item)))return false;
+    if(state.tester){const has=item.allRegions.some(r=>r.entries.some(e=>(e.test_environment?.tester||'').toLowerCase()===state.tester));if(!has)return false;}
     return true;
   });
   const sorters={
     'rating-desc':(a,b)=>(b.agg.bestRating-a.agg.bestRating)||a.game.localeCompare(b.game),
+    'recent':(a,b)=>(b.agg.latestTs||0)-(a.agg.latestTs||0)||a.game.localeCompare(b.game),
     'rating-asc':(a,b)=>(a.agg.bestRating-b.agg.bestRating)||a.game.localeCompare(b.game),
     'title-asc':(a,b)=>a.game.localeCompare(b.game,undefined,{numeric:true,sensitivity:'base'}),
     'title-desc':(a,b)=>b.game.localeCompare(a.game,undefined,{numeric:true,sensitivity:'base'}),
@@ -958,13 +984,44 @@ function renderGridCard(item,idx){
     +'</div>';
 }
 
-function renderGames(){
+const PAGE_SIZE=40;
+let _gridObserver=null;
+function renderGames(reset){
+  if(reset===undefined)reset=true;
   const grid=$('gamesGrid');const empty=$('empty');
   $('loading').style.display='none';
   if(!state.filtered.length){grid.style.display='none';empty.style.display='block';$('emptyMsg').textContent=state.groupedGames.length?'No games match your filters.':'No games in the database yet.';return;}
   empty.style.display='none';grid.style.display='grid';
-  grid.innerHTML=state.filtered.map(renderGridCard).join('');
+  if(reset||state.shownCount===undefined||state.shownCount>state.filtered.length)state.shownCount=PAGE_SIZE;
+  const _visible=state.filtered.slice(0,state.shownCount);
+  let _html=_visible.map(renderGridCard).join('');
+  if(state.shownCount<state.filtered.length){
+    _html+='<div id="gridSentinel" style="grid-column:1/-1;text-align:center;padding:24px;"><div class="spinner" style="margin:0 auto 10px;"></div><div style="color:var(--text-muted);font-size:13px;font-weight:700;">Loading more\u2026</div></div>';
+  } else if(state.filtered.length>PAGE_SIZE){
+    _html+='<div style="grid-column:1/-1;text-align:center;padding:24px;color:var(--text-dim);font-size:13px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">\u2014 All '+state.filtered.length+' games shown \u2014</div>';
+  }
+  if(_gridObserver){_gridObserver.disconnect();_gridObserver=null;}
+  grid.innerHTML=_html;
+  const _sentinel=$('gridSentinel');
+  if(_sentinel&&'IntersectionObserver' in window){
+    _gridObserver=new IntersectionObserver(entries=>{
+      if(entries[0].isIntersecting){
+        state.shownCount=Math.min(state.shownCount+PAGE_SIZE,state.filtered.length);
+        renderGames(false);
+      }
+    },{rootMargin:'200px'});
+    _gridObserver.observe(_sentinel);
+  }
   grid.querySelectorAll('[data-idx]').forEach(el=>el.addEventListener('click',e=>{if(e.target.closest('[data-fav]'))return;openGameModal(+el.dataset.idx);}));
+  grid.querySelectorAll('.gid-chip').forEach(chip=>chip.addEventListener('click',e=>{
+    e.stopPropagation();
+    const txt=chip.textContent.trim();
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(()=>toast('📋 Copied '+txt)).catch(()=>toast('Copy failed'));
+    } else {
+      const ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');toast('📋 Copied '+txt);}catch(err){}ta.remove();
+    }
+  }));
   grid.querySelectorAll('[data-fav]').forEach(btn=>btn.addEventListener('click',e=>{
     e.stopPropagation();
     const key=btn.dataset.fav;
@@ -983,11 +1040,13 @@ function openGameModal(idx){
   $('gameModal').classList.add('show');
   document.body.style.overflow='hidden';
   renderGameModal();
+  try{const gid=currentGame.agg.gameId||'';if(gid){const url=new URL(location.href);url.searchParams.set('game',gid);history.replaceState(null,'',url.toString());}}catch(e){}
 }
 function closeGameModal(){
   const m=$('gameModal');
   m.classList.add('closing');
   setTimeout(()=>{m.classList.remove('show','closing');document.body.style.overflow='';},400);
+  try{const url=new URL(location.href);url.searchParams.delete('game');history.replaceState(null,'',url.toString());}catch(e){}
 }
 function renderGameModal(){
   const g=currentGame;
@@ -1006,6 +1065,7 @@ function renderGameModal(){
     ? '<button class="gs-count-chip" data-open-gs="'+escapeHtml(g.agg.gameId)+'" style="display:inline-flex;align-items:center;gap:8px;padding:9px 16px;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 20%,var(--surface)),color-mix(in srgb,var(--hot) 15%,var(--surface)));border:2px solid var(--accent);border-radius:10px;font-family:\'JetBrains Mono\',monospace;font-size:13px;font-weight:900;color:var(--accent);cursor:pointer;letter-spacing:.03em;transition:all .2s;margin-top:8px;"><i class="fa-solid fa-sliders"></i><b style="font-size:16px;color:var(--hot);">'+settingsCount+'</b> GameSettings <i class="fa-solid fa-arrow-right" style="font-size:11px;opacity:.7;"></i></button>'
     : '';
 
+  const reportBtn='<button class="btn btn-sm" data-report-game="'+escapeHtml(g.agg.gameId)+'" data-report-title="'+escapeHtml(g.game)+'" data-report-region="'+escapeHtml(currentRegion)+'" data-report-system="'+(state.console==='gc'?'GC':'Wii')+'" style="margin-top:8px;"><i class="fa-solid fa-clipboard-list"></i> Report this game</button>';
   $('gmBody').innerHTML=
     '<div style="display:flex;gap:24px;align-items:flex-start;padding:8px 0 20px;border-bottom:2px solid var(--border);margin-bottom:20px;flex-wrap:wrap;">'
     +'<div style="width:170px;height:228px;border-radius:14px;overflow:hidden;background:var(--surface-2);flex-shrink:0;border:3px solid var(--border-2);box-shadow:0 10px 28px rgba(0,0,0,.5);">'+(cover?'<img src="'+cover+'" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display=\'none\'">':'')+'</div>'
@@ -1019,6 +1079,7 @@ function renderGameModal(){
     +'<div style="padding:12px 16px;background:var(--surface-2);border:2px solid var(--border-2);border-radius:10px;text-align:center;"><div style="font-family:JetBrains Mono,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);font-weight:900;margin-bottom:5px;">🚀 FPS</div><div style="font-family:JetBrains Mono,monospace;font-size:22px;font-weight:900;">'+fmtFps(region.bestFpsStr)+'</div></div>'
     +'</div>'
     +gsChip
+    +reportBtn
     +'</div>'
     +'</div>'
     +'<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;" id="gmTabs">'+tabsHtml+'</div>'
@@ -1028,6 +1089,12 @@ function renderGameModal(){
   if(gsChipEl)gsChipEl.addEventListener('click',()=>{
     closeGameModal();
     setTimeout(()=>openGameSettings(g.agg.gameId),380);
+  });
+  const reportEl=$('gmBody').querySelector('[data-report-game]');
+  if(reportEl)reportEl.addEventListener('click',()=>{
+    const prefill={gameId:reportEl.dataset.reportGame||'',title:reportEl.dataset.reportTitle||'',region:reportEl.dataset.reportRegion||'',system:reportEl.dataset.reportSystem||''};
+    closeGameModal();
+    setTimeout(()=>openReportModal(prefill),380);
   });
 
   $('gmTabs').querySelectorAll('[data-region]').forEach(btn=>btn.addEventListener('click',()=>{currentRegion=btn.dataset.region;renderGameModal();}));
@@ -1077,7 +1144,15 @@ function renderTestEntry(e,i){
     +attachHtml
     +'</div></div></div>';
 }
-function openTester(name){toast(name);}
+function openTester(name){
+  const q=String(name||'').trim().toLowerCase();
+  if(!q){toast('No tester');return;}
+  state.tester=q;
+  applyFilters();
+  renderGames();
+  toast('Showing tests by '+name+' — click Reset to clear');
+  closeGameModal();
+}
 
 /* ═══ SMART SEARCH — FINAL BULLETPROOF ═══ */
 function buildSearchIndex(){
@@ -1128,7 +1203,20 @@ function searchGames(q,system){
     }
   }
   out.sort((a,b)=>b.score-a.score);
-  return out.slice(0,20);
+  if(out.length===0&&qRaw.length>=3){
+    const alnum=s=>s.toLowerCase().replace(/[^a-z0-9]/g,'');
+    const qa=alnum(qRaw);
+    if(qa.length>=3){
+      for(let i=0;i<index.length;i++){
+        const g=index[i];
+        if(sys&&g.system&&g.system!==sys)continue;
+        const ga=alnum(g.normTitle)+alnum(g.normId);
+        if(ga.indexOf(qa)!==-1){out.push({title:g.title,gameId:g.gameId,region:g.region,system:g.system,cover:g.cover,score:40});}
+      }
+      out.sort((a,b)=>b.score-a.score);
+    }
+  }
+  return out.slice(0,40);
 }
 
 function wireSmartSearch(opts){
@@ -1148,12 +1236,14 @@ function wireSmartSearch(opts){
         const r=items[i];
         const sysCls=(r.system==='GC')?'gc':'wii';
         h+='<div class="ss-result" data-i="'+i+'">'
+          +'<img class="ss-cover-mini" src="'+(r.cover||coverUrl(r.gameId,r.region)||'')+'" alt="" onerror="this.style.display=\'none\'">'
           +'<img class="ss-flag" src="'+flagUrl(r.region)+'" alt="" onerror="this.style.visibility=\'hidden\'">'
-          +'<div class="ss-body"><div class="ss-t">'+escapeHtml(r.title||'Unknown')+'</div><div class="ss-r">'+escapeHtml(r.region||'Unknown')+'</div></div>'
+          +'<div class="ss-body"><div class="ss-t">'+highlightMatch(r.title||'Unknown',lastQuery)+'</div><div class="ss-r">'+escapeHtml(r.region||'Unknown')+'</div></div>'
           +'<span class="ss-sys '+sysCls+'">'+escapeHtml(r.system||'GC')+'</span>'
           +'<span class="ss-id">'+escapeHtml(r.gameId||'—')+'</span>'
           +'</div>';
       }
+      if(items.length>=40){h+='<div class="ss-loading" style="font-size:11px;color:var(--text-dim);padding:8px 16px;">Showing 40 results. Refine your search for more.</div>';}
       res.innerHTML=h;
       showDropdown();
       const els=res.querySelectorAll('.ss-result');
@@ -1300,14 +1390,14 @@ function applyRatingRules(v){
 }
 
 let rptSS=null;
-function openReportModal(){
+function openReportModal(prefill){
   $('reportModal').classList.add('show');
   document.body.style.overflow='hidden';
   resetReportForm();
   if(!rptSS){
     rptSS=wireSmartSearch({
       wrap:'rptSS',input:'rptSearch',res:'rptRes',clear:'rptClear',sel:'rptSel',
-      systemFn:()=>state.console,
+      systemFn:()=>null,
       onSelect:r=>{
         $('rptGameId').value=r.gameId;
         $('rptGameTitle').value=r.title;
@@ -1321,6 +1411,13 @@ function openReportModal(){
         $('rptRegion').value='';
       }
     });
+  }
+  if(prefill&&prefill.gameId){
+    $('rptGameId').value=prefill.gameId;
+    $('rptGameTitle').value=prefill.title||'';
+    $('rptSystem').value=prefill.system||'';
+    $('rptRegion').value=prefill.region||'';
+    if(rptSS&&rptSS.showSel){rptSS.showSel({title:prefill.title,gameId:prefill.gameId,region:prefill.region,system:prefill.system,cover:coverUrl(prefill.gameId,prefill.region)});}
   }
 }
 function closeReportModal(){$('reportModal').classList.remove('show');document.body.style.overflow='';}
@@ -1593,6 +1690,12 @@ function renderTags(box,input,tags){
   box.querySelectorAll('.chip-tag').forEach(el=>el.remove());
   tags.forEach(t=>{const c=document.createElement('span');c.className='chip-tag';c.innerHTML='#'+escapeHtml(t)+' <button type="button">✕</button>';c.querySelector('button').addEventListener('click',()=>{gsUploadTags=gsUploadTags.filter(x=>x!==t);renderTags(box,input,gsUploadTags);});box.insertBefore(c,input);});
 }
+function isValidIni(content){
+  if(!content||content.trim().length<5)return false;
+  if(/\[[^\]]+\]/.test(content))return true;
+  if(/^\s*\w[\w.]*\s*=/m.test(content))return true;
+  return false;
+}
 function gsSubmit(){
   const gid=$('gsUploadGameId').value;const gtitle=$('gsUploadGameTitle').value;
   const sys=$('gsUploadSystem').value;const region=$('gsUploadRegion').value;
@@ -1603,8 +1706,10 @@ function gsSubmit(){
   const isGS=type==='GameSettings';let url='';
   if(!isGS)url=$('gsUploadUrl').value.trim();
   if(isGS){
-    const valid=gsMultiRegions.filter(r=>r.content&&r.gameId);
-    if(!valid.length){toast('❌ Add at least one region with GameID and .ini content');return;}
+    const valid=gsMultiRegions.filter(r=>r.content&&r.gameId&&isValidIni(r.content));
+    const invalid=gsMultiRegions.filter(r=>r.gameId&&r.content&&!isValidIni(r.content));
+    if(invalid.length){toast('\u274c Invalid .ini format for: '+invalid.map(r=>r.gameId).join(', '));return;}
+    if(!valid.length){toast('\u274c Add at least one region with GameID and .ini content');return;}
   } else {
     if(!url){toast('❌ Provide a download URL');return;}
   }
@@ -1630,7 +1735,54 @@ async function fetchJson(url,retries){
     try{const r=await fetch(url+(url.includes('?')?'&':'?')+'t='+Date.now(),{cache:'no-store'});if(r.ok)return r.json();lastErr=new Error('HTTP '+r.status);}catch(e){lastErr=e;}
     if(i<retries)await new Promise(r=>setTimeout(r,800*(i+1)));
   }
+  if(url===URL_GAMES||url===URL_SETTINGS){
+    const fb=url===URL_GAMES?URL_GAMES_FALLBACK:URL_SETTINGS_FALLBACK;
+    try{console.warn('Fallback to jsDelivr:',fb);const r=await fetch(fb,{cache:'no-store'});if(r.ok)return r.json();}catch(e2){lastErr=e2;}
+  }
   throw lastErr;
+}
+let _deepLinkAttempts=0;
+function tryDeepLink(){
+  const gid=new URLSearchParams(location.search).get('game');
+  if(!gid)return;
+  if(_deepLinkAttempts>3)return;
+  _deepLinkAttempts++;
+  const target=gid.toUpperCase();
+  let idx=state.filtered.findIndex(item=>item.agg.gameId&&item.agg.gameId.toUpperCase()===target);
+  if(idx>=0){openGameModal(idx);return;}
+  const gIdx=state.groupedGames.findIndex(item=>item.agg.gameId&&item.agg.gameId.toUpperCase()===target);
+  if(gIdx>=0){
+    Object.assign(state,{search:'',stars:'all',favOnly:false,tester:'',region:'all',boot:'all'});
+    applyFilters();renderGames();
+    idx=state.filtered.findIndex(item=>item.agg.gameId&&item.agg.gameId.toUpperCase()===target);
+    if(idx>=0){openGameModal(idx);return;}
+  }
+  if(_deepLinkAttempts===1){
+    const targetSys=state.console==='gc'?'Wii':'GC';
+    const exists=state.rawGames.some(g=>String(g.game_info?.system||'').trim()===targetSys&&String(g.game_info?.game_id||'').toUpperCase()===target);
+    if(exists){setConsole(state.console==='gc'?'wii':'gc');return;}
+    toast('Game '+gid+' not found in database');
+  }
+}
+function injectJsonLd(){
+  const old=document.getElementById('jsonld-games');
+  if(old)old.remove();
+  const targetSys=state.console==='gc'?'GC':'Wii';
+  const platformName=targetSys==='GC'?'Nintendo GameCube':'Nintendo Wii';
+  const items=state.groupedGames.slice(0,150).map(g=>{
+    const firstRegion=g.allRegions[0];
+    const item={'@type':'VideoGame','name':g.game,'applicationCategory':'Game','gamePlatform':platformName,'operatingSystem':platformName};
+    if(g.agg.totalEntries>0){item.aggregateRating={'@type':'AggregateRating','ratingValue':g.agg.bestRating,'bestRating':5,'worstRating':0,'ratingCount':g.agg.totalEntries};}
+    if(firstRegion&&firstRegion.gameId)item.sku=firstRegion.gameId;
+    const c=coverUrl(g.agg.gameId,firstRegion&&firstRegion.region);
+    if(c)item.image=c;
+    return item;
+  });
+  const script=document.createElement('script');
+  script.type='application/ld+json';
+  script.id='jsonld-games';
+  script.textContent=JSON.stringify({'@context':'https://schema.org','@graph':items});
+  document.head.appendChild(script);
 }
 async function loadGames(){
   try{
@@ -1643,6 +1795,8 @@ async function loadGames(){
     state.groupedGames=groupGames(filtered);
     updateStats();applyFilters();renderGames();
     $('lastUpdate').textContent=_gamesCache.last_update?'Updated '+_gamesCache.last_update:'';
+    injectJsonLd();
+    setTimeout(tryDeepLink,80);
   }catch(e){
     $('loading').style.display='none';$('empty').style.display='block';
     $('emptyMsg').innerHTML='<span style="color:var(--bad);">Error loading games:</span> '+escapeHtml(e.message);
@@ -1657,8 +1811,8 @@ async function loadSettings(){
 function updateStats(){
   $('statGames').textContent=state.groupedGames.length;
   $('statTests').textContent=state.rawGames.length;
-  const c={5:0,4:0,3:0,2:0,1:0};
-  state.groupedGames.forEach(g=>{const r=g.agg.bestRating;if(r>=5)c[5]++;else if(r>=4)c[4]++;else if(r>=3)c[3]++;else if(r>=2)c[2]++;else if(r>=1)c[1]++;});
+  const c={5:0,4:0,3:0,2:0,1:0,0:0};
+  state.groupedGames.forEach(g=>{const r=g.agg.bestRating;if(r>=5)c[5]++;else if(r>=4)c[4]++;else if(r>=3)c[3]++;else if(r>=2)c[2]++;else if(r>=1)c[1]++;else c[0]++;});
   Object.keys(c).forEach(k=>{const el=$('c'+k);if(el)el.textContent=c[k];});
 }
 let _flipBusy=false;
@@ -1686,8 +1840,25 @@ function _applyConsole(target){
 }
 
 function init(){
+  if(location.protocol==='file:'){
+    const warn=document.createElement('div');
+    warn.style.cssText='position:fixed;top:0;left:0;right:0;z-index:99999;padding:14px 20px;background:linear-gradient(90deg,#7f1d1d,#b91c1c);color:#fff;font-family:Outfit,sans-serif;font-weight:800;font-size:14px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.7);line-height:1.5;';
+    warn.innerHTML='\u26a0\ufe0f <strong>Apri questa pagina con un server locale.</strong> Da terminale: <code style="background:rgba(0,0,0,.35);padding:2px 8px;border-radius:4px;font-family:monospace;">python3 -m http.server 8000</code> poi vai su <code style="background:rgba(0,0,0,.35);padding:2px 8px;border-radius:4px;font-family:monospace;">http://localhost:8000</code>.';
+    document.body.appendChild(warn);
+  }
   const toggle=$('consoleToggle');
   toggle.addEventListener('click',e=>{const opt=e.target.closest('.opt');const target=opt?opt.dataset.c:(state.console==='gc'?'wii':'gc');if(target!==state.console)setConsole(target);});
+  // Keyboard arrow nav on grid
+  $('gamesGrid').addEventListener('keydown',e=>{
+    if(!e.target.matches('[data-idx]'))return;
+    const cards=[...$('gamesGrid').querySelectorAll('[data-idx]')];
+    const i=cards.indexOf(e.target);
+    if(e.key==='ArrowRight'&&i<cards.length-1){e.preventDefault();cards[i+1].focus();}
+    else if(e.key==='ArrowLeft'&&i>0){e.preventDefault();cards[i-1].focus();}
+    else if(e.key==='ArrowDown'){e.preventDefault();const cols=getComputedStyle($('gamesGrid')).gridTemplateColumns.split(' ').length;const n=Math.min(cards.length-1,i+cols);if(n>i)cards[n].focus();}
+    else if(e.key==='ArrowUp'){e.preventDefault();const cols=getComputedStyle($('gamesGrid')).gridTemplateColumns.split(' ').length;const n=Math.max(0,i-cols);if(n<i)cards[n].focus();}
+    else if(e.key==='Enter'||e.key===' '){e.preventDefault();openGameModal(parseInt(e.target.dataset.idx,10));}
+  });
   let searchTimer;
   $('searchInput').addEventListener('input',e=>{const v=e.target.value;$('clearSearch').style.display=v?'block':'none';clearTimeout(searchTimer);searchTimer=setTimeout(()=>{state.search=v.toLowerCase().trim();applyFilters();renderGames();},150);});
   $('clearSearch').addEventListener('click',()=>{$('searchInput').value='';$('clearSearch').style.display='none';state.search='';applyFilters();renderGames();});
@@ -1698,7 +1869,7 @@ function init(){
   $('resetBtn').addEventListener('click',()=>{
     $('searchInput').value='';$('clearSearch').style.display='none';
     $('regionFilter').value='all';$('bootFilter').value='all';$('sortSelect').value='rating-desc';
-    Object.assign(state,{search:'',region:'all',boot:'all',sort:'rating-desc',stars:'all',favOnly:false});
+    Object.assign(state,{search:'',region:'all',boot:'all',sort:'rating-desc',stars:'all',favOnly:false,tester:''});
     $('favFilter').style.color='';
     $$('.rating-pill').forEach(p=>p.classList.remove('active'));
     applyFilters();renderGames();toast('Filters reset');
@@ -1753,6 +1924,11 @@ try{bootConsole=localStorage.getItem('dolphin-rtcore-console')||'gc';}catch(e){}
 setConsole(bootConsole,true);
 loadSettings();
 setTimeout(updateStats,200);
+if('serviceWorker' in navigator && location.protocol!=='file:'){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('./sw.js').catch(e=>console.warn('SW register failed:',e));
+  });
+}
 </script>
 </body>
 </html>
