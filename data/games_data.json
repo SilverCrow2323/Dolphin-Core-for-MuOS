@@ -26,7 +26,7 @@
             "fps_max": 12
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -65,7 +65,7 @@
             "fps_max": 11
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -104,9 +104,9 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
-            "core_profile": "SpeedHack/default",
-            "considerations": "slight texture issues, framerate is slow . default core seems to also give the same result"
+            "rtcore_version": "Legacy",
+            "core_profile": "SpeedHack/Default",
+            "considerations": "slight texture issues, Frame Rate is slow . Default core seems to also give the same result"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -143,9 +143,9 @@
             "fps_max": 9
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate is unplayably low"
+            "considerations": "Frame Rate is unplayably low"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -182,7 +182,7 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "Standard",
             "considerations": "it runs ok, but stutters quite a bit, its preferable to either use a PAL rom-speedhack core or play the OG N64 version."
           },
@@ -221,9 +221,9 @@
             "fps_max": 40
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "videos run slow, framerate varies, but playable"
+            "considerations": "videos run slow, Frame Rate varies, but playable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -260,7 +260,7 @@
             "fps_max": 23
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "few slowdowns here and there but playable"
           },
@@ -299,7 +299,7 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "fps drops are common, but its still very playable"
           },
@@ -338,9 +338,9 @@
             "fps_max": 10
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate is unplayably slow. using the Diet Melee mods might make it playable"
+            "considerations": "Frame Rate is unplayably slow. using the Diet Melee mods might make it playable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -377,8 +377,8 @@
             "fps_max": 40
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
-            "core_profile": "SpeedHack/default",
+            "rtcore_version": "Legacy",
+            "core_profile": "SpeedHack/Default",
             "considerations": "Can be slow with many enemies on screen. Can stutter when speaking with npcs."
           },
           "test_environment": {
@@ -416,7 +416,7 @@
             "fps_max": 15
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "stutters quite a bit at the start of a race, but still playable with some patiance"
           },
@@ -455,7 +455,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all of them",
             "considerations": "Doesnt start"
           },
@@ -547,7 +547,7 @@
             "fps_max": 10
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "graphical glitches all over, too slow to be anykind of enjoyable"
           },
@@ -586,7 +586,7 @@
             "fps_max": 15
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -625,9 +625,9 @@
             "fps_max": 12
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate is unplayably low"
+            "considerations": "Frame Rate is unplayably low"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -664,7 +664,7 @@
             "fps_max": 30
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "gameplay runs at half speed"
           },
@@ -703,9 +703,9 @@
             "fps_max": 11
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "frameratte too low to be playable"
+            "considerations": "Frame Rate too low to be playable."
           },
           "test_environment": {
             "tester": "Danster21",
@@ -742,9 +742,9 @@
             "fps_max": 30
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate varies, but very much playable"
+            "considerations": "Frame Rate varies, but very much playable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -781,7 +781,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all of them",
             "considerations": "Black Screen"
           },
@@ -820,7 +820,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all of them",
             "considerations": "starts, but freezes immidiatly"
           },
@@ -859,7 +859,7 @@
             "fps_max": 24
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "game runs in slow motion, the DS version is preferable"
           },
@@ -898,9 +898,9 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate varies, but very much playable"
+            "considerations": "Frame Rate varies, but very much playable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -937,7 +937,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all of them",
             "considerations": "crashes immidiatly"
           },
@@ -976,9 +976,9 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "All of them (tested multiple)",
-            "considerations": "[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -1015,7 +1015,7 @@
             "fps_max": 30
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "playable if a bit slow"
           },
@@ -1054,7 +1054,7 @@
             "fps_max": 21
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -1093,7 +1093,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "All of them",
             "considerations": "crashes the entire emulator."
           },
@@ -1132,7 +1132,7 @@
             "fps_max": 24
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -1171,7 +1171,7 @@
             "fps_max": 10
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -1210,9 +1210,9 @@
             "fps_max": 11
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "frameratte too low to be playable"
+            "considerations": "Frame Rate too low to be playable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -1249,9 +1249,9 @@
             "fps_max": 8
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "frameratte too low to be playable"
+            "considerations": "Frame Rate too low to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -1288,9 +1288,9 @@
             "fps_max": 15
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "frameratte too low to be playable and stutters a lot"
+            "considerations": "Frame Rate too low to be playable. and stutters a lot"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -1327,7 +1327,7 @@
             "fps_max": 7
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Too slow to be anykind of playable."
           },
@@ -1366,7 +1366,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "blacksceen fix",
             "considerations": "Crashes on the main menu"
           },
@@ -1405,9 +1405,9 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "game runs in slow motion, unplayable"
+            "considerations": "Game runs in slow motion, unplayable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -1444,9 +1444,9 @@
             "fps_max": 5
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate is unplayably slow. dont even bother."
+            "considerations": "Frame Rate is unplayably slow. Don't even bother."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -1483,7 +1483,7 @@
             "fps_max": 34
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "A few stutters but otherwise playable"
           },
@@ -1522,7 +1522,7 @@
             "fps_max": 9
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Too slow to be anykind of playable."
           },
@@ -1561,9 +1561,9 @@
             "fps_max": 22
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Runs alright framerate is not tied to game speed. Loading each map takes about 30 seconds."
+            "considerations": "Runs alright Frame Rate is not tied to game speed. Loading each map takes about 30 seconds."
           },
           "test_environment": {
             "tester": "Danster21",
@@ -1591,8 +1591,8 @@
           },
           "test_details": {
             "rtcore_version": "v11.0.0 (prerelease)",
-            "core_profile": "Speed Hack",
-            "considerations": "Simply perfect, applying a light HD texture pack makes it look even better visually. No lag, no FPS drops, simply perfect.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "core_profile": "SpeedHacks",
+            "considerations": "Simply perfect, applying a light HD texture pack makes it look even better visually. No lag, no FPS drops, simply perfect.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -1642,8 +1642,8 @@
             "fps_max": 6
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
-            "core_profile": "default",
+            "rtcore_version": "Legacy",
+            "core_profile": "Default",
             "considerations": "too slow to be anykind of enjoyable"
           },
           "test_environment": {
@@ -1681,9 +1681,9 @@
             "fps_max": 37
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate slowdown in large, cutscenes are slow"
+            "considerations": "Frame Rate slowdown in large, cutscenes are slow"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -1720,9 +1720,9 @@
             "fps_max": 20
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
-            "core_profile": "SpeedHack/default",
-            "considerations": "slow videos, framerate can vary, playable"
+            "rtcore_version": "Legacy",
+            "core_profile": "SpeedHack/Default",
+            "considerations": "slow videos, Frame Rate can vary, playable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -1759,7 +1759,7 @@
             "fps_max": 40
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Almost Perfect"
           },
@@ -1798,9 +1798,9 @@
             "fps_max": 40
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "perfectly playable, the dreamcast version is still more stable and preferable"
+            "considerations": "Perfectly playable, the Dreamcast version is still more stable and preferable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -1837,9 +1837,9 @@
             "fps_max": 6
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "frame rate but it's too slow to be enjoyable."
+            "considerations": "Frame Rate but it's too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Danster21",
@@ -1867,8 +1867,8 @@
           },
           "test_details": {
             "rtcore_version": "v10.5.3",
-            "core_profile": "Speed Hack. Default",
-            "considerations": "To be honest, the platforming sections are perfectly playable and even enjoyable, would rate 5*. However, in the central city hub and during races the lagging gets really heavy, dropping FPS down to 20-25\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "core_profile": "SpeedHacks. Default",
+            "considerations": "To be honest, the platforming sections are perfectly playable and even enjoyable, would rate 4*. However, in the central city hub and during races the lagging gets really heavy, dropping FPS down to 20-25\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -1936,7 +1936,7 @@
           "test_details": {
             "rtcore_version": "v10.5.3",
             "core_profile": "SpeedHack",
-            "considerations": "Playable but has noticeable frame drops during combat. With further optimizations and tweaking, performance could improve significantly.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Playable but has noticeable frame drops during combat. With further optimizations and tweaking, performance could improve significantly.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -1975,7 +1975,7 @@
           "test_details": {
             "rtcore_version": "v10.6 (pre release)",
             "core_profile": "Default",
-            "considerations": "Gameplay suffers from slowdowns during combat, but the visuals are excellent. The Standard core profile provides the best performance. The Performance core sacrifices too much graphical quality.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Gameplay suffers from slowdowns during combat, but the visuals are excellent. The Standard core profile provides the best performance. The Performance core sacrifices too much graphical quality.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -2004,7 +2004,7 @@
           "test_details": {
             "rtcore_version": "v11.0.0 'Frontendone' (prerelease)",
             "core_profile": "Speedup 2",
-            "considerations": "Combat is noticeably smoother and faster, but still not at a point where gameplay is enjoyable and worthy of the name. However, the progress is clearly visible, even if the trade-off has been the graphical quality of the game, still enjoyable but compared to the perfect visuals you get with the Default profile... it's a real shame. But we do not give up, still Sbrobbing, still Rintromping.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Combat is noticeably smoother and faster, but still not at a point where gameplay is enjoyable and worthy of the name. However, the progress is clearly visible, even if the trade-off has been the graphical quality of the game, still enjoyable but compared to the perfect visuals you get with the Default profile... it's a real shame. But we do not give up, still Sbrobbing, still Rintromping.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -2031,7 +2031,7 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -2070,7 +2070,7 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Runs almost perfectly"
           },
@@ -2109,9 +2109,9 @@
             "fps_max": 20
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Performance varies. Iplayable but can be laggy."
+            "considerations": "Performance varies. Playable but can be laggy."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -2140,7 +2140,7 @@
           "test_details": {
             "rtcore_version": "v11.5.00-II 'Bash Arsenal'",
             "core_profile": "Various / All profiles tested",
-            "considerations": "Slight stutter in animation fluidity, otherwise runs well.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Slight stutter in animation fluidity, otherwise runs well.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -2177,7 +2177,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all of them",
             "considerations": "Doesnt start"
           },
@@ -2245,9 +2245,9 @@
             "fps_max": 43
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate varies, too much stuttering to playable"
+            "considerations": "Frame Rate varies, too much stuttering to playable"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -2286,7 +2286,7 @@
           "test_details": {
             "rtcore_version": "v10.6 (pre release)",
             "core_profile": "Speedup 1",
-            "considerations": "Almost perfect. Some lag during intense scenes, but overall very playable. Further in-depth testing is needed to confirm full stability.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Almost perfect. Some lag during intense scenes, but overall very playable. Further in-depth testing is needed to confirm full stability.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -2323,9 +2323,9 @@
             "fps_max": 14
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "playable but framerate can vary"
+            "considerations": "playable but Frame Rate can vary"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2362,9 +2362,9 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all fo them",
-            "considerations": "crashes immidiatly"
+            "considerations": "Crashes immidiatly"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2401,7 +2401,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "freezes at the start"
           },
@@ -2440,9 +2440,9 @@
             "fps_max": 3
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "one of the worst framerate ever tested"
+            "considerations": "one of the worst Frame Rate ever tested"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2479,7 +2479,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all of them",
             "considerations": "Black Screen"
           },
@@ -2518,7 +2518,7 @@
             "fps_max": 42
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "really slow cutscenes, but in-game runs fine"
           },
@@ -2557,7 +2557,7 @@
             "fps_max": 60
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "runs really well, very playable"
           },
@@ -2596,7 +2596,7 @@
             "fps_max": 40
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "some slowdown, NEEDS NTSC ISO!"
           },
@@ -2635,9 +2635,9 @@
             "fps_max": 11
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "frameratte too low to be playable"
+            "considerations": "Frame Rate too low to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2674,9 +2674,9 @@
             "fps_max": 8
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "frameratte too low to be playable"
+            "considerations": "Frame Rate too low to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2713,9 +2713,9 @@
             "fps_max": 9
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "frameratte too low to be playable"
+            "considerations": "Frame Rate too low to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2752,9 +2752,9 @@
             "fps_max": 9
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "frameratte too low to be playable"
+            "considerations": "Frame Rate too low to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2791,9 +2791,9 @@
             "fps_max": 3
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "one of the worst framerate ever tested"
+            "considerations": "one of the worst Frame Rate ever tested"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2830,7 +2830,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "All of them",
             "considerations": "While the game is able to start it doesnt go past the logos of the developers, crashing and resetting on its own"
           },
@@ -2869,9 +2869,9 @@
             "fps_max": 4
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "the text-boxes in the menus dont render the text, framerate too low to be playable, the free-run mode is kinda playable"
+            "considerations": "the text-boxes in the menus dont render the text, Frame Rate too low to be playable, the free-run mode is kinda playable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2908,7 +2908,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all fo them",
             "considerations": "crashes immidiatly, PSP version is playable"
           },
@@ -2947,7 +2947,7 @@
             "fps_max": 12
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Too slow to be anykind of playable"
           },
@@ -2986,7 +2986,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Crashes in the menu"
           },
@@ -3025,7 +3025,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Freezes at the WB logo."
           },
@@ -3064,7 +3064,7 @@
             "fps_max": 10
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -3103,7 +3103,7 @@
             "fps_max": 20
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "pretty playable"
           },
@@ -3142,9 +3142,9 @@
             "fps_max": 40
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "[FREE RUN MODE] very much playable, framerate not perfect tho"
+            "considerations": "[FREE RUN MODE] very much playable, Frame Rate not perfect tho"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -3171,9 +3171,9 @@
             "fps_max": 6
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate is unplayably low"
+            "considerations": "Frame Rate is unplayably low"
           },
           "test_environment": {
             "tester": "WorkingGoose",
@@ -3210,9 +3210,9 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate varies, but playable"
+            "considerations": "Frame Rate varies, but playable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -3249,7 +3249,7 @@
             "fps_max": 27
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "playable but very slow in large areas"
           },
@@ -3280,7 +3280,7 @@
           "test_details": {
             "rtcore_version": "v10.5.3",
             "core_profile": "SpeedHack",
-            "considerations": "Runs smoothly at 40 FPS. Gets a bit laggy in large / crowded spaces.\nVideo sequences are perfect.\nPlayable, with issues\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Runs smoothly at 40 FPS. Gets a bit laggy in large / crowded spaces.\nVideo sequences are perfect.\nPlayable, with issues\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -3317,7 +3317,7 @@
             "fps_max": 10
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "The game runs, but performance is too low for me to consider it playable"
           },
@@ -3356,7 +3356,7 @@
             "fps_max": 12
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -3395,9 +3395,9 @@
             "fps_max": 23
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate is unplayably slow. just play the DS or PSP versions."
+            "considerations": "Frame Rate is unplayably slow. just play the DS or PSP versions."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -3434,7 +3434,7 @@
             "fps_max": 47
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Music glitch-loops rarely, few stutters, playable"
           },
@@ -3473,7 +3473,7 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "few slowdowns, but mostly playable"
           },
@@ -3512,7 +3512,7 @@
             "fps_max": 20
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "The game runs, but performance is too low for me to consider it playable"
           },
@@ -3551,7 +3551,7 @@
             "fps_max": 14
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -3590,7 +3590,7 @@
             "fps_max": 16
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -3629,7 +3629,7 @@
             "fps_max": 8
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -3660,7 +3660,7 @@
           "test_details": {
             "rtcore_version": "v10.5-124",
             "core_profile": "Performance",
-            "considerations": "The game boots but runs at its worst. Also used speedhacks and other performance settings but the result is basically the same.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "The game boots but runs at its worst. Also used speedhacks and other performance settings but the result is basically the same.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -3689,7 +3689,7 @@
           "test_details": {
             "rtcore_version": "v10.5-124",
             "core_profile": "Performance",
-            "considerations": "The game boots but runs at its worst. Also used sppedhacks and other performance settings but the result is basically the same.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "The game boots but runs at its worst. Also used sppedhacks and other performance settings but the result is basically the same.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -3726,9 +3726,9 @@
             "fps_max": 7
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
-            "core_profile": "SpeedHack/default",
-            "considerations": "framerate too slow to be playable"
+            "rtcore_version": "Legacy",
+            "core_profile": "SpeedHack/Default",
+            "considerations": "Frame Rate too slow to be playable"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -3767,7 +3767,7 @@
           "test_details": {
             "rtcore_version": "v10.5.3",
             "core_profile": "All of them (tested multiple)",
-            "considerations": "Perfectly playable, some minor lagging in video scenes.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Perfectly playable, some minor lagging in video scenes.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -3804,7 +3804,7 @@
             "fps_max": 6
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Too slow to be anykind of playable"
           },
@@ -3843,9 +3843,9 @@
             "fps_max": 8
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "menus and videos run hella slow, audio cuts in and out, framerate make it unplayable"
+            "considerations": "menus and videos run hella slow, audio cuts in and out, Frame Rate make it unplayable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -3882,7 +3882,7 @@
             "fps_max": 6
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -3921,7 +3921,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "videocalls dont render, making the game not start, just play the original for the PSX"
           },
@@ -3960,7 +3960,7 @@
             "fps_max": 30
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -3999,9 +3999,9 @@
             "fps_max": 15
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
-            "core_profile": "default",
-            "considerations": "frameratte too low to be playable"
+            "rtcore_version": "Legacy",
+            "core_profile": "Default",
+            "considerations": "Frame Rate too low to be playable."
           },
           "test_environment": {
             "tester": "Danster21",
@@ -4038,7 +4038,7 @@
             "fps_max": 12
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "The game runs, but performance is too low for me to consider it playable"
           },
@@ -4077,7 +4077,7 @@
             "fps_max": 40
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "a bit slow, but playable with patience"
           },
@@ -4116,7 +4116,7 @@
             "fps_max": 10
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -4147,7 +4147,7 @@
           "test_details": {
             "rtcore_version": "v11.0.00 (prerelease)",
             "core_profile": "All of them",
-            "considerations": "Can't run properly. Only with Black Screen Fix and Commpatibility profiles is able to go past the bootanim or the menu ui.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Can't run properly. Only with Black Screen Fix and Commpatibility profiles is able to go past the bootanim or the menu ui.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -4184,9 +4184,9 @@
             "fps_max": 8
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate too low to be playable"
+            "considerations": "Frame Rate too low to be playable"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -4223,7 +4223,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all of them",
             "considerations": "Black Screen"
           },
@@ -4262,7 +4262,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all of them",
             "considerations": "Black Screen"
           },
@@ -4301,7 +4301,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all of them",
             "considerations": "Black Screen"
           },
@@ -4340,7 +4340,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all of them",
             "considerations": "Black Screen"
           },
@@ -4379,7 +4379,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "text doesnt render making gamepaly impossible, controls also dont seem to work for some reason"
           },
@@ -4418,7 +4418,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "unplayable, blocked on a green screen"
           },
@@ -4457,7 +4457,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all of them",
             "considerations": "Black Screen"
           },
@@ -4496,7 +4496,7 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Menus are slow, gameplay is almost perfect"
           },
@@ -4535,7 +4535,7 @@
             "fps_max": 13
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "playable with a LOT of patience, its better to just play the PSP version"
           },
@@ -4574,7 +4574,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Crashes"
           },
@@ -4613,7 +4613,7 @@
             "fps_max": 45
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Runs almost perfectly"
           },
@@ -4652,7 +4652,7 @@
             "fps_max": 12
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -4691,8 +4691,8 @@
             "fps_max": 18
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
-            "core_profile": "default",
+            "rtcore_version": "Legacy",
+            "core_profile": "Default",
             "considerations": "a bit slow but playable, the date setup at the start crashes the emulator so youre going to need to import a save from an external source to bypass that. online doesnt work, solo does."
           },
           "test_environment": {
@@ -4730,9 +4730,9 @@
             "fps_max": 30
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "playable but framerate can vary"
+            "considerations": "playable but Frame Rate can vary"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -4769,7 +4769,7 @@
             "fps_max": 12
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -4808,7 +4808,7 @@
             "fps_max": 28
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "performance varies but it's playable"
           },
@@ -4847,9 +4847,9 @@
             "fps_max": 50
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Framerate varies but it's perfectly playable"
+            "considerations": "Frame Rate varies but it's perfectly playable"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -4886,9 +4886,9 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
-            "core_profile": "default",
-            "considerations": "playable with framerate dips in larger areas"
+            "rtcore_version": "Legacy",
+            "core_profile": "Default",
+            "considerations": "playable with Frame Rate dips in larger areas"
           },
           "test_environment": {
             "tester": "Danster21",
@@ -4917,7 +4917,7 @@
           "test_details": {
             "rtcore_version": "v11.5.00-II 'Bash Arsenal'",
             "core_profile": "Various / All profiles tested",
-            "considerations": "Boots and shows initial logos, language selection screen appears, but after selecting language only black screen. Tried every Rt:Profile.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Boots and shows initial logos, language selection screen appears, but after selecting language only black screen. Tried every Rt:Profile.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -4954,7 +4954,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all of them",
             "considerations": "crashes immidiatly"
           },
@@ -4993,7 +4993,7 @@
             "fps_max": 17
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Broken cutscenes but in-game runs fine"
           },
@@ -5032,9 +5032,9 @@
             "fps_max": 12
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "frameratte too low to be playable"
+            "considerations": "Frame Rate too low to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5071,7 +5071,7 @@
             "fps_max": 30
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "playable, but can be laggy"
           },
@@ -5110,9 +5110,9 @@
             "fps_max": 6
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
-            "core_profile": "SpeedHack/default",
-            "considerations": "framerate too low to be playable"
+            "rtcore_version": "Legacy",
+            "core_profile": "SpeedHack/Default",
+            "considerations": "Frame Rate too low to be playable"
           },
           "test_environment": {
             "tester": "eleot",
@@ -5149,9 +5149,9 @@
             "fps_max": 60
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "standard",
-            "considerations": "playable at relativly high framerate if you use the debug mode to disable stuff. i suggest BACKGROUND, STOBJ, EFFECTS, APE, MINIMAP"
+            "considerations": "playable at relativly high Frame Rate if you use the debug mode to disable stuff. i suggest BACKGROUND, STOBJ, EFFECTS, APE, MINIMAP"
           },
           "test_environment": {
             "tester": "Row",
@@ -5188,7 +5188,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "blacksceen fix",
             "considerations": "Doesnt start"
           },
@@ -5227,7 +5227,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all of them",
             "considerations": "Black Screen"
           },
@@ -5266,9 +5266,9 @@
             "fps_max": 50
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate varies, but playable"
+            "considerations": "Frame Rate varies, but playable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5305,7 +5305,7 @@
             "fps_max": 24
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -5344,7 +5344,7 @@
             "fps_max": 13
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable, play the dreamcast version instead"
           },
@@ -5383,7 +5383,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "blacksceen fix",
             "considerations": "it boots, but freezes almost immidiatly."
           },
@@ -5422,9 +5422,9 @@
             "fps_max": 9
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "frameratte too low to be playable"
+            "considerations": "Frame Rate too low to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5461,7 +5461,7 @@
             "fps_max": 50
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Videos runs Slow, it can struggle a bit, especialy during battles and larger levels but its still decently playable"
           },
@@ -5500,9 +5500,9 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "playable, framerate can sometimes vary"
+            "considerations": "playable, Frame Rate can sometimes vary"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5539,7 +5539,7 @@
             "fps_max": 23
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "text doesnt render in the menu making the game almost unplayable, apart from that its very much playable"
           },
@@ -5578,9 +5578,9 @@
             "fps_max": 13
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "frameratte too low to be playable"
+            "considerations": "Frame Rate too low to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5617,7 +5617,7 @@
             "fps_max": 12
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -5656,7 +5656,7 @@
             "fps_max": 18
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -5695,9 +5695,9 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "slow cutscenes, can be quite unstable with the default underclock. in Dolphin.ini set Overlock = 0.23000000 to resolve crashing and other issues."
+            "considerations": "slow cutscenes, can be quite unstable with the Default underclock. in Dolphin.ini set Overlock = 0.23000000 to resolve crashing and other issues."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5734,7 +5734,7 @@
             "fps_max": 11
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -5773,7 +5773,7 @@
             "fps_max": 15
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "Standard",
             "considerations": "playable, if a bit slow. Surprisingly the SpeedHack core makes the game run slower"
           },
@@ -5812,9 +5812,9 @@
             "fps_max": 20
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "stutters quite a lot especialy at the start of the game, playable, but only if you can handle low framerates"
+            "considerations": "stutters quite a lot especialy at the start of the game, playable, but only if you can handle low Frame Rates"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5851,9 +5851,9 @@
             "fps_max": 6
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
-            "core_profile": "SpeedHack/default",
-            "considerations": "framerate too low to be playable"
+            "rtcore_version": "Legacy",
+            "core_profile": "SpeedHack/Default",
+            "considerations": "Frame Rate too low to be playable"
           },
           "test_environment": {
             "tester": "eleot",
@@ -5890,7 +5890,7 @@
             "fps_max": 23
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "playable but with lot of patience"
           },
@@ -5929,9 +5929,9 @@
             "fps_max": 12
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "crashes sometimes and has graphical glitches in the ui, low framerate makes it unplayable"
+            "considerations": "crashes sometimes and has graphical glitches in the ui, low Frame Rate makes it unplayable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5968,7 +5968,7 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "bit slow, but perfectly playable, the dreamcast version is still more stable"
           },
@@ -6007,7 +6007,7 @@
             "fps_max": 18
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": ""
           },
@@ -6046,7 +6046,7 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "few stutters here and there, but playable. Might need higher cpu clock to avoid crashing."
           },
@@ -6085,7 +6085,7 @@
             "fps_max": 18
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "playable, but playing either the DS or PSP version is preferable"
           },
@@ -6124,7 +6124,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all fo them",
             "considerations": "crashes immidiatly"
           },
@@ -6163,7 +6163,7 @@
             "fps_max": 24
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Few stutters here and there but playable"
           },
@@ -6202,7 +6202,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all of them",
             "considerations": "Black Screen"
           },
@@ -6241,7 +6241,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Freezes at the starting credits screen."
           },
@@ -6280,7 +6280,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "All of the",
             "considerations": "Starts, but crashes shortly after"
           },
@@ -6319,7 +6319,7 @@
             "fps_max": 30
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "All of them",
             "considerations": "it requires files from this link to work. https://github.com/libretro/dolphin/archive/master.zip only workswith NTSC iso. try the DS game."
           },
@@ -6358,9 +6358,9 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate flactuations make the game unplayable"
+            "considerations": "Frame Rate flactuations make the game unplayable"
           },
           "test_environment": {
             "tester": "Danster21",
@@ -6397,7 +6397,7 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Overclock = .4 Resolution = .33 playable"
           },
@@ -6436,7 +6436,7 @@
             "fps_max": 7
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "stutters a lot, completly unplayable"
           },
@@ -6475,7 +6475,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "got stuck on character creation. unplayable"
           },
@@ -6514,7 +6514,7 @@
             "fps_max": 3
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Unplayably slow"
           },
@@ -6553,7 +6553,7 @@
             "fps_max": 8
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "blacksceen fix",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -6592,9 +6592,9 @@
             "fps_max": 13
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate too low to be playable"
+            "considerations": "Frame Rate too low to be playable"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -6631,7 +6631,7 @@
             "fps_max": 32
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "The game runs, but performance is too low for me to consider it playable"
           },
@@ -6670,7 +6670,7 @@
             "fps_max": 10
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -6709,7 +6709,7 @@
             "fps_max": 31
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Too slow to be anykind of playable."
           },
@@ -6748,7 +6748,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all of them",
             "considerations": "only gives a black screen"
           },
@@ -6787,7 +6787,7 @@
             "fps_max": 24
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "severe slowdowns on large areas, barely playable but not really enjoyable"
           },
@@ -6826,7 +6826,7 @@
             "fps_max": 14
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -6865,9 +6865,9 @@
             "fps_max": 10
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate too low to be playable"
+            "considerations": "Frame Rate too low to be playable"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -6904,7 +6904,7 @@
             "fps_max": 16
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -6943,7 +6943,7 @@
             "fps_max": 21
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Too slow to be anykind of playable."
           },
@@ -6982,7 +6982,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "all of them",
             "considerations": "Black Screen"
           },
@@ -7021,7 +7021,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Crashes at starting logo."
           },
@@ -7060,7 +7060,7 @@
             "fps_max": 27
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Performance varies, playable but not enjoyable"
           },
@@ -7099,7 +7099,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Freezes at the starting screen."
           },
@@ -7138,7 +7138,7 @@
             "fps_max": 9
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Too slow to be anykind of playable"
           },
@@ -7177,7 +7177,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Freezes at the Loading screen."
           },
@@ -7216,7 +7216,7 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "The unskippable prologue is unbearably slow, but after that, in-game its completly playable."
           },
@@ -7247,7 +7247,7 @@
           "test_details": {
             "rtcore_version": "v11.0.00 (prerelease)",
             "core_profile": "Compatibility",
-            "considerations": "[Disc 1] Only with the Compatibility profile does the game manage to boot past the \"Licensed by Nintendo\" screen shortly after startup.\nUnfortunately, this doesn't resolve the low frame rate, which stays locked at around 30 FPS during gameplay. This causes lag that, while not extreme, is still quite annoying. Ultimately, a game like this is unplayable with an issue like this.[Disc 1] Only with the Compatibility profile the game can go past the \"Licensed by Nintendo\" screen shortly after the boot.\nHowever the average FPS during the gaming session is stable on 20-30 and way too laggy to be enjoyable.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "[Disc 1] Only with the Compatibility profile does the game manage to boot past the \"Licensed by Nintendo\" screen shortly after startup.\nUnfortunately, this doesn't resolve the low frame rate, which stays locked at around 30 FPS during gameplay. This causes lag that, while not extreme, is still quite annoying. Ultimately, a game like this is unplayable with an issue like this.[Disc 1] Only with the Compatibility profile the game can go past the \"Licensed by Nintendo\" screen shortly after the boot.\nHowever the average FPS during the gaming session is stable on 20-30 and way too laggy to be enjoyable.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -7284,9 +7284,9 @@
             "fps_max": 16
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "frameratte too low to be playable"
+            "considerations": "Frame Rate too low to be playable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -7323,9 +7323,9 @@
             "fps_max": 9
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate too low to be playable"
+            "considerations": "Frame Rate too low to be playable"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -7362,9 +7362,9 @@
             "fps_max": 6
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate too low to be playable"
+            "considerations": "Frame Rate too low to be playable"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -7401,7 +7401,7 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Videos runs Slow, it can struggle a bit, running most of the time around 15 fps but its still decently playable"
           },
@@ -7440,8 +7440,8 @@
             "fps_max": 28
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
-            "core_profile": "SpeedHack/default",
+            "rtcore_version": "Legacy",
+            "core_profile": "SpeedHack/Default",
             "considerations": "gameplay needs a bit of patience"
           },
           "test_environment": {
@@ -7471,7 +7471,7 @@
           "test_details": {
             "rtcore_version": "v11.0.00 (prerelease)",
             "core_profile": "All of them",
-            "considerations": "Doesn't boot.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Doesn't boot.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -7508,7 +7508,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Crashes immidiatly"
           },
@@ -7547,7 +7547,7 @@
             "fps_max": 30
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "audio desynchs during the intro which takes a very long time, framarate seems high, but the game essentialy runs in slow motion."
           },
@@ -7586,7 +7586,7 @@
             "fps_max": 30
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "audio desynchs during the intro which takes a very long time, framarate seems high, but the game essentialy runs in slow motion."
           },
@@ -7625,7 +7625,7 @@
             "fps_max": 12
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "too slow to be anykind of enjoyable"
           },
@@ -7664,7 +7664,7 @@
             "fps_max": 23
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "few stutters but otherwise playable"
           },
@@ -7703,7 +7703,7 @@
             "fps_max": 18
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Performance varies, but its pretty static game so i'd say it's playable, with lots patience."
           },
@@ -7742,7 +7742,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Stuck at black screen after the main menu"
           },
@@ -7781,7 +7781,7 @@
             "fps_max": 50
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "Almost Perfect"
           },
@@ -7820,7 +7820,7 @@
             "fps_max": 45
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "texture problems with the ui make it difficult to start a new game, performance is low in the start lobby, but gets better in levels."
           },
@@ -7859,9 +7859,9 @@
             "fps_max": 50
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Runs nearly flawlessly. 40fps inbetween the minigames, tho minigames run fullspeed. Can run on the default core but is 20% slower and slightly its less playable."
+            "considerations": "Runs nearly flawlessly. 40fps inbetween the minigames, tho minigames run fullspeed. Can run on the Default core but is 20% slower and slightly its less playable."
           },
           "test_environment": {
             "tester": "Danster21",
@@ -7898,7 +7898,7 @@
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "blacksceen fix",
             "considerations": "it boots, but freezes almost immidiatly."
           },
@@ -7937,7 +7937,7 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "some framedrops can happen, still very playable"
           },
@@ -7976,7 +7976,7 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "glitchy text, playable with a few frame drops"
           },
@@ -8015,7 +8015,7 @@
             "fps_max": 25
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "overworld runs good, battles not as good"
           },
@@ -8054,9 +8054,9 @@
             "fps_max": 13
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate too low to be playable"
+            "considerations": "Frame Rate too low to be playable"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -8093,9 +8093,9 @@
             "fps_max": 5
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "framerate is unplayably slow. dont even bother."
+            "considerations": "Frame Rate is unplayably slow. dont even bother."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -8132,7 +8132,7 @@
             "fps_max": 40
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
             "considerations": "choose 50hz mode at the start"
           },
@@ -8172,8 +8172,8 @@
           },
           "test_details": {
             "rtcore_version": "v10.5.3",
-            "core_profile": "default",
-            "considerations": "Still running in slowmotion, the graphics look good but like this is absolutely not playable\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "core_profile": "Default",
+            "considerations": "Still running in slowmotion, the graphics look good but like this is absolutely not playable\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8212,7 +8212,7 @@
           "test_details": {
             "rtcore_version": "v10.5.300",
             "core_profile": "Default",
-            "considerations": "Boots but is heavily lagging all the time\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Boots but is heavily lagging all the time\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8288,9 +8288,9 @@
             "fps_max": 15
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
+            "rtcore_version": "Legacy",
             "core_profile": "blacksceen fix",
-            "considerations": "framerate is unplayably slow. dont even bother."
+            "considerations": "Frame Rate is unplayably slow. dont even bother."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -8327,8 +8327,8 @@
             "fps_max": 13
           },
           "test_details": {
-            "rtcore_version": "v9 Goose or prior",
-            "core_profile": "SpeedHack/default",
+            "rtcore_version": "Legacy",
+            "core_profile": "SpeedHack/Default",
             "considerations": "too slow to be anykind of enjoyable"
           },
           "test_environment": {
@@ -8368,7 +8368,7 @@
           "test_details": {
             "rtcore_version": "v10.5.3",
             "core_profile": "Various / All profiles tested",
-            "considerations": "Profiles tested: Speedhack,Performance, Speedup1, Default\nSadly the game won't go past the first option selection window\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Profiles tested: Speedhack,Performance, Speedup1, Default\nSadly the game won't go past the first option selection window\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8413,7 +8413,7 @@
           "test_details": {
             "rtcore_version": "v10.5.3",
             "core_profile": "Performance",
-            "considerations": "Perfect , only during the cutscenes there may be some minor lagging.\nEverything else is awesome.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Perfect , only during the cutscenes there may be some minor lagging.\nEverything else is awesome.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8452,7 +8452,7 @@
           "test_details": {
             "rtcore_version": "v10.5.3",
             "core_profile": "Default",
-            "considerations": "Not booting\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Not booting\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8497,7 +8497,7 @@
           "test_details": {
             "rtcore_version": "v11.0.0 (current)",
             "core_profile": "Ultra",
-            "considerations": "The game actually runs much more smoothly than its predecessor Budokai. The fights still suffer from frame rate drops, which are noticeable, but I managed to complete several battles without major issues. However, heavy lag persists during cutscenes, and the experimental Ultra profile significantly sacrifices graphical quality for smoother gameplay. I will run further tests with more stable profiles as soon as possible.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "The game actually runs much more smoothly than its predecessor Budokai. The fights still suffer from frame rate drops, which are noticeable, but I managed to complete several battles without major issues. However, heavy lag persists during cutscenes, and the experimental Ultra profile significantly sacrifices graphical quality for smoother gameplay. I will run further tests with more stable profiles as soon as possible.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8590,7 +8590,7 @@
           "test_details": {
             "rtcore_version": "v11.0.0 (prerelease)",
             "core_profile": "Various / All profiles tested",
-            "considerations": "Unfortunately, even with the Black Screen Fix profile, the game does not boot.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Unfortunately, even with the Black Screen Fix profile, the game does not boot.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8648,7 +8648,7 @@
           "test_details": {
             "rtcore_version": "v11.0.0 (prerelease)",
             "core_profile": "Black Screen Fix, Compatibility, Default",
-            "considerations": "Unfortunately, even with various profiles, the game fails to boot.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Unfortunately, even with various profiles, the game fails to boot.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8703,8 +8703,8 @@
           },
           "test_details": {
             "rtcore_version": "v11.0.0-dev",
-            "core_profile": "Speed Hack, Performance, Ultra",
-            "considerations": "UI graphics run smoothly at around 45 FPS, sometimes even higher. However, gameplay sessions and cutscenes lag heavily, making it currently unplayable.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "core_profile": "SpeedHacks, Performance, Ultra",
+            "considerations": "UI graphics run smoothly at around 45 FPS, sometimes even higher. However, gameplay sessions and cutscenes lag heavily, making it currently unplayable.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8742,8 +8742,8 @@
           },
           "test_details": {
             "rtcore_version": "v10.5.3",
-            "core_profile": "Speed Hack",
-            "considerations": "Does not boot, exactly like its NTSC sibling.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "core_profile": "SpeedHacks",
+            "considerations": "Does not boot, exactly like its NTSC sibling.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8782,7 +8782,7 @@
           "test_details": {
             "rtcore_version": "v11.0.00-dev",
             "core_profile": "All of them",
-            "considerations": "Unplayable, battle sessions runs down to 10FPS.\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Unplayable, battle sessions runs down to 10FPS.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8820,8 +8820,8 @@
           },
           "test_details": {
             "rtcore_version": "v11.0.00-dev",
-            "core_profile": "Speed Hacks",
-            "considerations": "Simply PERFECT\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "core_profile": "SpeedHackss",
+            "considerations": "Simply PERFECT\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8874,7 +8874,7 @@
           "test_details": {
             "rtcore_version": "v11.0.00 (prerelease)",
             "core_profile": "All of them",
-            "considerations": "[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -8956,7 +8956,7 @@
           "test_details": {
             "rtcore_version": "v11.5.00-II 'Bash Arsenal'",
             "core_profile": "Performance",
-            "considerations": "Need for Speed: Most Wanted – game-specific Performance profile\nFor Need for Speed: Most Wanted (GameCube PAL / Game ID GOWP69), the existing Rt:Core Performance profile works well with one important game-specific adjustment and a Potato Patched Rom:\n[Core]\nOverclock = 0.20\n\nThe regular Performance GFX.ini can be used unchanged. Its existing performance-oriented graphics/EFB/XFB settings already work well for this title.\nSuggested implementation:\n\nDetect Need for Speed: Most Wanted by Game ID GOWP69.\nStart from the normal Rt:Core Performance profile.\nOverride only the CPU emulation overclock value to 0.20.\nKeep the regular Performance GFX.ini.\nDo not modify the global Performance profile for other games.\nOn the H700 / RG34XX SP this setting was tested to perform significantly better for Need for Speed: Most Wanted than the default Performance CPU clock.\nPotato Edition / prepared RVZ *\nFor additional performance improvements, I also created Need for Speed Most Wanted Potato Edition, a small Windows patcher that prepares a clean PAL GOWP69 GameCube image and creates a verified RVZ optimized for this use case.\nThe patcher applies several game-side rendering reductions, including reduced scenery geometry/LOD paths, disabled car shadows and reflections, disabled sky rendering and other visual reductions, as well as forcing the reduced 2-player asset/geometry path in single-player.\nRepository and patcher:\n[GITHUB-LINK]\nThis is optional—the proposed Dolphin profile should still work with the original game—but the Potato Edition RVZ is intended specifically for low-power H700 handhelds and provides additional performance headroom."
+            "considerations": "Need for Speed: Most Wanted – game-specific Performance profile\nFor Need for Speed: Most Wanted (GameCube PAL / Game ID GOWP69), the existing Rt:Core Performance profile works well with one important game-specific adjustment and a Potato Patched Rom:\n[Core]\nOverclock = 0.20\n\nThe regular Performance GFX.ini can be used unchanged. Its existing performance-oriented graphics/EFB/XFB settings already work well for this title.\nSuggested implementation:\n\nDetect Need for Speed: Most Wanted by Game ID GOWP69.\nStart from the normal Rt:Core Performance profile.\nOverride only the CPU emulation overclock value to 0.20.\nKeep the regular Performance GFX.ini.\nDo not modify the global Performance profile for other games.\nOn the H700 / RG34XX SP this setting was tested to perform significantly better for Need for Speed: Most Wanted than the Default Performance CPU clock.\nPotato Edition / prepared RVZ *\nFor additional performance improvements, I also created Need for Speed Most Wanted Potato Edition, a small Windows patcher that prepares a clean PAL GOWP69 GameCube image and creates a verified RVZ optimized for this use case.\nThe patcher applies several game-side rendering reductions, including reduced scenery geometry/LOD paths, disabled car shadows and reflections, disabled sky rendering and other visual reductions, as well as forcing the reduced 2-player asset/geometry path in single-player.\nRepository and patcher:\n[GITHUB-LINK]\nThis is optional—the proposed Dolphin profile should still work with the original game—but the Potato Edition RVZ is intended specifically for low-power H700 handhelds and provides additional performance headroom."
           },
           "test_environment": {
             "tester": "Lazz",
@@ -9014,7 +9014,7 @@
           "test_details": {
             "rtcore_version": "v11.5.00 'Comfort Zone' (prerelease)",
             "core_profile": "All of them",
-            "considerations": "Boots and runs without crashing. Unfortunately it's impossible to play with it, too heavy stuttering. \nBetter in the UIs\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Boots and runs without crashing. Unfortunately it's impossible to play with it, too heavy stuttering. \nBetter in the UIs\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -9053,7 +9053,7 @@
           "test_details": {
             "rtcore_version": "",
             "core_profile": "All of them",
-            "considerations": "Profiles tested: Speedhack,Performance, Speedup1, Default\nSadly the game won't go past the first option selection window\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Profiles tested: Speedhack,Performance, Speedup1, Default\nSadly the game won't go past the first option selection window\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -9092,7 +9092,7 @@
           "test_details": {
             "rtcore_version": "v11.5.00-III FrontendONE",
             "core_profile": "Various / All profiles tested",
-            "considerations": "Only Black Screen, tried every Rt:Profile\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Only Black Screen, tried every Rt:Profile\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -9131,7 +9131,7 @@
           "test_details": {
             "rtcore_version": "v11.5.00-III FrontendONE",
             "core_profile": "Various / All profiles tested",
-            "considerations": "Only Black Screen, tried every Rt:Profile\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Only Black Screen, tried every Rt:Profile\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
@@ -9170,7 +9170,7 @@
           "test_details": {
             "rtcore_version": "v11.5.00-II 'Bash Arsenal'",
             "core_profile": "Various / All profiles tested",
-            "considerations": "Game boots and runs without crashes or major bugs, but the lagging is far too heavy to appreciate the gameplay. Especially for a title like Muramasa, where the beauty of its sophisticated and unique aesthetic is heavily compromised by such gameplay, it's almost painful to \"play\".\n[Game used in RVZ format, converted from ISO with ___(standard parameters and compression 5)]"
+            "considerations": "Game boots and runs without crashes or major bugs, but the lagging is far too heavy to appreciate the gameplay. Especially for a title like Muramasa, where the beauty of its sophisticated and unique aesthetic is heavily compromised by such gameplay, it's almost painful to \"play\".\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
             "tester": "sirpips",
