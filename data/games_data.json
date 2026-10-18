@@ -28,7 +28,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -67,7 +67,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -84,7 +84,7 @@
       "game_info": {
         "game_id": "G8MP01",
         "system": "GC",
-        "game": "Paper Mario Thousend Year",
+        "game": "Paper Mario: The Thousand-Year Door",
         "region": "PAL"
       },
       "entries": [
@@ -92,7 +92,7 @@
           "game_info": {
             "game_id": "G8MP01",
             "system": "GC",
-            "game": "Paper Mario Thousend Year",
+            "game": "Paper Mario: The Thousand-Year Door",
             "region": "PAL"
           },
           "test_review": {
@@ -105,8 +105,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "SpeedHack/Default",
-            "considerations": "slight texture issues, Frame Rate is slow . Default core seems to also give the same result"
+            "core_profile": "SpeedHack / Default",
+            "considerations": "Slight texture issues, Frame Rate is slow . Default core seems to also give the same result"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -145,7 +145,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate is unplayably low"
+            "considerations": "Frame Rate is unplayably low."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -184,7 +184,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "Standard",
-            "considerations": "it runs ok, but stutters quite a bit, its preferable to either use a PAL rom-speedhack core or play the OG N64 version."
+            "considerations": "It runs ok, but stutters quite a bit, its preferable to either use a PAL rom-speedhack core or play the OG N64 version."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -201,7 +201,7 @@
       "game_info": {
         "game_id": "GW7P69",
         "system": "GC",
-        "game": "007 - Agent Under Fire",
+        "game": "007: Agent Under Fire",
         "region": "PAL"
       },
       "entries": [
@@ -209,7 +209,7 @@
           "game_info": {
             "game_id": "GW7P69",
             "system": "GC",
-            "game": "007 - Agent Under Fire",
+            "game": "007: Agent Under Fire",
             "region": "PAL"
           },
           "test_review": {
@@ -223,7 +223,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "videos run slow, Frame Rate varies, but playable"
+            "considerations": "Videos run slow, Frame Rate varies, but playable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -262,7 +262,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "few slowdowns here and there but playable"
+            "considerations": "Few slowdowns here and there but playable"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -301,7 +301,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "fps drops are common, but its still very playable"
+            "considerations": "Fps drops are common, but its still very playable"
           },
           "test_environment": {
             "tester": "S1eepy",
@@ -340,7 +340,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate is unplayably slow. using the Diet Melee mods might make it playable"
+            "considerations": "Frame Rate is unplayably slow. Using the Diet Melee mods might make it playable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -378,7 +378,7 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "SpeedHack/Default",
+            "core_profile": "SpeedHack / Default",
             "considerations": "Can be slow with many enemies on screen. Can stutter when speaking with npcs."
           },
           "test_environment": {
@@ -418,7 +418,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "stutters quite a bit at the start of a race, but still playable with some patiance"
+            "considerations": "Stutters quite a bit at the start of a race, but still playable with some patiance"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -448,7 +448,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -456,8 +456,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all of them",
-            "considerations": "Doesnt start"
+            "core_profile": "All profiles",
+            "considerations": "Does not start."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -509,15 +509,15 @@
               "set_type": "Game Setting",
               "set_name": "[note by sirpips: Config created from test by Luis Torrão (RG4xxxx, Dolphin Rt:Core v10.5)]",
               "set_filename": "GLME01.ini",
-              "set_url": "https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/refs/heads/main/opt/muos/share/emulator/dolphin/GameSettings/GLME01.ini",
-              "set_note": "Settings:\n- Overclock = 0.60000000: slightly lowers virtual CPU clock to reduce load and improve stability on devices like RG35XX.\n- CPUCore = 4: uses the latest, fastest JIT core.\n- CPUThread = True: enables multi-threaded emulation (improves performance).\n- DSPHLE = True: uses HLE audio (faster, less accurate but sufficient).\n- SkipIPL = True: skips the console boot animation – faster startup.\n- InternalResolution = 66.666...%: internal resolution at 66% – balance between graphics and FPS.\n- NoMipmapping = True: disables mipmaps to reduce GPU load.\n- VISkip = True: skips some vertex information – helps performance in 3D games.\n- Backend = OpenSLES: changes audio backend from ALSA to OpenSLES for better muOS compatibility.\n- Additional tweaks: BBoxEnable, EFBAccessEnable off, EFBEmulateFormatChanges off, VertexRounding, FastDepthCalc, ShaderCache, VSync off, ForceTrueColor, SkipDuplicateXFBs, EFBScaledCopy, SafeTextureCacheColorSamples=128."
+              "set_url": "Https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/refs/heads/main/opt/muos/share/emulator/dolphin/GameSettings/GLME01.ini",
+              "set_note": "Settings:\n- Overclock = 0.60000000: slightly lowers virtual CPU clock to reduce load and improve stability on devices like RG35XX.\n- CPUCore = 4: uses the latest, fastest JIT core.\n- CPUThread = True: enables multi-threaded emulation (improves performance).\n- DSPHLE = True: uses HLE audio (faster, less accuRate but sufficient).\n- SkipIPL = True: skips the console boot animation – faster startup.\n- InternalResolution = 66.666...%: internal resolution at 66% – balance between graphics and FPS.\n- NoMipmapping = True: disables mipmaps to reduce GPU load.\n- VISkip = True: skips some vertex information – helps performance in 3D games.\n- Backend = OpenSLES: changes audio backend from ALSA to OpenSLES for better muOS compatibility.\n- Additional tweaks: BBoxEnable, EFBAccessEnable off, EFBEmulateFormatChanges off, VertexRounding, FastDepthCalc, ShaderCache, VSync off, ForceTrueColor, SkipDuplicateXFBs, EFBScaledCopy, SafeTextureCacheColorSamples=128."
             }
           ],
           "attachments": [
             {
-              "media_type": "video",
+              "media_type": "Video",
               "media_title": "Luigi's Mansion on an Anbernic device with the Allwinner H700 - MUOS",
-              "media_url": "https://www.youtube.com/watch?v=FG76ZUNnYBY"
+              "media_url": "Https://www.youtube.com/watch?v=FG76ZUNnYBY"
             }
           ]
         }
@@ -549,7 +549,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "graphical glitches all over, too slow to be anykind of enjoyable"
+            "considerations": "Graphical glitches all over, Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -566,7 +566,7 @@
       "game_info": {
         "game_id": "GDEP71",
         "system": "GC",
-        "game": "Baldur's gate - Dark alliance",
+        "game": "Baldur's Gate: Dark Alliance",
         "region": "PAL"
       },
       "entries": [
@@ -574,7 +574,7 @@
           "game_info": {
             "game_id": "GDEP71",
             "system": "GC",
-            "game": "Baldur's gate - Dark alliance",
+            "game": "Baldur's Gate: Dark Alliance",
             "region": "PAL"
           },
           "test_review": {
@@ -588,7 +588,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -627,7 +627,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate is unplayably low"
+            "considerations": "Frame Rate is unplayably low."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -666,7 +666,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "gameplay runs at half speed"
+            "considerations": "Gameplay runs at half speed"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -705,7 +705,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable."
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "Danster21",
@@ -774,7 +774,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -782,8 +782,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all of them",
-            "considerations": "Black Screen"
+            "core_profile": "All profiles",
+            "considerations": "Black screen."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -800,7 +800,7 @@
       "game_info": {
         "game_id": "GKBPAF",
         "system": "GC",
-        "game": "Baten Kaitos - Eternal Wings and the Lost Ocean",
+        "game": "Baten Kaitos: Eternal Wings and the Lost Ocean",
         "region": "PAL"
       },
       "entries": [
@@ -808,21 +808,21 @@
           "game_info": {
             "game_id": "GKBPAF",
             "system": "GC",
-            "game": "Baten Kaitos - Eternal Wings and the Lost Ocean",
+            "game": "Baten Kaitos: Eternal Wings and the Lost Ocean",
             "region": "PAL"
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
-            "boot": "NO",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all of them",
-            "considerations": "starts, but freezes immidiatly"
+            "core_profile": "All profiles",
+            "considerations": "Starts, but freezes immediately."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -861,7 +861,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "game runs in slow motion, the DS version is preferable"
+            "considerations": "Game runs in slow motion, the DS version is preferable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -878,7 +878,7 @@
       "game_info": {
         "game_id": "GO2P4F",
         "system": "GC",
-        "game": "Blood Omen 2 - The Legacy of Kain Series",
+        "game": "Blood Omen 2: The Legacy of Kain Series",
         "region": "PAL"
       },
       "entries": [
@@ -886,7 +886,7 @@
           "game_info": {
             "game_id": "GO2P4F",
             "system": "GC",
-            "game": "Blood Omen 2 - The Legacy of Kain Series",
+            "game": "Blood Omen 2: The Legacy of Kain Series",
             "region": "PAL"
           },
           "test_review": {
@@ -930,16 +930,16 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
-            "boot": "NO",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all of them",
-            "considerations": "crashes immidiatly"
+            "core_profile": "All profiles",
+            "considerations": "Crashes immediately."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -969,7 +969,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -977,11 +977,11 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "All of them (tested multiple)",
+            "core_profile": "All profiles (tested multiple)",
             "considerations": "[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "Funky Jacaranda"
           },
@@ -1017,7 +1017,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "playable if a bit slow"
+            "considerations": "Playable if a bit slow"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -1034,7 +1034,7 @@
       "game_info": {
         "game_id": "GB4P51",
         "system": "GC",
-        "game": "Burnout 2 - Point of Impact",
+        "game": "Burnout 2: Point of Impact",
         "region": "PAL"
       },
       "entries": [
@@ -1042,7 +1042,7 @@
           "game_info": {
             "game_id": "GB4P51",
             "system": "GC",
-            "game": "Burnout 2 - Point of Impact",
+            "game": "Burnout 2: Point of Impact",
             "region": "PAL"
           },
           "test_review": {
@@ -1056,7 +1056,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -1073,7 +1073,7 @@
       "game_info": {
         "game_id": "GQCP52",
         "system": "GC",
-        "game": "Call of Duty 2 - Big Red One",
+        "game": "Call of Duty 2: Big Red One",
         "region": "PAL"
       },
       "entries": [
@@ -1081,12 +1081,12 @@
           "game_info": {
             "game_id": "GQCP52",
             "system": "GC",
-            "game": "Call of Duty 2 - Big Red One",
+            "game": "Call of Duty 2: Big Red One",
             "region": "PAL"
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -1094,8 +1094,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "All of them",
-            "considerations": "crashes the entire emulator."
+            "core_profile": "All profiles",
+            "considerations": "Crashes the entire emulator."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -1134,7 +1134,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -1151,7 +1151,7 @@
       "game_info": {
         "game_id": "GCBP7D",
         "system": "GC",
-        "game": "Crash Bandicoot - The Wrath of Cortex",
+        "game": "Crash Bandicoot: The Wrath of Cortex",
         "region": "PAL"
       },
       "entries": [
@@ -1159,7 +1159,7 @@
           "game_info": {
             "game_id": "GCBP7D",
             "system": "GC",
-            "game": "Crash Bandicoot - The Wrath of Cortex",
+            "game": "Crash Bandicoot: The Wrath of Cortex",
             "region": "PAL"
           },
           "test_review": {
@@ -1173,7 +1173,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -1212,7 +1212,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable"
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -1229,7 +1229,7 @@
       "game_info": {
         "game_id": "GCFP75",
         "system": "GC",
-        "game": "Conflict - Desert Storm",
+        "game": "Conflict: Desert Storm",
         "region": "PAL"
       },
       "entries": [
@@ -1237,7 +1237,7 @@
           "game_info": {
             "game_id": "GCFP75",
             "system": "GC",
-            "game": "Conflict - Desert Storm",
+            "game": "Conflict: Desert Storm",
             "region": "PAL"
           },
           "test_review": {
@@ -1251,7 +1251,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable."
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -1268,7 +1268,7 @@
       "game_info": {
         "game_id": "GC2P75",
         "system": "GC",
-        "game": "Conflict - Desert Storm II",
+        "game": "Conflict: Desert Storm II",
         "region": "PAL"
       },
       "entries": [
@@ -1276,7 +1276,7 @@
           "game_info": {
             "game_id": "GC2P75",
             "system": "GC",
-            "game": "Conflict - Desert Storm II",
+            "game": "Conflict: Desert Storm II",
             "region": "PAL"
           },
           "test_review": {
@@ -1290,7 +1290,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable. and stutters a lot"
+            "considerations": "Frame Rate is too low to be playable. And stutters a lot"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -1329,7 +1329,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Too slow to be anykind of playable."
+            "considerations": "Too slow to be playable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -1346,7 +1346,7 @@
       "game_info": {
         "game_id": "GCOP52",
         "system": "GC",
-        "game": "Call of Duty - Finest Hour",
+        "game": "Call of Duty: Finest Hour",
         "region": "PAL"
       },
       "entries": [
@@ -1354,21 +1354,21 @@
           "game_info": {
             "game_id": "GCOP52",
             "system": "GC",
-            "game": "Call of Duty - Finest Hour",
+            "game": "Call of Duty: Finest Hour",
             "region": "PAL"
           },
           "test_review": {
             "rating": 1,
-            "fps": "???",
-            "boot": "YES",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "blacksceen fix",
-            "considerations": "Crashes on the main menu"
+            "core_profile": "Black Screen Fix",
+            "considerations": "Crashes on the main menu."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -1463,7 +1463,7 @@
       "game_info": {
         "game_id": "GKZE9G",
         "system": "GC",
-        "game": "Codename K1ds Next Door Operation V.I.D.E.O.G.A.M.E.",
+        "game": "Codename: Kids Next Door - Operation: V.I.D.E.O.G.A.M.E.",
         "region": "NTSC"
       },
       "entries": [
@@ -1471,7 +1471,7 @@
           "game_info": {
             "game_id": "GKZE9G",
             "system": "GC",
-            "game": "Codename K1ds Next Door Operation V.I.D.E.O.G.A.M.E.",
+            "game": "Codename: Kids Next Door - Operation: V.I.D.E.O.G.A.M.E.",
             "region": "NTSC"
           },
           "test_review": {
@@ -1524,7 +1524,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Too slow to be anykind of playable."
+            "considerations": "Too slow to be playable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -1591,11 +1591,11 @@
           },
           "test_details": {
             "rtcore_version": "v11.0.0 (prerelease)",
-            "core_profile": "SpeedHacks",
+            "core_profile": "SpeedHack",
             "considerations": "Simply perfect, applying a light HD texture pack makes it look even better visually. No lag, no FPS drops, simply perfect.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -1605,14 +1605,14 @@
               "set_type": "Texture",
               "set_name": "Crash Nitro Kart HD Texture Fixes",
               "set_filename": "CNK Texture Fixes.zip",
-              "set_url": "https://mega.nz/file/D8gChAYY#mvymsLDE-J-HCDIrVEIsXARE8VqyFpELFX3IF8cKMsQ"
+              "set_url": "Https://mega.nz/file/D8gChAYY#mvymsLDE-J-HCDIrVEIsXARE8VqyFpELFX3IF8cKMsQ"
             }
           ],
           "attachments": [
             {
-              "media_type": "link",
+              "media_type": "Link",
               "media_title": "Texture Pack source",
-              "media_url": "https://forums.dolphin-emu.org/Thread-crash-nitro-kart-hd-texture-fixes"
+              "media_url": "Https://forums.dolphin-emu.org/Thread-crash-nitro-kart-hd-texture-fixes"
             }
           ]
         }
@@ -1622,7 +1622,7 @@
       "game_info": {
         "game_id": "GCCP01",
         "system": "GC",
-        "game": "Crystal Chronicles",
+        "game": "Final Fantasy Crystal Chronicles",
         "region": "PAL"
       },
       "entries": [
@@ -1630,7 +1630,7 @@
           "game_info": {
             "game_id": "GCCP01",
             "system": "GC",
-            "game": "Crystal Chronicles",
+            "game": "Final Fantasy Crystal Chronicles",
             "region": "PAL"
           },
           "test_review": {
@@ -1644,7 +1644,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "Default",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Danster21",
@@ -1721,8 +1721,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "SpeedHack/Default",
-            "considerations": "slow videos, Frame Rate can vary, playable"
+            "core_profile": "SpeedHack / Default",
+            "considerations": "Slow videos, Frame Rate can vary, playable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -1739,7 +1739,7 @@
       "game_info": {
         "game_id": "GCVEEB",
         "system": "GC",
-        "game": "Cubivore - Survival of the Fittest",
+        "game": "Cubivore: Survival of the Fittest",
         "region": "NTSC"
       },
       "entries": [
@@ -1747,7 +1747,7 @@
           "game_info": {
             "game_id": "GCVEEB",
             "system": "GC",
-            "game": "Cubivore - Survival of the Fittest",
+            "game": "Cubivore: Survival of the Fittest",
             "region": "NTSC"
           },
           "test_review": {
@@ -1867,11 +1867,11 @@
           },
           "test_details": {
             "rtcore_version": "v10.5.3",
-            "core_profile": "SpeedHacks. Default",
-            "considerations": "To be honest, the platforming sections are perfectly playable and even enjoyable, would rate 4*. However, in the central city hub and during races the lagging gets really heavy, dropping FPS down to 20-25\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
+            "core_profile": "SpeedHack / Default",
+            "considerations": "To be honest, the platforming sections are perfectly playable and even enjoyable, would Rate 4*. However, in the central city hub and during races the lagging gets really heavy, dropping FPS down to 20-25\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "Anbernic RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -1881,30 +1881,30 @@
               "set_type": "Texture",
               "set_name": "Crash Tag Team Racing Texture Fixes.rar",
               "set_filename": "Crash Tag Team Racing Texture Fixes.rar",
-              "set_url": "https://mega.nz/file/DsBAFa6Q#Nhe1xY8GBDLng7Ht4aP_jX_0GPJ4BSIaaZouc-a5Tdo",
-              "set_note": "Test with a somewhat expected result, but... for the sake of science this and more!! HD textures, pack under 100MB. Even with any ultra super saiyan god super saiyan profile, the game cannot avoid being witness to FPS that tend heavily below 10. Reporting it here for documentation, however I do not consider it appropriate to add a specific test for this experiment."
+              "set_url": "Https://mega.nz/file/DsBAFa6Q#Nhe1xY8GBDLng7Ht4aP_jX_0GPJ4BSIaaZouc-a5Tdo",
+              "set_note": "Test with a somewhat expected result, but... For the sake of science this and more!! HD textures, pack under 100MB. Even with any ultra super saiyan god super saiyan profile, the game cannot avoid being witness to FPS that tend heavily below 10. Reporting it here for documentation, however I do not consider it appropriate to add a specific test for this experiment."
             }
           ],
           "attachments": [
             {
-              "media_type": "link",
+              "media_type": "Link",
               "media_title": "Texture Pack source",
-              "media_url": "https://forums.dolphin-emu.org/Thread-crash-tag-team-racing-texture-fixes"
+              "media_url": "Https://forums.dolphin-emu.org/Thread-crash-tag-team-racing-texture-fixes"
             },
             {
-              "media_type": "text",
+              "media_type": "Text",
               "media_title": "G9RP7D_AR_Cheats.txt",
-              "media_url": "https://docs.google.com/document/d/1sfSoDWaI3AyZiY8wi6ZUeb9jGygx8rbj3qatvw5OVKE/edit?usp=sharing"
+              "media_url": "Https://docs.google.com/document/d/1sfSoDWaI3AyZiY8wi6ZUeb9jGygx8rbj3qatvw5OVKE/edit?usp=sharing"
             },
             {
-              "media_type": "link",
+              "media_type": "Link",
               "media_title": "CTTR XBOX CONTROLS INVERTED.zip",
-              "media_url": "https://forums.dolphin-emu.org/attachment.php?aid=16178"
+              "media_url": "Https://forums.dolphin-emu.org/attachment.php?aid=16178"
             },
             {
-              "media_type": "link",
+              "media_type": "Link",
               "media_title": "CTTR PS4 CONTROLS.zip",
-              "media_url": "https://forums.dolphin-emu.org/attachment.php?aid=16179"
+              "media_url": "Https://forums.dolphin-emu.org/attachment.php?aid=16179"
             }
           ]
         }
@@ -1939,7 +1939,7 @@
             "considerations": "Playable but has noticeable frame drops during combat. With further optimizations and tweaking, performance could improve significantly.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "Jacaranda"
           },
@@ -1953,7 +1953,7 @@
       "game_info": {
         "game_id": "GD7PB2",
         "system": "GC",
-        "game": "Dragon Ball Z Budokai",
+        "game": "Dragon Ball Z: Budokai",
         "region": "PAL"
       },
       "entries": [
@@ -1961,7 +1961,7 @@
           "game_info": {
             "game_id": "GD7PB2",
             "system": "GC",
-            "game": "Dragon Ball Z Budokai",
+            "game": "Dragon Ball Z: Budokai",
             "region": "PAL"
           },
           "test_review": {
@@ -1978,7 +1978,7 @@
             "considerations": "Gameplay suffers from slowdowns during combat, but the visuals are excellent. The Standard core profile provides the best performance. The Performance core sacrifices too much graphical quality.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "Jacaranda"
           },
@@ -1990,12 +1990,12 @@
           "game_info": {
             "game_id": "GD7PB2",
             "system": "GC",
-            "game": "Dragon Ball Z Budokai",
+            "game": "Dragon Ball Z: Budokai",
             "region": "PAL"
           },
           "test_review": {
             "rating": 3,
-            "fps": "35 - 53",
+            "fps": "35-53",
             "fps_min": 35,
             "fps_max": 53,
             "boot": "YES",
@@ -2003,11 +2003,11 @@
           },
           "test_details": {
             "rtcore_version": "v11.0.0 'Frontendone' (prerelease)",
-            "core_profile": "Speedup 2",
-            "considerations": "Combat is noticeably smoother and faster, but still not at a point where gameplay is enjoyable and worthy of the name. However, the progress is clearly visible, even if the trade-off has been the graphical quality of the game, still enjoyable but compared to the perfect visuals you get with the Default profile... it's a real shame. But we do not give up, still Sbrobbing, still Rintromping.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
+            "core_profile": "SpeedUp 2",
+            "considerations": "Combat is noticeably smoother and faster, but still not at a point where gameplay is enjoyable and worthy of the name. However, the progress is clearly visible, even if the trade-off has been the graphical quality of the game, still enjoyable but compared to the perfect visuals you get with the Default profile... It's a real shame. But we do not give up, still Sbrobbing, still Rintromping.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -2019,7 +2019,7 @@
           "game_info": {
             "game_id": "GD7PB2",
             "system": "GC",
-            "game": "Dragon Ball Z Budokai",
+            "game": "Dragon Ball Z: Budokai",
             "region": "PAL"
           },
           "test_review": {
@@ -2033,7 +2033,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -2050,7 +2050,7 @@
       "game_info": {
         "game_id": "GWZP01",
         "system": "GC",
-        "game": "Dancing Stage Mario Mix",
+        "game": "Dancing Stage: Mario Mix",
         "region": "PAL"
       },
       "entries": [
@@ -2058,7 +2058,7 @@
           "game_info": {
             "game_id": "GWZP01",
             "system": "GC",
-            "game": "Dancing Stage Mario Mix",
+            "game": "Dancing Stage: Mario Mix",
             "region": "PAL"
           },
           "test_review": {
@@ -2139,11 +2139,11 @@
           },
           "test_details": {
             "rtcore_version": "v11.5.00-II 'Bash Arsenal'",
-            "core_profile": "Various / All profiles tested",
+            "core_profile": "All profiles (tested multiple)",
             "considerations": "Slight stutter in animation fluidity, otherwise runs well.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "Anbernic RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -2170,7 +2170,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -2178,8 +2178,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all of them",
-            "considerations": "Doesnt start"
+            "core_profile": "All profiles",
+            "considerations": "Does not start."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2199,7 +2199,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -2207,11 +2207,11 @@
           },
           "test_details": {
             "rtcore_version": "v11.5.00-II 'Bash Arsenal'",
-            "core_profile": "Various / All profiles tested",
-            "considerations": "Doesn't boot, black screen. Tried every Rt:Profile.\nROM is NKit format."
+            "core_profile": "All profiles (tested multiple)",
+            "considerations": "Doesn't boot, Black screen.. Tried every Rt:Profile.\nROM is NKit format."
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "Anbernic RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -2285,11 +2285,11 @@
           },
           "test_details": {
             "rtcore_version": "v10.6 (pre release)",
-            "core_profile": "Speedup 1",
+            "core_profile": "SpeedUp 1",
             "considerations": "Almost perfect. Some lag during intense scenes, but overall very playable. Further in-depth testing is needed to confirm full stability.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "Funky Jacaranda"
           },
@@ -2325,7 +2325,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "playable but Frame Rate can vary"
+            "considerations": "Playable but Frame Rate can vary"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2342,7 +2342,7 @@
       "game_info": {
         "game_id": "GEDP01",
         "system": "GC",
-        "game": "Eternal Darkness - Sanity's Requiem",
+        "game": "Eternal Darkness: Sanity's Requiem",
         "region": "PAL"
       },
       "entries": [
@@ -2350,21 +2350,21 @@
           "game_info": {
             "game_id": "GEDP01",
             "system": "GC",
-            "game": "Eternal Darkness - Sanity's Requiem",
+            "game": "Eternal Darkness: Sanity's Requiem",
             "region": "PAL"
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
-            "boot": "NO",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all fo them",
-            "considerations": "Crashes immidiatly"
+            "core_profile": "All profiles",
+            "considerations": "Crashes immediately."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2394,8 +2394,8 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
-            "boot": "NO",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
@@ -2403,7 +2403,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "freezes at the start"
+            "considerations": "Freezes at the start"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -2442,7 +2442,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "one of the worst Frame Rate ever tested"
+            "considerations": "One of the worst Frame Rate ever tested"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2472,7 +2472,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -2480,8 +2480,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all of them",
-            "considerations": "Black Screen"
+            "core_profile": "All profiles",
+            "considerations": "Black screen."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -2520,7 +2520,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "really slow cutscenes, but in-game runs fine"
+            "considerations": "Really slow cutscenes, but in-game runs fine"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -2559,7 +2559,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "runs really well, very playable"
+            "considerations": "Runs really well, very playable"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -2598,7 +2598,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "some slowdown, NEEDS NTSC ISO!"
+            "considerations": "Some slowdown, NEEDS NTSC ISO!"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -2637,7 +2637,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable."
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2676,7 +2676,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable."
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2715,7 +2715,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable."
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2754,7 +2754,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable."
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2793,7 +2793,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "one of the worst Frame Rate ever tested"
+            "considerations": "One of the worst Frame Rate ever tested"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2823,16 +2823,16 @@
           },
           "test_review": {
             "rating": 1,
-            "fps": "???",
-            "boot": "YES",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "All of them",
-            "considerations": "While the game is able to start it doesnt go past the logos of the developers, crashing and resetting on its own"
+            "core_profile": "All profiles",
+            "considerations": "The game starts, but it does not get past the developer logos; it crashes and resets on its own."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2863,7 +2863,7 @@
           "test_review": {
             "rating": 1,
             "fps": "3-4",
-            "boot": "YES",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 3,
             "fps_max": 4
@@ -2871,7 +2871,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "the text-boxes in the menus dont render the text, Frame Rate too low to be playable, the free-run mode is kinda playable"
+            "considerations": "The text-boxes in the menus dont render the text, Frame Rate is too low to be playable., the free-run mode is kinda playable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2901,16 +2901,16 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
-            "boot": "NO",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all fo them",
-            "considerations": "crashes immidiatly, PSP version is playable"
+            "core_profile": "All profiles",
+            "considerations": "Crashes immediately., PSP version is playable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -2927,7 +2927,7 @@
       "game_info": {
         "game_id": "GHSP69",
         "system": "GC",
-        "game": "Harry Potter and the Chamber of the Secrets",
+        "game": "Harry Potter and the Chamber of Secrets",
         "region": "PAL"
       },
       "entries": [
@@ -2935,7 +2935,7 @@
           "game_info": {
             "game_id": "GHSP69",
             "system": "GC",
-            "game": "Harry Potter and the Chamber of the Secrets",
+            "game": "Harry Potter and the Chamber of Secrets",
             "region": "PAL"
           },
           "test_review": {
@@ -2949,7 +2949,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Too slow to be anykind of playable"
+            "considerations": "Too slow to be playable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -2979,8 +2979,8 @@
           },
           "test_review": {
             "rating": 1,
-            "fps": "???",
-            "boot": "YES",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
@@ -2988,7 +2988,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Crashes in the menu"
+            "considerations": "Crashes in the menu."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -3018,8 +3018,8 @@
           },
           "test_review": {
             "rating": 1,
-            "fps": "???",
-            "boot": "YES",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
@@ -3066,7 +3066,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -3105,7 +3105,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "pretty playable"
+            "considerations": "Pretty playable"
           },
           "test_environment": {
             "tester": "ᴡᴏᴋᴇᴜᴘɪɴᴘᴀʀɪs",
@@ -3173,7 +3173,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate is unplayably low"
+            "considerations": "Frame Rate is unplayably low."
           },
           "test_environment": {
             "tester": "WorkingGoose",
@@ -3190,7 +3190,7 @@
       "game_info": {
         "game_id": "GKOP6V",
         "system": "GC",
-        "game": "Kao the Kangaroo - Round 2",
+        "game": "Kao the Kangaroo: Round 2",
         "region": "PAL"
       },
       "entries": [
@@ -3198,7 +3198,7 @@
           "game_info": {
             "game_id": "GKOP6V",
             "system": "GC",
-            "game": "Kao the Kangaroo - Round 2",
+            "game": "Kao the Kangaroo: Round 2",
             "region": "PAL"
           },
           "test_review": {
@@ -3251,7 +3251,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "playable but very slow in large areas"
+            "considerations": "Playable but very slow in large areas"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -3283,7 +3283,7 @@
             "considerations": "Runs smoothly at 40 FPS. Gets a bit laggy in large / crowded spaces.\nVideo sequences are perfect.\nPlayable, with issues\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "Funky Jacaranda"
           },
@@ -3358,7 +3358,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -3397,7 +3397,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate is unplayably slow. just play the DS or PSP versions."
+            "considerations": "Frame Rate is unplayably slow. Just play the DS or PSP versions."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -3414,7 +3414,7 @@
       "game_info": {
         "game_id": "GL7E64",
         "system": "GC",
-        "game": "LEGO Star Wars II - The Original Trilogy",
+        "game": "LEGO Star Wars II: The Original Trilogy",
         "region": "NTSC"
       },
       "entries": [
@@ -3422,7 +3422,7 @@
           "game_info": {
             "game_id": "GL7E64",
             "system": "GC",
-            "game": "LEGO Star Wars II - The Original Trilogy",
+            "game": "LEGO Star Wars II: The Original Trilogy",
             "region": "NTSC"
           },
           "test_review": {
@@ -3475,7 +3475,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "few slowdowns, but mostly playable"
+            "considerations": "Few slowdowns, but mostly playable"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -3492,7 +3492,7 @@
       "game_info": {
         "game_id": "GM4P01",
         "system": "GC",
-        "game": "Mario Kart Double Dash",
+        "game": "Mario Kart: Double Dash!!",
         "region": "PAL"
       },
       "entries": [
@@ -3500,7 +3500,7 @@
           "game_info": {
             "game_id": "GM4P01",
             "system": "GC",
-            "game": "Mario Kart Double Dash",
+            "game": "Mario Kart: Double Dash!!",
             "region": "PAL"
           },
           "test_review": {
@@ -3553,7 +3553,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -3592,7 +3592,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -3631,7 +3631,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -3651,7 +3651,7 @@
           },
           "test_review": {
             "rating": 2,
-            "fps": "9 - 15",
+            "fps": "9-15",
             "fps_min": 9,
             "fps_max": 15,
             "boot": "YES",
@@ -3663,7 +3663,7 @@
             "considerations": "The game boots but runs at its worst. Also used speedhacks and other performance settings but the result is basically the same.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -3692,7 +3692,7 @@
             "considerations": "The game boots but runs at its worst. Also used sppedhacks and other performance settings but the result is basically the same.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -3706,7 +3706,7 @@
       "game_info": {
         "game_id": "GGZP52",
         "system": "GC",
-        "game": "Dreamworks Madagascar",
+        "game": "DreamWorks Madagascar",
         "region": "PAL"
       },
       "entries": [
@@ -3714,7 +3714,7 @@
           "game_info": {
             "game_id": "GGZP52",
             "system": "GC",
-            "game": "Dreamworks Madagascar",
+            "game": "DreamWorks Madagascar",
             "region": "PAL"
           },
           "test_review": {
@@ -3727,7 +3727,7 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "SpeedHack/Default",
+            "core_profile": "SpeedHack / Default",
             "considerations": "Frame Rate too slow to be playable"
           },
           "test_environment": {
@@ -3766,11 +3766,11 @@
           },
           "test_details": {
             "rtcore_version": "v10.5.3",
-            "core_profile": "All of them (tested multiple)",
+            "core_profile": "All profiles (tested multiple)",
             "considerations": "Perfectly playable, some minor lagging in video scenes.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "Funky Jacaranda"
           },
@@ -3806,7 +3806,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Too slow to be anykind of playable"
+            "considerations": "Too slow to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -3823,7 +3823,7 @@
       "game_info": {
         "game_id": "GM5P7D",
         "system": "GC",
-        "game": "Metal Arms - Glitch in the System",
+        "game": "Metal Arms: Glitch in the System",
         "region": "PAL"
       },
       "entries": [
@@ -3831,13 +3831,13 @@
           "game_info": {
             "game_id": "GM5P7D",
             "system": "GC",
-            "game": "Metal Arms - Glitch in the System",
+            "game": "Metal Arms: Glitch in the System",
             "region": "PAL"
           },
           "test_review": {
             "rating": 2,
             "fps": "4-8",
-            "boot": "YES",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 4,
             "fps_max": 8
@@ -3845,7 +3845,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "menus and videos run hella slow, audio cuts in and out, Frame Rate make it unplayable"
+            "considerations": "Menus and videos run hella slow, audio cuts in and out, Frame Rate make it unplayable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -3862,7 +3862,7 @@
       "game_info": {
         "game_id": "GMFP69",
         "system": "GC",
-        "game": "Medal of Honor - Frontline",
+        "game": "Medal of Honor: Frontline",
         "region": "PAL"
       },
       "entries": [
@@ -3870,7 +3870,7 @@
           "game_info": {
             "game_id": "GMFP69",
             "system": "GC",
-            "game": "Medal of Honor - Frontline",
+            "game": "Medal of Honor: Frontline",
             "region": "PAL"
           },
           "test_review": {
@@ -3884,7 +3884,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -3901,7 +3901,7 @@
       "game_info": {
         "game_id": "GGSPA4",
         "system": "GC",
-        "game": "Metal Gear Solid - The Twin Snakes",
+        "game": "Metal Gear Solid: The Twin Snakes",
         "region": "PAL"
       },
       "entries": [
@@ -3909,13 +3909,13 @@
           "game_info": {
             "game_id": "GGSPA4",
             "system": "GC",
-            "game": "Metal Gear Solid - The Twin Snakes",
+            "game": "Metal Gear Solid: The Twin Snakes",
             "region": "PAL"
           },
           "test_review": {
             "rating": 1,
-            "fps": "???",
-            "boot": "YES",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
@@ -3923,7 +3923,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "videocalls dont render, making the game not start, just play the original for the PSX"
+            "considerations": "Video calls do not render, preventing the game from starting. Play the original PlayStation version instead."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -3962,7 +3962,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -3979,7 +3979,7 @@
       "game_info": {
         "game_id": "GR8P69",
         "system": "GC",
-        "game": "Medal of Honor - Rising Sun",
+        "game": "Medal of Honor: Rising Sun",
         "region": "PAL"
       },
       "entries": [
@@ -3987,7 +3987,7 @@
           "game_info": {
             "game_id": "GR8P69",
             "system": "GC",
-            "game": "Medal of Honor - Rising Sun",
+            "game": "Medal of Honor: Rising Sun",
             "region": "PAL"
           },
           "test_review": {
@@ -4001,7 +4001,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "Default",
-            "considerations": "Frame Rate too low to be playable."
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "Danster21",
@@ -4057,7 +4057,7 @@
       "game_info": {
         "game_id": "GXRP08",
         "system": "GC",
-        "game": "Mega Man X - Command Mission",
+        "game": "Mega Man X: Command Mission",
         "region": "PAL"
       },
       "entries": [
@@ -4065,7 +4065,7 @@
           "game_info": {
             "game_id": "GXRP08",
             "system": "GC",
-            "game": "Mega Man X - Command Mission",
+            "game": "Mega Man X: Command Mission",
             "region": "PAL"
           },
           "test_review": {
@@ -4079,7 +4079,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "a bit slow, but playable with patience"
+            "considerations": "A bit slow, but playable with patience"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -4118,7 +4118,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -4139,18 +4139,18 @@
           "test_review": {
             "rating": 2,
             "fps": "10-45",
-            "boot": "YES",
+            "boot": "NO",
             "playable": "NO",
             "fps_min": 10,
             "fps_max": 45
           },
           "test_details": {
             "rtcore_version": "v11.0.00 (prerelease)",
-            "core_profile": "All of them",
-            "considerations": "Can't run properly. Only with Black Screen Fix and Commpatibility profiles is able to go past the bootanim or the menu ui.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
+            "core_profile": "All profiles",
+            "considerations": "Can't run properly. Only with Black screen. Fix and Commpatibility profiles is able to go past the bootanim or the menu ui.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -4164,7 +4164,7 @@
       "game_info": {
         "game_id": "GW5E69",
         "system": "GC",
-        "game": "Need for Speed - Carbon",
+        "game": "Need for Speed: Carbon",
         "region": "NTSC"
       },
       "entries": [
@@ -4172,7 +4172,7 @@
           "game_info": {
             "game_id": "GW5E69",
             "system": "GC",
-            "game": "Need for Speed - Carbon",
+            "game": "Need for Speed: Carbon",
             "region": "NTSC"
           },
           "test_review": {
@@ -4186,7 +4186,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable"
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -4203,7 +4203,7 @@
       "game_info": {
         "game_id": "GH2E69",
         "system": "GC",
-        "game": "Need for Speed - Hot Pursuit 2",
+        "game": "Need for Speed: Hot Pursuit 2",
         "region": "NTSC"
       },
       "entries": [
@@ -4211,12 +4211,12 @@
           "game_info": {
             "game_id": "GH2E69",
             "system": "GC",
-            "game": "Need for Speed - Hot Pursuit 2",
+            "game": "Need for Speed: Hot Pursuit 2",
             "region": "NTSC"
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -4224,8 +4224,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all of them",
-            "considerations": "Black Screen"
+            "core_profile": "All profiles",
+            "considerations": "Black screen."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -4242,7 +4242,7 @@
       "game_info": {
         "game_id": "GOWE69",
         "system": "GC",
-        "game": "Need for Speed - Most Wanted",
+        "game": "Need for Speed: Most Wanted",
         "region": "NTSC"
       },
       "entries": [
@@ -4250,12 +4250,12 @@
           "game_info": {
             "game_id": "GOWE69",
             "system": "GC",
-            "game": "Need for Speed - Most Wanted",
+            "game": "Need for Speed: Most Wanted",
             "region": "NTSC"
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -4263,8 +4263,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all of them",
-            "considerations": "Black Screen"
+            "core_profile": "All profiles",
+            "considerations": "Black screen."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -4281,7 +4281,7 @@
       "game_info": {
         "game_id": "GNDE69",
         "system": "GC",
-        "game": "Need for Speed - Underground",
+        "game": "Need for Speed: Underground",
         "region": "NTSC"
       },
       "entries": [
@@ -4289,12 +4289,12 @@
           "game_info": {
             "game_id": "GNDE69",
             "system": "GC",
-            "game": "Need for Speed - Underground",
+            "game": "Need for Speed: Underground",
             "region": "NTSC"
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -4302,8 +4302,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all of them",
-            "considerations": "Black Screen"
+            "core_profile": "All profiles",
+            "considerations": "Black screen."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -4320,7 +4320,7 @@
       "game_info": {
         "game_id": "GUGE69",
         "system": "GC",
-        "game": "Need for Speed - Underground 2",
+        "game": "Need for Speed: Underground 2",
         "region": "NTSC"
       },
       "entries": [
@@ -4328,12 +4328,12 @@
           "game_info": {
             "game_id": "GUGE69",
             "system": "GC",
-            "game": "Need for Speed - Underground 2",
+            "game": "Need for Speed: Underground 2",
             "region": "NTSC"
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -4341,8 +4341,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all of them",
-            "considerations": "Black Screen"
+            "core_profile": "All profiles",
+            "considerations": "Black screen."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -4372,7 +4372,7 @@
           },
           "test_review": {
             "rating": 1,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "YES",
             "playable": "NO",
             "fps_min": 0,
@@ -4381,7 +4381,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "text doesnt render making gamepaly impossible, controls also dont seem to work for some reason"
+            "considerations": "Text does not render, making gameplay impossible; the controls also do not seem to work."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -4411,7 +4411,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -4420,7 +4420,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "unplayable, blocked on a green screen"
+            "considerations": "Unplayable; blocked on a green screen."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -4450,7 +4450,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -4458,8 +4458,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all of them",
-            "considerations": "Black Screen"
+            "core_profile": "All profiles",
+            "considerations": "Black screen."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -4490,7 +4490,7 @@
           "test_review": {
             "rating": 3,
             "fps": "20-25",
-            "boot": "YES",
+            "boot": "CRASH",
             "playable": "YES WITH ISSUES",
             "fps_min": 20,
             "fps_max": 25
@@ -4537,7 +4537,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "playable with a LOT of patience, its better to just play the PSP version"
+            "considerations": "Playable with a LOT of patience, its better to just play the PSP version"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -4554,7 +4554,7 @@
       "game_info": {
         "game_id": "GPKE41",
         "system": "GC",
-        "game": "Disney's PK - Out of the Shadows",
+        "game": "Disney's PK: Out of the Shadows",
         "region": "NTSC"
       },
       "entries": [
@@ -4562,13 +4562,13 @@
           "game_info": {
             "game_id": "GPKE41",
             "system": "GC",
-            "game": "Disney's PK - Out of the Shadows",
+            "game": "Disney's PK: Out of the Shadows",
             "region": "NTSC"
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
-            "boot": "NO",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
@@ -4654,7 +4654,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -4685,7 +4685,7 @@
           "test_review": {
             "rating": 3,
             "fps": "10-18",
-            "boot": "YES",
+            "boot": "CRASH",
             "playable": "YES WITH ISSUES",
             "fps_min": 10,
             "fps_max": 18
@@ -4693,7 +4693,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "Default",
-            "considerations": "a bit slow but playable, the date setup at the start crashes the emulator so youre going to need to import a save from an external source to bypass that. online doesnt work, solo does."
+            "considerations": "A bit slow but playable, the date setup at the start crashes the emulator so youre going to need to import a save from an external source to bypass that. Online doesnt work, solo does."
           },
           "test_environment": {
             "tester": "Lucaspec72",
@@ -4732,7 +4732,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "playable but Frame Rate can vary"
+            "considerations": "Playable but Frame Rate can vary"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -4771,7 +4771,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -4810,7 +4810,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "performance varies but it's playable"
+            "considerations": "Performance varies but it's playable"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -4866,7 +4866,7 @@
       "game_info": {
         "game_id": "GRHP41",
         "system": "GC",
-        "game": "Rayman 3 - Hoodlum Havoc",
+        "game": "Rayman 3: Hoodlum Havoc",
         "region": "PAL"
       },
       "entries": [
@@ -4874,7 +4874,7 @@
           "game_info": {
             "game_id": "GRHP41",
             "system": "GC",
-            "game": "Rayman 3 - Hoodlum Havoc",
+            "game": "Rayman 3: Hoodlum Havoc",
             "region": "PAL"
           },
           "test_review": {
@@ -4888,7 +4888,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "Default",
-            "considerations": "playable with Frame Rate dips in larger areas"
+            "considerations": "Playable with Frame Rate dips in larger areas"
           },
           "test_environment": {
             "tester": "Danster21",
@@ -4903,12 +4903,12 @@
           "game_info": {
             "game_id": "GRHP41",
             "system": "GC",
-            "game": "Rayman 3 - Hoodlum Havoc",
+            "game": "Rayman 3: Hoodlum Havoc",
             "region": "PAL"
           },
           "test_review": {
             "rating": 1,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
@@ -4916,11 +4916,11 @@
           },
           "test_details": {
             "rtcore_version": "v11.5.00-II 'Bash Arsenal'",
-            "core_profile": "Various / All profiles tested",
-            "considerations": "Boots and shows initial logos, language selection screen appears, but after selecting language only black screen. Tried every Rt:Profile.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
+            "core_profile": "All profiles (tested multiple)",
+            "considerations": "Boots and shows initial logos, language selection screen appears, but after selecting language only Black screen.. Tried every Rt:Profile.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "Anbernic RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -4947,16 +4947,16 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
-            "boot": "NO",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all of them",
-            "considerations": "crashes immidiatly"
+            "core_profile": "All profiles",
+            "considerations": "Crashes immediately."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -5034,7 +5034,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable."
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5073,7 +5073,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "playable, but can be laggy"
+            "considerations": "Playable, but can be laggy"
           },
           "test_environment": {
             "tester": "Speedrun [+.[🐬].%]",
@@ -5111,11 +5111,11 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "SpeedHack/Default",
-            "considerations": "Frame Rate too low to be playable"
+            "core_profile": "SpeedHack / Default",
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
-            "tester": "eleot",
+            "tester": "Eleot",
             "device": "Unknown Device",
             "muos_version": ""
           },
@@ -5151,7 +5151,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "standard",
-            "considerations": "playable at relativly high Frame Rate if you use the debug mode to disable stuff. i suggest BACKGROUND, STOBJ, EFFECTS, APE, MINIMAP"
+            "considerations": "Playable at relativly high Frame Rate if you use the debug mode to disable stuff. I suggest BACKGROUND, STOBJ, EFFECTS, APE, MINIMAP"
           },
           "test_environment": {
             "tester": "Row",
@@ -5168,7 +5168,7 @@
       "game_info": {
         "game_id": "GSNP8P",
         "system": "GC",
-        "game": "Sonic Adventure 2 DX",
+        "game": "Sonic Adventure 2: Battle",
         "region": "PAL"
       },
       "entries": [
@@ -5176,12 +5176,12 @@
           "game_info": {
             "game_id": "GSNP8P",
             "system": "GC",
-            "game": "Sonic Adventure 2 DX",
+            "game": "Sonic Adventure 2: Battle",
             "region": "PAL"
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -5189,8 +5189,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "blacksceen fix",
-            "considerations": "Doesnt start"
+            "core_profile": "Black Screen Fix",
+            "considerations": "Does not start."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5220,7 +5220,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -5228,8 +5228,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all of them",
-            "considerations": "Black Screen"
+            "core_profile": "All profiles",
+            "considerations": "Black screen."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -5246,7 +5246,7 @@
       "game_info": {
         "game_id": "GGVX78",
         "system": "GC",
-        "game": "Spongebob - Battle for Bikini Bottom",
+        "game": "SpongeBob SquarePants: Battle for Bikini Bottom",
         "region": "PAL"
       },
       "entries": [
@@ -5254,7 +5254,7 @@
           "game_info": {
             "game_id": "GGVX78",
             "system": "GC",
-            "game": "Spongebob - Battle for Bikini Bottom",
+            "game": "SpongeBob SquarePants: Battle for Bikini Bottom",
             "region": "PAL"
           },
           "test_review": {
@@ -5307,7 +5307,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -5324,7 +5324,7 @@
       "game_info": {
         "game_id": "GXSP8P",
         "system": "GC",
-        "game": "Sonic Adventure DX",
+        "game": "Sonic Adventure DX: Director's Cut",
         "region": "PAL"
       },
       "entries": [
@@ -5332,7 +5332,7 @@
           "game_info": {
             "game_id": "GXSP8P",
             "system": "GC",
-            "game": "Sonic Adventure DX",
+            "game": "Sonic Adventure DX: Director's Cut",
             "region": "PAL"
           },
           "test_review": {
@@ -5346,7 +5346,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable, play the dreamcast version instead"
+            "considerations": "Too slow to be enjoyable., play the dreamcast version instead"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5363,7 +5363,7 @@
       "game_info": {
         "game_id": "GS8E7D",
         "system": "GC",
-        "game": "Spyro - Enter the Dragonfly",
+        "game": "Spyro: Enter the Dragonfly",
         "region": "NTSC"
       },
       "entries": [
@@ -5371,21 +5371,21 @@
           "game_info": {
             "game_id": "GS8E7D",
             "system": "GC",
-            "game": "Spyro - Enter the Dragonfly",
+            "game": "Spyro: Enter the Dragonfly",
             "region": "NTSC"
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
-            "boot": "NO",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "blacksceen fix",
-            "considerations": "it boots, but freezes almost immidiatly."
+            "core_profile": "Black Screen Fix",
+            "considerations": "It boots, but freezes almost immediately."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5424,7 +5424,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable."
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5441,7 +5441,7 @@
       "game_info": {
         "game_id": "G3BP9G",
         "system": "GC",
-        "game": "Serious Sam Next Encounter",
+        "game": "Serious Sam: Next Encounter",
         "region": "PAL"
       },
       "entries": [
@@ -5449,7 +5449,7 @@
           "game_info": {
             "game_id": "G3BP9G",
             "system": "GC",
-            "game": "Serious Sam Next Encounter",
+            "game": "Serious Sam: Next Encounter",
             "region": "PAL"
           },
           "test_review": {
@@ -5502,7 +5502,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "playable, Frame Rate can sometimes vary"
+            "considerations": "Playable, Frame Rate can sometimes vary"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5519,7 +5519,7 @@
       "game_info": {
         "game_id": "GF7P01",
         "system": "GC",
-        "game": "Star Fox - Assault",
+        "game": "Star Fox: Assault",
         "region": "PAL"
       },
       "entries": [
@@ -5527,13 +5527,13 @@
           "game_info": {
             "game_id": "GF7P01",
             "system": "GC",
-            "game": "Star Fox - Assault",
+            "game": "Star Fox: Assault",
             "region": "PAL"
           },
           "test_review": {
             "rating": 3,
             "fps": "18-23",
-            "boot": "YES",
+            "boot": "CRASH",
             "playable": "YES WITH ISSUES",
             "fps_min": 18,
             "fps_max": 23
@@ -5541,7 +5541,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "text doesnt render in the menu making the game almost unplayable, apart from that its very much playable"
+            "considerations": "Text doesnt render in the menu making the game almost unplayable, apart from that its very much playable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5580,7 +5580,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable."
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5619,7 +5619,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -5658,7 +5658,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5675,7 +5675,7 @@
       "game_info": {
         "game_id": "GHQE7D",
         "system": "GC",
-        "game": "The Simpsons - Hit & Run",
+        "game": "The Simpsons: Hit & Run",
         "region": "NTSC"
       },
       "entries": [
@@ -5683,7 +5683,7 @@
           "game_info": {
             "game_id": "GHQE7D",
             "system": "GC",
-            "game": "The Simpsons - Hit & Run",
+            "game": "The Simpsons: Hit & Run",
             "region": "NTSC"
           },
           "test_review": {
@@ -5697,7 +5697,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "slow cutscenes, can be quite unstable with the Default underclock. in Dolphin.ini set Overlock = 0.23000000 to resolve crashing and other issues."
+            "considerations": "Slow cutscenes, can be quite unstable with the Default underclock. In Dolphin.ini set Overlock = 0.23000000 to resolve crashing and other issues."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5714,7 +5714,7 @@
       "game_info": {
         "game_id": "G5SE7D",
         "system": "GC",
-        "game": "Spyro - A Hero's Tail",
+        "game": "Spyro: A Hero's Tail",
         "region": "NTSC"
       },
       "entries": [
@@ -5722,7 +5722,7 @@
           "game_info": {
             "game_id": "G5SE7D",
             "system": "GC",
-            "game": "Spyro - A Hero's Tail",
+            "game": "Spyro: A Hero's Tail",
             "region": "NTSC"
           },
           "test_review": {
@@ -5736,7 +5736,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5775,7 +5775,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "Standard",
-            "considerations": "playable, if a bit slow. Surprisingly the SpeedHack core makes the game run slower"
+            "considerations": "Playable, if a bit slow. Surprisingly the SpeedHack core makes the game run slower"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5814,7 +5814,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "stutters quite a lot especialy at the start of the game, playable, but only if you can handle low Frame Rates"
+            "considerations": "Stutters quite a lot especialy at the start of the game, playable, but only if you can handle low Frame Rates"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5831,7 +5831,7 @@
       "game_info": {
         "game_id": "G4MP69",
         "system": "GC",
-        "game": "The Sims Bustin' out",
+        "game": "The Sims: Bustin' Out",
         "region": "PAL"
       },
       "entries": [
@@ -5839,7 +5839,7 @@
           "game_info": {
             "game_id": "G4MP69",
             "system": "GC",
-            "game": "The Sims Bustin' out",
+            "game": "The Sims: Bustin' Out",
             "region": "PAL"
           },
           "test_review": {
@@ -5852,11 +5852,11 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "SpeedHack/Default",
-            "considerations": "Frame Rate too low to be playable"
+            "core_profile": "SpeedHack / Default",
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
-            "tester": "eleot",
+            "tester": "Eleot",
             "device": "Unknown Device",
             "muos_version": ""
           },
@@ -5892,7 +5892,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "playable but with lot of patience"
+            "considerations": "Playable but with lot of patience"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -5931,7 +5931,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "crashes sometimes and has graphical glitches in the ui, low Frame Rate makes it unplayable"
+            "considerations": "Crashes sometimes and has graphical glitches in the ui, low Frame Rate makes it unplayable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -5970,7 +5970,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "bit slow, but perfectly playable, the dreamcast version is still more stable"
+            "considerations": "Bit slow, but perfectly playable, the dreamcast version is still more stable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -6048,7 +6048,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "few stutters here and there, but playable. Might need higher cpu clock to avoid crashing."
+            "considerations": "Few stutters here and there, but playable. Might need higher cpu clock to avoid crashing."
           },
           "test_environment": {
             "tester": "Speedrun [+.[🐬].%]",
@@ -6065,7 +6065,7 @@
       "game_info": {
         "game_id": "G4IP52",
         "system": "GC",
-        "game": "Shrek - Smash n' Crash Racing",
+        "game": "Shrek: Smash n' Crash Racing",
         "region": "PAL"
       },
       "entries": [
@@ -6073,7 +6073,7 @@
           "game_info": {
             "game_id": "G4IP52",
             "system": "GC",
-            "game": "Shrek - Smash n' Crash Racing",
+            "game": "Shrek: Smash n' Crash Racing",
             "region": "PAL"
           },
           "test_review": {
@@ -6087,7 +6087,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "playable, but playing either the DS or PSP version is preferable"
+            "considerations": "Playable, but playing either the DS or PSP version is preferable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -6104,7 +6104,7 @@
       "game_info": {
         "game_id": "GSWP64",
         "system": "GC",
-        "game": "Star Wars - Rogue Squadron II - Rogue Leader",
+        "game": "Star Wars: Rogue Squadron II - Rogue Leader",
         "region": "PAL"
       },
       "entries": [
@@ -6112,21 +6112,21 @@
           "game_info": {
             "game_id": "GSWP64",
             "system": "GC",
-            "game": "Star Wars - Rogue Squadron II - Rogue Leader",
+            "game": "Star Wars: Rogue Squadron II - Rogue Leader",
             "region": "PAL"
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
-            "boot": "NO",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all fo them",
-            "considerations": "crashes immidiatly"
+            "core_profile": "All profiles",
+            "considerations": "Crashes immediately."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -6195,7 +6195,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -6203,8 +6203,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all of them",
-            "considerations": "Black Screen"
+            "core_profile": "All profiles",
+            "considerations": "Black screen."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -6234,8 +6234,8 @@
           },
           "test_review": {
             "rating": 1,
-            "fps": "???",
-            "boot": "YES",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
@@ -6273,7 +6273,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -6281,7 +6281,7 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "All of the",
+            "core_profile": "All profiles",
             "considerations": "Starts, but crashes shortly after"
           },
           "test_environment": {
@@ -6320,8 +6320,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "All of them",
-            "considerations": "it requires files from this link to work. https://github.com/libretro/dolphin/archive/master.zip only workswith NTSC iso. try the DS game."
+            "core_profile": "All profiles",
+            "considerations": "It requires files from this link to work. Https://github.com/libretro/dolphin/archive/master.zip only workswith NTSC iso. Try the DS game."
           },
           "test_environment": {
             "tester": "DeadPlant, Sexy_Shrek, SEIRO",
@@ -6438,7 +6438,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "stutters a lot, completly unplayable"
+            "considerations": "Stutters a lot, completly unplayable"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -6468,8 +6468,8 @@
           },
           "test_review": {
             "rating": 1,
-            "fps": "???",
-            "boot": "YES",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
@@ -6477,7 +6477,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "got stuck on character creation. unplayable"
+            "considerations": "Gets stuck during character creation; unplayable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -6533,7 +6533,7 @@
       "game_info": {
         "game_id": "G6SP7D",
         "system": "GC",
-        "game": "Spyro - A New Beginning",
+        "game": "Spyro: A New Beginning",
         "region": "PAL"
       },
       "entries": [
@@ -6541,7 +6541,7 @@
           "game_info": {
             "game_id": "G6SP7D",
             "system": "GC",
-            "game": "Spyro - A New Beginning",
+            "game": "Spyro: A New Beginning",
             "region": "PAL"
           },
           "test_review": {
@@ -6554,8 +6554,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "blacksceen fix",
-            "considerations": "too slow to be anykind of enjoyable"
+            "core_profile": "Black Screen Fix",
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -6594,7 +6594,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable"
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -6672,7 +6672,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -6711,7 +6711,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Too slow to be anykind of playable."
+            "considerations": "Too slow to be playable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -6728,7 +6728,7 @@
       "game_info": {
         "game_id": "G3FP69",
         "system": "GC",
-        "game": "TimeSplitters Future Perfect",
+        "game": "TimeSplitters: Future Perfect",
         "region": "PAL"
       },
       "entries": [
@@ -6736,12 +6736,12 @@
           "game_info": {
             "game_id": "G3FP69",
             "system": "GC",
-            "game": "TimeSplitters Future Perfect",
+            "game": "TimeSplitters: Future Perfect",
             "region": "PAL"
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -6749,8 +6749,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all of them",
-            "considerations": "only gives a black screen"
+            "core_profile": "All profiles",
+            "considerations": "Only shows a Black screen.."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -6789,7 +6789,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "severe slowdowns on large areas, barely playable but not really enjoyable"
+            "considerations": "Severe slowdowns on large areas, barely playable but not really enjoyable"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -6828,7 +6828,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -6867,7 +6867,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable"
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -6906,7 +6906,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -6945,7 +6945,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Too slow to be anykind of playable."
+            "considerations": "Too slow to be playable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -6975,7 +6975,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -6983,8 +6983,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "all of them",
-            "considerations": "Black Screen"
+            "core_profile": "All profiles",
+            "considerations": "Black screen."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -7014,8 +7014,8 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
-            "boot": "NO",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
@@ -7023,7 +7023,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Crashes at starting logo."
+            "considerations": "Crashes at the starting logo."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -7092,8 +7092,8 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
-            "boot": "NO",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
@@ -7140,7 +7140,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Too slow to be anykind of playable"
+            "considerations": "Too slow to be playable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -7170,8 +7170,8 @@
           },
           "test_review": {
             "rating": 1,
-            "fps": "???",
-            "boot": "YES",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
@@ -7179,7 +7179,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Freezes at the Loading screen."
+            "considerations": "Freezes at the loading screen."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -7247,10 +7247,10 @@
           "test_details": {
             "rtcore_version": "v11.0.00 (prerelease)",
             "core_profile": "Compatibility",
-            "considerations": "[Disc 1] Only with the Compatibility profile does the game manage to boot past the \"Licensed by Nintendo\" screen shortly after startup.\nUnfortunately, this doesn't resolve the low frame rate, which stays locked at around 30 FPS during gameplay. This causes lag that, while not extreme, is still quite annoying. Ultimately, a game like this is unplayable with an issue like this.[Disc 1] Only with the Compatibility profile the game can go past the \"Licensed by Nintendo\" screen shortly after the boot.\nHowever the average FPS during the gaming session is stable on 20-30 and way too laggy to be enjoyable.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
+            "considerations": "[Disc 1] Only with the Compatibility profile does the game manage to boot past the \"Licensed by Nintendo\" screen shortly after startup.\nUnfortunately, this doesn't resolve the low frame Rate, which stays locked at around 30 FPS during gameplay. This causes lag that, while not extreme, is still quite annoying. Ultimately, a game like this is unplayable with an issue like this.[Disc 1] Only with the Compatibility profile the game can go past the \"Licensed by Nintendo\" screen shortly after the boot.\nHowever the average FPS during the gaming session is stable on 20-30 and way too laggy to be enjoyable.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -7286,7 +7286,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable."
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -7325,7 +7325,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable"
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -7364,7 +7364,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable"
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -7381,7 +7381,7 @@
       "game_info": {
         "game_id": "GTKP51",
         "system": "GC",
-        "game": "Turok Evolution",
+        "game": "Turok: Evolution",
         "region": "PAL"
       },
       "entries": [
@@ -7389,7 +7389,7 @@
           "game_info": {
             "game_id": "GTKP51",
             "system": "GC",
-            "game": "Turok Evolution",
+            "game": "Turok: Evolution",
             "region": "PAL"
           },
           "test_review": {
@@ -7441,11 +7441,11 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "SpeedHack/Default",
-            "considerations": "gameplay needs a bit of patience"
+            "core_profile": "SpeedHack / Default",
+            "considerations": "Gameplay needs a bit of patience"
           },
           "test_environment": {
-            "tester": "eleot",
+            "tester": "Eleot",
             "device": "Unknown Device",
             "muos_version": ""
           },
@@ -7462,7 +7462,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -7470,11 +7470,11 @@
           },
           "test_details": {
             "rtcore_version": "v11.0.00 (prerelease)",
-            "core_profile": "All of them",
+            "core_profile": "All profiles",
             "considerations": "Doesn't boot.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -7501,8 +7501,8 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
-            "boot": "NO",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
@@ -7510,7 +7510,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Crashes immidiatly"
+            "considerations": "Crashes immediately."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -7549,7 +7549,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "audio desynchs during the intro which takes a very long time, framarate seems high, but the game essentialy runs in slow motion."
+            "considerations": "Audio desynchs during the intro which takes a very long time, Frame Rate seems high, but the game essentialy runs in slow motion."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -7588,7 +7588,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "audio desynchs during the intro which takes a very long time, framarate seems high, but the game essentialy runs in slow motion."
+            "considerations": "Audio desynchs during the intro which takes a very long time, Frame Rate seems high, but the game essentialy runs in slow motion."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -7627,7 +7627,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "too slow to be anykind of enjoyable"
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -7666,7 +7666,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "few stutters but otherwise playable"
+            "considerations": "Few stutters but otherwise playable"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -7735,8 +7735,8 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
-            "boot": "NO",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
@@ -7744,7 +7744,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Stuck at black screen after the main menu"
+            "considerations": "Stuck on a Black screen. After the main menu."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -7822,7 +7822,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "texture problems with the ui make it difficult to start a new game, performance is low in the start lobby, but gets better in levels."
+            "considerations": "Texture problems with the ui make it difficult to start a new game, performance is low in the start lobby, but gets better in levels."
           },
           "test_environment": {
             "tester": "Sexy_Shrek, Speedrun [+.[🐬].%]",
@@ -7839,7 +7839,7 @@
       "game_info": {
         "game_id": "GZWP01",
         "system": "GC",
-        "game": "WarioWare Inc. - Mega Party Game$!",
+        "game": "WarioWare, Inc.: Mega Party Game$!",
         "region": "PAL"
       },
       "entries": [
@@ -7847,7 +7847,7 @@
           "game_info": {
             "game_id": "GZWP01",
             "system": "GC",
-            "game": "WarioWare Inc. - Mega Party Game$!",
+            "game": "WarioWare, Inc.: Mega Party Game$!",
             "region": "PAL"
           },
           "test_review": {
@@ -7891,16 +7891,16 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
-            "boot": "NO",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "blacksceen fix",
-            "considerations": "it boots, but freezes almost immidiatly."
+            "core_profile": "Black Screen Fix",
+            "considerations": "It boots, but freezes almost immediately."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -7939,7 +7939,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "some framedrops can happen, still very playable"
+            "considerations": "Some Frame drops can happen, still very playable"
           },
           "test_environment": {
             "tester": "S1eepy",
@@ -7956,7 +7956,7 @@
       "game_info": {
         "game_id": "GXXP01",
         "system": "GC",
-        "game": "Pokemon XD",
+        "game": "Pokemon XD: Gale of Darkness",
         "region": "PAL"
       },
       "entries": [
@@ -7964,7 +7964,7 @@
           "game_info": {
             "game_id": "GXXP01",
             "system": "GC",
-            "game": "Pokemon XD",
+            "game": "Pokemon XD: Gale of Darkness",
             "region": "PAL"
           },
           "test_review": {
@@ -7978,7 +7978,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "glitchy text, playable with a few frame drops"
+            "considerations": "Glitchy text, playable with a few frame drops"
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -7995,7 +7995,7 @@
       "game_info": {
         "game_id": "GYFPA4",
         "system": "GC",
-        "game": "Yu-Gi-Oh: The Falsebound Kingdo",
+        "game": "Yu-Gi-Oh! The Falsebound Kingdom",
         "region": "PAL"
       },
       "entries": [
@@ -8003,7 +8003,7 @@
           "game_info": {
             "game_id": "GYFPA4",
             "system": "GC",
-            "game": "Yu-Gi-Oh: The Falsebound Kingdo",
+            "game": "Yu-Gi-Oh! The Falsebound Kingdom",
             "region": "PAL"
           },
           "test_review": {
@@ -8017,7 +8017,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "overworld runs good, battles not as good"
+            "considerations": "Overworld runs good, battles not as good"
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -8056,7 +8056,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate too low to be playable"
+            "considerations": "Frame Rate is too low to be playable."
           },
           "test_environment": {
             "tester": "SkullXavier",
@@ -8073,7 +8073,7 @@
       "game_info": {
         "game_id": "GZLP01",
         "system": "GC",
-        "game": "Zelda - The Wind Waker",
+        "game": "The Legend of Zelda: The Wind Waker",
         "region": "PAL"
       },
       "entries": [
@@ -8081,7 +8081,7 @@
           "game_info": {
             "game_id": "GZLP01",
             "system": "GC",
-            "game": "Zelda - The Wind Waker",
+            "game": "The Legend of Zelda: The Wind Waker",
             "region": "PAL"
           },
           "test_review": {
@@ -8095,7 +8095,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "Frame Rate is unplayably slow. dont even bother."
+            "considerations": "Frame Rate is unplayably slow. Dont even bother."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -8112,7 +8112,7 @@
       "game_info": {
         "game_id": "GZCP51",
         "system": "GC",
-        "game": "Zoocube",
+        "game": "Zoo Cube",
         "region": "PAL"
       },
       "entries": [
@@ -8120,7 +8120,7 @@
           "game_info": {
             "game_id": "GZCP51",
             "system": "GC",
-            "game": "Zoocube",
+            "game": "Zoo Cube",
             "region": "PAL"
           },
           "test_review": {
@@ -8134,7 +8134,7 @@
           "test_details": {
             "rtcore_version": "Legacy",
             "core_profile": "SpeedHack",
-            "considerations": "choose 50hz mode at the start"
+            "considerations": "Choose 50hz mode at the start"
           },
           "test_environment": {
             "tester": "Speedrun [+.[🐬].%]",
@@ -8176,7 +8176,7 @@
             "considerations": "Still running in slowmotion, the graphics look good but like this is absolutely not playable\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG 35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -8215,7 +8215,7 @@
             "considerations": "Boots but is heavily lagging all the time\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "Funky Jacaranda"
           },
@@ -8229,7 +8229,7 @@
       "game_info": {
         "game_id": "SMNP01",
         "system": "Wii",
-        "game": "New Super Mario Bros Wii",
+        "game": "New Super Mario Bros. Wii",
         "region": "PAL"
       },
       "entries": [
@@ -8237,7 +8237,7 @@
           "game_info": {
             "game_id": "SMNP01",
             "system": "Wii",
-            "game": "New Super Mario Bros Wii",
+            "game": "New Super Mario Bros. Wii",
             "region": "PAL"
           },
           "test_review": {
@@ -8268,7 +8268,7 @@
       "game_info": {
         "game_id": "RZDP01",
         "system": "Wii",
-        "game": "Zelda - Twilight Princess",
+        "game": "The Legend of Zelda: Twilight Princess",
         "region": "PAL"
       },
       "entries": [
@@ -8276,7 +8276,7 @@
           "game_info": {
             "game_id": "RZDP01",
             "system": "Wii",
-            "game": "Zelda - Twilight Princess",
+            "game": "The Legend of Zelda: Twilight Princess",
             "region": "PAL"
           },
           "test_review": {
@@ -8289,8 +8289,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "blacksceen fix",
-            "considerations": "Frame Rate is unplayably slow. dont even bother."
+            "core_profile": "Black Screen Fix",
+            "considerations": "Frame Rate is unplayably slow. Dont even bother."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -8307,7 +8307,7 @@
       "game_info": {
         "game_id": "RHMP99",
         "system": "Wii",
-        "game": "Harvest Moon Magical Melody",
+        "game": "Harvest Moon: Magical Melody",
         "region": "PAL"
       },
       "entries": [
@@ -8315,7 +8315,7 @@
           "game_info": {
             "game_id": "RHMP99",
             "system": "Wii",
-            "game": "Harvest Moon Magical Melody",
+            "game": "Harvest Moon: Magical Melody",
             "region": "PAL"
           },
           "test_review": {
@@ -8328,8 +8328,8 @@
           },
           "test_details": {
             "rtcore_version": "Legacy",
-            "core_profile": "SpeedHack/Default",
-            "considerations": "too slow to be anykind of enjoyable"
+            "core_profile": "SpeedHack / Default",
+            "considerations": "Too slow to be enjoyable."
           },
           "test_environment": {
             "tester": "Sexy_Shrek",
@@ -8360,19 +8360,19 @@
           "test_review": {
             "rating": 1,
             "fps": "10-40",
-            "boot": "YES",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 10,
             "fps_max": 40
           },
           "test_details": {
             "rtcore_version": "v10.5.3",
-            "core_profile": "Various / All profiles tested",
+            "core_profile": "All profiles (tested multiple)",
             "considerations": "Profiles tested: Speedhack,Performance, Speedup1, Default\nSadly the game won't go past the first option selection window\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
-            "device": "RG-35XX H",
+            "tester": "Sirpips",
+            "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
           "cover_art": "https://retrogametalk.com/repo/wp-content/uploads/2021/03/61171_front.jpg",
@@ -8380,7 +8380,7 @@
             {
               "set_type": "Hack",
               "set_name": "English Patch by Traceytrace",
-              "set_url": "https://www.romhacking.net/translations/6799/"
+              "set_url": "Https://www.romhacking.net/translations/6799/"
             }
           ],
           "attachments": []
@@ -8416,8 +8416,8 @@
             "considerations": "Perfect , only during the cutscenes there may be some minor lagging.\nEverything else is awesome.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
-            "device": "RG-35XX H",
+            "tester": "Sirpips",
+            "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
           "cover_art": "",
@@ -8443,7 +8443,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "0-0",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -8455,7 +8455,7 @@
             "considerations": "Not booting\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -8464,7 +8464,7 @@
             {
               "set_type": "Hack",
               "set_name": "USA Undub",
-              "set_note": "intro video was swapped but not subbed in English. Battle voices restored."
+              "set_note": "Intro video was swapped but not subbed in English. Battle voices restored."
             }
           ],
           "attachments": []
@@ -8475,7 +8475,7 @@
       "game_info": {
         "game_id": "GZ3E70",
         "system": "GC",
-        "game": "Dragon Ball Z Budokai 2",
+        "game": "Dragon Ball Z: Budokai 2",
         "region": "NTSC"
       },
       "entries": [
@@ -8483,7 +8483,7 @@
           "game_info": {
             "game_id": "GZ3E70",
             "system": "GC",
-            "game": "Dragon Ball Z Budokai 2",
+            "game": "Dragon Ball Z: Budokai 2",
             "region": "NTSC"
           },
           "test_review": {
@@ -8497,10 +8497,10 @@
           "test_details": {
             "rtcore_version": "v11.0.0 (current)",
             "core_profile": "Ultra",
-            "considerations": "The game actually runs much more smoothly than its predecessor Budokai. The fights still suffer from frame rate drops, which are noticeable, but I managed to complete several battles without major issues. However, heavy lag persists during cutscenes, and the experimental Ultra profile significantly sacrifices graphical quality for smoother gameplay. I will run further tests with more stable profiles as soon as possible.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
+            "considerations": "The game actually runs much more smoothly than its predecessor Budokai. The fights still suffer from frame Rate drops, which are noticeable, but I managed to complete several battles without major issues. However, heavy lag persists during cutscenes, and the experimental Ultra profile significantly sacrifices graphical quality for smoother gameplay. I will run further tests with more stable profiles as soon as possible.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -8510,7 +8510,7 @@
               "set_type": "Hack",
               "set_name": "USA Undub",
               "set_filename": "Dragon Ball Z - Budokai 2 Undub 0.99.zip",
-              "set_url": "https://archive.org/download/dragon-ball-z-budokai-2-gamecube-undub/Dragon%20Ball%20Z%20-%20Budokai%202%20Undub%200.99.zip",
+              "set_url": "Https://archive.org/download/dragon-ball-z-budokai-2-gamecube-undub/Dragon%20Ball%20Z%20-%20Budokai%202%20Undub%200.99.zip",
               "set_note": "Undub Patch Released By TechnoSyndrome. Patch Version 0.99. Hack Release Date 26 March 2023. For more info: https://www.romhacking.net/hacks/7671/"
             }
           ],
@@ -8543,7 +8543,7 @@
           },
           "test_details": {
             "rtcore_version": "v10.5.3",
-            "core_profile": "Various / All profiles tested",
+            "core_profile": "All profiles (tested multiple)",
             "considerations": "I was surprised how well i got it to run how ever i will note it dipped heavily when i selected tails which would be an issue if i tried to 100% the game"
           },
           "test_environment": {
@@ -8556,8 +8556,8 @@
             {
               "set_type": "Config",
               "set_name": "Sonic Heroes Performance Tweaks",
-              "set_url": "https://raw.githubusercontent.com/Tekkra-Pi/dolphin4muosconfigs/refs/heads/main/sonic-heroes-gfx.ini",
-              "set_note": "[Core]\nOverclock = 0.00000000\nOverclockEnable = False\nCPUCore = 2\nCPUThread = True\nFastmem = True\nDSPHLE = True\nSkipIPL = True\nSyncOnSkipIdle = True\nEmulationSpeed = 1.00000000\nGFXBackend = OGL\nMMU = False\nAccurateNaNs = False\nFPRF = False\n\n[Video_Settings]\nInternalResolution = 1.00000000\nEnableGPUTextureDecoding = True\nDisableFog = True\nEFBToTextureEnable = True\nEFBScaledCopy = True\nNoMipmapping = True\nSkipDuplicateXFBs = True\nForceTrueColor = True\nFastDepthCalc = True\nSafeTextureCacheColorSamples = 128\nShaderCache = True\nWaitForShadersBeforeStarting = False\nVSync = False\n\n[Hacks]\nBBoxEnable = False\nEFBAccessEnable = False\nEFBEmulateFormatChanges = False\nVertexRounding = False\nVISkip = True\nDisableCopyFilter = True\nArbitraryMipmapDetection = True\n\n[Enhancements]\nPostProcessingShader =\n\n[DSP]\nBackend = OpenSLES\nEnableJIT = True\nVolume = 100\n\n[General]\nShowFPS = True\nShowVPS = False\nShowSpeedColors = False"
+              "set_url": "Https://raw.githubusercontent.com/Tekkra-Pi/dolphin4muosconfigs/refs/heads/main/sonic-heroes-gfx.ini",
+              "set_note": "[Core]\nOverclock = 0.00000000\nOverclockEnable = False\nCPUCore = 2\nCPUThread = True\nFastmem = True\nDSPHLE = True\nSkipIPL = True\nSyncOnSkipIdle = True\nEmulationSpeed = 1.00000000\nGFXBackend = OGL\nMMU = False\nAccuRateNaNs = False\nFPRF = False\n\n[Video_Settings]\nInternalResolution = 1.00000000\nEnableGPUTextureDecoding = True\nDisableFog = True\nEFBToTextureEnable = True\nEFBScaledCopy = True\nNoMipmapping = True\nSkipDuplicateXFBs = True\nForceTrueColor = True\nFastDepthCalc = True\nSafeTextureCacheColorSamples = 128\nShaderCache = True\nWaitForShadersBeforeStarting = False\nVSync = False\n\n[Hacks]\nBBoxEnable = False\nEFBAccessEnable = False\nEFBEmulateFormatChanges = False\nVertexRounding = False\nVISkip = True\nDisableCopyFilter = True\nArbitraryMipmapDetection = True\n\n[Enhancements]\nPostProcessingShader =\n\n[DSP]\nBackend = OpenSLES\nEnableJIT = True\nVolume = 100\n\n[General]\nShowFPS = True\nShowVPS = False\nShowSpeedColors = False"
             }
           ],
           "attachments": []
@@ -8589,11 +8589,11 @@
           },
           "test_details": {
             "rtcore_version": "v11.0.0 (prerelease)",
-            "core_profile": "Various / All profiles tested",
-            "considerations": "Unfortunately, even with the Black Screen Fix profile, the game does not boot.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
+            "core_profile": "All profiles (tested multiple)",
+            "considerations": "Unfortunately, even with the Black screen. Fix profile, the game does not boot.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -8603,20 +8603,20 @@
               "set_type": "Hack",
               "set_name": "English Translation",
               "set_filename": "Lupin.III.Umi.ni.Kieta.Hihou.Translation.v1.0.1.zip",
-              "set_url": "https://github.com/DOL-Translations/lupin-III/releases/download/r205/Lupin.III.Umi.ni.Kieta.Hihou.Translation.v1.0.1.zip",
+              "set_url": "Https://github.com/DOL-Translations/lupin-III/releases/download/r205/Lupin.III.Umi.ni.Kieta.Hihou.Translation.v1.0.1.zip",
               "set_note": "GitHub Repo: https://github.com/DOL-Translations/lupin-III"
             }
           ],
           "attachments": [
             {
-              "media_type": "text",
+              "media_type": "Text",
               "media_title": "GL3EE8.Gecko.Code.txt",
-              "media_url": "https://github.com/DOL-Translations/lupin-III/releases/download/r205/GL3EE8.Gecko.Code.txt"
+              "media_url": "Https://github.com/DOL-Translations/lupin-III/releases/download/r205/GL3EE8.Gecko.Code.txt"
             },
             {
-              "media_type": "image",
+              "media_type": "Image",
               "media_title": "English Boxart",
-              "media_url": "https://github.com/DOL-Translations/lupin-III/releases/download/r205/boxart.zip"
+              "media_url": "Https://github.com/DOL-Translations/lupin-III/releases/download/r205/boxart.zip"
             }
           ]
         }
@@ -8651,7 +8651,7 @@
             "considerations": "Unfortunately, even with various profiles, the game fails to boot.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -8665,14 +8665,14 @@
           ],
           "attachments": [
             {
-              "media_type": "link",
+              "media_type": "Link",
               "media_title": "LFA Team Discord 1",
-              "media_url": "https://discord.gg/yhwUFBjbVh"
+              "media_url": "Https://discord.gg/yhwUFBjbVh"
             },
             {
-              "media_type": "link",
+              "media_type": "Link",
               "media_title": "LFA Team Discord 2",
-              "media_url": "https://discord.gg/fyVTngUr3G"
+              "media_url": "Https://discord.gg/fyVTngUr3G"
             }
           ]
         }
@@ -8707,7 +8707,7 @@
             "considerations": "UI graphics run smoothly at around 45 FPS, sometimes even higher. However, gameplay sessions and cutscenes lag heavily, making it currently unplayable.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -8734,7 +8734,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -8742,11 +8742,11 @@
           },
           "test_details": {
             "rtcore_version": "v10.5.3",
-            "core_profile": "SpeedHacks",
-            "considerations": "Does not boot, exactly like its NTSC sibling.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
+            "core_profile": "SpeedHack",
+            "considerations": "Does not boot, exactly like its NTSC counterpart.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "Anbernic RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -8760,7 +8760,7 @@
       "game_info": {
         "game_id": "GABEAF",
         "system": "GC",
-        "game": "Zatch Bell - Mamodo Fury",
+        "game": "Zatch Bell: Mamodo Fury",
         "region": "NTSC"
       },
       "entries": [
@@ -8768,12 +8768,12 @@
           "game_info": {
             "game_id": "GABEAF",
             "system": "GC",
-            "game": "Zatch Bell - Mamodo Fury",
+            "game": "Zatch Bell: Mamodo Fury",
             "region": "NTSC"
           },
           "test_review": {
             "rating": 2,
-            "fps": "10 -59",
+            "fps": "10-59",
             "boot": "YES",
             "playable": "NO",
             "fps_min": 10,
@@ -8781,11 +8781,11 @@
           },
           "test_details": {
             "rtcore_version": "v11.0.00-dev",
-            "core_profile": "All of them",
+            "core_profile": "All profiles",
             "considerations": "Unplayable, battle sessions runs down to 10FPS.\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -8820,11 +8820,11 @@
           },
           "test_details": {
             "rtcore_version": "v11.0.00-dev",
-            "core_profile": "SpeedHackss",
+            "core_profile": "SpeedHack",
             "considerations": "Simply PERFECT\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -8840,9 +8840,9 @@
           ],
           "attachments": [
             {
-              "media_type": "link",
+              "media_type": "Link",
               "media_title": "Patch by swosho",
-              "media_url": "https://archive.org/details/castle_of_shikigami_iii_undub_patch"
+              "media_url": "Https://archive.org/details/castle_of_shikigami_iii_undub_patch"
             }
           ]
         }
@@ -8865,7 +8865,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -8873,11 +8873,11 @@
           },
           "test_details": {
             "rtcore_version": "v11.0.00 (prerelease)",
-            "core_profile": "All of them",
+            "core_profile": "All profiles",
             "considerations": "[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -8893,9 +8893,9 @@
           ],
           "attachments": [
             {
-              "media_type": "link",
+              "media_type": "Link",
               "media_title": "Patch source",
-              "media_url": "https://www.romhacking.net/translations/5575/"
+              "media_url": "Https://www.romhacking.net/translations/5575/"
             }
           ]
         }
@@ -8905,7 +8905,7 @@
       "game_info": {
         "game_id": "GOWP69",
         "system": "GC",
-        "game": "Need for Speed - Most Wanted",
+        "game": "Need for Speed: Most Wanted",
         "region": "PAL"
       },
       "entries": [
@@ -8913,7 +8913,7 @@
           "game_info": {
             "game_id": "GOWP69",
             "system": "GC",
-            "game": "Need for Speed - Most Wanted",
+            "game": "Need for Speed: Most Wanted",
             "region": "PAL"
           },
           "test_review": {
@@ -8925,9 +8925,9 @@
             "fps_max": 5
           },
           "test_details": {
-            "rtcore_version": "10.5.3",
-            "core_profile": "Various",
-            "considerations": "I found the cause of the persistent black screen in Need for Speed: Most Wanted (GameCube, PAL / GOWP69) on the H700 build.\nDolphin itself boots the game correctly, but the package is missing the GameCube system font files:\nfont_western.bin\nfont_japanese.bin\nDolphin expects them in:\n/usr/local/share/dolphin-emu/sys/GC/\nWith debug logging enabled, the game stopped exactly at:\nError: Trying to access Windows-1252 fonts but they are not loaded.\nfollowed by an NFS Most Wanted stack trace from EcstasyE.cpp.\nAfter copying the official Dolphin 2412 font files into the directory above, NFS Most Wanted boots and runs stable at around 5fps without any further optimisation on Performance core.\nIt would be great if these two files could be included in the next Rt:Core release / install package so games that depend on the GameCube ROM fonts work out of the box.\nTested on:\nAnbernic RG34XX SP\nAllwinner H700\nmuOS\nDolphin 2412-81-dirty\nRt:Core v11\nNFS Most Wanted Europe (GOWP69, RVZ)\n\n(Fix and GitHub comment created by ChatGPT, testet and prompted by XSpalter)"
+            "rtcore_version": "v10.5.3",
+            "core_profile": "Various profiles",
+            "considerations": "I found the cause of the persistent Black screen. In Need for Speed: Most Wanted (GameCube, PAL / GOWP69) on the H700 build.\nDolphin itself boots the game correctly, but the package is missing the GameCube system font files:\nFont_western.bin\nFont_japanese.bin\nDolphin expects them in:\n/usr/local/share/dolphin-emu/sys/GC/\nWith debug logging enabled, the game stopped exactly at:\nError: Trying to access Windows-1252 fonts but they are not loaded.\nFollowed by an NFS Most Wanted stack trace from EcstasyE.cpp.\nAfter copying the official Dolphin 2412 font files into the directory above, NFS Most Wanted boots and runs stable at around 5fps without any further optimisation on Performance core.\nIt would be great if these two files could be included in the next Rt:Core release / install package so games that depend on the GameCube ROM fonts work out of the box.\nTested on:\nAnbernic RG34XX SP\nAllwinner H700\nMuOS\nDolphin 2412-81-dirty\nRt:Core v11\nNFS Most Wanted Europe (GOWP69, RVZ)\n(Fix and GitHub comment created by ChatGPT, testet and prompted by XSpalter)"
           },
           "test_environment": {
             "tester": "XSpalter",
@@ -9001,7 +9001,7 @@
             "game_id": "RDBPAF",
             "system": "Wii",
             "game": "Dragon Ball Z: Budokai Tenkaichi 2",
-            "region": "NTSC-U"
+            "region": "NTSC"
           },
           "test_review": {
             "rating": 2,
@@ -9013,11 +9013,11 @@
           },
           "test_details": {
             "rtcore_version": "v11.5.00 'Comfort Zone' (prerelease)",
-            "core_profile": "All of them",
-            "considerations": "Boots and runs without crashing. Unfortunately it's impossible to play with it, too heavy stuttering. \nBetter in the UIs\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
+            "core_profile": "All profiles",
+            "considerations": "Boots and runs without crashing. Unfortunately it's impossible to play with it, too heavy stuttering.\nBetter in the UIs\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "Funky Jacaranda"
           },
@@ -9044,19 +9044,19 @@
           },
           "test_review": {
             "rating": 2,
-            "fps": "???",
-            "boot": "YES",
+            "fps": "N/A",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 0,
             "fps_max": 0
           },
           "test_details": {
-            "rtcore_version": "",
-            "core_profile": "All of them",
+            "rtcore_version": "Unknown",
+            "core_profile": "All profiles",
             "considerations": "Profiles tested: Speedhack,Performance, Speedup1, Default\nSadly the game won't go past the first option selection window\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -9083,7 +9083,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -9091,11 +9091,11 @@
           },
           "test_details": {
             "rtcore_version": "v11.5.00-III FrontendONE",
-            "core_profile": "Various / All profiles tested",
-            "considerations": "Only Black Screen, tried every Rt:Profile\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
+            "core_profile": "All profiles (tested multiple)",
+            "considerations": "Only Black Screen. Tried every Rt:Profile\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "Anbernic RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -9122,7 +9122,7 @@
           },
           "test_review": {
             "rating": 0,
-            "fps": "???",
+            "fps": "N/A",
             "boot": "NO",
             "playable": "NO",
             "fps_min": 0,
@@ -9130,11 +9130,11 @@
           },
           "test_details": {
             "rtcore_version": "v11.5.00-III FrontendONE",
-            "core_profile": "Various / All profiles tested",
-            "considerations": "Only Black Screen, tried every Rt:Profile\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
+            "core_profile": "All profiles (tested multiple)",
+            "considerations": "Only Black Screen. Tried every Rt:Profile\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "Anbernic RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
@@ -9162,18 +9162,18 @@
           "test_review": {
             "rating": 2,
             "fps": "8-15",
-            "boot": "YES",
+            "boot": "CRASH",
             "playable": "NO",
             "fps_min": 8,
             "fps_max": 15
           },
           "test_details": {
             "rtcore_version": "v11.5.00-II 'Bash Arsenal'",
-            "core_profile": "Various / All profiles tested",
+            "core_profile": "All profiles (tested multiple)",
             "considerations": "Game boots and runs without crashes or major bugs, but the lagging is far too heavy to appreciate the gameplay. Especially for a title like Muramasa, where the beauty of its sophisticated and unique aesthetic is heavily compromised by such gameplay, it's almost painful to \"play\".\n[Game used in RVZ format, converted from ISO with: 128 kb Block Size, Zstandard Compression, Compression Level 5]"
           },
           "test_environment": {
-            "tester": "sirpips",
+            "tester": "Sirpips",
             "device": "Anbernic RG35XX H",
             "muos_version": "2601.1 Funky Jacaranda"
           },
