@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="screenshots/05_library.png" alt="Rt:UI Library" width="420" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); margin-bottom: 15px;">
+  <img src="https://github.com/SilverCrow2323/dolphin-rt-core/blob/main/assets/Dolphin_RtCore_Flavour3_FrontendONE_Boxart.jpeg" alt="Rt:UI Library" width="420" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); margin-bottom: 15px;">
 
   <h1>🐬 Flavour III: <u>FrontendONE</u></h1>
   <h3><i>Dolphin Rt:Core Controller-First Frontend for muOS</i></h3>
