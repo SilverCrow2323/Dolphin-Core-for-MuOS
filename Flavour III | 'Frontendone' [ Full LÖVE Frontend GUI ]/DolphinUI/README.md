@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="https://github.com/SilverCrow2323/dolphin-rt-core/blob/main/assets/Dolphin_RtCore_Flavour3_FrontendONE_Boxart.jpeg" alt="Rt:UI Library" width="420" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); margin-bottom: 15px;">
+  <img src="https://github.com/SilverCrow2323/dolphin-rt-core/raw/main/assets/Dolphin_RtCore_Flavour3_FrontendONE_Boxart.jpeg" alt="Dolphin RtCore Flavour 3 FrontendONE Boxart" width="100%" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); margin-bottom: 15px;">
 
   <h1>🐬 Flavour III: <u>FrontendONE</u></h1>
   <h3><i>Dolphin Rt:Core Controller-First Frontend for muOS</i></h3>
 
   <p>
-    <a href="https://github.com/SilverCrow2323/Dolphin-Core-for-MuOS/releases/latest">
+    <a href="https://github.com/SilverCrow2323/dolphin-rt-core/releases/latest">
       <img src="https://img.shields.io/badge/version-11.5.00-8C59F2?style=for-the-badge&logo=github" alt="Version">
     </a>
     <img src="https://img.shields.io/badge/Rt%3AUI-3.4.0%20Triage-4FA8C7?style=for-the-badge" alt="Rt:UI">
@@ -27,8 +27,8 @@
 ## 📖 <u>Overview & Philosophy</u>
 
 <div>
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/ticket.png" width="48" align="left" style="margin-right: 15px; margin-bottom: 10px;">
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt_icon.png" alt="Rt:Core Branding" width="75" align="right" style="margin-left: 15px; margin-bottom: 10px;">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/dolphin-rt-core/main/assets/ticket.png" width="48" align="left" style="margin-right: 15px; margin-bottom: 10px;">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/dolphin-rt-core/main/assets/dolphinrt_icon.png" alt="Rt:Core Branding" width="75" align="right" style="margin-left: 15px; margin-bottom: 10px;">
 
   **FrontendONE** turns Dolphin Rt:Core into an **<u>appliance</u>**. Instead of Content Explorer → Assign Core → Task Toolkit → text files, you open **one app**, pick a game, press **X**, and change *its* profile, tier, controller, hotkeys, cheats and mods — saved instantly to the game's own card, applied on the next launch. *Zero file editing, zero guesswork.*
 </div>
@@ -76,7 +76,7 @@ graph TD
 ## 🖥️ <u>The Screens</u>
 
 <div>
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/powerup_machine.png" width="48" align="left" style="margin-right: 15px; margin-bottom: 10px;">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/dolphin-rt-core/main/assets/powerup_machine.png" width="48" align="left" style="margin-right: 15px; margin-bottom: 10px;">
 
   Open **<u>Applications → Dolphin Rt:FinalCut</u>**. Every screen shares one design system (chamfered panels, one accent per section, ≥ 14 px type) and remembers the row you left from.
 </div>
@@ -98,9 +98,9 @@ graph TD
 | 🩺 **`Env Triage`** | *Is Flavour I, II and III really installed? See below.* |
 
 <div align="center">
-  <img src="screenshots/07_compat.png" width="31%" alt="Compatibility">
-  <img src="screenshots/08_cheatdb.png" width="31%" alt="Cheat DB">
-  <img src="screenshots/06_settings.png" width="31%" alt="Settings">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/dolphin-rt-core/main/screenshots/07_compat.png" width="31%" alt="Compatibility">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/dolphin-rt-core/main/screenshots/08_cheatdb.png" width="31%" alt="Cheat DB">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/dolphin-rt-core/main/screenshots/06_settings.png" width="31%" alt="Settings">
 </div>
 
 ---
@@ -108,7 +108,7 @@ graph TD
 ## 🩺 <u>Rt:Core Env Triage — The Health Check</u>
 
 <div>
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/star.png" width="48" align="left" style="margin-right: 15px; margin-bottom: 10px;">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/dolphin-rt-core/main/assets/star.png" width="48" align="left" style="margin-right: 15px; margin-bottom: 10px;">
 
   **Settings → About & Tools → Rt:Core Env Triage.** In about a second it tells you whether the **three layers** are installed, which one is broken, and **what to fix first**. Perfect for bug reports: press <kbd>X</kbd> and attach the saved report.
 </div>
@@ -116,8 +116,8 @@ graph TD
 <br clear="all">
 
 <div align="center">
-  <img src="screenshots/01_triage_healthy.png" width="48%" alt="Triage — healthy">
-  <img src="screenshots/02_triage_degraded.png" width="48%" alt="Triage — broken install">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/dolphin-rt-core/main/screenshots/01_triage_healthy.png" width="48%" alt="Triage — healthy">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/dolphin-rt-core/main/screenshots/02_triage_degraded.png" width="48%" alt="Triage — broken install">
 </div>
 
 | Element | 🔍 Meaning |
@@ -131,9 +131,9 @@ graph TD
 **<u>Controls:</u>** <kbd>↑</kbd><kbd>↓</kbd> / <kbd>L1</kbd><kbd>R1</kbd> switch flavour · <kbd>A</kbd> inspect checks one by one · <kbd>X</kbd> save `data/logs/triage_report.txt` · <kbd>Y</kbd> rescan · <kbd>B</kbd> back.
 
 <div align="center">
-  <img src="screenshots/03_triage_inspect.png" width="31%" alt="Triage — inspecting a check">
-  <img src="screenshots/10_triage_flavour3.png" width="31%" alt="Triage — Flavour III checklist">
-  <img src="screenshots/04_triage_empty.png" width="31%" alt="Triage — nothing installed">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/dolphin-rt-core/main/screenshots/03_triage_inspect.png" width="31%" alt="Triage — inspecting a check">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/dolphin-rt-core/main/screenshots/10_triage_flavour3.png" width="31%" alt="Triage — Flavour III checklist">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/dolphin-rt-core/main/screenshots/04_triage_empty.png" width="31%" alt="Triage — nothing installed">
 </div>
 
 > [!NOTE]
@@ -220,7 +220,7 @@ sequenceDiagram
 ## 🙏 <u>Credits & Acknowledgments</u>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/sirpips.jpeg" alt="sirpips" width="110" style="border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-bottom: 8px;">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/dolphin-rt-core/main/assets/sirpips.jpeg" alt="sirpips" width="110" style="border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-bottom: 8px;">
   <br>
   <b>sirpips aka SilverCrow2323</b>
   <br>
@@ -240,8 +240,8 @@ sequenceDiagram
 ---
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/spdw_symbol.png" alt="SPDW Symbol" width="45" style="vertical-align: middle; margin-right: 10px;">
-  <img src="https://raw.githubusercontent.com/SilverCrow2323/Dolphin-Core-for-MuOS/main/assets/dolphinrt_icon.png" alt="Dolphin Rt Icon" width="45" style="vertical-align: middle;">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/dolphin-rt-core/main/assets/spdw_symbol.png" alt="SPDW Symbol" width="45" style="vertical-align: middle; margin-right: 10px;">
+  <img src="https://raw.githubusercontent.com/SilverCrow2323/dolphin-rt-core/main/assets/dolphinrt_icon.png" alt="Dolphin Rt Icon" width="45" style="vertical-align: middle;">
   <br><br>
   <b>Dolphin Rt:Core — Flavour III: FrontendONE v1.0 · Rt:UI 3.4.0 "Triage"</b><br>
   <b><u>Still Sbrobbing. Always Rintromping.</u></b> 🎮
